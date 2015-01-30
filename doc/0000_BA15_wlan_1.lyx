@@ -9,7 +9,7 @@
 \usepackage{ngerman}
 
 % Variabeln
-\newcommand{\myTitle}{Performance-Evaluation Ethernet für Echtzeit-Datenerfassung}
+\newcommand{\myTitle}{Ermittlung der Performance von Netzwerkfunktionen am Beispiel von PRP}
 
 % Package fuer Gesamtseitenzahl
 \usepackage{lastpage}
