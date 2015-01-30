@@ -1,0 +1,7841 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass scrbook
+\use_default_options true
+\master 0000_PA14_wlan_1.lyx
+\maintain_unincluded_children false
+\language ngerman
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman cmr
+\font_sans lmss
+\font_typewriter cmtt
+\font_math auto
+\font_default_family sfdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf true
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing other 1.2
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Stichwortverzeichnis
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 35mm
+\topmargin 35mm
+\rightmargin 25mm
+\bottommargin 30mm
+\headheight 18mm
+\headsep 12mm
+\footskip 20mm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Chapter
+Vorgehen / Methoden
+\end_layout
+
+\begin_layout Section
+Aufbau der Simulation
+\end_layout
+
+\begin_layout Standard
+In OMNeT++ wird ein HSR-Ring-Netzwerk aufgebaut, in welchem der Traffic
+ simuliert wird.
+ Mittels Konfigurationsdateien kann man die zu verwendenden Prioritäten
+ (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Prioritäten-der-Ethernet-Frames"
+
+\end_inset
+
+) und Mechanismen (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Mechanismen-zur-Trafficregelung"
+
+\end_inset
+
+) definieren, die in den weiteren Kapiteln genauer behandelt werden.
+\end_layout
+
+\begin_layout Subsection
+Prioritäten der Ethernet-Frames 
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Prioritäten-der-Ethernet-Frames"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Für die Frames sind 3 verschiedene Prioritäten vorgesehen, nämlich sogenannte
+ Express-, High- und Low-Prioritäten.
+ Dabei handelt es sich um das in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Interspersing-Express-Traffic"
+
+\end_inset
+
+ beschriebene Express-Frame, wobei die High- und Low-Frames als normales
+ Frame gelten und sich lediglich bei der Priorisierung unterscheiden.
+\end_layout
+
+\begin_layout Standard
+In dieser Arbeit werden wir diese Frames wie folgt auf technischer Ebene
+ unterscheiden:
+\end_layout
+
+\begin_layout Itemize
+Ein Express-Frame wird in der Simulation im VLAN-Tag mit der Priorität 2
+ versehen.
+ Die hier erwähnte Kennzeichnung ist eine der Autoren ausgedachten Lösungen.
+ Im Standard wird anhand des SFD-/SMD-Feldes zwischen normalen Frames und
+ Express-Frames unterschieden.
+\end_layout
+
+\begin_layout Itemize
+Bei einem High-Frame handelt es sich um ein normales Ethernet-Frame, das
+ über ein VLAN-Tag mit der Priorität 1 gekennzeichnet ist.
+ Da das VLAN-Priority-Feld 3 Bits gross ist wären 8 verschiedene Prioritäten
+ möglich, jedoch wird in dieser Arbeit keine Prioritätsnummer, die höher
+ als 2 ist, verwendet.
+\end_layout
+
+\begin_layout Itemize
+Als ein Low-Frame gelten alle Frames, welche einen VLAN-Tag mit der Priorität
+ 0 oder keine besondere Kennzeichnung haben.
+\end_layout
+
+\begin_layout Subsection
+Mechanismen zur Trafficregelung 
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Mechanismen-zur-Trafficregelung"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In diesem Kapitel werden Mechanismen erläutert, die den Traffic regeln und
+ in der Simulation angewendet werden können.
+ Jeder Node (DANH oder Redbox, siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Gerätetypen HSR"
+
+\end_inset
+
+) im Netzwerk verfügt über einen internen Switch, der entscheidet, wohin
+ die Frames gesendet werden sollen.
+ In der Simulation verfügt ein DANH über drei Ports, zwei für die Frames
+ vom und auf den Ring (Ethernet-Ports) und einen für die Frames von und
+ zur CPU.
+\end_layout
+
+\begin_layout Standard
+Für jeden möglichen Ausgang ist ein Scheduler zuständig (d.h.
+ bei einem DANH-Gerät hat es drei Scheduler), in welchem die Mechanismen
+ zur Trafficregelung implementiert sind und die Frames priorisiert abgehandelt
+ werden.
+ Der Scheduler ist innerhalb des Switches implementiert und erhält vom Switch
+ Zugang zu dessen Ausgängen, die er benötigt und die Frames, die er für
+ seinen Ausgang zu koordinieren hat.
+ Es besteht dann die Möglichkeit, für jeden Knoten zwischen den Mechanismen
+ auszuwählen oder diese sogar zu kombinieren.
+\end_layout
+
+\begin_layout Subsubsection
+First Come First Serve
+\end_layout
+
+\begin_layout Standard
+Die Frames werden, unabhängig von ihrer Herkunft (von Aussen oder vom Ring),
+ nur nach ihrer Priorität behandelt.
+ Das erste Frame, das von der jeweiligen Priorität eintrifft, wird dem anderen
+ der selben Priorität vorgezogen.
+\end_layout
+
+\begin_layout Subsubsection
+Zuflusslimitierung
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Limitierung-des-Zuflusses"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Jedes Gerät generiert intern eine Anzahl an Tokens bis zu einem bestimmten
+ Maximum.
+ Möchte das Gerät ein neues, intern generiertes Low-Frame versenden, kann
+ es das Frame erst versenden wenn genügend Tokens vorhanden sind.
+ Dabei verbraucht ein Low-Frame mit n Bytes genau n Tokens.
+ Wenn zum Beispiel ein Low-Frame mit 800 Bytes versendet werden muss und
+ nur 600 Tokens vorhanden sind, muss das Gerät mit dem Versand warten, bis
+ genügend Tokens vorhanden sind.
+\end_layout
+
+\begin_layout Standard
+Es werden lediglich Low-Frames limitiert, damit nichts vom hoch priorisierten
+ Traffic limitiert wird.
+ So kann der Zufluss von neuem 
+\begin_inset Quotes fld
+\end_inset
+
+unwichtigem
+\begin_inset Quotes frd
+\end_inset
+
+ Traffic limitiert werden, womit die Frames mit der Priorität High und Express
+ weniger von Frames mit der Priorität Low gestört werden.
+ 
+\end_layout
+
+\begin_layout Subsubsection
+Vortrittsregeln bezüglich Frames im und zum Ring
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Vortrittsregeln-bezüglich-Frames"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Damit die Frames innerhalb des Rings (HSR-Netzwerks) schneller zum Ziel
+ kommen, kann diesen Frames der Vortritt gegenüber Frames von Aussen gewährt
+ werden.
+ Dies ist bei gleich priorisierten Frames der Fall.
+ Es kann hier jedoch die Möglichkeit geben, dass so nie Frames von Aussen
+ versendet werden.
+\end_layout
+
+\begin_layout Standard
+Je nach auftretenden Prioritäten kann es auch sein, dass von Aussen ein
+ Express-Frame und vom Ring ein High-Frame kommt.
+ Dann hat das Express-Frame trotz der Herkunft von Aussen aufgrund dessen
+ Priorität Vortritt.
+\end_layout
+
+\begin_layout Standard
+Die andere Möglichkeit ist, den Frames, die von Aussen auf den Ring sollen,
+ den Vortritt zu gewähren.
+ So kann ein minimaler Zufluss auf den Ring garantiert werden.
+ Hier kann es den umgekehrten Fall wie wenn die Frames vom Ring Vortritt
+ haben geben: Wenn ständig neue Frames von Aussen kommen, werden die Frames
+ vom Ring nie versendet.
+\end_layout
+
+\begin_layout Subsubsection
+Reissverschluss
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Reissverschluss"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ein Derivat des vorherigen Mechanismus ist, den Vortritt zwischen Frames
+ vom Ring und von Aussen zu alternieren.
+ Die Frames würden dann wie folgt priorisiert werden (Angenommen es kommen
+ alle 3 Prioritäten (Express, High und Low) vor):
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "45col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+Liste 1
+\end_layout
+
+\begin_layout Enumerate
+\noindent
+Express-Frame vom Ring
+\end_layout
+
+\begin_layout Enumerate
+Express-Frame von Aussen
+\end_layout
+
+\begin_layout Enumerate
+High-Frame vom Ring
+\end_layout
+
+\begin_layout Enumerate
+High-Frame von Aussen
+\end_layout
+
+\begin_layout Enumerate
+Low-Frame vom Ring
+\end_layout
+
+\begin_layout Enumerate
+Low-Frame von Aussen
+\end_layout
+
+\end_inset
+
+
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "45col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+Liste 2
+\end_layout
+
+\begin_layout Enumerate
+\noindent
+Express-Frame von Aussen
+\end_layout
+
+\begin_layout Enumerate
+Express-Frame vom Ring
+\end_layout
+
+\begin_layout Enumerate
+High-Frame von Aussen
+\end_layout
+
+\begin_layout Enumerate
+High-Frame vom Ring
+\end_layout
+
+\begin_layout Enumerate
+Low-Frame von Aussen
+\end_layout
+
+\begin_layout Enumerate
+Low-Frame vom Ring
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+So würde die Priorisierung zwischen der aus Liste 1 und der aus Liste 2
+ nach jedem Frame-Versand abwechseln.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Zeitschlitzverfahren
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Zeitschlitzverfahren"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Im Zeitschlitzverfahren werden Zeitschlitze definiert, in denen man High-
+ und Low-Frames senden kann.
+ Ein Express-Frame kann immer versendet werden.
+ 
+\end_layout
+
+\begin_layout Standard
+Jeder Zeitschlitz hat zwei gleich grosse Phasen, davon eine sogenannte Grün-Phas
+e, in welcher High-Frames gesendet werden können.
+ Die Rot-Phase wird für den restlichen Sendevorgang oder für Low-Frames
+ verwendet.
+ Sollten keine High-Frames da sein, so können auch Low-Frames gesendet werden.
+ Dies wiederholt sich in jedem Zeitschlitz.
+ Mit diesem Mechanismus wird verhindert, dass Low-Frames nicht gesendet
+ werden, wenn ständig High-Frames zum Senden bereitstehen.
+\end_layout
+
+\begin_layout Standard
+Die Grösse einer Phase kann in Bytes selber gesetzt werden und jede zweite
+ Phase ist die vorhin erwähnte Grün-Phase.
+ Anhand der gesetzten Grösse in Bytes und der vorhandenen Übertragungsrate
+ wird eine Zeitdauer berechnet, die dann die effektive Phasengrösse als
+ Zeitfenster beträgt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/020_Zeitschlitzverfahren.png
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Beispiel von Frame-Abfolge mit Zeitschlitzverfahren
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Definition der Knoten
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Definition-der-Knoten"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Jede Komponente eines Knotens (Netzwerkinterface, Switch, etc.) ist eine
+ eigene C++-Klasse, welche die jeweiligen Funktionen enthält.
+ Ein Knoten wird dann aus diesen Komponenten zusammengesetzt, indem eine
+ sogenannte NED-Datei (NED steht für Network Description) erstellt wird,
+ in welcher die Komponenten initialisiert und verbunden werden 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "OMNET_USERGUIDE"
+
+\end_inset
+
+.
+ Der Knoten selbst existiert nicht als C++-Klasse, sondern lediglich als
+ NED-Datei.
+\end_layout
+
+\begin_layout Standard
+Der Aufbau eines DANH-Knoten in OMNeT++ sieht wie folgt aus:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/020_DANH-Knoten.png
+	display false
+	scale 37
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+DANH-Knoten in OMNeT++
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:DANH-Knoten"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es gibt in einem DANH-Gerät 3 Ports und für jeden Port gibt es zwei Netzwerkinte
+rfaces, einen für normale und einen für Express-Frames.
+ Der genaue Grund, warum für jeden Port zwei Netzwerkinterfaces existieren
+ ist im Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Fragmentierung-und-Zeitberechnun"
+
+\end_inset
+
+ aufgeführt.
+ Zwei Ports (im Bild 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ und 
+\begin_inset Quotes fld
+\end_inset
+
+eth1
+\begin_inset Quotes frd
+\end_inset
+
+) sind für den Anschluss an den Ring.
+ Der dritte Port ist mit der CPU verbunden, die für die Generierung der
+ neuen Frames verantwortlich ist.
+ 
+\end_layout
+
+\begin_layout Standard
+Zwischen jedem Port und Komponente befindet sich eine Duplikatliste, durch
+ die jedes Frame hindurch läuft.
+ Die Duplikatliste überprüft anhand der Sequenznummer und der Quell-MAC-Adresse,
+ ob dasselbe Frame schon einmal die Duplikatliste passiert hat.
+ Wenn dasselbe Frame bereits einmal von der Duplikatliste erkannt wurde
+ wird es gelöscht.
+ Dank dieser Duplikatliste wird kein Frame mehrmals über den selben Port
+ versendet.
+\end_layout
+
+\begin_layout Standard
+Alle Frames, die beim DANH-Knoten ankommen oder von dessen CPU generiert
+ werden, gelangen zum internen Switch.
+ Dieser analysiert das Frame und weist es dem entsprechenden Scheduler zu,
+ der die Frames je nach Priorität und aktiven Mechanismen in die entsprechende
+ Warteschlange stellt.
+ Dem Scheduler ist immer ein Port (also zwei Netzwerkinterfaces) zugeteilt,
+ was heisst, dass ein Switch über 3 Scheduler verfügt.
+ Der Scheduler ist zudem für das Senden der Frames zuständig.
+ Er entscheidet wann über welches Netzwerkinterface welches Frame versendet
+ wird.
+\end_layout
+
+\begin_layout Standard
+Des Weiteren verursacht ein Knoten eine Verzögerung von 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$6 
+\backslash
+mu s$
+\end_layout
+
+\end_inset
+
+ pro Frame (Vorgabe von unserem Betreuer, siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Kalenderwoche-49:-04.12.2014"
+
+\end_inset
+
+).
+ Dies ist die Zeit, die ein Knoten benötigt, um beim Cut-Through-Switching
+ genug vom Frame eingelesen zu haben, damit er Entscheiden kann, was er
+ mit dem Frame machen soll.
+\end_layout
+
+\begin_layout Subsection
+Netzwerkaufbau
+\end_layout
+
+\begin_layout Standard
+So wie ein Knoten als NED-Datei seinen Aufbau mit den Komponenten beschreibt,
+ wird ein Netzwerk auch als NED-Datei definiert, in welchem die Knoten initialis
+iert und verbunden werden.
+ Verbunden werden die Knoten über eine 20m lange 100Mbps-Verbindung, welche
+ in der Simulation durch eine Verzögerung von 100ns dargestellt wird.
+ Das folgende Bild zeigt ein Beispielaufbau mit 10 DANH-Knoten, die als
+ Merging und Protection Units definiert wurden (mehr dazu siehe Kapitel
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Szenario-1:-Substation"
+
+\end_inset
+
+): 
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Netzwerkaufbau"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/020_Netzwerkaufbau.png
+	display false
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Beispielaufbau eines Netzwerks in OMNeT++
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Das Verhalten in diesem Beispiel ist bei jedem Knoten das Selbe, da es sich
+ lediglich um DANH-Knoten handelt.
+ Was variiert, sind die MAC-Adressen (in der NED-Datei des Netzwerks definiert)
+ und die Anzahl und Häufigkeit der Frames, die generiert werden.
+ Für die Generierung von Frames wird eine XML-Datei definiert, bei der für
+ jeden Knoten bestimmt wird, wie viele Frames dieser Knoten an welchen Host
+ sendet.
+ Das Generieren von Multi- und Broadcast-Frames ist neben Unicast-Frames
+ auch möglich.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Während der Simulation wird die Komponente, die gerade eine Aktion durchführt,
+ rot umrandet.
+ Zudem verändert sich die Farbe der Verbindungen und der Netzwerkinterfaces
+ innerhalb der Knoten (
+\begin_inset Quotes fld
+\end_inset
+
+eth...
+\begin_inset Quotes frd
+\end_inset
+
+, siehe Abbildung 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:DANH-Knoten"
+
+\end_inset
+
+).
+ Die Farben haben folgende Bedeutungen:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="10text%">
+<column alignment="left" valignment="top" width="90text%">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Gelb
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Am übertragen
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Rot
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kollision erkannt (wird in den Simulationen dieser Arbeit nicht vorkommen,
+ da Vollduplex-Verbindungen verwendet werden)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Bedeutung der Farben bei den Verbindungen und Netzwerkinterfaces in der
+ Simulation 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "INET_FRAMEWORK"
+
+\end_inset
+
+ 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es folgt ein Beispiel einer XML-Konfiguration für den Lastgenerator eines
+ bestimmten Knoten:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+%
+\backslash
+lstinputlisting[caption={Konfiguration des Lastgenerators eines Knotens}
+\backslash
+label{lst:configxml},  captionpos=t,language=XML]{_srcListings/hello.c}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{language=XML,tabsize=2}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[caption={Konfiguration des Lastgenerators eines Knotens}
+\backslash
+label{lst:configxml},captionpos=b]
+\end_layout
+
+\begin_layout Plain Layout
+
+	<!--
+\end_layout
+
+\begin_layout Plain Layout
+
+		######################################################################
+\end_layout
+
+\begin_layout Plain Layout
+
+		 Tag-description (see current configurations for syntax)
+\end_layout
+
+\begin_layout Plain Layout
+
+		######################################################################
+\end_layout
+
+\begin_layout Plain Layout
+
+        source:	MAC-Address of source {
+\end_layout
+
+\begin_layout Plain Layout
+
+            lastmuster {
+\end_layout
+
+\begin_layout Plain Layout
+
+                startzeit:       Time when the first frame will be generated
+\end_layout
+
+\begin_layout Plain Layout
+
+                stopzeit:        Generate frame until this time is reached
+\end_layout
+
+\begin_layout Plain Layout
+
+                interval:        Generate a frame every x seconds
+\end_layout
+
+\begin_layout Plain Layout
+
+                epsilon:         Generate a random value between 0 and epsilon
+\end_layout
+
+\begin_layout Plain Layout
+
+                                 that will be added to the value of the
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+                                 previous tag every time a new frame 
+\end_layout
+
+\begin_layout Plain Layout
+
+                                 will be generated
+\end_layout
+
+\begin_layout Plain Layout
+
+                destination:     Set destination of frame
+\end_layout
+
+\begin_layout Plain Layout
+
+                                 (can be Uni-, Multi- or Broadcast)
+\end_layout
+
+\begin_layout Plain Layout
+
+                                 The broadcast-address is FF-FF-FF-FF-FF-FF
+\end_layout
+
+\begin_layout Plain Layout
+
+                paketgroesse:    Set datasize of frame in Bytes 
+\end_layout
+
+\begin_layout Plain Layout
+
+                                 (Size + 24 = Total Framesize)
+\end_layout
+
+\begin_layout Plain Layout
+
+                                 Example: the total framesize is 
+\end_layout
+
+\begin_layout Plain Layout
+
+                                 160 Bytes when 136 is set
+\end_layout
+
+\begin_layout Plain Layout
+
+                priority:        Set priority of frame
+\end_layout
+
+\begin_layout Plain Layout
+
+                                 ("EXPRESS", "HIGH", "LOW")
+\end_layout
+
+\begin_layout Plain Layout
+
+            }
+\end_layout
+
+\begin_layout Plain Layout
+
+        }
+\end_layout
+
+\begin_layout Plain Layout
+
+	-->
+\end_layout
+
+\begin_layout Plain Layout
+
+    
+\end_layout
+
+\begin_layout Plain Layout
+
+    <!-- # Express-Frames with unicast destination # -->
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    <source>00-15-12-14-88-01
+\end_layout
+
+\begin_layout Plain Layout
+
+        <lastmuster>
+\end_layout
+
+\begin_layout Plain Layout
+
+            <startzeit>0.001</startzeit>
+\end_layout
+
+\begin_layout Plain Layout
+
+            <stopzeit>0.0011</stopzeit>
+\end_layout
+
+\begin_layout Plain Layout
+
+            <interval>0.00025</interval>
+\end_layout
+
+\begin_layout Plain Layout
+
+            <epsilon>0</epsilon>
+\end_layout
+
+\begin_layout Plain Layout
+
+            <destination>00-15-12-14-88-02</destination>
+\end_layout
+
+\begin_layout Plain Layout
+
+            <paketgroesse>136</paketgroesse>
+\end_layout
+
+\begin_layout Plain Layout
+
+            <priority>EXPRESS</priority>
+\end_layout
+
+\begin_layout Plain Layout
+
+        </lastmuster>
+\end_layout
+
+\begin_layout Plain Layout
+
+    </source> 
+\end_layout
+
+\begin_layout Plain Layout
+
+          
+\end_layout
+
+\begin_layout Plain Layout
+
+    <!-- # # # -->
+\end_layout
+
+\begin_layout Plain Layout
+
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Für einen Knoten können mehrere solcher Konfigurationen gleichzeitig gesetzt
+ werden, wenn ein Knoten z.B.
+ Frames der Priorität High und Low versenden soll.
+ Des Weiteren können auch Knoten im Netz ohne einen Eintrag im XML existieren.
+ Diese Knoten generieren dann zwar selber keine Frames, leiten jedoch Frames
+ normal weiter wie jeder andere Knoten auch.
+\end_layout
+
+\begin_layout Standard
+Sind keine Frames mehr im Umlauf und werden keine mehr generiert (wenn die
+ Simulationszeit über der Zeit im 
+\begin_inset Quotes fld
+\end_inset
+
+Stopzeit
+\begin_inset Quotes frd
+\end_inset
+
+-Tag ist), dann wird die Simulation automatisch beendet.
+ Während der Simulation wurde einiges aufgezeichnet, was nachher eingesehen
+ und als Grafik dargestellt werden kann (Siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Resultate"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Subsection
+Abhandlung der Frames innerhalb eines Gerätes
+\end_layout
+
+\begin_layout Standard
+Sobald ein Gerät ein Frame erhält, wird es in dessen Switch analysiert und
+ die Herkunft und das Ziel ermittelt, um entscheiden zu können, an welchen
+ Ausgang das Frame weitergeleitet werden muss.
+ Je nach Ausgang wird das Frame dann an den jeweiligen Scheduler weitergeleitet.
+ Muss ein Frame an alle Ethernet-Ports gesendet werden (wenn z.B.
+ ein Frame von der CPU des Gerätes generiert wird), dann wird dies vom Switch
+ dupliziert und an die betroffenen Scheduler gesendet.
+ Der Scheduler ermittelt dann die Priorität (und eventuell die Herkunft)
+ des Frames, um diese dann in die entsprechende Queue einzuordnen.
+ Die Herkunft ist nur je nach Mechanismus notwendig, wenn z.B.
+ Frames, die vom Ring kommen, priorisiert werden (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Vortrittsregeln-bezüglich-Frames"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/020_Ablauf_Frame_Switch.png
+	display false
+	scale 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Schedulerzuordnung eines Frames in einem Switch
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Der Scheduler arbeitet nach jedem neuen Frame seine Queues ab.
+ Dabei überprüft er, ob auf seinem Ausgang gerade etwas gesendet wird und
+ sendet bei einem freien Ausgang das nächste Frame, das je nach Priorität
+ und Mechanismus an der Reihe ist.
+ Wird gerade etwas auf dem Ausgang übertragen, versucht es der Scheduler
+ erst nochmals sobald die Übertragung zu Ende ist.
+ Die Ausnahme bildet das Express-Frame, das den Sendevorgang normaler Frames
+ unterbrechen kann.
+\end_layout
+
+\begin_layout Subsubsection
+Express-Frame
+\end_layout
+
+\begin_layout Standard
+Bei einem Express-Frame muss der Scheduler sofort handeln.
+ Anders als bei einem normalen Frame, muss das Express-Frame auch bei einem
+ besetzten Ausgang versendet werden, was impliziert, dass das Frame, das
+ gerade übertragen wird, wenn möglich fragmentiert werden muss.
+ 
+\end_layout
+
+\begin_layout Standard
+Wichtig ist, dass kein Fragment unter der kleinstmöglichen Ethernet-Frame-Grösse
+ von 64 Bytes liegt.
+ Aus diesem Grund kann es sein, dass Frames manchmal nicht fragmentiert
+ werden können und der Scheduler warten muss, bis dieses versendet wurde.
+\end_layout
+
+\begin_layout Standard
+Kann das Frame jedoch fragmentiert werden, so wird das derzeitige Fragment
+ zu Ende gesendet und anschliessend das Express-Frame versendet.
+ Danach werden die restlichen Fragmente versendet.
+\end_layout
+
+\begin_layout Subsubsection
+Fragmentierung und Zeitberechnung
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Fragmentierung-und-Zeitberechnun"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In der Simulation findet keine richtige Fragmentierung statt, jedoch wird
+ diese mittels Zeitberechnung durchgeführt.
+ Das heisst, dass ein Express-Frame bei einem belegten Ausgang gesendet
+ wird, wenn das Fragment inklusive IFG versendet worden wäre.
+ Die Ankunftszeit des 
+\begin_inset Quotes fld
+\end_inset
+
+fragmentierten
+\begin_inset Quotes frd
+\end_inset
+
+ Frame wird dann um die Dauer des Express-Frames inkl.
+ dessen IFG verlängert.
+\end_layout
+
+\begin_layout Standard
+Da keine wirkliche Fragmentierung stattfindet, ist der Ausgang, bei dem
+ das zu unterbrechende Frame gesendet wird, immer noch belegt.
+ Aus diesem Grund gibt es für jeden Ausgang einen weiteren Ausgang ausschliessli
+ch für Express-Frames.
+\end_layout
+
+\begin_layout Standard
+Somit sind die Ankunfts- und Sendezeiten der Frames dieselben, wie wenn
+ eine tatsächliche Fragmentierung stattgefunden hätte.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/020_Ablauf_Frame_Express.png
+	display false
+	scale 90
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Abhandlung von Frames inklusive Express-Frames
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Der Datenbereich eines mFrames umfasst vom ersten Oktett nach dem SFD/SMD-Feld
+ bis und mit dem letzten Oktett vor dem CRC und hat mindestens eine Grösse
+ von 60 Bytes.
+ Dabei muss dessen Grösse durch 8 (Alignment der Fragmentierung) teilbar
+ sein (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Mframe"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Natürlich kann bei einem Frame, das gerade übertragen wird nur noch der
+ Teil fragmentiert werden, der aussteht.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Demnach wird bei der Fragmentierung wie folgt vorgegangen:
+\end_layout
+
+\begin_layout Standard
+Variablen:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+simtime=Derzeitige\, Simulationszeit\,(Jetztiger\, Zeitpunkt)\,[s]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+sendtime=Zeit,\, an\, der\, die\,Übertragung\, der\, Präambel\, begonnen\, hat\,[s]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+F=Grösse\, des\, zu\, fragmentierenden\, Frames\, ohne\, Präambel\, und\, SMD\,[Byte]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+V=Bereits\, versendete\, Bytes\, inkl.\, Präambel\, und\, SMD\,[Byte]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+O=Noch\, offen\, stehender\, Teil\, des\, zu\, fragmentierenden\, mFrames\,[Byte]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+D=Grösse\, des\, Datenbereichs\, eines\, mFrames,\, wenn\, man\, jetzt\, fragmentieren\, würde\,[Byte]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+t=Zeitpunkt,\, zu\, dem\, das\, Express\, Frame\, versendet\, wird\,[s]
+\]
+
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Konstanten:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Formula 
+\[
+datarate=Übermittlungsrate\,[Byte/s]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+P=Präambel\,+Start\, of\, Frame\, bzw.\, mFrame\, Delimiter=8\, Bytes
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+C=FCS\, bzw.\, MFCS=4\, Bytes
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+I=Interframe\, Gap\,(IFG)=12\, Bytes
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+A=Alignment\, der\, Fragmentierung=8\, Bytes
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/020_Ablauf_IET.png
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Berechnung der Express-Frame-Versandzeit
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Berechnung-Express-Versandzeit"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Mehr Informationen zu den Feldern dieser Abbildung sind in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Mframe"
+
+\end_inset
+
+ und Abbildung 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "mframe-format-image"
+
+\end_inset
+
+ zu finden.
+\end_layout
+
+\begin_layout Enumerate
+Express-Frame muss versendet werden.
+\end_layout
+
+\begin_layout Enumerate
+Hole Grösse des gesamten Frames 
+\begin_inset Quotes fld
+\end_inset
+
+F
+\begin_inset Quotes frd
+\end_inset
+
+, das gerade gesendet wird.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Beträgt 
+\begin_inset Quotes fld
+\end_inset
+
+F
+\begin_inset Quotes frd
+\end_inset
+
+ weniger als 128 Bytes (64 Bytes Data für das erste Fragment + 60 Bytes
+ Data für das zweite Fragment + 
+\begin_inset Quotes fld
+\end_inset
+
+C
+\begin_inset Quotes frd
+\end_inset
+
+ des gesamten Frames zusammen), kann das Frame nicht fragmentiert und der
+ weitere Vorgang abgebrochen werden.
+ Das heisst, dass man mit dem Senden des Express-Frames warten muss, bis
+ das nicht fragmentierbare Frame und dessen IFG fertig versendet wurden.
+\end_layout
+
+\begin_layout Enumerate
+Berechne 
+\begin_inset Quotes fld
+\end_inset
+
+V
+\begin_inset Quotes frd
+\end_inset
+
+ und 
+\begin_inset Quotes fld
+\end_inset
+
+D
+\begin_inset Quotes frd
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+V=(simtime-sendtime)*datarate
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+D=V-P-C-I=V-24
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Berechne 
+\begin_inset Quotes fld
+\end_inset
+
+O
+\begin_inset Quotes frd
+\end_inset
+
+ und rechne die 
+\begin_inset Quotes fld
+\end_inset
+
+C
+\begin_inset Quotes frd
+\end_inset
+
+, die pro neuem Fragment dazukommt, hinzu.
+ Des Weiteren muss 
+\begin_inset Quotes fld
+\end_inset
+
+P
+\begin_inset Quotes frd
+\end_inset
+
+ aus 
+\begin_inset Quotes fld
+\end_inset
+
+V
+\begin_inset Quotes frd
+\end_inset
+
+ nicht mit abgezogen werden, da die Präambel und SFD/SMD nicht zur Framegrösse
+ gehören:
+\begin_inset Formula 
+\[
+O=F-V+C+P=F-V+12
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Wenn 
+\begin_inset Quotes fld
+\end_inset
+
+V
+\begin_inset Quotes frd
+\end_inset
+
+ grösser gleich 72 Bytes (Präambel + SMD + Data + (M)FCS) und IFG (von der
+ Simulationsumgebung vorgegeben) zusammen beträgt, 
+\begin_inset Quotes fld
+\end_inset
+
+D
+\begin_inset Quotes frd
+\end_inset
+
+ durch 8 geteilt 0 ergibt und 
+\begin_inset Quotes fld
+\end_inset
+
+O
+\begin_inset Quotes frd
+\end_inset
+
+ grösser als 64 Bytes ist (Data-Felder je mindestens 60 Bytes + 4 Bytes
+ (M)FCS), kann das Express-Frame jetzt gesendet werden.
+ Die Schritte 6 und 7 müssen nicht mehr erledigt werden, da das Express-Frame
+ versendet wurde und der Vorgang somit erfolgreich war.
+ In diesem Fall beträgt 
+\begin_inset Quotes fld
+\end_inset
+
+t
+\begin_inset Quotes frd
+\end_inset
+
+:
+\begin_inset Formula 
+\[
+t=simtime
+\]
+
+\end_inset
+
+Da es sich hier um eine Zeitberechnung haltet, wird das normale Frame nicht
+ wirklich fragmentiert, sondern verlängert.
+ Die Ankunftszeit des verlängerten Frames ist die gleiche wie wenn alle
+ Fragmente des Frames ankommen würden.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Das 
+\begin_inset Quotes fld
+\end_inset
+
+fragmentierte
+\begin_inset Quotes frd
+\end_inset
+
+ Frame wird wie folgt verlängert: 
+\begin_inset Newline newline
+\end_inset
+
+Grösse normales Frame 
+\begin_inset Quotes fld
+\end_inset
+
+F
+\begin_inset Quotes frd
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
++ MFCS des ersten Fragments (
+\begin_inset Quotes fld
+\end_inset
+
+C
+\begin_inset Quotes frd
+\end_inset
+
+)
+\begin_inset Newline newline
+\end_inset
+
++ IFG des ersten Fragments (
+\begin_inset Quotes fld
+\end_inset
+
+I
+\begin_inset Quotes frd
+\end_inset
+
+)
+\begin_inset Newline newline
+\end_inset
+
++ Präambel und SFD des Express-Frames (
+\begin_inset Quotes fld
+\end_inset
+
+P
+\begin_inset Quotes frd
+\end_inset
+
+)
+\begin_inset Newline newline
+\end_inset
+
++ Grösse Express-Frame
+\begin_inset Newline newline
+\end_inset
+
++ IFG des Express-Frames (
+\begin_inset Quotes fld
+\end_inset
+
+I
+\begin_inset Quotes frd
+\end_inset
+
+)
+\begin_inset Newline newline
+\end_inset
+
++ Präambel und SMD des nächsten Fragments (
+\begin_inset Quotes fld
+\end_inset
+
+P
+\begin_inset Quotes frd
+\end_inset
+
+)
+\begin_inset Newline newline
+\end_inset
+
+= Totale Grösse des verlängerten Frames 
+\begin_inset Quotes fld
+\end_inset
+
+Fverlängert
+\begin_inset Quotes frd
+\end_inset
+
+ (siehe vorherige Abbildung)
+\begin_inset Formula 
+\[
+Fverlängert=F+C+I+P+(Grösse\, Express\, Frame)+I+P
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+=F+C+2*I+2*P+(Grösse\, Express\, Frame)=F+44+(Grösse\, Express\, Frame)
+\]
+
+\end_inset
+
+Die 
+\begin_inset Quotes fld
+\end_inset
+
+sendtime
+\begin_inset Quotes frd
+\end_inset
+
+ des fragmentierten Frames wird nun auf die Zeit gesetzt, an der das Express-Fra
+me + IFG fertig versendet wurde (
+\begin_inset Quotes fld
+\end_inset
+
+newsendtime
+\begin_inset Quotes frd
+\end_inset
+
+, siehe Abbildung 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Berechnung-Express-Versandzeit"
+
+\end_inset
+
+).
+ So wird sichergestellt, dass wenn das Frame erneut fragmentiert werden
+ muss, es ab Beginn des nächsten Fragments betrachtet wird.
+ So können keine zu kleinen Fragmente entstehen.
+ 
+\begin_inset Formula 
+\[
+newsendtime=Zeitpunkt,\, zu\, dem\, Express\, Frame+I\, fertig\, versandt\, wurden
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+sendtime=newsendtime
+\]
+
+\end_inset
+
+Somit kann dann bei der erneuten Fragmentierung das nächste Fragment so
+ betrachtet werden, als wäre es das erste Fragment des Frames (die Framegrösse
+ muss jedoch dementsprechend angepasst werden, nur noch das Fragment mit
+ dem 
+\begin_inset Quotes fld
+\end_inset
+
+Data 2
+\begin_inset Quotes frd
+\end_inset
+
+ Feld in Abbildung 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Berechnung-Express-Versandzeit"
+
+\end_inset
+
+ betrachten).
+\end_layout
+
+\begin_layout Enumerate
+Wenn 
+\begin_inset Quotes fld
+\end_inset
+
+V
+\begin_inset Quotes frd
+\end_inset
+
+ nicht grösser gleich 72 Bytes und IFG zusammen beträgt oder 
+\begin_inset Quotes fld
+\end_inset
+
+D
+\begin_inset Quotes frd
+\end_inset
+
+ bei der Division durch 8 nicht 0 ergibt, 
+\begin_inset Quotes fld
+\end_inset
+
+O
+\begin_inset Quotes frd
+\end_inset
+
+ aber grösser gleich 64 Bytes ist, dann muss abgewartet werden, bis folgender
+ Zeitpunkt 
+\begin_inset Quotes fld
+\end_inset
+
+t
+\begin_inset Quotes frd
+\end_inset
+
+ erreicht ist:
+\begin_inset Formula 
+\[
+t=\begin{cases}
+(V\geqq72+I)\:\&\:(D\%8=0) & simtime\\
+(V<72+I)\:\&\:(D\%8=0) & simtime+\frac{72+I-V}{datarate}\\
+(V\geqq72+I)\:\&\:(D\%8\:!=0) & simtime+\frac{8-(D\,\%\,8)}{datarate}\\
+(V<72+I)\:\&\:(D\%8\:!=0) & simtime+\frac{72+I-V+(8-(D\,\%\,8))}{datarate}
+\end{cases}
+\]
+
+\end_inset
+
+Diese Formel berechnet den nächsten Zeitpunkt, ab dem eine Fragmentierung
+ möglich wäre.
+ Ist 
+\begin_inset Quotes fld
+\end_inset
+
+V
+\begin_inset Quotes frd
+\end_inset
+
+ schon über oder gleich der Minimalgrösse (72 Bytes) + IFG, muss lediglich
+ abgewartet werden bis 
+\begin_inset Quotes fld
+\end_inset
+
+D
+\begin_inset Quotes frd
+\end_inset
+
+ durch 8 dividiert 0 ergibt.
+ Ist 
+\begin_inset Quotes fld
+\end_inset
+
+V
+\begin_inset Quotes frd
+\end_inset
+
+ kleiner als die Minimalgrösse + IFG, muss abgewartet werden, bis diese
+ erfüllt ist und die selben Bedingungen erfüllt sind wie wenn 
+\begin_inset Quotes fld
+\end_inset
+
+V
+\begin_inset Quotes frd
+\end_inset
+
+ die Minimalgrösse + IFG schon erreicht hat.
+\end_layout
+
+\begin_layout Enumerate
+Ist der Zeitpunkt erreicht, muss die Überprüfung wieder von Anfang an gemacht
+ werden.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Generierung von Traffic (Lastprofile)
+\end_layout
+
+\begin_layout Standard
+In jedem Knoten ist ein Generator implementiert, welcher mittels Konfigurationsp
+arameter Frames in verschiedenen Folgemustern generieren kann.
+ In diesem Kapitel werden verschiedene Muster von Traffic (Lastprofile)
+ aufgezeigt, die in der Simulation generiert werden können.
+\end_layout
+
+\begin_layout Standard
+Die Lastprofile teilen dabei folgende Eigenschaften bezüglich der Prioritäten
+ der Frames:
+\end_layout
+
+\begin_layout Itemize
+Express-Frames sind klein und kommen selten vor.
+ Sie sollen Alarme in einem System darstellen, welche schnellstmöglich übermitte
+lt werden müssen.
+\end_layout
+
+\begin_layout Itemize
+Frames der Priorität 
+\begin_inset Quotes fld
+\end_inset
+
+High
+\begin_inset Quotes frd
+\end_inset
+
+ stellen die zu übertragenden Messwerte mit bestimmter Grösse dar.
+\end_layout
+
+\begin_layout Itemize
+Die Frames mit der Priorität 
+\begin_inset Quotes fld
+\end_inset
+
+Low
+\begin_inset Quotes frd
+\end_inset
+
+ bilden den Background-Traffic, der oft vorkommt und wie der normale Verkehr
+ verschieden gross sein kann.
+ Dies kann unter anderem Down- und Upload von Dateien, Monitoring, etc.
+ sein.
+\end_layout
+
+\begin_layout Standard
+Bezüglich der Auftretenswahrscheinlichkeit der Frames lässt sich demnach
+ folgendes sagen: Je höher die Priorität, desto seltener kommt das Frame
+ vor.
+\end_layout
+
+\begin_layout Standard
+Ein Beispiel eines Lastprofils ist in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Szenario-1:-Substation"
+
+\end_inset
+
+ aufgeführt.
+\end_layout
+
+\begin_layout Section
+Überprüfung der Implementation 
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Überprüfung-der-Implementation"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Damit man sich sicher sein kann, dass die Simulation wie geplant verläuft,
+ wird die Implementation vor der Simulation der Szenarien überprüft.
+ Diese Überprüfungen können in der mit dieser Arbeit mitgelieferten Umgebung
+ auch selber durchgeführt werden.
+ Beim Starten der Simulationsumgebung wird jeweils nach einer Konfiguration
+ gefragt.
+ Dieser Konfigurationsname wird beim entsprechenden Testfall in der Zeile
+ 
+\begin_inset Quotes fld
+\end_inset
+
+Konfig.
+\begin_inset Quotes frd
+\end_inset
+
+ aufgelistet.
+\end_layout
+
+\begin_layout Subsection
+Aufbau der Testumgebung
+\end_layout
+
+\begin_layout Standard
+Für die Tests wird in der Simulation ein HSR-Ring mit 3 DANH-Geräten (
+\begin_inset Quotes fld
+\end_inset
+
+Node1
+\begin_inset Quotes frd
+\end_inset
+
+, 
+\begin_inset Quotes fld
+\end_inset
+
+Node2
+\begin_inset Quotes frd
+\end_inset
+
+ und 
+\begin_inset Quotes fld
+\end_inset
+
+Node3
+\begin_inset Quotes frd
+\end_inset
+
+) implementiert.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/020_Verhaltensueberpruefung_Umgebung.png
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+HSR-Ring, in dem die Verhaltensüberprüfung statt findet
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Verhaltensüberprüfung
+\end_layout
+
+\begin_layout Standard
+Für den Nachweis der Tests wird der Nachrichtenverlauf der jeweiligen Simulation
+ verwendet oder eine Grafik, die den Queueverlauf (wann sind wie viele Frames
+ mit welcher Eigenschaft bei einem Ausgang vorhanden) aufweist, angezeigt.
+ Wie diese Grafiken zu lesen sind wird in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Resultate"
+
+\end_inset
+
+ erklärt.
+ Im 
+\begin_inset Quotes fld
+\end_inset
+
+Name
+\begin_inset Quotes frd
+\end_inset
+
+-Feld des Frames im Nachrichtenverlauf steht der Name des Knotens, der das
+ Frame generiert hat, die Priorität und die Sequenznummer des Frames.
+ Am Anfang des 
+\begin_inset Quotes fld
+\end_inset
+
+Name
+\begin_inset Quotes frd
+\end_inset
+
+-Feldes steht zudem, ob es sich um ein Unicast-, Multicast- oder Broadcast-Frame
+ handelt.
+\end_layout
+
+\begin_layout Standard
+Wenn 
+\begin_inset Quotes fld
+\end_inset
+
+Node1
+\begin_inset Quotes frd
+\end_inset
+
+ am Anfang der Simulation 2 Multicast-Frames hintereinander mit der Priorität
+ High generiert, würden dessen Namen wie folgt lauten:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes fld
+\end_inset
+
+Multi From: Node1 (High) Seq#0
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes fld
+\end_inset
+
+Multi From: Node1 (High) Seq#1
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Der Namen des Frames bleibt immer gleich, auch wenn z.B.
+ 
+\begin_inset Quotes fld
+\end_inset
+
+Node2
+\begin_inset Quotes frd
+\end_inset
+
+ dieses weiterleitet.
+ Die Zeiten im Nachrichtenverlauf zeigen die Zeitpunkte, zu dem die Frames
+ den Knoten verlassen haben (Generierungszeitpunkt + Interner Delay + Verzögerun
+g durch andere Frames) auf.
+\end_layout
+
+\begin_layout Standard
+Des Weiteren ist bei der Zeit folgendes zu beachten: Der Zeitpunkt, zu dem
+ ein Frame generiert wird ist nicht der Sendezeitpunkt, da jeder Knoten
+ intern einen Delay von 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$6 
+\backslash
+mu s$
+\end_layout
+
+\end_inset
+
+ hat (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Definition-der-Knoten"
+
+\end_inset
+
+).
+ Wenn ein Frame eines Knotens zum Zeitpunkt t1=0.001 generiert wird, wird
+ es zum Zeitpunkt t2=0.001006 versendet, wenn gerade nichts anderes versendet
+ wird.
+\end_layout
+
+\begin_layout Standard
+Sofern nicht anders erwähnt, ist der verwendete Mechanismus 
+\begin_inset Quotes fld
+\end_inset
+
+First Come First Serve
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Frames richtig weiterleiten und empfangen
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="10text%">
+<column alignment="left" valignment="top" width="90text%">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Konfig.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Verh_ueberpruef_01_Weiterleiten_und_Empf
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Soll
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ein Frame wird von einem Knoten, der nicht der einzige Empfänger des Frames
+ ist, an den nächsten Knoten weitergeleitet.
+ Das Frame wird bei einem Unicast-Frame vom Empfänger und bei einem Multi-/Broad
+cast-Frame vom Sender vom Netz entfernt.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ist
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Der sich im Knoten befindende Switch analysiert die Quell- und Ziel-Adresse
+ und den Herkunftsport des Frames und leitet es an den entsprechenden Port
+ (links, rechts auf den Ring oder zur CPU) weiter.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+Frames, welche vom eigenen Switch stammen und nicht von der CPU her kommen
+ werden entfernt, um zirkulierende Frames (können Uni-, Multi- oder Broadcast
+ sein) zu verhindern.
+\end_layout
+
+\begin_layout Plain Layout
+Multi- und Broadcast-Frames, die nicht vom Knoten selbst stammen, werden
+ an alle Ports ausser dem Herkunftsport weitergeleitet.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nachweis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Folgende Frames werden mit der selben Priorität High generiert:
+\end_layout
+
+\begin_layout Itemize
+1x Unicast-Frame von 
+\begin_inset Quotes fld
+\end_inset
+
+Node1
+\begin_inset Quotes frd
+\end_inset
+
+ zu 
+\begin_inset Quotes fld
+\end_inset
+
+Node2
+\begin_inset Quotes frd
+\end_inset
+
+ (Generiert an t=0.001)
+\end_layout
+
+\begin_layout Itemize
+1x Multicast-Frame von 
+\begin_inset Quotes fld
+\end_inset
+
+Node1
+\begin_inset Quotes frd
+\end_inset
+
+ (Generiert an t=0.002)
+\end_layout
+
+\begin_layout Itemize
+1x Broadcast-Frame von 
+\begin_inset Quotes fld
+\end_inset
+
+Node1
+\begin_inset Quotes frd
+\end_inset
+
+ (Generiert an t=0.003)
+\end_layout
+
+\begin_layout Plain Layout
+Die Merkmale der Frames sind bis auf die oben erwähnten Eigenschaften gleich
+ (Herkunft, Grösse, Priorität).
+ Der verwendete Mechanismus ist 
+\begin_inset Quotes fld
+\end_inset
+
+First Come First Serve
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset space \hfill{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename _img/selftest/01_weiterleit_empf.png
+	display false
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Wie man der Grafik entnehmen kann, werden Unicast-Frames beim Empfänger
+ und Multi-/Broadcast-Frames beim Sender gelöscht.
+ Des Weiteren werden die Frames korrekt weitergeleitet.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Verhaltensüberprüfung: Frame-Ablauf
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Beachten der Priorisierung
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="10text%">
+<column alignment="left" valignment="top" width="90text%">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Konfig.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Verh_ueberpruef_02_Priorisierung
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Soll
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wenn drei Frames mit unterschiedlichen Prioritäten ankommen, soll das mit
+ der höheren Priorität vor dem anderen verarbeitet werden.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ist
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Der sich im Knoten befindende Switch hat für jeden seiner Ports einen Scheduler.
+ Der Switch fügt ein ankommendes Frame beim jeweiligen Scheduler in die
+ jeweilige Queue ein.
+ Der Scheduler beginnt darauf mit dem Abarbeiten der Queues und startet
+ mit der Queue der höchsten Priorität.
+ Wenn mehrere Frames mit unterschiedlichen Prioritäten zur selben Zeit ankommen,
+ wird garantiert das Frame mit der höheren Priorität zuerst versendet.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nachweis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Folgende Frames werden zur exakt selben Zeit generiert (t=0.001):
+\end_layout
+
+\begin_layout Itemize
+1x Unicast-Frame von 
+\begin_inset Quotes fld
+\end_inset
+
+Node1
+\begin_inset Quotes frd
+\end_inset
+
+ zu 
+\begin_inset Quotes fld
+\end_inset
+
+Node2
+\begin_inset Quotes frd
+\end_inset
+
+ mit Priorität Express
+\end_layout
+
+\begin_layout Itemize
+1x Unicast-Frame von 
+\begin_inset Quotes fld
+\end_inset
+
+Node1
+\begin_inset Quotes frd
+\end_inset
+
+ zu 
+\begin_inset Quotes fld
+\end_inset
+
+Node2
+\begin_inset Quotes frd
+\end_inset
+
+ mit Priorität High
+\end_layout
+
+\begin_layout Itemize
+1x Unicast-Frame von 
+\begin_inset Quotes fld
+\end_inset
+
+Node1
+\begin_inset Quotes frd
+\end_inset
+
+ zu 
+\begin_inset Quotes fld
+\end_inset
+
+Node2
+\begin_inset Quotes frd
+\end_inset
+
+ mit Priorität Low
+\end_layout
+
+\begin_layout Plain Layout
+Die Merkmale der Frames sind bis auf die oben erwähnten Eigenschaften gleich.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename _img/selftest/02_Priorisierung.png
+	display false
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Die nächste Grafik zeigt den Ablauf bei einem Ausgang von 
+\begin_inset Quotes fld
+\end_inset
+
+Node1
+\begin_inset Quotes frd
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename _img/selftest/02_Priorisierung_Queue_Analysis.png
+	display false
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Hier ist ersichtlich, dass alle 3 Frames zur gleichen Zeit eingereiht wurden,
+ jedoch die Zeitpunkte, an denen die Frames die Queues verlassen haben,
+ unterschiedlich sind.
+ Des Weiteren kann man feststellen, dass die Frames ihrer Priorität entsprechend
+ behandelt werden.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Verhaltensüberprüfung: Beachten der Priorisierung 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Express-Frames und Fragmentierung
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="10text%">
+<column alignment="left" valignment="top" width="90text%">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Konfig.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Siehe jeweiliges Szenario in den nächsten 3 Tabellen
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Soll
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Soll ein Express-Frame versendet werden, so wird dies sofort versandt, wenn
+ derzeit keine anderen Frames auf demselben Ausgang versendet werden.
+ Wird jedoch bereits ein High- oder Low-Frame darauf gesendet, so wird das
+ Express-Frame zu dem Zeitpunkt versandt, an dem ein Fragment des anderen
+ Frames (inklusive IFG) fertig versendet worden wäre.
+ Kann das normale Frame jedoch nicht fragmentiert werden, kann das Express-Frame
+ erst nach dem normalen Frame versendet werden.
+ Die Berechnung zur Fragmentierung und dem Zeitpunkt des Express-Frame-Versandes
+ ist in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Fragmentierung-und-Zeitberechnun"
+
+\end_inset
+
+ aufgeführt.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ist
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Die Frames der Priorität High und Low werden, wenn möglich, fragmentiert
+ und das Express-Frame wird zum korrekten Zeitpunkt versendet.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nachweis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3 Szenarios werden für den Nachweis erstellt:
+\end_layout
+
+\begin_layout Itemize
+Szenario 01 (Fragmentierbares Frame)
+\end_layout
+
+\begin_layout Itemize
+Szenario 02 (Nicht fragmentierbares Frame)
+\end_layout
+
+\begin_layout Itemize
+Szenario 03 (Ein langes Frame wird mehrmals fragmentiert)
+\end_layout
+
+\begin_layout Plain Layout
+Wenn ein Express-Frame unmittelbar nach einem normalen, fragmentierbaren
+ Frame generiert wird (d.h.
+ das normale Frame wird bereits versendet, jedoch wurde davon noch kein
+ Byte versendet), müsste das Express-Frame laut Berechnung aus Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Fragmentierung-und-Zeitberechnun"
+
+\end_inset
+
+ zu folgendem Zeitpunkt 
+\begin_inset Quotes fld
+\end_inset
+
+tsendexp
+\begin_inset Quotes frd
+\end_inset
+
+ versendet werden:
+\begin_inset Formula 
+\[
+tsend=Zeit,\, an\, dem\, das\, normale\, Frame\, versendet\, wurde\,[s]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+tsendexp=Zeit,\, an\, dem\, das\, ExpressFrame\, versendet\, wird\,[s]
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+datarate=100\, Mbit/s
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+t=\frac{72+I}{datarate}=\frac{84}{(100000000/8)}=0,00000672s
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+tsendexp=tsend+t
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Für die Bedeutung der Variablen siehe vorhin erwähnte Berechnung.
+\end_layout
+
+\begin_layout Plain Layout
+Da in OMNeT++ für die Zeitberechnung Double-Werte verwendet werden, kann
+ eine gewisse Präzision verloren gehen, weshalb sich die effektiven Zeiten
+ zur hier berechneten Zeit marginal unterscheiden können 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "OMNET_USERGUIDE"
+
+\end_inset
+
+.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Verhaltensüberprüfung: Express-Frames und Fragmentierung (Allgemein)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="10text%">
+<column alignment="left" valignment="top" width="90text%">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Konfig.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Verh_ueberpruef_03_Exp_und_Frag_01_Frag
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Szenario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+01: Fragmentierbares Frame
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nachweis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Folgende Frames werden generiert:
+\end_layout
+
+\begin_layout Itemize
+1x Unicast-Frame von 
+\begin_inset Quotes fld
+\end_inset
+
+Node1
+\begin_inset Quotes frd
+\end_inset
+
+ zu 
+\begin_inset Quotes fld
+\end_inset
+
+Node2
+\begin_inset Quotes frd
+\end_inset
+
+ mit 128 Bytes und Priorität High (Generiert an t=0.001)
+\end_layout
+
+\begin_layout Itemize
+1x Unicast-Frame von 
+\begin_inset Quotes fld
+\end_inset
+
+Node1
+\begin_inset Quotes frd
+\end_inset
+
+ zu 
+\begin_inset Quotes fld
+\end_inset
+
+Node2
+\begin_inset Quotes frd
+\end_inset
+
+ mit 100 Bytes und Priorität Express (Generiert an t=0.001001)
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename _img/selftest/03_Exp_und_Frag_01_Frag.png
+	display false
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Wie man sehen kann beträgt 
+\begin_inset Quotes fld
+\end_inset
+
+tsend
+\begin_inset Quotes frd
+\end_inset
+
+ 0.001006s und 
+\begin_inset Quotes fld
+\end_inset
+
+tsendexp
+\begin_inset Quotes frd
+\end_inset
+
+ 0.001012759999s, was einer Differenz 
+\begin_inset Quotes fld
+\end_inset
+
+t
+\begin_inset Quotes frd
+\end_inset
+
+ von 0.00000676s entspricht.
+ Dadurch, dass bei der Berechnung in OMNeT++ eine gewisse Präzision verloren
+ geht, kann man sagen, dass 
+\begin_inset Quotes fld
+\end_inset
+
+t
+\begin_inset Quotes frd
+\end_inset
+
+ dem vorhin berechneten Wert (0.00000672s) entspricht und die Fragmentierung
+ per Zeitberechnung somit bewiesen wurde.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Verhaltensüberprüfung: Express-Frames und Fragmentierung (Szenario 01)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="10text%">
+<column alignment="left" valignment="top" width="90text%">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Konfig.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Verh_ueberpruef_03_Exp_und_Frag_02_NoFrag
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Szenario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+02: Nicht fragmentierbares Frame
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nachweis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Folgende Frames werden generiert:
+\end_layout
+
+\begin_layout Itemize
+1x Unicast-Frame von 
+\begin_inset Quotes fld
+\end_inset
+
+Node1
+\begin_inset Quotes frd
+\end_inset
+
+ zu 
+\begin_inset Quotes fld
+\end_inset
+
+Node2
+\begin_inset Quotes frd
+\end_inset
+
+ mit 127 Bytes und Priorität High (Generiert an t=0.001)
+\end_layout
+
+\begin_layout Itemize
+1x Unicast-Frame von 
+\begin_inset Quotes fld
+\end_inset
+
+Node1
+\begin_inset Quotes frd
+\end_inset
+
+ zu 
+\begin_inset Quotes fld
+\end_inset
+
+Node2
+\begin_inset Quotes frd
+\end_inset
+
+ mit 100 Bytes und Priorität Express(Generiert an t=0.001001)
+\end_layout
+
+\begin_layout Plain Layout
+Wenn das normale Frame nicht fragmentiert werden kann, müsste 
+\begin_inset Quotes fld
+\end_inset
+
+t
+\begin_inset Quotes frd
+\end_inset
+
+ bei einem normalen Frame mit 127 Bytes wie folgt berechnet werden:
+\begin_inset Formula 
+\[
+t=\frac{127+I}{datarate}=\frac{139}{(100000000/8)}=0.00001112s
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+tsendexp=tsend+t
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename _img/selftest/03_Exp_und_Frag_02_NoFrag.png
+	display false
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Wie man sehen kann, beträgt 
+\begin_inset Quotes fld
+\end_inset
+
+tsend
+\begin_inset Quotes frd
+\end_inset
+
+ 0.001006s und 
+\begin_inset Quotes fld
+\end_inset
+
+tsendexp
+\begin_inset Quotes frd
+\end_inset
+
+ 0.001017759999s, was eine Differenz 
+\begin_inset Quotes fld
+\end_inset
+
+t
+\begin_inset Quotes frd
+\end_inset
+
+ von 0.00001176s beträgt.
+ Dadurch, dass bei der Berechnung in OMNeT++ eine gewisse Präzision verloren
+ geht, kann man sagen, dass 
+\begin_inset Quotes fld
+\end_inset
+
+t
+\begin_inset Quotes frd
+\end_inset
+
+ dem oben berechneten Wert (0.00001112s) entspricht und das Szenario somit
+ bewiesen wurde.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Verhaltensüberprüfung: Express-Frames und Fragmentierung (Szenario 02)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="10text%">
+<column alignment="left" valignment="top" width="90text%">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Konfig.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Verh_ueberpruef_03_Exp_und_Frag_03_Long_Mult
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Szenario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+03: Ein langes Frame wird mehrmals fragmentiert
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nachweis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Folgende Frames werden generiert:
+\end_layout
+
+\begin_layout Itemize
+1x Unicast-Frame von 
+\begin_inset Quotes fld
+\end_inset
+
+Node1
+\begin_inset Quotes frd
+\end_inset
+
+ zu 
+\begin_inset Quotes fld
+\end_inset
+
+Node2
+\begin_inset Quotes frd
+\end_inset
+
+ mit 1500 Bytes und Priorität High (Generiert an t=0.001)
+\end_layout
+
+\begin_layout Itemize
+2x Unicast-Frame von 
+\begin_inset Quotes fld
+\end_inset
+
+Node1
+\begin_inset Quotes frd
+\end_inset
+
+ zu 
+\begin_inset Quotes fld
+\end_inset
+
+Node2
+\begin_inset Quotes frd
+\end_inset
+
+ mit 100 Bytes und Priorität Express(Generiert an t1=0.001001 und t2=0.001002)
+\end_layout
+
+\begin_layout Plain Layout
+Das zweite Express-Frame wird unmittelbar nach dem ersten Express-Frame
+ generiert, weshalb das zweite Express-Frame direkt nach dem ersten Express-Fram
+e versendet wird.
+ Die beiden Express-Frames müssten zu folgenden Zeiten 
+\begin_inset Quotes fld
+\end_inset
+
+tsendexp1
+\begin_inset Quotes frd
+\end_inset
+
+ und 
+\begin_inset Quotes fld
+\end_inset
+
+tsendexp2
+\begin_inset Quotes frd
+\end_inset
+
+ versendet werden:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+t=\frac{72+I}{datarate}=\frac{84}{(100000000/8)}=0,00000672s
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+texp=\frac{100+I}{datarate}=\frac{112}{(100000000/8)}=0,00000896s
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Formula 
+\[
+tsendexp1=tsend+t
+\]
+
+\end_inset
+
+
+\begin_inset Formula 
+\[
+tsendexp2=tsend+t+texp=tsend+0,00001568s
+\]
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename _img/selftest/03_Exp_und_Frag_03_Long_Mult.png
+	display false
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Wie man sehen kann, beträgt 
+\begin_inset Quotes fld
+\end_inset
+
+tsend
+\begin_inset Quotes frd
+\end_inset
+
+ 0.001006s und 
+\begin_inset Quotes fld
+\end_inset
+
+tsendexp1
+\begin_inset Quotes frd
+\end_inset
+
+ 0.001012759999s, was einer Differenz 
+\begin_inset Quotes fld
+\end_inset
+
+t
+\begin_inset Quotes frd
+\end_inset
+
+ von 0.00000676s entspricht.
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Quotes fld
+\end_inset
+
+tsendexp2
+\begin_inset Quotes frd
+\end_inset
+
+ beträgt 0.001022359998s, was wenn man 
+\begin_inset Quotes fld
+\end_inset
+
+t
+\begin_inset Quotes frd
+\end_inset
+
+ und 
+\begin_inset Quotes fld
+\end_inset
+
+texp
+\begin_inset Quotes frd
+\end_inset
+
+ abzieht 0.00100668s (ungefähr 
+\begin_inset Quotes fld
+\end_inset
+
+tsend
+\begin_inset Quotes frd
+\end_inset
+
+) beträgt.
+\end_layout
+
+\begin_layout Plain Layout
+Dadurch, dass bei der Berechnung in OMNeT++ eine gewisse Präzision verloren
+ geht, kann man sagen, dass die simulierten Ergebnisse den berechneten Werten
+ entsprechen und das Szenario somit bewiesen wurde.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Verhaltensüberprüfung: Express-Frames und Fragmentierung (Szenario 03)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Zuflusslimitierung
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="10text%">
+<column alignment="left" valignment="top" width="90text%">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Konfig.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Verh_ueberpruef_04_Zuflusslimitierung
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Soll
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Der Zufluss von neuen Frames mit der Priorität Low soll limitiert werden
+ können.
+ Als Limit kann eine Anzahl an Bytes, die maximal pro Sekunde von Low-Frames
+ verbraucht werden können, festgelegt werden.
+ Es werden lediglich die Low-Frames limitiert, die intern generiert werden.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ist
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sofern eine Zuflusslimitierung auf x Byte/s gesetzt wurde, kann ein Knoten
+ nur so viele Low-Frames pro Sekunde generieren und versenden wie Tokens
+ generiert werden können.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nachweis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Damit in den Simulationsergebnissen zwischen den Frames vom Ring und den
+ intern generierten unterschieden werden kann, wird folgender Mechanismus
+ verwendet: Die intern Generierten Frames haben gegenüber den Frames vom
+ Ring Vortritt (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Vortrittsregeln-bezüglich-Frames"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Plain Layout
+Es wird eine Zuflusslimitierung von 100Kbit/s (12500 Byte/s) gesetzt.
+ Dies bedeutet, dass intern maximal 12500 Tokens generiert werden können.
+\end_layout
+
+\begin_layout Plain Layout
+Folgende Frames mit der Priorität Low werden generiert:
+\end_layout
+
+\begin_layout Itemize
+50x Unicast-Frame von 
+\begin_inset Quotes fld
+\end_inset
+
+Node1
+\begin_inset Quotes frd
+\end_inset
+
+ zu 
+\begin_inset Quotes fld
+\end_inset
+
+Node2
+\begin_inset Quotes frd
+\end_inset
+
+ mit 1000 Bytes (Generiert ab t=0.001 mit einem Intervall von 0.001 bis zu
+ tstop=0.051)
+\end_layout
+
+\begin_layout Plain Layout
+Es folgt ein Graph, der die Anzahl vorhandener, intern generierter Low-Frames
+ an einem Ausgang zu jedem Zeitpunkt darstellt:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename _img/selftest/04_Zuflusslimitierung.svg
+	display false
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Zu Beginn müssen die Tokens generiert werden, deshalb waren dann zu wenige
+ Tokens verfügbar und die Frames wurden nicht direkt nach ihrer Generierung
+ versendet.
+ Die Frames stauten sich somit bis zum Zeitpunkt 
+\begin_inset Quotes fld
+\end_inset
+
+tstop
+\begin_inset Quotes frd
+\end_inset
+
+ an, nach dem keine neuen Frames mehr generiert wurden.
+ Nach 
+\begin_inset Quotes fld
+\end_inset
+
+tstop
+\begin_inset Quotes frd
+\end_inset
+
+ wurden die Frames gleich schnell wie vorhin abgearbeitet.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Verhaltensüberprüfung: Zuflusslimitierung
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Vortrittsregeln im und zum Ring
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="10text%">
+<column alignment="left" valignment="top" width="90text%">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Konfig.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Siehe jeweiliges Szenario in den nächsten zwei Tabellen
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Soll
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wenn zwei Frames derselben Priorität beim Knoten ankommen (ein Frame vom
+ Ring und ein Frame intern generiert), gewährt der Knoten je nach Mechanismus
+ dem entsprechenden Frame gegenüber dem anderen den Vortritt.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ist
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wenn ständig Frames vom Ring her kommen und ständig welche mit der selben
+ Priorität intern generiert werden, werden je nach Mechanismus bestimmte
+ Frames nie weitergeleitet solange neue von der anderen Sorte kommen.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Haben die Frames vom Ring den Vortritt werden die intern generierten Frames
+ kaum versendet.
+\end_layout
+
+\begin_layout Plain Layout
+Haben die Frames von Aussen den Vortritt werden die Frames vom Ring kaum
+ weitergeleitet.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nachweis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zwei Szenarios werden für den Nachweis erstellt:
+\end_layout
+
+\begin_layout Itemize
+Szenario 01 (Frames vom Ring haben Vortritt)
+\end_layout
+
+\begin_layout Itemize
+Szenario 02 (Frames von Aussen intern generiert) haben Vortritt)
+\end_layout
+
+\begin_layout Plain Layout
+Bei beiden Szenarios werden folgende Frames mit der Priorität Low ab t=0.001
+ mit einem Intervall von 0.0001 bis zu tstop=0.051 generiert:
+\end_layout
+
+\begin_layout Itemize
+500x Multicast-Frame von 
+\begin_inset Quotes fld
+\end_inset
+
+Node1
+\begin_inset Quotes frd
+\end_inset
+
+ mit 1000 Bytes
+\end_layout
+
+\begin_layout Itemize
+500x Multicast-Frame von 
+\begin_inset Quotes fld
+\end_inset
+
+Node2
+\begin_inset Quotes frd
+\end_inset
+
+ mit 1000 Bytes
+\end_layout
+
+\begin_layout Itemize
+500x Multicast-Frame von 
+\begin_inset Quotes fld
+\end_inset
+
+Node3
+\begin_inset Quotes frd
+\end_inset
+
+ mit 1000 Bytes
+\end_layout
+
+\begin_layout Plain Layout
+Bei jedem der drei Knoten in der Testumgebung ist der gleiche Ablauf vorzufinden
+, da alle drei das selbe Lastprofil zur Framegenerierung haben.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Verhaltensüberprüfung: Vortrittsregeln im und zum Ring (Allgemein)
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "Verh_ueberpruef_05_Vortritt"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="10text%">
+<column alignment="left" valignment="top" width="90text%">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Konfig.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Verh_ueberpruef_05_Vortritt_01_Ring
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Szenario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+01: Frames vom Ring haben Vortritt
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nachweis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Es folgt ein Graph, der die Anzahl Low-Frames von Aussen und vom Ring an
+ einem Ausgang zu jedem Zeitpunkt darstellt:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename _img/selftest/05_Vortritt_01_Ring.png
+	display false
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Wie man sehen kann, stauen sich bis zum Zeitpunkt 
+\begin_inset Quotes fld
+\end_inset
+
+tstop
+\begin_inset Quotes frd
+\end_inset
+
+ (0.051s) die intern generierten Frames (rot) an.
+ Es werden zwar intern generierte Frames versendet (ansonsten hätte kein
+ Knoten etwas zum weiterleiten), jedoch sehr wenige.
+ Nach diesem Zeitpunkt sind die Knoten zwar noch andere Frames vom Ring
+ am weiterleiten, jedoch generiert kein Knoten mehr neue Frames, weshalb
+ mehr Platz entsteht, um mehr intern generierte Frames versenden zu können.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Verhaltensüberprüfung: Vortrittsregeln im und zum Ring (Szenario 01)
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "Verh_ueberpruef_05_Vortritt_01_Ring"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="10text%">
+<column alignment="left" valignment="top" width="90text%">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Konfig.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Verh_ueberpruef_05_Vortritt_02_Intern
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Szenario
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+02: Frames von Aussen (intern generiert) haben Vortritt
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nachweis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Es folgt ein Graph, der die Anzahl Low-Frames von Aussen und vom Ring an
+ einem Ausgang zu jedem Zeitpunkt darstellt:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename _img/selftest/05_Vortritt_02_Intern.png
+	display false
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Hier sieht man das Gegenstück zum vorherigen Szenario.
+ Die intern generierten Frames (rot) können alle sofort versendet werden
+ (weshalb es nach 
+\begin_inset Quotes fld
+\end_inset
+
+tstop
+\begin_inset Quotes frd
+\end_inset
+
+ keine mehr gibt) und die weiterzuleitenden Frames (blau) stauen sich an.
+ Nach 
+\begin_inset Quotes fld
+\end_inset
+
+tstop
+\begin_inset Quotes frd
+\end_inset
+
+ werden die angestauten Frames weitergeleitet und ab ca.
+ 0.09s hat sich das Netzwerk ein wenig 
+\begin_inset Quotes fld
+\end_inset
+
+erholt
+\begin_inset Quotes frd
+\end_inset
+
+ und mehr Platz geschaffen, weshalb die restlichen Frames schneller weitergeleit
+et werden können.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Verhaltensüberprüfung: Vortrittsregeln im und zum Ring (Szenario 02)
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "Verh_ueberpruef_05_Vortritt_02_Intern"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Reissverschluss
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="10text%">
+<column alignment="left" valignment="top" width="90text%">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Konfig.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Verh_ueberpruef_06_Reissverschluss
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Soll
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Abwechslungsweise soll ein Knoten mal dem gleich priorisierten Frame vom
+ Ring und mal von Aussen den Vortritt gewähren (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Reissverschluss"
+
+\end_inset
+
+).
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ist
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Es wird in einem Knoten, wenn gerade einem Frame vom Ring Vortritt gewährt
+ wurde, einem Frame von Aussen den Vortritt gewährt und umgekehrt.
+ Anders als beim vorherigen Test (siehe Tabelle 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "Verh_ueberpruef_05_Vortritt"
+
+\end_inset
+
+) stauen sich keine Frames an, weil ständig Frames vom anderen Typ gesendet
+ werden.
+ Ein Anstauen ist dennoch möglich, wenn zu viele Frames versendet werden
+ müssen, jedoch würde es sich dann bei beiden Typen anstauen.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nachweis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Es werden folgende Frames mit der Priorität Low ab t=0.001 mit einem Intervall
+ von 0.0001 bis zu tstop=0.051 generiert (selbes Lastprofil wie beim vorherigen
+ Test, siehe Tabelle 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "Verh_ueberpruef_05_Vortritt"
+
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Itemize
+500x Multicast-Frame von 
+\begin_inset Quotes fld
+\end_inset
+
+Node1
+\begin_inset Quotes frd
+\end_inset
+
+ mit 1000 Bytes
+\end_layout
+
+\begin_layout Itemize
+500x Multicast-Frame von 
+\begin_inset Quotes fld
+\end_inset
+
+Node2
+\begin_inset Quotes frd
+\end_inset
+
+ mit 1000 Bytes
+\end_layout
+
+\begin_layout Itemize
+500x Multicast-Frame von 
+\begin_inset Quotes fld
+\end_inset
+
+Node3
+\begin_inset Quotes frd
+\end_inset
+
+ mit 1000 Bytes
+\end_layout
+
+\begin_layout Plain Layout
+Es folgt ein Graph, der die Anzahl Low-Frames von Aussen und vom Ring an
+ einem Ausgang zu jedem Zeitpunkt darstellt:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename _img/selftest/06_Reissverschluss.png
+	display false
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Man kann anhand der Grafik feststellen, dass die beiden Typen einander beeinflus
+sen.
+ Es ist ersichtlich, dass nach 
+\begin_inset Quotes fld
+\end_inset
+
+tstop
+\begin_inset Quotes frd
+\end_inset
+
+ die Anzahl interner Frames (rot) schneller abgebaut werden und somit mehr
+ Frames vom Ring (blau) entstehen.
+ Nachdem alle internen Frames versendet wurden (bei ca.
+ 0.065s), können alle restlichen Frames vom Ring abgearbeitet werden.
+\end_layout
+
+\begin_layout Plain Layout
+Bei jedem der drei Knoten in der Testumgebung ist der gleiche Ablauf vorzufinden
+, da alle drei das selbe Lastprofil zur Framegenerierung haben.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Verhaltensüberprüfung: Reissverschluss
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Zeitschlitzverfahren
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="10text%">
+<column alignment="left" valignment="top" width="90text%">
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Konfig.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Verh_ueberpruef_07_Zeitschlitz
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Soll
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Es sollten mit dem Zeitschlitzverfahren (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Zeitschlitzverfahren"
+
+\end_inset
+
+) trotz einer ständigen Generierung von High-Frames auch Frames der Priorität
+ Low versendet werden, da die High-Frames nur innerhalb der definierten
+ Grün-Phase versendet werden können.
+ 
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ist
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Obwohl ständig High-Frames generiert werden, findet auch der Versand von
+ Low-Frames statt.
+ Gibt es keine High-Frames zum Versenden, so können Low-Frames auch in der
+ Grün-Phase versendet werden.
+ Express-Frames können immer versendet werden.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nachweis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Es werden folgende Frames generiert:
+\end_layout
+
+\begin_layout Itemize
+50x Unicast-Frame von 
+\begin_inset Quotes fld
+\end_inset
+
+Node1
+\begin_inset Quotes frd
+\end_inset
+
+ zu 
+\begin_inset Quotes fld
+\end_inset
+
+Node2
+\begin_inset Quotes frd
+\end_inset
+
+ mit 100 Bytes und Priorität Express (Generiert ab t=0.001 mit einem Interval
+ von 0.001 bis zu tstop=0.051)
+\end_layout
+
+\begin_layout Itemize
+500x Unicast-Frame von 
+\begin_inset Quotes fld
+\end_inset
+
+Node1
+\begin_inset Quotes frd
+\end_inset
+
+ zu 
+\begin_inset Quotes fld
+\end_inset
+
+Node2
+\begin_inset Quotes frd
+\end_inset
+
+ mit 1000 Bytes und Priorität High (Generiert ab t=0.001, Interval von 0.0001
+ bis zu tstop=0.051)
+\end_layout
+
+\begin_layout Itemize
+500x Unicast-Frame von 
+\begin_inset Quotes fld
+\end_inset
+
+Node1
+\begin_inset Quotes frd
+\end_inset
+
+ zu 
+\begin_inset Quotes fld
+\end_inset
+
+Node2
+\begin_inset Quotes frd
+\end_inset
+
+ mit 1000 Bytes und Priorität Low (Generiert ab t=0.001, Interval von 0.0001
+ bis zu tstop=0.051)
+\end_layout
+
+\begin_layout Plain Layout
+Die Phasengrösse wird auf 10000 Bytes gesetzt, was bei einer gegebenen Übertragu
+ngsrate von 100Mbit/s 0.0008s beträgt.
+ Das heisst, das alle 0.0016s für 0.0008s lang High-Frames versendet werden
+ können.
+\end_layout
+
+\begin_layout Plain Layout
+Es folgt ein Graph, der die Anzahl aller Frames an einem Ausgang zu jedem
+ Zeitpunkt darstellt:
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename _img/selftest/07_Zeitschlitz.png
+	display false
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Wie man feststellen kann, werden High- (rot) und Low-Frames (grün) gleichmässig
+ abgebaut, obwohl von beiden Prioritäten ständig neue Frames generiert werden.
+ Die Express-Frames können immer versendet werden, haben aber in diesem
+ Fall keinen erwähnenswerten Einfluss auf die Low- und High-Frames.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Verhaltensüberprüfung: Zeitschlitz
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Simulation
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Simulation"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In diesem Kapitel werden die Szenarien und Simulationen definiert, die in
+ dieser Arbeit simuliert werden.
+ Die Resultate der jeweiligen Simulation sind im Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Resultate"
+
+\end_inset
+
+ aufgeführt.
+ Diese Simulationen können in der mit dieser Arbeit mitgelieferten Umgebung
+ auch selber durchgeführt werden.
+ Wie diese Szenarien selber simuliert werden können, wird in der Anleitung
+ in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Anleitung-zur-Simulationsumgebun"
+
+\end_inset
+
+ beschrieben.
+ Beim Starten der Simulationsumgebung wird jeweils nach einer Konfiguration
+ gefragt.
+ Dieser Konfigurationsname wird bei der entsprechenden Simulation aufgelistet.
+\end_layout
+
+\begin_layout Subsection
+Szenario 1: Substation Automation
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Szenario-1:-Substation"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Der Aufbau dieses Szenarios ist ein HSR-Ring mit DANH-Knoten.
+ Die Aufgabe im Anwendungsfall Substation Automation ist den Schutz von
+ Schaltern und Leitungen sicher zu stellen.
+\end_layout
+
+\begin_layout Standard
+Im HSR-Ring befinden sich 14 sogenannte Merging Units (MU), welche die Messwerte
+ mit Sensoren erfassen und diese mit Zeitstempel und sonstigen Steuerinformation
+en in ein Frame verpacken.
+ Ein solches Frame hat eine Gesamtgrösse von 160 Bytes (inklusive Header)
+ und die Priorität High.
+ Eine MU verschickt ca.
+ 4000 mal pro Sekunde ein solches Frame via Multicast (Publisher / Subscriber
+ Modell).
+ Ziel dieser Frames sind zwei Protection Units (PU) und eventuell andere
+ MUs.
+ Protection Units treffen anhand der erhaltenen Messwerte Entscheidungen.
+ MUs und PUs sind DANH-Knoten.
+\end_layout
+
+\begin_layout Standard
+Neben den erwähnten Frames gibt es spontane Einzelmeldungen (Express-Frames,
+ auch Multicast), welche selten und zufällig vorkommen.
+ Die Grösse dieser Express-Frames beträgt total 100 Bytes.
+ 
+\end_layout
+
+\begin_layout Standard
+Als Background-Traffic wird von 2 Knoten TCP-ähnlicher Traffic generiert,
+ bei dem ein Knoten (Knoten A) alle 200 Sekunden Frames mit einer Gesamtgrösse
+ von 1500 Bytes an den anderen Knoten (Knoten B) sendet (Unicast).
+ Knoten B sendet zur selben Zeit auch alle 200 Sekunden Frames à 64 Bytes
+ an Knoten A.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/020_Simulation_1_Network.png
+	display false
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Netzwerkaufbau Szenario 1: Substation Automation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Konkret wird für dieses Szenario folgendes Lastprofil angewendet:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="19" columns="6">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="middle" width="12text%">
+<column alignment="left" valignment="middle" width="8text%">
+<column alignment="left" valignment="middle" width="10text%">
+<column alignment="left" valignment="middle" width="30text%">
+<column alignment="left" valignment="middle" width="10text%">
+<column alignment="left" valignment="middle" width="18text%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Priorität
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Quelle
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ziel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Intervall (Alle x Sekunden)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Grösse in Bytes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zweck
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Express
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU1
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Multicast
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.01s + 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+epsilon_{1}$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Alarm
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU8
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+High
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU1
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Multicast
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.00025s + 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+epsilon_{2}$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+160
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Messwerte
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU2
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU3
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU4
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU5
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU6
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU7
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU8
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU9
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU10
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU11
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU12
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU13
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU14
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Low
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PU1
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.005s
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1500
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+TCP-ähnlicher Traffic
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PU1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU5
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+64
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Lastprofil Szenario 1: Substation Automation
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Lastprofil_Szenario_1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+epsilon_{1}$
+\end_layout
+
+\end_inset
+
+ = Zufallswert zwischen (0s und 0.01s)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+epsilon_{2}$
+\end_layout
+
+\end_inset
+
+= Zufallswert zwischen (0s und 0.0000125s)
+\end_layout
+
+\begin_layout Standard
+Diese Frames werden ab dem Zeitpunkt t=0.001s bis zu tstop=0.56s generiert.
+\end_layout
+
+\begin_layout Standard
+Sofern es nicht anders erwähnt wird, befinden sich in den Simulationen 14
+ MUs und 2 PUs, die in einem Ring mit einer 100Mbps-Verbindung verbunden
+ sind.
+ Die Prioritäten der Frames werden in jeder Simulation berücksichtigt.
+\end_layout
+
+\begin_layout Subsubsection
+Simulation 1.1: First Come First Serve
+\end_layout
+
+\begin_layout Standard
+Konfigurationsname: Scen1_Simulation_1_1_FCFS
+\end_layout
+
+\begin_layout Standard
+Szenario 1 wird ohne spezielle Mechanismen in den Knoten simuliert.
+ Es spielt in dieser Variante keine Rolle, ob ein Frame von Aussen oder
+ vom Ring kommt.
+\end_layout
+
+\begin_layout Subsubsection
+Simulation 1.2: Vortritt für Frames vom Ring
+\end_layout
+
+\begin_layout Standard
+Konfigurationsname: Scen1_Simulation_1_2_Vortritt_Ring
+\end_layout
+
+\begin_layout Standard
+Jeder Knoten im Ring gewährt den Frames, die vom Ring kommen, den Vortritt
+ gegenüber den Frames, die von Aussen kommen.
+ Die Frames, die von Aussen kommen, sind dabei die, die vom Knoten selbst
+ generiert werden.
+\end_layout
+
+\begin_layout Subsubsection
+Simulation 1.3: Vortritt für Frames von Aussen
+\end_layout
+
+\begin_layout Standard
+Konfigurationsname: Scen1_Simulation_1_3_Vortritt_Internal
+\end_layout
+
+\begin_layout Standard
+Jeder Knoten im Ring gewährt den Frames, die von Aussen kommen, den Vortritt
+ gegenüber den Frames, die vom Ring kommen.
+ Die Frames, die von Aussen kommen, sind dabei die, die vom Knoten selbst
+ generiert werden.
+ Wenn ein Knoten ständig Frames generiert, kann es sein, dass die Frames
+ vom Ring bei diesem Knoten nie zum Zuge kommen und somit nie weitergeleitet
+ werden.
+\end_layout
+
+\begin_layout Subsubsection
+Simulation 1.4: Vortritt für Frames von Aussen mit Zuflusslimitierung
+\end_layout
+
+\begin_layout Standard
+Konfigurationsname: Scen1_Simulation_1_4_Vortritt_Int_Zuflusslim
+\end_layout
+
+\begin_layout Standard
+Die Simulation 1.3 wird mit einer Zuflusslimitierung erweitert.
+ Mit Hilfe dieser Limitierung kann ausgeschlossen werden, dass Frames vom
+ Ring nie weitergeleitet werden, wenn ein Knoten ständig Frames generiert.
+\end_layout
+
+\begin_layout Subsubsection
+Simulation 1.5: Reissverschluss
+\end_layout
+
+\begin_layout Standard
+Konfigurationsname: Scen1_Simulation_1_5_Reissverschluss
+\end_layout
+
+\begin_layout Standard
+Es wird in jedem Knoten abwechslungsweise der Vortritt für Frames vom Ring
+ und von Aussen gewährt.
+ Wurde zum Beispiel ein Frame vom Ring versendet, wird als nächstes ein
+ Frame von Aussen versendet, sofern eines gesendet werden muss.
+\end_layout
+
+\begin_layout Subsubsection
+Simulation 1.6: Zeitschlitzverfahren
+\end_layout
+
+\begin_layout Standard
+Konfigurationsname: Scen1_Simulation_1_6_Zeitschlitz
+\end_layout
+
+\begin_layout Standard
+In jedem Knoten wird das Zeitschlitzverfahren (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Zeitschlitzverfahren"
+
+\end_inset
+
+) angewendet.
+\end_layout
+
+\begin_layout Subsubsection
+Simulation 1.7: Maximale Auslastung
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Simulation-1.7:-Maximale"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Konfigurationsname: Scen1_Simulation_1_7_Max_Auslastung
+\end_layout
+
+\begin_layout Standard
+Die Knoten verwenden den 
+\begin_inset Quotes fld
+\end_inset
+
+First Come First Serve
+\begin_inset Quotes frd
+\end_inset
+
+-Mechanismus.
+\end_layout
+
+\begin_layout Standard
+Anstelle von 14 werden 17 MUs eingesetzt.
+ Zudem werden in dieser Simulation lediglich Messwerte und Express-Frames
+ versendet, der TCP-ähnliche Traffic wird hier nicht simuliert.
+ Laut unserem Betreuer (siehe Besprechung in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Kalenderwoche-48:-27.11.2014"
+
+\end_inset
+
+) sollte dann neben dem Traffic nichts mehr sonst Platz auf dem Ethernet
+ haben.
+\end_layout
+
+\begin_layout Standard
+Das Lastprofil für diese Simulation sieht wie folgt aus:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="20" columns="6">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="middle" width="12text%">
+<column alignment="left" valignment="middle" width="8text%">
+<column alignment="left" valignment="middle" width="10text%">
+<column alignment="left" valignment="middle" width="30text%">
+<column alignment="left" valignment="middle" width="10text%">
+<column alignment="left" valignment="middle" width="18text%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Priorität
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Quelle
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ziel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Intervall (Alle x Sekunden)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Grösse in Bytes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zweck
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Express
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU1
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Multicast
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.01s + 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+epsilon_{1}$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Alarm
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU8
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+High
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU1
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Multicast
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.00025s + 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+epsilon_{2}$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+160
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Messwerte
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU2
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU3
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU4
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU5
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU6
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU7
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU8
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU9
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU10
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU11
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU12
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU13
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU14
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU15
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU16
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU17
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Lastprofil Simulation 1.7: Maximale Auslastung
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+epsilon_{1}$
+\end_layout
+
+\end_inset
+
+ = Zufallswert zwischen (0s und 0.01s)
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$
+\backslash
+epsilon_{2}$
+\end_layout
+
+\end_inset
+
+= Zufallswert zwischen (0s und 0.0000125s)
+\end_layout
+
+\begin_layout Standard
+Diese Frames werden ab dem Zeitpunkt t=0.001s bis zu tstop=0.56s generiert.
+\end_layout
+
+\begin_layout Subsubsection
+Simulation 1.8: Maximale Auslastung mit TCP-ähnlichem Verkehr
+\end_layout
+
+\begin_layout Standard
+Konfigurationsname: Scen1_Simulation_1_8_Max_Auslastung_TCP_similar
+\end_layout
+
+\begin_layout Standard
+Es wird dieselbe Simulation wie Simulation 1.7 
+\begin_inset Quotes fld
+\end_inset
+
+Maximale Auslastung
+\begin_inset Quotes frd
+\end_inset
+
+ (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Simulation-1.7:-Maximale"
+
+\end_inset
+
+) ausgeführt, jedoch wird zusätzlich TCP-ähnlicher Traffic generiert.
+\end_layout
+
+\begin_layout Standard
+Das Lastprofil aus Simulation 1.7 
+\begin_inset Quotes fld
+\end_inset
+
+Maximale Auslastung
+\begin_inset Quotes frd
+\end_inset
+
+ wird um folgende Frames erweitert:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="6">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="middle" width="12text%">
+<column alignment="left" valignment="middle" width="8text%">
+<column alignment="left" valignment="middle" width="10text%">
+<column alignment="left" valignment="middle" width="30text%">
+<column alignment="left" valignment="middle" width="10text%">
+<column alignment="left" valignment="middle" width="18text%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Priorität
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Quelle
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ziel
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Intervall (Alle x Sekunden)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Grösse in Bytes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zweck
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Low
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PU1
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+0.001s
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1500
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+TCP-ähnlicher Traffic
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PU1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MU5
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+64
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Erweiterung des Lastprofils aus Simulation 1.7: Maximale Auslastung
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
