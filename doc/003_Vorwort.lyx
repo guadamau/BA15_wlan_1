@@ -107,29 +107,7 @@ addcontentsline{toc}{chapter}{Vorwort}
 \end_layout
 
 \begin_layout Standard
-Ab dem 4.
- Semester des Informatik-Studiums werden erstmals Module unterrichtet, die
- spezifisch für die jeweilig gewählte Fachrichtung der Studierenden ausgelegt
- sind.
- Wir haben zum einen die Fachrichtung Service Engineering (Mauro Guadagnini)
- und zum anderen Embedded Systems (Prosper Leibundgut) selektiert.
- In der Fachrichtung Service Engineering geht es primär darum, die Fachkenntniss
-e über das Errichten und Unterhalten umfangreicher Services und Netzwerk-Infrast
-rukturen weiter zu vertiefen.
- Die Fachrichtung Embedded Systems befasst sich hauptsächlich damit, Firmware
- für eingebettete Systeme zu entwickeln, die ohne oder nur mit minimalistischen
- Betriebssystemen betrieben werden.
- Solche Geräte haben oft die Anforderung zu erfüllen, Datenverarbeitungen
- in Echtzeit auszuführen.
- Nicht selten müssen diese Geräte auch über eine Netzwerkschnittstelle verfügen,
- um Daten an entfernte Netzwerkteilnehmer zu übermitteln, beziehungsweise
- diesen einen Zugriff auf besagte Geräte zu ermöglichen.
-\end_layout
-
-\begin_layout Standard
-Unser gemeinsames Interesse liegt im Bereich von netzwerkbasierten Anwendungen
- und performanter Datenübertragung.
- Bei der Wahl der ausgeschriebenen Projektarbeiten fiel uns die Arbeit 
+Arbeit 
 \begin_inset Quotes fld
 \end_inset
 
@@ -150,20 +128,7 @@ myTitle
 \begin_inset Quotes frd
 \end_inset
 
- auf.
- Die Entscheidung, uns für diese Arbeit einzuschreiben, war nach kurzer
- Zeit getroffen.
- Wir zeigen beide grosses Interesse an gehaltvollen Technologien und so
- sahen wir es als zusätzliche Gelegenheit, ein tieferes Verständnis für
- Netzwerksimulationen, das HSR-Protokoll und Interspersing Express Traffic
- zu gewinnen, was uns im Verlaufe der Umsetzung dieser Arbeit auch gelungen
- ist.
-\end_layout
 
-\begin_layout Standard
-Unser herzlicher Dank gilt Herrn Prof.
- Hans Weibel für die geduldige und fachkundige Arbeitsbetreuung in Form
- von Impulsen und Diskussionen, die zu geeigneten Lösungsansätzen verhalfen.
 \end_layout
 
 \end_body

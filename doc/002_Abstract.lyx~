@@ -119,7 +119,40 @@ begin{otherlanguage*}{british}
 
 \end_inset
 
-Lorem ipsum.
+In real-time systems consisting of several components, which are connected
+ by a network, aspects like failsafe data transmission and guaranteed data
+ transmission times are of significant importance.
+ An approach to fulfil these requirements is provided by High Availability
+ Seamless Redundancy (hereafter also referred to as HSR) protocol.
+ Redundant data transmission and the structure of the compounds implemented
+ as a ring topology rank as the main characteristics of the HSR protocol.
+ The main focus of this project consists of the modelling of various scenarios
+ based on a virtual HSR ring network composed of distinct autonomous instances
+ of HSR end devices.
+ For this purpose a virtual HSR node which implements certain rule sets
+ is programmed.
+ These rule sets apply to the treatment of Ethernet frames and the dataflow
+ in a HSR ring.
+ In order to achieve guaranteed maximum transmission times, Ethernet frames
+ are prioritized, which allows the preemption of low prioritized Ethernet
+ frames.
+ For this purpose, the IEEE Draft P802.3br / D1.0 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Draft_Standart"
+
+\end_inset
+
+ is used as a basis to simulate the timed behaviour of Interspersing Express
+ Traffic (IET) in the form of MAC Merge Frames (mFrames).
+ The simulation environment used is OMNeT++, a discrete event simulation
+ environment for communication networks.
+ The results of this project work reveal the impacts on behaviour of delay
+ times of Ethernet frames in regard to different rule sets and varied data
+ traffic in a HSR ring.
+ Moreover, other factors are also discussed; among these are data backlog
+ in relation to various dataflow rules of particular HSR nodes and how many
+ Ethernet frames are preempted during one simulation run.
 \begin_inset ERT
 status open
 

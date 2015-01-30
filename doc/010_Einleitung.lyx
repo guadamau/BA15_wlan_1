@@ -90,52 +90,7 @@ Stand der Technik
 \end_layout
 
 \begin_layout Standard
-Das Unterbrechen der Übertragung von Frames durch Express-Frames (IET) sowie
- das dadurch zu verwendende mFrame-Format sind noch nicht in Hardware implementi
-ert.
- Es ist ein Entwurf in Entwicklung 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "IET_DRAFT_IETTF"
-
-\end_inset
-
-, der voraussichtlich Ende 2015 zum Standard werden soll und seit Mai 2014
- keine weiteren Features mehr erhält, technische Änderungen jedoch noch
- bis März 2015 eingeführt werden können 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "IET_DRAFT_SCHEDULE"
-
-\end_inset
-
-.
-\end_layout
-
-\begin_layout Standard
-Aufgrund dieser Tatsache findet man im Internet kaum etwas zu IET sowie
- dem mFrame-Format, ausser einigen Unterlagen vom IEEE-Verband, der den
- Standard entwickelt.
-\end_layout
-
-\begin_layout Standard
-Bezüglich HSR (High Availability Seamless Redundancy) gibt es einiges mehr
- zu finden.
- Das HSR-Protokoll ist seit Februar 2010 unter dem Titel «IEC 62439-3 Cl.
- 5
-\begin_inset Quotes frd
-\end_inset
-
- ein Standard und wurde schon bei einigen Firmen implementiert 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "HSR_PPT"
-
-\end_inset
-
-.
- Da IET noch nicht in Hardware implementiert wurde, existieren auch keine
- Berichte zur Implementation von IET in einem HSR-Netzwerk.
+Lorem ipsum
 \end_layout
 
 \begin_layout Subsection
@@ -143,18 +98,7 @@ Bestehende Arbeiten
 \end_layout
 
 \begin_layout Standard
-Die bestehende Vertiefungsarbeit 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "VA_HSR_Simulation"
-
-\end_inset
-
- behandelt das Simulieren von Frames in einem HSR-Netzwerk, jedoch ohne
- IET-Implementation, die dazugehörige Frame-Priorisierung und dem mFrame-Format.
- Aufgrund des derzeitigen Standes der Technik wurden keine Arbeiten gefunden,
- die sich mit unserer Thematik (HSR-Netzwerk mit IET-Implementation) beschäftige
-n.
+Lorem ipsum
 \end_layout
 
 \begin_layout Section
@@ -162,126 +106,7 @@ Zielsetzung / Aufgabenstellung / Anforderungen
 \end_layout
 
 \begin_layout Standard
-Durch das Institute of Embedded Systems der ZHAW wurde den Autoren am 24.
- September 2014 eine Aufgabenstellung 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Aufgabenstellung"
-
-\end_inset
-
- (siehe Kapitel 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "sec:Offizielle-Aufgabenstellung"
-
-\end_inset
-
-) zugestellt, welche die nachfolgenden Hauptanforderungen umfasst:
-\end_layout
-
-\begin_layout Subsection
-Modell für HSR-Knoten erweitern
-\end_layout
-
-\begin_layout Standard
-Das betrachtete Netzwerk ist ein HSR-Ring.
- Die bestehende Simulationsumgebung 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "VA_HSR_Simulation"
-
-\end_inset
-
- soll so erweitert bzw.
- angepasst werden, dass folgende Funktionen/Mechanismen simuliert werden
- können 
-\series bold
-
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Aufgabenstellung"
-
-\end_inset
-
-
-\series default
-:
-\end_layout
-
-\begin_layout Itemize
-Der Knoten soll zwei Prioritäten unterstützen, d.h.
- zwei Warteschlangen pro Interface bewirtschaften.
-\end_layout
-
-\begin_layout Itemize
-Der Knoten soll Interspersing Express Traffic (IET) unterstützen, d.h.
- Express-Frames können die aktuell ablaufende Übertragung eines Frames unterbrec
-hen.
-\end_layout
-
-\begin_layout Itemize
-Der in den Ring einfliessende Traffic kann limitiert werden.
-\end_layout
-
-\begin_layout Itemize
-Die Vortrittsregeln bezüglich der im Ring zirkulierenden Frames und den
- Frames, die in den Ring einfliessen, können variiert werden (z.B.
- «zirkulierende Frames haben immer Vortritt» oder «minimaler Zufluss wird
- garantiert»).
-\end_layout
-
-\begin_layout Itemize
-Der Knoten implementiert ein Zeitschlitzverfahren, welches dem zeitkritischen
- Traffic und dem Bulk Traffic je eine Phase zuordnet.
-\end_layout
-
-\begin_layout Subsection
-Lastmodell beschreiben und implementieren
-\end_layout
-
-\begin_layout Standard
-Das durch die Anwendung generierte Verkehrsaufkommen ist zu studieren und
- zu beschreiben.
- Lastgeneratoren sollen implementiert werden, die das Verkehrsaufkommen
- für die Simulation generieren durch die Überlagerung von Strömen mit folgender
- Charakteristik 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Aufgabenstellung"
-
-\end_inset
-
-:
-\end_layout
-
-\begin_layout Itemize
-Lastgenerator mit konstanter Framerate.
-\end_layout
-
-\begin_layout Itemize
-Lastgenerator mit zufälliger zeitlicher Verteilung der Frames.
-\end_layout
-
-\begin_layout Itemize
-Lastgenerator, der spontane Einzelmeldungen erzeugt.
-\end_layout
-
-\begin_layout Subsection
-Simulationen durchführen und Resultate interpretieren
-\end_layout
-
-\begin_layout Standard
-Das Zeitverhalten der verschiedenen Weiterleitungsvarianten soll durch entsprech
-ende Simulationsläufe ermittelt werden.
- Die Resultate sind zu vergleichen und zu interpretieren 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Aufgabenstellung"
-
-\end_inset
-
-.
+Lorem ipsum
 \end_layout
 
 \begin_layout Subsection
@@ -289,12 +114,7 @@ Erwartetes Resultat
 \end_layout
 
 \begin_layout Standard
-Das Resultat der Arbeit soll verschiedene Verhaltensweisen von Frames in
- einem HSR-Ring mit IET-Implementation bei unterschiedlichen Bedingungen
- aufzeigen.
- Durch eine Interpretation der Verhaltensweisen ist dann die bestmögliche
- Konfiguration des HSR-Rings zu ermitteln, mit welcher zeitkritische Frames
- am schnellsten übermittelt werden.
+Lorem ipsum
 \end_layout
 
 \begin_layout Subsection
@@ -302,31 +122,7 @@ Vorausgesetztes Wissen
 \end_layout
 
 \begin_layout Standard
-In den theoretischen Grundlagen (siehe Kapitel 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "chap:Theoretische-Grundlagen"
-
-\end_inset
-
-) werden unter anderem OMNeT++, das HSR-Protokoll und der Aufbau eines HSR-Netzw
-erks inklusive dessen Gerätetypen behandelt.
-\end_layout
-
-\begin_layout Standard
-Zum Verständnis dieser Projektarbeit ist ein Vorwissen über die allgemeine
- Netzwerkkommunikation nötig.
- Dieses Vorwissen umfasst folgende Bereiche:
-\end_layout
-
-\begin_layout Itemize
-Allgemeine Netzwerk- und Hardware-Begriffe wie z.B.
- MAC-Adresse, Ethernet-Port oder Ethernet-Frame.
-\end_layout
-
-\begin_layout Itemize
-Funktionsweise eines Netzwerks inklusive der Übertragung eines Ethernet-Frames
- und dem Aufbau dessen Headers.
+Lorem ipsum
 \end_layout
 
 \end_body
