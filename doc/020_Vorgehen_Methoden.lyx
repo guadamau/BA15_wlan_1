@@ -81,6 +81,31 @@
 Vorgehen / Methoden
 \end_layout
 
+\begin_layout Section
+Aufbau der Untersuchungsumgebung
+\end_layout
+
+\begin_layout Standard
+Die Untersuchungsumgebung besteht aus 3 Linux-Servern mit je 3 Netzwerkanschlüss
+en.
+ Davon werden je 2 für die PRP-Umgebung verwendet, wobei der dritte Anschluss
+ lediglich für administrative Zwecke verwendet wird.
+ So ist es möglich von Aussen auf die Server zugreifen zu können ohne einen
+ Einfluss auf die PRP-Umgebung zu haben.
+\end_layout
+
+\begin_layout Standard
+Betreffend den technischen Daten 
+\end_layout
+
+\begin_layout Section
+Ermittlung der Performance
+\end_layout
+
+\begin_layout Subsection
+Verwendete Tools
+\end_layout
+
 \begin_layout Standard
 Lorem ipsum
 \end_layout
