@@ -1,40 +1,13 @@
 % *****************************************************************************
 % Nomenclature descriptions
 
-\newcommand{\hsrdesc}{\textbf{High Availability Seamless Redundancy}. Redundanzprotokoll für Ethernet basierte Netzwerke. HSR ist für redundant gekoppelte Ringtopologien ausgelegt. Die Datenübermittlung innerhalb eines HSR-Rings ist im Fehlerfall gewährleistet, wenn eine Netzwerkschnittstelle ausfallen sollte.}
+\newcommand{\nonfreefirmwaredesc}{Bei Non-Free-Firmware handelt es sich um Gerätetreiber-Software, die nicht als komplett freie Software vertrieben wird. Das heisst, die Software ist proprietär und basiert auf herstellerbasierten Standards, die nicht veröffentlicht wurden.}
 
-\newcommand{\ietdesc}{\textbf{Interspersed Express Traffic}. Erlaubt es Frames während des Sendevorgangs zu unterbrechen, um sogenannte Express-Frames so schnell wie möglich versenden zu können.}
-
-\newcommand{\ifgdesc}{\textbf{Interframe Gap}. Minimaler zeitlicher Abstand zwischen dem Versand zweier Frames.}
-
-\newcommand{\prpdesc}{\textbf{Parallel Redundancy Protocol}. Hat ein ähnliches Funktionsprinzip wie HSR, aber auch Unterschiede wie z.B. das Frameformat. PRP- und HSR-Netze können jedoch über RedBoxen kommunizieren.}
-
-\newcommand{\ethernetIIdesc}{Definiert eine Struktur, um Nutzdaten über ein Ethernet-Netzwerk zu versenden. Es ist die kleinste adressierbare Einheit auf dem Link Layer. Die Struktur eines EthernetII-Frames gliedert sich wie folgt: Zieladresse, Quelladresse, VLAN-Tag (optional), Ethertype (Ethernet II), Nutzdatenanteil, Frame Check Sequence (CRC).}
-
-\newcommand{\mframedesc}{MAC Merge Frame ist ein Format eines Ethernet Frames. Im Gegensatz zu herkömmlichen EthernetII Frames, stellt das mFrame Format Parameter und Strukturen zur Verfügung, die es ermöglichen, das Ethernet Frame zu fragmentieren.}
-
-\newcommand{\linklayerdesc}{Stellt sicher, dass Daten über eine physikalische Schnittstelle von und zu einem Netzwerk transferiert werden können.}
-
-\newcommand{\steadystatedesc}{Eingeschwungener, stabiler Zustand der Simulation. Damit keine verfälschten Simulationsresultate auftreten, werden die Messwerte in einem Zeitintervall aufgenommen, welches einige Zeit nach dem Simulationsstart beginnt und einige Zeit vor der Generierung der letzten Frames endet.}
-
-\newcommand{\selfmessagedesc}{In OMNeT++ kann ein Modul sich selber eine Selfmessage senden. Diese Selfmessage nimmt als Parameter eine Verzögerungszeit. Nach dieser Verzögerungszeit wird im selben Modul ein Event ausgelöst um die Selfmessage zu verarbeiten. Diese Methode wird beispielsweise verwendet, um immer wiederkehrende Ereignisse in Modulen auszulösen.}
-
-\newcommand{\lyxdesc}{LyX ist ein Front-End-Editor für das Textsatz-System \LaTeX. Das freie Softwarepaket kann unter \url{http://www.lyx.org} heruntergeladen werden und ist für die Betriebssysteme Linux, Windows und Mac OS X verfügbar.}
-
-\newcommand{\predesc}{Unter Preemption versteht man den Vorgang, welcher das Unterbrechen der Frames im IET ausführt. Frames, die keine Express-Priorität haben, können während ihres Sendevorgangs von Express-Frames unterbrochen werden. Die Preemption wird im Rahmen dieser Arbeit lediglich mittels Zeitrechung vollzogen, das heisst, es werden keine Frames effektiv unterbrochen, jedoch deren Übertragungszeiten künstlich verlängert. Das Ergebnis ist dasselbe wie bei einer effektiven Fragmentierung.}
+\newcommand{\gatewaydesc}{Netzwerkkomponente, die es ermöglicht, Computern in einem lokalen Netzwerk, den Zugriff in andere Netzwerke zu ermöglichen. Als bekanntestes Beispiel, kann an dieser Stelle die Verbindung von Computern in einem lokalen Netzwerk über einen Router als Gateway mit dem Internet erwähnt werden.}
 
 
 % *****************************************************************************
 % Nomenclature entries
 
-\nomenclature{HSR}{\hsrdesc}
-\nomenclature{IET}{\ietdesc}
-\nomenclature{IFG}{\ifgdesc}
-\nomenclature{PRP}{\prpdesc}
-\nomenclature{EthernetII Frame}{\ethernetIIdesc}
-\nomenclature{mFrame}{\mframedesc}
-\nomenclature{Link Layer}{\linklayerdesc}
-\nomenclature{Steady-State}{\steadystatedesc}
-\nomenclature{Selfmessage}{\selfmessagedesc}
-\nomenclature{LyX}{\lyxdesc}
-\nomenclature{Preemption}{\predesc}
+\nomenclature{Non-Free-Firmware}{\nonfreefirmwaredesc}
+\nomenclature{Gateway}{\gatewaydesc}
