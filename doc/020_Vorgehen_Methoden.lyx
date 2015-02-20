@@ -465,7 +465,7 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename _img/setup_physical.svg
+	filename _img/020_setup_physical.svg
 	display false
 	scale 60
 
@@ -756,7 +756,7 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename _img/phisical_to_virtual_prp.svg
+	filename _img/020_physical_to_virtual_prp.svg
 	display false
 	scale 60
 
@@ -798,7 +798,7 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename _img/setup_virt_prp.svg
+	filename _img/020_setup_virt_prp.svg
 	display false
 	scale 60
 
@@ -997,9 +997,9 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename _img/setup_locations.svg
+	filename _img/020_setup_locations.svg
 	display false
-	scale 60
+	scale 50
 
 \end_inset
 
@@ -1024,10 +1024,6 @@ Aufbau der Messumgebung - Detaillierte Verkabelung
 \end_layout
 
 \begin_layout Section
-Ermittlung der Performance
-\end_layout
-
-\begin_layout Subsection
 Evaluierung der Tools
 \end_layout
 
@@ -1035,8 +1031,8 @@ Evaluierung der Tools
 Verwendete Tools
 \end_layout
 
-\begin_layout Standard
-Lorem ipsum
+\begin_layout Section
+Ermittlung der Performance
 \end_layout
 
 \end_body
