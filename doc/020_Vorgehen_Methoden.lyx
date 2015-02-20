@@ -82,7 +82,7 @@ Vorgehen / Methoden
 \end_layout
 
 \begin_layout Section
-Aufbau der Messumgebung
+Aufbau der Testumgebung
 \end_layout
 
 \begin_layout Subsection
@@ -99,7 +99,7 @@ Server
 \end_layout
 
 \begin_layout Standard
-Die Messumgebung besteht aus 3 Servern mit je 3 Netzwerkanschlüssen.
+Die Testumgebung besteht aus 3 Servern mit je 3 Netzwerkanschlüssen.
  Davon werden je 2 für die PRP-Umgebung verwendet, wobei der dritte Anschluss
  lediglich für administrative Zwecke verwendet wird.
  So ist es möglich, von Aussen auf die Server zugreifen zu können, ohne
@@ -447,7 +447,7 @@ Netzwerke
 \begin_layout Standard
 Um ein PRP-Netzwerk mit den 3 Servern aufzubauen, sind 2 physische Netzwerke
  nötig, die dann ein virtuelles PRP-Netzwerk bilden.
- Im Folgenden wird grafisch aufgezeigt, wie die Messumgebung aufgebaut ist.
+ Im Folgenden wird grafisch aufgezeigt, wie die Testumgebung aufgebaut ist.
 \end_layout
 
 \begin_layout Subsubsection
@@ -478,7 +478,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Aufbau der Messumgebung - Physisches Netzwerk
+Aufbau der Testumgebung - Physisches Netzwerk
 \end_layout
 
 \end_inset
@@ -811,7 +811,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Aufbau der Messumgebung - PRP-Netzwerk
+Aufbau der Testumgebung - PRP-Netzwerk
 \end_layout
 
 \end_inset
@@ -972,7 +972,7 @@ Standorte
 \end_layout
 
 \begin_layout Standard
-Die Messumgebung wurde in den Räumlichkeiten des Gebäudes TE der ZHAW in
+Die Testumgebung wurde in den Räumlichkeiten des Gebäudes TE der ZHAW in
  Winterthur aufgebaut.
  Die Server wurden in einem nicht öffentlichen Raum (TE524) platziert.
  Die beiden Switches (A und B) befinden sich im Arbeitsraum (TE523).
@@ -983,7 +983,7 @@ Die Messumgebung wurde in den Räumlichkeiten des Gebäudes TE der ZHAW in
 
 \begin_layout Standard
 Das nachfolgende Schema zeigt die detaillierte, physische Verkabelung der
- gesamten Messumgebung:
+ gesamten Testumgebung:
 \end_layout
 
 \begin_layout Standard
@@ -1010,7 +1010,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Aufbau der Messumgebung - Detaillierte Verkabelung
+Aufbau der Testumgebung - Detaillierte Verkabelung
 \end_layout
 
 \end_inset
@@ -1025,6 +1025,25 @@ Aufbau der Messumgebung - Detaillierte Verkabelung
 
 \begin_layout Section
 Evaluierung der Tools
+\end_layout
+
+\begin_layout Standard
+Für die Performance-Messungen werden auch bereits bestehende Tools verwendet.
+ Da bereits eine Vielzahl solcher Tools existiert, wird in diesem Abschnitt
+ versucht, die Auswahl zu verwendender Tools einzugrenzen.
+ Für diese Selektierung werden die Aspekte berücksichtigt, welchen gemäss
+ der Aufgabenstellung 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Aufgabenstellung"
+
+\end_inset
+
+ besondere Beachtung beigemessen werden soll.
+\end_layout
+
+\begin_layout Standard
+Es sind dies:
 \end_layout
 
 \begin_layout Subsection
