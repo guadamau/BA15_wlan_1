@@ -447,8 +447,7 @@ Netzwerke
 \begin_layout Standard
 Um ein PRP-Netzwerk mit den 3 Servern aufzubauen, sind 2 physische Netzwerke
  nötig, die dann ein virtuelles PRP-Netzwerk bilden.
- Im Folgenden wird grafisch aufgezeigt, wie die Messumgebung genau aufgebaut
- ist.
+ Im Folgenden wird grafisch aufgezeigt, wie die Messumgebung aufgebaut ist.
 \end_layout
 
 \begin_layout Subsubsection
@@ -728,13 +727,64 @@ Konfigurationsdaten - Physisches Netzwerk
 \end_layout
 
 \begin_layout Standard
-Für das Administrationsnetzwerk wird der Gateway mit der IP-Adresse 192.168.99.100
- verwendet.
- Damit wird ein
+Für das Administrationsnetzwerk (192.168.99.0) wird der Gateway mit der IP-Adresse
+ 192.168.99.100 verwendet.
+ Damit wird ein Zugang von einem anderen LAN aus auf die Server ermöglicht.
 \end_layout
 
 \begin_layout Subsubsection
 PRP-Netzwerk
+\end_layout
+
+\begin_layout Standard
+Ein PRP-Netzwerk basiert grundsätzlich auf dem Konzept, dass aus zwei physischen
+ Netzwerken ein virtuelles Netzwerk gebildet wird, um die gewünschte Redundanz
+ zu erreichen.
+ Beispielsweise wird aus zwei physischen Netzwerk-Interfaces ein Virtuelles.
+ Die folgende Abbildung zeigt, wie die physischen Verbindungen zweier Netze
+ zu einer virtuellen Verbindung eines PRP-Netzwerks werden.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/phisical_to_virtual_prp.svg
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Zusammenhang physische und virtuelle Verbindung
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Daraus lässt sich der Aufbau des virtuellen PRP-Netzwerks ableiten und folgender
+massen aufzeigen:
 \end_layout
 
 \begin_layout Standard
@@ -905,6 +955,62 @@ srv03
 
 \begin_layout Plain Layout
 Konfigurationsdaten - PRP-Netzwerk
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Standorte
+\end_layout
+
+\begin_layout Standard
+Die Messumgebung wurde in den Räumlichkeiten des Gebäudes TE der ZHAW in
+ Winterthur aufgebaut.
+ Die Server wurden in einem nicht öffentlichen Raum (TE524) platziert.
+ Die beiden Switches (A und B) befinden sich im Arbeitsraum (TE523).
+ Dies ermöglicht es, Messgeräte sowie simulierte Verzögerungen einzubauen.
+ Ebenfalls können so weitere Geräte an die Netzwerke A oder B angeschlossen
+ werden.
+\end_layout
+
+\begin_layout Standard
+Das nachfolgende Schema zeigt die detaillierte, physische Verkabelung der
+ gesamten Messumgebung:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/setup_locations.svg
+	display false
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Aufbau der Messumgebung - Detaillierte Verkabelung
 \end_layout
 
 \end_inset
