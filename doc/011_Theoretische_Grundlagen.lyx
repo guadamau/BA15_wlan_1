@@ -94,8 +94,8 @@ Parallel Redundancy Protocol (PRP)
 \end_layout
 
 \begin_layout Standard
-Bei PRP handelt es sich um ein Kommunikationsprotokoll, welches eine Redundanz
- im Netzwerk gewährleistet.
+Bei PRP handelt es sich um ein Kommunikationsprotokoll auf Layer 2, welches
+ eine Redundanz im Netzwerk gewährleistet.
  Dies wird erreicht, indem ein Netzwerkknoten mit 2 Netzwerkinterfaces an
  zwei disjunkten, parallel betriebenen LANs (LAN A und LAN B) angeschlossen
  wird, die unabhängig von einander sind.
@@ -122,20 +122,6 @@ Double Attached Node
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Tutorial_on_Parallel_Redundancy_Protocol_(PRP)"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-In diesem Kapitel wird PRP Version 1 (auch als PRP-1 bekannt) behandelt.
- Die vorherige Version wird PRP-0 genannt.
- Die beiden Versionen sind nicht kompatibel zu einander.
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "PRP_InES_ZHAW"
 
 \end_inset
 
@@ -380,6 +366,22 @@ bumpless
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Tutorial_on_Parallel_Redundancy_Protocol_(PRP),PPT_Ethernet_Redundancy_with_zero_switchover_time"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Da es sich bei PRP um ein Protokoll handelt, das von den MAC-Adressen der
+ Netzwerkteilnehmer abhängig ist, wird kein IP-Routing unterstützt.
+ Dies hat den Grund, weil ein IP-Router die Quell-MAC-Adresse im Ethernet-Frame
+ ändert und ein Empfänger im PRP-Netzwerk die ursprüngliche Adresse benötigt,
+ um Duplikate feststellen zu können.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "PRP-Industrial_IP"
 
 \end_inset
 

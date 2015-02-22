@@ -134,6 +134,8 @@ morekeywords={xmlns,version,type}
 keepaspectratio]{_img/InES.pdf}%
 \vfill
 }}}
+
+\usepackage{svg}
 \end_preamble
 \options bibliography=totocnumbered,listof=totocnumbered
 \use_default_options true

@@ -90,7 +90,39 @@ Stand der Technik
 \end_layout
 
 \begin_layout Standard
-Lorem ipsum
+Der Standard zu PRP Version 1 (oder PRP-1) wurde unter dem Namen IEC 62439-3
+ am 05.07.2012 veröffentlicht, welcher eine technische Revision des ursprünglichen
+ Standards (PRP Version 0 oder PRP-0) vom 25.02.2010 darstellt und diesen
+ für ungültig erklärt.
+ PRP-1 wurde unter anderem entwickelt, damit es mit einem weiteren Protokoll
+ für redundante Netzwerkkommunikation, HSR (High-availability Seamless Redundanc
+y) kompatibel ist, jedoch ging dabei die Kompatibilität zu PRP-0 verloren.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "IEC_62439-3_2010,IEC_62439-3_2012"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+PRP ist bereits bei einigen Firmen implementiert und wird unter anderem
+ für Substation Automation verwendet.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Exp_using_PRP_Substation,PRP-Hirschmann"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In dieser Arbeit, welche die Performance-Ermittlung von Netzwerkfunktionen
+ umfasst, wird lediglich PRP Version 1 behandelt.
 \end_layout
 
 \begin_layout Subsection
@@ -98,15 +130,34 @@ Bestehende Arbeiten
 \end_layout
 
 \begin_layout Standard
-Lorem ipsum
+Zu PRP-1
 \end_layout
 
 \begin_layout Section
 Zielsetzung / Aufgabenstellung / Anforderungen
 \end_layout
 
+\begin_layout Subsection
+Anforderungen
+\end_layout
+
 \begin_layout Standard
-Lorem ipsum
+Durch das Institute of Embedded Systems der ZHAW wurde den Autoren am 10.
+ Februar 2015 eine Aufgabenstellung 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Aufgabenstellung"
+
+\end_inset
+
+ (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Offizielle-Aufgabenstellung"
+
+\end_inset
+
+) zugestellt, welche die nachfolgenden Hauptanforderungen umfasst:
 \end_layout
 
 \begin_layout Subsection
