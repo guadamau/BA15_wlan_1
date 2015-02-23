@@ -95,16 +95,33 @@ Parallel Redundancy Protocol (PRP)
 
 \begin_layout Standard
 Bei PRP handelt es sich um ein Kommunikationsprotokoll auf Layer 2, welches
- eine Redundanz im Netzwerk gewährleistet.
+ eine Redundanz im Netzwerk gewährleistet und in den Knoten statt dem Netzwerk
+ implementiert ist.
  Dies wird erreicht, indem ein Netzwerkknoten mit 2 Netzwerkinterfaces an
- zwei disjunkten, parallel betriebenen LANs (LAN A und LAN B) angeschlossen
- wird, die unabhängig von einander sind.
- Diese beiden LANs ergeben zusammen ein PRP-Netzwerk.
+ zwei disjunkten, parallel betriebenen LANs (
+\begin_inset Quotes fld
+\end_inset
+
+LAN_A
+\begin_inset Quotes frd
+\end_inset
+
+ und 
+\begin_inset Quotes fld
+\end_inset
+
+LAN_B
+\begin_inset Quotes frd
+\end_inset
+
+) angeschlossen wird, die unabhängig von einander sind.
+ Diese beiden LANs, die sich bezüglich Performance und Topologie unterscheiden
+ können, ergeben zusammen ein PRP-Netzwerk.
  Ein solcher Knoten im PRP-Netzwerk wird 
 \begin_inset Quotes fld
 \end_inset
 
-Dual Attached Node
+Double Attached Node
 \begin_inset Quotes frd
 \end_inset
 
@@ -113,15 +130,27 @@ Dual Attached Node
 \begin_inset Quotes fld
 \end_inset
 
-Double Attached Node
+Dual Attached Node
 \begin_inset Quotes frd
 \end_inset
 
 ), kurz DAN, genannt.
+ Ein DAN hat dieselbe MAC-Adresse auf beiden Netzwerkinterfaces.
+ Da es sich hier um DANs handelt, die PRP implementiert haben, werden sie
+ auch mit DANP (
+\begin_inset Quotes fld
+\end_inset
+
+Double Attached Node implementing PRP
+\begin_inset Quotes frd
+\end_inset
+
+) bezeichnet.
+ In dieser Arbeit sind DAN und DANP gleichbedeutend.
  
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Tutorial_on_Parallel_Redundancy_Protocol_(PRP)"
+key "IEC_62439-3_2015"
 
 \end_inset
 
@@ -129,10 +158,11 @@ key "Tutorial_on_Parallel_Redundancy_Protocol_(PRP)"
 \end_layout
 
 \begin_layout Standard
-Wenn ein DAN etwas an einen anderen Netzwerkteilnehmer sendet, dupliziert
+Wenn ein DANP etwas an einen anderen Netzwerkteilnehmer sendet, dupliziert
  er das Frame und übermittelt es über beide LANs.
  Beim Empfänger wird das Frame, das als Erstes ankommt, an die oberen Schichten
  weitergeleitet und das Duplikat je nach nach Methode akzeptiert oder verworfen.
+ Wie Duplikate erkennt und entfernt werden ist der Implementation überlassen.
  Auf die Duplikat-Handhabung wird genauer im Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -146,7 +176,8 @@ reference "sub:Handhabung-von-Frame-Duplikaten"
  den oberen Netzwerkschichten in einem DAN befindet.
  Um diese Frame-Redundanz handhaben zu können, wird vom LRE beim Versand
  dem Frame am Ende ein Redundancy Control Trailer (RCT) angehängt, der beim
- Empfänger von dessen LRE wieder entfernt wird.
+ Empfänger von dessen LRE wieder entfernt wird und anhand dem Duplikate
+ erkannt werden können.
  
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -158,29 +189,57 @@ key "Tutorial_on_Parallel_Redundancy_Protocol_(PRP)"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/011_DANP_Node.png
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+PRP-Netzwerk mit 2 kommunizierenden DANPs 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "IEC_62439-3_2015"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Dieser RCT hat eine Grösse von 6 Bytes und beeinhaltet folgende Parameter
  
 \begin_inset CommandInset citation
 LatexCommand cite
-key "PRP-Wireshark_Wiki,PRP-Industrial_IP"
+key "IEC_62439-3_2015"
 
 \end_inset
 
 :
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-% PRP-SUFFIX?! 4 Bytes? 0x88FB
-\end_layout
-
-\end_inset
-
-
 \end_layout
 
 \begin_layout Itemize
@@ -207,12 +266,12 @@ Dieser Parameter lautet entwerder 0xA für LAN_A oder 0xB für LAN_B
 \end_layout
 
 \begin_layout Itemize
-Frame-Grösse (12 Bit)
+LSDU-Size (12 Bit)
 \begin_inset Newline newline
 \end_inset
 
-Umfasst die Grösse des Payloads des Ethernet-Frames in Bytes zuzüglich der
- Grösse vom RCT
+Umfasst die Grösse der LSDU (Link Service Data Unit) in Bytes zuzüglich
+ der Grösse vom RCT
 \end_layout
 
 \begin_layout Itemize
@@ -239,6 +298,49 @@ chkeit durch Zufall ein Nicht-PRP-Frame diesen Wert am Schluss des Frames
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/011_prp_frame.png
+	lyxscale 50
+	scale 80
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+PRP-Frame mit RCT 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "IEC_62439-3_2015"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Des Weiteren gibt es auch Netzwerkkomponenten, die nur über ein Netzwerkinterfac
 e verfügen und lediglich an einem LAN des PRP-Netzwerks angeschlossen sind.
  Solche Geräte werden 
@@ -254,6 +356,7 @@ Single Attached Node
  in beiden LANs befinden, jedoch können nur andere SANs erreicht werden,
  die am selben LAN angeschlossen sind.
  SANs, die mit dem anderen LAN verbunden sind, können nicht erreicht werden.
+ Ein SAN weiss nichts von PRP.
  Daher erzeugen SANs beim Frameversand keine Duplikate und hängen somit
  auch kein RCT an die Frames.
  Erhält ein SAN ein Frame mit einem RCT wird dies als zusätzliches Padding
@@ -271,7 +374,7 @@ key "PRP-Hirschmann"
 \begin_layout Standard
 Eine zusätzliche Möglichkeit, um Geräte mit nur einem Netzwerkinterface
  an einem PRP-Netzwerk anzuschliessen, wäre über eine Redundancy Box (RedBox).
- Eine RedBox ist wie ein DAN über beide LANs im PRP-Netzwerk eingebunden
+ Eine RedBox ist, wie ein DANP, über beide LANs im PRP-Netzwerk eingebunden
  und bietet weitere Anschlüsse für Geräte mit nur einem Interface.
  Ein solches Gerät, das über eine RedBox am PRP-Netzwerk teilnimmt, erscheint
  für die anderen Teilnehmer wie ein DAN und wird 
@@ -342,9 +445,9 @@ key "Tutorial_on_Parallel_Redundancy_Protocol_(PRP)"
 \end_layout
 
 \begin_layout Standard
-Durch diesen Ablauf und Aufbau wird garantiert, dass die Kommunikation bei
- dem Ausfall eines LANs trotzdem bestehen bleibt, ohne Zeit für eine Umschaltung
- zu benötigen.
+Durch diesen Ablauf und Aufbau wird garantiert, dass die Kommunikation zwischen
+ den DANs und RedBoxen bei dem Ausfall eines LANs trotzdem bestehen bleibt,
+ ohne Zeit für eine Umschaltung zu benötigen.
  Aufgrund dieser Eigenschaft wird PRP unter anderem als 
 \begin_inset Quotes fld
 \end_inset
@@ -365,7 +468,7 @@ bumpless
  
 \begin_inset CommandInset citation
 LatexCommand cite
-key "Tutorial_on_Parallel_Redundancy_Protocol_(PRP),PPT_Ethernet_Redundancy_with_zero_switchover_time"
+key "PPT_Ethernet_Redundancy_with_zero_switchover_time"
 
 \end_inset
 
@@ -388,7 +491,191 @@ key "PRP-Industrial_IP"
 
 \end_layout
 
+\begin_layout Standard
+Für das Redundanzmanagement und das Überprüfen, ob andere DANs im Netzwerk
+ anwesend sind, sendet jede LRE via Multicast regelmässig (laut Standard
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "IEC_62439-3_2015"
+
+\end_inset
+
+ alle 400 ms) sogenannte 
+\begin_inset Quotes fld
+\end_inset
+
+PRP_Supervision
+\begin_inset Quotes frd
+\end_inset
+
+-Frames.
+ Erhält eine LRE ein solches Frame, erzeugt es einen Eintrag in seiner Node-Tabe
+lle mit der MAC-Adresse des betreffenden Knotens (dieser ist im 
+\begin_inset Quotes fld
+\end_inset
+
+MacAddress
+\begin_inset Quotes frd
+\end_inset
+
+-Feld im 
+\begin_inset Quotes fld
+\end_inset
+
+PRP_Supervision
+\begin_inset Quotes frd
+\end_inset
+
+-Frame aufgeführt).
+ Die LRE einer RedBox sendet für jedes seiner VDANs ein solches Frame, allerding
+s werden die Informationen zur RedBox in zusätzlichen Feldern beigefügt.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "IEC_62439-3_2015"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Erhält ein Knoten nach einer gewissen Zeit (
+\begin_inset Quotes fld
+\end_inset
+
+NodeForgetTime
+\begin_inset Quotes frd
+\end_inset
+
+, standardmässig 60'000 ms oder 1 min) von einem bestimmten Knoten kein
+ 
+\begin_inset Quotes fld
+\end_inset
+
+PRP_Supervision
+\begin_inset Quotes frd
+\end_inset
+
+-Frame mehr, jedoch noch andere Frames von dieser Quelle über lediglich
+ ein LAN, wird der Status dieser Quelle im Knoten von 
+\begin_inset Quotes fld
+\end_inset
+
+DAN
+\begin_inset Quotes frd
+\end_inset
+
+ zu 
+\begin_inset Quotes fld
+\end_inset
+
+SanA
+\begin_inset Quotes frd
+\end_inset
+
+ oder 
+\begin_inset Quotes fld
+\end_inset
+
+SanB
+\begin_inset Quotes frd
+\end_inset
+
+ geändert (hängt vom verwendeten LAN ab).
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "IEC_62439-3_2015"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
+Software-Implementation
+\end_layout
+
+\begin_layout Standard
+In dieser Arbeit wird PRP in Form einer Software-Implementation im Endgerät
+ betrachtet.
+ Bei der Software handelt es sich um einen vom ZHAW Institute of Embedded
+ Systems entwickelten Open Source User-Mode-Stack für Linux.
+ Dieser wird als Zwischenschicht realisiert, der über ein virtuelles Netzwerkint
+erface (
+\begin_inset Quotes fld
+\end_inset
+
+PRP Driver
+\begin_inset Quotes frd
+\end_inset
+
+) mit den höheren Schichten kommuniziert.
+ Dabei erscheint der 
+\begin_inset Quotes fld
+\end_inset
+
+PRP Driver
+\begin_inset Quotes frd
+\end_inset
+
+ für diese Schichten wie ein normales Netzwerkinterface und stellt die LRE
+ dar.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "PRP-1_SW_Stack"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/011_PRP_User_Mode_Stack.png
+	scale 45
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+PRP-1 User Mode Stack 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "PRP-1_SW_Stack"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
 Handhabung von Frame-Duplikaten
 \begin_inset CommandInset label
 LatexCommand label
@@ -397,10 +684,6 @@ name "sub:Handhabung-von-Frame-Duplikaten"
 \end_inset
 
 
-\end_layout
-
-\begin_layout Subsection
-Software Implementation
 \end_layout
 
 \end_body

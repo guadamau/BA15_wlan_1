@@ -6,8 +6,9 @@
 \newcommand{\gatewaydesc}{Netzwerkkomponente, die es ermöglicht, Computern in einem lokalen Netzwerk, den Zugriff in andere Netzwerke zu ermöglichen. Als bekanntestes Beispiel, kann an dieser Stelle die Verbindung von Computern in einem lokalen Netzwerk über einen Router als Gateway mit dem Internet erwähnt werden.}
 
 \newcommand{\prpdesc}{\textbf{Parallel Redundancy Protocol}. Hochverfügbarkeitsnetzwerk, bei dem Netzwerkkomponenten über zwei voneinander unabhängige LANs kommunizieren. Beim Versand wird das Frame dupliziert und über beide LANs versandt. Das Duplikat wird vom Empfänger erkannt und verworfen.}
-\newcommand{\dandesc}{\textbf{Dual Attached Node oder Double Attached Node}. Netzwerkteilnehmer eines PRP-Netzwerks, der über zwei Netzwerkinterfaces verfügt, die je direkt an einem LAN des PRP-Netzwerks angeschlossen sind.}
-\newcommand{\vdandesc}{\textbf{Virtual Dual Attached Node oder Virtual Double Attached Node}. Host, der über ein Netzwerkinterface an einer RedBox angeschlossen ist und somit darüber am PRP-Netzwerk teilnimmt. Für andere Netzwerkteilnehmer wird dieser Host wie ein DAN wahrgenommen.}
+\newcommand{\dandesc}{\textbf{Double Attached Node oder Dual Attached Node}. Netzwerkteilnehmer eines Netzwerks, der über zwei Netzwerkinterfaces verfügt, die je direkt an einem LAN des Netzwerks angeschlossen sind.}
+\newcommand{\danpdesc}{\textbf{Double Attached Node implementing PRP oder Dual Attached Node implementing PRP}. DAN in einem PRP-Netzwerk.}
+\newcommand{\vdandesc}{\textbf{Virtual Double Attached Node oder Virtual Dual Attached Node}. Host, der über ein Netzwerkinterface an einer RedBox angeschlossen ist und somit darüber am PRP-Netzwerk teilnimmt. Für andere Netzwerkteilnehmer wird dieser Host wie ein DAN wahrgenommen.}
 \newcommand{\sandesc}{\textbf{Single Attached Node}. Host, der nur an einem LAN des PRP-Netzwerks angeschlossen ist. Dieser kann mit allen DANs, VDANs und RedBoxen kommunizieren, jedoch nur mit anderen SANs, die am selben LAN angeschlossen sind. Ist zum Beispiel ein SAN nur am LAN A angeschlossen, kann dieser nur andere SANs erreichen, die auch am LAN A angeschlossen sind.}
 \newcommand{\redboxdesc}{\textbf{Redundancy Box}. Ist mit beiden LANs des PRP-Netzwerks verbunden und bietet Anschlüsse für mehrere Hosts, damit diese über je 1 Netzwerkanschluss am PRP-Netzwerk teilnehmen können. Solche Hosts werden dann VDAN genannt.}
 \newcommand{\rctdesc}{\textbf{Redundancy Control Trailer}. 4 Bytes langes Framefeld, um Frames, die über beide LANs eines PRP-Netzwerks verschickt werden, zu kennzeichnen.}
@@ -22,6 +23,7 @@
 \nomenclature{Gateway}{\gatewaydesc}
 \nomenclature{PRP}{\prpdesc}
 \nomenclature{DAN}{\dandesc}
+\nomenclature{DANP}{\danpdesc}
 \nomenclature{VDAN}{\vdandesc}
 \nomenclature{SAN}{\sandesc}
 \nomenclature{RedBox}{\redboxdesc}
