@@ -3177,6 +3177,30 @@ Grund
 \end_layout
 
 \begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Weitere Hilfsmittel: arping
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
 \noindent
 \align center
 \begin_inset Tabular
@@ -3202,7 +3226,14 @@ Name
 \begin_layout Plain Layout
 
 \series bold
-Ethernet Cable Interceptor (ECI)
+Ethernet Cable Interceptor (ECI) 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ECI-1588"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3222,7 +3253,9 @@ Beschrieb
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Kleine Box, welche bei einem 10/100 Base-TX Netzwerkanschluss dazwischen
+ geschaltet werden kann und benötigt somit weder Modifikationen an Hardware
+ oder zusätzlichen Treibern.
 \end_layout
 
 \end_inset
@@ -3242,7 +3275,7 @@ Funktionen
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Mit dem ECI wird ein Delay und falls gewünscht ein Frameverlust erzeugt.
 \end_layout
 
 \end_inset
@@ -3262,7 +3295,7 @@ Wird verwendet
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Ja
 \end_layout
 
 \end_inset
@@ -3282,7 +3315,8 @@ Grund
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Durch das Erzwingen von Frameverlust kann die Stabilität von PRP und dessen
+ Einfluss auf die Performance überprüft werden.
 \end_layout
 
 \end_inset
@@ -3294,6 +3328,30 @@ Grund
 
 
 \end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Weitere Hilfsmittel: Ethernet Cable Interceptor (ECI)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -3418,7 +3476,7 @@ Grund
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Weitere Hilfsmittel
+Weitere Hilfsmittel: vmstat
 \end_layout
 
 \end_inset
@@ -3435,8 +3493,28 @@ Weitere Hilfsmittel
 Verwendete Tools
 \end_layout
 
+\begin_layout Subsection
+Zuverlässigkeit der Messwerte
+\end_layout
+
+\begin_layout Subsubsection
+CPU
+\end_layout
+
+\begin_layout Subsubsection
+Arbeitsspeicher
+\end_layout
+
+\begin_layout Subsubsection
+Netzwerkbelastung
+\end_layout
+
 \begin_layout Section
 Ermittlung der Performance
+\end_layout
+
+\begin_layout Subsection
+Grundsätze und Rahmenbedingungen
 \end_layout
 
 \end_body
