@@ -1090,6 +1090,9 @@ Simulieren von Fehlern in der Datenübertragung
 \begin_layout Standard
 Es folgt eine Auflistung von Hilfsmitteln inklusive deren Beschrieb, Funktionen
  und Grund, warum es in dieser Arbeit verwendet oder nicht verwendet wird.
+ Dabei wurden zuvor Hilfsmittel ausgeschlossen, die entweder eine grafische
+ Oberfläche benötigen, kaum bekannt oder dessen aktuellste Version älter
+ als 2012 sind.
 \end_layout
 
 \begin_layout Subsection
@@ -1692,6 +1695,8 @@ Wird verwendet
 
 \begin_layout Plain Layout
 
+\color red
+Nein
 \end_layout
 
 \end_inset
@@ -1711,7 +1716,7 @@ Grund
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Erstellt regelmässig Berichte, welche in dieser Arbeit nicht von Nöten sind.
 \end_layout
 
 \end_inset
@@ -2545,6 +2550,8 @@ Wird verwendet
 
 \begin_layout Plain Layout
 
+\color green
+Ja
 \end_layout
 
 \end_inset
@@ -2564,7 +2571,11 @@ Grund
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Zwar wird die sysstat-Sammlung nicht komplett verwendet, jedoch erweisen
+ sich einzelne Komponenten wie z.B.
+ pidstat als nützlich.
+ Regelmässige Statistiken werden somit nicht angelegt, was die Verwendung
+ der Tools aber nicht ausschliesst.
 \end_layout
 
 \end_inset
@@ -2698,6 +2709,8 @@ Wird verwendet
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\color red
 Nein
 \end_layout
 
@@ -2718,7 +2731,8 @@ Grund
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Da tshark alle Funktionalitäten von tcpdump abdeckt und dazu noch mehr bietet,
+ wird tshark gegenüber tcpdump vorgezogen.
 \end_layout
 
 \end_inset
@@ -2737,6 +2751,171 @@ Grund
 \begin_layout Plain Layout
 Hilfsmittel zum Messen von Ressourcennutzung und Performanceparametern:
  tcpdump
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="20col%">
+<column alignment="left" valignment="top" width="70col%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+top 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "top"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Beschrieb
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Performance-Monitor, der über die Aktivität aller Prozesse bezüglich CPU,
+ RAM und Speicher berichten kann.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Funktionen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Der Ressourcenverbrauch kann in Echtzeit angezeigt werden.
+ Dazu wird ein 
+\begin_inset Quotes fld
+\end_inset
+
+Batch mode
+\begin_inset Quotes frd
+\end_inset
+
+ angeboten, mit dem es möglich ist, die Werte zu anderen Applikationen oder
+ Dateien zu leiten.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wird verwendet
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color green
+Ja
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Grund
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+top ist weit verbreitet und bietet die Informationen bezüglich Ressourcenverbrau
+ch, die für diese Arbeit benötigt werden.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Hilfsmittel zum Messen von Ressourcennutzung und Performanceparametern:
+ top
 \end_layout
 
 \end_inset
@@ -2851,6 +3030,8 @@ Wird verwendet
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\color green
 Ja
 \end_layout
 
@@ -2871,6 +3052,16 @@ Grund
 \begin_inset Text
 
 \begin_layout Plain Layout
+Mit tshark sind gegenüber tcpdump einiges mehr an Filtermöglichkeiten gegeben.
+ Des Weiteren wird PRP offiziell von den tshark-/Wireshark-Entwicklern unterstüt
+zt.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "PRP-Wireshark_Wiki"
+
+\end_inset
+
 
 \end_layout
 
@@ -3229,7 +3420,7 @@ Name
 Ethernet Cable Interceptor (ECI) 
 \begin_inset CommandInset citation
 LatexCommand cite
-key "ECI-1588"
+key "ECI-Manual,ECI-1588"
 
 \end_inset
 
@@ -3276,6 +3467,7 @@ Funktionen
 
 \begin_layout Plain Layout
 Mit dem ECI wird ein Delay und falls gewünscht ein Frameverlust erzeugt.
+ Man kann gezielt reproduzierbare Störungen in einem Netzwerk generieren.
 \end_layout
 
 \end_inset
@@ -3295,6 +3487,8 @@ Wird verwendet
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\color green
 Ja
 \end_layout
 
@@ -3495,6 +3689,14 @@ Verwendete Tools
 
 \begin_layout Subsection
 Zuverlässigkeit der Messwerte
+\end_layout
+
+\begin_layout Standard
+Die Zuverlässigkeit der Messwerte wird überprüft, indem Messungen mit unterschie
+dlichen Tools nacheinander bei den gleichen Bedingungen ausgeführt.
+ So wird vermieden, dass sich die Tools für die Messungen gegenseitig beeinfluss
+en.
+ Die Bedingungen werden in den folgenden Kapiteln beschrieben.
 \end_layout
 
 \begin_layout Subsubsection
