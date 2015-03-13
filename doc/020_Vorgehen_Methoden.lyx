@@ -83,6 +83,13 @@ Vorgehen / Methoden
 
 \begin_layout Section
 Aufbau der Testumgebung
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Aufbau-der-Testumgebung"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -1424,6 +1431,13 @@ Hilfsmittel zur Generierung von Netzwerktraffic: iperf3
 \end_inset
 
 
+\begin_inset CommandInset label
+LatexCommand label
+name "iperf3"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2449,9 +2463,8 @@ Beschrieb
 \begin_inset Text
 
 \begin_layout Plain Layout
-sysstat ist eine Sammlung an Tools, um die Systemleistung und -Aktivitäten
- zu überwachen.
- Die Sammlung beinhaltet folgende Applikationen:
+Sammlung an Tools, um die Systemleistung und -Aktivitäten zu überwachen,
+ welche folgende Applikationen beinhaltet:
 \end_layout
 
 \begin_layout Itemize
@@ -2823,8 +2836,8 @@ Beschrieb
 \begin_inset Text
 
 \begin_layout Plain Layout
-Performance-Monitor, der über die Aktivität aller Prozesse bezüglich CPU,
- RAM und Speicher berichten kann.
+Performance-Monitor, der über die Aktivität aller Prozesse bezüglich CPU
+ und RAM berichten kann.
 \end_layout
 
 \end_inset
@@ -3126,7 +3139,14 @@ Name
 \begin_layout Plain Layout
 
 \series bold
-valgrind
+valgrind 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "valgrind"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3146,7 +3166,8 @@ Beschrieb
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+valgrind dient dazu, Linux-Applikationen zu debuggen und u.a.
+ Memory-Leaks zu entdecken.
 \end_layout
 
 \end_inset
@@ -3166,7 +3187,9 @@ Funktionen
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Stellt automatisch Fehler bezüglich Memory-Management und Threading fest.
+ Dazu macht valgrind ein detailliertes Profiling einer Applikation, um bei
+ der Suche nach Bottlenecks zu helfen.
 \end_layout
 
 \end_inset
@@ -3187,6 +3210,8 @@ Wird verwendet
 
 \begin_layout Plain Layout
 
+\color red
+Nein
 \end_layout
 
 \end_inset
@@ -3206,7 +3231,7 @@ Grund
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Es ist nicht Teil dieser Arbeit, nach Fehlern in der Software zu finden.
 \end_layout
 
 \end_inset
@@ -3274,7 +3299,14 @@ Name
 \begin_layout Plain Layout
 
 \series bold
-arping
+arping 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "arping"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3294,7 +3326,7 @@ Beschrieb
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Arbeitet ähnlich wie ping, jedoch auf dem Ethernet-Layer.
 \end_layout
 
 \end_inset
@@ -3314,7 +3346,8 @@ Funktionen
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Mittels arping können ARP-Requests versendet werden.
+ Dabei wird angezeigt, wie lange für eine Antwort benötigt wurde.
 \end_layout
 
 \end_inset
@@ -3335,6 +3368,8 @@ Wird verwendet
 
 \begin_layout Plain Layout
 
+\color green
+Ja
 \end_layout
 
 \end_inset
@@ -3354,7 +3389,7 @@ Grund
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Anhand von arping kann das Netzwerk auf Layer 2 untersucht werden.
 \end_layout
 
 \end_inset
@@ -3573,7 +3608,14 @@ Name
 \begin_layout Plain Layout
 
 \series bold
-vmstat
+vmstat 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "vmstat"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3593,7 +3635,8 @@ Beschrieb
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Zeigt Informationen zu u.a.
+ Prozessen, Arbeitsspeicher, Traps, etc.
 \end_layout
 
 \end_inset
@@ -3613,7 +3656,8 @@ Funktionen
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Stellt Durchschnitte seit dem letzten Neustart oder innerhalb einer bestimmten
+ Zeitspanne dar.
 \end_layout
 
 \end_inset
@@ -3634,6 +3678,8 @@ Wird verwendet
 
 \begin_layout Plain Layout
 
+\color red
+Nein
 \end_layout
 
 \end_inset
@@ -3653,7 +3699,7 @@ Grund
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Mittels vmstat können keine Prozesse einzeln analysiert werden.
 \end_layout
 
 \end_inset
@@ -3687,6 +3733,244 @@ Weitere Hilfsmittel: vmstat
 Verwendete Tools
 \end_layout
 
+\begin_layout Standard
+In diesem Kapitel werden die in dieser Arbeit verwendeten Tools aufgelistet.
+ Dazu wird aufgeführt welche Aufgabe von welcher Applikation übernommen
+ wird.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="9" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="20col%">
+<column alignment="left" valignment="top" width="70col%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Tool
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Aufgabe in dieser Arbeit
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+arping
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Überprüfen der Erreichbarkeit der Computer im Netzwerk auf Layer 2 mittels
+ ARP
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ECI
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Erzeugen von Störungen im Netzwerk
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+iperf3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Generieren und Versenden von Netzwerktraffic über TCP und UDP
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pidstat (sysstat)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Analyse des PRP-1 Stacks (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Software-Implementation"
+
+\end_inset
+
+) im Betrieb
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pmap
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Festellen des Speichers, der vom PRP-1 Stack beansprucht wird
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+strace
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Anzeigen von System-Calls des PRP-1 Stacks, um dessen Verhalten nach zu
+ vollziehen
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+top
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Performance des PRP-1 Stacks bezüglich CPU und RAM überwachen
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+tshark
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Festhalten und Analysieren des Netzwerkverkehrs
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Verwendete Tools und ihre Aufgaben in dieser Arbeit
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Zuverlässigkeit der Messwerte
 \end_layout
@@ -3701,10 +3985,275 @@ en.
 
 \begin_layout Subsubsection
 CPU
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:CPU"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Auf einem der DANs wird iperf3 (siehe Tabelle 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "iperf3"
+
+\end_inset
+
+) als Server und auf einem weiteren DAN als Client ausgeführt.
+ Es wird mit unterschiedlichen Tools gemessen, was der iperf3-Client von
+ der CPU beansprucht.
+ Danach werden die Resultate verglichen, um aufzuzeigen, welches Tool glaubwürdi
+ge Messwerte liefert.
+\end_layout
+
+\begin_layout Standard
+Auf dem DAN 
+\begin_inset Quotes fld
+\end_inset
+
+srv02
+\begin_inset Quotes frd
+\end_inset
+
+ wird der Server mit dem Befehl 
+\family typewriter
+iperf3 -s 
+\family default
+ausgeführt, während der Client auf 
+\begin_inset Quotes fld
+\end_inset
+
+srv01
+\begin_inset Quotes frd
+\end_inset
+
+ mit dem Befehl 
+\family typewriter
+iperf3 -c 192.168.0.2 -d -n 200M 
+\family default
+gestartet wird.
+ Mit dem Client werden hier 200 Megabytes an 
+\begin_inset Quotes fld
+\end_inset
+
+srv02
+\begin_inset Quotes frd
+\end_inset
+
+ via TCP übertragen (dabei wird der Client als Deamon ausgeführt).
+ Während der Übertragung wird mit den folgenden Applikationen die beanspruchte
+ CPU-Leistung gemessen:
+\end_layout
+
+\begin_layout Itemize
+pidstat
+\end_layout
+
+\begin_layout Itemize
+top
+\end_layout
+
+\begin_layout Standard
+Eine Messung wird jeweils 5 und 10 Sekunden nach dem Start des Clients durchgefü
+hrt.
+ Darauf folgt eine weitere Messung mit einer anderen Applikation, wobei
+ der Client neu gestartet und wieder jeweils 5 und 10 Sekunden nach dessen
+ Start gemessen wird.
+\end_layout
+
+\begin_layout Standard
+Für jede Applikation wurde jeweils ein Bash-Script erstellt, bei dem die
+ Ausgabe in eine Datei weitergeleitet wird.
+ Diese Scripts werden nacheinander ausgeführt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,numbers=left,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#!/bin/sh
+\end_layout
+
+\begin_layout Plain Layout
+
+(iperf3 -c 192.168.0.2 -d -n 200M &)
+\end_layout
+
+\begin_layout Plain Layout
+
+sleep 5
+\end_layout
+
+\begin_layout Plain Layout
+
+# execute pidstat 2 times with a 5 second interval
+\end_layout
+
+\begin_layout Plain Layout
+
+# report cpu utilization for the command "iperf3"
+\end_layout
+
+\begin_layout Plain Layout
+
+pidstat -u -C "iperf3" -h 5 2 > results/pidstat.txt
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Bash-Script zur Zuverlässigkeitsüberprüfung der CPU-Messungen von pidstat
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,numbers=left,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#!/bin/sh
+\end_layout
+
+\begin_layout Plain Layout
+
+(iperf3 -c 192.168.0.2 -d -n 200M &)
+\end_layout
+
+\begin_layout Plain Layout
+
+echo "" > results/top.txt
+\end_layout
+
+\begin_layout Plain Layout
+
+# execute top 2 times with a 5 second interval
+\end_layout
+
+\begin_layout Plain Layout
+
+# run top in "Batch mode" and watch iperf3
+\end_layout
+
+\begin_layout Plain Layout
+
+while kill -0 $(pgrep iperf3) >/dev/null 2>&1; 
+\end_layout
+
+\begin_layout Plain Layout
+
+do
+\end_layout
+
+\begin_layout Plain Layout
+
+	top -b -S -n 1 -p $(pgrep iperf3) >> results/top.txt
+\end_layout
+
+\begin_layout Plain Layout
+
+	sleep 0.2
+\end_layout
+
+\begin_layout Plain Layout
+
+done
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Bash-Script zur Zuverlässigkeitsüberprüfung der CPU-Messungen von top
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Des Weiteren wird eine eigene Anwendung in C programmiert, bei der die CPU-Last
+ berechnet wird, um die Ergebnisse von pidstat und top verifizieren zu können.
+ Diese Funktioniert wie folgt:
+\end_layout
+
+\begin_layout Standard
+Folgende Werte werden von pidstat, top und der eigenen Anwendung ausgegeben:
+\end_layout
+
+\begin_layout Standard
+pidstat
+\end_layout
+
+\begin_layout Standard
+top
+\end_layout
+
+\begin_layout Standard
+Eigene Anwendung
 \end_layout
 
 \begin_layout Subsubsection
 Arbeitsspeicher
+\end_layout
+
+\begin_layout Standard
+Wie im vorherigen Kapitel (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:CPU"
+
+\end_inset
+
+) wird wieder iperf3 mit den selben Parametern ein Mal als Server und ein
+ Mal als Client auf unterschiedlichen DANs ausgeführt und beim Client gemessen.
+ Während der Übertragung wird mit den folgenden Applikationen die Arbeitsspeiche
+rnutzung gemessen:
+\end_layout
+
+\begin_layout Itemize
+pidstat
+\end_layout
+
+\begin_layout Itemize
+pmap
+\end_layout
+
+\begin_layout Itemize
+top
+\end_layout
+
+\begin_layout Standard
+Eine Messung wird jeweils 5 und 10 Sekunden nach dem Start des Clients durchgefü
+hrt.
+ Darauf folgt eine weitere Messung mit einer anderen Applikation, wobei
+ der Client neu gestartet und wieder jeweils 5 und 10 Sekunden nach dessen
+ Start gemessen wird.
+\end_layout
+
+\begin_layout Standard
+Für jede Applikation wurde jeweils ein Bash-Script erstellt, bei dem die
+ Ausgabe in eine Datei weitergeleitet wird.
+ Diese Scripts werden nacheinander ausgeführt.
 \end_layout
 
 \begin_layout Subsubsection
@@ -3715,8 +4264,266 @@ Netzwerkbelastung
 Ermittlung der Performance
 \end_layout
 
+\begin_layout Standard
+In diesem Kapitel wird erläutert, welche Aspekte mit welchen Mitteln und
+ welcher Konfiguration getestet werden.
+ Die Resultate der Tests werden in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Resultate"
+
+\end_inset
+
+ aufgeführt und analysiert.
+\end_layout
+
 \begin_layout Subsection
 Grundsätze und Rahmenbedingungen
+\end_layout
+
+\begin_layout Standard
+Für die Ermittlung und Analyse der Performance werden folgende Grundsätze
+ und Rahmenbedingungen festgelegt:
+\end_layout
+
+\begin_layout Itemize
+Die ausgeführten Tests müssen reproduzier- und nachvollziehbar sein.
+ Falls Zufallswerte verwendet werden, werden diese im Voraus generiert,
+ gespeichert und für alle betroffenen Tests verwendet.
+\end_layout
+
+\begin_layout Itemize
+Änderungen an der bestehenden Konfiguration sind vollständig dokumentiert.
+ Ist bei einem Test keine Änderung an der Konfiguration aufgeführt, ist
+ vom Ursprungszustand (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Aufbau-der-Testumgebung"
+
+\end_inset
+
+) auszugehen.
+\end_layout
+
+\begin_layout Itemize
+Wenn ein Test in verschiedenen Variationen ausgeführt wird, wird jeder dieser
+ Tests mit den selben Mitteln durchgeführt und überprüft.
+\end_layout
+
+\begin_layout Itemize
+Wird bei einem Test eigens entwickelte Software verwendet, so wird diese
+ im Test erläutert oder darauf verwiesen.
+ Der Quellcode der jeweiligen Software liegt dieser Arbeit bei.
+\end_layout
+
+\begin_layout Standard
+Um feststellen zu können, ob sich auf eine längere Zeit ein bestimmtes Verhalten
+ ändert, werden die Tests, wenn nötig, in verschiedenen Zeitspannen durchgeführt.
+ Dabei gibt es 3 verschiedene Zeitspannen: Ultrakurzzeit-, Kurzzeit und
+ Langzeit-Tests.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="20col%">
+<column alignment="left" valignment="top" width="45col%">
+<column alignment="left" valignment="top" width="25col%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Dauer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Dauer 
+\begin_inset Formula $t$
+\end_inset
+
+ (math.)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ultrakurzzeit
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+kleiner als oder genau 60 Sekunden
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $t\leq60s$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kurzzeit
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+grösser als 60 Sekunden und kleiner als oder genau 5 Minuten
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $60s<t\leq5min$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Langzeit
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+grösser als 5 Minuten und kleiner als oder genau 1 Stunde
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Formula $5min<t\leq1h$
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Zeitspannen, in denen die Tests, wenn nötig, durchgeführt werden.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Performance im PRP-Netzwerk
+\end_layout
+
+\begin_layout Subsection
+Performance ohne PRP
+\end_layout
+
+\begin_layout Subsection
+Effekt von Laufzeitunterscheidungen zwischen Netzwerk A und B
+\end_layout
+
+\begin_layout Subsection
+Zeitweiser Ausfall eines Netzwerkpfades
+\end_layout
+
+\begin_layout Subsection
+Abhängigkeit vom verwendeten Protokoll
+\end_layout
+
+\begin_layout Subsection
+Einfluss nicht entfernter Duplikate auf Funktion und Performance
+\end_layout
+
+\begin_layout Subsection
+Auswirkungen, wenn Frames out-of-sequence ankommen
 \end_layout
 
 \end_body

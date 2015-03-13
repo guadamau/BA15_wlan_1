@@ -105,7 +105,186 @@ name "sec:Offizielle-Aufgabenstellung"
 \end_layout
 
 \begin_layout Standard
-Lorem ipsum
+\noindent
+Nachfolgend ist die offizielle Aufgabenstellung 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Aufgabenstellung"
+
+\end_inset
+
+ platziert, welche den Autoren am 09.02.2015 zugestellt wurde:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure}[htbp]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fbox{
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics[trim=60 60 60 110,page=1,scale=0.7]{_pdf/BA_Performance_PRP_Aufga
+benstellung.pdf}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Offizielle Aufgabenstellung, Seite 1}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure}[htbp]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fbox{
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics[trim=60 60 60 60,page=2,scale=0.85]{_pdf/BA_Performance_PRP_Aufga
+benstellung.pdf}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Offizielle Aufgabenstellung, Seite 2}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{figure}[htbp]
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+centering   
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fbox{
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+includegraphics[trim=60 60 60 60,page=3,scale=0.85]{_pdf/BA_Performance_PRP_Aufga
+benstellung.pdf}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+caption{Offizielle Aufgabenstellung, Seite 3}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{figure}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Chapter
