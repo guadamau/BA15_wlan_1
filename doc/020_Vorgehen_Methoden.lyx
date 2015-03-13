@@ -4138,7 +4138,7 @@ status open
 
 \begin_layout Plain Layout
 
-echo "" > results/top.txt
+sleep 5
 \end_layout
 
 \begin_layout Plain Layout
@@ -4153,27 +4153,11 @@ echo "" > results/top.txt
 
 \begin_layout Plain Layout
 
-while kill -0 $(pgrep iperf3) >/dev/null 2>&1; 
+top -b -S -n 2 -d 5 -p $(pgrep iperf3) > results/top.txt
 \end_layout
 
 \begin_layout Plain Layout
 
-do
-\end_layout
-
-\begin_layout Plain Layout
-
-	top -b -S -n 1 -p $(pgrep iperf3) >> results/top.txt
-\end_layout
-
-\begin_layout Plain Layout
-
-	sleep 0.2
-\end_layout
-
-\begin_layout Plain Layout
-
-done
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -4245,15 +4229,433 @@ top
 \begin_layout Standard
 Eine Messung wird jeweils 5 und 10 Sekunden nach dem Start des Clients durchgefü
 hrt.
- Darauf folgt eine weitere Messung mit einer anderen Applikation, wobei
- der Client neu gestartet und wieder jeweils 5 und 10 Sekunden nach dessen
- Start gemessen wird.
+ Die Messungen werden alle zur gleichen Zeit gestartet.
 \end_layout
 
 \begin_layout Standard
 Für jede Applikation wurde jeweils ein Bash-Script erstellt, bei dem die
  Ausgabe in eine Datei weitergeleitet wird.
- Diese Scripts werden nacheinander ausgeführt.
+ Das erste der folgenden Skripts wird ausgeführt, welches iperf3 startet
+ und die Messungen gleichzeitig ausführen lässt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,numbers=left,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#!/bin/sh
+\end_layout
+
+\begin_layout Plain Layout
+
+(iperf3 -c 192.168.0.2 -d -n 200M &)
+\end_layout
+
+\begin_layout Plain Layout
+
+(./pidstat.sh &)
+\end_layout
+
+\begin_layout Plain Layout
+
+(./pmap.sh &)
+\end_layout
+
+\begin_layout Plain Layout
+
+(./top.sh &)
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Bash-Script zur Zuverlässigkeitsüberprüfung der Arbeitsspeicher-Messungen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,numbers=left,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#!/bin/sh
+\end_layout
+
+\begin_layout Plain Layout
+
+sleep 5
+\end_layout
+
+\begin_layout Plain Layout
+
+pidstat -r -C "iperf3" -h > results/pidstat.txt
+\end_layout
+
+\begin_layout Plain Layout
+
+sleep 5
+\end_layout
+
+\begin_layout Plain Layout
+
+pidstat -r -C "iperf3" -h >> results/pidstat.txt 
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Bash-Script zur Zuverlässigkeitsüberprüfung der Arbeitsspeicher-Messungen
+ von pidstat (pidstat.sh)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,numbers=left,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#!/bin/sh
+\end_layout
+
+\begin_layout Plain Layout
+
+sleep 5
+\end_layout
+
+\begin_layout Plain Layout
+
+pmap -x $(pgrep iperf3) > results/pmap.txt
+\end_layout
+
+\begin_layout Plain Layout
+
+sleep 5
+\end_layout
+
+\begin_layout Plain Layout
+
+pmap -x $(pgrep iperf3) >> results/pmap.txt
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Bash-Script zur Zuverlässigkeitsüberprüfung der Arbeitsspeicher-Messungen
+ von pmap (pmap.sh)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,numbers=left,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#!/bin/sh
+\end_layout
+
+\begin_layout Plain Layout
+
+sleep 5
+\end_layout
+
+\begin_layout Plain Layout
+
+top -b -n 2 -d 5.0 -p $(pgrep iperf3) > results/top.txt 
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Bash-Script zur Zuverlässigkeitsüberprüfung der Arbeitsspeicher-Messungen
+ von (top.sh)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In dieser Arbeit werden die Werte VSZ (Virtual Memory Size) und RSS (Resident
+ Set Size) betrachtet, um feststellen zu können, wie viel Speicher der Prozess
+ allgemein und wie viel er davon im Arbeitsspeicher benötigt.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "RSS_VSZ"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Folgende Werte werden von pidstat, pmap und top ausgegeben:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="5">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="20col%">
+<column alignment="left" valignment="top" width="15col%">
+<column alignment="left" valignment="top" width="15col%">
+<column alignment="left" valignment="top" width="15col%">
+<column alignment="left" valignment="top" width="15col%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Tool
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+VSZ (5s nach Start)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+VSZ (10s nach Start)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RSS (5s nach Start)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+RSS (10s nach Start)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pidstat
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2084 Kilobytes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2084 Kilobytes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+700 Kilobytes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+700 Kilobytes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+top
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2084 Kilobytes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2084 Kilobytes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+700 Kilobytes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+700 Kilobytes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Zuverlässigkeitsüberprüfung der Arbeitsspeicher-Messungen von pidstat und
+ top
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+pmap gibt keine konkreten VSZ- / RSS-Werte zurück, jedoch haben die Autoren
+ dieser Arbeit den Grund zur Annahme, dass aus den Ausgabewerten von pmap
+ die VSZ- und RSS-Werte berechnet werden können, weil pmap die Werte direkt
+ aus dem Pseudo-File-System proc ausliest, in welchem die Werte vom Kernel
+ direkt aufgeführt werden.
+ Aus Prioritätsgründen wird auf die Berechnung anhand der Werte von pmap
+ in dieser Arbeit nicht weiter eingegangen.
+\end_layout
+
+\begin_layout Standard
+Aus den Ergebnissen von pidstat und top lässt sich sagen, dass sich die
+ Arbeitsspeichernutzung von iperf3 innerhalb von 5 Sekunden während konstantem
+ Senden nicht verändert.
+ Des Weiteren werden die Ausgabewerte von pidstat und top aufgrund ihrer
+ Übereinstimmung als zuverlässig eingestuft.
 \end_layout
 
 \begin_layout Subsubsection
@@ -4524,6 +4926,10 @@ Einfluss nicht entfernter Duplikate auf Funktion und Performance
 
 \begin_layout Subsection
 Auswirkungen, wenn Frames out-of-sequence ankommen
+\end_layout
+
+\begin_layout Subsection
+Einluss von Offload-Mechanismen
 \end_layout
 
 \end_body

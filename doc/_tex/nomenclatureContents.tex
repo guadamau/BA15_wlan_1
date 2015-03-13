@@ -20,6 +20,8 @@
 \newcommand{\memorymapdesc}{Einteilung in verschiedene Segmente. Die kleinste adressierbare Einheit eines Segments ist ein Byte.}
 \newcommand{\syscalldesc}{Anfrage einer Applikation an den Kernel des Betriebssystems.}
 \newcommand{\ecidesc}{\textbf{Ethernet Cable Interceptor}. Gerät für gezielte und reproduzierbare Störungen im Netzwerk, das bei einer Netzverbindung dazwischen geschaltet wird.}
+\newcommand{\vszdesc}{\textbf{Virtual Memory Size}. Beschreibt den gesamten Speicher, der von einem Prozess benutzt wird, inklusive dem Speicher ausserhalb vom RAM und Shared-Libraries, die der Prozess verwendet.}
+\newcommand{\rssdesc}{\textbf{Resident Set Size}. Beschreibt wie viel Speicher ein Prozess alloziert hat, der im Arbeitsspeicher ist. Zur RSS gehören zudem der Speicher, den Shared-Libraries des Prozesses im RAM belegen und den gesamten Stack- und Heap-Memory.}
 
 
 % *****************************************************************************
@@ -40,3 +42,5 @@
 \nomenclature{Memory Map}{\memorymapdesc}
 \nomenclature{System-Call}{\syscalldesc}
 \nomenclature{ECI}{\ecidesc}
+\nomenclature{VSZ}{\vszdesc}
+\nomenclature{RSS}{\rssdesc}
