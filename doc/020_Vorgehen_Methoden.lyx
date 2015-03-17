@@ -4662,6 +4662,15 @@ Aus den Ergebnissen von pidstat und top lässt sich sagen, dass sich die
 Netzwerkbelastung
 \end_layout
 
+\begin_layout Standard
+Im Kapitel zur Zuverlässigkeitsüberprüfungen der CPU-Messungen wird eine
+ eigens entwickelte Applikation erwähnt, mit der die CPU-Last berechnet
+ wird.
+ In der gleichen Applikation wurde die Möglichkeit implementiert, die Belastung
+ des Netzwerks zu messen.
+ Dieser Mechanismus läuft wie folgt ab:
+\end_layout
+
 \begin_layout Section
 Ermittlung der Performance
 \end_layout
@@ -4900,6 +4909,75 @@ Zeitspannen, in denen die Tests, wenn nötig, durchgeführt werden.
 
 \end_layout
 
+\begin_layout Standard
+Des Weiteren werden für die Generierung der Netzwerklast 3 verschiedene
+ Typen angewandt:
+\end_layout
+
+\begin_layout Standard
+Der Netzwerkverkehr besteht...
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+...nur aus kleinen Frames
+\series default
+ (64 Bytes + 6 Bytes RCT = 70 Bytes, wenn ein VLAN-Tag gebraucht wird 74
+ Bytes 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "IEC_62439-3_2015"
+
+\end_inset
+
+)
+\begin_inset Newline newline
+\end_inset
+
+Hierbei handelt es sich um einen der schlimmsten Fälle, da weitaus weniger
+ Zeit für die Duplikaterkennung vorhanden ist, bis das nächste Frame ankommt.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+...nur aus grossen Frames
+\series default
+ (Mit RCT 1528 Bytes, im PRP-1-Standard wird angenommen, dass die meisten
+ Ethernet-Controller diese 
+\begin_inset Quotes fld
+\end_inset
+
+Oversize
+\begin_inset Quotes frd
+\end_inset
+
+-Grösse unterstützen)
+\begin_inset Newline newline
+\end_inset
+
+Der zweite der schlimmsten Fälle, da permanent grosse Daten verarbeitet
+ werden müssen.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+...aus Frames mit zufälliger Grösse
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
+Dieser Netzwerkfluss stellt die Mitte zwischen den oberen beiden Typen dar.
+ Es wird im Voraus eine grosse Liste mit zufälligen Zahlen generiert, die
+ sich zwischen der kleinst- und grösstmöglichen Framegrösse befinden.
+ Diese Liste wird bei der Generierung der Netzwerklast stets von Oben nach
+ Unten abgearbeitet, um so zufällige Grössen, aber auch Reproduzierbarkeit
+ garantieren zu können.
+\end_layout
+
 \begin_layout Subsection
 Performance im PRP-Netzwerk
 \end_layout
@@ -4918,6 +4996,10 @@ Zeitweiser Ausfall eines Netzwerkpfades
 
 \begin_layout Subsection
 Abhängigkeit vom verwendeten Protokoll
+\end_layout
+
+\begin_layout Standard
+TCP, UDP, Ethernet
 \end_layout
 
 \begin_layout Subsection

@@ -405,8 +405,16 @@ lock
 sudo usermod -a -G lock $USERNAME
 \end_layout
 
-\begin_layout Standard
-jh
+\begin_layout Chapter
+Quellcode
+\end_layout
+
+\begin_layout Section
+meas - Messung von CPU- und Netzwerk-Last
+\end_layout
+
+\begin_layout Section
+ethersend - Versenden von Ethernet-Frames
 \end_layout
 
 \end_body
