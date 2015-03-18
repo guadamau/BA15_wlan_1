@@ -113,6 +113,22 @@ Die Testumgebung besteht aus 3 Servern mit je 3 Netzwerkanschlüssen.
  das der Datenverkehr, der über die PRP-Schnittstellen transportiert wird,
  durch administrative Netzwerkprotokolle beeinflusst wird.
  Dies soll einer Verfälschung der Messergebnisse vorbeugen.
+ Sämtliche Offload-Mechanismen (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Offload-Mechanismen"
+
+\end_inset
+
+) sind deaktiviert, wobei dessen Einflüsse später untersucht werden (siehe
+ Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Einluss-von-Offload-Mechanismen"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -4944,8 +4960,8 @@ Hierbei handelt es sich um einen der schlimmsten Fälle, da weitaus weniger
 \series bold
 ...nur aus grossen Frames
 \series default
- (Mit RCT 1528 Bytes, im PRP-1-Standard wird angenommen, dass die meisten
- Ethernet-Controller diese 
+ (Mit RCT 1528 Bytes, im PRP-1-Standard wird angenommen, dass die jede Netzwerkk
+omponente diese von ISO/IEC/IEEE 8802-3:2014 vorhergesehene 
 \begin_inset Quotes fld
 \end_inset
 
@@ -4953,7 +4969,14 @@ Oversize
 \begin_inset Quotes frd
 \end_inset
 
--Grösse unterstützen)
+-Grösse unterstützt 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "IEC_62439-3_2015"
+
+\end_inset
+
+)
 \begin_inset Newline newline
 \end_inset
 
@@ -4979,22 +5002,71 @@ Dieser Netzwerkfluss stellt die Mitte zwischen den oberen beiden Typen dar.
 \end_layout
 
 \begin_layout Subsection
+Wie wird gemessen?
+\end_layout
+
+\begin_layout Standard
+Die Messungen werden in Form von Bash-Scripts und C-Applikationen vorbereitet
+ (Quellcode siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Quellcode"
+
+\end_inset
+
+), um automatisiert ausgeführt werden zu können.
+\end_layout
+
+\begin_layout Standard
+Der Vorgang einer Messung lautet im Groben wie folgt:
+\end_layout
+
+\begin_layout Enumerate
+Starten der Netzwerkgenerierung auf einem Rechner, sodass sie etwas länger
+ als die gewählte Zeitspanne (Ultrakurz-, Kurz- oder Langzeit) Netzwerkverkehr
+ stattfindet.
+\end_layout
+
+\begin_layout Enumerate
+Kurz darauf werden gleichzeitig die Messungen auf allen 3 Servern gestartet.
+ Zum Startzeitpunkt der Messungen befindet man sich bereits an einem Punkt,
+ an dem sich ein konstanter Zustand (Steady State) eingependelt hat.
+\end_layout
+
+\begin_layout Enumerate
+Während der gewählten Zeitspanne wird die CPU-Last, der Arbeitsspeicherverbrauch
+ und die Netzwerkbelastung gemessen.
+ Diese Daten werden für eine spätere Analyse ausgelagert.
+\end_layout
+
+\begin_layout Enumerate
+Ist die Zeitspanne abgelaufen, wird die Messung beendet.
+ Wichtig ist hier, dass erst nach dem Abschluss der Messung mit der Generierung
+ von Netzwerkverkehr aufgehört wird, da ansonsten die Messung nicht während
+ einem Steady State statt findet.
+\end_layout
+
+\begin_layout Subsection
+Szenarien
+\end_layout
+
+\begin_layout Subsubsection
 Performance im PRP-Netzwerk
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Performance ohne PRP
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Effekt von Laufzeitunterscheidungen zwischen Netzwerk A und B
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Zeitweiser Ausfall eines Netzwerkpfades
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Abhängigkeit vom verwendeten Protokoll
 \end_layout
 
@@ -5002,16 +5074,23 @@ Abhängigkeit vom verwendeten Protokoll
 TCP, UDP, Ethernet
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Einfluss nicht entfernter Duplikate auf Funktion und Performance
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Auswirkungen, wenn Frames out-of-sequence ankommen
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Subsubsection
 Einluss von Offload-Mechanismen
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Einluss-von-Offload-Mechanismen"
+
+\end_inset
+
+
 \end_layout
 
 \end_body

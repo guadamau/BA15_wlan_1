@@ -89,7 +89,49 @@ name "chap:Resultate"
 \end_layout
 
 \begin_layout Standard
-Lorem ipsum
+Es folgt ein ausgezeichnetes Histogramm, generiert aus einer Textdatei:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+histocpu{_histo/randomtest.hist}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Test Histogram
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body

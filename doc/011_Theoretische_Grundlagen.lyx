@@ -701,5 +701,16 @@ Beschrieb/Beispiel Hash-Tabelle ...
 PRP-1 stack
 \end_layout
 
+\begin_layout Section
+Offload-Mechanismen
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Offload-Mechanismen"
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document

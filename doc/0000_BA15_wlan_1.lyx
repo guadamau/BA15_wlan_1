@@ -136,6 +136,29 @@ keepaspectratio]{_img/InES.pdf}%
 }}}
 
 \usepackage{svg}
+\usepackage{etex}
+\usepackage{pgfplots}
+\usepackage[eulergreek]{sansmath}
+\pgfplotsset{
+compat=newest,
+tick label style = {font=\sansmath\sffamily},
+every axis label = {font=\sansmath\sffamily},
+legend style = {font=\sansmath\sffamily},
+label style = {font=\sansmath\sffamily}
+}
+
+\newcommand{\histocpu}[1]{\begin{tikzpicture} 
+\begin{axis}[
+xlabel = {CPU-Last in Prozent},
+xtick={0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1},
+xticklabels={0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1},
+ylabel = {Häufigkeit},
+ybar interval,
+width=.8\textwidth
+] 
+\addplot+[darkblue!20!black,fill=darkblue!80!white,hist={data=x}] file {#1}; 
+\end{axis} 
+\end{tikzpicture}}
 \end_preamble
 \options bibliography=totocnumbered,listof=totocnumbered
 \use_default_options true
