@@ -712,5 +712,433 @@ name "sec:Offload-Mechanismen"
 
 \end_layout
 
+\begin_layout Standard
+Bei den Offload-Mechanismen handelt es sich um Features, die von gewissen
+ Netzwerkkarten unterstützt werden und ein- oder ausgeschaltet werden können.
+ In diesem Kapitel wird erläutert, was die unterschiedlichen Mechanismen
+ im Groben bewirken.
+ Hierbei liegen lediglich die Offload-Mechanismen, die von der in dieser
+ Arbeit eingesetzen Hardware unterstützt werden, im Fokus.
+ 
+\end_layout
+
+\begin_layout Standard
+http://blog.securityonion.net/2011/10/when-is-full-packet-capture-not-full.html
+\end_layout
+
+\begin_layout Minisec
+RX/TX Checksum Offload
+\end_layout
+
+\begin_layout Standard
+Wird der Checksum-Offload-Mechanismus aktiviert, werden die IP-, TCP- und
+ UDP-Checksummen von der Netzwerkkarte anstelle dem Prozessor berechnet.
+ Dieser Mechanismus lässt sich individuell für das Senden und Empfangen
+ konfigurieren.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Checksum_and_Segmentation_Offloading"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Minisec
+Scatter-Gather
+\end_layout
+
+\begin_layout Standard
+.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Scatter_Gather"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Minisec
+TCP Segmenation Offload (TSO)
+\end_layout
+
+\begin_layout Standard
+Bei TSO wird die Belastung der CPU minimiert, indem der Netzwerkkarte grosse
+ Buffer angereiht werden, welche dann von dieser in separate Pakete gesplittet
+ wird (Segmentierung).
+ Ohne diese Segmentierung würde ein grosses TCP-Paket zuerst von der CPU
+ segmentiert und einzeln an die NIC gesendet werden.
+ Mit TSO ist es möglich, dass das grosse Frame direkt an die NIC gesendet
+ wird und diese dann die Segmentierung vornimmt.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "TSO_GSO"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Minisec
+UDP Fragmentation Offload (UFO)
+\end_layout
+
+\begin_layout Standard
+Funktioniert ähnlich wie TSO mit dem Unterschied, dass hier das Fragmentieren
+ von UDP-Datagrammen der NIC statt der CPU überlassen wird.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "UDP_Fragmentation_Offload"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Minisec
+Generic Segmentation Offload (GSO)
+\end_layout
+
+\begin_layout Standard
+Beim Generic Segmentation Offload handelt es sich um eine Generalisierung
+ von TSO (nicht auf TCP limitiert).
+ Hierbei wird ein grosses Frame nicht in der NIC segmentiert, sondern vor
+ der Übermittlungs-Routine im Treiber der Netzwerkkarte.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GRO,Generic_Segmentation_Offload,TSO_GSO"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Minisec
+Generic Recieve Offload (GRO)
+\end_layout
+
+\begin_layout Standard
+GRO ist ein Mechanismus, der die eintreffenden Fragmente in ein grösseres
+ Paket zusammenfasst, so dass vom Computer aus, der die Daten erhält, nicht
+ mehr die einzelnen Fragmente, sondern ein grosses Frame sichtbar ist.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GRO"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Zusammengefasst kann man sagen, dass die Mechanismen TSO, UFO, GSO und GRO
+ dazu dienen, mit einer MTU von 1500 Bytes umgehen zu können.
+ Mit der ansteigenden Geschwindigkeit der Netzwerkkarten werden durch die
+ Limitierung der MTU mehr Frames pro Sekunde erzeugt, was eine Steigerung
+ der CPU-Belastung mit sich bringt.
+ Damit diese Belastung nicht allzu stark ansteigt, werden durch die Offload-Mech
+anismen Operationen für die Frame-Behandlung auf die Netzwerkkarte ausgelagert.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GRO"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Minisec
+RX/TX VLAN Acceleration
+\end_layout
+
+\begin_layout Minisec
+RX ntuple Filters and Actions
+\end_layout
+
+\begin_layout Standard
+Dieses Feature ermöglicht es, dass die Netzwerkkarte Pakete je nach Filter
+ in verschiedene Queues einordnet.
+ So kann zum Beispiel einem Webserver eine eigene Recieve-Queue zugeordnet
+ werden.
+ Diese Filter und Queues können mit der Applikation ethtool konfiguriert
+ werden.
+ Es besteht die Möglichkeit unter anderem nach Protokoll, Quell- / Ziel-Adressen
+ (MAC oder IP), Portnummern, VLANs, etc.
+ zu filtern.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "ethtool,Scaling_Linux_NW_Stack"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Minisec
+RX Hashing Offload
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+inline false
+status open
+
+\begin_layout Plain Layout
+
+rx-checksumming: off [fixed] 
+\end_layout
+
+\begin_layout Plain Layout
+
+tx-checksumming: off 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	tx-checksum-ipv4: off [fixed] 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	tx-checksum-unneeded: off [fixed] 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	tx-checksum-ip-generic: off 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	tx-checksum-ipv6: off [fixed] 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	tx-checksum-fcoe-crc: off [fixed] 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	tx-checksum-sctp: off [fixed] 
+\end_layout
+
+\begin_layout Plain Layout
+
+scatter-gather: off 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	tx-scatter-gather: off 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	tx-scatter-gather-fraglist: off 
+\end_layout
+
+\begin_layout Plain Layout
+
+tcp-segmentation-offload: off 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	tx-tcp-segmentation: off 	
+\end_layout
+
+\begin_layout Plain Layout
+
+	tx-tcp-ecn-segmentation: off 
+\end_layout
+
+\begin_layout Plain Layout
+
+	tx-tcp6-segmentation: off 
+\end_layout
+
+\begin_layout Plain Layout
+
+udp-fragmentation-offload: off 
+\end_layout
+
+\begin_layout Plain Layout
+
+generic-segmentation-offload: off 
+\end_layout
+
+\begin_layout Plain Layout
+
+generic-receive-offload: off 
+\end_layout
+
+\begin_layout Plain Layout
+
+large-receive-offload: off [fixed] 
+\end_layout
+
+\begin_layout Plain Layout
+
+rx-vlan-offload: off [fixed] 
+\end_layout
+
+\begin_layout Plain Layout
+
+tx-vlan-offload: off [fixed] 
+\end_layout
+
+\begin_layout Plain Layout
+
+ntuple-filters: off [fixed] 
+\end_layout
+
+\begin_layout Plain Layout
+
+receive-hashing: off [fixed] 
+\end_layout
+
+\begin_layout Plain Layout
+
+highdma: off [fixed] 
+\end_layout
+
+\begin_layout Plain Layout
+
+rx-vlan-filter: off [fixed] 
+\end_layout
+
+\begin_layout Plain Layout
+
+vlan-challenged: off [fixed] 
+\end_layout
+
+\begin_layout Plain Layout
+
+tx-lockless: off [fixed] 
+\end_layout
+
+\begin_layout Plain Layout
+
+netns-local: off [fixed] 
+\end_layout
+
+\begin_layout Plain Layout
+
+tx-gso-robust: off [fixed] 
+\end_layout
+
+\begin_layout Plain Layout
+
+tx-fcoe-segmentation: off [fixed] 
+\end_layout
+
+\begin_layout Plain Layout
+
+fcoe-mtu: off [fixed] 
+\end_layout
+
+\begin_layout Plain Layout
+
+tx-nocache-copy: on 
+\end_layout
+
+\begin_layout Plain Layout
+
+loopback: off [fixed] 
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+rx tx sg tso ufo gso gro lro rxvlan txvlan rxhash
+\end_layout
+
+\begin_layout Plain Layout
+
+rx on|off               Specifies whether RX checksumming should be enabled.
+\end_layout
+
+\begin_layout Plain Layout
+
+tx on|off               Specifies whether TX checksumming should be enabled.
+\end_layout
+
+\begin_layout Plain Layout
+
+sg on|off               Specifies whether scatter-gather should be enabled.
+\end_layout
+
+\begin_layout Plain Layout
+
+tso on|off               Specifies whether TCP segmentation offload should
+ be enabled.
+\end_layout
+
+\begin_layout Plain Layout
+
+ufo on|off               Specifies whether UDP fragmentation offload should
+ be enabled
+\end_layout
+
+\begin_layout Plain Layout
+
+gso on|off               Specifies whether generic segmentation offload
+ should be enabled
+\end_layout
+
+\begin_layout Plain Layout
+
+gro on|off               Specifies whether generic receive offload should
+ be enabled
+\end_layout
+
+\begin_layout Plain Layout
+
+lro on|off               Specifies whether large receive offload should
+ be enabled
+\end_layout
+
+\begin_layout Plain Layout
+
+rxvlan on|off               Specifies whether RX VLAN acceleration should
+ be enabled
+\end_layout
+
+\begin_layout Plain Layout
+
+txvlan on|off               Specifies whether TX VLAN acceleration should
+ be enabled
+\end_layout
+
+\begin_layout Plain Layout
+
+ntuple on|off               Specifies whether Rx ntuple filters and actions
+ should be enabled
+\end_layout
+
+\begin_layout Plain Layout
+
+rxhash on|off               Specifies whether receive hashing offload should
+ be enabled 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
