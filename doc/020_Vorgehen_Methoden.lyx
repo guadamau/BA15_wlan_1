@@ -4745,7 +4745,7 @@ Wird bei einem Test eigens entwickelte Software verwendet, so wird diese
 
 \begin_layout Standard
 Um feststellen zu können, ob sich auf eine längere Zeit ein bestimmtes Verhalten
- ändert, werden die Tests, wenn nötig, in verschiedenen Zeitspannen durchgeführt.
+ ändert, werden die Tests in verschiedenen Zeitspannen durchgeführt.
  Dabei gibt es 3 verschiedene Zeitspannen: Ultrakurzzeit-, Kurzzeit und
  Langzeit-Tests.
 \end_layout
@@ -5028,15 +5028,27 @@ Starten der Netzwerkgenerierung auf einem Rechner, sodass sie etwas länger
 \end_layout
 
 \begin_layout Enumerate
-Kurz darauf werden gleichzeitig die Messungen auf allen 3 Servern gestartet.
- Zum Startzeitpunkt der Messungen befindet man sich bereits an einem Punkt,
- an dem sich ein konstanter Zustand (Steady State) eingependelt hat.
+Kurz darauf (ca.
+ 5 Sekunden) werden gleichzeitig die Messungen auf allen 3 Servern gestartet.
+ Zum Startzeitpunkt der Messungen befindet man so sich sicher bereits an
+ einem Punkt, an dem sich ein konstanter Zustand (Steady State) eingependelt
+ hat.
 \end_layout
 
 \begin_layout Enumerate
 Während der gewählten Zeitspanne wird die CPU-Last, der Arbeitsspeicherverbrauch
- und die Netzwerkbelastung gemessen.
+ und die Netzwerkbelastung der Netzwerkkarten-Treiber und des PRP-1 stacks
+ gemessen (wird PRP nicht verwendet so werden lediglich die Netzwerktreiber
+ analysiert).
  Diese Daten werden für eine spätere Analyse ausgelagert.
+\begin_inset Newline newline
+\end_inset
+
+Die Messungen werden so durchgeführt, dass innerhalb der Zeitspanne immer
+ nach einer bestimmten Periode die Durchschnitts-Werte dieser Periode gespeicher
+t werden.
+ So lässt sich schlussendlich sagen, wann Minimum und Maximum eingetreten
+ sind und wie viel der gesamte Durchschnitt beträgt.
 \end_layout
 
 \begin_layout Enumerate
@@ -5046,12 +5058,577 @@ Ist die Zeitspanne abgelaufen, wird die Messung beendet.
  einem Steady State statt findet.
 \end_layout
 
+\begin_layout Standard
+Solch eine Messung wird in jedem Szenario jeweils für jede Zeitspanne (Ultrakurz
+-, Kurz- und Langzeit) ein mal durchgeführt.
+ In den ermittelten Daten befinden sich Werte zur CPU-Last, Arbeitsspeicherbeleg
+ung und Netzwerkbelastung.
+\end_layout
+
+\begin_layout Standard
+Die Werte werden jeweils wie folgt berechnet:
+\end_layout
+
+\begin_layout Itemize
+CPU
+\begin_inset Newline newline
+\end_inset
+
+Innerhalb einer Zeitspanne wird aufgezeichnet, wie lange ein Prozess den
+ Prozessor beansprucht hat.
+ Diese Zeit wird durch die Dauer der Zeitspanne dividiert, was die CPU-Last
+ des Prozesses ergibt.
+\end_layout
+
+\begin_layout Itemize
+Arbeitsspeicher
+\begin_inset Newline newline
+\end_inset
+
+Eine Berechnung der Werte ist hier nicht nötig, die RSS- und VSZ-Werte können
+ direkt ausgelesen werden.
+ So kann ermittelt werden wie viel Speicher der NIC-Treiber und der PRP-1
+ stack beanspruchen und wie viel jeweils davon im Arbeitsspeicher und wie
+ viel ausgelagert ist.
+\end_layout
+
+\begin_layout Itemize
+BERECHNUNG NET
+\end_layout
+
+\begin_layout Standard
+Konkret werden folgende Werte je ein mal pro zu untersuchendes Objekt (Netzwerkk
+arten-Treiber und PRP-1 stack) pro Messung in einem Analyse-Ergebnis aufgeführt:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="25col%">
+<column alignment="left" valignment="top" width="55col%">
+<column alignment="left" valignment="top" width="10col%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Wert
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Bedeutung
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Einheit
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CPU-Last Minimum
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wert der Periode innerhalb der Zeitspanne, in der das untersuchte Objekt
+ am wenigsten Zeit vom Prozessor beansprucht hat.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CPU-Last Maximum
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wert der Periode innerhalb der Zeitspanne, in der das untersuchte Objekt
+ am meisten Zeit vom Prozessor beansprucht hat.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+CPU-Last Durchschnitt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Durchschnitt der Werte jeder Periode innerhalb der Zeitspanne.
+ Besagt wie viel der Zeit innerhalb der Zeitspanne die CPU für das untersuchte
+ Objekt aufgewendet hat.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+%
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Arbeitsspeicher RSS Minimum
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kleinster RSS-Wert unter allen Perioden, der vom untersuchten Objekt im
+ Arbeitsspeicher beansprucht wurde.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+KBytes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Arbeitsspeicher RSS Maximum
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Grösster RSS-Wert unter allen Perioden, der vom untersuchten Objekt im Arbeitssp
+eicher beansprucht wurde.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+KBytes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Arbeitsspeicher RSS Durchschnitt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Durchschnittlicher RSS-Wert über die gesamte Zeitspanne, der vom untersuchten
+ Objekt im Arbeitsspeicher beansprucht wurde.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+KBytes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Arbeitsspeicher VSZ Minimum
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kleinster VSZ-Wert unter allen Perioden, der vom untersuchten Objekt im
+ Arbeitsspeicher beansprucht wurde.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+KBytes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Arbeitsspeicher VSZ Maximum
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Grösster RSS-Wert unter allen Perioden, der vom untersuchten Objekt im Arbeitssp
+eicher beansprucht wurde.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+KBytes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Arbeitsspeicher VSZ Durchschnitt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Durchschnittlicher RSS-Wert über die gesamte Zeitspanne, der vom untersuchten
+ Objekt im Arbeitsspeicher beansprucht wurde.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+KBytes
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Beschreibung der Werte vom Ergebnis einer Messung: CPU und Arbeitsspeicher
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Da bei der Konfiguration der Endsysteme und der Netzwerkumgebung sichergestellt
+ wurde, dass nur gewollter Netzwerkverkehr besteht, kann man die Netzwerkbelastu
+ng pro Netzwerkinterface anstelle der zu untersuchenden Objekte festhalten.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="25col%">
+<column alignment="left" valignment="top" width="55col%">
+<column alignment="left" valignment="top" width="10col%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Wert
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Bedeutung
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Einheit
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Netzwerkbelastung Minimum
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Kleinste Netzwerkbelastung der Periode innerhalb der Zeitspanne, in der
+ das Netzwerkinterface am wenigsten das Netzwerk belastet hat.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte/s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Netzwerkbelastung Maximum
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Grösste Netzwerkbelastung der Periode innerhalb der Zeitspanne, in der das
+ Netzwerkinterface am meisten das Netzwerk belastet hat.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte/s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Netzwerkbelastung Durchschnitt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Durchschnittliche Netzwerkbelastung über die ganze Zeitspanne, in der gemessen
+ wurde.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Byte/s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Beschreibung der Werte vom Ergebnis einer Messung: Netzwerkbelastung pro
+ Netzwerkinterface
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Szenarien
 \end_layout
 
 \begin_layout Subsubsection
 Performance im PRP-Netzwerk
+\end_layout
+
+\begin_layout Standard
+001
 \end_layout
 
 \begin_layout Subsubsection
