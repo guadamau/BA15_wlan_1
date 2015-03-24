@@ -88,6 +88,10 @@ name "chap:Resultate"
 
 \end_layout
 
+\begin_layout Section
+Szenario 01: Performance im PRP-Netzwerk
+\end_layout
+
 \begin_layout Standard
 Es folgt ein ausgezeichnetes Histogramm, generiert aus einer Textdatei:
 \end_layout
@@ -132,6 +136,39 @@ Test Histogram
 \end_inset
 
 
+\end_layout
+
+\begin_layout Section
+Szenario 02: Performance ohne PRP
+\end_layout
+
+\begin_layout Section
+Szenario 03: Effekt von Laufzeitunterscheidungen zwischen Netzwerk A und
+ B
+\end_layout
+
+\begin_layout Section
+Szenario 04: Zeitweiser Ausfall eines Netzwerkpfades
+\end_layout
+
+\begin_layout Section
+Szenario 05: Abhängigkeit vom verwendeten Protokoll
+\end_layout
+
+\begin_layout Standard
+TCP, UDP, Ethernet
+\end_layout
+
+\begin_layout Section
+Szenario 06: Einfluss nicht entfernter Duplikate auf Funktion und Performance
+\end_layout
+
+\begin_layout Section
+Szenario 07: Auswirkungen, wenn Frames out-of-sequence ankommen
+\end_layout
+
+\begin_layout Section
+Szenario 08: Einluss von Offload-Mechanismen
 \end_layout
 
 \end_body

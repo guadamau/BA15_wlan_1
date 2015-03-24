@@ -5623,28 +5623,90 @@ Beschreibung der Werte vom Ergebnis einer Messung: Netzwerkbelastung pro
 Szenarien
 \end_layout
 
+\begin_layout Standard
+Es folgt eine kurze Aufführung der wichtigsten Eckdaten zum Ursprungszustand
+ der Testumgebung, welche detaillierter im Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Aufbau-der-Testumgebung"
+
+\end_inset
+
+ aufgeführt ist:
+\end_layout
+
+\begin_layout Itemize
+3x Server 
+\begin_inset Quotes fld
+\end_inset
+
+HP ProLiant DL140
+\begin_inset Quotes frd
+\end_inset
+
+ mit Debian, je an beiden Netzwerken des PRP-Netzes angeschlossen.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Jede Netzwerkkarte der Server, die am PRP-Netz angeschlossen ist, wird mit
+ 100 MBit/s betrieben.
+ Des Weiteren sind in diesen NICs jegliche Offload-Mechanismen (siehe Kapitel
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Offload-Mechanismen"
+
+\end_inset
+
+) deaktiviert.
+\end_layout
+
+\begin_layout Itemize
+Bei den IP-Adressen handelt es sich um manuell zugewiesene Adressen.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Sämtliche Applikationen und Skripts sind auf allen 3 Servern in der gleichen
+ Ausführung vorhanden.
+\end_layout
+
+\begin_layout Itemize
+Innerhalb des PRP-Netzes findet kein Netzwerkverkehr statt, sofern auf den
+ Servern keine Netzwerk-Applikationen ausgeführt werden.
+\end_layout
+
+\begin_layout Itemize
+Neben den 3 aufgeführten Servern und den 2 Switches befinden sich keine
+ weiteren Netzwerkkomponenten im PRP-Netz.
+\end_layout
+
 \begin_layout Subsubsection
-Performance im PRP-Netzwerk
+Szenario 01: Performance im PRP-Netzwerk
 \end_layout
 
 \begin_layout Standard
-001
+In diesem Szenario wird die ursprüngliche Konfiguration der Testumgebung
+ verwendet, um die Ergebnisse dieses Szenarios als Refernzpunkt für weitere
+ Messungen verwenden zu können.
 \end_layout
 
 \begin_layout Subsubsection
-Performance ohne PRP
+Szenario 02: Performance ohne PRP
 \end_layout
 
 \begin_layout Subsubsection
-Effekt von Laufzeitunterscheidungen zwischen Netzwerk A und B
+Szenario 03: Effekt von Laufzeitunterscheidungen zwischen Netzwerk A und
+ B
 \end_layout
 
 \begin_layout Subsubsection
-Zeitweiser Ausfall eines Netzwerkpfades
+Szenario 04: Zeitweiser Ausfall eines Netzwerkpfades
 \end_layout
 
 \begin_layout Subsubsection
-Abhängigkeit vom verwendeten Protokoll
+Szenario 05: Abhängigkeit vom verwendeten Protokoll
 \end_layout
 
 \begin_layout Standard
@@ -5652,15 +5714,15 @@ TCP, UDP, Ethernet
 \end_layout
 
 \begin_layout Subsubsection
-Einfluss nicht entfernter Duplikate auf Funktion und Performance
+Szenario 06: Einfluss nicht entfernter Duplikate auf Funktion und Performance
 \end_layout
 
 \begin_layout Subsubsection
-Auswirkungen, wenn Frames out-of-sequence ankommen
+Szenario 07: Auswirkungen, wenn Frames out-of-sequence ankommen
 \end_layout
 
 \begin_layout Subsubsection
-Einluss von Offload-Mechanismen
+Szenario 08: Einluss von Offload-Mechanismen
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Einluss-von-Offload-Mechanismen"

@@ -859,6 +859,19 @@ key "GRO"
 RX/TX VLAN Acceleration
 \end_layout
 
+\begin_layout Standard
+Mittels VLAN Acceleration wird beim Senden / Empfangen der VLAN-Header in
+ der NIC hinzugefügt / gekürzt.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "vlan_accel"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Minisec
 RX ntuple Filters and Actions
 \end_layout
@@ -885,6 +898,27 @@ key "ethtool,Scaling_Linux_NW_Stack"
 
 \begin_layout Minisec
 RX Hashing Offload
+\end_layout
+
+\begin_layout Standard
+Anhand von 
+\begin_inset Quotes fld
+\end_inset
+
+RX Hashing Offload
+\begin_inset Quotes frd
+\end_inset
+
+ wird bei Erhalt eines Frames bereits in der Netzwerkkarte die Prüfsumme
+ automatisch verifiziert.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Patent_TCPIP_Offload"
+
+\end_inset
+
+
 \end_layout
 
 \end_body
