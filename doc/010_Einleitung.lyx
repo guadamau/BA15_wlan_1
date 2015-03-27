@@ -130,7 +130,28 @@ Bestehende Arbeiten
 \end_layout
 
 \begin_layout Standard
-Zu PRP-1
+Zu PRP-1 existieren Arbeiten, welche sich mit der Verwendung von PRP-1 in
+ Substation-Automation-Systemen auseinander setzen 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Exp_using_PRP_Substation"
+
+\end_inset
+
+ oder Verbesserungen vorschlagen, welche in einem eventuell zukünftigen
+ PRP-2 implementiert werden könnten 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "PRP-Industrial_IP"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Eine Arbeit, welche sich konkret mit der Performance-Ermittlung von Netzwerkfunk
+tionen am Beispiel von PRP auseinandersetzt, konnte nicht aufgefunden werden.
 \end_layout
 
 \begin_layout Section

@@ -4083,7 +4083,8 @@ hrt.
 \begin_layout Standard
 Für jede Applikation wurde jeweils ein Bash-Script erstellt, bei dem die
  Ausgabe in eine Datei weitergeleitet wird.
- Diese Scripts werden nacheinander ausgeführt.
+ Das erste der folgenden Skripts wird ausgeführt, welches iperf3 startet
+ und die Messungen gleichzeitig ausführen lässt.
 \end_layout
 
 \begin_layout Standard
@@ -4104,22 +4105,46 @@ status open
 
 \begin_layout Plain Layout
 
-sleep 5
+(./pidstat.sh &)
 \end_layout
 
 \begin_layout Plain Layout
 
-# execute pidstat 2 times with a 5 second interval
+(./top.sh &)
 \end_layout
 
 \begin_layout Plain Layout
 
-# report cpu utilization for the command "iperf3"
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Bash-Script zur Zuverlässigkeitsüberprüfung der CPU-Messungen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,numbers=left,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#!/bin/sh
 \end_layout
 
 \begin_layout Plain Layout
 
-pidstat -u -C "iperf3" -h 5 2 > results/pidstat.txt
+pidstat -u -C "iperf3" -h 5 2 > results/pidstat.txt 
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
@@ -4149,27 +4174,12 @@ status open
 
 \begin_layout Plain Layout
 
-(iperf3 -c 192.168.0.2 -d -n 200M &)
-\end_layout
-
-\begin_layout Plain Layout
-
 sleep 5
 \end_layout
 
 \begin_layout Plain Layout
 
-# execute top 2 times with a 5 second interval
-\end_layout
-
-\begin_layout Plain Layout
-
-# run top in "Batch mode" and watch iperf3
-\end_layout
-
-\begin_layout Plain Layout
-
-top -b -S -n 2 -d 5 -p $(pgrep iperf3) > results/top.txt
+top -b -n 2 -d 5.0 -p $(pgrep iperf3) > results/top.txt 
 \end_layout
 
 \begin_layout Plain Layout
@@ -4191,13 +4201,210 @@ Bash-Script zur Zuverlässigkeitsüberprüfung der CPU-Messungen von top
 \end_layout
 
 \begin_layout Standard
-Des Weiteren wird eine eigene Anwendung in C programmiert, bei der die CPU-Last
- berechnet wird, um die Ergebnisse von pidstat und top verifizieren zu können.
+Des Weiteren wird eine eigene Anwendung in C (mit dem Namen 
+\begin_inset Quotes fld
+\end_inset
+
+meas
+\begin_inset Quotes frd
+\end_inset
+
+, kurz für 
+\begin_inset Quotes fld
+\end_inset
+
+measurement
+\begin_inset Quotes frd
+\end_inset
+
+) programmiert, bei der die CPU-Last berechnet wird, um die Ergebnisse von
+ pidstat und top verifizieren zu können.
  Diese Funktioniert wie folgt:
 \end_layout
 
 \begin_layout Standard
+WIP MEAS CPU
+\end_layout
+
+\begin_layout Standard
 Folgende Werte werden von pidstat, top und der eigenen Anwendung ausgegeben:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="20col%">
+<column alignment="left" valignment="top" width="15col%">
+<column alignment="left" valignment="top" width="15col%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Tool
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+%CPU (5s nach Start)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+%CPU (10s nach Start)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+meas
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pidstat
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5,98
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5,20
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+top
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6,60
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5,20
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Zuverlässigkeitsüberprüfung der CPU von pidstat und top
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Anhand der Resultate und der Tatsache, dass alle Applikationen das /proc-Dateisy
+stem nutzen, kann davon ausgegangen werden, dass die Resultate als zuverlässig
+ zu betrachten sind.
+ Abweichungen lassen sich dadurch erklären, dass die Messzeitpunkte bei
+ den Programmen nicht zur exakt selben Zeit stattgefunden haben und die
+ Berechnungen von Software zu Software marginal unterschiedlich sein können.
+\end_layout
+
+\begin_layout Standard
+Da es sich bei meas um die eigens entwickelte Applikation handelt und dort
+ die konkreten Rechnungswege vorliegen, wird diese für die Ermittlungen
+ in dieser Arbeit verwendet.
 \end_layout
 
 \begin_layout Standard
@@ -4687,6 +4894,10 @@ Im Kapitel zur Zuverlässigkeitsüberprüfungen der CPU-Messungen wird eine
  Dieser Mechanismus läuft wie folgt ab:
 \end_layout
 
+\begin_layout Standard
+WIP MEAS NET
+\end_layout
+
 \begin_layout Section
 Ermittlung der Performance
 \end_layout
@@ -5037,9 +5248,7 @@ Kurz darauf (ca.
 
 \begin_layout Enumerate
 Während der gewählten Zeitspanne wird die CPU-Last, der Arbeitsspeicherverbrauch
- und die Netzwerkbelastung der Netzwerkkarten-Treiber und des PRP-1 stacks
- gemessen (wird PRP nicht verwendet so werden lediglich die Netzwerktreiber
- analysiert).
+ und die Netzwerkbelastung gemessen.
  Diese Daten werden für eine spätere Analyse ausgelagert.
 \begin_inset Newline newline
 \end_inset
@@ -5070,7 +5279,11 @@ Die Werte werden jeweils wie folgt berechnet:
 \end_layout
 
 \begin_layout Itemize
-CPU
+
+\series bold
+CPU-Last
+\series default
+
 \begin_inset Newline newline
 \end_inset
 
@@ -5081,24 +5294,39 @@ Innerhalb einer Zeitspanne wird aufgezeichnet, wie lange ein Prozess den
 \end_layout
 
 \begin_layout Itemize
-Arbeitsspeicher
+
+\series bold
+Arbeitsspeicher-Nutzung
+\series default
+
 \begin_inset Newline newline
 \end_inset
 
 Eine Berechnung der Werte ist hier nicht nötig, die RSS- und VSZ-Werte können
  direkt ausgelesen werden.
- So kann ermittelt werden wie viel Speicher der NIC-Treiber und der PRP-1
- stack beanspruchen und wie viel jeweils davon im Arbeitsspeicher und wie
- viel ausgelagert ist.
+ So kann ermittelt werden wie viel Speicher der PRP-1 stack beansprucht
+ und wie viel davon im Arbeitsspeicher und wie viel ausgelagert ist.
 \end_layout
 
 \begin_layout Itemize
-BERECHNUNG NET
+
+\series bold
+Netzwerkbelastung
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
+Zu Beginn und Ende der Messung wird jeweils ausgelesen, wie viele Bytes
+ empfangen und versendet wurden.
+ Diese Differenz wird dann durch die Messdauer in Sekunden dividiert, um
+ danach die Down- und Uploadrate in Bytes pro Sekunde zu erhalten.
 \end_layout
 
 \begin_layout Standard
-Konkret werden folgende Werte je ein mal pro zu untersuchendes Objekt (Netzwerkk
-arten-Treiber und PRP-1 stack) pro Messung in einem Analyse-Ergebnis aufgeführt:
+Konkret werden folgende Werte je ein mal pro zu untersuchenden Prozess (zum
+ Beispiel PRP-1 stack oder iperf) pro Messung in einem Analyse-Ergebnis
+ aufgeführt:
 \end_layout
 
 \begin_layout Standard
@@ -5450,7 +5678,7 @@ Beschreibung der Werte vom Ergebnis einer Messung: CPU und Arbeitsspeicher
 \begin_layout Standard
 Da bei der Konfiguration der Endsysteme und der Netzwerkumgebung sichergestellt
  wurde, dass nur gewollter Netzwerkverkehr besteht, kann man die Netzwerkbelastu
-ng pro Netzwerkinterface anstelle der zu untersuchenden Objekte festhalten.
+ng pro Netzwerkinterface anstelle für jeden Prozess einzeln festhalten.
 \end_layout
 
 \begin_layout Standard

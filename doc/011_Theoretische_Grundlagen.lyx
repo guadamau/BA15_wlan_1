@@ -921,5 +921,59 @@ key "Patent_TCPIP_Offload"
 
 \end_layout
 
+\begin_layout Section
+/proc-Dateisystem
+\end_layout
+
+\begin_layout Standard
+Bei dem /proc-Dateisystem handelt es sich um ein Pseudo-Dateisystem, welches
+ als Schnittstelle für Datenstrukturen des Linux-Kernels dient.
+ Üblicherweise ist dieses Dateisystem in einem Linux-Betriebssystem unter
+ dem Pfad /proc eingebunden.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "procfs"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Datenstrukturen können ausgelesen werden, um so die aktuellsten System-
+ und Prozess-Informationen vom laufenden Linux-Kernel erhalten zu können.
+ Zudem kann die Konfiguration des Linux-Kernels, während dieser in Betrieb
+ ist, über das /proc-Dateisystem geändert werden.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Advanced_Linux_Programming"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Jeder Prozess erhält im /proc-Dateisystem einen Ordner, der die Prozess-ID-Numme
+r als Namen trägt.
+ In einem solchen Ordner (z.B.
+ /proc/123, bei einem Prozess mit der ID 123) ist eine umfangreiche Auswahl
+ an Daten zum entsprechenden Prozess aufzufinden.
+ Nicht-prozessbezogene Informationen findet man im Wurzelverzeichnis des
+ /proc-Dateisystems.
+ Zum Beispiel befinden sich detaillierte Informationen zum Arbeitsspeicher
+ unter /proc/meminfo.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Advanced_Linux_Programming"
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
