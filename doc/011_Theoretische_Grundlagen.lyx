@@ -161,7 +161,7 @@ key "IEC_62439-3_2015"
 Wenn ein DANP etwas an einen anderen Netzwerkteilnehmer sendet, dupliziert
  er das Frame und übermittelt es über beide LANs.
  Beim Empfänger wird das Frame, das als Erstes ankommt, an die oberen Schichten
- weitergeleitet und das Duplikat je nach nach Methode akzeptiert oder verworfen.
+ weitergereicht und das Duplikat je nach nach Methode akzeptiert oder verworfen.
  Wie Duplikate erkennt und entfernt werden ist der Implementation überlassen.
  Auf die Duplikat-Handhabung wird genauer im Kapitel 
 \begin_inset CommandInset ref
@@ -176,7 +176,7 @@ reference "sub:Handhabung-von-Frame-Duplikaten"
  den oberen Netzwerkschichten in einem DAN befindet.
  Um diese Frame-Redundanz handhaben zu können, wird vom LRE beim Versand
  dem Frame am Ende ein Redundancy Control Trailer (RCT) angehängt, der beim
- Empfänger von dessen LRE wieder entfernt wird und anhand dem Duplikate
+ Empfänger von dessen LRE wieder entfernt wird und anhand von dem RCT Duplikate
  erkannt werden können.
  
 \begin_inset CommandInset citation
@@ -595,7 +595,7 @@ key "IEC_62439-3_2015"
 \end_layout
 
 \begin_layout Subsection
-Software-Implementation
+PRP-1 stack (Software-Implementation)
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Software-Implementation"
@@ -603,6 +603,10 @@ name "sub:Software-Implementation"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsubsection
+Übersicht
 \end_layout
 
 \begin_layout Standard
@@ -695,10 +699,6 @@ name "sub:Handhabung-von-Frame-Duplikaten"
 
 \begin_layout Standard
 Beschrieb/Beispiel Hash-Tabelle ...
-\end_layout
-
-\begin_layout Section
-PRP-1 stack
 \end_layout
 
 \begin_layout Section
