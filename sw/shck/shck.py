@@ -39,6 +39,9 @@ prp_enabled = False
 current_framesize = 64
 sizetype = 'MIN'
 target = '127.0.0.1'
+targetmac = 'ff:ff:ff:ff:ff:ff'
+interface = 'eth0'
+count_frames = 1
 
 """
  functions
@@ -53,7 +56,7 @@ printheader()
  Import scapy and other modules
  Check if run by root and exit if not
 """
-import os, sys, getopt
+import os, sys, getopt, uuid
 
 if not os.geteuid()==0:
     sys.exit("Only root can run this script")
@@ -95,14 +98,32 @@ def getpayloadfromfile( datafile ):
 
     return data
 
-def generatetcp( target, data ):
+def generateeth( data ):
+    src=hex(uuid.getnode())
+    srcmac = str(src[2])
+    srcmac += str(src[3]) 
+    srcmac += ':' + str(src[4]) 
+    srcmac += str(src[5]) 
+    srcmac += ':' + str(src[6]) 
+    srcmac += str(src[7]) 
+    srcmac += ':' + str(src[8]) 
+    srcmac += str(src[9])
+    srcmac += ':' + str(src[10]) 
+    srcmac += str(src[11]) 
+    srcmac += ':' + str(src[12]) 
+    srcmac += str(src[13])
+    eth=Ether(dst=target,src=srcmac,type=0x2015)
+    data=cutpayload(data)
+    return eth/data
+
+def generatetcp( data ):
     ip=ippacket(target)
     tcp=tcpfragment(2014,2015)
     data=cutpayload(data)
     addpayload(tcp, data)
     return ip/tcp
 
-def generateudp( target, data ):
+def generateudp( data ):
     ip=ippacket(target)
     udp=udpdatagram(2014, 2015)
     data=cutpayload(data)
@@ -113,61 +134,91 @@ def cutpayload( data ):
     if transmission_type == 'ETH':
         size = current_framesize
     elif transmission_type == 'TCP':
-        size = current_framesize-IP_OVERHEAD-TCP_OVERHEAD
+        size = current_framesize-IP_OVERHEAD-TCP_OVERHEAD-ETH_OVERHEAD
     elif transmission_type == 'UDP':
-        size = current_framesize-IP_OVERHEAD-UDP_OVERHEAD
+        size = current_framesize-IP_OVERHEAD-UDP_OVERHEAD-ETH_OVERHEAD
 
     if prp_enabled == True:
         size -= PRP_OVERHEAD
 
-    size -= ETH_OVERHEAD
     return data[0:size]
 
 def generate_package( data ):
     if transmission_type == 'ETH':
-        print('WIP')
+        if not ':' in target:
+            print('need a MAC-address as destination when sending Ethernet frames')
+            sys.exit()
+        else:
+            packet = generateeth( data )
     elif transmission_type == 'TCP':
-        packet = generatetcp( target, data )
+        if not '.' in target:
+            print('need an IP-address as destination when sending TCP-packets')
+            sys.exit()
+        else:
+            packet = generatetcp( data )
     elif transmission_type == 'UDP':
-        packet = generateudp( target, data )
+        if not '.' in target:
+            print('need an IP-address as destination when sending UDP-packets')
+            sys.exit()
+        else:
+            packet = generateudp( data )
 
     return packet
     
+def sendpacketout( packet ):
+    if sizetype == 'RANDOM':
+        countend = 1
+    else:
+        countend = count_frames
+        
+    if transmission_type == 'ETH':
+        for x in range(0, int(countend)):
+            sendp(packet, iface=interface)
+    else:
+        for x in range(0, int(countend)):
+            sr(packet)
 
 def sendpacket( data ):
+    import time
+    old_stdout = sys.stdout
+    sys.stdout = open('log/shck-' + time.strftime("%Y%m%d-%H%M%S") + '.log', 'w')
+    print('-shck------LOG-' + time.strftime("%Y%m%d-%H%M%S") + '-------')
+
     global current_framesize
 
     if sizetype == 'MIN':
         current_framesize = 64
         packet = generate_package(data)
-        srloop(packet)
-        
-    elif sizetype == 'RANDOM':
-        with open("random_framesizes.txt", "r") as ins:
-            for line in ins:
-                current_framesize = int(line)
-                packet = generate_package(data)
-                sr(packet)
-
+        sendpacketout(packet)
     elif sizetype == 'MAX':
         current_framesize = 1500
         packet = generate_package(data)
-        srloop(packet)
+        sendpacketout(packet)
+    elif sizetype == 'RANDOM':
+        count = 0
+        randframesizefile = open("random_framesizes.txt", "r")
+        line = randframesizefile.readline()
+        while (line and int(count)<int(count_frames)):
+            print(count)
+            print(count_frames)
+            current_framesize = int(randframesizefile.readline())
+            packet = generate_package(data)
+            sendpacketout(packet)
+            count += 1
+            
+    print('-------------------------------------------------')
+    sys.stdout = old_stdout
 
 def printhelp():
-    print sys.argv[0] + ' -s SIZETYPE -t TRANSMISSION_TYPE -m MTU -d DESTINATION -f FILE [-P]\n-s SIZETYPE: MIN | RANDOM | MAX\n-t TRANSMISSION_TYPE: ETH | TCP | UDP (default)\n-f FILE: File you want to send as payload (will only send the first x bytes of it)\n-d DESTINATION: IP-destination-address\n-m MTU: set MTU (default 1500)\n-P enable PRP (subtracts 6 bytes from payload (RCT))'
+    print sys.argv[0] + ' -s SIZETYPE -t TRANSMISSION_TYPE -m MTU -d DESTINATION -f FILE -i INTERFACE -n COUNT [-P]\n-s SIZETYPE: MIN | RANDOM | MAX\n-t TRANSMISSION_TYPE: ETH | TCP | UDP (default)\n-f FILE: File you want to send as payload (will only send the first x bytes of it)\n-d DESTINATION: MAC OR IP-destination-address (MAC if -t ETH, IP if -t TCP|UDP)\n-m MTU: set MTU (default 1500)\n-I INTERFACE (for example eth0): is needed when -t ETH\n-n COUNT: How many frames/packets you want to send (default 1)\n-P enable PRP (subtracts 6 bytes from payload (RCT))'
 
 """
  main
 """
 def main(argv):
 
-    """
-        default values
-    """
-
     try:
-        opts, args = getopt.getopt(argv,"s:t:d:f:m:Ph")
+        opts, args = getopt.getopt(argv,"s:t:d:f:m:i:n:Ph")
     except getopt.GetoptError as err:
         print(err)
         printhelp()
@@ -199,14 +250,17 @@ def main(argv):
         elif opt in ("-m"):
             global mtu
             mtu = arg
+        elif opt in ("-i"):
+            global interface
+            interface = arg
+        elif opt in ("-n"):
+            global count_frames
+            count_frames = arg
         elif opt in ("-P"):
             global prp_enabled
             prp_enabled = True
 
     payload=getpayloadfromfile( datafile )
-
-    if transmission_type == 'ETH':
-        sys.exit(1)
 
     sendpacket( payload )
 
