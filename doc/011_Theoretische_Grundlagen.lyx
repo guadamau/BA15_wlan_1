@@ -91,6 +91,13 @@ name "chap:Theoretische-Grundlagen"
 
 \begin_layout Section
 Parallel Redundancy Protocol (PRP)
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:PRP-Overview"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -161,12 +168,12 @@ key "IEC_62439-3_2015"
 Wenn ein DANP etwas an einen anderen Netzwerkteilnehmer sendet, dupliziert
  er das Frame und übermittelt es über beide LANs.
  Beim Empfänger wird das Frame, das als Erstes ankommt, an die oberen Schichten
- weitergeleitet und das Duplikat je nach nach Methode akzeptiert oder verworfen.
+ weitergereicht und das Duplikat je nach nach Methode akzeptiert oder verworfen.
  Wie Duplikate erkennt und entfernt werden ist der Implementation überlassen.
  Auf die Duplikat-Handhabung wird genauer im Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
-reference "sub:Handhabung-von-Frame-Duplikaten"
+reference "sub:Frame-Duplikaten"
 
 \end_inset
 
@@ -176,7 +183,7 @@ reference "sub:Handhabung-von-Frame-Duplikaten"
  den oberen Netzwerkschichten in einem DAN befindet.
  Um diese Frame-Redundanz handhaben zu können, wird vom LRE beim Versand
  dem Frame am Ende ein Redundancy Control Trailer (RCT) angehängt, der beim
- Empfänger von dessen LRE wieder entfernt wird und anhand dem Duplikate
+ Empfänger von dessen LRE wieder entfernt wird und anhand von dem RCT Duplikate
  erkannt werden können.
  
 \begin_inset CommandInset citation
@@ -595,7 +602,7 @@ key "IEC_62439-3_2015"
 \end_layout
 
 \begin_layout Subsection
-Software-Implementation
+PRP-1 stack (Software-Implementation)
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Software-Implementation"
@@ -603,6 +610,10 @@ name "sub:Software-Implementation"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsubsection
+Übersicht
 \end_layout
 
 \begin_layout Standard
@@ -683,10 +694,10 @@ key "PRP-1_SW_Stack"
 \end_layout
 
 \begin_layout Subsubsection
-Handhabung von Frame-Duplikaten
+Frame-Duplikate
 \begin_inset CommandInset label
 LatexCommand label
-name "sub:Handhabung-von-Frame-Duplikaten"
+name "sub:Frame-Duplikaten"
 
 \end_inset
 
@@ -694,11 +705,103 @@ name "sub:Handhabung-von-Frame-Duplikaten"
 \end_layout
 
 \begin_layout Standard
-Beschrieb/Beispiel Hash-Tabelle ...
+Bei der Handhabung von Frame-Duplikaten sind zwei Aspekte von zentraler
+ Beteutung, die genauer betrachtet werden müssen.
+ 
 \end_layout
 
-\begin_layout Section
-PRP-1 stack
+\begin_layout Enumerate
+Ein neues Frame trifft ein.
+ Der Software-Stack muss zu diesem Zeitpunkt kontrollieren, ob ein Duplikat
+ dieses Frames bereits vorgängig auf dem anderen Interface eingetroffen
+ ist.
+ Falls dies zutrifft, muss das Frame verworfen werden, ansonsten muss das
+ Frame, respektive dessen Meta-Daten in einer Datenstruktur über eine gewisse
+ Zeit gehalten werden.
+\end_layout
+
+\begin_layout Enumerate
+Da der Speicher einer Maschine endlich ist, müssen die Metadaten der erhaltenen
+ Frames nach einer gewissen Zeitspanne wieder aus der Datenstruktur entfernt
+ werden.
+ Dies wird mittels Software-Timer erreicht.
+ Nach Ablauf eines gewissen Timer-Intervalls muss die Datenstruktur, in
+ der die Metadaten der Frames gehalten werden, aktualisiert und das älteste
+ Frame verworfen werden.
+\end_layout
+
+\begin_layout Subsubsection
+Software-Timer
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:SoftwareTimer"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Software-Implementation des PRP-1 stack verfügt über 3 Software-Timer,
+ welche beim Starten der Applikation initialisiert und gestartet werden.
+ Ein Timer-Tick dauert 20 ms.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Aging-Timer
+\series default
+ mit einem Intervall von 
+\series bold
+20 ms
+\series default
+.
+ Mit jedem Timer-Tick der Applikation wird die Datenstruktur aktualisiert
+ und die ältesten Frame-Meta-Daten werden gelöscht.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Statistics-Timer
+\series default
+ mit einem Intervall von 
+\series bold
+1000 ms
+\series default
+.
+ Nach Ablauf dieses Timer-Intervalls werden sämtliche Statistikwerte der
+ gesamten PRP-Stack-Applikation ausgelesen und, falls so konfiguriert, auf
+ der Konsole ausgegeben.
+\end_layout
+
+\begin_layout Itemize
+
+\series bold
+Supervision-Timer
+\series default
+ mit einem Intervall von 
+\series bold
+2000 ms
+\series default
+.
+ Ist dieses Timer-Intervall abgelaufen, wird auf beiden physischen PRP-Interface
+s ein Supervision-Frame transmittiert.
+\end_layout
+
+\begin_layout Subsubsection
+Datenhaltung von Frame-Metadaten
+\end_layout
+
+\begin_layout Standard
+Als Datenstruktur, um die Metadaten erstmals eingetroffener Frames zu halten,
+ wird eine Hash-Table verwendet.
+ Die Tabelle hat eine Grösse von 256.
+\end_layout
+
+\begin_layout Subsubsection
+Supervision-Frames
 \end_layout
 
 \begin_layout Section
