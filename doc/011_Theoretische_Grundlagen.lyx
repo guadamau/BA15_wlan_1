@@ -797,7 +797,15 @@ Datenhaltung von Frame-Metadaten
 \begin_layout Standard
 Als Datenstruktur, um die Metadaten erstmals eingetroffener Frames zu halten,
  wird eine Hash-Table verwendet.
- Die Tabelle hat eine Grösse von 256.
+ Die Tabelle hat eine Grösse von 256 Einträgen.
+ Aus der Sequenznummer eines Frames wird nun ein Hash-Wert gebildet.
+ Dieser Hash-Wert repräsentiert sogleich die Index-Nummer des
+\end_layout
+
+\begin_layout Standard
+Erzeugung des Hashwertes: Bei der Ankunft eines PRP-Frames wird die Sequenznumme
+r, welche sich im Redundancy Control Trailer befindet, herausgelesen.
+ Eine Sequenznummer umfasst 16 Bit.
 \end_layout
 
 \begin_layout Subsubsection
