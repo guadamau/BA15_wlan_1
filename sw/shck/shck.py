@@ -42,6 +42,7 @@ target = '127.0.0.1'
 targetmac = 'ff:ff:ff:ff:ff:ff'
 interface = 'eth0'
 count_frames = 1
+datafile = ''
 
 """
  functions
@@ -176,7 +177,7 @@ def sendpacketout( packet ):
             sendp(packet, iface=interface)
     else:
         for x in range(0, int(countend)):
-            sr(packet)
+            sr(packet, iface=interface)
 
 def sendpacket( data ):
     import time
@@ -210,7 +211,9 @@ def sendpacket( data ):
     sys.stdout = old_stdout
 
 def printhelp():
-    print sys.argv[0] + ' -s SIZETYPE -t TRANSMISSION_TYPE -m MTU -d DESTINATION -f FILE -i INTERFACE -n COUNT [-P]\n-s SIZETYPE: MIN | RANDOM | MAX\n-t TRANSMISSION_TYPE: ETH | TCP | UDP (default)\n-f FILE: File you want to send as payload (will only send the first x bytes of it)\n-d DESTINATION: MAC OR IP-destination-address (MAC if -t ETH, IP if -t TCP|UDP)\n-m MTU: set MTU (default 1500)\n-I INTERFACE (for example eth0): is needed when -t ETH\n-n COUNT: How many frames/packets you want to send (default 1)\n-P enable PRP (subtracts 6 bytes from payload (RCT))'
+    from subprocess import call
+    call(["less", "README"])
+    #print sys.argv[0] + ' -s SIZETYPE -t TRANSMISSION_TYPE -m MTU -d DESTINATION -f FILE -i INTERFACE -n COUNT [-P]\n-s SIZETYPE: MIN | RANDOM | MAX\n-t TRANSMISSION_TYPE: ETH | TCP | UDP (default)\n-f FILE: File you want to send as payload (will only send the first x bytes of it)\n-d DESTINATION: MAC OR IP-destination-address (MAC if -t ETH, IP if -t TCP|UDP)\n-m MTU: set MTU (default 1500)\n-I INTERFACE (for example eth0): is needed when -t ETH\n-n COUNT: How many frames/packets you want to send (default 1)\n-P enable PRP (subtracts 6 bytes from payload (RCT))'
 
 """
  main
@@ -243,6 +246,7 @@ def main(argv):
                 print('No valid transmission type selected (ETH, TCP, UDP)')
                 sys.exit()
         elif opt in ("-f"):
+            global datafile
             datafile = arg
         elif opt in ("-d"):
             global target
@@ -260,10 +264,11 @@ def main(argv):
             global prp_enabled
             prp_enabled = True
 
+    if datafile == '':
+        printhelp()
+        sys.exit()
+
     payload=getpayloadfromfile( datafile )
-
     sendpacket( payload )
-
-
 
 main(sys.argv[1:])

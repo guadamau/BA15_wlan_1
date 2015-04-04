@@ -1,14 +1,6 @@
-#===================================================================================================
-#
-# ########     ###       ##   ########         ##      ## ##          ###    ##    ##            ##
-# ##     ##   ## ##    ####   ##               ##  ##  ## ##         ## ##   ###   ##          ####
-# ##     ##  ##   ##     ##   ##               ##  ##  ## ##        ##   ##  ####  ##            ##
-# ########  ##     ##    ##   #######          ##  ##  ## ##       ##     ## ## ## ##            ##
-# ##     ## #########    ##         ##         ##  ##  ## ##       ######### ##  ####            ##
-# ##     ## ##     ##    ##   ##    ##         ##  ##  ## ##       ##     ## ##   ###            ##
-# ########  ##     ##  ######  ######  #######  ###  ###  ######## ##     ## ##    ## #######  ######
-#
-#===================================================================================================
+#=========================================================================
+# BA15_wlan_1
+#=========================================================================
 #
 #  *****************************************************************************
 #  Software:   shck Python Script
@@ -24,3 +16,74 @@
 #	       Uses scapy (http://www.secdev.org/projects/scapy/index.html)
 #
 #  *****************************************************************************
+
+############################################################
+Features:
+############################################################
+
+- Generate Layer-2-/TCP-/UDP-load
+- Set count of frames / packets
+- Generate load with min, max or random framesizes
+  - Set MTU (default 1500)
+  - Enable PRP-support (subtract 6 bytes from payload)
+
+############################################################
+Info:
+############################################################
+
+- Uses scapy (http://www.secdev.org/projects/scapy/)
+- Needs to be run as root
+- Logfile will be created everytime you run the script
+  (./log/shck-YYYYmmdd-HHMMSS.log)
+
+############################################################
+Parameters:
+############################################################
+
+All parameters except -m and -P are mandatory
+
+-d      DESTINATION 
+        IP-address  requires "TCP" or "UDP" for -t
+        MAC-address requires "ETH" for -t
+
+-f      FILE        File whose content will be used as payload 
+                    for the frames/packets (the file ./testbin contains
+                    random values and has a size of 1M)
+
+-i      INTERFACE   Networkinterface over which you want to send
+                    the generated load
+
+-m      MTU         Define the MTU (Default: 1500)
+
+-P      PRP-MODE    Subtracts 6 bytes from the payload so that it is
+                    guaranteed that the packet has space 
+                    for the RCT-fields from the PRP-protocol
+
+-n      COUNT       Define how many frames / packets will be sent
+                    Default: 1
+
+-s      SIZETYPE
+        MIN         Load will only contain frames with minimal size.
+        MAX         Load will only contain frames with maximum size (MTU).
+        RANDOM      Load will contain frames of random sizes.
+                    Size-values are taken from textfile so that the load 
+                    can be reproduced.
+
+-t      TRANSMISSION_TYPE
+        ETH         Send frames over layer 2 (Type-value: 0x2015)
+                    (requires MAC-destination-address as value for -d)
+        TCP         Send TCP-packets (src port: 2014 / dest port 2015)
+                    (requires IP-destination-address as value for -d)
+        UDP         Send UDP-packets (src port: 2014 / dest port 2015)
+                    (requires IP-destination-address as value for -d)
+
+############################################################
+Examples:
+############################################################
+
+- Generate Layer-2-traffic consisting of 30 frames 
+  with random sizes over interface prp1 which operates with a PRP-stack
+    sudo ./shck.py -d 00:1E:4F:E5:BA:E8 -f ./testbin -i prp1 -n 30 -P -s RANDOM -t ETH
+
+- Generate one TCP-packet with maximum size over a non-PRP-interface
+    sudo ./shck.py -d 192.168.0.2 -f ./testbin -i eth0 -s MAX -t TCP
