@@ -4021,6 +4021,8 @@ reference "iperf3"
 ) als Server und auf einem weiteren DAN als Client ausgeführt.
  Es wird mit unterschiedlichen Tools gemessen, was der iperf3-Client von
  der CPU beansprucht.
+ Dazu wird ein zweiter Fall untersucht, in welchem mit dem Befehl dd eine
+ 10GB grosse Datei erstellt wird, die aus zufälligen Zahlen besteht.
  Danach werden die Resultate verglichen, um aufzuzeigen, welches Tool glaubwürdi
 ge Messwerte liefert.
 \end_layout
@@ -4060,8 +4062,13 @@ srv02
 \end_inset
 
  via TCP übertragen (dabei wird der Client als Deamon ausgeführt).
- Während der Übertragung wird mit den folgenden Applikationen die beanspruchte
- CPU-Leistung gemessen:
+ Die Datei mit zufälligen Werten wird mit dem Befehl 
+\family typewriter
+dd if=/dev/urandom of=/tmp/randomfile bs=1M count=10000
+\family default
+ erstellt.
+ Während der Übertragung und File-Generierung wird mit den folgenden Applikation
+en die beanspruchte CPU-Leistung gemessen:
 \end_layout
 
 \begin_layout Itemize
@@ -4073,18 +4080,17 @@ top
 \end_layout
 
 \begin_layout Standard
-Eine Messung wird jeweils 5 und 10 Sekunden nach dem Start des Clients durchgefü
-hrt.
- Darauf folgt eine weitere Messung mit einer anderen Applikation, wobei
- der Client neu gestartet und wieder jeweils 5 und 10 Sekunden nach dessen
- Start gemessen wird.
+Eine Messung wird jeweils 5 und 10 Sekunden nach dem Start des Clients /
+ der File-Generierung durchgeführt.
+ Dabei misst jede Applikation pro Fall (dd und iperf3) zur gleichen Zeit
+ wie die andere die Performance-Werte.
 \end_layout
 
 \begin_layout Standard
 Für jede Applikation wurde jeweils ein Bash-Script erstellt, bei dem die
  Ausgabe in eine Datei weitergeleitet wird.
- Das erste der folgenden Skripts wird ausgeführt, welches iperf3 startet
- und die Messungen gleichzeitig ausführen lässt.
+ Das erste der folgenden Skripts wird ausgeführt, welches dd und iperf3
+ nacheinander startet und jeweils die Messungen gleichzeitig ausführen lässt.
 \end_layout
 
 \begin_layout Standard
@@ -4095,22 +4101,52 @@ status open
 
 \begin_layout Plain Layout
 
-#!/bin/sh
+#!/bin/sh 
 \end_layout
 
 \begin_layout Plain Layout
 
-(iperf3 -c 192.168.0.2 -d -n 200M &)
+(dd if=/dev/urandom of=/tmp/randomfile bs=1M count=10000 &) 
 \end_layout
 
 \begin_layout Plain Layout
 
-(./pidstat.sh &)
+pid_dd=$! 
 \end_layout
 
 \begin_layout Plain Layout
 
-(./top.sh &)
+(./pidstat.sh dd &) 
+\end_layout
+
+\begin_layout Plain Layout
+
+(./top.sh dd $pid_dd) 
+\end_layout
+
+\begin_layout Plain Layout
+
+sleep 15 
+\end_layout
+
+\begin_layout Plain Layout
+
+pkill dd
+\end_layout
+
+\begin_layout Plain Layout
+
+(iperf3 -c 192.168.0.2 -d -n 200M &) 
+\end_layout
+
+\begin_layout Plain Layout
+
+(./pidstat.sh iperf3 &) 
+\end_layout
+
+\begin_layout Plain Layout
+
+(./top.sh iperf3 &) 
 \end_layout
 
 \begin_layout Plain Layout
@@ -4139,16 +4175,96 @@ status open
 
 \begin_layout Plain Layout
 
-#!/bin/sh
+#!/bin/sh 
 \end_layout
 
 \begin_layout Plain Layout
 
-pidstat -u -C "iperf3" -h 5 2 > results/pidstat.txt 
+if [ -z $1 ] 
+\end_layout
+
+\begin_layout Plain Layout
+
+then
+\end_layout
+
+\begin_layout Plain Layout
+
+        echo "parameter dd or iperf3 needed"
+\end_layout
+
+\begin_layout Plain Layout
+
+        exit 
+\end_layout
+
+\begin_layout Plain Layout
+
+fi
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+case $1 in
+\end_layout
+
+\begin_layout Plain Layout
+
+        "dd")
+\end_layout
+
+\begin_layout Plain Layout
+
+                pidstat -u -C "dd" -h 5 2 > results/pidstat_dd.txt
+\end_layout
+
+\begin_layout Plain Layout
+
+                ;;
+\end_layout
+
+\begin_layout Plain Layout
+
+        "iperf3")
+\end_layout
+
+\begin_layout Plain Layout
+
+                pidstat -u -C "iperf3" -h 5 2 > results/pidstat_iperf3.txt
+\end_layout
+
+\begin_layout Plain Layout
+
+               ;;
+\end_layout
+
+\begin_layout Plain Layout
+
+        *)
+\end_layout
+
+\begin_layout Plain Layout
+
+                echo "only use dd or iperf3 as parameter"
+\end_layout
+
+\begin_layout Plain Layout
+
+                ;; 
+\end_layout
+
+\begin_layout Plain Layout
+
+esac 
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
 Bash-Script zur Zuverlässigkeitsüberprüfung der CPU-Messungen von pidstat
+ (cpu/pidstat.sh)
 \end_layout
 
 \end_inset
@@ -4169,17 +4285,126 @@ status open
 
 \begin_layout Plain Layout
 
-#!/bin/sh
+#!/bin/sh 
 \end_layout
 
 \begin_layout Plain Layout
 
-sleep 5
+if [ -z $1 ] 
 \end_layout
 
 \begin_layout Plain Layout
 
-top -b -n 2 -d 5.0 -p $(pgrep iperf3) > results/top.txt 
+then
+\end_layout
+
+\begin_layout Plain Layout
+
+        echo "parameter dd or iperf3 needed"
+\end_layout
+
+\begin_layout Plain Layout
+
+        exit 
+\end_layout
+
+\begin_layout Plain Layout
+
+fi
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+case $1 in
+\end_layout
+
+\begin_layout Plain Layout
+
+        "dd")
+\end_layout
+
+\begin_layout Plain Layout
+
+                if [ -z $2 ]
+\end_layout
+
+\begin_layout Plain Layout
+
+                then
+\end_layout
+
+\begin_layout Plain Layout
+
+                        echo "pid of dd for top missing"
+\end_layout
+
+\begin_layout Plain Layout
+
+                        exit
+\end_layout
+
+\begin_layout Plain Layout
+
+                fi 
+\end_layout
+
+\begin_layout Plain Layout
+
+                sleep 5
+\end_layout
+
+\begin_layout Plain Layout
+
+                top -b -n 2 -d 5.0 -p $(pgrep dd) > results/top_dd.txt
+\end_layout
+
+\begin_layout Plain Layout
+
+                ;;
+\end_layout
+
+\begin_layout Plain Layout
+
+        "iperf3")
+\end_layout
+
+\begin_layout Plain Layout
+
+                sleep 5
+\end_layout
+
+\begin_layout Plain Layout
+
+				top -b -n 2 -d 5.0 -p $(pgrep iperf3) > results/top_iperf3.txt
+\end_layout
+
+\begin_layout Plain Layout
+
+                ;;
+\end_layout
+
+\begin_layout Plain Layout
+
+        *)
+\end_layout
+
+\begin_layout Plain Layout
+
+                echo "only use dd or iperf3 as parameter"
+\end_layout
+
+\begin_layout Plain Layout
+
+                ;; 
+\end_layout
+
+\begin_layout Plain Layout
+
+esac
 \end_layout
 
 \begin_layout Plain Layout
@@ -4187,7 +4412,8 @@ top -b -n 2 -d 5.0 -p $(pgrep iperf3) > results/top.txt
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Bash-Script zur Zuverlässigkeitsüberprüfung der CPU-Messungen von top
+Bash-Script zur Zuverlässigkeitsüberprüfung der CPU-Messungen von top (cpu/top.sh
+)
 \end_layout
 
 \end_inset
@@ -4241,7 +4467,7 @@ status open
 \noindent
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="3">
+<lyxtabular version="3" rows="7" columns="3">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="left" valignment="top" width="20col%">
 <column alignment="left" valignment="top" width="15col%">
@@ -4286,7 +4512,7 @@ Tool
 \begin_inset Text
 
 \begin_layout Plain Layout
-meas
+meas-Messung von dd
 \end_layout
 
 \end_inset
@@ -4315,7 +4541,7 @@ meas
 \begin_inset Text
 
 \begin_layout Plain Layout
-pidstat
+pidstat-Messung von dd
 \end_layout
 
 \end_inset
@@ -4324,7 +4550,7 @@ pidstat
 \begin_inset Text
 
 \begin_layout Plain Layout
-5,98
+
 \end_layout
 
 \end_inset
@@ -4333,7 +4559,94 @@ pidstat
 \begin_inset Text
 
 \begin_layout Plain Layout
-5,20
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+top-Messung von dd
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+meas-Messung von iperf3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pidstat-Messung von iperf3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \end_inset
@@ -4344,25 +4657,25 @@ pidstat
 \begin_inset Text
 
 \begin_layout Plain Layout
-top
+top-Messung von iperf3
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-6,60
+
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-5,20
+
 \end_layout
 
 \end_inset
@@ -4399,6 +4712,10 @@ stem nutzen, kann davon ausgegangen werden, dass die Resultate als zuverlässig
  Abweichungen lassen sich dadurch erklären, dass die Messzeitpunkte bei
  den Programmen nicht zur exakt selben Zeit stattgefunden haben und die
  Berechnungen von Software zu Software marginal unterschiedlich sein können.
+ Was jedoch aus Zeitgründen nicht belegt werden kann ist, wie pidstat und
+ top weils die CPU-Last anhand der Informationen aus dem /proc-Dateisystem
+ berechnen, weshalb nicht ausgeschlossen werden kann, dass sich die Werte
+ aufgrund unterschiedlicher Rechnungswege unterscheiden können.
 \end_layout
 
 \begin_layout Standard
@@ -4433,8 +4750,9 @@ reference "sub:CPU"
 
 ) wird wieder iperf3 mit den selben Parametern ein Mal als Server und ein
  Mal als Client auf unterschiedlichen DANs ausgeführt und beim Client gemessen.
- Während der Übertragung wird mit den folgenden Applikationen die Arbeitsspeiche
-rnutzung gemessen:
+ Der zweite Fall mit dd wird zudem wieder betrachtet.
+ Während der Übertragung und Dateigenerierung wird mit den folgenden Applikation
+en die Arbeitsspeichernutzung gemessen:
 \end_layout
 
 \begin_layout Itemize
@@ -4452,14 +4770,14 @@ top
 \begin_layout Standard
 Eine Messung wird jeweils 5 und 10 Sekunden nach dem Start des Clients durchgefü
 hrt.
- Die Messungen werden alle zur gleichen Zeit gestartet.
+ Die Messungen werden pro Fall alle zur gleichen Zeit gestartet.
 \end_layout
 
 \begin_layout Standard
 Für jede Applikation wurde jeweils ein Bash-Script erstellt, bei dem die
  Ausgabe in eine Datei weitergeleitet wird.
- Das erste der folgenden Skripts wird ausgeführt, welches iperf3 startet
- und die Messungen gleichzeitig ausführen lässt.
+ Das erste der folgenden Skripts wird ausgeführt, welches dd und iperf3
+ nacheinander startet und jeweils die Messungen gleichzeitig ausführen lässt.
 \end_layout
 
 \begin_layout Standard
@@ -4471,6 +4789,40 @@ status open
 \begin_layout Plain Layout
 
 #!/bin/sh
+\end_layout
+
+\begin_layout Plain Layout
+
+(dd if=/dev/urandom of=/tmp/randomfile bs=1M count=10000 &)
+\end_layout
+
+\begin_layout Plain Layout
+
+(./pidstat.sh dd &)
+\end_layout
+
+\begin_layout Plain Layout
+
+(./pmap.sh dd &)
+\end_layout
+
+\begin_layout Plain Layout
+
+(./top.sh dd)
+\end_layout
+
+\begin_layout Plain Layout
+
+sleep 15
+\end_layout
+
+\begin_layout Plain Layout
+
+pkill dd
+\end_layout
+
+\begin_layout Plain Layout
+
 \end_layout
 
 \begin_layout Plain Layout
@@ -4480,17 +4832,17 @@ status open
 
 \begin_layout Plain Layout
 
-(./pidstat.sh &)
+(./pidstat.sh iperf3 &)
 \end_layout
 
 \begin_layout Plain Layout
 
-(./pmap.sh &)
+(./pmap.sh iperf3 &)
 \end_layout
 
 \begin_layout Plain Layout
 
-(./top.sh &)
+(./top.sh iperf3 &)
 \end_layout
 
 \begin_layout Plain Layout
@@ -4519,27 +4871,91 @@ status open
 
 \begin_layout Plain Layout
 
-#!/bin/sh
+#!/bin/sh 
 \end_layout
 
 \begin_layout Plain Layout
 
-sleep 5
+if [ -z $1 ] 
 \end_layout
 
 \begin_layout Plain Layout
 
-pidstat -r -C "iperf3" -h > results/pidstat.txt
+then
 \end_layout
 
 \begin_layout Plain Layout
 
-sleep 5
+        echo "parameter dd or iperf3 needed"
 \end_layout
 
 \begin_layout Plain Layout
 
-pidstat -r -C "iperf3" -h >> results/pidstat.txt 
+        exit 
+\end_layout
+
+\begin_layout Plain Layout
+
+fi
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+case $1 in
+\end_layout
+
+\begin_layout Plain Layout
+
+        "dd")
+\end_layout
+
+\begin_layout Plain Layout
+
+                pidstat -r -C "dd" -h 5 2 > results/pidstat_dd.txt
+\end_layout
+
+\begin_layout Plain Layout
+
+                ;;
+\end_layout
+
+\begin_layout Plain Layout
+
+        "iperf3")
+\end_layout
+
+\begin_layout Plain Layout
+
+                pidstat -r -C "iperf3" -h 5 2 > results/pidstat_iperf3.txt
+\end_layout
+
+\begin_layout Plain Layout
+
+               ;;
+\end_layout
+
+\begin_layout Plain Layout
+
+        *)
+\end_layout
+
+\begin_layout Plain Layout
+
+                echo "only use dd or iperf3 as parameter"
+\end_layout
+
+\begin_layout Plain Layout
+
+                ;; 
+\end_layout
+
+\begin_layout Plain Layout
+
+esac
 \end_layout
 
 \begin_layout Plain Layout
@@ -4548,7 +4964,7 @@ pidstat -r -C "iperf3" -h >> results/pidstat.txt
 
 \begin_layout Plain Layout
 Bash-Script zur Zuverlässigkeitsüberprüfung der Arbeitsspeicher-Messungen
- von pidstat (pidstat.sh)
+ von pidstat (ram/pidstat.sh)
 \end_layout
 
 \end_inset
@@ -4569,27 +4985,121 @@ status open
 
 \begin_layout Plain Layout
 
-#!/bin/sh
+#!/bin/sh 
 \end_layout
 
 \begin_layout Plain Layout
 
-sleep 5
+if [ -z $1 ] 
 \end_layout
 
 \begin_layout Plain Layout
 
-pmap -x $(pgrep iperf3) > results/pmap.txt
+then
 \end_layout
 
 \begin_layout Plain Layout
 
-sleep 5
+        echo "parameter dd or iperf3 needed"
 \end_layout
 
 \begin_layout Plain Layout
 
-pmap -x $(pgrep iperf3) >> results/pmap.txt
+        exit 
+\end_layout
+
+\begin_layout Plain Layout
+
+fi
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+case $1 in
+\end_layout
+
+\begin_layout Plain Layout
+
+        "dd")
+\end_layout
+
+\begin_layout Plain Layout
+
+			sleep 5
+\end_layout
+
+\begin_layout Plain Layout
+
+			pmap -x $(pgrep dd) > results/pmap_dd.txt
+\end_layout
+
+\begin_layout Plain Layout
+
+			sleep 5
+\end_layout
+
+\begin_layout Plain Layout
+
+			pmap -x $(pgrep dd) >> results/pmap_dd.txt
+\end_layout
+
+\begin_layout Plain Layout
+
+			;;
+\end_layout
+
+\begin_layout Plain Layout
+
+		"iperf3")
+\end_layout
+
+\begin_layout Plain Layout
+
+			sleep 5
+\end_layout
+
+\begin_layout Plain Layout
+
+			pmap -x $(pgrep iperf3) > results/pmap_iperf3.txt
+\end_layout
+
+\begin_layout Plain Layout
+
+			sleep 5
+\end_layout
+
+\begin_layout Plain Layout
+
+			pmap -x $(pgrep iperf3) >> results/pmap_iperf3.txt
+\end_layout
+
+\begin_layout Plain Layout
+
+			;;
+\end_layout
+
+\begin_layout Plain Layout
+
+		*)
+\end_layout
+
+\begin_layout Plain Layout
+
+			echo "only use dd or iperf3 as parameter"
+\end_layout
+
+\begin_layout Plain Layout
+
+            ;; 
+\end_layout
+
+\begin_layout Plain Layout
+
+esac
 \end_layout
 
 \begin_layout Plain Layout
@@ -4598,7 +5108,7 @@ pmap -x $(pgrep iperf3) >> results/pmap.txt
 
 \begin_layout Plain Layout
 Bash-Script zur Zuverlässigkeitsüberprüfung der Arbeitsspeicher-Messungen
- von pmap (pmap.sh)
+ von pmap (ram/pmap.sh)
 \end_layout
 
 \end_inset
@@ -4619,17 +5129,101 @@ status open
 
 \begin_layout Plain Layout
 
-#!/bin/sh
+#!/bin/sh 
 \end_layout
 
 \begin_layout Plain Layout
 
-sleep 5
+if [ -z $1 ] 
 \end_layout
 
 \begin_layout Plain Layout
 
-top -b -n 2 -d 5.0 -p $(pgrep iperf3) > results/top.txt 
+then
+\end_layout
+
+\begin_layout Plain Layout
+
+        echo "parameter dd or iperf3 needed"
+\end_layout
+
+\begin_layout Plain Layout
+
+        exit 
+\end_layout
+
+\begin_layout Plain Layout
+
+fi
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+case $1 in
+\end_layout
+
+\begin_layout Plain Layout
+
+        "dd")
+\end_layout
+
+\begin_layout Plain Layout
+
+                sleep 5
+\end_layout
+
+\begin_layout Plain Layout
+
+                top -b -n 2 -d 5.0 -p $(pgrep dd) > results/top_dd.txt
+\end_layout
+
+\begin_layout Plain Layout
+
+                ;;
+\end_layout
+
+\begin_layout Plain Layout
+
+        "iperf3")
+\end_layout
+
+\begin_layout Plain Layout
+
+                sleep 5
+\end_layout
+
+\begin_layout Plain Layout
+
+				top -b -n 2 -d 5.0 -p $(pgrep iperf3) > results/top_iperf3.txt
+\end_layout
+
+\begin_layout Plain Layout
+
+                ;;
+\end_layout
+
+\begin_layout Plain Layout
+
+        *)
+\end_layout
+
+\begin_layout Plain Layout
+
+                echo "only use dd or iperf3 as parameter"
+\end_layout
+
+\begin_layout Plain Layout
+
+                ;; 
+\end_layout
+
+\begin_layout Plain Layout
+
+esac
 \end_layout
 
 \begin_layout Plain Layout
@@ -4638,7 +5232,7 @@ top -b -n 2 -d 5.0 -p $(pgrep iperf3) > results/top.txt
 
 \begin_layout Plain Layout
 Bash-Script zur Zuverlässigkeitsüberprüfung der Arbeitsspeicher-Messungen
- von (top.sh)
+ von top (ram/top.sh)
 \end_layout
 
 \end_inset
@@ -4680,7 +5274,7 @@ status open
 \noindent
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="3" columns="5">
+<lyxtabular version="3" rows="5" columns="5">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="left" valignment="top" width="20col%">
 <column alignment="left" valignment="top" width="15col%">
@@ -4749,7 +5343,7 @@ RSS (10s nach Start)
 \begin_inset Text
 
 \begin_layout Plain Layout
-pidstat
+pidstat-Messung von dd
 \end_layout
 
 \end_inset
@@ -4758,7 +5352,7 @@ pidstat
 \begin_inset Text
 
 \begin_layout Plain Layout
-2084 Kilobytes
+
 \end_layout
 
 \end_inset
@@ -4767,12 +5361,106 @@ pidstat
 \begin_inset Text
 
 \begin_layout Plain Layout
-2084 Kilobytes
+
 \end_layout
 
 \end_inset
 </cell>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+top-Messung von dd
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+pidstat-Messung von iperf3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2084 Kilobytes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2084 Kilobytes
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4781,7 +5469,7 @@ pidstat
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4796,12 +5484,12 @@ pidstat
 \begin_inset Text
 
 \begin_layout Plain Layout
-top
+top-Messung von iperf3
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4810,7 +5498,7 @@ top
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4819,7 +5507,7 @@ top
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -5908,6 +6596,38 @@ Innerhalb des PRP-Netzes findet kein Netzwerkverkehr statt, sofern auf den
 \begin_layout Itemize
 Neben den 3 aufgeführten Servern und den 2 Switches befinden sich keine
  weiteren Netzwerkkomponenten im PRP-Netz.
+\end_layout
+
+\begin_layout Subsubsection
+UDP / Ethernet Vergleich
+\end_layout
+
+\begin_layout Standard
+Aufgrund der ähnlichen Verhaltensweisen von UDP-Segmenten und Layer-2-Frames
+ besteht Grund zur Annahme, dass diese sich auch ähnlich auf die Performance
+ auswirken.
+ Daher wird in diesem Abschnitt untersucht, ob und was für eine Differenz
+ bei der Messung von UDP- und Ethernet-Datenverkehr mit PRP entsteht.
+ Aus dieser Untersuchung soll sich heraus stellen, ob es nötig ist, den
+ Layer-2- vom UDP-Verkehr getrennt zu begutachten oder ob es genügt den
+ UDP-Verkehr zu analysieren und daraus Ergebnisse für den Layer-2-Datenverkehr
+ abzuleiten.
+ Dies wird aus folgendem Grund untersucht: Die Applikation zur Netzwerkgenerieru
+ng (iperf3) ist lediglich in der Lage, TCP- und UDP-Netzwerklast zu generieren,
+ jedoch keine Netzwerklast, die ausschliesslich aus Ethernet-Frames besteht.
+ Sollte es nach der Analyse in diesem Abschnitt nicht von Nöten sein, den
+ Layer-2-Datenstrom separat zu begutachten, kann für die darauf folgenden
+ Untersuchungen lediglich iperf3 für die Generierung der Netzwerklast verwendet
+ werden.
+\end_layout
+
+\begin_layout Standard
+Für den Vergleich zwischen UDP und Ethernet wird jeweils die Netzwerklast
+ wie folgt generiert:
+\end_layout
+
+\begin_layout Standard
+3 
 \end_layout
 
 \begin_layout Subsubsection
