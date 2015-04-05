@@ -57,16 +57,17 @@ printheader()
  Import scapy and other modules
  Check if run by root and exit if not
 """
-import os, sys, getopt, uuid
-
-if not os.geteuid()==0:
-    sys.exit("Only root can run this script")
 
 try:
+    import os, sys, getopt, uuid, logging
+    logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
     from scapy.all import *
 except ImportError:
     print("Use python 2.7 or install scapy http://www.secdev.org/projects/scapy")
     sys.exit(0)
+
+if not os.geteuid()==0:
+    sys.exit("Only root can run this script")
 
 """
  function definitions
@@ -175,7 +176,10 @@ def sendpacketout( packet ):
     if transmission_type == 'ETH':
         for x in range(0, int(countend)):
             sendp(packet, iface=interface)
-    else:
+    elif transmission_type == 'TCP':
+        for x in range(0, int(countend)):
+            sr(packet, iface=interface)
+    elif transmission_type == 'UDP':
         for x in range(0, int(countend)):
             sr(packet, iface=interface)
 
@@ -192,7 +196,7 @@ def sendpacket( data ):
         packet = generate_package(data)
         sendpacketout(packet)
     elif sizetype == 'MAX':
-        current_framesize = 1500
+        current_framesize = mtu
         packet = generate_package(data)
         sendpacketout(packet)
     elif sizetype == 'RANDOM':
@@ -200,9 +204,9 @@ def sendpacket( data ):
         randframesizefile = open("random_framesizes.txt", "r")
         line = randframesizefile.readline()
         while (line and int(count)<int(count_frames)):
-            print(count)
-            print(count_frames)
             current_framesize = int(randframesizefile.readline())
+            if int(current_framesize) > int(mtu):
+                current_framesize = int(mtu)
             packet = generate_package(data)
             sendpacketout(packet)
             count += 1
@@ -253,7 +257,7 @@ def main(argv):
             target = arg
         elif opt in ("-m"):
             global mtu
-            mtu = arg
+            mtu = int(arg)
         elif opt in ("-i"):
             global interface
             interface = arg
@@ -267,6 +271,8 @@ def main(argv):
     if datafile == '':
         printhelp()
         sys.exit()
+
+    print('Load characteristics:\nDestination: ' + str(target) + '\n-SIZETYPE: ' + str(sizetype) + '\n-TRANSMISSION_TYPE: ' + str(transmission_type) + '\n-PRP-mode enabled: ' + str(prp_enabled) + '\n-Interface: ' + str(interface) + '\n-MTU: ' + str(mtu) + '\n-FILE: ' + str(datafile) + '\n-Frame / Packet count: ' + str(count_frames) + '\n\nSending load...')
 
     payload=getpayloadfromfile( datafile )
     sendpacket( payload )

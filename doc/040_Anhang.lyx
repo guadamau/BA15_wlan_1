@@ -418,10 +418,24 @@ name "chap:Quellcode"
 
 \begin_layout Section
 meas - Messung von CPU- und Netzwerk-Last
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:meas---Messung"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
-ethersend - Versenden von Ethernet-Frames
+shck - Netzwerklast-Generierung
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:shck---Netzwerklast-Generierung"
+
+\end_inset
+
+
 \end_layout
 
 \end_body
