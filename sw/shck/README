@@ -34,7 +34,7 @@ Info:
 - Uses scapy (http://www.secdev.org/projects/scapy/)
 - Needs to be run as root
 - Logfile will be created everytime you run the script
-  (./log/shck-YYYYmmdd-HHMMSS.log)
+  (./logfile.log)
 
 ############################################################
 Parameters:

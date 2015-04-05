@@ -102,9 +102,11 @@ def getpayloadfromfile( datafile ):
 
 def generateeth( data ):
     src=str(hex(uuid.getnode()))
+    srcmac = ''
     if str(src[1])=='x':
         src = src[2:]
-    srcmac = str(src[0])
+        srcmac += '00:'
+    srcmac += str(src[0])
     srcmac += str(src[1]) 
     srcmac += ':' + str(src[2]) 
     srcmac += str(src[3]) 
@@ -114,8 +116,6 @@ def generateeth( data ):
     srcmac += str(src[7])
     srcmac += ':' + str(src[8]) 
     srcmac += str(src[9]) 
-    srcmac += ':' + str(src[10]) 
-    srcmac += str(src[10])
     eth=Ether(dst=target,src=srcmac,type=0x2015)
     data=cutpayload(data)
     return eth/data
@@ -183,12 +183,12 @@ def sendpacketout( packet ):
             sr(packet, iface=interface)
     elif transmission_type == 'UDP':
         for x in range(0, int(countend)):
-            sr(packet, iface=interface)
+            send(packet, iface=interface)
 
 def sendpacket( data ):
     import time
     old_stdout = sys.stdout
-    sys.stdout = open('log/shck-' + time.strftime("%Y%m%d-%H%M%S") + '.log', 'w')
+    sys.stdout = open('logfile.log', 'w')
     print('-shck------LOG-' + time.strftime("%Y%m%d-%H%M%S") + '-------')
 
     global current_framesize
@@ -283,5 +283,7 @@ def main(argv):
 
     payload=getpayloadfromfile( datafile )
     sendpacket( payload )
+
+    print('\nDone\nshck is finished\n\n')
 
 main(sys.argv[1:])
