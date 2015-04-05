@@ -41,7 +41,7 @@ sizetype = 'MIN'
 target = '127.0.0.1'
 targetmac = 'ff:ff:ff:ff:ff:ff'
 interface = 'eth0'
-count_frames = 1
+count_frames = int(1)
 datafile = ''
 
 """
@@ -169,9 +169,9 @@ def generate_package( data ):
     
 def sendpacketout( packet ):
     if sizetype == 'RANDOM':
-        countend = 1
+        countend = int(1)
     else:
-        countend = count_frames
+        countend = int(count_frames)
         
     if transmission_type == 'ETH':
         for x in range(0, int(countend)):
@@ -203,13 +203,18 @@ def sendpacket( data ):
         count = 0
         randframesizefile = open("random_framesizes.txt", "r")
         line = randframesizefile.readline()
-        while (line and int(count)<int(count_frames)):
+        while (line or int(count)<int(count_frames)):
+            if int(count)==int(count_frames):
+                break
+            if int(count)%99==0:
+                randframesizefile.seek(0)
             current_framesize = int(randframesizefile.readline())
             if int(current_framesize) > int(mtu):
                 current_framesize = int(mtu)
             packet = generate_package(data)
             sendpacketout(packet)
-            count += 1
+            count += int(1)
+        randframesizefile.close()
             
     print('-------------------------------------------------')
     sys.stdout = old_stdout
@@ -263,7 +268,7 @@ def main(argv):
             interface = arg
         elif opt in ("-n"):
             global count_frames
-            count_frames = arg
+            count_frames = int(arg)
         elif opt in ("-P"):
             global prp_enabled
             prp_enabled = True
