@@ -42,6 +42,7 @@ target = '127.0.0.1'
 targetmac = 'ff:ff:ff:ff:ff:ff'
 interface = 'eth0'
 count_frames = int(1)
+unlimited_count = False
 datafile = ''
 
 """
@@ -177,12 +178,18 @@ def sendpacketout( packet ):
         
     if transmission_type == 'ETH':
         for x in range(0, int(countend)):
+            while unlimited_count == True:
+                sendp(packet, iface=interface)
             sendp(packet, iface=interface)
     elif transmission_type == 'TCP':
         for x in range(0, int(countend)):
+            while unlimited_count == True:
+                sr(packet, iface=interface)
             sr(packet, iface=interface)
     elif transmission_type == 'UDP':
         for x in range(0, int(countend)):
+            while unlimited_count == True:
+                send(packet, iface=interface)
             send(packet, iface=interface)
 
 def sendpacket( data ):
@@ -215,7 +222,8 @@ def sendpacket( data ):
                 current_framesize = int(mtu)
             packet = generate_package(data)
             sendpacketout(packet)
-            count += int(1)
+            if unlimited_count == False:
+                count += int(1)
         randframesizefile.close()
             
     print('-------------------------------------------------')
@@ -270,7 +278,11 @@ def main(argv):
             interface = arg
         elif opt in ("-n"):
             global count_frames
-            count_frames = int(arg)
+            global unlimited_count
+            if int(arg) == 0:
+                unlimited_count = True
+            else:
+                count_frames = int(arg)
         elif opt in ("-P"):
             global prp_enabled
             prp_enabled = True

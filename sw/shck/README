@@ -61,6 +61,7 @@ All parameters except -m and -P are mandatory
 
 -n      COUNT       Define how many frames / packets will be sent
                     Default: 1
+                    If you set 0, the amount is infinite
 
 -s      SIZETYPE
         MIN         Load will only contain frames with minimal size.
