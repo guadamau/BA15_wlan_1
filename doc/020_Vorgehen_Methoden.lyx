@@ -7116,22 +7116,170 @@ Aufgrund der ähnlichen Verhaltensweisen von UDP-Segmenten und Layer-2-Frames
  Layer-2- vom UDP-Verkehr getrennt zu begutachten oder ob es genügt den
  UDP-Verkehr zu analysieren und daraus Ergebnisse für den Layer-2-Datenverkehr
  abzuleiten.
- Dies wird aus folgendem Grund untersucht: Die Applikation zur Netzwerkgenerieru
-ng (iperf3) ist lediglich in der Lage, TCP- und UDP-Netzwerklast zu generieren,
- jedoch keine Netzwerklast, die ausschliesslich aus Ethernet-Frames besteht.
  Sollte es nach der Analyse in diesem Abschnitt nicht von Nöten sein, den
  Layer-2-Datenstrom separat zu begutachten, kann für die darauf folgenden
- Untersuchungen lediglich iperf3 für die Generierung der Netzwerklast verwendet
- werden.
+ Untersuchungen lediglich TCP und UDP für die Generierung der Netzwerklast
+ verwendet werden.
 \end_layout
 
 \begin_layout Standard
-Für den Vergleich zwischen UDP und Ethernet wird jeweils die Netzwerklast
- wie folgt generiert:
+Für den Vergleich zwischen UDP und Ethernet wird auf dem DAN 
+\begin_inset Quotes fld
+\end_inset
+
+srv01
+\begin_inset Quotes frd
+\end_inset
+
+ jeweils die Netzwerklast mit dem 
+\begin_inset Quotes fld
+\end_inset
+
+shck
+\begin_inset Quotes frd
+\end_inset
+
+-Skript wie folgt generiert, an 
+\begin_inset Quotes fld
+\end_inset
+
+srv02
+\begin_inset Quotes frd
+\end_inset
+
+ gesendet und parallel dazu mit tshark aufgezeichnet:
 \end_layout
 
 \begin_layout Standard
-3 
+1) Ethernet-Datenverkehr bestehend aus 1000 Frames mit minimaler Grösse:
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+sudo ./shck.py -d 00:0e:7f:30:17:4a -f ./testbin -i prp1 -m 1494 -n 1000 -s
+ MIN -t ETH
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+2) Ethernet-Datenverkehr bestehend aus 1000 Frames mit maximaler Grösse:
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+sudo ./shck.py -d 00:0e:7f:30:17:4a -f ./testbin -i prp1 -m 1494 -n 1000 -s
+ MAX -t ETH
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+3) Ethernet-Datenverkehr bestehend aus 1000 Frames mit zufälliger Grösse:
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+sudo ./shck.py -d 00:0e:7f:30:17:4a -f ./testbin -i prp1 -m 1494 -n 1000 -s
+ RANDOM -t ETH
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+4) UDP-Datenverkehr bestehend aus 1000 Paketen mit minimaler Grösse:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+sudo ./shck.py -d 192.168.0.2 -f ./testbin -i prp1 -m 1494 -n 1000 -s MIN -t UDP
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+5) UDP-Datenverkehr bestehend aus 1000 Paketen mit maximaler Grösse:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+sudo ./shck.py -d 192.168.0.2 -f ./testbin -i prp1 -m 1494 -n 1000 -s MAX -t UDP
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+6) UDP-Datenverkehr bestehend aus 1000 Paketen mit zufälliger Grösse:
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+sudo ./shck.py -d 192.168.0.2 -f ./testbin -i prp1 -m 1494 -n 1000 -s RANDOM -t
+ UDP
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Darauf wird ein Vergleich zwischen den Netzwerkströmen 1 & 4, 2 & 5 und
+ 3 & 6 erstellt.
 \end_layout
 
 \begin_layout Subsubsection
