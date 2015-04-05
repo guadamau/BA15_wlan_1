@@ -101,19 +101,21 @@ def getpayloadfromfile( datafile ):
     return data
 
 def generateeth( data ):
-    src=hex(uuid.getnode())
-    srcmac = str(src[2])
+    src=str(hex(uuid.getnode()))
+    if str(src[1])=='x':
+        src = src[2:]
+    srcmac = str(src[0])
+    srcmac += str(src[1]) 
+    srcmac += ':' + str(src[2]) 
     srcmac += str(src[3]) 
     srcmac += ':' + str(src[4]) 
     srcmac += str(src[5]) 
     srcmac += ':' + str(src[6]) 
-    srcmac += str(src[7]) 
+    srcmac += str(src[7])
     srcmac += ':' + str(src[8]) 
-    srcmac += str(src[9])
+    srcmac += str(src[9]) 
     srcmac += ':' + str(src[10]) 
-    srcmac += str(src[11]) 
-    srcmac += ':' + str(src[12]) 
-    srcmac += str(src[13])
+    srcmac += str(src[10])
     eth=Ether(dst=target,src=srcmac,type=0x2015)
     data=cutpayload(data)
     return eth/data
