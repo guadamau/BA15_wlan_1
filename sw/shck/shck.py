@@ -81,8 +81,9 @@ def udpdatagram( sport, dport ):
     udp=UDP(sport=sport, dport=dport)
     return udp
 
-def tcpfragment( sport, dport ):
-    tcp=TCP(sport=sport, dport=dport)
+def tcpfragment( sport, dport, seq ):
+    tcp=TCP(sport=sport, dport=dport, seq=seq)
+    tcp.flags="PA"
     return tcp
 
 def addpayload( element, payloadcontent ):
@@ -121,9 +122,9 @@ def generateeth( data ):
     data=cutpayload(data)
     return eth/data
 
-def generatetcp( data ):
+def generatetcp( data, seq ):
     ip=ippacket(target)
-    tcp=tcpfragment(2014,2015)
+    tcp=tcpfragment(2014,2015,seq)
     data=cutpayload(data)
     addpayload(tcp, data)
     return ip/tcp
@@ -160,7 +161,7 @@ def generate_package( data ):
             print('need an IP-address as destination when sending TCP-packets')
             sys.exit()
         else:
-            packet = generatetcp( data )
+            packet = generatetcp( data, 2001 )
     elif transmission_type == 'UDP':
         if not '.' in target:
             print('need an IP-address as destination when sending UDP-packets')
@@ -171,26 +172,28 @@ def generate_package( data ):
     return packet
     
 def sendpacketout( packet ):
+    s = conf.L2socket()
+
     if sizetype == 'RANDOM':
         countend = int(1)
     else:
         countend = int(count_frames)
         
-    if transmission_type == 'ETH':
-        for x in range(0, int(countend)):
-            while unlimited_count == True:
-                sendp(packet, iface=interface)
-            sendp(packet, iface=interface)
-    elif transmission_type == 'TCP':
-        for x in range(0, int(countend)):
-            while unlimited_count == True:
-                sr(packet, iface=interface)
-            sr(packet, iface=interface)
-    elif transmission_type == 'UDP':
-        for x in range(0, int(countend)):
-            while unlimited_count == True:
-                send(packet, iface=interface)
-            send(packet, iface=interface)
+    if transmission_type == 'TCP':
+    	ip=ippacket(target)
+    	tcpsyn=tcpfragment(3014,2015,2000)
+        tcpsyn.flags="S"
+        tcpsynack=s.sr1(ip/tcpsyn)
+
+        tcpack=tcpfragment(2014,2015,(tcpsynack.ack + 1))
+        tcpack.flags="A"
+        tcpack.ack=tcpsynack.seq + 1
+        s.send(ip/tcpack)
+
+    s.send(packet)
+    #s.send(packet, count=int(countend), verbose=0)
+    while unlimited_count == True:
+        s.send(packet)
 
 def sendpacket( data ):
     import time
@@ -281,8 +284,7 @@ def main(argv):
             global unlimited_count
             if int(arg) == 0:
                 unlimited_count = True
-            else:
-                count_frames = int(arg)
+            count_frames = int(arg)
         elif opt in ("-P"):
             global prp_enabled
             prp_enabled = True
@@ -291,7 +293,7 @@ def main(argv):
         printhelp()
         sys.exit()
 
-    print('Load characteristics:\nDestination: ' + str(target) + '\n-SIZETYPE: ' + str(sizetype) + '\n-TRANSMISSION_TYPE: ' + str(transmission_type) + '\n-PRP-mode enabled: ' + str(prp_enabled) + '\n-Interface: ' + str(interface) + '\n-MTU: ' + str(mtu) + '\n-FILE: ' + str(datafile) + '\n-Frame / Packet count: ' + str(count_frames) + '\n\nSending load...')
+    print('PID of shck: ' + str(os.getpid()) + '\nLoad characteristics:\nDestination: ' + str(target) + '\n-SIZETYPE: ' + str(sizetype) + '\n-TRANSMISSION_TYPE: ' + str(transmission_type) + '\n-PRP-mode enabled: ' + str(prp_enabled) + '\n-Interface: ' + str(interface) + '\n-MTU: ' + str(mtu) + '\n-FILE: ' + str(datafile) + '\n-Frame / Packet count: ' + str(count_frames) + '\n\nSending load...')
 
     payload=getpayloadfromfile( datafile )
     sendpacket( payload )
