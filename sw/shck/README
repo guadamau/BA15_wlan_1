@@ -40,7 +40,7 @@ Info:
 Parameters:
 ############################################################
 
-All parameters except -m and -P are mandatory
+All parameters except -m, -n, -P, -S are mandatory
 
 -d      DESTINATION 
         IP-address  requires "TCP" or "UDP" for -t
@@ -70,6 +70,11 @@ All parameters except -m and -P are mandatory
                     Size-values are taken from textfile so that the load 
                     can be reproduced.
 
+-S	SERVERMODE  Start shck in Server-Mode an the target to recieve UDP
+		    and TCP-packets
+		    Mandatory parameters in Server-Mode:
+			-t (TCP|UDP)
+
 -t      TRANSMISSION_TYPE
         ETH         Send frames over layer 2 (Type-value: 0x2015)
                     (requires MAC-destination-address as value for -d)
@@ -88,3 +93,6 @@ Examples:
 
 - Generate one TCP-packet with maximum size over a non-PRP-interface
     sudo ./shck.py -d 192.168.0.2 -f ./testbin -i eth0 -s MAX -t TCP
+
+- Start shck in Server-Mode with TCP
+    sudo ./shck.py -S -t TCP

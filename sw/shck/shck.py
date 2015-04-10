@@ -44,6 +44,9 @@ interface = 'eth0'
 count_frames = int(1)
 unlimited_count = False
 datafile = ''
+srvmode = False
+old_stdout = ''
+portnumber = 52015
 
 """
  functions
@@ -60,8 +63,13 @@ printheader()
 """
 
 try:
-    import os, sys, getopt, uuid, logging
+    import os, socket, sys, getopt, uuid, logging
+
+    from socket import error as socket_error
+    import errno
+
     logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
+
     from scapy.all import *
 except ImportError:
     print("Use python 2.7 or install scapy http://www.secdev.org/projects/scapy")
@@ -81,8 +89,8 @@ def udpdatagram( sport, dport ):
     udp=UDP(sport=sport, dport=dport)
     return udp
 
-def tcpfragment( sport, dport, seq ):
-    tcp=TCP(sport=sport, dport=dport, seq=seq)
+def tcpfragment( sport, dport ):
+    tcp=TCP(sport=sport, dport=dport)
     tcp.flags="PA"
     return tcp
 
@@ -122,23 +130,21 @@ def generateeth( data ):
     data=cutpayload(data)
     return eth/data
 
-def generatetcp( data, seq ):
+def generatetcp( data ):
     ip=ippacket(target)
-    tcp=tcpfragment(2014,2015,seq)
+    tcp=tcpfragment(2014,portnumber)
     data=cutpayload(data)
-    addpayload(tcp, data)
-    return ip/tcp
+    return ip/tcp/data
 
 def generateudp( data ):
     ip=ippacket(target)
-    udp=udpdatagram(2014, 2015)
+    udp=udpdatagram(2014,portnumber)
     data=cutpayload(data)
-    addpayload(udp, data)
-    return ip/udp
+    return ip/udp/data
 
 def cutpayload( data ):
     if transmission_type == 'ETH':
-        size = current_framesize
+        size = current_framesize-ETH_OVERHEAD
     elif transmission_type == 'TCP':
         size = current_framesize-IP_OVERHEAD-TCP_OVERHEAD-ETH_OVERHEAD
     elif transmission_type == 'UDP':
@@ -146,8 +152,7 @@ def cutpayload( data ):
 
     if prp_enabled == True:
         size -= PRP_OVERHEAD
-
-    return data[0:size]
+    return data[0:(size)]
 
 def generate_package( data ):
     if transmission_type == 'ETH':
@@ -161,7 +166,7 @@ def generate_package( data ):
             print('need an IP-address as destination when sending TCP-packets')
             sys.exit()
         else:
-            packet = generatetcp( data, 2001 )
+            packet = generatetcp( data )
     elif transmission_type == 'UDP':
         if not '.' in target:
             print('need an IP-address as destination when sending UDP-packets')
@@ -171,32 +176,75 @@ def generate_package( data ):
 
     return packet
     
-def sendpacketout( packet ):
-    s = conf.L2socket()
-
-    if sizetype == 'RANDOM':
-        countend = int(1)
-    else:
+def sendpacketout( packet, data ):
+    try:
         countend = int(count_frames)
-        
-    if transmission_type == 'TCP':
-    	ip=ippacket(target)
-    	tcpsyn=tcpfragment(3014,2015,2000)
-        tcpsyn.flags="S"
-        tcpsynack=s.sr1(ip/tcpsyn)
-
-        tcpack=tcpfragment(2014,2015,(tcpsynack.ack + 1))
-        tcpack.flags="A"
-        tcpack.ack=tcpsynack.seq + 1
-        s.send(ip/tcpack)
-
-    s.send(packet)
-    #s.send(packet, count=int(countend), verbose=0)
-    while unlimited_count == True:
-        s.send(packet)
+            
+        if transmission_type == 'ETH':
+	    s = conf.L2socket(iface=interface)
+	    ss = StreamSocket(s)
+    
+        elif transmission_type == 'UDP':
+	    s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+	    s.connect((target, portnumber))
+	    ss = StreamSocket(s)
+    
+    
+        elif transmission_type == 'TCP':
+	    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+	    s.connect((target, portnumber))
+	    ss = StreamSocket(s)
+    
+	    """
+    	    ip=ippacket(target)
+    	    tcpsyn=tcpfragment(3014,portnumber)
+            tcpsyn.flags="S"
+            tcpsynack=ss.sr1(ip/tcpsyn)
+    
+            tcpack=tcpfragment(2014,portnumber)
+            tcpack.flags="A"
+            tcpack.seq=tcpsynack[TCP].ack + 1
+            tcpack.ack=tcpsynack[TCP].seq + 1
+            ss.send(ip/tcpack)
+	    """
+    
+        if sizetype == 'RANDOM':
+    	    global current_framesize
+	    count = 0
+            randframesizefile = open("random_framesizes.txt", "r")
+            line = randframesizefile.readline()
+            while (line or int(count)<int(count_frames)):
+                if int(count)==int(count_frames):
+                    break
+                if int(count)%99==0:
+                    randframesizefile.seek(0)
+                current_framesize = int(randframesizefile.readline())
+                if int(current_framesize) > int(mtu):
+                    current_framesize = int(mtu)
+                packet = generate_package(data)
+	        ss.send(packet)
+                if unlimited_count == False:
+                    count += int(1)
+            randframesizefile.close()
+        else:
+	    for x in range(0, int(countend)):
+	        ss.send(packet)
+    
+	    while unlimited_count == True:
+	        ss.send(packet)
+    
+        s.close()
+    except socket_error as serr:
+	if serr.errno != errno.ECONNREFUSED:
+		raise serr
+	else:
+    		sys.stdout = old_stdout
+		print('\nERROR (Connection refused by target):\nshck needs to run in Server-Mode (-S) with -t ' + transmission_type + ' on the target host!\nTry again after starting shck in Server-Mode on the target.')
+		sys.exit()
 
 def sendpacket( data ):
     import time
+    global old_stdout
     old_stdout = sys.stdout
     sys.stdout = open('logfile.log', 'w')
     print('-shck------LOG-' + time.strftime("%Y%m%d-%H%M%S") + '-------')
@@ -206,31 +254,53 @@ def sendpacket( data ):
     if sizetype == 'MIN':
         current_framesize = 64
         packet = generate_package(data)
-        sendpacketout(packet)
+        sendpacketout(packet, data)
     elif sizetype == 'MAX':
         current_framesize = mtu
         packet = generate_package(data)
-        sendpacketout(packet)
+        sendpacketout(packet, data)
     elif sizetype == 'RANDOM':
-        count = 0
-        randframesizefile = open("random_framesizes.txt", "r")
-        line = randframesizefile.readline()
-        while (line or int(count)<int(count_frames)):
-            if int(count)==int(count_frames):
-                break
-            if int(count)%99==0:
-                randframesizefile.seek(0)
-            current_framesize = int(randframesizefile.readline())
-            if int(current_framesize) > int(mtu):
-                current_framesize = int(mtu)
-            packet = generate_package(data)
-            sendpacketout(packet)
-            if unlimited_count == False:
-                count += int(1)
-        randframesizefile.close()
+        packet = generate_package(data)
+    	sendpacketout(packet, data)
             
     print('-------------------------------------------------')
     sys.stdout = old_stdout
+
+def server():
+    HOST = ''
+    PORT = portnumber
+    if transmission_type == 'TCP':
+	while 1:
+	    try:
+	        s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+                s.bind((HOST, PORT))
+                s.listen(1)
+                conn, addr = s.accept()
+                print('\nConnected by ' + str(addr))
+	        count = 0
+                while 1:
+       	            data = conn.recv(1024)
+       	            if not data: break
+                    conn.sendall(data)
+		    count += 1
+	            print ('\rRecieved messages: ' + str(count) + ''),
+                conn.close()
+	    except socket_error as serr:
+	        if serr.errno !=  errno.ECONNRESET:
+		    raise serr
+	        else:
+		    print('\nConnection reset by peer, ready for new connection...')
+    elif transmission_type == 'UDP':
+	s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.bind((HOST, PORT))
+	count = 0
+        while 1:
+	    count += int(1)
+	    data, addr = s.recvfrom(1024)
+	    print ('\rRecieved messages: ' + str(count) + ''),
+    else:
+	print('\nINVALID TRANSMISSION_TYPE! Choose TCP or UDP!\n')
+    
 
 def printhelp():
     from subprocess import call
@@ -243,7 +313,7 @@ def printhelp():
 def main(argv):
 
     try:
-        opts, args = getopt.getopt(argv,"s:t:d:f:m:i:n:Ph")
+        opts, args = getopt.getopt(argv,"s:t:d:f:m:i:n:PSh")
     except getopt.GetoptError as err:
         print(err)
         printhelp()
@@ -288,16 +358,30 @@ def main(argv):
         elif opt in ("-P"):
             global prp_enabled
             prp_enabled = True
+        elif opt in ("-S"):
+            global srvmode
+            srvmode = True
 
-    if datafile == '':
+    if (datafile == '' and srvmode == False):
         printhelp()
         sys.exit()
+    elif (srvmode == True):
+	print('PID of shck: ' + str(os.getpid()) + '\nRunning in SERVER MODE' + '\n-TRANSMISSION_TYPE: ' + str(transmission_type) + '\n\nListening...')
+	server()
 
-    print('PID of shck: ' + str(os.getpid()) + '\nLoad characteristics:\nDestination: ' + str(target) + '\n-SIZETYPE: ' + str(sizetype) + '\n-TRANSMISSION_TYPE: ' + str(transmission_type) + '\n-PRP-mode enabled: ' + str(prp_enabled) + '\n-Interface: ' + str(interface) + '\n-MTU: ' + str(mtu) + '\n-FILE: ' + str(datafile) + '\n-Frame / Packet count: ' + str(count_frames) + '\n\nSending load...')
+    else:
+	print('PID of shck: ' + str(os.getpid()) + '\nLoad characteristics:\nDestination: ' + str(target) + '\n-SIZETYPE: ' + str(sizetype) + '\n-TRANSMISSION_TYPE: ' + str(transmission_type) + '\n-PRP-mode enabled: ' + str(prp_enabled) + '\n-Interface: ' + str(interface) + '\n-MTU: ' + str(mtu) + '\n-FILE: ' + str(datafile) + '\n-Frame / Packet count: ' + str(count_frames) + '\n\nSending load...')
 
-    payload=getpayloadfromfile( datafile )
-    sendpacket( payload )
+	payload=getpayloadfromfile( datafile )
+	sendpacket( payload )
 
-    print('\nDone\nshck is finished\n\n')
+    	print('\nDone\nshck is finished\n')
+	sys.exit()
 
-main(sys.argv[1:])
+try:
+	main(sys.argv[1:])
+except (KeyboardInterrupt, SystemExit):
+	sys.stdout = old_stdout
+    	print("######################################\n Goodbye!\n 'Avoid the Gates of Hell. Use Linux.' \n######################################\n")
+except:
+	raise
