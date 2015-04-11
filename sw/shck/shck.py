@@ -1,6 +1,6 @@
 #! /usr/bin/env python2.7
 
-"""
+"""shck - network generator script
 ==============================================================================
  BA15_wlan_1
 =============================================================================
@@ -13,47 +13,52 @@
   Purpose:    Generate and send specific network load
 
   Desc:       Creates specific load described in the german thesis
-           "Ermittlung der Performance von Netzwerkfunktionen am Beispiel
-       von PRP" by Mauro Guadagnini and Prosper Leibundgut.
+           	  "Ermittlung der Performance von Netzwerkfunktionen am Beispiel
+       		  von PRP" by Mauro Guadagnini and Prosper Leibundgut.
              
-       Uses scapy (http://www.secdev.org/projects/scapy/index.html)
+              Uses scapy (http://www.secdev.org/projects/scapy/index.html)
 
 *****************************************************************************
 """
 
-"""
- constants
-"""
+#
+#  constants
+#
 ETH_OVERHEAD = 14
 IP_OVERHEAD = 20
 TCP_OVERHEAD = 32
 UDP_OVERHEAD = 8
 PRP_OVERHEAD = 6
 
-"""
- global variables
-"""
-mtu = int(1500)
-transmission_type = 'UDP'
-prp_enabled = False
-current_framesize = 64
-sizetype = 'MIN'
-target = '127.0.0.1'
-targetmac = 'ff:ff:ff:ff:ff:ff'
-interface = 'eth0'
-count_frames = int(1)
-unlimited_count = False
-datafile = ''
-srvmode = False
-old_stdout = ''
-portnumber = int(52015)
-logfile = ''
+#
+# global variables
+#
+sizetype = 'MIN'					# set default sizetype to MIN
+current_framesize = 64				# set default framesize to 64 bytes (MIN sizetype)
 
-"""
- Import scapy and other modules
- Check if run by root and exit if not
-"""
+target = '127.0.0.1'				# set default IP-taget to localhost
+interface = 'eth0'					# set default network interface to eth0
+mtu = int(1500)						# set default mtu to 1500 bytes
+									# (Maximum frame size decrement by 6 bytes)
+transmission_type = 'UDP'			# set default transmission type to UDP
+prp_enabled = False					# disable PRP-support 
 
+count_frames = int(1)				# send 1 frame by default
+unlimited_count = False				# don't send unlimited count of frames per default
+
+srvmode = False						# start per default in client mode
+
+portnumber = int(52015)				# set default portnumber to 52015
+
+datafile = ''						# global variable for datafile (payload of packets)
+logfile = ''						# global variable for logfile location
+old_stdout = ''						# global variable to save standard out 
+									# (for example to set a textfile as stdout)
+
+#
+# Import scapy and other modules
+# Check if run by root and exit if not
+#
 try:
     import os, socket, sys, getopt, uuid, logging
 
@@ -63,31 +68,35 @@ try:
     logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
 
     from scapy.all import *
+
 except ImportError:
     print("Use python 2.7 or install scapy http://www.secdev.org/projects/scapy")
     sys.exit(0)
 
 if not os.geteuid()==0:
-    sys.exit("Only root can run this script")
+    sys.exit("ERROR:\nOnly root can run this script\nUse sudo or run as root")
 
-"""
- functions
-"""
-
+#
+# functions
+#
 def printheader():
     sys.stdout.write('#######################################\n shck - generate and send network load\n#######################################\n')
 
 printheader()
 
 
-"""
- function definitions
-"""
+#
+# function definitions
+#
 def addpayload( element, payloadcontent ):
+	"""Adds data to payload of a specific element
+	"""
     if payloadcontent != '':
         element.payload=payloadcontent
 
 def getpayloadfromfile( datafile ):
+	"""returns the first 1500 bytes of a specific file
+	"""
     data = ''
     with open(datafile, "rb") as f:
         byte = f.read(1)
@@ -101,6 +110,16 @@ def getpayloadfromfile( datafile ):
     return data
 
 def generateeth( data ):
+	"""Generates an ethernet frame (Type value is 0x2015)
+
+	Parses the MAC-address of the NIC and writes it as source
+	into the ethernet frame.
+
+	Writes target MAC-address (needs to have the format "XX:XX:XX:XX:XX:XX") 
+	as destination into the ethernet frame.
+
+	Adds prepared payload (by cutpayload(data)) in the needed size to the frame.
+	"""
     src=str(hex(uuid.getnode()))
     srcmac = ''
     if str(src[1])=='x':
@@ -122,6 +141,11 @@ def generateeth( data ):
     return eth
 
 def cutpayload( data ):
+	"""Returns the first x bytes from the content of the argument variable
+
+	The size of the return value matches the payload of an ethernet frame or
+	TCP- or UDP-packet so that the final packet/frame will have the needed size.
+	"""
     global current_framesize
 
     if transmission_type == 'ETH':
@@ -140,6 +164,14 @@ def cutpayload( data ):
         return data[0:int(size)]
 
 def generate_package( data ):
+	"""returns the final content that needs to be send by the sockets.
+
+	The TCP- and UDP-socket wrap all needed headers around the return value,
+	whereas the RAW-socket needs to have the complete ethernet frame.
+
+	Also checks if the destination argument matches 
+	the specified transmission type (MAC for Ethernet / IP for TCP and UDP)
+	"""
     if transmission_type == 'ETH':
         if not ':' in str(target):
             logfile.close()
@@ -168,11 +200,15 @@ def generate_package( data ):
 
     
 def sendpacketout( packet, data ):
+	"""Creates the needed socket and sends the prepared data x times (specified per -n parameter) over it
+
+	For the RANDOM-sizetype, the function reads a prepared textfile which contains a specific
+	size in bytes per line, prepares and sends the frame/packet per line.
+	"""
     try:
         countend = int(count_frames)
             
         if transmission_type == 'ETH':
-            #s = conf.L2socket(iface=interface)
             s = socket.socket(socket.PF_PACKET, socket.SOCK_RAW)
             s.bind((interface,0x2015))
     
@@ -228,6 +264,8 @@ def sendpacketout( packet, data ):
             sys.exit()
 
 def sendpacket( data ):
+	"""starts the sending-method (sendpacketout()) and redirects the stdout to a logfile
+	"""
     import time
     global old_stdout
     global logfile
@@ -255,6 +293,8 @@ def sendpacket( data ):
     sys.stdout = old_stdout
 
 def server():
+	"""server-mode: listens on the specified portnumber (TCP or UDP)
+	"""
     HOST = ''
     PORT = portnumber
     if transmission_type == 'TCP':
@@ -294,12 +334,13 @@ def server():
 def printhelp():
     from subprocess import call
     call(["less", "README"])
-    #print sys.argv[0] + ' -s SIZETYPE -t TRANSMISSION_TYPE -m MTU -d DESTINATION -f FILE -i INTERFACE -n COUNT [-P]\n-s SIZETYPE: MIN | RANDOM | MAX\n-t TRANSMISSION_TYPE: ETH | TCP | UDP (default)\n-f FILE: File you want to send as payload (will only send the first x bytes of it)\n-d DESTINATION: MAC OR IP-destination-address (MAC if -t ETH, IP if -t TCP|UDP)\n-m MTU: set MTU (default 1500)\n-I INTERFACE (for example eth0): is needed when -t ETH\n-n COUNT: How many frames/packets you want to send (default 1)\n-P enable PRP (subtracts 6 bytes from payload (RCT))'
 
-"""
- main
-"""
+#
+# main
+#
 def main(argv):
+	"""Parse arguments
+	"""
 
     try:
         opts, args = getopt.getopt(argv,"s:t:d:f:m:i:n:p:PSh")
@@ -355,12 +396,12 @@ def main(argv):
             global srvmode
             srvmode = True
 
-    if (datafile == '' and srvmode == False):
+    if (datafile == '' and srvmode == False):	# display help if invalid parameters are set
         printhelp()
         sys.exit()
     elif (srvmode == True):
         print('PID of shck: ' + str(os.getpid()) + '\nRunning in SERVER MODE' + '\n-TRANSMISSION_TYPE: ' + str(transmission_type) + ' (Port: ' + str(portnumber) + ')' + '\n\nListening...')
-        server()
+        server()								# start server-mode
 
     else:
         print('PID of shck: ' + str(os.getpid()) + '\nLoad characteristics:\nDestination: ' + str(target) + '\n-SIZETYPE: ' + str(sizetype) + '\n-TRANSMISSION_TYPE: ' + str(transmission_type) + ' (Port: ' + str(portnumber) + ')' + '\n-PRP-mode enabled: ' + str(prp_enabled) + '\n-Interface: ' + str(interface) + '\n-MTU: ' + str(mtu) + '\n-FILE: ' + str(datafile))
@@ -370,12 +411,15 @@ def main(argv):
             print('-Frame / Packet count: ' + str(count_frames))
         print('\n\nSending load...')
 
-        payload=getpayloadfromfile( datafile )
-        sendpacket( payload )
+        payload=getpayloadfromfile( datafile )	# get payload from file
+        sendpacket( payload )					# send frames with specified payload
 
         print('\nDone\nshck is finished\n')
     sys.exit()
 
+#
+# start main and catch KeyboardInterrupt and sys.exit()
+#
 try:
     main(sys.argv[1:])
 except (KeyboardInterrupt, SystemExit):
