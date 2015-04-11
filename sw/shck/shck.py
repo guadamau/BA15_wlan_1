@@ -46,7 +46,7 @@ unlimited_count = False
 datafile = ''
 srvmode = False
 old_stdout = ''
-portnumber = 52015
+portnumber = int(52015)
 logfile = ''
 
 """
@@ -185,6 +185,7 @@ def sendpacketout( packet, data ):
             s.connect((target, portnumber))
     
         ss = StreamSocket(s)
+        sendpacketonsocket = ss.send
     
         if sizetype == 'RANDOM':
             global current_framesize
@@ -202,20 +203,19 @@ def sendpacketout( packet, data ):
                     current_framesize = int(mtu)
                 packet = generate_package(data)
 
-                bytecount = ss.send(Raw(packet))
+                bytecount = sendpacketonsocket(Raw(packet))
                 if (unlimited_count == False) and (int(bytecount) > int(0)):
                     count += int(1)
             randframesizefile.close()
         else:
-
             count = 0
             while int(count) < int(countend):
-                bytecount = ss.send(Raw(packet))
+                bytecount = sendpacketonsocket(Raw(packet))
                 if int(bytecount) > int(0):
                     count += int(1)
         
             while unlimited_count == True:
-                ss.send(Raw(packet))
+                sendpacketonsocket(Raw(packet))
         
         s.close()
     except socket_error as serr:
@@ -224,7 +224,7 @@ def sendpacketout( packet, data ):
         else:
             logfile.close()
             sys.stdout = old_stdout
-            print('\nERROR (Connection refused by target):\nshck needs to run in Server-Mode (-S) with -t ' + transmission_type + ' on the target host!\nTry again after starting shck in Server-Mode on the target.')
+            print('\nERROR (Connection refused by target):\nshck needs to run in Server-Mode (-S) with -t ' + transmission_type + '\nand on the same port (-p PORTNUMBER) on the target host!\nTry again after starting shck in Server-Mode on the target.')
             sys.exit()
 
 def sendpacket( data ):
@@ -302,7 +302,7 @@ def printhelp():
 def main(argv):
 
     try:
-        opts, args = getopt.getopt(argv,"s:t:d:f:m:i:n:PSh")
+        opts, args = getopt.getopt(argv,"s:t:d:f:m:i:n:p:PSh")
     except getopt.GetoptError as err:
         print(err)
         printhelp()
@@ -348,6 +348,9 @@ def main(argv):
         elif opt in ("-P"):
             global prp_enabled
             prp_enabled = True
+        elif opt in ("-p"):
+            global portnumber
+            portnumber = int(arg)
         elif opt in ("-S"):
             global srvmode
             srvmode = True
@@ -356,11 +359,11 @@ def main(argv):
         printhelp()
         sys.exit()
     elif (srvmode == True):
-        print('PID of shck: ' + str(os.getpid()) + '\nRunning in SERVER MODE' + '\n-TRANSMISSION_TYPE: ' + str(transmission_type) + '\n\nListening...')
+        print('PID of shck: ' + str(os.getpid()) + '\nRunning in SERVER MODE' + '\n-TRANSMISSION_TYPE: ' + str(transmission_type) + ' (Port: ' + str(portnumber) + ')' + '\n\nListening...')
         server()
 
     else:
-        print('PID of shck: ' + str(os.getpid()) + '\nLoad characteristics:\nDestination: ' + str(target) + '\n-SIZETYPE: ' + str(sizetype) + '\n-TRANSMISSION_TYPE: ' + str(transmission_type) + '\n-PRP-mode enabled: ' + str(prp_enabled) + '\n-Interface: ' + str(interface) + '\n-MTU: ' + str(mtu) + '\n-FILE: ' + str(datafile))
+        print('PID of shck: ' + str(os.getpid()) + '\nLoad characteristics:\nDestination: ' + str(target) + '\n-SIZETYPE: ' + str(sizetype) + '\n-TRANSMISSION_TYPE: ' + str(transmission_type) + ' (Port: ' + str(portnumber) + ')' + '\n-PRP-mode enabled: ' + str(prp_enabled) + '\n-Interface: ' + str(interface) + '\n-MTU: ' + str(mtu) + '\n-FILE: ' + str(datafile))
         if (unlimited_count == True):
             print('-Frame / Packet count: unlimited (Stop by pressing Ctrl+C)')
         else:

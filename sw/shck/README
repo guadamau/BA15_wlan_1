@@ -50,10 +50,16 @@ All parameters except -m, -n, -P, -S are mandatory
                     for the frames/packets (the file ./testbin contains
                     random values and has a size of 1M)
 
+-h      HELP        Displays this README
+
 -i      INTERFACE   Networkinterface over which you want to send
                     the generated load
 
 -m      MTU         Define the MTU (Default: 1500)
+
+-p      PORTNUMBER  Only affects TCP and UDP.
+                    Run on a specific portnumber (Default: 52015)
+                    Server and Client need to have the same portnumber
 
 -P      PRP-MODE    Subtracts 6 bytes from the payload so that it is
                     guaranteed that the packet has space 
@@ -61,10 +67,12 @@ All parameters except -m, -n, -P, -S are mandatory
 
 -n      COUNT       Define how many frames / packets will be sent
                     Default: 1
-                    If you set 0, the amount is infinite
+                    If you set 0, the amount is infinite.
 
 -s      SIZETYPE
         MIN         Load will only contain frames with minimal size.
+                    TCP Minimal size: Header (Ethernet + IP + TCP = 66)
+                                      + 1 Byte Data (can't send 0 Bytes)
         MAX         Load will only contain frames with maximum size (MTU).
         RANDOM      Load will contain frames of random sizes.
                     Size-values are taken from textfile so that the load 
