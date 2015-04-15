@@ -158,6 +158,22 @@ def cutpayload( data ):
     else:
         return data[0:int(size)]
 
+def calcsizeofrandompayload(current_randomsize):
+    if transmission_type == 'ETH':
+        size = int(current_randomsize)
+    elif transmission_type == 'TCP':
+        size = int(current_randomsize)-int(IP_OVERHEAD)-int(TCP_OVERHEAD)-int(ETH_OVERHEAD)
+    elif transmission_type == 'UDP':
+        size = int(current_randomsize)-int(IP_OVERHEAD)-int(UDP_OVERHEAD)-int(ETH_OVERHEAD)
+    
+    if prp_enabled == True:
+        size -= PRP_OVERHEAD
+
+    if size <= 0:
+        return 0
+    else:
+        return int(size)
+
 def generate_package( data ):
     """returns the final content that needs to be send by the sockets.
 
@@ -215,23 +231,34 @@ def sendpacketout( packet, data ):
         if sizetype == 'RANDOM':
             global current_framesize
             count = 0
-            randframesizefile = open("random_framesizes.txt", "r")
-            line = randframesizefile.readline()
-            while (line or count < count_frames):
-                if (int(count)==int(count_frames) and unlimited_count == False):
-                    break
-                if int(count)%99==0:
-                    randframesizefile.seek(0)
+            with open("random_framesizes.txt", "r") as randomsizes:
+                head = [next(randomsizes) for x in xrange(100)]
+            cursor = 0
+            packet = generate_package(data)
+            packet = Raw(packet)
+            while (count < count_frames):
 
-                current_framesize = int(randframesizefile.readline())
-                if int(current_framesize) > int(mtu):
-                    current_framesize = int(mtu)
-                packet = generate_package(data)
-                packet = Raw(packet)
-                bytecount = sendpacketonsocket(packet)
-                if (unlimited_count == False) and (int(bytecount) > int(0)):
+                if (count==count_frames and unlimited_count == False):
+                    break
+
+                if int(cursor)%100==0:
+                    cursor = 0
+
+                current_randomsize = int(head[cursor])
+
+                if int(current_randomsize) > mtu:
+                    current_randomsize = mtu
+
+                packetlength = len(packet)
+                diff = packetlength - calcsizeofrandompayload(current_randomsize)
+                packettosend = Raw(str(packet)[diff:packetlength])
+                packettosendlength = len(packettosend)
+                bytecount = sendpacketonsocket(packettosend)
+                if (unlimited_count == False) and (bytecount == packettosendlength):
                     count += 1
-            randframesizefile.close()
+                    cursor += 1
+                elif (unlimited_count == True) and (bytecount == packettosendlength):
+                    cursor += 1
         else:
             count = 0
             packet = Raw(packet)
@@ -241,7 +268,6 @@ def sendpacketout( packet, data ):
                     count += 1
         
             while unlimited_count == True:
-                #sendpacketonsocket(packet)
                 ss.send(packet)
         
         s.close()
@@ -268,6 +294,7 @@ def sendpacket( data ):
         packet = generate_package(data)
         sendpacketout(packet, data)
     elif sizetype == 'RANDOM':
+        current_framesize = int(mtu)
         packet = generate_package(data)
         sendpacketout(packet, data)
 
