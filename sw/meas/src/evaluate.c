@@ -1,6 +1,7 @@
 /* *****************************************************************************
    File:       evaluate.c
-   Autor:      leibupro
+   Authors:    leibupro
+               guadamau
    Date:       03.2015
    
    Purpose:    Evaluate statistics data from /proc-filesystem. 

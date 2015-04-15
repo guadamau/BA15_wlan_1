@@ -1,6 +1,7 @@
 /* *****************************************************************************
    File:       collect.c
-   Autor:      leibupro
+   Authors:    leibupro
+               guadamau
    Date:       03.2015
    
    Purpose:    Collect specified values from the /proc-Filesystem 
@@ -42,7 +43,7 @@
  * cmd_line_count
  * 
  * */
-#include "cmds"
+#include "attrs.h"
 
 /* private function prototypes */
 unsigned char is_printable_str( const char* str );

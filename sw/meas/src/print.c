@@ -1,6 +1,7 @@
 /* *****************************************************************************
    File:       print.c
-   Autor:      leibupro
+   Authors:    leibupro
+               guadamau
    Date:       03.2015
    
    Purpose:    Output collected statistics data.

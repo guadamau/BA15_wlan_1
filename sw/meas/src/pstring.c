@@ -1,6 +1,7 @@
 /* *****************************************************************************
    File:       pstring.c
-   Autor:      leibupro
+   Authors:    leibupro
+               guadamau
    Date:       03.2015
    
    Purpose:    Extra string functions like string replace. 
