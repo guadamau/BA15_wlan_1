@@ -1,8 +1,8 @@
-#=========================================================================
+#============================================================================
 # BA15_wlan_1
-#=========================================================================
-#
+#============================================================================
 *****************************************************************************
+
 Software:   BA15_wlan_1 Software Suite
 Authors:    leibupro@students.zhaw.ch | guadamau@students.zhaw.ch
 Date:       06.2015
@@ -18,7 +18,16 @@ shck:
     Written in Python
 
 *****************************************************************************
+
+Directories:
+./meas                      meas-Source-Code
+./shck                      shck-Source-Code
+./tarballs                  Prepared tarballs in the current version
+./tarballs/meas_archive     Tarballs of old meas-versions
+./tarballs/shck_archive     Tarballs of old shck-versions
+
 For more info see the corresponding README or the german thesis 
-    "Ermittlung der Performance von Netzwerkfunktionen am Beispiel
-    von PRP" by Mauro Guadagnini and Prosper Leibundgut.
+"Ermittlung der Performance von Netzwerkfunktionen am Beispiel
+von PRP" by Mauro Guadagnini and Prosper Leibundgut.
+
 *****************************************************************************
