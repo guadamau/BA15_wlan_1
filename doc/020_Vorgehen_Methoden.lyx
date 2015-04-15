@@ -1116,6 +1116,8 @@ Es folgt eine Auflistung von Hilfsmitteln inklusive deren Beschrieb, Funktionen
  Dabei wurden zuvor Hilfsmittel ausgeschlossen, die entweder eine grafische
  Oberfläche benötigen, kaum bekannt oder dessen aktuellste Version älter
  als 2012 sind.
+ Im nächsten Kapitel wird die engere Auswahl der gefundenen Tools aufgelistet
+ und evaluiert.
 \end_layout
 
 \begin_layout Subsection
@@ -3796,6 +3798,13 @@ shck
 \end_inset
 
 
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Netzwerklast-Generierung-shck"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3869,7 +3878,7 @@ status open
 \noindent
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="9" columns="2">
+<lyxtabular version="3" rows="12" columns="2">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="left" valignment="top" width="15col%">
 <column alignment="left" valignment="top" width="75col%">
@@ -3898,7 +3907,7 @@ Beschreibung
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3907,7 +3916,7 @@ Beschreibung
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3924,7 +3933,7 @@ Je nach Übertragungsart (Reine Layer-2-Frames, TCP- oder UDP-Pakete) ist
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3933,7 +3942,7 @@ Je nach Übertragungsart (Reine Layer-2-Frames, TCP- oder UDP-Pakete) ist
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3951,7 +3960,31 @@ Datei, wessen Inhalt für die Payload der Frames / Pakete verwendet werden
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-h
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Hilfe
+\begin_inset Newline newline
+\end_inset
+
+Zeigt die englische Readme-Datei an.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3960,7 +3993,7 @@ Datei, wessen Inhalt für die Payload der Frames / Pakete verwendet werden
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3976,7 +4009,7 @@ Bestimmt, über welches Netzwerkinterface die Netzwerklast versendet werden
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3985,7 +4018,7 @@ Bestimmt, über welches Netzwerkinterface die Netzwerklast versendet werden
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4000,7 +4033,32 @@ Bestimmt die MTU (Standard-Wert beträgt 1500)
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-p
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Portnummer
+\begin_inset Newline newline
+\end_inset
+
+TCP-/UDP-Verbindung auf einem bestimmten Port herstellen (Standard: 52015).
+ Client und Server müssen den selben Port ausgewählt haben.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4009,7 +4067,7 @@ Bestimmt die MTU (Standard-Wert beträgt 1500)
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4025,7 +4083,7 @@ Wird dieser Parameter mit angegeben, so wird der Nutzlast 6 Bytes abgezogen,
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4034,7 +4092,7 @@ Wird dieser Parameter mit angegeben, so wird der Nutzlast 6 Bytes abgezogen,
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4044,13 +4102,17 @@ Count / Anzahl
 
 Bestimmt, wie viele Frames / Pakete generiert werden.
  Der Standard-Wert ist 1 Frame / Paket.
+\begin_inset Newline newline
+\end_inset
+
+Wird die Anzahl 0 angegeben, so werden unendlich viele Frames / Pakete versendet.
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4059,7 +4121,7 @@ Bestimmt, wie viele Frames / Pakete generiert werden.
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4124,6 +4186,40 @@ RANDOM
  zwischen 64 und 1500 generiert wurde.
  So kann eine zufällige Netzwerklast generiert werden, die dennoch reproduzierba
 r ist.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-S
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Server-Modus
+\begin_inset Newline newline
+\end_inset
+
+Startet shck im Server-Modus, um TCP-/UDP-Pakete empfangen zu können.
+ Wird dieser Parameter nicht mit angegeben, startet shck im Client-Modus.
+ Benötigt den 
+\begin_inset Quotes fld
+\end_inset
+
+-t
+\begin_inset Quotes frd
+\end_inset
+
+-Parameter, um den Server im TCP- oder UDP-Modus starten zu können.
 \end_layout
 
 \end_inset
@@ -4216,7 +4312,8 @@ Verwendete Tools
 \end_layout
 
 \begin_layout Standard
-In diesem Kapitel werden die in dieser Arbeit verwendeten Tools aufgelistet.
+In diesem Kapitel werden die in dieser Arbeit verwendeten Tools aufgelistet,
+ die es durch die engere Auswahl geschafft haben.
  Dazu wird aufgeführt welche Aufgabe von welcher Applikation übernommen
  wird.
 \end_layout
@@ -7367,6 +7464,13 @@ reference "chap:Resultate"
 
 \begin_layout Subsection
 Grundsätze und Rahmenbedingungen
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Grundsätze-und-Rahmenbedingungen"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -8747,65 +8851,12 @@ In diesem Kapitel werden sämltiche Typen von Netzwerklast, die in dieser
 \end_layout
 
 \begin_layout Standard
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="4">
-<features rotate="0" tabularvalignment="middle">
-<column alignment="left" valignment="top" width="25col%">
-<column alignment="left" valignment="top" width="10col%">
-<column alignment="left" valignment="top" width="10col%">
-<column alignment="left" valignment="top" width="10col%">
-<row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Lasttyp
+Es werden 3 verschiedene Übermittlungsarten verwendet: Ethernet (reine Layer-2-F
+rames), TCP und UDP.
+ Für jeden dieser Übermittlungsarten gibt es 3 Lasttypen:
 \end_layout
 
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Ethernet
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-TCP
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-UDP
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
+\begin_layout Itemize
 \begin_inset Quotes fld
 \end_inset
 
@@ -8813,45 +8864,15 @@ MIN
 \begin_inset Quotes frd
 \end_inset
 
-: Besteht aus lauter Frames / Paketen, welche die minimal mögliche Grösse
- haben
+
+\begin_inset Newline newline
+\end_inset
+
+Besteht aus lauter Frames / Paketen, welche die minimal mögliche Grösse
+ haben.
 \end_layout
 
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
+\begin_layout Itemize
 \begin_inset Quotes fld
 \end_inset
 
@@ -8859,44 +8880,32 @@ RANDOM
 \begin_inset Quotes frd
 \end_inset
 
-: Beinhaltet Frames / Pakete, welche von zufälliger Grösse sind
-\end_layout
+
+\begin_inset Newline newline
+\end_inset
+
+Beinhaltet Frames / Pakete, welche von zufälliger Grösse sind.
+ Wie es bereits im Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Grundsätze-und-Rahmenbedingungen"
 
 \end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
 
-\begin_layout Plain Layout
+ erläutert wurde, muss die Netzwerklast reproduzierbar sein.
+ Aus diesem Grund wurde eine Liste mit zufälligen Werten zwischen 64 und
+ 1500 im Voraus generiert, welche bei der Erzeugung der Last vom Typ 
+\begin_inset Quotes fld
+\end_inset
 
+RANDOM
+\begin_inset Quotes frd
+\end_inset
+
+ von oben nach unten abgearbeitet wird.
 \end_layout
 
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
+\begin_layout Itemize
 \begin_inset Quotes fld
 \end_inset
 
@@ -8904,63 +8913,27 @@ MAX
 \begin_inset Quotes frd
 \end_inset
 
-: Setzt sich aus Frames / Paketen zusammen, die über die maximal mögliche
+
+\begin_inset Newline newline
+\end_inset
+
+Setzt sich aus Frames / Paketen zusammen, die über die maximal mögliche
  Grösse verfügen.
 \end_layout
 
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
+\begin_layout Standard
+Dies ergibt total 9 unterschiedliche Netzwerklastarten.
+ Mittels der Applikation shck (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Netzwerklast-Generierung-shck"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Beschreibung der Werte vom Ergebnis einer Messung: Netzwerkbelastung pro
- Netzwerkinterface
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
+) ist es möglich, jeden dieser Datenströme mit einer Genauigkeit zur Einheit
+ Byte generieren zu können.
+ Die vorhin erwähnte Liste mit zufälligen Werten liegt dem Quellcode der
+ shck-Applikation bei.
 \end_layout
 
 \begin_layout Subsection
