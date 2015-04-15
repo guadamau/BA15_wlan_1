@@ -249,9 +249,7 @@ def sendpacketout( packet, data ):
                 if int(current_randomsize) > mtu:
                     current_randomsize = mtu
 
-                packetlength = len(packet)
-                diff = packetlength - calcsizeofrandompayload(current_randomsize)
-                packettosend = Raw(str(packet)[diff:packetlength])
+                packettosend = Raw(str(packet)[0:calcsizeofrandompayload(current_randomsize)])
                 packettosendlength = len(packettosend)
                 bytecount = sendpacketonsocket(packettosend)
                 if (unlimited_count == False) and (bytecount == packettosendlength):
