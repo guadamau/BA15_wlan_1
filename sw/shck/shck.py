@@ -13,8 +13,8 @@
   Purpose:    Generate and send specific network load
 
   Desc:       Creates specific load described in the german thesis
-           	  "Ermittlung der Performance von Netzwerkfunktionen am Beispiel
-       		  von PRP" by Mauro Guadagnini and Prosper Leibundgut.
+			  "Ermittlung der Performance von Netzwerkfunktionen am Beispiel
+			  von PRP" by Mauro Guadagnini and Prosper Leibundgut.
              
               Uses scapy (http://www.secdev.org/projects/scapy/index.html)
 
@@ -51,21 +51,16 @@ srvmode = False						# start per default in client mode
 portnumber = int(52015)				# set default portnumber to 52015
 
 datafile = ''						# global variable for datafile (payload of packets)
-logfile = ''						# global variable for logfile location
-old_stdout = ''						# global variable to save standard out 
-									# (for example to set a textfile as stdout)
 
 #
 # Import scapy and other modules
 # Check if run by root and exit if not
 #
 try:
-    import os, socket, sys, getopt, uuid, logging
+    import os, socket, sys, getopt, uuid
 
     from socket import error as socket_error
     import errno
-
-    logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
 
     from scapy.all import *
 
@@ -89,14 +84,14 @@ printheader()
 # function definitions
 #
 def addpayload( element, payloadcontent ):
-	"""Adds data to payload of a specific element
-	"""
+    """Adds data to payload of a specific element
+    """
     if payloadcontent != '':
         element.payload=payloadcontent
 
 def getpayloadfromfile( datafile ):
-	"""returns the first 1500 bytes of a specific file
-	"""
+    """returns the first 1500 bytes of a specific file
+    """
     data = ''
     with open(datafile, "rb") as f:
         byte = f.read(1)
@@ -110,7 +105,7 @@ def getpayloadfromfile( datafile ):
     return data
 
 def generateeth( data ):
-	"""Generates an ethernet frame (Type value is 0x2015)
+    """Generates an ethernet frame (Type value is 0x2015)
 
 	Parses the MAC-address of the NIC and writes it as source
 	into the ethernet frame.
@@ -119,7 +114,7 @@ def generateeth( data ):
 	as destination into the ethernet frame.
 
 	Adds prepared payload (by cutpayload(data)) in the needed size to the frame.
-	"""
+    """
     src=str(hex(uuid.getnode()))
     srcmac = ''
     if str(src[1])=='x':
@@ -141,11 +136,11 @@ def generateeth( data ):
     return eth
 
 def cutpayload( data ):
-	"""Returns the first x bytes from the content of the argument variable
+    """Returns the first x bytes from the content of the argument variable
 
 	The size of the return value matches the payload of an ethernet frame or
 	TCP- or UDP-packet so that the final packet/frame will have the needed size.
-	"""
+    """
     global current_framesize
 
     if transmission_type == 'ETH':
@@ -164,18 +159,16 @@ def cutpayload( data ):
         return data[0:int(size)]
 
 def generate_package( data ):
-	"""returns the final content that needs to be send by the sockets.
+    """returns the final content that needs to be send by the sockets.
 
 	The TCP- and UDP-socket wrap all needed headers around the return value,
 	whereas the RAW-socket needs to have the complete ethernet frame.
 
 	Also checks if the destination argument matches 
 	the specified transmission type (MAC for Ethernet / IP for TCP and UDP)
-	"""
+    """
     if transmission_type == 'ETH':
         if not ':' in str(target):
-            logfile.close()
-            sys.stdout = old_stdout
             sys.stdout.write('need a MAC-address as destination when sending Ethernet frames')
             sys.exit()
         else:
@@ -183,28 +176,24 @@ def generate_package( data ):
             return str(packet)
     elif (transmission_type == 'TCP' or transmission_type == 'UDP'):
         if (sizetype == 'MIN' and transmission_type == 'TCP'):
-	    # Empty TCP-packet is 66 bytes
-	    # Cant send an empty packet -> Payload 1 Byte
-	    return "\0"
+		# Empty TCP-packet is 66 bytes
+		# Cant send an empty packet -> Payload 1 Byte
+		return "\0"
         if not '.' in str(target):
-            logfile.close()
-            sys.stdout = old_stdout
             sys.stdout.write('need an IP-address as destination when sending ' + str(transmission_type) + '-packets')
             sys.exit()
         return cutpayload(data)
     else:
-        logfile.close()
-        sys.stdout = old_stdout
         sys.stdout.write('\nERROR: Wrong transmission_type in generate_package()\n')
         sys.exit()
 
     
 def sendpacketout( packet, data ):
-	"""Creates the needed socket and sends the prepared data x times (specified per -n parameter) over it
+    """Creates the needed socket and sends the prepared data x times (specified per -n parameter) over it
 
 	For the RANDOM-sizetype, the function reads a prepared textfile which contains a specific
 	size in bytes per line, prepares and sends the frame/packet per line.
-	"""
+    """
     try:
         countend = int(count_frames)
             
@@ -228,7 +217,7 @@ def sendpacketout( packet, data ):
             count = 0
             randframesizefile = open("random_framesizes.txt", "r")
             line = randframesizefile.readline()
-            while (line or int(count)<int(count_frames)):
+            while (line or count < count_frames):
                 if (int(count)==int(count_frames) and unlimited_count == False):
                     break
                 if int(count)%99==0:
@@ -238,41 +227,35 @@ def sendpacketout( packet, data ):
                 if int(current_framesize) > int(mtu):
                     current_framesize = int(mtu)
                 packet = generate_package(data)
-
-                bytecount = sendpacketonsocket(Raw(packet))
+                packet = Raw(packet)
+                bytecount = sendpacketonsocket(packet)
                 if (unlimited_count == False) and (int(bytecount) > int(0)):
-                    count += int(1)
+                    count += 1
             randframesizefile.close()
         else:
             count = 0
-            while int(count) < int(countend):
-                bytecount = sendpacketonsocket(Raw(packet))
-                if int(bytecount) > int(0):
-                    count += int(1)
+            packet = Raw(packet)
+            while count < countend:
+                bytecount = sendpacketonsocket(packet)
+                if int(bytecount) == len(packet):
+                    count += 1
         
             while unlimited_count == True:
-                sendpacketonsocket(Raw(packet))
+                #sendpacketonsocket(packet)
+                ss.send(packet)
         
         s.close()
     except socket_error as serr:
         if serr.errno != errno.ECONNREFUSED:
             raise serr
         else:
-            logfile.close()
-            sys.stdout = old_stdout
             print('\nERROR (Connection refused by target):\nshck needs to run in Server-Mode (-S) with -t ' + transmission_type + '\nand on the same port (-p PORTNUMBER) on the target host!\nTry again after starting shck in Server-Mode on the target.')
             sys.exit()
 
 def sendpacket( data ):
-	"""starts the sending-method (sendpacketout()) and redirects the stdout to a logfile
-	"""
+    """starts the sending-method (sendpacketout())
+    """
     import time
-    global old_stdout
-    global logfile
-    old_stdout = sys.stdout
-    logfile = open('logfile.log', 'w')
-    sys.stdout = logfile
-    print('-shck------LOG-' + time.strftime("%Y%m%d-%H%M%S") + '-------')
 
     global current_framesize
 
@@ -287,14 +270,10 @@ def sendpacket( data ):
     elif sizetype == 'RANDOM':
         packet = generate_package(data)
         sendpacketout(packet, data)
-            
-    print('-------------------------------------------------')
-    logfile.close()
-    sys.stdout = old_stdout
 
 def server():
-	"""server-mode: listens on the specified portnumber (TCP or UDP)
-	"""
+    """server-mode: listens on the specified portnumber (TCP or UDP)
+    """
     HOST = ''
     PORT = portnumber
     if transmission_type == 'TCP':
@@ -339,8 +318,8 @@ def printhelp():
 # main
 #
 def main(argv):
-	"""Parse arguments
-	"""
+    """Parse arguments
+    """
 
     try:
         opts, args = getopt.getopt(argv,"s:t:d:f:m:i:n:p:PSh")
