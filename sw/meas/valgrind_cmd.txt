@@ -1,0 +1,4 @@
+# For this command valgrind Version 3.10.0 was in use.
+# replace the -p (PID) and -i (interval time) and -n (no of intervals) as you like.
+
+valgrind --leak-check=full --show-reachable=yes ./meas -p 2430 -i 2 -n 1 > cur_valgrind_rpt.txt 2>&1

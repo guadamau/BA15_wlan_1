@@ -1,0 +1,94 @@
+#=========================================================================
+# BA15_wlan_1
+#=========================================================================
+#
+*****************************************************************************
+Software:   meas
+Authors:    leibupro@students.zhaw.ch | guadamau@students.zhaw.ch
+Date:       06.2015
+
+Purpose:    Watch and record statistics of a process (PID) as well as 
+            network interface statistics over a specific timespan, 
+            divided into equidistant intervals.
+            
+Desc:       Used to collect statistics data for testcases performed 
+            in the thesis:
+            "Ermittlung der Performance von Netzwerkfunktionen am Beispiel
+            von PRP" by Mauro Guadagnini and Prosper Leibundgut.
+            
+Uses:       Linking requires libbsd 
+            to take advantage of the function 'strtonum'
+            To build the application a gcc and make is required.
+
+*****************************************************************************
+
+############################################################
+Build:
+############################################################
+
+To build and install change to the meas directory and
+type: "make release"
+This will perform a release build and store the
+binary in the meas directory. 
+
+############################################################
+Delete binaries:
+############################################################
+
+If you want to delete the binary files and object files, 
+change to the meas directory and type: "make clean"
+
+############################################################
+Parameters:
+############################################################
+
+Mandatory parameters: -p -i
+Optional parameters : -n -v -P
+
+-i      INTERVAL        Defines the interval time 
+                        of one measurement interval in seconds.
+                        No floating point values allowed.
+
+-n      NO OF INTERVALS Defines how many times a measurement
+                        interval should be repeated.
+                        No floating point values allowed.
+                        Calculate the time, meas runs:
+                        i * n = total time [s]
+                        The default value is 1.
+
+-p      PROCESS ID      Defines the Process ID, whose statistics
+                        should be measured.
+
+-P      PATH            Defines the path where the output files
+                        of meas are stored.
+                        DO NOT PUT A TRAILING SLASH
+                        AT THE END OF THE PATH.
+                        Output files are [per meas run]:
+                        "meas_interval_results_$TIMESTAMP"
+                        "meas_overall_stats_$TIMESTAMP"
+                        where $TIMESTAMP is the elapsed time [s]
+                        since the epoch (01.01.1970).
+                        The default value is /tmp
+
+-v      VERBOSITY       Define a verbosity level: [0, 2]
+                        0: No console outputs produced.
+                           Just the output files are stored.
+                        1: After all measurement intervals 
+                           have passed it shows the overall stats
+                           on stdout.
+                        2: After each measurement interval the
+                           stats of the passed interval are shown
+                           on stdout. After all measurement intervals 
+                           have passed it shows the overall stats
+                           on stdout.
+                        The default value is 0.
+
+############################################################
+Example:
+############################################################
+
+- Measure the process with the ID 2430 with 60 measurement intervals
+  with an interval duration of 10 seconds. (Overall time: 600s)
+  Store the output files in /home/leibupro and be very verbose.
+    meas -p 2430 -i 10 -n 60 -P /home/leibupro -v 2
+
