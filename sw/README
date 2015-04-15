@@ -1,0 +1,24 @@
+#=========================================================================
+# BA15_wlan_1
+#=========================================================================
+#
+*****************************************************************************
+Software:   BA15_wlan_1 Software Suite
+Authors:    leibupro@students.zhaw.ch | guadamau@students.zhaw.ch
+Date:       06.2015
+
+*****************************************************************************
+
+meas:
+    Analyse processes and calculate cpu and network usage
+    Written in C
+
+shck:
+    Generate and send specific network load
+    Written in Python
+
+*****************************************************************************
+For more info see the corresponding README or the german thesis 
+    "Ermittlung der Performance von Netzwerkfunktionen am Beispiel
+    von PRP" by Mauro Guadagnini and Prosper Leibundgut.
+*****************************************************************************
