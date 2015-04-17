@@ -48,7 +48,8 @@ unlimited_count = False				# don't send unlimited count of frames per default
 
 srvmode = False						# start per default in client mode
 
-portnumber = int(52015)				# set default portnumber to 52015
+portnumber_tcp = int(52015)				# set default portnumber for TCP to 52015
+portnumber_udp = int(52014)				# set default portnumber for UDP to 52015
 
 datafile = ''						# global variable for datafile (payload of packets)
 
@@ -219,11 +220,11 @@ def sendpacketout( packet, data ):
     
         elif transmission_type == 'UDP':
             s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-            s.connect((target, portnumber))
+            s.connect((target, portnumber_udp))
     
         elif transmission_type == 'TCP':
             s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-            s.connect((target, portnumber))
+            s.connect((target, portnumber_tcp))
     
         ss = StreamSocket(s)
         sendpacketonsocket = ss.send
@@ -300,13 +301,14 @@ def server():
     """server-mode: listens on the specified portnumber (TCP or UDP)
     """
     HOST = ''
-    PORT = portnumber
+    PORT_UDP = portnumber_udp
+    PORT_TCP = portnumber_tcp
     if transmission_type == 'TCP':
         while 1:
             try:
                 s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
                 s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
-                s.bind((HOST, PORT))
+                s.bind((HOST, PORT_TCP))
                 s.listen(1)
                 conn, addr = s.accept()
                 print('\nConnected by ' + str(addr))
@@ -325,7 +327,7 @@ def server():
                     print('\nConnection reset by peer, ready for new connection...')
     elif transmission_type == 'UDP':
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
-        s.bind((HOST, PORT))
+        s.bind((HOST, PORT_UDP))
         count = 0
         while 1:
             count += int(1)
@@ -394,8 +396,10 @@ def main(argv):
             global prp_enabled
             prp_enabled = True
         elif opt in ("-p"):
-            global portnumber
-            portnumber = int(arg)
+            global portnumber_udp
+            global portnumber_tcp
+            portnumber_udp = int(arg)
+            portnumber_tcp = int(arg)
         elif opt in ("-S"):
             global srvmode
             srvmode = True
@@ -404,7 +408,7 @@ def main(argv):
         printhelp()
         sys.exit()
     elif (srvmode == True):
-        print('PID of shck: ' + str(os.getpid()) + '\nRunning in SERVER MODE' + '\n-TRANSMISSION_TYPE: ' + str(transmission_type) + ' (Port: ' + str(portnumber) + ')' + '\n\nListening...')
+        print('PID of shck: ' + str(os.getpid()) + '\nRunning in SERVER MODE' + '\n-TRANSMISSION_TYPE: ' + str(transmission_type) + '\n\nListening...')
         server()								# start server-mode
 
     else:

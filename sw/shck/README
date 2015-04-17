@@ -56,7 +56,8 @@ All parameters except -m, -n, -P, -S are mandatory
 -m      MTU         Define the MTU (Default: 1500)
 
 -p      PORTNUMBER  Only affects TCP and UDP.
-                    Run on a specific portnumber (Default: 52015)
+                    Run on a specific portnumber (Default: UDP 52014)
+                    Run on a specific portnumber (Default: TCP 52015)
                     Server and Client need to have the same portnumber
 
 -P      PRP-MODE    Subtracts 6 bytes from the payload so that it is

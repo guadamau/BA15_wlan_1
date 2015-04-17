@@ -90,6 +90,13 @@ name "chap:Resultate"
 
 \begin_layout Section
 Szenario 01: Performance im PRP-Netzwerk
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Szenario-01:-Performance"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
