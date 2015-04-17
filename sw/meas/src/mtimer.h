@@ -60,11 +60,13 @@
 typedef struct gtimer_t { struct timeval sT; \
                           struct timeval eT; } gtimer_t;
 
-#define startGTimer(X)  gettimeofday(&X.sT, NULL)  
-#define stopGTimer(X)   gettimeofday(&X.eT, NULL)
-#define getWallGTime(X) ((double)(X.eT.tv_sec) - (double)(X.sT.tv_sec)) +\
-                            ((double)X.eT.tv_usec - (double)X.sT.tv_usec)/1e6  
-#define printGTime(X)   printf("elapsed %3.4lfs\n", getWallGTime(X))
+#define startGTimer(X)   gettimeofday(&X.sT, NULL)  
+#define stopGTimer(X)    gettimeofday(&X.eT, NULL)
+#define getWallGTime(X)  ((double)(X.eT.tv_sec) - (double)(X.sT.tv_sec)) +\
+                             ((double)X.eT.tv_usec - (double)X.sT.tv_usec)/1e6  
+#define getWallGUTime(X) (useconds_t)(((X.eT.tv_sec - X.sT.tv_sec)*1000*1000) +\
+                            (X.eT.tv_usec - X.sT.tv_usec))
+#define printGTime(X)    printf("elapsed %3.4lfs\n", getWallGTime(X))
 
 //------------------------------------------------------------------------------
 

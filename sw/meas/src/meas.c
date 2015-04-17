@@ -106,6 +106,7 @@ int main( int argc, char* argv[] )
  
   stats_t* start_data = NULL;
   stats_t* end_data = NULL;
+  stats_t** data_snapshots = NULL;
 
   stats_res_t** results_list = NULL;
 
@@ -114,6 +115,7 @@ int main( int argc, char* argv[] )
   file_params_t** file_params_list = NULL;
 
   ttimer_t timer;
+  gtimer_t overhead_timer;
 
   const char* errstr;
 
@@ -273,6 +275,13 @@ int main( int argc, char* argv[] )
     exit( EXIT_FAILURE );
   }
 
+  data_snapshots = ( stats_t** )malloc( sizeof( stats_t* ) * ( args.no_intervals + 1 ) );
+  if( data_snapshots == NULL )
+  {
+    perror( "Memory allocation failure. Exiting...\n" );
+    exit( EXIT_FAILURE );
+  }
+
   results_list = ( stats_res_t** )malloc( sizeof( stats_res_t* ) * args.no_intervals );
   if( results_list == NULL )
   {
@@ -282,34 +291,51 @@ int main( int argc, char* argv[] )
   
   file_params_list = create_file_params( args );
 
-  for( i = 0; i < args.no_intervals; i++ )
+  for( i = 0; i < ( args.no_intervals + 1 ); i++ )
   {
     /* ============================================================== */
     
     startTTimer( timer );
-    start_data = get_stat_vals( file_params_list );
-    purge_file_contents( file_params_list );
     
-    sleep( args.interval );
-    
-    end_data = get_stat_vals( file_params_list );
+    startGTimer( overhead_timer );
+    *( data_snapshots + i ) = get_stat_vals( file_params_list );
     purge_file_contents( file_params_list );
+    stopGTimer( overhead_timer );
+
+    usleep( ( args.interval * 1000 * 1000 ) 
+            - getWallGUTime( overhead_timer ) );
+    
     stopTTimer( timer );
+
+    /* pass timevalue to data snapshot */
+    ( *( data_snapshots + i ) )->otime_usec = getWallGUTime( overhead_timer );
+    ( *( data_snapshots + i ) )->etime_sec = getWallTTime( timer );
    
     /* ============================================================== */
+  }
 
-    *( results_list + i ) = evaluate_interval_data( start_data, end_data, &timer );
-    free( start_data );
-    free( end_data );
+  for( i = 1; i <= args.no_intervals; i++ )
+  {  
+    start_data = *( data_snapshots + ( i - 1 ) );
+    end_data = *( data_snapshots + i );
+    *( results_list + ( i - 1 ) ) = evaluate_interval_data( start_data, end_data );
     
     /* print data of each elapsed interval 
      * at this verbosity level */
     if( args.verbosity_level == 2 )
     {
-      output_results_single( ( void* )stdout, *( results_list + i ), NULL );
+      output_results_single( ( void* )stdout, *( results_list + ( i - 1 ) ), NULL );
     }
-
   }
+  
+  /* clean up the data snapshots */
+  for( i = 0; i < ( args.no_intervals + 1 ); i++ )
+  {
+    free( *( data_snapshots + i ) );
+    *( data_snapshots + i ) = NULL;
+  }
+  free( data_snapshots );
+  data_snapshots = NULL;
 
   overall_stats = evaluate_overall_data( results_list, args.no_intervals, args.interval );
   

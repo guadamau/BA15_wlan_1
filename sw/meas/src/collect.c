@@ -468,7 +468,7 @@ stats_t* get_stat_vals( file_params_t** file_params_list )
   stats_t* data_snapshot = NULL;
 
   unsigned char i, j;
-  uint32_t k;
+  uint32_t k, l;
   char* cur_path = NULL;
 
   char** file_paths = NULL;
@@ -542,11 +542,13 @@ stats_t* get_stat_vals( file_params_t** file_params_list )
          * lines count and columns count per line here. 
          * */
         /* file matrix (2d) */
-        for( k = 0; k < ( FILE_BUFFER_SIZE / 2 ); k++ )
+        for( k = 0; k < ( *( file_params_list + j ) )->lines_count; k++ )
         {
-          memcpy( &( ( *( file_params_list + i ) )->file_matrix[ k ] ), /* destination */
-                  &( ( *( file_params_list + j ) )->file_matrix[ k ] ), /* source */
-                  ( FILE_BUFFER_SIZE / 2 ) );                           /* size */
+          for( l = 0; l < ( *( file_params_list + j ) )->columns_count[ k ]; l++ )
+          {
+            ( *( file_params_list + i ) )->file_matrix[ k ][ l ] =
+              ( *( file_params_list + j ) )->file_matrix[ k ][ l ];
+          } 
         }
         
         /* lines count */

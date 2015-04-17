@@ -108,9 +108,17 @@ measurement
 
 ) programmiert, bei der die CPU-Last berechnet wird, um die Ergebnisse von
  pidstat und top verifizieren zu können.
- Des Weiteren misst meas neben der CPU-Last auch die verwendete Netzwerkbandbrei
-te.
- Die Applikation wie folgt:
+ Des Weiteren misst meas neben der CPU-Last auch die verwendeten Netzwerkbandbre
+iten.
+\end_layout
+
+\begin_layout Paragraph
+Übersicht
+\end_layout
+
+\begin_layout Standard
+Die nachfolgend gezeigte Grafik, soll eine Übersicht um den Gesamtumfang
+ der Software meas aufzeigen:
 \end_layout
 
 \end_body
