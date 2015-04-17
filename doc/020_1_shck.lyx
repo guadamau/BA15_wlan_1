@@ -1,0 +1,600 @@
+#LyX 2.1 created this file. For more info see http://www.lyx.org/
+\lyxformat 474
+\begin_document
+\begin_header
+\textclass scrbook
+\use_default_options true
+\master 0000_BA15_wlan_1.lyx
+\maintain_unincluded_children false
+\language ngerman
+\language_package default
+\inputencoding utf8
+\fontencoding global
+\font_roman cmr
+\font_sans lmss
+\font_typewriter cmtt
+\font_math auto
+\font_default_family sfdefault
+\use_non_tex_fonts false
+\font_sc false
+\font_osf true
+\font_sf_scale 100
+\font_tt_scale 100
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 11
+\spacing other 1.2
+\use_hyperref false
+\papersize a4paper
+\use_geometry false
+\use_package amsmath 1
+\use_package amssymb 1
+\use_package cancel 1
+\use_package esint 1
+\use_package mathdots 1
+\use_package mathtools 1
+\use_package mhchem 1
+\use_package stackrel 1
+\use_package stmaryrd 1
+\use_package undertilde 1
+\cite_engine basic
+\cite_engine_type default
+\biblio_style plain
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\justification true
+\use_refstyle 0
+\index Stichwortverzeichnis
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 35mm
+\topmargin 35mm
+\rightmargin 25mm
+\bottommargin 30mm
+\headheight 18mm
+\headsep 12mm
+\footskip 20mm
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation skip
+\defskip medskip
+\quotes_language french
+\papercolumns 1
+\papersides 1
+\paperpagestyle fancy
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Subsubsection
+Netzwerklast-Generierung 
+\begin_inset Quotes fld
+\end_inset
+
+shck
+\begin_inset Quotes frd
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Netzwerklast-Generierung-shck"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Für die Generierung der Netzwerklast wurde ein Python-Skript (mit dem Namen
+ 
+\begin_inset Quotes fld
+\end_inset
+
+shck
+\begin_inset Quotes frd
+\end_inset
+
+, kurz für das schweizerdeutsche Verb 
+\begin_inset Quotes fld
+\end_inset
+
+schick
+\begin_inset Quotes frd
+\end_inset
+
+ (äquivalent zum deutschen Verb 
+\begin_inset Quotes fld
+\end_inset
+
+senden
+\begin_inset Quotes frd
+\end_inset
+
+)) programmiert.
+ Das Skript verwendet das interaktive Paket-Manipulierungs-Programm Scapy
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "scapy"
+
+\end_inset
+
+ und Python Version 2.7.
+\end_layout
+
+\begin_layout Standard
+Der Grund für die Erstellung von shck ist, dass kein Tool gefunden wurde,
+ mit welchem die von den Testfällen geforderte Netzwerklast generiert werden
+ konnte (Zum Beispiel TCP-Pakete, welche permanent mit der minimalen Grösse
+ versendet werden oder das Versenden von reinen Ethernet-Frames mit zufälligen
+ und dennoch reproduzierbaren Grössen).
+\end_layout
+
+\begin_layout Standard
+Der Quellcode ist der Arbeit beigelegt und wird dort auch genauer erörtert
+ (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:shck---Netzwerklast-Generierung"
+
+\end_inset
+
+).
+ In diesem Abschnitt gibt es eine grobe Einführung in die Parameter/Optionen
+ von shck:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="12" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="15col%">
+<column alignment="left" valignment="top" width="75col%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Parameter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Beschreibung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-d
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Destination / Ziel
+\begin_inset Newline newline
+\end_inset
+
+Je nach Übertragungsart (Reine Layer-2-Frames, TCP- oder UDP-Pakete) ist
+ hier eine MAC- oder IP-Adresse anzugeben.
+ Diese Adresse ist dann das Ziel der zu generierenden Netzwerklast.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-f
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+File / Datei
+\begin_inset Newline newline
+\end_inset
+
+Datei, wessen Inhalt für die Payload der Frames / Pakete verwendet werden
+ soll.
+ Es wird pro Frame / Paket jeweils immer nur die ersten x Bytes der Datei
+ verwendet.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-h
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Hilfe
+\begin_inset Newline newline
+\end_inset
+
+Zeigt die englische Readme-Datei an.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-i
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Interface
+\begin_inset Newline newline
+\end_inset
+
+Bestimmt, über welches Netzwerkinterface die Netzwerklast versendet werden
+ soll.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-m
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MTU
+\begin_inset Newline newline
+\end_inset
+
+Bestimmt die MTU (Standard-Wert beträgt 1500)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-p
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Portnummer
+\begin_inset Newline newline
+\end_inset
+
+TCP-/UDP-Verbindung auf einem bestimmten Port herstellen (Standard: 52015).
+ Client und Server müssen den selben Port ausgewählt haben.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-P
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+PRP-Modus (benötigt kein Argument)
+\begin_inset Newline newline
+\end_inset
+
+Wird dieser Parameter mit angegeben, so wird der Nutzlast 6 Bytes abgezogen,
+ um Platz für den RCT des PRP-Protokolls garantieren zu können.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-n
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Count / Anzahl
+\begin_inset Newline newline
+\end_inset
+
+Bestimmt, wie viele Frames / Pakete generiert werden.
+ Der Standard-Wert ist 1 Frame / Paket.
+\begin_inset Newline newline
+\end_inset
+
+Wird die Anzahl 0 angegeben, so werden unendlich viele Frames / Pakete versendet.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-s
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Sizetype / Grössentyp
+\begin_inset Newline newline
+\end_inset
+
+Bestimmt den Grössentyp der Netzwerklast.
+ Zur Auswahl stehen 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+, 
+\begin_inset Quotes fld
+\end_inset
+
+MAX
+\begin_inset Quotes frd
+\end_inset
+
+ und 
+\begin_inset Quotes fld
+\end_inset
+
+RANDOM
+\begin_inset Quotes frd
+\end_inset
+
+.
+ Bei 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+ und 
+\begin_inset Quotes fld
+\end_inset
+
+MAX
+\begin_inset Quotes frd
+\end_inset
+
+ besteht die Netzwerklast jeweils aus lauter kleinen oder grossen Frames
+ / Paketen.
+ Mit 
+\begin_inset Quotes fld
+\end_inset
+
+RANDOM
+\begin_inset Quotes frd
+\end_inset
+
+ als Argument erhalten die Frames / Pakete jeweils eine zufällige Grösse.
+ Diese Grössen werden aus einer Datei ausgelesen, die mit Zufallswerten
+ zwischen 64 und 1500 generiert wurde.
+ So kann eine zufällige Netzwerklast generiert werden, die dennoch reproduzierba
+r ist.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-S
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Server-Modus
+\begin_inset Newline newline
+\end_inset
+
+Startet shck im Server-Modus, um TCP-/UDP-Pakete empfangen zu können.
+ Wird dieser Parameter nicht mit angegeben, startet shck im Client-Modus.
+ Benötigt den 
+\begin_inset Quotes fld
+\end_inset
+
+-t
+\begin_inset Quotes frd
+\end_inset
+
+-Parameter, um den Server im TCP- oder UDP-Modus starten zu können.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Transmission type / Übertragungsart
+\begin_inset Newline newline
+\end_inset
+
+Bestimmt, wie die Frames / Pakete versendet werden sollen.
+ Zur Auswahl stehen 
+\begin_inset Quotes fld
+\end_inset
+
+ETH
+\begin_inset Quotes frd
+\end_inset
+
+ (Layer 2), 
+\begin_inset Quotes fld
+\end_inset
+
+TCP
+\begin_inset Quotes frd
+\end_inset
+
+ und 
+\begin_inset Quotes fld
+\end_inset
+
+UDP
+\begin_inset Quotes frd
+\end_inset
+
+.
+ Je nach Auswahl muss das Argument zum Parameter -d definiert werden.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Parameter der Applikation 
+\begin_inset Quotes fld
+\end_inset
+
+shck
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document
