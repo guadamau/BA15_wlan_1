@@ -27,7 +27,7 @@ void print_one_interval( FILE* fp, stats_res_t* results )
 {
   fprintf( fp,
            "*******************************************************************************************\n\n"
-           " Process specific statistics:\n\n"
+           " Process specific statistics, interval no: %5d\n\n"
            " PID:  %d \n"
            " Time: elapsed %3.2lfs, user %3.2lfs, sys %3.2lfs, overhead %dus\n"
            " CPU:  cpu workload %3.2lf%%\n\n\n"
@@ -39,6 +39,7 @@ void print_one_interval( FILE* fp, stats_res_t* results )
            " if1 (%.4s)  %12lld   %12lld           %14.3lf           %14.3lf\n"
            " =========================================================================================\n\n"
            "*******************************************************************************************\n",
+           results->interval_no,
            results->pid,
            results->etime_sec, 
            results->utime_sec, 

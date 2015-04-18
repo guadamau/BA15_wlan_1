@@ -26,7 +26,7 @@ void check_min_uint( uint32_t* current, uint32_t* actual, uint16_t* interval, ui
 void check_max_uint( uint32_t* current, uint32_t* actual, uint16_t* interval, uint32_t i );
 
 
-stats_res_t* evaluate_interval_data( stats_t* start_data, stats_t* end_data )
+stats_res_t* evaluate_interval_data( stats_t* start_data, stats_t* end_data, uint16_t interval_no )
 {
   stats_res_t* results = NULL;
 
@@ -50,6 +50,10 @@ stats_res_t* evaluate_interval_data( stats_t* start_data, stats_t* end_data )
     exit( EXIT_FAILURE );
   }
 
+  /* set the interval number to a result set */
+  results->interval_no = interval_no;
+  /* ****************************************** */
+  
   /* set the pid to a result set */
   results->pid = start_data->pid;
   /* ****************************************** */
@@ -122,25 +126,33 @@ stats_res_t* evaluate_interval_data( stats_t* start_data, stats_t* end_data )
      * in case of an overflow.
      *
      * */
-    if( end_data->tx_bytes_prp < start_data->tx_bytes_prp )
-    {
-      end_data->tx_bytes_prp = UINT32_MAX + end_data->tx_bytes_prp;
-    }
-
     if( end_data->rx_bytes_prp < start_data->rx_bytes_prp )
     {
-      end_data->rx_bytes_prp = UINT32_MAX + end_data->rx_bytes_prp;
+      results->rx_bytes_prp =   ( UINT32_MAX + end_data->rx_bytes_prp )
+                              - start_data->rx_bytes_prp;
+    }
+    else
+    {
+      results->rx_bytes_prp = end_data->rx_bytes_prp - start_data->rx_bytes_prp; 
+    }
+    
+    if( end_data->tx_bytes_prp < start_data->tx_bytes_prp )
+    {
+      results->tx_bytes_prp =   ( UINT32_MAX + end_data->tx_bytes_prp )
+                              - start_data->tx_bytes_prp;
+    }
+    else
+    {
+      results->tx_bytes_prp = end_data->tx_bytes_prp - start_data->tx_bytes_prp; 
     }
 
-    results->rx_bytes_prp = end_data->rx_bytes_prp - start_data->rx_bytes_prp; 
-    results->tx_bytes_prp = end_data->tx_bytes_prp - start_data->tx_bytes_prp; 
-
+    /* following interface stats are not UINT32 limited */
     results->rx_bytes_if0 = end_data->rx_bytes_if0 - start_data->rx_bytes_if0; 
     results->tx_bytes_if0 = end_data->tx_bytes_if0 - start_data->tx_bytes_if0; 
     
     results->rx_bytes_if1 = end_data->rx_bytes_if1 - start_data->rx_bytes_if1; 
     results->tx_bytes_if1 = end_data->tx_bytes_if1 - start_data->tx_bytes_if1;
-
+    /* ************************************************************************* */
     
     results->rx_byterate_prp = results->rx_bytes_prp / results->etime_sec;
     results->tx_byterate_prp = results->tx_bytes_prp / results->etime_sec;

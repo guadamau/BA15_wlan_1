@@ -36,7 +36,7 @@
 #define BIT_PER_BYTE 8
 
 /* function prototypes */
-stats_res_t*         evaluate_interval_data( stats_t* start_data, stats_t* end_data );
+stats_res_t*         evaluate_interval_data( stats_t* start_data, stats_t* end_data, uint16_t interval_no );
 stats_res_overall_t* evaluate_overall_data( stats_res_t** results_list, uint32_t list_len, uint16_t interval_dur );
 
 #endif /* MEAS_EVALUATE_H_ */

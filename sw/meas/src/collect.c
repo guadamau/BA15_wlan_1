@@ -556,9 +556,11 @@ stats_t* get_stat_vals( file_params_t** file_params_list )
           ( *( file_params_list + j ) )->lines_count;
         
         /* columns count per line (1d) */
-        memcpy( &( ( *( file_params_list + i ) )->columns_count ), /* destination */
-                &( ( *( file_params_list + j ) )->columns_count ), /* source */
-                ( FILE_BUFFER_SIZE / 2 ) );                        /* size */
+        for( k = 0; k < ( *( file_params_list + j ) )->lines_count; k++ )
+        {
+          ( *( file_params_list + i ) )->columns_count[ k ] =
+            ( *( file_params_list + j ) )->columns_count[ k ];
+        }
 
         break;
       }

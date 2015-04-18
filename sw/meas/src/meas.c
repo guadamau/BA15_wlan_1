@@ -318,7 +318,8 @@ int main( int argc, char* argv[] )
   {  
     start_data = *( data_snapshots + ( i - 1 ) );
     end_data = *( data_snapshots + i );
-    *( results_list + ( i - 1 ) ) = evaluate_interval_data( start_data, end_data );
+    *( results_list + ( i - 1 ) ) = evaluate_interval_data( start_data, end_data, 
+                                                            ( uint16_t )( i - 1 ) );
     
     /* print data of each elapsed interval 
      * at this verbosity level */
@@ -326,6 +327,8 @@ int main( int argc, char* argv[] )
     {
       output_results_single( ( void* )stdout, *( results_list + ( i - 1 ) ), NULL );
     }
+    start_data = NULL;
+    end_data = NULL;
   }
   
   /* clean up the data snapshots */

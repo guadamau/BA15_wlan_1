@@ -93,8 +93,10 @@ typedef struct
 
 typedef struct
 {
-
-  pid_t  pid;
+  
+  uint16_t   interval_no;
+  
+  pid_t      pid;
 
   double     utime_sec;
   double     stime_sec;

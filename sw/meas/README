@@ -76,9 +76,10 @@ Optional parameters : -n -v -P
                         1: After all measurement intervals 
                            have passed it shows the overall stats
                            on stdout.
-                        2: After all measurement intervals have passed
-                           the stats of each interval are concatenated
-                           to stdout. In addition to that the overall
+                        2: After all measurement intervals 
+                           have passed the stats of each interval 
+                           are concatenated to stdout. 
+                           In addition to that the overall
                            stats are also shown on stdout.
                         The default value is 0.
 
