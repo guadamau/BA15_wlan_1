@@ -107,12 +107,17 @@ int main( int argc, char* argv[] )
   stats_t* start_data = NULL;
   stats_t* end_data = NULL;
   stats_t** data_snapshots = NULL;
+  
+  time_vals_t* time_values = NULL;
 
   stats_res_t** results_list = NULL;
 
   stats_res_overall_t* overall_stats = NULL;
 
   file_params_t** file_params_list = NULL;
+  
+  meas_buffer_meta_t buffers_metadata;
+  meas_buffer_t** buffers = NULL;
 
   ttimer_t timer;
   gtimer_t overhead_timer;
@@ -120,9 +125,6 @@ int main( int argc, char* argv[] )
   const char* errstr;
 
   char proc_loc[ 16 ] = { '\0' };
-
-  file_coords_t pid_max_coords;
-  file_params_t pid_max_params;
 
   uint32_t i;
 
@@ -133,32 +135,9 @@ int main( int argc, char* argv[] )
   /* init memory area and set the default store path */
   memset( args.store_path, '\0', PATH_LEN );
   strncpy( args.store_path, DEF_STORE_PATH, ( PATH_LEN - 1 ) );
-
-  pid_max_coords.line = 0;
-  pid_max_coords.column = 0;
-  pid_max_params.path = PATH_PID_MAX;
-  pid_max_params.coordinates = pid_max_coords;
-  pid_max_params.column_delimiter = " ";
-  pid_max_params.lines_count = 1;
-  pid_max_params.columns_count[ 0 ] = 1;
-  pid_max_params.file_content = 
-    ( char* )read_file( pid_max_params.path );
-  pid_max_params.value_type = VALUE_NUM;
   
-  if( !file_exists( PATH_PID_MAX ) )
-  {
-    printf( "PID-Max file not found "
-            "in the proc file-system. Using INT16_MAX: %d\n", INT16_MAX );
-    pid_max = INT16_MAX;
-  }
-  else
-  {
-    prepare_file_matrix( &pid_max_params );
-    get_proc_value( &pid_max_params );
-    pid_max = ( pid_t )pid_max_params.value_num;
-  }
-  free( pid_max_params.file_content );
-
+  pid_max = INT16_MAX;
+  
   /* 
    * Specifiying the expected options
    * The two options p and t expect numbers as argument.
@@ -275,6 +254,13 @@ int main( int argc, char* argv[] )
     exit( EXIT_FAILURE );
   }
 
+  time_values = ( time_vals_t* )malloc( sizeof( time_vals_t ) * ( args.no_intervals + 1 ) );
+  if( time_values == NULL )
+  {
+    perror( "Memory allocation failure time values. Exiting...\n" );
+    exit( EXIT_FAILURE );
+  }
+  
   data_snapshots = ( stats_t** )malloc( sizeof( stats_t* ) * ( args.no_intervals + 1 ) );
   if( data_snapshots == NULL )
   {
@@ -290,7 +276,11 @@ int main( int argc, char* argv[] )
   }
   
   file_params_list = create_file_params( args );
-
+  
+  buffers_metadata = get_meas_buffers_meta_data( file_params_list );
+  buffers = init_meas_buffers( &buffers_metadata, ( uint16_t )args.no_intervals );
+  
+  /* capture measurement data into the measurement buffers */
   for( i = 0; i < ( args.no_intervals + 1 ); i++ )
   {
     /* ============================================================== */
@@ -298,8 +288,7 @@ int main( int argc, char* argv[] )
     startTTimer( timer );
     
     startGTimer( overhead_timer );
-    *( data_snapshots + i ) = get_stat_vals( file_params_list );
-    purge_file_contents( file_params_list );
+    read_to_meas_buffers( buffers, buffers_metadata.unique_paths_count, i );
     stopGTimer( overhead_timer );
 
     usleep( ( args.interval * 1000 * 1000 ) 
@@ -307,13 +296,24 @@ int main( int argc, char* argv[] )
     
     stopTTimer( timer );
 
-    /* pass timevalue to data snapshot */
-    ( *( data_snapshots + i ) )->otime_usec = getWallGUTime( overhead_timer );
-    ( *( data_snapshots + i ) )->etime_sec = getWallTTime( timer );
-   
+    ( time_values + i )->otime_usec = getWallGUTime( overhead_timer );
+    ( time_values + i )->etime_sec = getWallTTime( timer );
+
     /* ============================================================== */
   }
 
+  /* perpare the measurement snapshots for evaluation */
+  for( i = 0; i < ( args.no_intervals + 1 ); i++ )
+  {
+    *( data_snapshots + i ) = get_stat_vals( file_params_list, buffers, 
+                                             buffers_metadata.unique_paths_count, i );
+  
+    /* pass timevalues to data snapshot */
+    ( *( data_snapshots + i ) )->otime_usec = ( time_values + i )->otime_usec;
+    ( *( data_snapshots + i ) )->etime_sec = ( time_values + i )->etime_sec;
+  }
+
+  /* evaluate all the snapshot data */
   for( i = 1; i <= args.no_intervals; i++ )
   {  
     start_data = *( data_snapshots + ( i - 1 ) );
@@ -330,6 +330,8 @@ int main( int argc, char* argv[] )
     start_data = NULL;
     end_data = NULL;
   }
+  
+  release_meas_buffers( &buffers_metadata, buffers );
   
   /* clean up the data snapshots */
   for( i = 0; i < ( args.no_intervals + 1 ); i++ )
@@ -353,6 +355,8 @@ int main( int argc, char* argv[] )
   clear_file_params( file_params_list );
 
   /* clean up that ... */
+  free( time_values );
+
   for( i = 0; i < args.no_intervals; i++ )
   {
     free( *( results_list + i ) );

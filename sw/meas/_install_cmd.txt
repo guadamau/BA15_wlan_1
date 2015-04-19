@@ -1,0 +1,4 @@
+# installs the builded binary to the specific location
+sudo install -D -s meas /home/scripts/meas/
+
+# The s-flag strips the symbol table from the binary. It is not needed in a release build

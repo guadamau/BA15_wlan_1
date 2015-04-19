@@ -41,6 +41,7 @@
 
 
 #define FILE_BUFFER_SIZE    1024
+#define STD_STRING_MALLOC   1024
 #define PATH_LEN             256
 #define IF_NAME_LEN           16
 #define TIME_STMP_LEN         16
@@ -90,6 +91,14 @@ typedef struct
   uint64_t   tx_bytes_if1;
 
 } stats_t;
+
+typedef struct
+{
+
+  useconds_t otime_usec;
+  double     etime_sec;
+
+} time_vals_t;
 
 typedef struct
 {
@@ -249,6 +258,27 @@ typedef struct
   uint32_t line;
   uint32_t column;
 } file_coords_t;
+
+typedef struct
+{
+
+  char**   unique_paths;
+  uint16_t unique_paths_count;
+
+} meas_buffer_meta_t;
+
+typedef struct
+{
+  
+  char     file_path[ STD_STRING_MALLOC ];
+  int32_t  file_descriptor;  
+  char*    content_buffer;
+  
+  uint32_t buffer_size;
+  uint16_t slice_size;
+  uint16_t slice_count;
+  
+} meas_buffer_t;
 
 typedef struct
 {

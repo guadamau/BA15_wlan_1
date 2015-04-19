@@ -33,8 +33,6 @@
 
 #include "types.h"
 
-#define STD_STRING_MALLOC 1024
-
 #define INDEX_UTIME         0
 #define INDEX_STIME         1
 #define INDEX_IF_NAME_PRP   2
@@ -49,13 +47,19 @@
 
 
 /* function prototypes */
-stats_t* get_stat_vals( file_params_t** file_params_list );
-void     get_proc_value( file_params_t* file_params );
-void     prepare_file_matrix( file_params_t* file_params );
-void*    read_file( char* file_path );
+stats_t* get_stat_vals( file_params_t** file_params_list, meas_buffer_t** meas_buffers,
+                        uint16_t meas_buffers_len, uint16_t interval_no );
 
 file_params_t** create_file_params( cmd_args_t args );
-void            purge_file_contents( file_params_t** file_params_list );
 void            clear_file_params( file_params_t** file_params_list );
+
+meas_buffer_meta_t get_meas_buffers_meta_data( file_params_t** file_params_list );
+
+meas_buffer_t** init_meas_buffers( meas_buffer_meta_t* buffers_meta, uint16_t no_intervals );
+
+void read_to_meas_buffers( meas_buffer_t** meas_buffers, uint16_t meas_buffers_len,
+                           uint16_t interval_no );
+
+void release_meas_buffers( meas_buffer_meta_t* buffers_meta, meas_buffer_t** meas_buffers );
 
 #endif /* MEAS_COLLECT_H_ */

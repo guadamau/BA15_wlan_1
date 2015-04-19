@@ -48,6 +48,10 @@
 /* private function prototypes */
 unsigned char is_printable_str( const char* str );
 file_coords_t get_file_coordinates( uint8_t par_index );
+void get_proc_value( file_params_t* file_params );
+void prepare_file_matrix( file_params_t* file_params );
+char* get_file_content_from_buffer( char* path, meas_buffer_t** meas_buffers,
+                                    uint16_t meas_buffers_len, uint16_t interval_no );
 
 unsigned char is_printable_str( const char* str )
 {
@@ -402,68 +406,8 @@ void prepare_file_matrix( file_params_t* file_params )
 }
 
 
-void* read_file( char* file_path )
-{
-  /* printf( "Entering read_file ...\n" ); */
-  
-  int fd;
-  void* file_buffer = NULL;
-  ssize_t bytes_read = -1;
-  
-  if( file_path == NULL )
-  {
-    perror( "No file path specified. Exiting ...\n" );
-    exit( EXIT_FAILURE );
-  }
-
-  fd = open( file_path, O_RDONLY );
-  
-  if( fd == -1 )
-  {
-    perror( "Failed to open file. Exiting ...\n" );
-    exit( EXIT_FAILURE );
-  }
-  else
-  {
-    file_buffer = malloc( sizeof( char ) * FILE_BUFFER_SIZE );
-    if( file_buffer == NULL )
-    {
-      /* Should never come here. */
-      perror( "Memory allocation failure. Exiting now.\n" );
-      exit( EXIT_FAILURE );
-    }
-
-    bytes_read = read( fd, file_buffer, FILE_BUFFER_SIZE );
-    
-    if( bytes_read == -1 )
-    {
-      perror( "Failed to read from file. Exiting ...\n" );
-      exit( EXIT_FAILURE );
-    }
-    else if( bytes_read == FILE_BUFFER_SIZE )
-    {
-      perror( "File read buffer is too small, "
-              "for the requested file. Exiting" );
-      exit( EXIT_FAILURE );
-    }
-    else
-    {
-      /* NULL-Terminate the text. */
-      *( ( ( char* )file_buffer ) + bytes_read ) = '\0';
-    }
-    
-    if( close( fd ) == -1 )
-    {
-      perror( "Failed to close the file. Exiting ... \n" );
-      exit( EXIT_FAILURE );
-    }
-  }
-  
-  return file_buffer;
-}
-
-
-stats_t* get_stat_vals( file_params_t** file_params_list )
+stats_t* get_stat_vals( file_params_t** file_params_list, meas_buffer_t** meas_buffers, 
+                        uint16_t meas_buffers_len, uint16_t interval_no )
 {
   stats_t* data_snapshot = NULL;
 
@@ -513,7 +457,9 @@ stats_t* get_stat_vals( file_params_t** file_params_list )
    * coordinates.
    * */
   ( *( file_params_list + 0 ) )->file_content = 
-    ( char* )read_file( ( *( file_params_list + 0 ) )->path );
+    get_file_content_from_buffer( ( *( file_params_list + 0 ) )->path, meas_buffers,
+                                  meas_buffers_len, interval_no );
+
   *( file_paths + 0 ) =  ( *( file_params_list + 0 ) )->path;
   prepare_file_matrix( *( file_params_list + 0 ) );
 
@@ -567,8 +513,10 @@ stats_t* get_stat_vals( file_params_t** file_params_list )
       else if( j == ( i - 1 ) )
       {
         ( *( file_params_list + i ) )->file_content = 
-          ( char* )read_file( ( *( file_params_list + i ) )->path );
-        prepare_file_matrix( *( file_params_list + i ) );
+          get_file_content_from_buffer( ( *( file_params_list + i ) )->path, meas_buffers,
+                                        meas_buffers_len, interval_no );
+          
+          prepare_file_matrix( *( file_params_list + i ) );
       }  
     }
     *( file_paths + i ) = cur_path;
@@ -674,62 +622,248 @@ stats_t* get_stat_vals( file_params_t** file_params_list )
   return data_snapshot;
 }
 
-void purge_file_contents( file_params_t** file_params_list )
+
+meas_buffer_meta_t get_meas_buffers_meta_data( file_params_t** file_params_list )
 {
-  uint8_t i, j;
-
-  char** file_content_ptrs = NULL;
-
-  file_content_ptrs = ( char** )malloc( sizeof( char* ) * cmd_line_count );
+  meas_buffer_meta_t buffers_meta;
+  uint16_t unique_paths_count = 0;
+  uint16_t i, j;
   
-  if( file_content_ptrs == NULL )
+  char* cur_path = NULL;
+
+  buffers_meta.unique_paths = ( char** )malloc( sizeof( char* ) * cmd_line_count );
+  if( buffers_meta.unique_paths == NULL )
   {
-    /* Should never come here. */
-    perror( "Memory allocation failure. Exiting now.\n" );
+    perror( "Memory allocation failure unique paths. Exiting ...\n" );
     exit( EXIT_FAILURE );
   }
-  
+
+  /* init our path strings ... */
   for( i = 0; i < cmd_line_count; i++ )
   {
-    /* 
-     * routines on the next lines are there to prevent from
-     * freeing file content pointers twice (or more) 
-     * **********************************************************************************
-     * */
-    if( i == 0 )
+    *( buffers_meta.unique_paths + i ) = ( char* )malloc( sizeof( char ) * STD_STRING_MALLOC );
+    if( *( buffers_meta.unique_paths + i ) == NULL )
     {
-      /* first list content cannot be a duplicate
-       * we can free it here. */
-      free( ( *( file_params_list + i ) )->file_content );
-      *( file_content_ptrs + i ) = ( *( file_params_list + i ) )->file_content;
-      ( *( file_params_list + i ) )->file_content = NULL;
+      perror( "Memory allocation failure unique paths. Exiting ...\n" );
+      exit( EXIT_FAILURE );
     }
-    else
-    {    
-      for( j = 0; j < i; j++ )
-      {
-        if( ( *( file_params_list + i ) )->file_content == *( file_content_ptrs + j ) )
-        {
-          *( file_content_ptrs + i ) = ( *( file_params_list + i ) )->file_content;
-          ( *( file_params_list + i ) )->file_content = NULL;
-          break;
-        }
-        else if( j == ( i - 1 ) )
-        {
-          free( ( *( file_params_list + i ) )->file_content );
-          *( file_content_ptrs + i ) = ( *( file_params_list + i ) )->file_content;
-          ( *( file_params_list + i ) )->file_content = NULL;
-        }
-      }
-    }
-    /*
-     * **********************************************************************************
-     */
+    memset( *( buffers_meta.unique_paths + i ), '\0', STD_STRING_MALLOC );
   }
 
-  free( file_content_ptrs );
-  file_content_ptrs = NULL;
+  /* 
+   * Detect all the unique paths in our file_params_list. 
+   * This is for performance reasons, to minimize
+   * file reads while measuring.
+   * */
+  strncpy( *( buffers_meta.unique_paths + 0 ),  /* destination */
+           ( *( file_params_list + 0 ) )->path, /* source */
+           STD_STRING_MALLOC );                 /* length */
+  unique_paths_count++;
+
+  for( i = 1; i < cmd_line_count; i++ )
+  {
+    cur_path = ( *( file_params_list + i ) )->path;
+    for( j = 0; j < i; j++ )
+    {
+      if( strcmp( cur_path, *( buffers_meta.unique_paths + j ) ) == 0 )
+      {
+        break;
+      }
+      else if( j == ( i - 1 ) )
+      {
+        strncpy( *( buffers_meta.unique_paths + unique_paths_count ),  /* destination */
+                 ( *( file_params_list + i ) )->path,                  /* source */
+                 STD_STRING_MALLOC );                                  /* length */
+        unique_paths_count++;
+      }
+    }
+  }
+  buffers_meta.unique_paths_count = unique_paths_count;
+
+  return buffers_meta;
 }
+
+
+meas_buffer_t** init_meas_buffers( meas_buffer_meta_t* buffers_meta, uint16_t no_intervals )
+{
+  meas_buffer_t** meas_buffers = NULL;
+  uint16_t i;
+  meas_buffer_t* mb = NULL;
+  
+  meas_buffers = 
+    ( meas_buffer_t** )malloc( sizeof( meas_buffer_t* ) * buffers_meta->unique_paths_count );
+  if( meas_buffers == NULL )
+  {
+    perror( "Memory allocation failure. meas buffers. Exiting...\n" );
+    exit( EXIT_FAILURE );
+  }
+
+  for( i = 0; i < buffers_meta->unique_paths_count; i++ )
+  {
+    ( *( meas_buffers + i ) ) = ( meas_buffer_t* )malloc( sizeof( meas_buffer_t ) );
+    if( ( *( meas_buffers + i ) ) == NULL )
+    {
+      perror( "Memory allocation failure. meas buffers. Exiting...\n" );
+      exit( EXIT_FAILURE );
+    }
+    
+    mb = ( *( meas_buffers + i ) );
+    
+    memcpy( mb->file_path,                           /* dest */
+            *( ( buffers_meta->unique_paths ) + i ), /* src */
+            STD_STRING_MALLOC );                     /* n */
+    
+    /* open file relative to directory file descriptor */
+    mb->file_descriptor = open( mb->file_path, O_RDONLY | O_SYNC );
+    if( mb->file_descriptor == -1 )
+    {
+      perror( "Failed to open requested file. Exiting ...\n" );
+      exit( EXIT_FAILURE );
+    }
+
+    /* no_intervals + 1 is because we need one more interval
+     * than the user specifies to calculate the last intervals data. */
+    mb->content_buffer =
+      ( char* )malloc( sizeof( char ) * FILE_BUFFER_SIZE * ( no_intervals + 1 ) );
+    if( mb->content_buffer == NULL )
+    {
+      perror( "Memory allocation failure. file content buffer. Exiting...\n" );
+      exit( EXIT_FAILURE );
+    }
+
+    /* initialize the content buffer, fill with zeros */
+    memset( mb->content_buffer,
+            '\0',
+            ( sizeof( char ) * FILE_BUFFER_SIZE * ( no_intervals + 1 ) ) );
+    
+    mb->buffer_size = FILE_BUFFER_SIZE * ( no_intervals + 1 );
+    mb->slice_size = FILE_BUFFER_SIZE;
+    mb->slice_count = ( no_intervals + 1 );
+  }
+
+  return meas_buffers;
+}
+
+
+void read_to_meas_buffers( meas_buffer_t** meas_buffers, uint16_t meas_buffers_len,
+                           uint16_t interval_no )
+{
+  uint16_t i;
+  ssize_t bytes_read;
+  off_t offset_location;
+  uint32_t c_buf_offset;
+  meas_buffer_t* mb = NULL;
+  
+  for( i = 0; i < meas_buffers_len; i++ )
+  {
+    mb = ( *( meas_buffers + i ) );
+    c_buf_offset = mb->slice_size * interval_no;
+    bytes_read = -1;
+    offset_location = -1;
+    
+    /* 
+     * Do not panic about the next instruction, here is the explanation ... 
+     * read to the given file_descriptor. The start position of the
+     * file buffer is the start address of our content_buffer 
+     * with an offset of our buffersize of one file read multiplied by
+     * the interval number.
+     * The last argument passed to read is the size of one file read.
+     * The the status of the file at each intervals time is stored
+     * consecutively in the content_buffer.
+     * */
+    bytes_read = read( mb->file_descriptor,
+                       ( mb->content_buffer + c_buf_offset ),
+                       mb->slice_size );
+    
+    /* reposition the file contents pointer to the beginning of the
+     * file after reading from it */
+    offset_location = lseek( mb->file_descriptor, 0, SEEK_SET );
+
+    if( bytes_read == -1 || offset_location == -1 )
+    {
+      perror( "Failed to read from file. Exiting ...\n" );
+      exit( EXIT_FAILURE );
+    }
+    else if( bytes_read >= mb->slice_size )
+    {
+      perror( "File read buffer is too small, "
+              "for the requested file. Exiting" );
+      exit( EXIT_FAILURE );
+    }
+    else
+    {
+      /* NULL-Terminate the text. */
+      *( mb->content_buffer + c_buf_offset + bytes_read ) = '\0';
+    }
+  }
+}
+
+
+char* get_file_content_from_buffer( char* path, meas_buffer_t** meas_buffers,
+                                    uint16_t meas_buffers_len, uint16_t interval_no )
+{
+  char* file_content = NULL;
+  uint16_t i;
+  meas_buffer_t* mb = NULL;
+  
+  for( i = 0; i < meas_buffers_len; i++ )
+  {
+    mb = ( *( meas_buffers + i ) );
+    if( strncmp( path, mb->file_path, STD_STRING_MALLOC ) == 0 )
+    {
+      file_content = ( ( mb->content_buffer ) + ( mb->slice_size * interval_no ) );
+      break;
+    }
+    else if( i == ( meas_buffers_len - 1 ) )
+    {
+      perror( "Requested path not found in meas buffers. Exiting...\n" );
+      exit( EXIT_FAILURE );
+    }
+  }
+
+  return file_content;
+}
+
+
+void release_meas_buffers( meas_buffer_meta_t* buffers_meta, meas_buffer_t** meas_buffers )
+{
+  /* 
+   * This function frees all the 
+   * reference data which were allocated 
+   * in get_meas_buffers_meta_data 
+   * and init_meas_buffers.
+   * It also closes the file descriptors. 
+   * */
+  uint16_t i;
+  uint16_t count;
+  meas_buffer_t* mb = NULL;
+
+  count = buffers_meta->unique_paths_count;
+
+  /* Space was allocated for all possible cmd lines
+   * with distinct paths. They all have to be freed again. */
+  for( i = 0; i < cmd_line_count; i++ )
+  {
+    free( *( buffers_meta->unique_paths + i ) );
+  }
+  free( buffers_meta->unique_paths );
+
+  for( i = 0; i < count; i++ )
+  {
+    mb = ( *( meas_buffers + i ) );
+
+    /* close the filedescriptor */
+    if( close( mb->file_descriptor ) == -1 )
+    {
+      perror( "Failed to close file descriptor. Continuing ...\n" );
+    }
+
+    free( mb->content_buffer );
+    free( mb );
+  }
+  free( meas_buffers );
+}
+
 
 void clear_file_params( file_params_t** file_params_list )
 {
