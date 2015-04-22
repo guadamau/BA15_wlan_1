@@ -27,5 +27,5 @@ for i in $(find $1 | grep "meas_interval"); do
     echo "Interval result: ${INT_FILE}"
     echo "Creating histogram files in ${DIR_OUT}"
     mkdir -p ${DIR_OUT}
-    ${SCRIPT_DIR}/histogram.sh ${INT_FILE} ${DIR_OUT}
+    ${SCRIPT_DIR}/include/histogram.sh ${INT_FILE} ${DIR_OUT}
 done
