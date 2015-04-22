@@ -1812,6 +1812,162 @@ Name
 \begin_layout Plain Layout
 
 \series bold
+bwm-ng 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bwm-ng"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Beschrieb
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Zeichnet die Netzwerk- und Disk-I/O-Bandbreite auf.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Funktionen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Bietet unterschiedliche Darstellungsfunktionen, u.a.
+ auch Exportierungen nach CSV & HTML und ermöglicht es, in Intervallen zu
+ messen.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wird verwendet
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color green
+Ja
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Grund
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mit bwm-ng kann die Netzwerkbelastung in Intervallen gemessen sowie auch
+ dessen Output als CSV-Datei gespeichert werden.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Hilfsmittel zum Messen von Ressourcennutzung und Performanceparametern:
+ bwm-ng
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="20col%">
+<column alignment="left" valignment="top" width="70col%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
 NetHogs 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -4076,14 +4232,13 @@ Verwendete Tools und ihre Aufgaben in dieser Arbeit
 \end_layout
 
 \begin_layout Subsection
-Zuverlässigkeit der Messwerte
+Verifizierung der Messwerte
 \end_layout
 
 \begin_layout Standard
-Die Zuverlässigkeit der Messwerte wird überprüft, indem Messungen mit unterschie
-dlichen Tools nacheinander bei den gleichen Bedingungen ausgeführt.
- So wird vermieden, dass sich die Tools für die Messungen gegenseitig beeinfluss
-en.
+Die Messwerte der Tools werden verifiziert, indem Messungen mit unterschiedliche
+n Tools gleichzeitig ausgeführt werden.
+ Dies hat zur Folge, dass jedes Tool das exakt gleiche Verhalten misst.
  Die Bedingungen werden in den folgenden Kapiteln beschrieben.
 \end_layout
 
@@ -4170,6 +4325,7 @@ top
 \begin_layout Standard
 Eine Messung wird jeweils 5 und 10 Sekunden nach dem Start des Clients /
  der File-Generierung durchgeführt.
+ Konkret werden also die Intervalle [0s, 5s] und [5s, 10s] gemessen.
  Dabei misst jede Applikation pro Fall (dd und iperf3) zur gleichen Zeit
  wie die andere die Performance-Werte.
 \end_layout
@@ -4700,7 +4856,7 @@ Tool
 \begin_layout Plain Layout
 
 \series bold
-%CPU (5s nach Start)
+%CPU [0s, 5s]
 \end_layout
 
 \end_inset
@@ -4711,7 +4867,7 @@ Tool
 \begin_layout Plain Layout
 
 \series bold
-%CPU (10s nach Start)
+%CPU [5s, 10s]
 \end_layout
 
 \end_inset
@@ -4722,7 +4878,11 @@ Tool
 \begin_layout Plain Layout
 
 \series bold
-Systemtime [s] (5s nach Start)
+System-
+\begin_inset Newline newline
+\end_inset
+
+time [s] [0s, 5s]
 \end_layout
 
 \end_inset
@@ -4733,7 +4893,11 @@ Systemtime [s] (5s nach Start)
 \begin_layout Plain Layout
 
 \series bold
-Systemtime [s] (10s nach Start)
+System-
+\begin_inset Newline newline
+\end_inset
+
+time [s] [5s, 10s]
 \end_layout
 
 \end_inset
@@ -4744,7 +4908,11 @@ Systemtime [s] (10s nach Start)
 \begin_layout Plain Layout
 
 \series bold
-Usertime [s] (5s nach Start)
+User-
+\begin_inset Newline newline
+\end_inset
+
+time [s] [0s, 5s]
 \end_layout
 
 \end_inset
@@ -4755,7 +4923,11 @@ Usertime [s] (5s nach Start)
 \begin_layout Plain Layout
 
 \series bold
-Usertime [s] (10s nach Start)
+User-
+\begin_inset Newline newline
+\end_inset
+
+time [s] [5s, 10s]
 \end_layout
 
 \end_inset
@@ -4775,7 +4947,7 @@ meas-Messung von dd
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+100.00
 \end_layout
 
 \end_inset
@@ -4784,7 +4956,7 @@ meas-Messung von dd
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+99.80
 \end_layout
 
 \end_inset
@@ -4793,7 +4965,7 @@ meas-Messung von dd
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+5.00
 \end_layout
 
 \end_inset
@@ -4802,7 +4974,7 @@ meas-Messung von dd
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+4.99
 \end_layout
 
 \end_inset
@@ -4811,7 +4983,7 @@ meas-Messung von dd
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.00
 \end_layout
 
 \end_inset
@@ -4820,7 +4992,7 @@ meas-Messung von dd
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.00
 \end_layout
 
 \end_inset
@@ -4840,7 +5012,7 @@ pidstat-Messung von dd
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+99.60
 \end_layout
 
 \end_inset
@@ -4849,7 +5021,7 @@ pidstat-Messung von dd
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+99.80
 \end_layout
 
 \end_inset
@@ -4858,7 +5030,11 @@ pidstat-Messung von dd
 \begin_inset Text
 
 \begin_layout Plain Layout
+99.60% von 5s
+\begin_inset Newline newline
+\end_inset
 
+4.98
 \end_layout
 
 \end_inset
@@ -4867,7 +5043,11 @@ pidstat-Messung von dd
 \begin_inset Text
 
 \begin_layout Plain Layout
+99.80% von 5s
+\begin_inset Newline newline
+\end_inset
 
+4.99
 \end_layout
 
 \end_inset
@@ -4876,7 +5056,7 @@ pidstat-Messung von dd
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.00
 \end_layout
 
 \end_inset
@@ -4885,7 +5065,7 @@ pidstat-Messung von dd
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.00
 \end_layout
 
 \end_inset
@@ -4905,7 +5085,7 @@ top-Messung von dd
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+99.90
 \end_layout
 
 \end_inset
@@ -4914,7 +5094,7 @@ top-Messung von dd
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+99.90
 \end_layout
 
 \end_inset
@@ -4970,7 +5150,7 @@ meas-Messung von iperf3
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+3.40
 \end_layout
 
 \end_inset
@@ -4979,7 +5159,7 @@ meas-Messung von iperf3
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+3.20
 \end_layout
 
 \end_inset
@@ -4988,7 +5168,7 @@ meas-Messung von iperf3
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.16
 \end_layout
 
 \end_inset
@@ -4997,7 +5177,7 @@ meas-Messung von iperf3
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.15
 \end_layout
 
 \end_inset
@@ -5006,7 +5186,7 @@ meas-Messung von iperf3
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.01
 \end_layout
 
 \end_inset
@@ -5015,7 +5195,7 @@ meas-Messung von iperf3
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.01
 \end_layout
 
 \end_inset
@@ -5035,7 +5215,7 @@ pidstat-Messung von iperf3
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+3.78
 \end_layout
 
 \end_inset
@@ -5044,7 +5224,7 @@ pidstat-Messung von iperf3
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+3.40
 \end_layout
 
 \end_inset
@@ -5053,7 +5233,11 @@ pidstat-Messung von iperf3
 \begin_inset Text
 
 \begin_layout Plain Layout
+3.58% von 5s
+\begin_inset Newline newline
+\end_inset
 
+0.179
 \end_layout
 
 \end_inset
@@ -5062,7 +5246,11 @@ pidstat-Messung von iperf3
 \begin_inset Text
 
 \begin_layout Plain Layout
+3.20% von 5s
+\begin_inset Newline newline
+\end_inset
 
+0.16
 \end_layout
 
 \end_inset
@@ -5071,7 +5259,11 @@ pidstat-Messung von iperf3
 \begin_inset Text
 
 \begin_layout Plain Layout
+0.20% von 5s
+\begin_inset Newline newline
+\end_inset
 
+0.01
 \end_layout
 
 \end_inset
@@ -5080,7 +5272,11 @@ pidstat-Messung von iperf3
 \begin_inset Text
 
 \begin_layout Plain Layout
+0.20% von 5s
+\begin_inset Newline newline
+\end_inset
 
+0.01
 \end_layout
 
 \end_inset
@@ -5100,7 +5296,7 @@ top-Messung von iperf3
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+3.20
 \end_layout
 
 \end_inset
@@ -5109,7 +5305,7 @@ top-Messung von iperf3
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+3.20
 \end_layout
 
 \end_inset
@@ -5789,7 +5985,7 @@ Tool
 \begin_layout Plain Layout
 
 \series bold
-VSZ in Kilobytes (5s nach Start)
+VSZ in Kilobytes [0s, 5s]
 \end_layout
 
 \end_inset
@@ -5800,7 +5996,7 @@ VSZ in Kilobytes (5s nach Start)
 \begin_layout Plain Layout
 
 \series bold
-VSZ in Kilobytes (10s nach Start)
+VSZ in Kilobytes [5s, 10s]
 \end_layout
 
 \end_inset
@@ -5811,7 +6007,7 @@ VSZ in Kilobytes (10s nach Start)
 \begin_layout Plain Layout
 
 \series bold
-RSS in Kilobytes (5s nach Start)
+RSS in Kilobytes [0s, 5s]
 \end_layout
 
 \end_inset
@@ -5822,7 +6018,7 @@ RSS in Kilobytes (5s nach Start)
 \begin_layout Plain Layout
 
 \series bold
-RSS in Kilobytes (10s nach Start)
+RSS in Kilobytes [5s, 10s]
 \end_layout
 
 \end_inset
@@ -6077,13 +6273,21 @@ reference "sub:CPU"
 
 \end_inset
 
-) wird eine eigens entwickelte Applikation erwähnt, mit der die CPU-Last
- berechnet wird.
+) wird eine eigens entwickelte Applikation 
+\begin_inset Quotes fld
+\end_inset
+
+meas
+\begin_inset Quotes frd
+\end_inset
+
+ erwähnt, mit der die CPU-Last berechnet wird.
  In der gleichen Applikation wurde die Möglichkeit implementiert, die Belastung
  des Netzwerks zu messen.
  Wird anhand von iperf3 Netzwerkverkehr generiert, so werden auch von diesem
  Tool Angaben zur Netzwerkbelastung aufgeführt.
- 
+ Des Weiteren wird die Netzwerkbelastung mit bwm-ng gemessen, womit man
+ einen weiteren Vergleichswert erhält.
 \end_layout
 
 \begin_layout Standard
@@ -6132,9 +6336,15 @@ srv01
 \end_layout
 
 \begin_layout Standard
-Dazu kommt, dass beide Fälle separat mit Wireshark (tshark) aufgezeichnet
- werden.
- Betrachtet werden in diesem Kapitel die Werte, die vom PRP-Netzwerkinterface
+Betrachtet werden in diesem Kapitel die Werte, die vom PRP-Netzwerkinterface
+ des Clients 
+\begin_inset Quotes fld
+\end_inset
+
+srv01
+\begin_inset Quotes frd
+\end_inset
+
  stammen.
 \end_layout
 
@@ -6173,29 +6383,25 @@ case $(hostname) in
 
 \begin_layout Plain Layout
 
-        (tshark -i prp1 -w results/srv01_iperf3/tshark_prp1.pcap &)
+        (iperf3 -c 192.168.0.2 -d -n 200M > /home/scripts/measurement/test_reliabil
+ity/net/results/srv01_iperf3/iperf3_output.txt &)
 \end_layout
 
 \begin_layout Plain Layout
 
-        (iperf3 -c 192.168.0.2 -d -n 200M > results/srv01_iperf3/iperf3_output.txt
- &)
+        (/home/scripts/bin/meas -i 1 -n 10 -p $(pgrep iperf3) -v 0 -P /home/scri
+pts/measurement/test_reliability/net/results/srv01_iperf3 &)
 \end_layout
 
 \begin_layout Plain Layout
 
-        (meas -i 1 -n 10 -p $(pgrep iperf3) -v 0 -P /home/scripts/measurement/te
-st_reliability/net/results/srv01_iperf3 &)
+		(bwm-ng -t 1000 -c 10 -o csv -F /home/scripts/measurement/test_reliability/net
+/results/srv01_iperf3/bwm.csv -I prp1 &)
 \end_layout
 
 \begin_layout Plain Layout
 
         sleep 30
-\end_layout
-
-\begin_layout Plain Layout
-
-        sudo pkill tshark
 \end_layout
 
 \begin_layout Plain Layout
@@ -6205,29 +6411,25 @@ st_reliability/net/results/srv01_iperf3 &)
 
 \begin_layout Plain Layout
 
-        (tshark -i prp1 -w results/srv01_shck/tshark_prp1.pcap &)
+        (/home/scripts/bin/shck -d 192.168.0.2 -f /home/scripts/shck/testpayload
+ -n 200000 -P -s MAX -t TCP &)
 \end_layout
 
 \begin_layout Plain Layout
 
-        (shck -d 192.168.0.2 -f /home/scripts/shck/testpayload -n 200000 -P
- -s MAX -t TCP &)
+        (/home/scripts/bin/meas -i 1 -n 10 -p $(pgrep shck) -v 0 -P /home/script
+s/measurement/test_reliability/net/results/srv01_shck &)
 \end_layout
 
 \begin_layout Plain Layout
 
-        (meas -i 1 -n 10 -p $(pgrep shck) -v 0 -P /home/scripts/measurement/test
-_reliability/cpu/results/srv01_shck &)
+		(bwm-ng -t 1000 -c 10 -o csv -F /home/scripts/measurement/test_reliability/net
+/results/srv01_shck/bwm.csv -I prp1 &)
 \end_layout
 
 \begin_layout Plain Layout
 
         sleep 30
-\end_layout
-
-\begin_layout Plain Layout
-
-        sudo pkill tshark
 \end_layout
 
 \begin_layout Plain Layout
@@ -6242,12 +6444,7 @@ _reliability/cpu/results/srv01_shck &)
 
 \begin_layout Plain Layout
 
-        (tshark -i prp1 -w results/srv02_iperf3/tshark_prp1.pcap &)
-\end_layout
-
-\begin_layout Plain Layout
-
-        (iperf3 -s > results/srv02_iperf3/iperf3_output.txt &)
+        (iperf3 -s &)
 \end_layout
 
 \begin_layout Plain Layout
@@ -6258,18 +6455,7 @@ t_reliability_test.sh &)
 
 \begin_layout Plain Layout
 
-        (meas -i 1 -n 10 -p $(pgrep iperf3) -v 0 -P /home/scripts/measurement/te
-st_reliability/net/results/srv02_iperf3 &)
-\end_layout
-
-\begin_layout Plain Layout
-
         sleep 30
-\end_layout
-
-\begin_layout Plain Layout
-
-        sudo pkill tshark
 \end_layout
 
 \begin_layout Plain Layout
@@ -6284,28 +6470,12 @@ st_reliability/net/results/srv02_iperf3 &)
 
 \begin_layout Plain Layout
 
-        (tshark -i prp1 -w results/srv02_shck/tshark_prp1.pcap &)
-\end_layout
-
-\begin_layout Plain Layout
-
-        (shck -S -t TCP &)
-\end_layout
-
-\begin_layout Plain Layout
-
-        (meas -i 1 -n 10 -p $(pgrep shck) -v 0 -P /home/scripts/measurement/test
-_reliability/cpu/results/srv02_shck &)
+        (/home/scripts/bin/shck -S -t TCP &)
 \end_layout
 
 \begin_layout Plain Layout
 
         sleep 30
-\end_layout
-
-\begin_layout Plain Layout
-
-        sudo pkill tshark
 \end_layout
 
 \begin_layout Plain Layout
@@ -6384,7 +6554,6 @@ Netzwerk Ext
 
 ) über SSH die Clients sobald der Server bereit ist.
  Somit werden erst Daten übertragen wenn man auch bereit ist, diese zu empfangen.
-11
 \end_layout
 
 \begin_layout Standard
@@ -6398,15 +6567,18 @@ status open
 \noindent
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="12" columns="5">
+<lyxtabular version="3" rows="13" columns="8">
 <features rotate="0" tabularvalignment="middle">
-<column alignment="center" valignment="top" width="7col%">
-<column alignment="left" valignment="top" width="8col%">
-<column alignment="left" valignment="top" width="8col%">
-<column alignment="left" valignment="top" width="8col%">
-<column alignment="left" valignment="top" width="8col%">
+<column alignment="left" valignment="top" width="7col%">
+<column alignment="left" valignment="top" width="10col%">
+<column alignment="left" valignment="top" width="10col%">
+<column alignment="left" valignment="top" width="10col%">
+<column alignment="left" valignment="top" width="10col%">
+<column alignment="left" valignment="top" width="10col%">
+<column alignment="left" valignment="top" width="10col%">
+<column alignment="left" valignment="top" width="10col%">
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6415,7 +6587,7 @@ status open
 
 \end_inset
 </cell>
-<cell multicolumn="1" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell multicolumn="1" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6427,7 +6599,25 @@ srv01 (iperf3-Client, tätigt Upload)
 
 \end_inset
 </cell>
-<cell multicolumn="2" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+<cell multicolumn="2" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6446,6 +6636,15 @@ srv01 (iperf3-Client, tätigt Upload)
 \end_inset
 </cell>
 <cell multicolumn="2" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6456,7 +6655,7 @@ srv01 (iperf3-Client, tätigt Upload)
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6468,7 +6667,47 @@ Interval [s]
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+bwm-ng
+\begin_inset Newline newline
+\end_inset
+
+TX Daten
+\begin_inset Newline newline
+\end_inset
+
+[Bytes]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+bwm-ng
+\begin_inset Newline newline
+\end_inset
+
+TX-Rate
+\begin_inset Newline newline
+\end_inset
+
+[Bits/s]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6488,7 +6727,7 @@ TX Daten
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6508,7 +6747,7 @@ TX-Rate
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6548,9 +6787,29 @@ TX-Rate
 
 \end_inset
 </cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+meas
+\begin_inset Newline newline
+\end_inset
+
+TX-Rate / (1024²)
+\begin_inset Newline newline
+\end_inset
+
+[MBits/s]
+\end_layout
+
+\end_inset
+</cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6562,29 +6821,13 @@ TX-Rate
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+\size footnotesize
+8995724
 \end_layout
 
 \end_inset
@@ -6594,13 +6837,70 @@ TX-Rate
 
 \begin_layout Plain Layout
 
+\size footnotesize
+71965792
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+8.97
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+75.2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+9631728
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+77053824
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+73.48
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6612,29 +6912,13 @@ TX-Rate
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+\size footnotesize
+9568260
 \end_layout
 
 \end_inset
@@ -6644,13 +6928,70 @@ TX-Rate
 
 \begin_layout Plain Layout
 
+\size footnotesize
+76546080
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+8.80
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+73.8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+9571276
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+76570208
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+73.02
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6662,29 +7003,13 @@ TX-Rate
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+\size footnotesize
+9631596
 \end_layout
 
 \end_inset
@@ -6694,13 +7019,70 @@ TX-Rate
 
 \begin_layout Plain Layout
 
+\size footnotesize
+77052768
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+8.73
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+73.3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+9631596
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+77052768
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+73.48
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6712,29 +7094,13 @@ TX-Rate
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+\size footnotesize
+9581832
 \end_layout
 
 \end_inset
@@ -6744,13 +7110,70 @@ TX-Rate
 
 \begin_layout Plain Layout
 
+\size footnotesize
+76654656
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+8.75
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+73.4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+9575800
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+76606400
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+73.06
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6762,29 +7185,13 @@ TX-Rate
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+\size footnotesize
+9571276
 \end_layout
 
 \end_inset
@@ -6794,13 +7201,70 @@ TX-Rate
 
 \begin_layout Plain Layout
 
+\size footnotesize
+76570208
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+8.71
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+73.1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+9575800
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+76606400
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+73.06
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6812,29 +7276,13 @@ TX-Rate
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+\size footnotesize
+9633104
 \end_layout
 
 \end_inset
@@ -6844,13 +7292,70 @@ TX-Rate
 
 \begin_layout Plain Layout
 
+\size footnotesize
+77064832
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+8.74
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+73.3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+9628580
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+77028640
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+73.46
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6862,29 +7367,13 @@ TX-Rate
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+\size footnotesize
+9580324
 \end_layout
 
 \end_inset
@@ -6894,13 +7383,70 @@ TX-Rate
 
 \begin_layout Plain Layout
 
+\size footnotesize
+76642892
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+8.76
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+73.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+9569768
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+76558144
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+73.01
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6912,29 +7458,13 @@ TX-Rate
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+\size footnotesize
+9633104
 \end_layout
 
 \end_inset
@@ -6944,13 +7474,70 @@ TX-Rate
 
 \begin_layout Plain Layout
 
+\size footnotesize
+77064832
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+8.71
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+73.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+9586356
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+76690848
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+73.14
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6962,29 +7549,13 @@ TX-Rate
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+\size footnotesize
+9601436
 \end_layout
 
 \end_inset
@@ -6994,13 +7565,70 @@ TX-Rate
 
 \begin_layout Plain Layout
 
+\size footnotesize
+76811488
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+8.76
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+73.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+9619532
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+76956256
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+73.39
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -7012,29 +7640,13 @@ TX-Rate
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+\size footnotesize
+9599928
 \end_layout
 
 \end_inset
@@ -7044,6 +7656,158 @@ TX-Rate
 
 \begin_layout Plain Layout
 
+\size footnotesize
+76799424
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+8.79
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+73.7
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+9586356
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+76690848
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+73.14
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+Mittel-
+\begin_inset Newline newline
+\end_inset
+
+wert
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+9539658.4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+76317267.2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+8.772
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+73.65
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+9597679.2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+76781433.6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+73.22
 \end_layout
 
 \end_inset
@@ -7069,7 +7833,7 @@ srv01
 \begin_inset Quotes frd
 \end_inset
 
- und meas
+, bwm-ng und meas
 \end_layout
 
 \end_inset
@@ -7093,15 +7857,15 @@ status open
 \noindent
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="12" columns="5">
+<lyxtabular version="3" rows="13" columns="5">
 <features rotate="0" tabularvalignment="middle">
-<column alignment="center" valignment="top" width="7col%">
-<column alignment="left" valignment="top" width="8col%">
-<column alignment="left" valignment="top" width="8col%">
-<column alignment="left" valignment="top" width="8col%">
-<column alignment="left" valignment="top" width="8col%">
+<column alignment="left" valignment="top" width="7col%">
+<column alignment="left" valignment="top" width="10col%">
+<column alignment="left" valignment="top" width="10col%">
+<column alignment="left" valignment="top" width="10col%">
+<column alignment="left" valignment="top" width="10col%">
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -7110,19 +7874,19 @@ status open
 
 \end_inset
 </cell>
-<cell multicolumn="1" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell multicolumn="1" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \series bold
 \size footnotesize
-srv02 (iperf3-Server, tätigt Download)
+srv01 (shck-Client, tätigt Upload)
 \end_layout
 
 \end_inset
 </cell>
-<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -7131,7 +7895,7 @@ srv02 (iperf3-Server, tätigt Download)
 
 \end_inset
 </cell>
-<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell multicolumn="2" alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -7140,7 +7904,7 @@ srv02 (iperf3-Server, tätigt Download)
 
 \end_inset
 </cell>
-<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell multicolumn="2" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -7151,7 +7915,7 @@ srv02 (iperf3-Server, tätigt Download)
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -7163,58 +7927,18 @@ Interval [s]
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \series bold
 \size footnotesize
-iperf3
+bwm-ng
 \begin_inset Newline newline
 \end_inset
 
-RX Daten
-\begin_inset Newline newline
-\end_inset
-
-[MBytes]
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-\size footnotesize
-iperf3
-\begin_inset Newline newline
-\end_inset
-
-RX-Rate
-\begin_inset Newline newline
-\end_inset
-
-[MBits/s]
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-\size footnotesize
-meas
-\begin_inset Newline newline
-\end_inset
-
-RX Daten
+TX Daten
 \begin_inset Newline newline
 \end_inset
 
@@ -7230,11 +7954,11 @@ RX Daten
 
 \series bold
 \size footnotesize
-meas
+bwm-ng
 \begin_inset Newline newline
 \end_inset
 
-RX-Rate
+TX-Rate
 \begin_inset Newline newline
 \end_inset
 
@@ -7243,683 +7967,7 @@ RX-Rate
 
 \end_inset
 </cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-\size footnotesize
-0-1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-\size footnotesize
-1-2
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-\size footnotesize
-2-3
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-\size footnotesize
-3-4
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-\size footnotesize
-4-5
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-\size footnotesize
-5-6
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-\size footnotesize
-6-7
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-\size footnotesize
-7-8
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-\size footnotesize
-8-9
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-\size footnotesize
-9-10
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Zuverlässigkeitsüberprüfung der Netzwerkbelastungs-Messungen: Werte von
- iperf3-Server auf 
-\begin_inset Quotes fld
-\end_inset
-
-srv02
-\begin_inset Quotes frd
-\end_inset
-
- und meas
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float table
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Tabular
-<lyxtabular version="3" rows="12" columns="9">
-<features rotate="0" tabularvalignment="middle">
-<column alignment="center" valignment="top" width="7col%">
-<column alignment="left" valignment="top" width="8col%">
-<column alignment="left" valignment="top" width="8col%">
-<column alignment="left" valignment="top" width="8col%">
-<column alignment="left" valignment="top" width="8col%">
-<column alignment="left" valignment="top" width="8col%">
-<column alignment="left" valignment="top" width="8col%">
-<column alignment="left" valignment="top" width="8col%">
-<column alignment="left" valignment="top" width="8col%">
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="1" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-\size footnotesize
-srv01 (shck-Client, tätigt Upload)
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="2" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="2" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="2" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="1" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-\size footnotesize
-srv02 (shck-Server, tätigt Download)
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-\size footnotesize
-Interval [s]
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -7939,7 +7987,7 @@ TX Daten
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -7959,67 +8007,9 @@ TX-Rate
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-\size footnotesize
-meas
-\begin_inset Newline newline
-\end_inset
-
-RX Daten
-\begin_inset Newline newline
-\end_inset
-
-[Bytes]
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-\size footnotesize
-meas
-\begin_inset Newline newline
-\end_inset
-
-RX-Rate
-\begin_inset Newline newline
-\end_inset
-
-[Bits/s]
-\end_layout
-
-\end_inset
-</cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -8031,65 +8021,13 @@ RX-Rate
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+\size footnotesize
+06584584
 \end_layout
 
 \end_inset
@@ -8099,13 +8037,37 @@ RX-Rate
 
 \begin_layout Plain Layout
 
+\size footnotesize
+52676672
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+07512004
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+60096032
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -8117,65 +8079,13 @@ RX-Rate
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+\size footnotesize
+11228900
 \end_layout
 
 \end_inset
@@ -8185,13 +8095,37 @@ RX-Rate
 
 \begin_layout Plain Layout
 
+\size footnotesize
+89831200
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+11094688
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+88757504
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -8203,65 +8137,13 @@ RX-Rate
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+\size footnotesize
+10862564
 \end_layout
 
 \end_inset
@@ -8271,13 +8153,37 @@ RX-Rate
 
 \begin_layout Plain Layout
 
+\size footnotesize
+86900512
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+10877644
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+87021152
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -8289,65 +8195,13 @@ RX-Rate
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+\size footnotesize
+11015940
 \end_layout
 
 \end_inset
@@ -8357,13 +8211,37 @@ RX-Rate
 
 \begin_layout Plain Layout
 
+\size footnotesize
+88127520
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+11035544
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+88284352
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -8375,65 +8253,13 @@ RX-Rate
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+\size footnotesize
+11108330
 \end_layout
 
 \end_inset
@@ -8443,13 +8269,37 @@ RX-Rate
 
 \begin_layout Plain Layout
 
+\size footnotesize
+88866640
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+11073646
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+88589168
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -8461,65 +8311,13 @@ RX-Rate
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+\size footnotesize
+10871214
 \end_layout
 
 \end_inset
@@ -8529,13 +8327,37 @@ RX-Rate
 
 \begin_layout Plain Layout
 
+\size footnotesize
+86969712
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+10866690
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+86933520
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -8547,65 +8369,13 @@ RX-Rate
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+\size footnotesize
+10833244
 \end_layout
 
 \end_inset
@@ -8615,13 +8385,37 @@ RX-Rate
 
 \begin_layout Plain Layout
 
+\size footnotesize
+86665952
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+10843800
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+86750400
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -8633,65 +8427,13 @@ RX-Rate
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+\size footnotesize
+10912024
 \end_layout
 
 \end_inset
@@ -8701,13 +8443,37 @@ RX-Rate
 
 \begin_layout Plain Layout
 
+\size footnotesize
+87296192
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+10880356
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+87042848
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -8719,65 +8485,13 @@ RX-Rate
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+\size footnotesize
+10988680
 \end_layout
 
 \end_inset
@@ -8787,13 +8501,37 @@ RX-Rate
 
 \begin_layout Plain Layout
 
+\size footnotesize
+87909440
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+10875580
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+87004640
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -8805,65 +8543,13 @@ RX-Rate
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+\size footnotesize
+10974188
 \end_layout
 
 \end_inset
@@ -8873,6 +8559,92 @@ RX-Rate
 
 \begin_layout Plain Layout
 
+\size footnotesize
+87793504
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+11115940
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+88927520
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+Mittel-
+\begin_inset Newline newline
+\end_inset
+
+wert
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+10537966.8
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+84303734.4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+10617589.2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+84940713.6
 \end_layout
 
 \end_inset
@@ -8890,9 +8662,12 @@ RX-Rate
 
 \begin_layout Plain Layout
 Zuverlässigkeitsüberprüfung der Netzwerkbelastungs-Messungen: Werte von
- meas zu 
-\end_layout
+ bwm-ng und meas des shck-Clients auf 
+\begin_inset Quotes fld
+\end_inset
 
+srv01
+\begin_inset Quotes frd
 \end_inset
 
 
@@ -8901,6 +8676,34 @@ Zuverlässigkeitsüberprüfung der Netzwerkbelastungs-Messungen: Werte von
 \end_inset
 
 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Da die Resultate der unterschiedlichen Applikationen keine grossen Abweichungen
+ zueinander haben, sind die Resultate der Applikationen als zuverlässig
+ einzustufen.
+ Grund für die Abweichungen könnte sein, dass die Tools wahrscheinlich nicht
+ immer zur exakt selben Zeit messen oder in jeder Applikation bei der Berechnung
+ anders vorgegangen wird.
+ Wie genau bwm-ng und iperf3 bei den Berechnungen vorgehen kann aus Zeitgründen
+ nicht ermittelt werden, jedoch ist der Rechenweg der meas-Applikation komplett
+ ersichtlich, da es sich hierbei und eine eigens entwickelte Software handelt.
+\end_layout
+
+\begin_layout Standard
+Daraus, dass bei meas das Vorgehen bei der Berechnung selbst implementiert
+ wurde und die Werte grösstenteils mit den Werten anderer Tools übereinstimmen,
+ wird für die Messung der Netzwerkbandbreite meas verwendet.
+ Ein weiterer Grund, der für meas spricht, ist dessen kleiner Messfehler
+ von circa 100us, da meas während der Messung nur aufzeichnet und am Ende
+ die Daten auswertet und ausgibt, während z.B.
+ bwm-ng pro Messinterval die Daten auswertet und in die Standardausgabe
+ oder eine Datei schreibt.
 \end_layout
 
 \begin_layout Section
@@ -9162,15 +8965,25 @@ Der Netzwerkverkehr besteht...
 \series bold
 ...nur aus kleinen Frames
 \series default
- (64 Bytes + 6 Bytes RCT = 70 Bytes, wenn ein VLAN-Tag gebraucht wird 74
- Bytes 
+
+\begin_inset Newline newline
+\end_inset
+
+Layer-2-Frames / UDP-Pakete: 64 Bytes + 6 Bytes RCT = 70 Bytes, wenn ein
+ VLAN-Tag gebraucht wird 74 Bytes 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "IEC_62439-3_2015"
 
 \end_inset
 
-)
+
+\begin_inset Newline newline
+\end_inset
+
+TCP-Pakete: 66 Bytes Header (14 Bytes Ethernet, 20 Bytes IP, 32 Bytes TCP)
+ + 6 Bytes RCT + 1 Byte Payload (es können über Sockets keine leeren TCP-Pakete
+ versendet werden) = 73 Bytes und mit einem VLAN-Tag 77 Bytes
 \begin_inset Newline newline
 \end_inset
 
@@ -9248,7 +9061,7 @@ reference "chap:Quellcode"
 \end_layout
 
 \begin_layout Standard
-Der Vorgang einer Messung lautet im Groben wie folgt:
+Der Vorgang einer Messung lautet wie folgt:
 \end_layout
 
 \begin_layout Enumerate
@@ -9613,9 +9426,9 @@ CPU-Last Durchschnitt
 \begin_inset Text
 
 \begin_layout Plain Layout
-Durchschnitt der Werte jeder Periode innerhalb der Zeitspanne.
+Durchschnitt der Werte alle Perioden.
  Besagt wie viel der Zeit innerhalb der Zeitspanne die CPU für das untersuchte
- Objekt aufgewendet hat.
+ Objekt benötigt hat.
 \end_layout
 
 \end_inset
@@ -10496,11 +10309,15 @@ Neben den 3 aufgeführten Servern und den 2 Switches befinden sich keine
  Szenario erwähnt, dass der Umgebungsaufbau gegenüber dem Standard variiert.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status collapsed
+
 \begin_layout Subsubsection
 UDP / Ethernet Vergleich
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Aufgrund der ähnlichen Verhaltensweisen von UDP-Segmenten und Layer-2-Frames
  besteht Grund zur Annahme, dass diese sich auch ähnlich auf die Performance
  auswirken.
@@ -10516,7 +10333,7 @@ Aufgrund der ähnlichen Verhaltensweisen von UDP-Segmenten und Layer-2-Frames
  verwendet werden.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Der Vergleich findet im PRP-Netzwerk statt, weil diese Umgebung im Fokus
  dieser Arbeit liegt.
  Es ist davon auszugehen, dass die Unterschiede zwischen Ethernet- und UDP-Traff
@@ -10524,7 +10341,7 @@ ic in einem Nicht-PRP-Umfeld identisch ausfallen, weil die Umgebung die
  beiden Typen äquivalent beeinflusst.
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Für den Vergleich zwischen UDP und Ethernet wird auf dem DAN 
 \begin_inset Quotes fld
 \end_inset
@@ -10562,12 +10379,12 @@ meas
  gemessen:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 1) Ethernet-Datenverkehr bestehend aus 10000 Frames mit minimaler Grösse:
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset listings
 lstparams "language=bash"
 inline false
@@ -10584,12 +10401,12 @@ sudo shck.py -d 00:0e:7f:30:17:4a -f ./testbin -i prp1 -n 10000 -s MIN -t
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 2) Ethernet-Datenverkehr bestehend aus 10000 Frames mit maximaler Grösse:
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset listings
 lstparams "language=bash"
 inline false
@@ -10606,12 +10423,12 @@ sudo shck.py -d 00:0e:7f:30:17:4a -f ./testbin -i prp1 -n 10000 -s MAX -t
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 3) Ethernet-Datenverkehr bestehend aus 10000 Frames mit zufälliger Grösse:
  
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset listings
 lstparams "language=bash"
 inline false
@@ -10628,11 +10445,11 @@ sudo shck.py -d 00:0e:7f:30:17:4a -f ./testbin -i prp1 -n 10000 -s RANDOM
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 4) UDP-Datenverkehr bestehend aus 10000 Paketen mit minimaler Grösse:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset listings
 lstparams "language=bash"
 inline false
@@ -10648,11 +10465,11 @@ sudo shck.py -d 192.168.0.2 -f ./testbin -i prp1 -n 10000 -s MIN -t UDP -P
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 5) UDP-Datenverkehr bestehend aus 10000 Paketen mit maximaler Grösse:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset listings
 lstparams "language=bash"
 inline false
@@ -10668,11 +10485,11 @@ sudo shck.py -d 192.168.0.2 -f ./testbin -i prp1 -n 10000 -s MAX -t UDP -P
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 6) UDP-Datenverkehr bestehend aus 10000 Paketen mit zufälliger Grösse:
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 \begin_inset listings
 lstparams "language=bash"
 inline false
@@ -10688,9 +10505,14 @@ sudo shck.py -d 192.168.0.2 -f ./testbin -i prp1 -n 10000 -s RANDOM -t UDP -P
 
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Darauf wird ein Vergleich zwischen den Netzwerkströmen 1 & 4, 2 & 5 und
  3 & 6 erstellt.
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -12110,6 +11932,38 @@ reference "sub:Szenario-01:-Performance"
 \end_inset
 
  aufgelistet.
+\end_layout
+
+\begin_layout Paragraph
+UDP / Ethernet Vergleich
+\begin_inset space \hfill{}
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aufgrund der ähnlichen Verhaltensweisen von UDP-Segmenten und Layer-2-Frames
+ besteht Grund zur Annahme, dass diese sich auch ähnlich auf die Performance
+ auswirken.
+ Daher wird in diesem Abschnitt untersucht, ob und was für eine Differenz
+ bei der Messung von UDP- und Ethernet-Datenverkehr mit PRP entsteht.
+ Aus dieser Untersuchung soll sich heraus stellen, ob es nötig ist, den
+ Layer-2- vom UDP-Verkehr getrennt zu begutachten oder ob es genügt den
+ UDP-Verkehr zu analysieren und daraus Ergebnisse für den Layer-2-Datenverkehr
+ abzuleiten.
+ Sollte es nach der Analyse in diesem Abschnitt nicht von Nöten sein, den
+ Layer-2-Datenstrom separat zu begutachten, kann für die darauf folgenden
+ Untersuchungen lediglich TCP und UDP für die Generierung der Netzwerklast
+ verwendet werden.
+\end_layout
+
+\begin_layout Standard
+Der Vergleich findet im PRP-Netzwerk statt, weil diese Umgebung im Fokus
+ dieser Arbeit liegt.
+ Es ist davon auszugehen, dass die Unterschiede zwischen Ethernet- und UDP-Traff
+ic in einem Nicht-PRP-Umfeld identisch ausfallen, weil die Umgebung die
+ beiden Typen äquivalent beeinflusst.
 \end_layout
 
 \begin_layout Subsubsection

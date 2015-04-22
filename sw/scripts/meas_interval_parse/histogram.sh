@@ -8,19 +8,19 @@ echo "-> Create files for usage as histogram-data in LyX-documentation"
 echo ""
 echo "*****************************************************************************"
 
-if [ -z "$1" ]
+if [ -z "$2" ]
 then
-    echo "Usage: $0 meas_interval_file"
+    echo "Usage: $0 meas_interval_file OUTPUT_FOLDER"
     echo "USE ONLY OUTPUT INTERVAL FILE FROM MEAS!"
     echo "*****************************************************************************"
     exit
 fi
 
-PRP_NAME=$(cat test/meas_interval_results_1428888790 | grep "prp (" | head -n 1 | cut -d' ' -f3 | cut -d'(' -f2 | cut -d')' -f1)
-IF0_NAME=$(cat test/meas_interval_results_1428888790 | grep "if0 (" | head -n 1 | cut -d' ' -f3 | cut -d'(' -f2 | cut -d')' -f1)
-IF1_NAME=$(cat test/meas_interval_results_1428888790 | grep "if1 (" | head -n 1 | cut -d' ' -f3 | cut -d'(' -f2 | cut -d')' -f1)
+PRP_NAME=$(cat $1 | grep "prp (" | head -n 1 | cut -d' ' -f3 | cut -d'(' -f2 | cut -d')' -f1)
+IF0_NAME=$(cat $1 | grep "if0 (" | head -n 1 | cut -d' ' -f3 | cut -d'(' -f2 | cut -d')' -f1)
+IF1_NAME=$(cat $1 | grep "if1 (" | head -n 1 | cut -d' ' -f3 | cut -d'(' -f2 | cut -d')' -f1)
 
-OUTPUT_FOLDER="./out"
+OUTPUT_FOLDER=$2
 CPU_LOAD_PER_INT="cpu_load_per_interval.hist"
 USER_TIME_PER_INT="cpu_usertime_per_interval.hist"
 SYSTEM_TIME_PER_INT="cpu_systemtime_per_interval.hist"
