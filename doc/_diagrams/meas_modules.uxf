@@ -1,0 +1,406 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.2">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>310</x>
+      <y>430</y>
+      <w>160</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>*attrs.h*
+--
+
+init_paths[]
+init_search[]
+init_val_pos[]
+init_val_delim[]
+init_val_types[]
+cmd_line_count
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>490</w>
+      <h>390</h>
+    </coordinates>
+    <panel_attributes>*collect.h*
+--
+
+stats_t* 
+get_stat_vals( file_params_t** file_params_list )
+
+void 
+get_proc_value( file_params_t* file_params )
+
+void 
+prepare_file_matrix( file_params_t* file_params )
+
+void* 
+read_file( char* file_path )
+
+file_params_t** 
+create_file_params( cmd_args_t args )
+
+void 
+purge_file_contents( file_params_t** file_params_list )
+
+void 
+clear_file_params( file_params_t** file_params_list )
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>340</x>
+      <y>660</y>
+      <w>190</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>*collect.c*
+--
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>470</x>
+      <y>380</y>
+      <w>30</w>
+      <h>300</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;280.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>610</x>
+      <y>0</y>
+      <w>520</w>
+      <h>170</h>
+    </coordinates>
+    <panel_attributes>*types.h*
+--
+
+cmd_args_t
+stats_t
+stats_res_t
+stats_res_overall_t
+file_coords_t
+file_params_t
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>480</x>
+      <y>100</y>
+      <w>150</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>550</x>
+      <y>360</y>
+      <w>460</w>
+      <h>210</h>
+    </coordinates>
+    <panel_attributes>*evaluate.h*
+--
+
+stats_res_t* 
+evaluate_interval_data( stats_t* start_data, 
+                        stats_t* end_data, 
+                        ttimer_t* timer )
+                                     
+stats_res_overall_t* 
+evaluate_overall_data( stats_res_t** results_list, 
+                       uint32_t list_len, 
+                       uint16_t interval_dur )
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>620</x>
+      <y>600</y>
+      <w>510</w>
+      <h>310</h>
+    </coordinates>
+    <panel_attributes>*print.h*
+--
+
+void 
+output_results_single( void* output_loc, 
+                       stats_res_t* results, 
+                       char* file_prefix )
+
+void 
+output_results_all( void* output_loc, 
+                    stats_res_t** results_list, 
+                    uint32_t res_list_len, 
+                    char* file_prefix )
+
+void 
+output_results_overall( void* output_loc, 
+                        stats_res_overall_t* overall_stats, 
+                        char* file_prefix )
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>510</x>
+      <y>200</y>
+      <w>310</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>*pstring.h*
+--
+
+char* 
+string_replace_ext( char* search, 
+                    char* replace, 
+                    char* string )
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>510</x>
+      <y>310</y>
+      <w>30</w>
+      <h>370</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;350.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>980</x>
+      <y>160</y>
+      <w>30</w>
+      <h>220</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;200.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1040</x>
+      <y>160</y>
+      <w>30</w>
+      <h>460</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;440.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>860</x>
+      <y>200</y>
+      <w>120</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>*pstring.c*
+--
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>810</x>
+      <y>240</y>
+      <w>70</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;&gt;</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>360</x>
+      <y>790</y>
+      <w>210</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>*evaluate.c*
+--
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>550</x>
+      <y>560</y>
+      <w>30</w>
+      <h>250</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;230.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>910</x>
+      <y>1030</y>
+      <w>220</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>*print.c*
+--
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1010</x>
+      <y>900</y>
+      <w>30</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>970</y>
+      <w>850</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>*meas.c*
+--
+
+/ /* ******************* program entry point ******************* */ /
+ int
+ main( int argc, char* argv[] )
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>430</y>
+      <w>270</w>
+      <h>460</h>
+    </coordinates>
+    <panel_attributes>*mtimer.h*
+--
+
+ttimer_t
+
+void
+startTTimer( ttimer_t timer )
+
+void
+stopTTimer( ttimer_t timer )
+
+double
+getUsrTime( ttimer_t timer )
+
+double
+getSysTime( ttimer_t timer )
+
+double
+getCUsrTime( ttimer_t timer )
+
+double
+getCUSysTime( ttimer_t timer )
+
+double
+getWallTTime( ttimer_t timer )
+
+void
+printTTime( ttimer_t timer )</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>410</x>
+      <y>590</y>
+      <w>30</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>580</x>
+      <y>560</y>
+      <w>30</w>
+      <h>430</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;410.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>20</x>
+      <y>880</y>
+      <w>30</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>380</y>
+      <w>30</w>
+      <h>610</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;590.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>700</x>
+      <y>900</y>
+      <w>30</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+</diagram>

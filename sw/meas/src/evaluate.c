@@ -22,9 +22,11 @@
 /* "private" function prototypes */
 void check_min( double* current, double* actual, uint16_t* interval, uint32_t i );
 void check_max( double* current, double* actual, uint16_t* interval, uint32_t i );
+void check_min_uint( uint32_t* current, uint32_t* actual, uint16_t* interval, uint32_t i );
+void check_max_uint( uint32_t* current, uint32_t* actual, uint16_t* interval, uint32_t i );
 
 
-stats_res_t* evaluate_interval_data( stats_t* start_data, stats_t* end_data, ttimer_t* timer )
+stats_res_t* evaluate_interval_data( stats_t* start_data, stats_t* end_data, uint16_t interval_no )
 {
   stats_res_t* results = NULL;
 
@@ -48,12 +50,20 @@ stats_res_t* evaluate_interval_data( stats_t* start_data, stats_t* end_data, tti
     exit( EXIT_FAILURE );
   }
 
+  /* set the interval number to a result set */
+  results->interval_no = interval_no;
+  /* ****************************************** */
+  
   /* set the pid to a result set */
   results->pid = start_data->pid;
   /* ****************************************** */
   
-  /* add overall elapsed time to the result set */
-  results->etime_sec = getWallTTime( ( *timer ) );
+  /* add elapsed time to the result set */
+  results->etime_sec = start_data->etime_sec;
+  /* ****************************************** */
+  
+  /* add overhead time to the result set */
+  results->otime_usec = start_data->otime_usec;
   /* ****************************************** */
   
   /* utime and stime */
@@ -116,25 +126,33 @@ stats_res_t* evaluate_interval_data( stats_t* start_data, stats_t* end_data, tti
      * in case of an overflow.
      *
      * */
-    if( end_data->tx_bytes_prp < start_data->tx_bytes_prp )
-    {
-      end_data->tx_bytes_prp = UINT32_MAX + end_data->tx_bytes_prp;
-    }
-
     if( end_data->rx_bytes_prp < start_data->rx_bytes_prp )
     {
-      end_data->rx_bytes_prp = UINT32_MAX + end_data->rx_bytes_prp;
+      results->rx_bytes_prp =   ( UINT32_MAX + end_data->rx_bytes_prp )
+                              - start_data->rx_bytes_prp;
+    }
+    else
+    {
+      results->rx_bytes_prp = end_data->rx_bytes_prp - start_data->rx_bytes_prp; 
+    }
+    
+    if( end_data->tx_bytes_prp < start_data->tx_bytes_prp )
+    {
+      results->tx_bytes_prp =   ( UINT32_MAX + end_data->tx_bytes_prp )
+                              - start_data->tx_bytes_prp;
+    }
+    else
+    {
+      results->tx_bytes_prp = end_data->tx_bytes_prp - start_data->tx_bytes_prp; 
     }
 
-    results->rx_bytes_prp = end_data->rx_bytes_prp - start_data->rx_bytes_prp; 
-    results->tx_bytes_prp = end_data->tx_bytes_prp - start_data->tx_bytes_prp; 
-
+    /* following interface stats are not UINT32 limited */
     results->rx_bytes_if0 = end_data->rx_bytes_if0 - start_data->rx_bytes_if0; 
     results->tx_bytes_if0 = end_data->tx_bytes_if0 - start_data->tx_bytes_if0; 
     
     results->rx_bytes_if1 = end_data->rx_bytes_if1 - start_data->rx_bytes_if1; 
     results->tx_bytes_if1 = end_data->tx_bytes_if1 - start_data->tx_bytes_if1;
-
+    /* ************************************************************************* */
     
     results->rx_byterate_prp = results->rx_bytes_prp / results->etime_sec;
     results->tx_byterate_prp = results->tx_bytes_prp / results->etime_sec;
@@ -240,6 +258,8 @@ stats_res_overall_t* evaluate_overall_data( stats_res_t** results_list, uint32_t
   /* first initialisation ... */
   overall_results->etime_sec_total    = 0.0;
 
+  overall_results->otime_usec_total   = 0;
+
   overall_results->rx_bytes_prp_total = 0;
   overall_results->tx_bytes_prp_total = 0;
   overall_results->rx_bytes_if0_total = 0;
@@ -247,6 +267,12 @@ stats_res_overall_t* evaluate_overall_data( stats_res_t** results_list, uint32_t
   overall_results->rx_bytes_if1_total = 0;
   overall_results->tx_bytes_if1_total = 0;
 
+  overall_results->etime_sec_min      = DBL_MAX;
+  overall_results->etime_sec_max      = DBL_MAX * (-1);
+
+  overall_results->otime_usec_min     = UINT32_MAX;
+  overall_results->otime_usec_max     = 0;
+  
   overall_results->utime_sec_min      = DBL_MAX;
   overall_results->utime_sec_max      = DBL_MAX * (-1);
   
@@ -284,6 +310,7 @@ stats_res_overall_t* evaluate_overall_data( stats_res_t** results_list, uint32_t
     
     /* sum things up ... */
     overall_results->etime_sec_total += ( *( results_list + i ) )->etime_sec;
+    overall_results->otime_usec_total += ( *( results_list + i ) )->otime_usec;
     
     utime_sec_sum   += ( *( results_list + i ) )->utime_sec;
     stime_sec_sum   += ( *( results_list + i ) )->stime_sec;
@@ -304,6 +331,28 @@ stats_res_overall_t* evaluate_overall_data( stats_res_t** results_list, uint32_t
     overall_results->tx_bytes_if0_total += ( *( results_list + i ) )->tx_bytes_if0;
     overall_results->rx_bytes_if1_total += ( *( results_list + i ) )->rx_bytes_if1;
     overall_results->tx_bytes_if1_total += ( *( results_list + i ) )->tx_bytes_if1;
+    
+    /* etime min and max check */
+    check_min( &( ( *( results_list + i ) )->etime_sec ),      /* current */
+               &( overall_results->etime_sec_min ),            /* actual */
+               &( overall_results->etime_sec_min_interval ),   /* interval no */
+               i );                                            /* current loop no */
+    check_max( &( ( *( results_list + i ) )->etime_sec ),      /* current */
+               &( overall_results->etime_sec_max ),            /* actual */
+               &( overall_results->etime_sec_max_interval ),   /* interval no */
+               i );                                            /* current loop no */
+    /* ****************************************************************************** */
+    
+    /* otime min and max check */
+    check_min_uint( &( ( *( results_list + i ) )->otime_usec ),      /* current */
+                    &( overall_results->otime_usec_min ),            /* actual */
+                    &( overall_results->otime_usec_min_interval ),   /* interval no */
+                    i );                                             /* current loop no */
+    check_max_uint( &( ( *( results_list + i ) )->otime_usec ),      /* current */
+                    &( overall_results->otime_usec_max ),            /* actual */
+                    &( overall_results->otime_usec_max_interval ),   /* interval no */
+                    i );                                             /* current loop no */
+    /* ****************************************************************************** */
     
     /* utime min and max check */
     check_min( &( ( *( results_list + i ) )->utime_sec ),      /* current */
@@ -397,6 +446,9 @@ stats_res_overall_t* evaluate_overall_data( stats_res_t** results_list, uint32_t
 
   }
 
+  overall_results->etime_sec_avg  = overall_results->etime_sec_total / list_len;
+  overall_results->otime_usec_avg = overall_results->otime_usec_total / list_len;
+
   overall_results->utime_sec_avg   = utime_sec_sum / list_len;
   overall_results->stime_sec_avg   = stime_sec_sum / list_len;
   overall_results->cpu_percent_avg = cpu_percent_sum / list_len;
@@ -411,7 +463,6 @@ stats_res_overall_t* evaluate_overall_data( stats_res_t** results_list, uint32_t
   overall_results->tx_bitrate_if1_avg = tx_bitrate_if1_sum / list_len;
 
   return overall_results;
-
 }
 
 
@@ -434,3 +485,22 @@ void check_max( double* current, double* actual, uint16_t* interval, uint32_t i 
   }
 }
 
+
+void check_min_uint( uint32_t* current, uint32_t* actual, uint16_t* interval, uint32_t i )
+{
+  if( *current < *actual )
+  {
+    *actual = *current;
+    *interval = i;
+  }
+}
+
+
+void check_max_uint( uint32_t* current, uint32_t* actual, uint16_t* interval, uint32_t i )
+{
+  if( *current > *actual )
+  {
+    *actual = *current;
+    *interval = i;
+  }
+}

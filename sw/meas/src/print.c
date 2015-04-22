@@ -27,9 +27,9 @@ void print_one_interval( FILE* fp, stats_res_t* results )
 {
   fprintf( fp,
            "*******************************************************************************************\n\n"
-           " Process specific statistics:\n\n"
+           " Process specific statistics, interval no: %5d\n\n"
            " PID:  %d \n"
-           " Time: elapsed %3.2lfs, user %3.2lfs, sys %3.2lfs\n"
+           " Time: elapsed %3.2lfs, user %3.2lfs, sys %3.2lfs, overhead %dus\n"
            " CPU:  cpu workload %3.2lf%%\n\n\n"
            " Machine wide network stats for PRP involved interfaces, not process specific:\n\n"
            " Interface       RX Bytes       TX Bytes       RX Bitrate [Bit/s]       TX Bitrate [Bit/s]\n"
@@ -39,10 +39,12 @@ void print_one_interval( FILE* fp, stats_res_t* results )
            " if1 (%.4s)  %12lld   %12lld           %14.3lf           %14.3lf\n"
            " =========================================================================================\n\n"
            "*******************************************************************************************\n",
+           results->interval_no,
            results->pid,
            results->etime_sec, 
            results->utime_sec, 
            results->stime_sec,
+           results->otime_usec,
            results->cpu_percent,
            results->if_name_prp, 
            results->rx_bytes_prp,
@@ -71,21 +73,30 @@ void print_overall_stats( FILE* fp, stats_res_overall_t* overall_stats )
   
   fprintf( fp, 
            "*******************************************************************************************\n\n"
-           " Overall statistics of Process with PID: %d   |   Total elapsed time [s]: %7.2lf\n"
+           " Overall statistics of Process with PID: %6d   |   Total elapsed time [s]:   %10.2lf\n"
+           "                                                  |   Total overhead time [us]: %10d\n"
            " Total no of intervals:         %4d\n"
            " Duration of each interval [s]: %4d\n\n"
            " -----------------------------------------------------------------------------------------\n"
-           " Usertime [s]:      Average: %7.2lf\n"
-           "                    Min:     %7.2lf at interval: [%4ds, %4ds]\n"
-           "                    Max:     %7.2lf at interval: [%4ds, %4ds]\n"
+           " Elapsed time [s]:   Average: %7.2lf\n"
+           " (per interval)      Min:     %7.2lf at interval: [%4ds, %4ds]\n"
+           "                     Max:     %7.2lf at interval: [%4ds, %4ds]\n"
            " -----------------------------------------------------------------------------------------\n"
-           " Systemtime [s]:    Average: %7.2lf\n"
-           "                    Min:     %7.2lf at interval: [%4ds, %4ds]\n"
-           "                    Max:     %7.2lf at interval: [%4ds, %4ds]\n"
+           " Overhead time [us]: Average: %7d\n"
+           " (per interval)      Min:     %7d at interval: [%4ds, %4ds]\n"
+           "                     Max:     %7d at interval: [%4ds, %4ds]\n"
            " -----------------------------------------------------------------------------------------\n"
-           " CPU workload [%%]:  Average: %7.2lf\n"
-           "                    Min:     %7.2lf at interval: [%4ds, %4ds]\n"
-           "                    Max:     %7.2lf at interval: [%4ds, %4ds]\n"
+           " Usertime [s]:       Average: %7.2lf\n"
+           "                     Min:     %7.2lf at interval: [%4ds, %4ds]\n"
+           "                     Max:     %7.2lf at interval: [%4ds, %4ds]\n"
+           " -----------------------------------------------------------------------------------------\n"
+           " Systemtime [s]:     Average: %7.2lf\n"
+           "                     Min:     %7.2lf at interval: [%4ds, %4ds]\n"
+           "                     Max:     %7.2lf at interval: [%4ds, %4ds]\n"
+           " -----------------------------------------------------------------------------------------\n"
+           " CPU workload [%%]:   Average: %7.2lf\n"
+           "                     Min:     %7.2lf at interval: [%4ds, %4ds]\n"
+           "                     Max:     %7.2lf at interval: [%4ds, %4ds]\n"
            " -----------------------------------------------------------------------------------------\n"
            "\n\n\n"
            " Machine wide statistics of the network interfaces: \n"
@@ -132,8 +143,31 @@ void print_overall_stats( FILE* fp, stats_res_overall_t* overall_stats )
            /* global information */
            os->pid,
            os->etime_sec_total,
+           os->otime_usec_total,
            os->no_intervals,
            os->interval_duration,
+           
+           /* elapsed time per interval */
+           os->etime_sec_avg,
+           
+           os->etime_sec_min,
+           os->etime_sec_min_interval * int_dur,
+           os->etime_sec_min_interval * int_dur + int_dur,
+
+           os->etime_sec_max,
+           os->etime_sec_max_interval * int_dur,
+           os->etime_sec_max_interval * int_dur + int_dur,
+           
+           /* overhead time per interval */
+           ( uint32_t )os->otime_usec_avg,
+           
+           os->otime_usec_min,
+           os->otime_usec_min_interval * int_dur,
+           os->otime_usec_min_interval * int_dur + int_dur,
+
+           os->otime_usec_max,
+           os->otime_usec_max_interval * int_dur,
+           os->otime_usec_max_interval * int_dur + int_dur,
            
            /* usertime */
            os->utime_sec_avg,
