@@ -108,8 +108,9 @@ measurement
 
 ) programmiert, bei der die CPU-Last berechnet wird, um die Ergebnisse von
  pidstat und top verifizieren zu können.
- Des Weiteren misst meas neben der CPU-Last auch die verwendeten Netzwerkbandbre
-iten.
+ Des Weiteren ermittelt meas neben der CPU-Last, die System- und Usertime
+ eines Prozesses, sowie sämtliche statistischen Daten zu allen PRP-involvierten
+ Netzwerk-Interfaces.
 \end_layout
 
 \begin_layout Paragraph
@@ -119,6 +120,76 @@ iten.
 \begin_layout Standard
 Die nachfolgend gezeigte Grafik, soll eine Übersicht um den Gesamtumfang
  der Software meas aufzeigen:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _diagrams/meas_overview.svg
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Gesamtübersicht meas-Applikation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Der Betriebssystem-Kern legt periodisch statistische Daten in ein Dateisystem
+ ab, welches beim Bootprozess des Betriebssytems im Arbeitsspeicher angelegt
+ wird, das /proc-Dateisystem, siehe 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:proc-Dateisystem"
+
+\end_inset
+
+.
+ Aus diesem Dateisystem sollen alle relevanten statistischen Werte für die
+ meas-Applikation gelesen und ausgewertet werden.
+ Beim starten von meas gibt der Benutzer eine Intervall-Dauer sowie eine
+ Anzahl von Intervallen und die zu überwachende Prozess-ID an.
+ Im Attribut-Modul (attrs), wird spezifiziert, welche Zeile und Spalte aus
+ welcher Datei im /proc-Dateisystem gelesen werden soll.
+ Das Sammel-Modul (collect), ist dafür zuständig, die im Attribut-Modul
+ spezifizierten Werte in ensprechende Datenstrukturen abzulegen, sowie die
+ Werte in Datentypen umzuwandeln, mit denen arithmetisch gerechnet werden
+ kann.
+ Das Timer-Modul (timer) wird verwendet, um die effektive Intervall-Dauer
+ und Messfehler, damit ist die Zeit gemeint, welche aufgewendet werden muss,
+ um von den entsprechenden Dateien im /proc-Dateisystem zu lesen.
+ Es wird ein Timer verwendet, der eine Auflösung von 1 Mikrosekunde bereitstellt.
+ Das Auswertungs-Modul (evaluate) hat die Aufgabe, gesammelte Statistiken
+ in Form von Intervall-Resultaten auszuwerten und zusätzlich eine Gesamtstatisti
+k zu berechnen.
+ Im Print-Modul (print), werden ausgewertete Intervall-Daten, wie auch die
+ Gesamtstatistik in eine für den Benutzer lesbare Form gebracht und können
+ an eine beliebige Ausgabe geleitet werden, beispielsweise Textdateien,
+ Konsole, Drucker, etc.
 \end_layout
 
 \end_body

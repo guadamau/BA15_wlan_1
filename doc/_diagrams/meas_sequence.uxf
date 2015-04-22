@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>480</x>
-      <y>0</y>
+      <x>632</x>
+      <y>56</y>
       <w>104</w>
       <h>48</h>
     </coordinates>
@@ -16,8 +16,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>176</x>
-      <y>0</y>
+      <x>328</x>
+      <y>56</y>
       <w>104</w>
       <h>48</h>
     </coordinates>
@@ -28,8 +28,8 @@
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>176</x>
-      <y>80</y>
+      <x>328</x>
+      <y>136</y>
       <w>712</w>
       <h>240</h>
     </coordinates>
@@ -39,8 +39,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>632</x>
-      <y>0</y>
+      <x>784</x>
+      <y>56</y>
       <w>104</w>
       <h>48</h>
     </coordinates>
@@ -51,8 +51,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>784</x>
-      <y>0</y>
+      <x>936</x>
+      <y>56</y>
       <w>104</w>
       <h>48</h>
     </coordinates>
@@ -63,30 +63,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>216</x>
-      <y>40</y>
-      <w>24</w>
-      <h>816</h>
-    </coordinates>
-    <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;1000.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>520</x>
-      <y>40</y>
-      <w>24</w>
-      <h>840</h>
-    </coordinates>
-    <panel_attributes>lt=.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;1030.0</additional_attributes>
-  </element>
-  <element>
-    <id>Relation</id>
-    <coordinates>
-      <x>680</x>
-      <y>40</y>
+      <x>368</x>
+      <y>96</y>
       <w>24</w>
       <h>832</h>
     </coordinates>
@@ -96,8 +74,30 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>824</x>
-      <y>40</y>
+      <x>672</x>
+      <y>96</y>
+      <w>24</w>
+      <h>832</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1020.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>832</x>
+      <y>96</y>
+      <w>24</w>
+      <h>832</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;1020.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>976</x>
+      <y>96</y>
       <w>24</w>
       <h>832</h>
     </coordinates>
@@ -107,8 +107,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>328</x>
-      <y>0</y>
+      <x>480</x>
+      <y>56</y>
       <w>104</w>
       <h>48</h>
     </coordinates>
@@ -119,8 +119,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>368</x>
-      <y>40</y>
+      <x>520</x>
+      <y>96</y>
       <w>24</w>
       <h>832</h>
     </coordinates>
@@ -130,8 +130,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>216</x>
-      <y>112</y>
+      <x>368</x>
+      <y>168</y>
       <w>176</w>
       <h>32</h>
     </coordinates>
@@ -142,8 +142,8 @@ startTTimer(elapsed)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>216</x>
-      <y>136</y>
+      <x>368</x>
+      <y>192</y>
       <w>176</w>
       <h>32</h>
     </coordinates>
@@ -154,8 +154,8 @@ startGTimer(overhead)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>216</x>
-      <y>168</y>
+      <x>368</x>
+      <y>224</y>
       <w>328</w>
       <h>32</h>
     </coordinates>
@@ -166,8 +166,8 @@ read_to_meas_buffers()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>216</x>
-      <y>192</y>
+      <x>368</x>
+      <y>280</y>
       <w>208</w>
       <h>56</h>
     </coordinates>
@@ -178,7 +178,7 @@ usleep(interval-overhead)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>216</x>
+      <x>368</x>
       <y>248</y>
       <w>176</w>
       <h>32</h>
@@ -190,8 +190,8 @@ stopGTimer(overhead)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>216</x>
-      <y>280</y>
+      <x>368</x>
+      <y>336</y>
       <w>176</w>
       <h>32</h>
     </coordinates>
@@ -202,10 +202,10 @@ stopTTimer(elapsed)</panel_attributes>
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>176</x>
-      <y>528</y>
+      <x>328</x>
+      <y>624</y>
       <w>712</w>
-      <h>240</h>
+      <h>96</h>
     </coordinates>
     <panel_attributes>*n measurement intervals*</panel_attributes>
     <additional_attributes/>
@@ -213,8 +213,8 @@ stopTTimer(elapsed)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>216</x>
-      <y>352</y>
+      <x>368</x>
+      <y>408</y>
       <w>328</w>
       <h>32</h>
     </coordinates>
@@ -225,10 +225,10 @@ get_stat_vals()</panel_attributes>
   <element>
     <id>UMLFrame</id>
     <coordinates>
-      <x>176</x>
-      <y>328</y>
+      <x>328</x>
+      <y>384</y>
       <w>712</w>
-      <h>192</h>
+      <h>232</h>
     </coordinates>
     <panel_attributes>*n measurement intervals*</panel_attributes>
     <additional_attributes/>
@@ -236,8 +236,8 @@ get_stat_vals()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>520</x>
-      <y>376</y>
+      <x>672</x>
+      <y>456</y>
       <w>248</w>
       <h>56</h>
     </coordinates>
@@ -248,8 +248,8 @@ get_file_content_from_buffer()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>520</x>
-      <y>416</y>
+      <x>672</x>
+      <y>496</y>
       <w>184</w>
       <h>56</h>
     </coordinates>
@@ -260,8 +260,8 @@ prepare_file_matrix()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>520</x>
-      <y>456</y>
+      <x>672</x>
+      <y>536</y>
       <w>152</w>
       <h>56</h>
     </coordinates>
@@ -272,8 +272,8 @@ get_proc_value()</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>216</x>
-      <y>488</y>
+      <x>368</x>
+      <y>584</y>
       <w>328</w>
       <h>32</h>
     </coordinates>
@@ -284,13 +284,108 @@ stats_t* data_snapshot</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>216</x>
-      <y>552</y>
+      <x>368</x>
+      <y>648</y>
       <w>488</w>
       <h>32</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
 evaluate_interval_data(start_data, end_data, interval_no)</panel_attributes>
     <additional_attributes>590.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>368</x>
+      <y>824</y>
+      <w>632</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+output_results_all(path, interval_results_list, no_intervals)</panel_attributes>
+    <additional_attributes>770.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>368</x>
+      <y>864</y>
+      <w>632</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+output_results_overall(path, overall_results)</panel_attributes>
+    <additional_attributes>770.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>368</x>
+      <y>744</y>
+      <w>488</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+evaluate_overall_data(interval_results_list, no_intervals, interval)</panel_attributes>
+    <additional_attributes>590.0;20.0;10.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>320</x>
+      <y>904</y>
+      <w>736</w>
+      <h>24</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>900.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>368</x>
+      <y>680</y>
+      <w>488</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+stats_res_t* interval_result</panel_attributes>
+    <additional_attributes>10.0;20.0;590.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>368</x>
+      <y>776</y>
+      <w>488</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+stats_res_overall_t* overall_results</panel_attributes>
+    <additional_attributes>10.0;20.0;590.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLFrame</id>
+    <coordinates>
+      <x>656</x>
+      <y>440</y>
+      <w>264</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>*n proc file values*</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>576</x>
+      <y>280</y>
+      <w>112</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>usleep() is a system-function
+declared in "unistd.h"
+bg=white</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
