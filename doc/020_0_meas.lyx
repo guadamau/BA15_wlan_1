@@ -171,14 +171,21 @@ reference "sec:proc-Dateisystem"
 .
  Aus diesem Dateisystem sollen alle relevanten statistischen Werte für die
  meas-Applikation gelesen und ausgewertet werden.
- Beim starten von meas gibt der Benutzer eine Intervall-Dauer sowie eine
+ 
+\end_layout
+
+\begin_layout Standard
+Beim Starten von meas gibt der Benutzer eine Intervall-Dauer sowie eine
  Anzahl von Intervallen und die zu überwachende Prozess-ID an.
  Im Attribut-Modul (attrs), wird spezifiziert, welche Zeile und Spalte aus
  welcher Datei im /proc-Dateisystem gelesen werden soll.
- Das Sammel-Modul (collect), ist dafür zuständig, die im Attribut-Modul
- spezifizierten Werte in ensprechende Datenstrukturen abzulegen, sowie die
- Werte in Datentypen umzuwandeln, mit denen arithmetisch gerechnet werden
- kann.
+ 
+\end_layout
+
+\begin_layout Standard
+Das Sammel-Modul (collect), ist dafür zuständig, die im Attribut-Modul spezifizi
+erten Werte in ensprechende Datenstrukturen abzulegen, sowie die Werte in
+ Datentypen umzuwandeln, mit denen arithmetisch gerechnet werden kann.
  Das Timer-Modul (timer) wird verwendet, um die effektive Intervall-Dauer
  und Messfehler, damit ist die Zeit gemeint, welche aufgewendet werden muss,
  um von den entsprechenden Dateien im /proc-Dateisystem zu lesen.
@@ -190,6 +197,555 @@ k zu berechnen.
  Gesamtstatistik in eine für den Benutzer lesbare Form gebracht und können
  an eine beliebige Ausgabe geleitet werden, beispielsweise Textdateien,
  Konsole, Drucker, etc.
+\end_layout
+
+\begin_layout Paragraph
+meas-Datentypen
+\end_layout
+
+\begin_layout Standard
+Um zusammengehörende Datentypen sinnvoll zu gliedern werden C-Structs verwendet:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="10" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="25col%">
+<column alignment="left" valignment="top" width="65col%">
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+C-Datentyp
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Kurzbeschrieb
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+cmd_args_t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Enthält alle Argumente, die der Benutzer beim Starten der meas-Applikation
+ via Kommandozeile übergeben hat (Prozess-ID, Intervallzeit, Anzahl Intervalle,
+ etc.).
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+stats_t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Beinhaltet die relevanten, als Zahlen aufbereiteten Werte, die bei einem
+ Lesezugriff auf das /proc-Dateisystem gelesen wurden.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+time_vals_t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wird zur temporären Speicherung der pro Intervall gemessenen Zeiten verwendet.
+ Die gemessenen Zeiten werden nach Ablauf aller Messintervalle dem ensprechenden
+ stats_t zugefügt.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+stats_res_t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dieser Datentyp beinhaltet alle Daten eines ausgewerteten Messintervalls.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+stats_res_overall_t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+In dieser Datenstruktur werden alle fertig ausgewerteten Daten gehalten,
+ die zur Gestamtstatistik einer ganzen Messserie gehören.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+file_coords_t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Koordinaten eines Wertes im /proc-Dateisystem.
+ Die Koordinaten haben die Form: Liniennummer und Zeilennummer
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+meas_buffer_meta_t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Enthält wichtige Metainformationen, die für einen Mess-Puffer von Bedeutung
+ sind.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+meas_buffer_t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Datenstruktur eines Mess-Puffers.
+ Ein Mess-Puffer wird verwendet, um die Rohdaten pro Intervall aus dem /proc-Dat
+eisystem zwischen zu speichern.
+ Die Rohdaten werden erst am Schluss einer Mess-Serie aufbereitet und ausgewerte
+t.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+file_params_t
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Diese Datenstruktur enthält die Metainformationen zu jedem Wert, der aus
+ dem /proc-Dateisystem gelesen werden soll.
+ Dazu gehören beispielsweise der Dateipfad, die Koordinaten des Messwertes,
+ eine Referenz auf die Rohdaten des Dateiinhalts, etc.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Kurzbeschrieb der meas-Datentypen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Detailansicht Module
+\end_layout
+
+\begin_layout Standard
+Basierend auf der Gesamtübersicht, wurden die verschiedenen Module implementiert.
+ Die Modulübersicht soll eine etwas detailliertere Übersicht darstellen.
+ Bei der folgenden Illustration wurden der Übersichtlichkeit wegen pro Modul
+ nur relevante, modulübergreifende Funktionen berücksichtigt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _diagrams/meas_modules.svg
+	scale 36
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Detailansicht meas-Module
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+meas
+\end_layout
+
+\begin_layout Standard
+Diese Komponente ist der Programmeinstiegspunkt.
+ Sie ist für das Einlesen Programmargumente zuständig, sowie für die Koordinatio
+n des Hauptprogrammablaufs.
+\end_layout
+
+\begin_layout Subparagraph
+mtimer
+\end_layout
+
+\begin_layout Standard
+timer und so.
+\end_layout
+
+\begin_layout Subparagraph
+attrs
+\end_layout
+
+\begin_layout Standard
+Repräsentiert eine Header-Datei, in welcher definiert wird, welche /proc-Dateien
+ ausgelesen werden sollen, und an welchen Koordinaten der gewünschte Wert
+ in der spezifizierten Datei liegt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{language=C,tabsize=2}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[caption={Beispiels eines Konfigurationsfeldes, /proc-Dateipfad
+e},captionpos=b]
+\end_layout
+
+\begin_layout Plain Layout
+
+...
+\end_layout
+
+\begin_layout Plain Layout
+
+const char const* init_paths[] =     {                                 
+        
+\end_layout
+
+\begin_layout Plain Layout
+
+                                       "/proc/$PID$/stat", /* utime %lu
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+                                       "/proc/$PID$/stat", /* stime %lu
+ */
+\end_layout
+
+\begin_layout Plain Layout
+
+                                       "/proc/net/dev"     /* traffic stats
+ of nics */
+\end_layout
+
+\begin_layout Plain Layout
+
+                                     };
+\end_layout
+
+\begin_layout Plain Layout
+
+...
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Mit $-Zeichen umgebene Zeichen im Dateipfad werden in diesem Fall durch
+ die Prozess-ID ersetzt, die dem Programm als Argument übergeben wird.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{language=C,tabsize=2}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[caption={Beispiels eines Konfigurationsfeldes, Datei-Koordinat
+en},captionpos=b]
+\end_layout
+
+\begin_layout Plain Layout
+
+...
+\end_layout
+
+\begin_layout Plain Layout
+
+const char const* init_val_pos[] =   {
+\end_layout
+
+\begin_layout Plain Layout
+
+                                       "1:14",
+\end_layout
+
+\begin_layout Plain Layout
+
+                                       "1:15",
+\end_layout
+
+\begin_layout Plain Layout
+
+                                       "7:1"                           
+          
+\end_layout
+
+\begin_layout Plain Layout
+
+                                     };
+\end_layout
+
+\begin_layout Plain Layout
+
+...
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+pstring
+\end_layout
+
+\begin_layout Standard
+Dieses Modul behandelt das Ersetzen von einmal oder mehrfach vorkommenden
+ Zeichenketten in einer Zeichenkette.
+ So wird es beispielsweise möglich, das Muster 
+\begin_inset Quotes fld
+\end_inset
+
+$PID$
+\begin_inset Quotes frd
+\end_inset
+
+ in einem Dateipfad durch eine Prozess-ID zu ersetzen.
+\end_layout
+
+\begin_layout Subparagraph
+collect
+\end_layout
+
+\begin_layout Standard
+Dieser Programmteil ist dafür zuständig, die in 
+\begin_inset Quotes fld
+\end_inset
+
+attrs
+\begin_inset Quotes frd
+\end_inset
+
+ definierten Werte aus dem /proc-Dateisystem zu lesen.
+ Besonders erwähnenswert sind die Lesepuffer.
+ Die Initialisierung sowie die Schreib- und Leseoperationen dieser Puffer
+ werden alle in diesem Programm-Modul abgehandelt.
+ Des Weiteren ist 
+\begin_inset Quotes fld
+\end_inset
+
+collect
+\begin_inset Quotes frd
+\end_inset
+
+ dafür zuständig, die in den Puffern gesammelten Rohdaten aus /proc für
+ die spätere Auswertung aufzubereiten.
+ Ferner befinden sich hier administrative Funktionen, die die Datenstrukturen
+ betreffend den /proc-Datei-Metadaten behandeln.
+\end_layout
+
+\begin_layout Subparagraph
+evaluate
+\end_layout
+
+\begin_layout Standard
+Dieses Modul enthält alle Funktionen, welche aus den gesammelten Messdaten
+ statistische Werte berechnen, sowohl pro Messintervall als auch eine Gesamtstat
+istik über alle Messintervalle.
+ Die berechneten Statistiken werden in der entsprechenden Datenstrukturen
+ abgelegt und können anschliessend für Ausgaben auf bliebige Ausgabe-Geräte
+ weiterverwendet werden.
+\end_layout
+
+\begin_layout Subparagraph
+print
 \end_layout
 
 \end_body
