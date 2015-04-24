@@ -18,7 +18,7 @@ fi
 SCRIPT_DIR=$(dirname $0)
 echo $SCRIPT_DIR
 
-for i in $(find $1 | grep "meas_interval"); do
+for i in $(find $1 | grep "meas_interval" | sort); do
     INT_FILE_NAME=$(echo "$i" | rev | cut -d'/' -f1 | rev)
     INT_FILE=$i
     DIR_NAME=$(dirname $i)
@@ -27,5 +27,5 @@ for i in $(find $1 | grep "meas_interval"); do
     echo "Interval result: ${INT_FILE}"
     echo "Creating histogram files in ${DIR_OUT}"
     mkdir -p ${DIR_OUT}
-    ${SCRIPT_DIR}/include/histogram.sh ${INT_FILE} ${DIR_OUT}
+    ${SCRIPT_DIR}/include/histogram.sh ${INT_FILE} ${DIR_OUT} $(dirname ${INT_FILE} | rev | cut -d'/' -f1 | rev) $1
 done
