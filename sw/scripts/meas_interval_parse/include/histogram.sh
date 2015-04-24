@@ -38,63 +38,63 @@ IF1_RX_BITRATE_PER_INT="net_${IF1_NAME}_rx_bitrate_per_interval.hist"
 IF1_TX_BITRATE_PER_INT="net_${IF1_NAME}_tx_bitrate_per_interval.hist"
 
 echo -n "Parsing CPU-load per interval to ${OUTPUT_FOLDER}/${CPU_LOAD_PER_INT}..."
-cat $1 | grep CPU | cut -d' ' -f6 | cut -d'%' -f1 > ${OUTPUT_FOLDER}/${CPU_LOAD_PER_INT}
+cat $1  | tr -s ' ' | grep CPU | cut -d' ' -f5 | cut -d'%' -f1 > ${OUTPUT_FOLDER}/${CPU_LOAD_PER_INT}
 echo "done"
 
 echo -n "Parsing CPU-usertime per interval to ${OUTPUT_FOLDER}/${USER_TIME_PER_INT}..."
-cat $1 | grep "user" | cut -d' ' -f6 | cut -d's' -f1  > ${OUTPUT_FOLDER}/${USER_TIME_PER_INT}
+cat $1  | tr -s ' ' | grep "user" | cut -d' ' -f6 | cut -d's' -f1  > ${OUTPUT_FOLDER}/${USER_TIME_PER_INT}
 echo "done"
 
 echo -n "Parsing CPU-systemtime per interval to ${OUTPUT_FOLDER}/${SYSTEM_TIME_PER_INT}..."
-cat $1 | grep "sys" | cut -d' ' -f8 | cut -d's' -f1 > ${OUTPUT_FOLDER}/${SYSTEM_TIME_PER_INT}
+cat $1  | tr -s ' ' | grep "sys" | cut -d' ' -f8 | cut -d's' -f1 > ${OUTPUT_FOLDER}/${SYSTEM_TIME_PER_INT}
 echo "done"
 
 echo -n "Parsing ${PRP_NAME} - RX Bytes per interval to ${OUTPUT_FOLDER}/${PRP_RX_BYTES_PER_INT}..."
-cat $1 | grep "prp" | cut -d' ' -f10 > ${OUTPUT_FOLDER}/${PRP_RX_BYTES_PER_INT}
+cat $1  | tr -s ' ' | grep "prp" | cut -d' ' -f4 > ${OUTPUT_FOLDER}/${PRP_RX_BYTES_PER_INT}
 echo "done"
 
 echo -n "Parsing ${PRP_NAME} - TX Bytes per interval to ${OUTPUT_FOLDER}/${PRP_TX_BYTES_PER_INT}..."
-cat $1 | grep "prp" | cut -d' ' -f16 > ${OUTPUT_FOLDER}/${PRP_TX_BYTES_PER_INT}
+cat $1  | tr -s ' ' | grep "prp" | cut -d' ' -f5 > ${OUTPUT_FOLDER}/${PRP_TX_BYTES_PER_INT}
 echo "done"
 
 echo -n "Parsing ${PRP_NAME} - RX Bitrate per interval to ${OUTPUT_FOLDER}/${PRP_RX_BITRATE_PER_INT}..."
-cat $1 | grep "prp" | cut -d' ' -f30 > ${OUTPUT_FOLDER}/${PRP_RX_BITRATE_PER_INT}
+cat $1  | tr -s ' ' | grep "prp" | cut -d' ' -f6 > ${OUTPUT_FOLDER}/${PRP_RX_BITRATE_PER_INT}
 echo "done"
 
 echo -n "Parsing ${PRP_NAME} - TX Bitrate per interval to ${OUTPUT_FOLDER}/${PRP_TX_BITRATE_PER_INT}..."
-cat $1 | grep "prp" | cut -d' ' -f43 > ${OUTPUT_FOLDER}/${PRP_TX_BITRATE_PER_INT}
+cat $1  | tr -s ' ' | grep "prp" | cut -d' ' -f7 > ${OUTPUT_FOLDER}/${PRP_TX_BITRATE_PER_INT}
 echo "done"
 
 echo -n "Parsing ${IF0_NAME} - RX Bytes per interval to ${OUTPUT_FOLDER}/${IF0_RX_BYTES_PER_INT}..."
-cat $1 | grep "if0" | cut -d' ' -f10 > ${OUTPUT_FOLDER}/${IF0_RX_BYTES_PER_INT}
+cat $1  | tr -s ' ' | grep "if0" | cut -d' ' -f4 > ${OUTPUT_FOLDER}/${IF0_RX_BYTES_PER_INT}
 echo "done"
 
 echo -n "Parsing ${IF0_NAME} - TX Bytes per interval per interval to ${OUTPUT_FOLDER}/${IF0_TX_BYTES_PER_INT}..."
-cat $1 | grep "if0" | cut -d' ' -f16 > ${OUTPUT_FOLDER}/${IF0_TX_BYTES_PER_INT}
+cat $1  | tr -s ' ' | grep "if0" | cut -d' ' -f5 > ${OUTPUT_FOLDER}/${IF0_TX_BYTES_PER_INT}
 echo "done"
 
 echo -n "Parsing ${IF0_NAME} - RX Bitrate per interval to ${OUTPUT_FOLDER}/${IF0_RX_BITRATE_PER_INT}..."
-cat $1 | grep "if0" | cut -d' ' -f30 > ${OUTPUT_FOLDER}/${IF0_RX_BITRATE_PER_INT}
+cat $1  | tr -s ' ' | grep "if0" | cut -d' ' -f6 > ${OUTPUT_FOLDER}/${IF0_RX_BITRATE_PER_INT}
 echo "done"
 
 echo -n "Parsing ${IF0_NAME} - TX Bitrate per interval to ${OUTPUT_FOLDER}/${IF0_TX_BITRATE_PER_INT}..."
-cat $1 | grep "if0" | cut -d' ' -f43 > ${OUTPUT_FOLDER}/${IF0_TX_BITRATE_PER_INT}
+cat $1  | tr -s ' ' | grep "if0" | cut -d' ' -f7 > ${OUTPUT_FOLDER}/${IF0_TX_BITRATE_PER_INT}
 echo "done"
 
 echo -n "Parsing ${IF1_NAME} - RX Bytes per interval to ${OUTPUT_FOLDER}/${IF1_RX_BYTES_PER_INT}..."
-cat $1 | grep "if1" | cut -d' ' -f10 > ${OUTPUT_FOLDER}/${IF1_RX_BYTES_PER_INT}
+cat $1  | tr -s ' ' | grep "if1" | cut -d' ' -f4 > ${OUTPUT_FOLDER}/${IF1_RX_BYTES_PER_INT}
 echo "done"
 
 echo -n "Parsing ${IF1_NAME} - TX Bytes per interval per interval to ${OUTPUT_FOLDER}/${IF1_TX_BYTES_PER_INT}..."
-cat $1 | grep "if1" | cut -d' ' -f16 > ${OUTPUT_FOLDER}/${IF1_TX_BYTES_PER_INT}
+cat $1  | tr -s ' ' | grep "if1" | cut -d' ' -f5 > ${OUTPUT_FOLDER}/${IF1_TX_BYTES_PER_INT}
 echo "done"
 
 echo -n "Parsing ${IF1_NAME} - RX Bitrate per interval to ${OUTPUT_FOLDER}/${IF1_RX_BITRATE_PER_INT}..."
-cat $1 | grep "if1" | cut -d' ' -f30 > ${OUTPUT_FOLDER}/${IF1_RX_BITRATE_PER_INT}
+cat $1  | tr -s ' ' | grep "if1" | cut -d' ' -f6 > ${OUTPUT_FOLDER}/${IF1_RX_BITRATE_PER_INT}
 echo "done"
 
 echo -n "Parsing ${IF1_NAME} - TX Bitrate per interval to ${OUTPUT_FOLDER}/${IF1_TX_BITRATE_PER_INT}..."
-cat $1 | grep "if1" | cut -d' ' -f43 > ${OUTPUT_FOLDER}/${IF1_TX_BITRATE_PER_INT}
+cat $1  | tr -s ' ' | grep "if1" | cut -d' ' -f7 > ${OUTPUT_FOLDER}/${IF1_TX_BITRATE_PER_INT}
 echo "done"
 
 echo "*****************************************************************************"
