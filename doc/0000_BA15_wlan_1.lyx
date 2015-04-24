@@ -159,6 +159,62 @@ width=.8\textwidth
 \addplot+[darkblue!20!black,fill=darkblue!80!white,hist={data=x}] file {#1}; 
 \end{axis} 
 \end{tikzpicture}}
+
+\newcommand{\histocpuusr}[1]{\begin{tikzpicture} 
+\begin{axis}[
+xlabel = {CPU-Usertime in Prozent},
+xtick={0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1},
+xticklabels={0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1},
+ylabel = {Häufigkeit},
+ybar interval,
+width=.8\textwidth
+] 
+\addplot+[darkblue!20!black,fill=darkblue!80!white,hist={data=x}] file {#1}; 
+\end{axis} 
+\end{tikzpicture}}
+
+\newcommand{\histocpusys}[1]{\begin{tikzpicture} 
+\begin{axis}[
+xlabel = {CPU-Systemtime in Prozent},
+xtick={0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1},
+xticklabels={0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1},
+ylabel = {Häufigkeit},
+ybar interval,
+width=.8\textwidth
+] 
+\addplot+[darkblue!20!black,fill=darkblue!80!white,hist={data=x}] file {#1}; 
+\end{axis} 
+\end{tikzpicture}}
+
+\newcommand{\histonet}[1]{\begin{tikzpicture} 
+\begin{axis}[
+        xmode=linear,
+        ymode=linear,
+        axis x line*=bottom,
+        axis y line*=left,
+        tick label style={font=\small},
+        xlabel=Bytes,
+        ylabel=Häufigkeit,
+        width=.8\textwidth
+] 
+\addplot+[darkblue!20!black,fill=darkblue!80!white,hist={data=x}] file {#1}; 
+\end{axis} 
+\end{tikzpicture}}
+
+\newcommand{\histonetspeed}[1]{\begin{tikzpicture} 
+\begin{axis}[
+        xmode=linear,
+        ymode=linear,
+        axis x line*=bottom,
+        axis y line*=left,
+        tick label style={font=\small},
+        xlabel=Bits/s,
+        ylabel=Häufigkeit,
+        width=.8\textwidth
+] 
+\addplot+[darkblue!20!black,fill=darkblue!80!white,hist={data=x}] file {#1}; 
+\end{axis} 
+\end{tikzpicture}}
 \end_preamble
 \options bibliography=totocnumbered,listof=totocnumbered
 \use_default_options true
