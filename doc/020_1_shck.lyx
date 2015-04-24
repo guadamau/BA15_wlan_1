@@ -596,5 +596,162 @@ shck
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
+Ablauf shck Text:
+\end_layout
+
+\begin_layout Enumerate
+Client- / Server-Modus (-S Parameter)?
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Client
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Daten aus Datei (-f Parameter) auslesen und als Payload-Parameter der Sende-Funk
+tion weiterreichen
+\end_layout
+
+\begin_layout Enumerate
+Zu versendendes Frame / Paket je nach Lasttyp (-s Parameter) (
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+, 
+\begin_inset Quotes fld
+\end_inset
+
+RANDOM
+\begin_inset Quotes frd
+\end_inset
+
+, 
+\begin_inset Quotes fld
+\end_inset
+
+MAX
+\begin_inset Quotes frd
+\end_inset
+
+) und Übertragungsart vorbereiten.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Beim Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+RANDOM
+\begin_inset Quotes frd
+\end_inset
+
+ wird ein Frame / Paket mit der maximalen Grösse vorbereitet, was vor dem
+ Versand das Ende so wegschneided, dass das Frame / Paket die gewünschte
+ Grösse hat.
+ Des Weiteren wird bei diesem Lasttypen eine Liste von 100 zufälligen Werten
+ zwischen 64 und 1500 eingelesen, die später beim Versand die Grösse des
+ zu versenden Frames / Pakets angibt.
+ So wird die Last zufällig, aber dennoch reproduzierbar.
+\begin_inset Newline newline
+\end_inset
+
+Ist der PRP-Modus (-P Parameter) aktiviert, so wird das Frame / Paket 6
+ Bytes kürzer, um Platz für den RCT des PRP-Protokolls garantieren zu können.
+\end_layout
+
+\begin_layout Enumerate
+Ethernet-, TCP- oder UDP-Socket (bei TCP und UDP mit entsprechender Portnummer
+ (-p Parameter)) öffnen und vorbereitetes Frame / Paket so oft über den
+ Socket versenden wie es gewünscht (-n Parameter) wird.
+ 
+\begin_inset Newline newline
+\end_inset
+
+Wurde als Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+RANDOM
+\begin_inset Quotes frd
+\end_inset
+
+ ausgewählt, so wird hier bei jedem Versand das vorbereitete Frame / Paket
+ zugeschnitten, dass es dem aktuellen Listeneintrag entspricht.
+ Beim nächsten Versand mit diesem Lasttyp wird der nächste Listeneintrag
+ gewählt (ist die Applikation am Ende der Liste so beginnt sie wieder von
+ vorne).
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+Bei einer unlimitierten Anzahl wird das Frame / Paket so oft versendet bis
+ die ganze Applikation terminiert wird.
+\end_layout
+
+\begin_layout Enumerate
+Ist die gewünschte Anzahl der zu versendenden Frames / Pakete erreicht,
+ so wird die Applikation beendet.
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Enumerate
+Server (für TCP und UDP)
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+TCP- oder UDP-Socket mit entsprechender Portnummer (-p Parameter) öffnen
+ und Verbindung vom Client abwarten.
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+TCP
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+TCP-Pakete auf definiertem Port annehmen bis der Client die Verbindung beendet
+ oder die ganze Applikation terminiert wird
+\end_layout
+
+\begin_layout Enumerate
+Ist die Verbindung beendet wird der TCP-Socket neu geöffnet und ist bereit
+ für die nächste Übertragung
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+UDP
+\end_layout
+
+\begin_deeper
+\begin_layout Enumerate
+UDP-Pakete auf definiertem Port annehmen bis die ganze Applikation terminiert
+ wird
+\end_layout
+
+\end_deeper
+\end_deeper
+\end_deeper
+\end_deeper
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
