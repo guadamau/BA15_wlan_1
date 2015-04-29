@@ -1,0 +1,745 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.2">
+  <zoom_level>8</zoom_level>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>160</x>
+      <y>144</y>
+      <w>24</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>*Pre*
+valign=center
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>288</x>
+      <y>144</y>
+      <w>80</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>*Src. MAC*
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>184</x>
+      <y>144</y>
+      <w>24</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>*SFD*
+valign=center
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>208</x>
+      <y>144</y>
+      <w>80</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>*Dest. MAC*
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>368</x>
+      <y>144</y>
+      <w>48</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>*Type*
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>416</x>
+      <y>144</y>
+      <w>144</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>*Payload*
+valign=top</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>584</x>
+      <y>144</y>
+      <w>24</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>*FCS*
+valign=center
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>608</x>
+      <y>144</y>
+      <w>24</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>*IFG*
+valign=center
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>24</x>
+      <y>40</y>
+      <w>104</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>*7 Byte*
+valign=center
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>24</x>
+      <y>64</y>
+      <w>160</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;180.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>136</x>
+      <y>40</y>
+      <w>104</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>*1 Byte*
+valign=center
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>184</x>
+      <y>64</y>
+      <w>24</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>256</x>
+      <y>40</y>
+      <w>104</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>*6 Byte*
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>64</y>
+      <w>48</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;100.0;40.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>592</x>
+      <y>224</y>
+      <w>104</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>*6 Byte*
+valign=center
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>376</x>
+      <y>40</y>
+      <w>104</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>*6 Byte*
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>320</x>
+      <y>64</y>
+      <w>88</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;100.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>376</x>
+      <y>64</y>
+      <w>152</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;100.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>496</x>
+      <y>40</y>
+      <w>104</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>*2 Byte*
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>376</y>
+      <w>80</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;40.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>584</x>
+      <y>64</y>
+      <w>72</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;100.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>624</x>
+      <y>40</y>
+      <w>104</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>*4 Byte*
+valign=center
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>616</x>
+      <y>64</y>
+      <w>160</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;100.0;180.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>744</x>
+      <y>40</y>
+      <w>104</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>*12 Byte*
+valign=center
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>560</x>
+      <y>144</y>
+      <w>24</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>*RCT*
+valign=center
+bg=green</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>272</x>
+      <y>408</y>
+      <w>160</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>*53 ... 1494 Byte*
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>560</x>
+      <y>176</y>
+      <w>56</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>50.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>0</x>
+      <y>0</y>
+      <w>872</w>
+      <h>456</h>
+    </coordinates>
+    <panel_attributes>*Ethernet with TCP Packet via PRP-Interface*
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>424</x>
+      <y>200</y>
+      <w>128</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>*IP-Header*
+*20 Byte*
+valign=top</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>432</x>
+      <y>264</y>
+      <w>112</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>*TCP-Header*
+*32 Byte*
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>432</x>
+      <y>328</y>
+      <w>112</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>*TCP-Payload*
+*min. 1 Byte*
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>160</x>
+      <y>640</y>
+      <w>24</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>*Pre*
+valign=center
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>288</x>
+      <y>640</y>
+      <w>80</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>*Src. MAC*
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>184</x>
+      <y>640</y>
+      <w>24</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>*SFD*
+valign=center
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>208</x>
+      <y>640</y>
+      <w>80</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>*Dest. MAC*
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>368</x>
+      <y>640</y>
+      <w>48</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>*Type*
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>416</x>
+      <y>640</y>
+      <w>168</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>*Payload*
+valign=top</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>584</x>
+      <y>640</y>
+      <w>24</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>*FCS*
+valign=center
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>608</x>
+      <y>640</y>
+      <w>24</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>*IFG*
+valign=center
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>24</x>
+      <y>536</y>
+      <w>104</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>*7 Byte*
+valign=center
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>24</x>
+      <y>560</y>
+      <w>160</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;180.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>136</x>
+      <y>536</y>
+      <w>104</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>*1 Byte*
+valign=center
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>184</x>
+      <y>560</y>
+      <w>24</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>256</x>
+      <y>536</y>
+      <w>104</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>*6 Byte*
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>240</x>
+      <y>560</y>
+      <w>48</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;100.0;40.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>376</x>
+      <y>536</y>
+      <w>104</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>*6 Byte*
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>320</x>
+      <y>560</y>
+      <w>88</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;100.0;90.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>376</x>
+      <y>560</y>
+      <w>152</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;100.0;170.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>496</x>
+      <y>536</y>
+      <w>104</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>*2 Byte*
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>432</x>
+      <y>840</y>
+      <w>32</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;50.0;20.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>584</x>
+      <y>560</y>
+      <w>72</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;100.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>624</x>
+      <y>536</y>
+      <w>104</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>*4 Byte*
+valign=center
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>616</x>
+      <y>560</y>
+      <w>160</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;100.0;180.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>744</x>
+      <y>536</y>
+      <w>104</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>*12 Byte*
+valign=center
+bg=blue</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>304</x>
+      <y>880</y>
+      <w>160</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>*53 ... 1500 Byte*
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>0</x>
+      <y>496</y>
+      <w>872</w>
+      <h>432</h>
+    </coordinates>
+    <panel_attributes>*Ethernet with TCP Packet via Standard-Interface*
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>424</x>
+      <y>232</y>
+      <w>128</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>*IP-Payload*
+
+valign=top</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>424</x>
+      <y>664</y>
+      <w>152</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>*IP-Header*
+*20 Byte*
+valign=top</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>424</x>
+      <y>696</y>
+      <w>152</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>*IP-Payload*
+
+valign=top</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>432</x>
+      <y>728</y>
+      <w>136</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>*TCP-Header*
+*32 Byte*
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLGeneric</id>
+    <coordinates>
+      <x>432</x>
+      <y>792</y>
+      <w>136</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>*TCP-Payload*
+*min. 1 Byte*
+valign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

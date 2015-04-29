@@ -520,6 +520,8 @@ meas
 Diese Komponente ist der Programmeinstiegspunkt.
  Sie ist für das Einlesen Programmargumente zuständig, sowie für die Koordinatio
 n des Hauptprogrammablaufs.
+ Beispielsweise werden hier die Aufrufe zum Starten einer Messung ausgeführt
+ wie auch die Intervall-Wartezeiten berechnet, etc.
 \end_layout
 
 \begin_layout Subparagraph
@@ -527,7 +529,38 @@ mtimer
 \end_layout
 
 \begin_layout Standard
-timer und so.
+mtimer.h ist eine Programm-Header-Datei, die von Dr.
+ M.
+ Thaler (ZHAW, InIT) geschrieben wurde.
+ Sie enthält C-Makros, die einen universellen, vereinfachten Zugriff auf
+ verschiedene Timer-Module eines Standard-Linux-Systems ermöglichen.
+ Für die meas-Applikation sind zwei Timer-Typen mit verschiedenen Auflösugen
+ im Einsatz.
+ Messung der Gesamtintervallzeit: Auflösung 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$10 ms$
+\end_layout
+
+\end_inset
+
+, Messung der Lesezeit aus dem /proc-Dateisystem: Auflösung 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$1 
+\backslash
+mu s$
+\end_layout
+
+\end_inset
+
+.
 \end_layout
 
 \begin_layout Subparagraph

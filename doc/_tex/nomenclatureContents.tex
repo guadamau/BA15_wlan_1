@@ -25,7 +25,11 @@
 \newcommand{\rxdesc}{\textbf{Reciever} / Empfänger.}
 \newcommand{\txdesc}{\textbf{Transmitter} / Sender.}
 \newcommand{\nicdesc}{\textbf{Network Interface Card} / Netzwerkkarte.}
-\newcommand{\socketdesc}{HIER TEXT ZU SOCKETS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!}
+\newcommand{\socketdesc}{Sockets bilden das Bindeglied zwischen Kommunikationsprotokollen und dem Betriebssystem. Ein Socket kann auch als Endpunkt einer Verbindung angesehen werden. Da in einem unixoiden System das Konzept gilt, "Alles ist eine Datei.", wird ein Socket seitens Betriebssystem als Datei repräsentiert. Der sendende Prozess schreibt die Daten in seine entsprechende Socket-Datei, wobei diametral dazu ein empfangender Prozess die Daten von seiner entsprechenden Socket-Datei liest.}
+\newcommand{\headerdesc]{Eine Programm-Header-Datei hat die Dateiendung .h und enthält C-Funktionsdeklarationen sowie C-Makro-Definitionen. Die Header-Datei dient als Schnittstelle, zu den Quellcode-Dateien. Aufrufe von Funktionen, die in anderen Quellcodedateien implementiert wurden, werden durch das Einbinden der ensprechenden Header-Datei für den Compiler sichtbar.}
+\newcommand{\cmacrodesc}{Ein Makro ist ein benanntes Code-Fragment und wird meist in einer Header-Datei definert. Der Name des Fragments kann beliebig in Quellcode-Dateien platziert werden. Der C-Präprozessor ersetzt vor dem Kompilieren die Fragment-Namen durch die Code-Fragmente.}
+\newcommand{\payloaddesc}{Als Payload wird der reine Nutzdaten-Anteil eines Frames (Datalink-Layer) oder eines Paketes (Network-Layer, Transport-Layer, ...) definiert. Die Grösse des Payloads ist die Differenz der Gesamtpaketgrösse und der Grösse des entsprechenden Protokoll-Headers.}
+\newcommand{\protoheaddesc}{Der Protokoll-Header enthält alle nötigen Metainformationen, die ein bestimmtes Kommunikationprotokoll braucht, um Daten austauschen zu können. Beispielfelder eines Protokoll-Headers: Quell- und Zieladresse, Port, Fragment-ID, etc.}
 
 
 % *****************************************************************************
@@ -52,3 +56,7 @@
 \nomenclature{TX}{\txdesc}
 \nomenclature{NIC}{\nicdesc}
 \nomenclature{Socket}{\socketdesc}
+\nomenclature{Programm-Header-Datei}{\headerdesc}
+\nomenclature{C-Makros}{\cmacrodesc}
+\nomenclature{Payload}{\payloaddesc}
+\nomenclature{Protokoll-Header}{\protoheaddesc}
