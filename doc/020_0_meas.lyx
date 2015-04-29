@@ -520,7 +520,7 @@ meas
 Diese Komponente ist der Programmeinstiegspunkt.
  Sie ist für das Einlesen Programmargumente zuständig, sowie für die Koordinatio
 n des Hauptprogrammablaufs.
- Beispielsweise werden hier die Aufrufe zum Starten einer Messung ausgeführt
+ Beispielsweise werden hier die Aufrufe zum Starten einer Messung ausgeführt,
  wie auch die Intervall-Wartezeiten berechnet, etc.
 \end_layout
 
