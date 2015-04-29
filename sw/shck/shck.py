@@ -13,8 +13,8 @@
   Purpose:    Generate and send specific network load
 
   Desc:       Creates specific load described in the german thesis
-			  "Ermittlung der Performance von Netzwerkfunktionen am Beispiel
-			  von PRP" by Mauro Guadagnini and Prosper Leibundgut.
+              "Ermittlung der Performance von Netzwerkfunktionen am Beispiel
+              von PRP" by Mauro Guadagnini and Prosper Leibundgut.
              
               Uses scapy (http://www.secdev.org/projects/scapy/index.html)
 
@@ -33,25 +33,25 @@ PRP_OVERHEAD = 6
 #
 # global variables
 #
-sizetype = 'MIN'					# set default sizetype to MIN
-payload_size = 46				# set default framesize to 46 bytes (MIN sizetype)
+sizetype = 'MIN'                    # set default sizetype to MIN
+payload_size = 46               # set default framesize to 46 bytes (MIN sizetype)
 
-target = '127.0.0.1'				# set default IP-taget to localhost
-interface = 'eth0'					# set default network interface to eth0
-mtu = int(1500)						# set default mtu to 1500 bytes
-									# (Maximum frame size decrement by 6 bytes)
-transmission_type = 'UDP'			# set default transmission type to UDP
-prp_enabled = False					# disable PRP-support 
+target = '127.0.0.1'                # set default IP-taget to localhost
+interface = 'eth0'                  # set default network interface to eth0
+mtu = int(1500)                     # set default mtu to 1500 bytes
+                                    # (Maximum frame size decrement by 6 bytes)
+transmission_type = 'UDP'           # set default transmission type to UDP
+prp_enabled = False                 # disable PRP-support 
 
-count_frames = int(1)				# send 1 frame by default
-unlimited_count = False				# don't send unlimited count of frames per default
+count_frames = int(1)               # send 1 frame by default
+unlimited_count = False             # don't send unlimited count of frames per default
 
-srvmode = False						# start per default in client mode
+srvmode = False                     # start per default in client mode
 
-portnumber_tcp = int(52015)				# set default portnumber for TCP to 52015
-portnumber_udp = int(52014)				# set default portnumber for UDP to 52015
+portnumber_tcp = int(52015)             # set default portnumber for TCP to 52015
+portnumber_udp = int(52014)             # set default portnumber for UDP to 52015
 
-datafile = ''						# global variable for datafile (payload of packets)
+datafile = ''                       # global variable for datafile (payload of packets)
 
 #
 # Import scapy and other modules
@@ -108,13 +108,13 @@ def getpayloadfromfile( datafile ):
 def generateeth( data ):
     """Generates an ethernet frame (Type value is 0x2015)
 
-	Parses the MAC-address of the NIC and writes it as source
-	into the ethernet frame.
+    Parses the MAC-address of the NIC and writes it as source
+    into the ethernet frame.
 
-	Writes target MAC-address (needs to have the format "XX:XX:XX:XX:XX:XX") 
-	as destination into the ethernet frame.
+    Writes target MAC-address (needs to have the format "XX:XX:XX:XX:XX:XX") 
+    as destination into the ethernet frame.
 
-	Adds prepared payload (by cutpayload(data)) in the needed size to the frame.
+    Adds prepared payload (by cutpayload(data)) in the needed size to the frame.
     """
     src=str(hex(uuid.getnode()))
     srcmac = ''
@@ -139,8 +139,8 @@ def generateeth( data ):
 def cutpayload( data ):
     """Returns the first x bytes from the content of the argument variable
 
-	The size of the return value matches the payload of an ethernet frame or
-	TCP- or UDP-packet so that the final packet/frame will have the needed size.
+    The size of the return value matches the payload of an ethernet frame or
+    TCP- or UDP-packet so that the final packet/frame will have the needed size.
     """
     global payload_size
 
@@ -172,11 +172,11 @@ def calcsizeofrandompayload(current_randomsize):
 def generate_package( data ):
     """returns the final content that needs to be send by the sockets.
 
-	The TCP- and UDP-socket wrap all needed headers around the return value,
-	whereas the RAW-socket needs to have the complete ethernet frame.
+    The TCP- and UDP-socket wrap all needed headers around the return value,
+    whereas the RAW-socket needs to have the complete ethernet frame.
 
-	Also checks if the destination argument matches 
-	the specified transmission type (MAC for Ethernet / IP for TCP and UDP)
+    Also checks if the destination argument matches 
+    the specified transmission type (MAC for Ethernet / IP for TCP and UDP)
     """
     if transmission_type == 'ETH':
         if not ':' in str(target):
@@ -187,9 +187,9 @@ def generate_package( data ):
             return str(packet)
     elif (transmission_type == 'TCP' or transmission_type == 'UDP'):
         if (sizetype == 'MIN' and transmission_type == 'TCP'):
-		# Empty TCP-packet is 66 bytes
-		# Cant send an empty packet -> Payload 1 Byte
-		return "\0"
+        # Empty TCP-packet is 66 bytes
+        # Cant send an empty packet -> Payload 1 Byte
+            return "\0"
         if not '.' in str(target):
             sys.stdout.write('need an IP-address as destination when sending ' + str(transmission_type) + '-packets')
             sys.exit()
@@ -202,8 +202,8 @@ def generate_package( data ):
 def sendpacketout( packet, data ):
     """Creates the needed socket and sends the prepared data x times (specified per -n parameter) over it
 
-	For the RANDOM-sizetype, the function reads a prepared textfile which contains a specific
-	size in bytes per line, prepares and sends the frame/packet per line.
+    For the RANDOM-sizetype, the function reads a prepared textfile which contains a specific
+    size in bytes per line, prepares and sends the frame/packet per line.
     """
     try:
         countend = int(count_frames)
@@ -228,23 +228,24 @@ def sendpacketout( packet, data ):
             count = 0
             packet = generate_package(data)
             packet = str(packet)
+            if unlimited_count == False:
+                frametogen = count_frames
+            else:
+                frametogen = 1000000
             with open("random_framesizes.txt", "r") as randomsizes:
-                head = [next(randomsizes) for x in xrange(100)]
-            rnd_packets = [0] * 100
-            for x in range (0,100):
-                if int(head[x]) > mtu:
-                    head[x] = mtu
-                rnd_packets[x] = Raw(packet[0:calcsizeofrandompayload(head[x])])
+                head = [next(randomsizes) for x in xrange(int(frametogen))]
             cursor = 0
             while (count < count_frames):
 
                 if (count==count_frames and unlimited_count == False):
                     break
 
-                if int(cursor)%100==0:
+                if int(cursor)%frametogen==0:
                     cursor = 0
 
-                packettosend = rnd_packets[cursor]
+                if int(head[cursor]) > mtu:
+                    head[cursor] = mtu
+                packettosend = Raw(packet[0:calcsizeofrandompayload(head[cursor])])
                 packettosendlength = len(packettosend)
                 bytecount = sendpacketonsocket(packettosend)
                 if (unlimited_count == False) and (bytecount == packettosendlength):
@@ -311,13 +312,13 @@ def server():
                 conn, addr = s.accept()
                 print('\nConnected by ' + str(addr))
                 count = 0
-		while 1:
-		    data = conn.recv(4096)
+                while 1:
+                    data = conn.recv(4096)
                     if not data: break
                     count += 1
                     print ('\rRecieved messages: ' + str(count) + ''),
-                #conn.close()
-                s.close()
+                    #conn.close()
+                    s.close()
             except socket_error as serr:
                 if serr.errno !=  errno.ECONNRESET:
                     raise serr
@@ -402,12 +403,12 @@ def main(argv):
             global srvmode
             srvmode = True
 
-    if (datafile == '' and srvmode == False):	# display help if invalid parameters are set
+    if (datafile == '' and srvmode == False):   # display help if invalid parameters are set
         printhelp()
         sys.exit()
     elif (srvmode == True):
         print('PID of shck: ' + str(os.getpid()) + '\nRunning in SERVER MODE' + '\n-TRANSMISSION_TYPE: ' + str(transmission_type) + '\n\nListening...')
-        server()								# start server-mode
+        server()                                # start server-mode
 
     else:
         print('PID of shck: ' + str(os.getpid()) + '\nLoad characteristics:\nDestination: ' + str(target) + '\n-SIZETYPE: ' + str(sizetype) + '\n-TRANSMISSION_TYPE: ' + str(transmission_type) + '\n-PRP-mode enabled: ' + str(prp_enabled) + '\n-Interface: ' + str(interface) + '\n-FILE: ' + str(datafile))
@@ -417,8 +418,8 @@ def main(argv):
             print('-Frame / Packet count: ' + str(count_frames))
         print('\n\nSending load...')
 
-        payload=getpayloadfromfile( datafile )	# get payload from file
-        sendpacket( payload )					# send frames with specified payload
+        payload=getpayloadfromfile( datafile )  # get payload from file
+        sendpacket( payload )                   # send frames with specified payload
 
         print('\nDone\nshck is finished\n')
     sys.exit()

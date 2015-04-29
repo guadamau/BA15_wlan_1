@@ -138,6 +138,8 @@ keepaspectratio]{_img/InES.pdf}%
 \usepackage{svg}
 \usepackage{etex}
 \usepackage{pgfplots}
+\usepgfplotslibrary{external}
+\tikzexternalize
 \usepackage[eulergreek]{sansmath}
 \pgfplotsset{
 compat=newest,

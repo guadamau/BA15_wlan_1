@@ -140,6 +140,7 @@ Der Grund für die Erstellung von shck ist, dass kein Tool gefunden wurde,
  konnte (Zum Beispiel TCP-Pakete, welche permanent mit der minimalen Grösse
  versendet werden oder das Versenden von reinen Ethernet-Frames mit zufälligen
  und dennoch reproduzierbaren Grössen).
+ Mit shck ist es möglich genau definierte Lasten zu erzeugen.
 \end_layout
 
 \begin_layout Standard
@@ -364,8 +365,9 @@ PRP-Modus (benötigt kein Argument)
 \begin_inset Newline newline
 \end_inset
 
-Wird dieser Parameter mit angegeben, so wird der Nutzlast 6 Bytes abgezogen,
- um Platz für den RCT des PRP-Protokolls garantieren zu können.
+Wird dieser Parameter mit angegeben, wird bei einer MTU von 1500 6 Bytes
+ der Payload abgezogen, um Platz für den RCT des PRP-Protokolls garantieren
+ zu können.
 \end_layout
 
 \end_inset
@@ -751,6 +753,35 @@ UDP-Pakete auf definiertem Port annehmen bis die ganze Applikation terminiert
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+shck wurde anhand von Profiling-Tools und Wireshark (Whitebox-Ansatz) untersucht
+, um darauf Optimierungen an der Applikation vornehmen zu können.
+ So wurden die von shck generierten Netzwerklasten mit Wireshark überprüft,
+ um feststellen zu können, ob die Last wie gewünscht erzeugt wird.
+ Mit dem Python Profiler cProfile erzeugte man während der Ausführung von
+ shck ein Profil, welches darauf mit SnakeViz (
+\begin_inset Flex URL
+status open
+
+\begin_layout Plain Layout
+
+https://jiffyclub.github.io/snakeviz/
+\end_layout
+
+\end_inset
+
+) untersucht wurde.
+\end_layout
+
+\begin_layout Standard
+Mit diesen Mitteln konnte man determinieren, wo noch Optimierungsbedarf
+ besteht, den man darauf umsetzen konnte.
+ Des Weiteren gab es Unterstützung von Martin Renold (Wissenschaftlicher
+ Mitarbeiter Institute of Embedded Systems, ZHAW School of Engineering),
+ welcher bei der Optimierung des Python-Codes Hilfe in Form von Beratung
+ beigesteuert hat.
 \end_layout
 
 \end_body

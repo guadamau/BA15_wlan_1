@@ -75,12 +75,12 @@ All parameters except -m, -n, -P, -S are mandatory
         MAX         Load will only contain frames with maximum size (MTU).
         RANDOM      Load will contain frames of random sizes.
                     Size-values are taken from textfile so that the load 
-                    can be reproduced.
+                    can be reproduced. The values are normally distributed
 
--S	SERVERMODE  Start shck in Server-Mode an the target to recieve UDP
-		    and TCP-packets
-		    Mandatory parameters in Server-Mode:
-			-t (TCP|UDP)
+-S	    SERVERMODE  Start shck in Server-Mode an the target to recieve UDP
+        		    and TCP-packets
+        		    Mandatory parameters in Server-Mode:
+        			-t (TCP|UDP)
 
 -t      TRANSMISSION_TYPE
         ETH         Send frames over layer 2 (Type-value: 0x2015)
