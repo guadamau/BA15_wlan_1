@@ -32,11 +32,11 @@ void print_one_interval( FILE* fp, stats_res_t* results )
            " Time: elapsed %3.2lfs, user %3.2lfs, sys %3.2lfs, overhead %dus\n"
            " CPU:  cpu workload %3.2lf%%\n\n\n"
            " Machine wide network stats for PRP involved interfaces, not process specific:\n\n"
-           " Interface       RX Bytes       TX Bytes       RX Bitrate [Bit/s]       TX Bitrate [Bit/s]\n"
+           " Interface       RX Bytes       TX Bytes      RX Bitrate [Mbit/s]      TX Bitrate [Mbit/s]\n"
            " =========================================================================================\n"
-           " prp (%.4s)  %12lld   %12lld           %14.3lf           %14.3lf\n"
-           " if0 (%.4s)  %12lld   %12lld           %14.3lf           %14.3lf\n"
-           " if1 (%.4s)  %12lld   %12lld           %14.3lf           %14.3lf\n"
+           " prp (%.4s)  %12lld   %12lld                   %6.2lf                   %6.2lf\n"
+           " if0 (%.4s)  %12lld   %12lld                   %6.2lf                   %6.2lf\n"
+           " if1 (%.4s)  %12lld   %12lld                   %6.2lf                   %6.2lf\n"
            " =========================================================================================\n\n"
            "*******************************************************************************************\n",
            results->interval_no,
@@ -49,18 +49,18 @@ void print_one_interval( FILE* fp, stats_res_t* results )
            results->if_name_prp, 
            results->rx_bytes_prp,
            results->tx_bytes_prp,
-           results->rx_bitrate_prp,
-           results->tx_bitrate_prp,
+           bit_s_to_mbit_s( results->rx_bitrate_prp ),
+           bit_s_to_mbit_s( results->tx_bitrate_prp ),
            results->if_name_if0,
            results->rx_bytes_if0,
            results->tx_bytes_if0,
-           results->rx_bitrate_if0,
-           results->tx_bitrate_if0,
+           bit_s_to_mbit_s( results->rx_bitrate_if0 ),
+           bit_s_to_mbit_s( results->tx_bitrate_if0 ),
            results->if_name_if1,
            results->rx_bytes_if1,
            results->tx_bytes_if1,
-           results->rx_bitrate_if1,
-           results->tx_bitrate_if1 );
+           bit_s_to_mbit_s( results->rx_bitrate_if1 ),
+           bit_s_to_mbit_s( results->tx_bitrate_if1 ) );
 }
 
 
@@ -104,33 +104,33 @@ void print_overall_stats( FILE* fp, stats_res_overall_t* overall_stats )
            " =========================================================================================\n\n"
            " Statistics for virtual PRP interface with label: %.4s\n"
            " -----------------------------------------------------------------------------------------\n"
-           "             RX [Bit/s]     | at interval     ||| TX [Bit/s]     | at interval\n"
+           "             RX [Mbit/s]    | at interval     ||| TX [Mbit/s]    | at interval\n"
            "            -----------------------------------------------------------------------\n"
-           " Average:    %14.3lf |             --- ||| %14.3lf |             ---\n"
-           " Min:        %14.3lf |  [%4ds, %4ds] ||| %14.3lf |  [%4ds, %4ds]\n"
-           " Max:        %14.3lf |  [%4ds, %4ds] ||| %14.3lf |  [%4ds, %4ds]\n"
+           " Average:            %6.2lf |             --- |||         %6.2lf |             ---\n"
+           " Min:                %6.2lf |  [%4ds, %4ds] |||         %6.2lf |  [%4ds, %4ds]\n"
+           " Max:                %6.2lf |  [%4ds, %4ds] |||         %6.2lf |  [%4ds, %4ds]\n"
            "            -----------------------------------------------------------------------\n\n"
            " Total received bytes:    %13lld\n"
            " Total transmitted bytes: %13lld\n\n"
            " -----------------------------------------------------------------------------------------\n\n"
            " Statistics for first PRP involved physical interface with label: %.4s\n"
            " -----------------------------------------------------------------------------------------\n"
-           "             RX [Bit/s]     | at interval     ||| TX [Bit/s]     | at interval\n"
+           "             RX [Mbit/s]    | at interval     ||| TX [Mbit/s]    | at interval\n"
            "            -----------------------------------------------------------------------\n"
-           " Average:    %14.3lf |             --- ||| %14.3lf |             ---\n"
-           " Min:        %14.3lf |  [%4ds, %4ds] ||| %14.3lf |  [%4ds, %4ds]\n"
-           " Max:        %14.3lf |  [%4ds, %4ds] ||| %14.3lf |  [%4ds, %4ds]\n"
+           " Average:            %6.2lf |             --- |||         %6.2lf |             ---\n"
+           " Min:                %6.2lf |  [%4ds, %4ds] |||         %6.2lf |  [%4ds, %4ds]\n"
+           " Max:                %6.2lf |  [%4ds, %4ds] |||         %6.2lf |  [%4ds, %4ds]\n"
            "            -----------------------------------------------------------------------\n\n"
            " Total received bytes:    %13lld\n"
            " Total transmitted bytes: %13lld\n\n"
            " -----------------------------------------------------------------------------------------\n\n"
            " Statistics for second PRP involved physical interface with label: %.4s\n"
            " -----------------------------------------------------------------------------------------\n"
-           "             RX [Bit/s]     | at interval     ||| TX [Bit/s]     | at interval\n"
+           "             RX [Mbit/s]    | at interval     ||| TX [Mbit/s]    | at interval\n"
            "            -----------------------------------------------------------------------\n"
-           " Average:    %14.3lf |             --- ||| %14.3lf |             ---\n"
-           " Min:        %14.3lf |  [%4ds, %4ds] ||| %14.3lf |  [%4ds, %4ds]\n"
-           " Max:        %14.3lf |  [%4ds, %4ds] ||| %14.3lf |  [%4ds, %4ds]\n"
+           " Average:            %6.2lf |             --- |||         %6.2lf |             ---\n"
+           " Min:                %6.2lf |  [%4ds, %4ds] |||         %6.2lf |  [%4ds, %4ds]\n"
+           " Max:                %6.2lf |  [%4ds, %4ds] |||         %6.2lf |  [%4ds, %4ds]\n"
            "            -----------------------------------------------------------------------\n\n"
            " Total received bytes:    %13lld\n"
            " Total transmitted bytes: %13lld\n\n"
@@ -205,22 +205,22 @@ void print_overall_stats( FILE* fp, stats_res_overall_t* overall_stats )
            /* prp interface */
            os->if_name_prp,
 
-           os->rx_bitrate_prp_avg,
-           os->tx_bitrate_prp_avg,
+           bit_s_to_mbit_s( os->rx_bitrate_prp_avg ),
+           bit_s_to_mbit_s( os->tx_bitrate_prp_avg ),
 
-           os->rx_bitrate_prp_min,
+           bit_s_to_mbit_s( os->rx_bitrate_prp_min ),
            os->rx_bitrate_prp_min_interval * int_dur,
            os->rx_bitrate_prp_min_interval * int_dur + int_dur,
            
-           os->tx_bitrate_prp_min,
+           bit_s_to_mbit_s( os->tx_bitrate_prp_min ),
            os->tx_bitrate_prp_min_interval * int_dur,
            os->tx_bitrate_prp_min_interval * int_dur + int_dur,
            
-           os->rx_bitrate_prp_max,
+           bit_s_to_mbit_s( os->rx_bitrate_prp_max ),
            os->rx_bitrate_prp_max_interval * int_dur,
            os->rx_bitrate_prp_max_interval * int_dur + int_dur,
            
-           os->tx_bitrate_prp_max,
+           bit_s_to_mbit_s( os->tx_bitrate_prp_max ),
            os->tx_bitrate_prp_max_interval * int_dur,
            os->tx_bitrate_prp_max_interval * int_dur + int_dur,
 
@@ -230,22 +230,22 @@ void print_overall_stats( FILE* fp, stats_res_overall_t* overall_stats )
            /* first prp involved interface */
            os->if_name_if0,
 
-           os->rx_bitrate_if0_avg,
-           os->tx_bitrate_if0_avg,
+           bit_s_to_mbit_s( os->rx_bitrate_if0_avg ),
+           bit_s_to_mbit_s( os->tx_bitrate_if0_avg ),
 
-           os->rx_bitrate_if0_min,
+           bit_s_to_mbit_s( os->rx_bitrate_if0_min ),
            os->rx_bitrate_if0_min_interval * int_dur,
            os->rx_bitrate_if0_min_interval * int_dur + int_dur,
            
-           os->tx_bitrate_if0_min,
+           bit_s_to_mbit_s( os->tx_bitrate_if0_min ),
            os->tx_bitrate_if0_min_interval * int_dur,
            os->tx_bitrate_if0_min_interval * int_dur + int_dur,
            
-           os->rx_bitrate_if0_max,
+           bit_s_to_mbit_s( os->rx_bitrate_if0_max ),
            os->rx_bitrate_if0_max_interval * int_dur,
            os->rx_bitrate_if0_max_interval * int_dur + int_dur,
            
-           os->tx_bitrate_if0_max,
+           bit_s_to_mbit_s( os->tx_bitrate_if0_max ),
            os->tx_bitrate_if0_max_interval * int_dur,
            os->tx_bitrate_if0_max_interval * int_dur + int_dur,
 
@@ -255,22 +255,22 @@ void print_overall_stats( FILE* fp, stats_res_overall_t* overall_stats )
            /* second prp involved interface */
            os->if_name_if1,
 
-           os->rx_bitrate_if1_avg,
-           os->tx_bitrate_if1_avg,
+           bit_s_to_mbit_s( os->rx_bitrate_if1_avg ),
+           bit_s_to_mbit_s( os->tx_bitrate_if1_avg ),
 
-           os->rx_bitrate_if1_min,
+           bit_s_to_mbit_s( os->rx_bitrate_if1_min ),
            os->rx_bitrate_if1_min_interval * int_dur,
            os->rx_bitrate_if1_min_interval * int_dur + int_dur,
            
-           os->tx_bitrate_if1_min,
+           bit_s_to_mbit_s( os->tx_bitrate_if1_min ),
            os->tx_bitrate_if1_min_interval * int_dur,
            os->tx_bitrate_if1_min_interval * int_dur + int_dur,
            
-           os->rx_bitrate_if1_max,
+           bit_s_to_mbit_s( os->rx_bitrate_if1_max ),
            os->rx_bitrate_if1_max_interval * int_dur,
            os->rx_bitrate_if1_max_interval * int_dur + int_dur,
            
-           os->tx_bitrate_if1_max,
+           bit_s_to_mbit_s( os->tx_bitrate_if1_max ),
            os->tx_bitrate_if1_max_interval * int_dur,
            os->tx_bitrate_if1_max_interval * int_dur + int_dur,
 
