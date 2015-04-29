@@ -3783,6 +3783,151 @@ Name
 \begin_layout Plain Layout
 
 \series bold
+Paragon
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Beschrieb
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Funktionen
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wird verwendet
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\color green
+Ja
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Grund
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Weitere Hilfsmittel: Paragon
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="20col%">
+<column alignment="left" valignment="top" width="70col%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
 vmstat 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -9147,6 +9292,14 @@ MByte (1 MByte sind 1000 kByte)
 
 \end_layout
 
+\begin_layout Standard
+Bei den Geschwindigkeiten handelt es sich, falls es nicht anders angegeben
+ wird, um Geschwindigkeiten auf Layer 2.
+ Das heisst, dass nur die Bits, die zu einem Layer-2-Frame gehören, zählen
+ und u.a.
+ die Bits der Präambel, SFD und IFG davon ausgeschlossen sind.
+\end_layout
+
 \begin_layout Subsubsection
 Generierung von Datenverkehrströmen / Netzwerklast
 \begin_inset CommandInset label
@@ -9407,7 +9560,11 @@ reference "sub:Netzwerklast-Generierung-shck"
 
 ) ist es möglich, jeden dieser Datenströme mit einer Genauigkeit zur Einheit
  Byte generieren zu können.
- Die vorhin erwähnte Liste mit zufälligen Werten liegt dem Quellcode der
+ 
+\end_layout
+
+\begin_layout Standard
+Die vorhin erwähnte Liste mit zufälligen Werten liegt dem Quellcode der
  shck-Applikation (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -9642,7 +9799,7 @@ Für Frames / Pakete mit zufälliger Grösse kann dies aufgrund ihrer Natur
 
 \begin_layout Standard
 Die maximale Übertragungsgeschwindigkeit in der Umgebung dieser Arbeit beträgt
- 100 MBit/s.
+ auf dem Physical-Layer (Layer 1) 100 MBit/s.
  Vor jedem Frame / Paket wird die Präambel und der Start of Frame Delimiter
  (SFD) (zusammen 8 Bytes) angehängt 
 \begin_inset CommandInset citation
@@ -9681,7 +9838,8 @@ key "Fast_Ethernet_and_Gigabit_Ethernet"
 \end_layout
 
 \begin_layout Standard
-LAYER 1 & 2
+Die Bitraten der folgenden Berechnungen beziehen sich auf den Data-Link-Layer
+ (Layer 2).
 \end_layout
 
 \begin_layout Paragraph
@@ -9783,7 +9941,23 @@ Einschwingzeit / Steady State
 \end_layout
 
 \begin_layout Standard
-Für jede Last Steady State
+Es folgt eine Analyse für jede Übertragungsart (Ethernet, TCP, UDP), bei
+ der die Dauer bis sich das System im eingeschwungenen Zustand befindet
+ ermittelt wird.
+ Des Weiteren wird pro Übertragungs- und Lastart determiniert welche Grösse
+ die Schwankungen im eingeschwungenen Zustand betragen.
+ Dieser eingeschwungene Zustand wird auch Steady State genannt.
+\end_layout
+
+\begin_layout Standard
+Dazu wird für jedes Protokoll und jeden Lasttyp eine Netzwerklast mit 500'000
+ Frames / Paketen mit shck generiert, versendet und mit meas gemessen.
+ So wird jeweils der Verbindungsaufbau, Versand und Verbindungsabbau aufgezeichn
+et.
+ Während der Aufzeichnung werden alle 10ms die aktuellen Performance-Werte
+ gespeichert und am Ende ausgewertet, womit auf eine Hundertstel Sekunde
+ genau festgelegt werden kann, wie lange die Einschwingzeit, der Steady
+ State und der Verbindungsabbau dauern.
 \end_layout
 
 \begin_layout Standard

@@ -1,0 +1,3 @@
+####################################################################
+* Prepend 10ms in seconds to every line of a file
+    * awk '{printf("%010f %s\n", NR/100, $0)}' test.txt | less
