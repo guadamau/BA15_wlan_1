@@ -33,6 +33,8 @@
 
 #include "types.h"
 
+#define bit_s_to_mbit_s( X )   ( X / ( double )( 1000 * 1000 ) )
+
 /* function prototypes */
 void output_results_single( void* output_loc, stats_res_t* results, char* file_prefix );
 void output_results_all( void* output_loc, stats_res_t** results_list, uint32_t res_list_len, 
