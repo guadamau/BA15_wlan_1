@@ -34,7 +34,7 @@ PRP_OVERHEAD = 6
 # global variables
 #
 sizetype = 'MIN'					# set default sizetype to MIN
-current_framesize = 64				# set default framesize to 64 bytes (MIN sizetype)
+payload_size = 46				# set default framesize to 46 bytes (MIN sizetype)
 
 target = '127.0.0.1'				# set default IP-taget to localhost
 interface = 'eth0'					# set default network interface to eth0
@@ -96,7 +96,7 @@ def getpayloadfromfile( datafile ):
     data = ''
     with open(datafile, "rb") as f:
         byte = f.read(1)
-        while (byte != "" and sys.getsizeof(data) <= 1500):
+        while (byte != "" and sys.getsizeof(data) <= 3000):
             # Do stuff with byte.
             data += byte
             if not byte:
@@ -142,17 +142,14 @@ def cutpayload( data ):
 	The size of the return value matches the payload of an ethernet frame or
 	TCP- or UDP-packet so that the final packet/frame will have the needed size.
     """
-    global current_framesize
+    global payload_size
 
     if transmission_type == 'ETH':
-        size = int(current_framesize)-int(ETH_OVERHEAD)
+        size = int(payload_size)
     elif transmission_type == 'TCP':
-        size = int(current_framesize)-int(IP_OVERHEAD)-int(TCP_OVERHEAD)-int(ETH_OVERHEAD)
+        size = int(payload_size)-int(IP_OVERHEAD)-int(TCP_OVERHEAD)-int(ETH_OVERHEAD)
     elif transmission_type == 'UDP':
-        size = int(current_framesize)-int(IP_OVERHEAD)-int(UDP_OVERHEAD)-int(ETH_OVERHEAD)
-
-    if prp_enabled == True:
-        size -= PRP_OVERHEAD
+        size = int(payload_size)-int(IP_OVERHEAD)-int(UDP_OVERHEAD)
 
     if size <= 0:
         return ''
@@ -167,9 +164,6 @@ def calcsizeofrandompayload(current_randomsize):
     elif transmission_type == 'UDP':
         size = int(current_randomsize)-int(IP_OVERHEAD)-int(UDP_OVERHEAD)-int(ETH_OVERHEAD)
     
-    if prp_enabled == True:
-        size -= PRP_OVERHEAD
-
     if size <= 0:
         return 0
     else:
@@ -230,13 +224,18 @@ def sendpacketout( packet, data ):
         sendpacketonsocket = ss.send
     
         if sizetype == 'RANDOM':
-            global current_framesize
+            global payload_size
             count = 0
+            packet = generate_package(data)
+            packet = str(packet)
             with open("random_framesizes.txt", "r") as randomsizes:
                 head = [next(randomsizes) for x in xrange(100)]
+            rnd_packets = [0] * 100
+            for x in range (0,100):
+                if int(head[x]) > mtu:
+                    head[x] = mtu
+                rnd_packets[x] = Raw(packet[0:calcsizeofrandompayload(head[x])])
             cursor = 0
-            packet = generate_package(data)
-            packet = Raw(packet)
             while (count < count_frames):
 
                 if (count==count_frames and unlimited_count == False):
@@ -245,12 +244,7 @@ def sendpacketout( packet, data ):
                 if int(cursor)%100==0:
                     cursor = 0
 
-                current_randomsize = int(head[cursor])
-
-                if int(current_randomsize) > mtu:
-                    current_randomsize = mtu
-
-                packettosend = Raw(str(packet)[0:calcsizeofrandompayload(current_randomsize)])
+                packettosend = rnd_packets[cursor]
                 packettosendlength = len(packettosend)
                 bytecount = sendpacketonsocket(packettosend)
                 if (unlimited_count == False) and (bytecount == packettosendlength):
@@ -282,18 +276,22 @@ def sendpacket( data ):
     """
     import time
 
-    global current_framesize
+    global payload_size
 
     if sizetype == 'MIN':
-        current_framesize = int(64)
+        payload_size = int(46)
         packet = generate_package(data)
         sendpacketout(packet, data)
     elif sizetype == 'MAX':
-        current_framesize = int(mtu)
+        payload_size = int(mtu)
+        if prp_enabled == True and mtu == 1500:
+            payload_size -= PRP_OVERHEAD
         packet = generate_package(data)
         sendpacketout(packet, data)
     elif sizetype == 'RANDOM':
-        current_framesize = int(mtu)
+        payload_size = int(mtu)
+        if prp_enabled == True:
+            payload_size -= PRP_OVERHEAD
         packet = generate_package(data)
         sendpacketout(packet, data)
 
@@ -412,7 +410,7 @@ def main(argv):
         server()								# start server-mode
 
     else:
-        print('PID of shck: ' + str(os.getpid()) + '\nLoad characteristics:\nDestination: ' + str(target) + '\n-SIZETYPE: ' + str(sizetype) + '\n-TRANSMISSION_TYPE: ' + str(transmission_type) + '\n-PRP-mode enabled: ' + str(prp_enabled) + '\n-Interface: ' + str(interface) + '\n-MTU: ' + str(mtu) + '\n-FILE: ' + str(datafile))
+        print('PID of shck: ' + str(os.getpid()) + '\nLoad characteristics:\nDestination: ' + str(target) + '\n-SIZETYPE: ' + str(sizetype) + '\n-TRANSMISSION_TYPE: ' + str(transmission_type) + '\n-PRP-mode enabled: ' + str(prp_enabled) + '\n-Interface: ' + str(interface) + '\n-FILE: ' + str(datafile))
         if (unlimited_count == True):
             print('-Frame / Packet count: unlimited (Stop by pressing Ctrl+C)')
         else:

@@ -60,7 +60,7 @@ All parameters except -m, -n, -P, -S are mandatory
                     Run on a specific portnumber (Default: TCP 52015)
                     Server and Client need to have the same portnumber
 
--P      PRP-MODE    Subtracts 6 bytes from the payload so that it is
+-P      PRP-MODE    Guarantees an MTU of max. 1494 so that it is
                     guaranteed that the packet has space 
                     for the RCT-fields from the PRP-protocol
 

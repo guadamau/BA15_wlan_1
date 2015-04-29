@@ -8955,9 +8955,21 @@ Zeitspannen, in denen die Tests, wenn nötig, durchgeführt werden.
 
 \end_layout
 
+\begin_layout Subsubsection
+Generierung von Datenverkehrströmen / Netzwerklast
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Generierung-von-Datenverkehrströ"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Standard
-Des Weiteren werden für die Generierung der Netzwerklast 3 verschiedene
- Lasttypen angewandt:
+In diesem Kapitel werden sämtliche Typen von Netzwerklast, die in dieser
+ Arbeit vorkommen, beschrieben und Erzeugung erläutert.
+ Für die Generierung der Netzwerklast werden 3 verschiedene Lasttypen angewandt:
 \end_layout
 
 \begin_layout Standard
@@ -8969,25 +8981,34 @@ Der Netzwerkverkehr besteht...
 \series bold
 ...nur aus kleinen Frames
 \series default
+ (Lasttypen-Bezeichnung: 
+\begin_inset Quotes fld
+\end_inset
 
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+)
 \begin_inset Newline newline
 \end_inset
 
-Layer-2-Frames / UDP-Pakete: 64 Bytes + 6 Bytes RCT = 70 Bytes, wenn ein
- VLAN-Tag gebraucht wird 74 Bytes 
+Layer-2-Frames / UDP-Pakete: 64 Bytes + 6 Bytes RCT = 70 Bytes (wenn ein
+ VLAN-Tag gebraucht wird 4 Bytes mehr 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "IEC_62439-3_2015"
 
 \end_inset
 
-
+)
 \begin_inset Newline newline
 \end_inset
 
 TCP-Pakete: 66 Bytes Header (14 Bytes Ethernet, 20 Bytes IP, 32 Bytes TCP)
  + 6 Bytes RCT + 1 Byte Payload (es können über Sockets keine leeren TCP-Pakete
- versendet werden) = 73 Bytes und mit einem VLAN-Tag 77 Bytes
+ versendet werden) + 4 Bytes Frame Check Sequence = 77 Bytes und mit einem
+ VLAN-Tag 81 Bytes
 \begin_inset Newline newline
 \end_inset
 
@@ -9000,8 +9021,29 @@ Hierbei handelt es sich um einen der schlimmsten Fälle, da weitaus weniger
 \series bold
 ...nur aus grossen Frames
 \series default
- (Mit RCT 1528 Bytes, im PRP-1-Standard wird angenommen, dass die jede Netzwerkk
-omponente diese von ISO/IEC/IEEE 8802-3:2014 vorhergesehene 
+ (Lasttypen-Bezeichnung: 
+\begin_inset Quotes fld
+\end_inset
+
+MAX
+\begin_inset Quotes frd
+\end_inset
+
+)
+\begin_inset Newline newline
+\end_inset
+
+Mit RCT und ohne VLAN-Tag 1518 Bytes.
+ In dieser Arbeit wird der RCT mit in die maximale Framegrösse miteinbezogen,
+ die Grösse von 1518 Bytes der Standard ist und somit nicht die gesamte
+ Netzwerkperipherie neu parametrisiert werden muss.
+ Des Weiteren ist beim PRP-1 stack eine MTU von 1494 Bytes gesetzt, was
+ Frames grösser als 1518 Bytes ausschliesst.
+\begin_inset Newline newline
+\end_inset
+
+Im PRP-1-Standard wird angenommen, dass die jede Netzwerkkomponente eine
+ von ISO/IEC/IEEE 8802-3:2014 vorhergesehene 
 \begin_inset Quotes fld
 \end_inset
 
@@ -9009,14 +9051,15 @@ Oversize
 \begin_inset Quotes frd
 \end_inset
 
--Grösse unterstützt 
+-Grösse von 1528 Bytes (max.
+ Frame von 1518 Bytes + 4 Bytes VLAN-Tag + 6 Bytes RCT) unterstützt 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "IEC_62439-3_2015"
 
 \end_inset
 
-)
+.
 \begin_inset Newline newline
 \end_inset
 
@@ -9029,7 +9072,15 @@ Der zweite der schlimmsten Fälle, da permanent grosse Daten verarbeitet
 \series bold
 ...aus Frames mit zufälliger Grösse
 \series default
+ (Lasttypen-Bezeichnung: 
+\begin_inset Quotes fld
+\end_inset
 
+RANDOM
+\begin_inset Quotes frd
+\end_inset
+
+)
 \begin_inset Newline newline
 \end_inset
 
@@ -9039,6 +9090,374 @@ Dieser Netzwerkfluss stellt die Mitte zwischen den oberen beiden Typen dar.
  Diese Liste wird bei der Generierung der Netzwerklast stets von Oben nach
  Unten abgearbeitet, um so zufällige Grössen, aber auch Reproduzierbarkeit
  garantieren zu können.
+\end_layout
+
+\begin_layout Standard
+Es werden 3 verschiedene Übermittlungsarten verwendet: Ethernet (reine Layer-2-F
+rames), TCP und UDP.
+ Für jeden dieser Übermittlungsarten gibt es die 3 vorhin erläuterten Lasttypen.
+\end_layout
+
+\begin_layout Standard
+Dies ergibt total 9 unterschiedliche Netzwerklastarten.
+ Mittels der Applikation shck (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Netzwerklast-Generierung-shck"
+
+\end_inset
+
+) ist es möglich, jeden dieser Datenströme mit einer Genauigkeit zur Einheit
+ Byte generieren zu können.
+ Die vorhin erwähnte Liste mit zufälligen Werten liegt dem Quellcode der
+ shck-Applikation (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:shck---Netzwerklast-Generierung"
+
+\end_inset
+
+) bei.
+\end_layout
+
+\begin_layout Paragraph
+Bezeichnung der Datenströme
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Die generierten Netzwerklasten erhalten je eine eindeutige Identifikation,
+ welche wie folgt aufgestellt ist:
+\end_layout
+
+\begin_layout Itemize
+Nummer des Szenarios, in dem die Last generiert wird
+\end_layout
+
+\begin_layout Itemize
+Übermittlungsart in Form eines Buchstabens
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Quotes fld
+\end_inset
+
+E
+\begin_inset Quotes frd
+\end_inset
+
+ für Ethernet / Layer-2-Frames
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes fld
+\end_inset
+
+T
+\begin_inset Quotes frd
+\end_inset
+
+ für TCP-Pakete
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes fld
+\end_inset
+
+U
+\begin_inset Quotes frd
+\end_inset
+
+ für UDP-Pakete
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Lasttyp (
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+, 
+\begin_inset Quotes fld
+\end_inset
+
+RANDOM
+\begin_inset Quotes frd
+\end_inset
+
+, 
+\begin_inset Quotes fld
+\end_inset
+
+MAX
+\begin_inset Quotes frd
+\end_inset
+
+) (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Generierung-von-Datenverkehrströ"
+
+\end_inset
+
+) als dreistelliges Kürzel
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+ für Frames / Pakete mit minimaler Grösse
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes fld
+\end_inset
+
+RND
+\begin_inset Quotes frd
+\end_inset
+
+ für Frames / Pakete mit zufälliger Grösse
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes fld
+\end_inset
+
+MAX
+\begin_inset Quotes frd
+\end_inset
+
+ für Frames / Pakete mit maximaler Grösse
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Zeitspanne (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Grundsätze-und-Rahmenbedingungen"
+
+\end_inset
+
+), in der die Netzwerklast generiert wird, in Form eines Buchstabens.
+ Sofern es nicht anders aufgeführt ist, beträgt die Dauer für Ultrakurzzeit-Mess
+ungen 60s, für Kurzzeit-Messungen 5min und für Langzeit-Messungen 1h.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+\begin_inset Quotes fld
+\end_inset
+
+U
+\begin_inset Quotes frd
+\end_inset
+
+ für Ultrakurzzeit
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes fld
+\end_inset
+
+K
+\begin_inset Quotes frd
+\end_inset
+
+ für Kurzzeit
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes fld
+\end_inset
+
+L
+\begin_inset Quotes frd
+\end_inset
+
+ für Langzeit
+\end_layout
+
+\end_deeper
+\begin_layout Standard
+Zum Beispiel hat eine Netzwerklast, die in Szenario 01 generiert, via TCP
+ versendet wird, aus Paketen mit zufälliger Grösse besteht und während 5min
+ gemessen wird das folgende Kürzel: 01.T.RND.K
+\end_layout
+
+\begin_layout Subsubsection
+Theoretische Grenzwerte
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Theoretische-Grenzwerte"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In diesem Abschnitt wird pro Lasttyp berechnet, was die maximal mögliche
+ Netzwerklastung sein würde.
+ Somit kann man anhand der Resultate feststellen, ob beim jeweiligen Testfall
+ ein Engpass beim Prozessor oder bei der Netzwerkverbindung entsteht.
+ 
+\end_layout
+
+\begin_layout Standard
+Für Frames / Pakete mit zufälliger Grösse kann dies aufgrund ihrer Natur
+ nicht konkret berechnet werden, jedoch muss dessen maximale Bandbreite
+ zwischen denen der minimalen und maximalen Frames liegen.
+\end_layout
+
+\begin_layout Standard
+Die maximale Übertragungsgeschwindigkeit in der Umgebung dieser Arbeit beträgt
+ 100 MBit/s.
+ Vor jedem Frame / Paket wird die Präambel und der Start of Frame Delimiter
+ (SFD) (zusammen 8 Bytes) angehängt 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Industiral_Ethernet_Basics"
+
+\end_inset
+
+.
+ Nach jedem Frame / Paket wird bei der Datenübertragung ein 
+\begin_inset Quotes fld
+\end_inset
+
+Interframe Gap
+\begin_inset Quotes frd
+\end_inset
+
+ (IFG) eingefügt, das bei 100 MBit/s 12 Bytes gross ist, da bei Fast Ethernet
+ (100 Mbit/s) die IFG 960ns dauern muss 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Fast_Ethernet_and_Gigabit_Ethernet"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Formula $IFG=\frac{100'000'000\,Bit/s}{1'000'000'000\,ns}*960\,ns=96\,Bit=12\,Bytes$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Frames mit minimaler Grösse
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Ein Frame mit minimaler Grösse nimmt bei der Übertragung effektiv 84 Bytes
+ ein (7 Bytes Präambel + 1 Byte SFD + 64 Bytes Ethernet Frame + 12 Bytes
+ IFG), was 672 Bit beträgt.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Formula $Anzahl\,Frames/s=\frac{100'000'000\,Bit/s}{672\,Bit}=148'809.52381\,Frames/s\approx148'810\,Frames/s$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Multipliziert man diese Anzahl an Frames lediglich mit der Payload des minimalen
+ Ethernet Frames (46 Bytes = 368 Bit), erhält man die effektive Bitrate:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Formula $148'810\,Frames/s*368\,Bit=54'762'080\,Bit/s\approx54.8\,MBit/s$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Somit liegt die maximale Bandbreite bei einer Nutzlast, die lediglich aus
+ minimal grossen Frames / Paketen besteht bei ca.
+ 54.8 MBit/s.
+\end_layout
+
+\begin_layout Paragraph
+Frames mit maximaler Grösse
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Ein Frame mit maximaler Grösse nimmt effektiv 1528 Bytes ein (7 Bytes Präambel
+ + 1 Byte SFD + 1518 Bytes Ethernet Frame + 12 Bytes IFG), was 12'224 Bit
+ beträgt.
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Formula $Anzahl\,Frames/s=\frac{100'000'000\,Bit/s}{12'224\,Bit}=8'180.62827225\,Frames/s\approx8181\,Frames/s$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Multipliziert man diese Anzahl an Frames lediglich mit der Payload des maximalen
+ Ethernet Frames (1500 Bytes = 12'000 Bit), erhält man die effektive Bitrate:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Formula $8181\,Frames/s*12'000\,Bit=98'172'000\,Bit/s\approx98.2\,MBit/s$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Somit liegt die maximale Bandbreite bei einer Nutzlast, die lediglich aus
+ maximal grossen Frames / Paketen besteht bei ca.
+ 98.2 MBit/s.
 \end_layout
 
 \begin_layout Subsection
@@ -10145,291 +10564,6 @@ Beschreibung der Werte vom Ergebnis einer Messung: Netzwerkbelastung pro
 \end_layout
 
 \begin_layout Subsection
-Generierung von Datenverkehrströmen / Netzwerklast
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Generierung-von-Datenverkehrströ"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-In diesem Kapitel werden sämtliche Typen von Netzwerklast, die in dieser
- Arbeit vorkommen, beschrieben und Erzeugung erläutert.
-\end_layout
-
-\begin_layout Standard
-Es werden 3 verschiedene Übermittlungsarten verwendet: Ethernet (reine Layer-2-F
-rames), TCP und UDP.
- Für jeden dieser Übermittlungsarten gibt es 3 Lasttypen:
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Quotes fld
-\end_inset
-
-MIN
-\begin_inset Quotes frd
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-Besteht aus lauter Frames / Paketen, welche die minimal mögliche Grösse
- haben.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Quotes fld
-\end_inset
-
-RANDOM
-\begin_inset Quotes frd
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-Beinhaltet Frames / Pakete, welche von zufälliger Grösse sind.
- Wie es bereits im Kapitel 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "sub:Grundsätze-und-Rahmenbedingungen"
-
-\end_inset
-
- erläutert wurde, muss die Netzwerklast reproduzierbar sein.
- Aus diesem Grund wurde eine Liste mit zufälligen Werten zwischen 64 und
- 1500 im Voraus generiert, welche bei der Erzeugung der Last vom Typ 
-\begin_inset Quotes fld
-\end_inset
-
-RANDOM
-\begin_inset Quotes frd
-\end_inset
-
- von oben nach unten abgearbeitet wird.
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Quotes fld
-\end_inset
-
-MAX
-\begin_inset Quotes frd
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
-Setzt sich aus Frames / Paketen zusammen, die über die maximal mögliche
- Grösse verfügen.
-\end_layout
-
-\begin_layout Standard
-Dies ergibt total 9 unterschiedliche Netzwerklastarten.
- Mittels der Applikation shck (siehe Kapitel 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "sub:Netzwerklast-Generierung-shck"
-
-\end_inset
-
-) ist es möglich, jeden dieser Datenströme mit einer Genauigkeit zur Einheit
- Byte generieren zu können.
- Die vorhin erwähnte Liste mit zufälligen Werten liegt dem Quellcode der
- shck-Applikation (siehe Kapitel 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "sec:shck---Netzwerklast-Generierung"
-
-\end_inset
-
-) bei.
-\end_layout
-
-\begin_layout Subsubsection
-Bezeichnung der Datenströme
-\end_layout
-
-\begin_layout Standard
-Die generierten Netzwerklasten erhalten je eine eindeutige Identifikation,
- welche wie folgt aufgestellt ist:
-\end_layout
-
-\begin_layout Itemize
-Nummer des Szenarios, in dem die Last generiert wird
-\end_layout
-
-\begin_layout Itemize
-Übermittlungsart in Form eines Buchstabens
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset Quotes fld
-\end_inset
-
-E
-\begin_inset Quotes frd
-\end_inset
-
- für Ethernet / Layer-2-Frames
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Quotes fld
-\end_inset
-
-T
-\begin_inset Quotes frd
-\end_inset
-
- für TCP-Pakete
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Quotes fld
-\end_inset
-
-U
-\begin_inset Quotes frd
-\end_inset
-
- für UDP-Pakete
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Lasttyp (
-\begin_inset Quotes fld
-\end_inset
-
-MIN
-\begin_inset Quotes frd
-\end_inset
-
-, 
-\begin_inset Quotes fld
-\end_inset
-
-RANDOM
-\begin_inset Quotes frd
-\end_inset
-
-, 
-\begin_inset Quotes fld
-\end_inset
-
-MAX
-\begin_inset Quotes frd
-\end_inset
-
-) (siehe Kapitel 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "sub:Generierung-von-Datenverkehrströ"
-
-\end_inset
-
-) als dreistelliges Kürzel
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset Quotes fld
-\end_inset
-
-MIN
-\begin_inset Quotes frd
-\end_inset
-
- für Frames / Pakete mit minimaler Grösse
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Quotes fld
-\end_inset
-
-RND
-\begin_inset Quotes frd
-\end_inset
-
- für Frames / Pakete mit zufälliger Grösse
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Quotes fld
-\end_inset
-
-MAX
-\begin_inset Quotes frd
-\end_inset
-
- für Frames / Pakete mit maximaler Grösse
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Zeitspanne (siehe Kapitel 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "sub:Grundsätze-und-Rahmenbedingungen"
-
-\end_inset
-
-), in der die Netzwerklast generiert wird, in Form eines Buchstabens.
- Sofern es nicht anders aufgeführt ist, beträgt die Dauer für Ultrakurzzeit-Mess
-ungen 60s, für Kurzzeit-Messungen 5min und für Langzeit-Messungen 1h.
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-\begin_inset Quotes fld
-\end_inset
-
-U
-\begin_inset Quotes frd
-\end_inset
-
- für Ultrakurzzeit
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Quotes fld
-\end_inset
-
-K
-\begin_inset Quotes frd
-\end_inset
-
- für Kurzzeit
-\end_layout
-
-\begin_layout Itemize
-\begin_inset Quotes fld
-\end_inset
-
-L
-\begin_inset Quotes frd
-\end_inset
-
- für Langzeit
-\end_layout
-
-\end_deeper
-\begin_layout Standard
-Zum Beispiel hat eine Netzwerklast, die in Szenario 01 generiert, via TCP
- versendet wird, aus Paketen mit zufälliger Grösse besteht und während 1h
- gemessen wird das folgende Kürzel: 01.T.RND.L
-\end_layout
-
-\begin_layout Subsection
 Szenarien
 \end_layout
 
@@ -10714,7 +10848,8 @@ Darauf wird ein Vergleich zwischen den Netzwerkströmen 1 & 4, 2 & 5 und
 \end_layout
 
 \begin_layout Subsubsection
-UDP / Ethernet Vergleich
+Erörterung signifikanter Resultat-Parameter: UDP / Ethernet Vergleich &
+ Notwendigkeit der Langzeit-Tests
 \end_layout
 
 \begin_layout Standard
@@ -10736,23 +10871,22 @@ Aufgrund der ähnlichen Verhaltensweisen von UDP-Segmenten und Layer-2-Frames
 \begin_layout Standard
 Der Vergleich findet im PRP-Netzwerk statt, weil diese Umgebung im Fokus
  dieser Arbeit liegt.
+ Die Konfiguration der Umgebung kann in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Aufbau-der-Testumgebung"
+
+\end_inset
+
+ eingesehen werden.
  Es ist davon auszugehen, dass die Unterschiede zwischen Ethernet- und UDP-Traff
 ic in einem Nicht-PRP-Umfeld identisch ausfallen, weil die Umgebung die
  beiden Typen äquivalent beeinflusst.
 \end_layout
 
 \begin_layout Standard
-Verwendet wird für den Vergleich die Messwerte, welche im Szenario 01: Performan
-ce im PRP-Netzwerk (siehe Kapitel 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "sub:Szenario-01:-Performance-1"
-
-\end_inset
-
-) entstanden sind.
- Betrachtet wird die Belastung der CPU durch den PRP-1 stack und der Netzwerkint
-erfaces.
+Betrachtet wird die Belastung der CPU durch den PRP-1 stack und der Netzwerkinte
+rfaces.
  Davon werden jeweils die kleinsten und grössten sowie die durchschnittlichen
  (in der folgenden Tabelle als 
 \begin_inset Quotes fld
