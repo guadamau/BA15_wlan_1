@@ -879,6 +879,16 @@ reference "sub:Grundsätze-und-Rahmenbedingungen"
 ), in der die Netzwerklast generiert wird, in Form eines Buchstabens.
  Sofern es nicht anders aufgeführt ist, beträgt die Dauer für Ultrakurzzeit-Mess
 ungen 60s, für Kurzzeit-Messungen 5min und für Langzeit-Messungen 1h.
+ Wird anstelle einer Zeitspanne eine Anzahl an Frames / Paketen verwendet,
+ so wird hier anstelle des Buchstabens die Anzahl gefolgt von einem 
+\begin_inset Quotes fld
+\end_inset
+
+x
+\begin_inset Quotes frd
+\end_inset
+
+ aufgeführt.
 \end_layout
 
 \begin_deeper
@@ -1108,6 +1118,156 @@ et.
  gespeichert und am Ende ausgewertet, womit auf eine Hundertstel Sekunde
  genau festgelegt werden kann, wie lange die Einschwingzeit, der Steady
  State und der Verbindungsabbau dauern.
+\end_layout
+
+\begin_layout Paragraph
+E.MIN.500000x
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+----
+\end_layout
+
+\begin_layout Paragraph
+E.RND.500000x
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+----
+\end_layout
+
+\begin_layout Paragraph
+E.MAX.500000x
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+----
+\end_layout
+
+\begin_layout Paragraph
+T.MIN.500000x
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+----
+\end_layout
+
+\begin_layout Paragraph
+T.RND.500000x
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+----
+\end_layout
+
+\begin_layout Paragraph
+T.MAX.500000x
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+----
+\end_layout
+
+\begin_layout Paragraph
+U.MIN.500000x
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+----
+\end_layout
+
+\begin_layout Paragraph
+U.RND.500000x
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+----
+\end_layout
+
+\begin_layout Paragraph
+U.MAX.500000x
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+----
+\end_layout
+
+\begin_layout Paragraph
+Fazit
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+----
 \end_layout
 
 \begin_layout Standard
@@ -2864,6 +3024,8 @@ ER.E.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 64.00
 \end_layout
 
@@ -2873,6 +3035,8 @@ ER.E.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 65.08
 \end_layout
 
@@ -2882,6 +3046,8 @@ ER.E.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 66.00
 \end_layout
 
@@ -2891,6 +3057,8 @@ ER.E.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.53
 \end_layout
 
@@ -2900,6 +3068,8 @@ ER.E.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.57
 \end_layout
 
@@ -2909,6 +3079,8 @@ ER.E.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.61
 \end_layout
 
@@ -2918,6 +3090,8 @@ ER.E.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.05
 \end_layout
 
@@ -2927,6 +3101,8 @@ ER.E.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.08
 \end_layout
 
@@ -2936,6 +3112,8 @@ ER.E.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.11
 \end_layout
 
@@ -2958,6 +3136,8 @@ ER.U.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 56.00
 \end_layout
 
@@ -2967,6 +3147,8 @@ ER.U.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 58.32
 \end_layout
 
@@ -2976,6 +3158,8 @@ ER.U.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 60.00
 \end_layout
 
@@ -2985,6 +3169,8 @@ ER.U.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.47
 \end_layout
 
@@ -2994,6 +3180,8 @@ ER.U.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.51
 \end_layout
 
@@ -3003,6 +3191,8 @@ ER.U.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.55
 \end_layout
 
@@ -3012,6 +3202,8 @@ ER.U.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.03
 \end_layout
 
@@ -3021,6 +3213,8 @@ ER.U.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.08
 \end_layout
 
@@ -3030,6 +3224,8 @@ ER.U.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.11
 \end_layout
 
@@ -3052,6 +3248,8 @@ ER.E.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 64.36
 \end_layout
 
@@ -3061,6 +3259,8 @@ ER.E.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 66.07
 \end_layout
 
@@ -3070,6 +3270,8 @@ ER.E.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 68.00
 \end_layout
 
@@ -3079,6 +3281,8 @@ ER.E.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.53
 \end_layout
 
@@ -3088,6 +3292,8 @@ ER.E.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.58
 \end_layout
 
@@ -3097,6 +3303,8 @@ ER.E.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.63
 \end_layout
 
@@ -3106,6 +3314,8 @@ ER.E.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.03
 \end_layout
 
@@ -3115,6 +3325,8 @@ ER.E.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.08
 \end_layout
 
@@ -3124,6 +3336,8 @@ ER.E.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.13
 \end_layout
 
@@ -3146,6 +3360,8 @@ ER.U.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 62.00
 \end_layout
 
@@ -3155,6 +3371,8 @@ ER.U.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 62.98
 \end_layout
 
@@ -3164,6 +3382,8 @@ ER.U.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 65.00
 \end_layout
 
@@ -3173,6 +3393,8 @@ ER.U.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.51
 \end_layout
 
@@ -3182,6 +3404,8 @@ ER.U.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.56
 \end_layout
 
@@ -3191,6 +3415,8 @@ ER.U.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.61
 \end_layout
 
@@ -3200,6 +3426,8 @@ ER.U.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.03
 \end_layout
 
@@ -3209,6 +3437,8 @@ ER.U.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.07
 \end_layout
 
@@ -3218,6 +3448,8 @@ ER.U.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.12
 \end_layout
 
@@ -3240,6 +3472,8 @@ ER.E.MIN.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 51.00
 \end_layout
 
@@ -3249,6 +3483,8 @@ ER.E.MIN.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 64.26
 \end_layout
 
@@ -3258,6 +3494,8 @@ ER.E.MIN.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 68.00
 \end_layout
 
@@ -3267,6 +3505,8 @@ ER.E.MIN.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.44
 \end_layout
 
@@ -3276,6 +3516,8 @@ ER.E.MIN.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.57
 \end_layout
 
@@ -3285,6 +3527,8 @@ ER.E.MIN.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.64
 \end_layout
 
@@ -3294,6 +3538,8 @@ ER.E.MIN.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.03
 \end_layout
 
@@ -3303,6 +3549,8 @@ ER.E.MIN.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.08
 \end_layout
 
@@ -3312,6 +3560,8 @@ ER.E.MIN.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.15
 \end_layout
 
@@ -3335,6 +3585,8 @@ ER.U.MIN.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+51.00
 \end_layout
 
 \end_inset
@@ -3344,6 +3596,8 @@ ER.U.MIN.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+59.57
 \end_layout
 
 \end_inset
@@ -3353,6 +3607,8 @@ ER.U.MIN.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+69.00
 \end_layout
 
 \end_inset
@@ -3362,6 +3618,8 @@ ER.U.MIN.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+0.42
 \end_layout
 
 \end_inset
@@ -3371,6 +3629,8 @@ ER.U.MIN.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+0.52
 \end_layout
 
 \end_inset
@@ -3380,6 +3640,8 @@ ER.U.MIN.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+0.63
 \end_layout
 
 \end_inset
@@ -3389,6 +3651,8 @@ ER.U.MIN.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+0.02
 \end_layout
 
 \end_inset
@@ -3398,6 +3662,8 @@ ER.U.MIN.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+0.07
 \end_layout
 
 \end_inset
@@ -3407,6 +3673,8 @@ ER.U.MIN.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+0.14
 \end_layout
 
 \end_inset
@@ -3428,6 +3696,8 @@ ER.E.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 19.00
 \end_layout
 
@@ -3437,6 +3707,8 @@ ER.E.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 20.23
 \end_layout
 
@@ -3446,6 +3718,8 @@ ER.E.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 21.00
 \end_layout
 
@@ -3455,6 +3729,8 @@ ER.E.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.15
 \end_layout
 
@@ -3464,6 +3740,8 @@ ER.E.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.17
 \end_layout
 
@@ -3473,6 +3751,8 @@ ER.E.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.20
 \end_layout
 
@@ -3482,6 +3762,8 @@ ER.E.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.01
 \end_layout
 
@@ -3491,6 +3773,8 @@ ER.E.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.03
 \end_layout
 
@@ -3500,6 +3784,8 @@ ER.E.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.06
 \end_layout
 
@@ -3522,6 +3808,8 @@ ER.U.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 19.00
 \end_layout
 
@@ -3531,6 +3819,8 @@ ER.U.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 20.33
 \end_layout
 
@@ -3540,6 +3830,8 @@ ER.U.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 21.00
 \end_layout
 
@@ -3549,6 +3841,8 @@ ER.U.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.15
 \end_layout
 
@@ -3558,6 +3852,8 @@ ER.U.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.17
 \end_layout
 
@@ -3567,6 +3863,8 @@ ER.U.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.20
 \end_layout
 
@@ -3576,6 +3874,8 @@ ER.U.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.00
 \end_layout
 
@@ -3585,6 +3885,8 @@ ER.U.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.03
 \end_layout
 
@@ -3594,6 +3896,8 @@ ER.U.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.06
 \end_layout
 
@@ -3616,6 +3920,8 @@ ER.E.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 19.00
 \end_layout
 
@@ -3625,6 +3931,8 @@ ER.E.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 20.57
 \end_layout
 
@@ -3634,6 +3942,8 @@ ER.E.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 22.00
 \end_layout
 
@@ -3643,6 +3953,8 @@ ER.E.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.15
 \end_layout
 
@@ -3652,6 +3964,8 @@ ER.E.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.18
 \end_layout
 
@@ -3661,6 +3975,8 @@ ER.E.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.20
 \end_layout
 
@@ -3670,6 +3986,8 @@ ER.E.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.00
 \end_layout
 
@@ -3679,6 +3997,8 @@ ER.E.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.03
 \end_layout
 
@@ -3688,6 +4008,8 @@ ER.E.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.06
 \end_layout
 
@@ -3710,6 +4032,8 @@ ER.U.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 18.81
 \end_layout
 
@@ -3719,6 +4043,8 @@ ER.U.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 20.33
 \end_layout
 
@@ -3728,6 +4054,8 @@ ER.U.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 22.00
 \end_layout
 
@@ -3737,6 +4065,8 @@ ER.U.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.15
 \end_layout
 
@@ -3746,6 +4076,8 @@ ER.U.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.18
 \end_layout
 
@@ -3755,6 +4087,8 @@ ER.U.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.20
 \end_layout
 
@@ -3764,6 +4098,8 @@ ER.U.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.00
 \end_layout
 
@@ -3773,6 +4109,8 @@ ER.U.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.03
 \end_layout
 
@@ -3782,6 +4120,8 @@ ER.U.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.05
 \end_layout
 
@@ -3804,6 +4144,8 @@ ER.E.RND.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 18.81
 \end_layout
 
@@ -3813,6 +4155,8 @@ ER.E.RND.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 20.37
 \end_layout
 
@@ -3822,6 +4166,8 @@ ER.E.RND.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 22.00
 \end_layout
 
@@ -3831,6 +4177,8 @@ ER.E.RND.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.14
 \end_layout
 
@@ -3840,6 +4188,8 @@ ER.E.RND.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.18
 \end_layout
 
@@ -3849,6 +4199,8 @@ ER.E.RND.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.21
 \end_layout
 
@@ -3858,6 +4210,8 @@ ER.E.RND.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.00
 \end_layout
 
@@ -3867,6 +4221,8 @@ ER.E.RND.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.03
 \end_layout
 
@@ -3876,6 +4232,8 @@ ER.E.RND.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.06
 \end_layout
 
@@ -3899,6 +4257,8 @@ ER.U.RND.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+18.00
 \end_layout
 
 \end_inset
@@ -3908,6 +4268,8 @@ ER.U.RND.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+20.66
 \end_layout
 
 \end_inset
@@ -3917,6 +4279,8 @@ ER.U.RND.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+22.00
 \end_layout
 
 \end_inset
@@ -3926,6 +4290,8 @@ ER.U.RND.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+0.12
 \end_layout
 
 \end_inset
@@ -3935,6 +4301,8 @@ ER.U.RND.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+0.18
 \end_layout
 
 \end_inset
@@ -3944,6 +4312,8 @@ ER.U.RND.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+0.21
 \end_layout
 
 \end_inset
@@ -3953,6 +4323,8 @@ ER.U.RND.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+0.00
 \end_layout
 
 \end_inset
@@ -3962,6 +4334,8 @@ ER.U.RND.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+0.03
 \end_layout
 
 \end_inset
@@ -3971,6 +4345,8 @@ ER.U.RND.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+0.08
 \end_layout
 
 \end_inset
@@ -3992,6 +4368,8 @@ ER.E.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 16.00
 \end_layout
 
@@ -4001,6 +4379,8 @@ ER.E.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 17.36
 \end_layout
 
@@ -4010,6 +4390,8 @@ ER.E.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 19.00
 \end_layout
 
@@ -4019,6 +4401,8 @@ ER.E.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.14
 \end_layout
 
@@ -4028,6 +4412,8 @@ ER.E.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.16
 \end_layout
 
@@ -4037,6 +4423,8 @@ ER.E.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.17
 \end_layout
 
@@ -4046,6 +4434,8 @@ ER.E.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.00
 \end_layout
 
@@ -4055,6 +4445,8 @@ ER.E.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.02
 \end_layout
 
@@ -4064,6 +4456,8 @@ ER.E.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.04
 \end_layout
 
@@ -4086,6 +4480,8 @@ ER.U.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 16.00
 \end_layout
 
@@ -4095,6 +4491,8 @@ ER.U.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 17.20
 \end_layout
 
@@ -4104,6 +4502,8 @@ ER.U.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 18.00
 \end_layout
 
@@ -4113,6 +4513,8 @@ ER.U.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.12
 \end_layout
 
@@ -4122,6 +4524,8 @@ ER.U.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.16
 \end_layout
 
@@ -4131,6 +4535,8 @@ ER.U.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.18
 \end_layout
 
@@ -4140,6 +4546,8 @@ ER.U.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.00
 \end_layout
 
@@ -4149,6 +4557,8 @@ ER.U.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.02
 \end_layout
 
@@ -4158,6 +4568,8 @@ ER.U.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.05
 \end_layout
 
@@ -4180,6 +4592,8 @@ ER.E.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 16.00
 \end_layout
 
@@ -4189,6 +4603,8 @@ ER.E.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 17.40
 \end_layout
 
@@ -4198,6 +4614,8 @@ ER.E.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 19.00
 \end_layout
 
@@ -4207,6 +4625,8 @@ ER.E.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.13
 \end_layout
 
@@ -4216,6 +4636,8 @@ ER.E.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.16
 \end_layout
 
@@ -4225,6 +4647,8 @@ ER.E.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.18
 \end_layout
 
@@ -4234,6 +4658,8 @@ ER.E.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.00
 \end_layout
 
@@ -4243,6 +4669,8 @@ ER.E.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.02
 \end_layout
 
@@ -4252,6 +4680,8 @@ ER.E.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.05
 \end_layout
 
@@ -4274,6 +4704,8 @@ ER.U.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 16.00
 \end_layout
 
@@ -4283,6 +4715,8 @@ ER.U.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 17.25
 \end_layout
 
@@ -4292,6 +4726,8 @@ ER.U.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 19.00
 \end_layout
 
@@ -4301,6 +4737,8 @@ ER.U.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.13
 \end_layout
 
@@ -4310,6 +4748,8 @@ ER.U.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.16
 \end_layout
 
@@ -4319,6 +4759,8 @@ ER.U.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.18
 \end_layout
 
@@ -4328,6 +4770,8 @@ ER.U.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.00
 \end_layout
 
@@ -4337,6 +4781,8 @@ ER.U.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.02
 \end_layout
 
@@ -4346,6 +4792,8 @@ ER.U.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.04
 \end_layout
 
@@ -4368,6 +4816,8 @@ ER.E.MAX.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 15.84
 \end_layout
 
@@ -4377,6 +4827,8 @@ ER.E.MAX.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 17.42
 \end_layout
 
@@ -4386,6 +4838,8 @@ ER.E.MAX.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 20.00
 \end_layout
 
@@ -4395,6 +4849,8 @@ ER.E.MAX.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.12
 \end_layout
 
@@ -4404,6 +4860,8 @@ ER.E.MAX.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.16
 \end_layout
 
@@ -4413,6 +4871,8 @@ ER.E.MAX.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.18
 \end_layout
 
@@ -4422,6 +4882,8 @@ ER.E.MAX.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.00
 \end_layout
 
@@ -4431,6 +4893,8 @@ ER.E.MAX.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.02
 \end_layout
 
@@ -4440,6 +4904,8 @@ ER.E.MAX.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
 0.06
 \end_layout
 
@@ -4463,6 +4929,8 @@ ER.U.MAX.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+15.84
 \end_layout
 
 \end_inset
@@ -4472,6 +4940,8 @@ ER.U.MAX.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+17.21
 \end_layout
 
 \end_inset
@@ -4481,6 +4951,8 @@ ER.U.MAX.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+20.00
 \end_layout
 
 \end_inset
@@ -4490,6 +4962,8 @@ ER.U.MAX.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+0.12
 \end_layout
 
 \end_inset
@@ -4499,6 +4973,8 @@ ER.U.MAX.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+0.16
 \end_layout
 
 \end_inset
@@ -4508,6 +4984,8 @@ ER.U.MAX.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+0.18
 \end_layout
 
 \end_inset
@@ -4517,6 +4995,8 @@ ER.U.MAX.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+0.00
 \end_layout
 
 \end_inset
@@ -4526,6 +5006,8 @@ ER.U.MAX.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+0.02
 \end_layout
 
 \end_inset
@@ -4535,6 +5017,8 @@ ER.U.MAX.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+0.06
 \end_layout
 
 \end_inset
@@ -4582,6 +5066,47 @@ Wie auch bei der CPU-Belastung stammen in der folgenden Tabelle die Ergebnisse
 \end_layout
 
 \begin_layout Standard
+Da der Client bei der Übertragung von reinen Layer-2-Frames und UDP-Paketen
+ keine Antwort vom Server empfangen und ausser shck nur noch die PRP_Supervision
+-Frames (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:PRP-Overview"
+
+\end_inset
+
+) das Netzwerk belasten, ist die RX-Rate bei den Interfaces 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ und 
+\begin_inset Quotes fld
+\end_inset
+
+eth1
+\begin_inset Quotes frd
+\end_inset
+
+ verschwindend klein.
+ Bei keiner der unten aufgezeichneten Netzwerklast betrug die RX-Bitrate
+ mehr als 1kBit/s.
+ Beim Interface 
+\begin_inset Quotes fld
+\end_inset
+
+prp1
+\begin_inset Quotes frd
+\end_inset
+
+ werden PRP_Supervision-Frames nicht gezählt, was bei jeder der unten aufgeführt
+en Netzwerklast für dieses Interface eine RX-Rate von 0 Bit/s ergibt.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 placement H
 wide false
@@ -4592,17 +5117,20 @@ status open
 \noindent
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="20" columns="7">
+<lyxtabular version="3" rows="21" columns="10">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="left" valignment="top" width="12col%">
-<column alignment="left" valignment="top" width="10col%">
-<column alignment="left" valignment="top" width="10col%">
-<column alignment="left" valignment="top" width="10col%">
-<column alignment="left" valignment="top" width="12col%">
-<column alignment="left" valignment="top" width="12col%">
-<column alignment="left" valignment="top" width="12col%">
+<column alignment="left" valignment="top" width="6col%">
+<column alignment="left" valignment="top" width="6col%">
+<column alignment="left" valignment="top" width="6col%">
+<column alignment="left" valignment="top" width="6col%">
+<column alignment="left" valignment="top" width="6col%">
+<column alignment="left" valignment="top" width="6col%">
+<column alignment="left" valignment="top" width="6col%">
+<column alignment="left" valignment="top" width="6col%">
+<column alignment="left" valignment="top" width="6col%">
 <row>
-<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4610,36 +5138,6 @@ status open
 \series bold
 \size footnotesize
 Bezeichnung
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="1" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-\size footnotesize
-RX-Bitrate [MBit/s]
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
 \end_layout
 
 \end_inset
@@ -4674,6 +5172,60 @@ TX-Bitrate [MBit/s]
 
 \end_inset
 </cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
 </row>
 <row>
 <cell multirow="4" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
@@ -4685,7 +5237,7 @@ TX-Bitrate [MBit/s]
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell multicolumn="1" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4697,7 +5249,25 @@ prp1
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell multicolumn="2" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4709,7 +5279,25 @@ eth0
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -4721,38 +5309,139 @@ eth1
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
-\series bold
-\size footnotesize
-prp1
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
-\series bold
-\size footnotesize
-eth0
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+</row>
+<row>
+<cell multirow="4" alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
 \series bold
 \size footnotesize
-eth1
+Min
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+Avg
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+Max
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+Min
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+Avg
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+Max
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+Min
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+Avg
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+Max
 \end_layout
 
 \end_inset
@@ -4774,7 +5463,9 @@ ER.E.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
+
+\size footnotesize
+7.88
 \end_layout
 
 \end_inset
@@ -4783,24 +5474,8 @@ ER.E.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
-\end_layout
 
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.00
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
+\size footnotesize
 7.91
 \end_layout
 
@@ -4810,16 +5485,75 @@ ER.E.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+7.97
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+8.45
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 9.29
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+18.03
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+8.46
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 9.14
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+17.98
 \end_layout
 
 \end_inset
@@ -4841,7 +5575,9 @@ ER.U.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
+
+\size footnotesize
+6.53
 \end_layout
 
 \end_inset
@@ -4850,24 +5586,8 @@ ER.U.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
-\end_layout
 
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.00
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
+\size footnotesize
 6.95
 \end_layout
 
@@ -4877,16 +5597,75 @@ ER.U.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+7.12
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+7.44
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 8.03
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+15.93
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+7.43
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 8.03
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+15.84
 \end_layout
 
 \end_inset
@@ -4908,7 +5687,9 @@ ER.E.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
+
+\size footnotesize
+7.96
 \end_layout
 
 \end_inset
@@ -4917,24 +5698,8 @@ ER.E.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
-\end_layout
 
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.00
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
+\size footnotesize
 8.06
 \end_layout
 
@@ -4944,16 +5709,75 @@ ER.E.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+8.09
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+8.34
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 9.41
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+18.39
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+8.38
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 9.41
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+18.38
 \end_layout
 
 \end_inset
@@ -4975,7 +5799,9 @@ ER.U.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
+
+\size footnotesize
+7.37
 \end_layout
 
 \end_inset
@@ -4984,24 +5810,8 @@ ER.U.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
-\end_layout
 
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.00
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
+\size footnotesize
 7.52
 \end_layout
 
@@ -5011,16 +5821,75 @@ ER.U.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+7.58
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+7.84
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 8.79
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+17.23
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+7.83
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 8.79
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+17.19
 \end_layout
 
 \end_inset
@@ -5042,7 +5911,9 @@ ER.E.MIN.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
+
+\size footnotesize
+5.94
 \end_layout
 
 \end_inset
@@ -5051,24 +5922,8 @@ ER.E.MIN.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
-\end_layout
 
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.00
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
+\size footnotesize
 8.00
 \end_layout
 
@@ -5078,16 +5933,75 @@ ER.E.MIN.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+8.20
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+6.74
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 9.33
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+18.59
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+6.73
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 9.33
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+18.57
 \end_layout
 
 \end_inset
@@ -5110,6 +6024,8 @@ ER.U.MIN.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+5.70
 \end_layout
 
 \end_inset
@@ -5119,6 +6035,8 @@ ER.U.MIN.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+6.93
 \end_layout
 
 \end_inset
@@ -5128,33 +6046,74 @@ ER.U.MIN.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+7.49
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
+\size footnotesize
+6.61
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
+\size footnotesize
+8.08
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
+\size footnotesize
+17.00
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+6.49
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+8.08
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+17.02
 \end_layout
 
 \end_inset
@@ -5176,7 +6135,9 @@ ER.E.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
+
+\size footnotesize
+23.69
 \end_layout
 
 \end_inset
@@ -5185,24 +6146,8 @@ ER.E.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
-\end_layout
 
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.00
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
+\size footnotesize
 23.84
 \end_layout
 
@@ -5212,16 +6157,75 @@ ER.E.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+23.99
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+22.97
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 23.93
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+46.97
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+21.62
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 24.30
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+47.15
 \end_layout
 
 \end_inset
@@ -5243,7 +6247,9 @@ ER.U.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
+
+\size footnotesize
+23.55
 \end_layout
 
 \end_inset
@@ -5252,24 +6258,8 @@ ER.U.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
-\end_layout
 
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.00
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
+\size footnotesize
 23.75
 \end_layout
 
@@ -5279,16 +6269,75 @@ ER.U.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+23.90
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+22.30
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 24.21
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+46.98
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+22.32
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 24.21
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+46.80
 \end_layout
 
 \end_inset
@@ -5310,7 +6359,9 @@ ER.E.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
+
+\size footnotesize
+22.78
 \end_layout
 
 \end_inset
@@ -5319,24 +6370,8 @@ ER.E.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
-\end_layout
 
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.00
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
+\size footnotesize
 23.10
 \end_layout
 
@@ -5346,16 +6381,75 @@ ER.E.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+23.31
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+22.27
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 23.35
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+45.75
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+21.68
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 23.42
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+45.86
 \end_layout
 
 \end_inset
@@ -5377,7 +6471,9 @@ ER.U.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
+
+\size footnotesize
+22.40
 \end_layout
 
 \end_inset
@@ -5386,24 +6482,8 @@ ER.U.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
-\end_layout
 
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.00
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
+\size footnotesize
 22.77
 \end_layout
 
@@ -5413,16 +6493,75 @@ ER.U.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+22.96
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+21.38
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 23.08
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+45.15
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+21.36
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 23.08
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+45.17
 \end_layout
 
 \end_inset
@@ -5444,7 +6583,9 @@ ER.E.RND.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
+
+\size footnotesize
+23.21
 \end_layout
 
 \end_inset
@@ -5453,24 +6594,8 @@ ER.E.RND.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
-\end_layout
 
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.00
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
+\size footnotesize
 23.72
 \end_layout
 
@@ -5480,16 +6605,75 @@ ER.E.RND.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+24.33
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+22.64
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 24.02
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+47.80
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+22.06
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 24.02
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+47.76
 \end_layout
 
 \end_inset
@@ -5512,6 +6696,8 @@ ER.U.RND.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+17.48
 \end_layout
 
 \end_inset
@@ -5521,6 +6707,8 @@ ER.U.RND.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+22.26
 \end_layout
 
 \end_inset
@@ -5530,33 +6718,74 @@ ER.U.RND.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+22.78
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
+\size footnotesize
+19.03
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
+\size footnotesize
+22.54
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
+\size footnotesize
+44.75
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+18.29
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+22.55
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+44.82
 \end_layout
 
 \end_inset
@@ -5578,7 +6807,9 @@ ER.E.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
+
+\size footnotesize
+97.13
 \end_layout
 
 \end_inset
@@ -5587,24 +6818,8 @@ ER.E.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
-\end_layout
 
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.00
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
+\size footnotesize
 98.05
 \end_layout
 
@@ -5614,16 +6829,75 @@ ER.E.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+98.44
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+95.26
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 97.85
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+192.51
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+95.26
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 97.85
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+192.50
 \end_layout
 
 \end_inset
@@ -5645,7 +6919,9 @@ ER.U.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
+
+\size footnotesize
+97.11
 \end_layout
 
 \end_inset
@@ -5654,24 +6930,8 @@ ER.U.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
-\end_layout
 
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.00
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
+\size footnotesize
 98.05
 \end_layout
 
@@ -5681,16 +6941,75 @@ ER.U.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+98.38
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+95.31
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 97.85
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+192.56
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+95.34
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 99.46
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+192.56
 \end_layout
 
 \end_inset
@@ -5712,7 +7031,9 @@ ER.E.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
+
+\size footnotesize
+96.75
 \end_layout
 
 \end_inset
@@ -5721,24 +7042,8 @@ ER.E.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
-\end_layout
 
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.00
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
+\size footnotesize
 98.05
 \end_layout
 
@@ -5748,16 +7053,75 @@ ER.E.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+98.48
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+95.30
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 98.50
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+192.57
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+95.30
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 98.50
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+192.57
 \end_layout
 
 \end_inset
@@ -5779,7 +7143,9 @@ ER.U.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
+
+\size footnotesize
+96.79
 \end_layout
 
 \end_inset
@@ -5788,24 +7154,8 @@ ER.U.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
-\end_layout
 
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.00
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
+\size footnotesize
 98.05
 \end_layout
 
@@ -5815,16 +7165,75 @@ ER.U.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+98.43
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+95.28
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 98.82
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+192.54
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+95.26
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 98.82
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+192.57
 \end_layout
 
 \end_inset
@@ -5846,7 +7255,9 @@ ER.E.MAX.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
+
+\size footnotesize
+96.75
 \end_layout
 
 \end_inset
@@ -5855,24 +7266,8 @@ ER.E.MAX.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-0.00
-\end_layout
 
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-0.00
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
+\size footnotesize
 98.05
 \end_layout
 
@@ -5882,16 +7277,75 @@ ER.E.MAX.L
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+98.49
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+95.26
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 98.71
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size footnotesize
+192.57
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+95.26
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
 98.71
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+192.57
 \end_layout
 
 \end_inset
@@ -5914,6 +7368,8 @@ ER.U.MAX.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+96.67
 \end_layout
 
 \end_inset
@@ -5923,6 +7379,8 @@ ER.U.MAX.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+98.05
 \end_layout
 
 \end_inset
@@ -5932,33 +7390,74 @@ ER.U.MAX.L
 
 \begin_layout Plain Layout
 
+\size footnotesize
+98.48
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
+\size footnotesize
+95.26
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
+\size footnotesize
+98.71
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
+\size footnotesize
+192.57
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+98.71
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+95.26
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\size footnotesize
+192.57
 \end_layout
 
 \end_inset
@@ -6000,7 +7499,120 @@ Interpretation: Auswahl der signifikanten Resultat-Parameter
 \begin_inset Newline newline
 \end_inset
 
-Lorem Ipsum
+Es stellt sich heraus, dass die gemessenen Werte innerhalb den selben Lasttypen
+ sehr ähnlich ausfallen.
+ 
+\end_layout
+
+\begin_layout Subparagraph
+Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bezüglich der CPU-Belastung sticht heraus, dass sich Ethernet- und UDP-Netzwerkl
+asten innerhalb des Lasttyps 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+ am stärksten, nämlich um ca.
+ 3-7% pro Zeitspanne unterscheiden.
+ Dabei ist stets die CPU-Belastung der Ethernet-Netzwerklasten höher als
+ die durch UDP.
+ Die erzielten Bitraten der Netzwerkströme dieses Lasttyps sind weit unter
+ dem entsprechenden theoretischen Grenzwert (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Theoretische-Grenzwerte"
+
+\end_inset
+
+), was daraus schliessen lässt, dass hier die CPU der limitierende Faktor
+ ist und somit bei der Lastgenerierung dieses Typs zusammen mit dem PRP-1
+ stack die komplette CPU-Last beansprucht wird.
+ 
+\end_layout
+
+\begin_layout Standard
+Dadurch, dass beim Versand über UDP-Sockets das Betriebssystem häufiger
+ zum Einsatz kommt (Generierung UDP- & IP-Header pro Paket) als beim Versand
+ über Ethernet-Sockets, bleibt weniger CPU-Zeit für den PRP-1 stack übrig,
+ weshalb dieser weniger UDP-Pakete als Ethernet-Frames abarbeiten kann.
+ Daraus resultieren auch die in diesem Lasttyp kleineren Bitraten bei UDP-
+ gegenüber Ethernet-Netzwerklasten.
+\end_layout
+
+\begin_layout Subparagraph
+Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+RANDOM
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+WIP
+\end_layout
+
+\begin_layout Subparagraph
+Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MAX
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Innerhalb dieses Lasttyps sind kaum Unterschiede zwischen den Übermittlungsarten
+ festzustellen, was sich auch über die Zeitspannen des selben Lasttyps weiter
+ zieht.
+ Die erreichten Bitraten sind sehr nahe am theoretischen Grenzwert (siehe
+ Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Theoretische-Grenzwerte"
+
+\end_inset
+
+), weshalb bei der Erzeugung von Netzwerklasten dieses Lasttyps das Netzwerk
+ anstelle der CPU der Engpass darzustellen scheint.
+\end_layout
+
+\begin_layout Standard
+Übertragungsraten über dem theoretischen Grenzwert
+\end_layout
+
+\begin_layout Subparagraph
+Zeitspannen
+\end_layout
+
+\begin_layout Standard
+Innerhalb einer Übertragungsart und eines Lasttyps ist über die drei Zeitspannen
+ keine signifikante Änderung festzustellen.
+ Da die Ultrakurz-Zeitspanne mit 60s z.B.
+ für die Analyse von Laufzeitunterscheidungen zwischen Netzwerk A und B
+ knapp ausfallen könnte, 5min (Kurzzeit-Zeitspanne) dafür aber aussagekräftigere
+ Resultate liefern würde, besteht Grund dazu, lediglich diese beiden Zeitspannen
+ zu berücksichtigen.
 \end_layout
 
 \begin_layout Subparagraph

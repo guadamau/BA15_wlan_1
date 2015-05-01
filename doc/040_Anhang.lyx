@@ -442,7 +442,7 @@ name "sec:shck---Netzwerklast-Generierung"
 Szenarien
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Szenario 01: Performance im PRP-Netzwerk
 \begin_inset CommandInset label
 LatexCommand label
