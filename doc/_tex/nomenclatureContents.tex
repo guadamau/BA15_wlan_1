@@ -30,6 +30,9 @@
 \newcommand{\cmacrodesc}{Ein Makro ist ein benanntes Code-Fragment und wird meist in einer Header-Datei definert. Der Name des Fragments kann beliebig in Quellcode-Dateien platziert werden. Der C-Präprozessor ersetzt vor dem Kompilieren die Fragment-Namen durch die Code-Fragmente.}
 \newcommand{\payloaddesc}{Als Payload wird der reine Nutzdaten-Anteil eines Frames (Datalink-Layer) oder eines Paketes (Network-Layer, Transport-Layer, ...) definiert. Die Grösse des Payloads ist die Differenz der Gesamtpaketgrösse und der Grösse des entsprechenden Protokoll-Headers.}
 \newcommand{\protoheaddesc}{Der Protokoll-Header enthält alle nötigen Metainformationen, die ein bestimmtes Kommunikationprotokoll braucht, um Daten austauschen zu können. Beispielfelder eines Protokoll-Headers: Quell- und Zieladresse, Port, Fragment-ID, etc.}
+\newcommand{\cpointerdesc}{Ein Pointer in der Programmiersprache C, repräsentiert eine Speicheradresse.}
+\newcommand{\fcsdesc}{Die \textbf{Frame Check Sequence} befindet sich am Ende eines Ethernet Frames. Sie hat eine Grösse von 4 Byte und wird von der sendenden Hardware (Ethernet-Controller) basierend auf dem Frame-Inhalt meist mittels CRC-Verfahrens berechnet und anschliessend am Ende eines jeden Frames platziert. Die empfangende Hardware berechnet für jedes empfangene Frame ebenfalls eine Frame Check Sequence und vergleicht diese mit der FCS am Ende des empfangenen Frames. Wenn beide FCS übereinstimmen, wird das Frame dem Netzwerk-Protokoll-Stack des Betriebssystems weitergereicht. Im Falle einer Divergenz der beiden FCS wird das Frame verworfen.}
+\newcommand{\crcdesc}{\textbf{Cyclic Redundancy Check} ist ein Verfahren, basierend auf der modularen Polynomdivision (mod 2), welches dazu verwendet wird, einen Prüfwert.}
 
 
 % *****************************************************************************
@@ -60,3 +63,6 @@
 \nomenclature{C-Makros}{\cmacrodesc}
 \nomenclature{Payload}{\payloaddesc}
 \nomenclature{Protokoll-Header}{\protoheaddesc}
+\nomenclature{C-Pointer}{\cpointerdesc}
+\nomenclature{FCS}{\fcsdesc}
+\nomenclature{CRC}{\crcdesc}

@@ -118,6 +118,13 @@ measurement
 \end_layout
 
 \begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
 Die nachfolgend gezeigte Grafik, soll eine Übersicht um den Gesamtumfang
  der Software meas aufzeigen:
 \end_layout
@@ -204,6 +211,13 @@ meas-Datentypen
 \end_layout
 
 \begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
 Um zusammengehörende Datentypen sinnvoll zu gliedern werden C-Structs verwendet:
 \end_layout
 
@@ -470,6 +484,13 @@ Detailansicht Module
 \end_layout
 
 \begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
 Basierend auf der Gesamtübersicht, wurden die verschiedenen Module implementiert.
  Die Modulübersicht soll eine etwas detailliertere Übersicht darstellen.
  Bei der folgenden Illustration wurden der Übersichtlichkeit wegen pro Modul
@@ -529,14 +550,17 @@ mtimer
 \end_layout
 
 \begin_layout Standard
-mtimer.h ist eine Programm-Header-Datei, die von Dr.
+mtimer.h ist eine Programm-Header-Datei, die von Prof.
+ Dr.
  M.
  Thaler (ZHAW, InIT) geschrieben wurde.
  Sie enthält C-Makros, die einen universellen, vereinfachten Zugriff auf
  verschiedene Timer-Module eines Standard-Linux-Systems ermöglichen.
- Für die meas-Applikation sind zwei Timer-Typen mit verschiedenen Auflösugen
- im Einsatz.
- Messung der Gesamtintervallzeit: Auflösung 
+ Für die meas-Applikation sind zwei Timer-Typen im Einsatz:
+\end_layout
+
+\begin_layout Itemize
+Timer mit einer Auflösung von 
 \begin_inset ERT
 status open
 
@@ -547,7 +571,11 @@ $10 ms$
 
 \end_inset
 
-, Messung der Lesezeit aus dem /proc-Dateisystem: Auflösung 
+ für das Messen der effektiven Intervallzeiten.
+\end_layout
+
+\begin_layout Itemize
+Timer mit einer Auflösung von 
 \begin_inset ERT
 status open
 
@@ -560,7 +588,7 @@ mu s$
 
 \end_inset
 
-.
+, um die Lesezeiten aus dem /proc-Dateisystem aufzuzeichnen.
 \end_layout
 
 \begin_layout Subparagraph
@@ -588,8 +616,8 @@ lstset{language=C,tabsize=2}
 
 
 \backslash
-begin{lstlisting}[caption={Beispiels eines Konfigurationsfeldes, /proc-Dateipfad
-e},captionpos=b]
+begin{lstlisting}[caption={Beispiel eines Konfigurationsfeldes, /proc-Dateipfade
+},captionpos=b]
 \end_layout
 
 \begin_layout Plain Layout
@@ -663,8 +691,8 @@ lstset{language=C,tabsize=2}
 
 
 \backslash
-begin{lstlisting}[caption={Beispiels eines Konfigurationsfeldes, Datei-Koordinat
-en},captionpos=b]
+begin{lstlisting}[caption={Beispiel eines Konfigurationsfeldes, Datei-Koordinate
+n},captionpos=b]
 \end_layout
 
 \begin_layout Plain Layout
@@ -772,13 +800,328 @@ evaluate
 Dieses Modul enthält alle Funktionen, welche aus den gesammelten Messdaten
  statistische Werte berechnen, sowohl pro Messintervall als auch eine Gesamtstat
 istik über alle Messintervalle.
- Die berechneten Statistiken werden in der entsprechenden Datenstrukturen
+ Die berechneten Statistiken werden in den entsprechenden Datenstrukturen
  abgelegt und können anschliessend für Ausgaben auf bliebige Ausgabe-Geräte
  weiterverwendet werden.
 \end_layout
 
 \begin_layout Subparagraph
 print
+\end_layout
+
+\begin_layout Standard
+Die Implementationen im Print-Modul dienen dazu, Datenstrukturen mit Intervall-R
+esultaten oder Gesamtstatistiken auf beliebige Ausgabegeräte auszugeben.
+ Der Umstand, dass in einem unixoiden System alles als eine Datei angesehen
+ wird, macht es möglich, dass die Ausgabefunktionen generisch implementiert
+ werden können.
+ So kann den Ausgabefunktionen ein C-Pointer auf eine entsprechende Ausgabedatei
+ übergeben werden.
+ Ausgabedateien haben beispielsweise die Form einer Ausgabekonsole, einer
+ einfachen Text-Datei, einer Druckerwarteschlange, etc.
+\end_layout
+
+\begin_layout Paragraph
+Ablauf einer Messserie
+\begin_inset CommandInset label
+LatexCommand label
+name "par:Ablauf-einer-Messserie"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Das folgende Sequenzdiagramm, verdeutlicht den Ablauf einer Messserie mit
+ meas.
+ Die Namen der Funktionsparameter entsprechen nicht genau denen aus dem
+ Quellcode, um die Interpretaion des Sequenzdiagramms zu vereinfachen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _diagrams/meas_sequence.svg
+	scale 42
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ablaufdiagramm meas-Messserie
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Minderung von Messfehlern / Optimierungen
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Die Zeit, welche vergeht, um die Datenwerte aus dem /proc-Dateisystem zu
+ lesen, verfälscht die Messung eines Intervalls.
+ Dieser Zeitabschnitt sollte deshalb möglichst kurz gehalten werden.
+ Während des Entwicklungsprozesses von meas wurden zwei Optimierungsschritte
+ durchgeführt, welche der Verkürzung dieses Zeitabschnitts gewidmet wurden.
+\end_layout
+
+\begin_layout Standard
+Der Messfehler wird pro Messintervall auf eine Genauigkeit von 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$1 
+\backslash
+mu s$
+\end_layout
+
+\end_inset
+
+ protokolliert und in den Ausgaben von meas angezeigt, unter der Bezeichnung
+ 
+\begin_inset Quotes fld
+\end_inset
+
+Overhead Time
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subparagraph
+Resultate ohne Optimierungen
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Beim Durchführen erster Messserien mit meas, wurde ein Messfehler von 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$~ 7 ms$
+\end_layout
+
+\end_inset
+
+ festgestellt, was im Vergleich zur Intervallzeit einen relativ hohen Anteil
+ darstellt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _diagrams/meas_read_times_1.svg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Messfehler ohne Optimierungen.
+ Intervallzeit 1 s.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+Resultate nach erster Optimierungsstufe
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Nach sorgfältiger Analyse des Quellcodes wurde festgestellt, dass das Interpreti
+eren und Kopieren der gelesenen Werte sehr viel Zeit in Anspruch nahmen.
+ Hauptsächlich durch zahlreiche Aufrufe der memcpy-Funktion mit nur kleinen
+ Datenbereichen.
+ Die memcpy-Funktion kopiert eine definierte Anzahl von Bytes von einer
+ Quell- an eine Zieladresse im Arbeitsspeicher.
+ Diese Aufrufe konnten signifikant reduziert werden.
+ Nach den Code-Optimierungen war noch ein Messfehler von 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$~ 600 
+\backslash
+mu s$
+\end_layout
+
+\end_inset
+
+ zu verzeichnen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _diagrams/meas_read_times_2.svg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Messfehler nach erster Optimierungsstufe.
+ Intervallzeit 1 s.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+Resultate nach zweiter Optimierungsstufe
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Zusätzlich zum Auslesen der Werte wurden die Statistiken eines Intervalls
+ bereits ausgewertet.
+ Ebenfalls wurde je nach Konfigurationsparameter der Software pro Intervall
+ eine Konsolenausgabe getätigt, was einen zusätzlichen Zeitverlust bedeutete.
+\end_layout
+
+\begin_layout Standard
+Das Konzept, wie das Auslesen der Werte aus dem /proc-Dateisystem umgesetzt
+ wird, wurde grundlegend geändert, zwecks weiterer Minimierung des Messfehlers,
+ um eine höhere Messgenauigkeit zu erreichen.
+ Wie bereits im Sequenzdiagramm (siehe 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "par:Ablauf-einer-Messserie"
+
+\end_inset
+
+) ersichtlich ist, wurde ein Lesepuffer eingeführt, der die gelesenen Werte
+ zwischenspeichert und die Auswertungen und Ausgaben erst nach Beenden einer
+ Messserie durchgeführt werden.
+ Die Funktion, welche für das Auslesen der Werte aus dem /proc-Dateisystem
+ zuständig ist wurde mit möglichst wenigen Instruktionen implementiert und
+ hat folgenden Funktionskörper:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[caption={gausskern.m - Algorithmus der Gauss-Kern-Funktion},
+  captionpos=b,language=C]{_src_lst/meas_read_to_meas_buffers.c}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{lst:meas_read_to_meas_buffers}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
