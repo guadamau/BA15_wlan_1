@@ -784,5 +784,146 @@ Mit diesen Mitteln konnte man determinieren, wo noch Optimierungsbedarf
  beigesteuert hat.
 \end_layout
 
+\begin_layout Paragraph
+Frame- / Paketaufbau
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Die Farbgebung in den nachfolgenden Grafiken ist wie folgt zu interpretieren:
+\end_layout
+
+\begin_layout Itemize
+Blau: Hardware-gesteuerte Fragmente eines Ethernet-Frames, auf die kein
+ Einfluss auf Betriebssystem-Ebene möglich ist.
+\end_layout
+
+\begin_layout Itemize
+Grün: Von PRP-1 stack erzeugtes Ethernet-Frame-Fragment.
+\end_layout
+
+\begin_layout Itemize
+Weiss / Transparent: Inhalt der Fragmente wird über Socket oder shck erzeugt.
+\end_layout
+
+\begin_layout Standard
+Frames / Pakete, die mit shck generiert werden, haben die folgenden Charakterist
+iken:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _diagrams/shck_frame_eth.svg
+	scale 37
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ethernet-Frame, generiert mit shck via PRP- und Standard-Interface
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _diagrams/shck_frame_tcp.svg
+	scale 37
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+TCP-Paket, generiert mit shck via PRP- und Standard-Interface
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _diagrams/shck_frame_udp.svg
+	scale 37
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+UDP-Paket, generiert mit shck via PRP- und Standard-Interface
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document

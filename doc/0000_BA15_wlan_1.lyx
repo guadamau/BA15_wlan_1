@@ -240,6 +240,7 @@ width=.8\textwidth
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement H
 \paperfontsize 11
 \spacing single
 \use_hyperref false

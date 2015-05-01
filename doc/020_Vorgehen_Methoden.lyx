@@ -25,6 +25,7 @@
 \output_sync 0
 \bibtex_command default
 \index_command default
+\float_placement H
 \paperfontsize 11
 \spacing other 1.2
 \use_hyperref false
@@ -8064,7 +8065,49 @@ Die Werte von bwm-ng / meas konnten auf die Werte von iperf3 über folgende
 
 \begin_layout Standard
 Als Annahme zu diesem Rechnungsweg diente, dass iperf3 lediglich die versendete
- Payload betrachtet.
+ Payload betrachtet, bzw.
+ dessen Werte auf Layer 4 anstelle Layer 2 bezieht.
+\end_layout
+
+\begin_layout Standard
+Die Werte für die Payload des TCP-Pakets und die Gesamtgrösse des Pakets
+ stammen aus einer Wireshark-Aufzeichnung von iperf3.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/030_iperf3_wireshark.png
+	scale 65
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Wireshark-Aufzeichnung: TCP-Paket von iperf3-Client auf PRP-Interface
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
