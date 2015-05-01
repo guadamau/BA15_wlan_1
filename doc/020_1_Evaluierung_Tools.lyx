@@ -3455,6 +3455,14 @@ name "sub:CPU"
 \end_layout
 
 \begin_layout Standard
+Bei der Berechnung der CPU-Werte handelt es sich lediglich um Single-Threaded-Pr
+ozesse, da der PRP-1 stack und die Tools zur Generierung der Netzwerklast
+ single-threaded sind.
+ meas behandelt aus diesem und aus Zeitgründen keine Multi-Threaded-Applikatione
+n.
+\end_layout
+
+\begin_layout Standard
 Auf einem der DANs wird iperf3 (siehe Tabelle 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -3619,7 +3627,7 @@ sleep 10
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Bash-Script zur Zuverlässigkeitsüberprüfung der CPU-Messungen (cpu/00_cpu_reliab
+Bash-Script zur Verifizierung der Messwerte der CPU-Messungen (cpu/00_cpu_reliab
 ility_test.sh)
 \end_layout
 
@@ -3752,7 +3760,7 @@ esac
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Bash-Script zur Zuverlässigkeitsüberprüfung der CPU-Messungen von pidstat
+Bash-Script zur Verifizierung der Messwerte der CPU-Messungen von pidstat
  (cpu/meas.sh)
 \end_layout
 
@@ -3862,7 +3870,7 @@ esac
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Bash-Script zur Zuverlässigkeitsüberprüfung der CPU-Messungen von pidstat
+Bash-Script zur Verifizierung der Messwerte der CPU-Messungen von pidstat
  (cpu/pidstat.sh)
 \end_layout
 
@@ -4001,7 +4009,7 @@ esac
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Bash-Script zur Zuverlässigkeitsüberprüfung der CPU-Messungen von top (cpu/top.sh
+Bash-Script zur Verifizierung der Messwerte der CPU-Messungen von top (cpu/top.sh
 )
 \end_layout
 
@@ -4650,7 +4658,7 @@ keine Angabe
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Zuverlässigkeitsüberprüfung der CPU-Messungen von meas, pidstat und top
+Verifizierung der Messwerte der CPU-Messungen von meas, pidstat und top
 \end_layout
 
 \end_inset
@@ -4812,7 +4820,7 @@ sleep 10
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Bash-Script zur Zuverlässigkeitsüberprüfung der Arbeitsspeicher-Messungen
+Bash-Script zur Verifizierung der Messwerte der Arbeitsspeicher-Messungen
  (ram/00_ram_reliability_test.sh)
 \end_layout
 
@@ -4926,7 +4934,7 @@ esac
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Bash-Script zur Zuverlässigkeitsüberprüfung der Arbeitsspeicher-Messungen
+Bash-Script zur Verifizierung der Messwerte der Arbeitsspeicher-Messungen
  von pidstat (ram/pidstat.sh)
 \end_layout
 
@@ -5070,7 +5078,7 @@ esac
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Bash-Script zur Zuverlässigkeitsüberprüfung der Arbeitsspeicher-Messungen
+Bash-Script zur Verifizierung der Messwerte der Arbeitsspeicher-Messungen
  von pmap (ram/pmap.sh)
 \end_layout
 
@@ -5209,7 +5217,7 @@ esac
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Bash-Script zur Zuverlässigkeitsüberprüfung der Arbeitsspeicher-Messungen
+Bash-Script zur Verifizierung der Messwerte der Arbeitsspeicher-Messungen
  von top (ram/top.sh)
 \end_layout
 
@@ -5576,7 +5584,7 @@ top-Messung von iperf3
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Zuverlässigkeitsüberprüfung der Arbeitsspeicher-Messungen von pidstat und
+Verifizierung der Messwerte der Arbeitsspeicher-Messungen von pidstat und
  top
 \end_layout
 
@@ -5618,7 +5626,7 @@ Netzwerkbelastung
 \end_layout
 
 \begin_layout Standard
-Im Kapitel zur Zuverlässigkeitsüberprüfungen der CPU-Messungen (siehe Kapitel
+Im Kapitel zur Verifizierung der Messwerte der CPU-Messungen (siehe Kapitel
  
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -5870,7 +5878,7 @@ esac
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Bash-Script zur Zuverlässigkeitsüberprüfung der Netzwerkbelastungs-Messungen
+Bash-Script zur Verifizierung der Messwerte der Netzwerkbelastungs-Messungen
  (net/00_ram_reliability_test.sh)
 \end_layout
 
@@ -5924,7 +5932,7 @@ status open
 \noindent
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="13" columns="7">
+<lyxtabular version="3" rows="12" columns="7">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="left" valignment="top" width="7col%">
 <column alignment="left" valignment="top" width="10col%">
@@ -6935,90 +6943,6 @@ TX-Rate
 \end_inset
 </cell>
 </row>
-<row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-\size footnotesize
-Mittel-
-\begin_inset Newline newline
-\end_inset
-
-wert
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-12.2
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-97.5
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-11.2
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-94.1
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-12.3
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-98.1
-\end_layout
-
-\end_inset
-</cell>
-</row>
 </lyxtabular>
 
 \end_inset
@@ -7030,7 +6954,7 @@ wert
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Zuverlässigkeitsüberprüfung der Netzwerkbelastungs-Messungen: Werte von
+Verifizierung der Messwerte der Netzwerkbelastungs-Messungen: Werte von
  iperf3-Client auf 
 \begin_inset Quotes fld
 \end_inset
@@ -7151,7 +7075,7 @@ status open
 \noindent
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="13" columns="5">
+<lyxtabular version="3" rows="12" columns="5">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="left" valignment="top" width="7col%">
 <column alignment="left" valignment="top" width="10col%">
@@ -7882,68 +7806,6 @@ TX-Rate
 \end_inset
 </cell>
 </row>
-<row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-\size footnotesize
-Mittel-
-\begin_inset Newline newline
-\end_inset
-
-wert
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-11.8
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-94.4
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-11.9
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-95.1
-\end_layout
-
-\end_inset
-</cell>
-</row>
 </lyxtabular>
 
 \end_inset
@@ -7955,7 +7817,7 @@ wert
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Zuverlässigkeitsüberprüfung der Netzwerkbelastungs-Messungen: Werte von
+Verifizierung der Messwerte der Netzwerkbelastungs-Messungen: Werte von
  bwm-ng und meas des shck-Clients auf 
 \begin_inset Quotes fld
 \end_inset

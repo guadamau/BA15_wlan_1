@@ -144,8 +144,7 @@ Der Grund für die Erstellung von shck ist, dass kein Tool gefunden wurde,
 \end_layout
 
 \begin_layout Standard
-Der Quellcode ist der Arbeit beigelegt und wird dort auch genauer erörtert
- (siehe Kapitel 
+Der Quellcode ist der Arbeit beigelegt (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sec:shck---Netzwerklast-Generierung"
@@ -153,8 +152,8 @@ reference "sec:shck---Netzwerklast-Generierung"
 \end_inset
 
 ).
- In diesem Abschnitt gibt es eine grobe Einführung in die Parameter/Optionen
- von shck:
+ In diesem Abschnitt gibt es eine Einführung in die Parameter/Optionen von
+ shck:
 \end_layout
 
 \begin_layout Standard
@@ -662,9 +661,9 @@ RANDOM
  wird ein Frame / Paket mit der maximalen Grösse vorbereitet, was vor dem
  Versand das Ende so wegschneided, dass das Frame / Paket die gewünschte
  Grösse hat.
- Des Weiteren wird bei diesem Lasttypen eine Liste von 100 zufälligen Werten
- zwischen 64 und 1500 eingelesen, die später beim Versand die Grösse des
- zu versenden Frames / Pakets angibt.
+ Des Weiteren wird bei diesem Lasttypen eine Liste von 1000000 zufälligen
+ Werten zwischen 64 und 1500 eingelesen, die später beim Versand die Grösse
+ des zu versenden Frames / Pakets angibt.
  So wird die Last zufällig, aber dennoch reproduzierbar.
 \begin_inset Newline newline
 \end_inset
@@ -913,6 +912,74 @@ status open
 
 \begin_layout Plain Layout
 UDP-Paket, generiert mit shck via PRP- und Standard-Interface
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage newpage
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Programm-Ablauf
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+shck läuft je nach angegebenen Parametern unterschiedlich ab.
+ Die Parameter, die dies bewirken, sind in der nächsten Grafik aufgeführt.
+ Die exakten Frame-/Paketgrössen sind dem Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Generierung-von-Datenverkehrströ"
+
+\end_inset
+
+ zu entnehmen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _diagrams/shck_activity.svg
+	scale 45
+	BoundingBox 40bp 0bp 1020bp 1150bp
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+shck: Ablauf
 \end_layout
 
 \end_inset

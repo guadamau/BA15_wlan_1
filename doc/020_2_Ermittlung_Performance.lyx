@@ -1225,6 +1225,10 @@ Innerhalb einer Zeitspanne wird aufgezeichnet, wie lange ein Prozess den
  Prozessor beansprucht hat.
  Diese Zeit wird durch die Dauer der Zeitspanne dividiert, was die CPU-Last
  in Prozent, die der Prozess beansprucht hat, ergibt.
+ Hierbei handelt es sich lediglich um Single-Threaded-Prozesse, da der PRP-1
+ stack und die Tools zur Generierung der Netzwerklast single-threaded sind.
+ meas behandelt aus diesem und aus Zeitgründen keine Multi-Threaded-Applikatione
+n.
 \end_layout
 
 \begin_layout Itemize
@@ -2860,9 +2864,7 @@ ER.E.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-58.00
+64.00
 \end_layout
 
 \end_inset
@@ -2871,9 +2873,7 @@ ER.E.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-65.56
+65.08
 \end_layout
 
 \end_inset
@@ -2882,9 +2882,7 @@ ER.E.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-69.00
+66.00
 \end_layout
 
 \end_inset
@@ -2893,9 +2891,7 @@ ER.E.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.50
+0.53
 \end_layout
 
 \end_inset
@@ -2904,9 +2900,7 @@ ER.E.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.58
+0.57
 \end_layout
 
 \end_inset
@@ -2915,9 +2909,7 @@ ER.E.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.64
+0.61
 \end_layout
 
 \end_inset
@@ -2926,9 +2918,7 @@ ER.E.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.04
+0.05
 \end_layout
 
 \end_inset
@@ -2937,8 +2927,6 @@ ER.E.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.08
 \end_layout
 
@@ -2948,9 +2936,7 @@ ER.E.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.13
+0.11
 \end_layout
 
 \end_inset
@@ -2972,9 +2958,7 @@ ER.U.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-63.00
+56.00
 \end_layout
 
 \end_inset
@@ -2983,9 +2967,7 @@ ER.U.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-64.27
+58.32
 \end_layout
 
 \end_inset
@@ -2994,9 +2976,7 @@ ER.U.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-66.00
+60.00
 \end_layout
 
 \end_inset
@@ -3005,9 +2985,7 @@ ER.U.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.53
+0.47
 \end_layout
 
 \end_inset
@@ -3016,9 +2994,7 @@ ER.U.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.57
+0.51
 \end_layout
 
 \end_inset
@@ -3027,9 +3003,7 @@ ER.U.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.60
+0.55
 \end_layout
 
 \end_inset
@@ -3038,9 +3012,7 @@ ER.U.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.04
+0.03
 \end_layout
 
 \end_inset
@@ -3049,8 +3021,6 @@ ER.U.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.08
 \end_layout
 
@@ -3060,8 +3030,6 @@ ER.U.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.11
 \end_layout
 
@@ -3084,9 +3052,7 @@ ER.E.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-60.00
+64.36
 \end_layout
 
 \end_inset
@@ -3095,9 +3061,7 @@ ER.E.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-65.78
+66.07
 \end_layout
 
 \end_inset
@@ -3106,8 +3070,6 @@ ER.E.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 68.00
 \end_layout
 
@@ -3117,9 +3079,7 @@ ER.E.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.47
+0.53
 \end_layout
 
 \end_inset
@@ -3128,8 +3088,6 @@ ER.E.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.58
 \end_layout
 
@@ -3139,9 +3097,7 @@ ER.E.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.65
+0.63
 \end_layout
 
 \end_inset
@@ -3150,9 +3106,7 @@ ER.E.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.02
+0.03
 \end_layout
 
 \end_inset
@@ -3161,8 +3115,6 @@ ER.E.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.08
 \end_layout
 
@@ -3172,9 +3124,7 @@ ER.E.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.14
+0.13
 \end_layout
 
 \end_inset
@@ -3196,9 +3146,7 @@ ER.U.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-54.00
+62.00
 \end_layout
 
 \end_inset
@@ -3207,9 +3155,7 @@ ER.U.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-59.78
+62.98
 \end_layout
 
 \end_inset
@@ -3218,9 +3164,7 @@ ER.U.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-66.00
+65.00
 \end_layout
 
 \end_inset
@@ -3229,9 +3173,7 @@ ER.U.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.44
+0.51
 \end_layout
 
 \end_inset
@@ -3240,9 +3182,7 @@ ER.U.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.52
+0.56
 \end_layout
 
 \end_inset
@@ -3251,8 +3191,6 @@ ER.U.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.61
 \end_layout
 
@@ -3262,9 +3200,7 @@ ER.U.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.04
+0.03
 \end_layout
 
 \end_inset
@@ -3273,9 +3209,7 @@ ER.U.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.08
+0.07
 \end_layout
 
 \end_inset
@@ -3284,8 +3218,6 @@ ER.U.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.12
 \end_layout
 
@@ -3308,9 +3240,7 @@ ER.E.MIN.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-58.00
+51.00
 \end_layout
 
 \end_inset
@@ -3319,9 +3249,7 @@ ER.E.MIN.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-65.11
+64.26
 \end_layout
 
 \end_inset
@@ -3330,9 +3258,7 @@ ER.E.MIN.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-69.00
+68.00
 \end_layout
 
 \end_inset
@@ -3341,9 +3267,7 @@ ER.E.MIN.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.45
+0.44
 \end_layout
 
 \end_inset
@@ -3352,8 +3276,6 @@ ER.E.MIN.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.57
 \end_layout
 
@@ -3363,9 +3285,7 @@ ER.E.MIN.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.66
+0.64
 \end_layout
 
 \end_inset
@@ -3374,9 +3294,7 @@ ER.E.MIN.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.01
+0.03
 \end_layout
 
 \end_inset
@@ -3385,8 +3303,6 @@ ER.E.MIN.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.08
 \end_layout
 
@@ -3396,8 +3312,6 @@ ER.E.MIN.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.15
 \end_layout
 
@@ -3421,8 +3335,6 @@ ER.U.MIN.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-55.00
 \end_layout
 
 \end_inset
@@ -3432,8 +3344,6 @@ ER.U.MIN.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-60.26
 \end_layout
 
 \end_inset
@@ -3443,8 +3353,6 @@ ER.U.MIN.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-66.00
 \end_layout
 
 \end_inset
@@ -3454,8 +3362,6 @@ ER.U.MIN.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-0.43
 \end_layout
 
 \end_inset
@@ -3465,8 +3371,6 @@ ER.U.MIN.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-0.52
 \end_layout
 
 \end_inset
@@ -3476,8 +3380,6 @@ ER.U.MIN.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-0.62
 \end_layout
 
 \end_inset
@@ -3487,8 +3389,6 @@ ER.U.MIN.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-0.02
 \end_layout
 
 \end_inset
@@ -3498,8 +3398,6 @@ ER.U.MIN.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-0.08
 \end_layout
 
 \end_inset
@@ -3509,8 +3407,6 @@ ER.U.MIN.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-0.15
 \end_layout
 
 \end_inset
@@ -3532,9 +3428,7 @@ ER.E.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-36.00
+19.00
 \end_layout
 
 \end_inset
@@ -3543,9 +3437,7 @@ ER.E.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-41.61
+20.23
 \end_layout
 
 \end_inset
@@ -3554,9 +3446,7 @@ ER.E.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-57.00
+21.00
 \end_layout
 
 \end_inset
@@ -3565,9 +3455,7 @@ ER.E.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.29
+0.15
 \end_layout
 
 \end_inset
@@ -3576,9 +3464,7 @@ ER.E.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.36
+0.17
 \end_layout
 
 \end_inset
@@ -3587,9 +3473,7 @@ ER.E.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.51
+0.20
 \end_layout
 
 \end_inset
@@ -3598,20 +3482,16 @@ ER.E.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
+0.01
+\end_layout
 
-\size footnotesize
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
 0.03
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\size footnotesize
-0.06
 \end_layout
 
 \end_inset
@@ -3620,9 +3500,7 @@ ER.E.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.10
+0.06
 \end_layout
 
 \end_inset
@@ -3644,9 +3522,7 @@ ER.U.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-18.00
+19.00
 \end_layout
 
 \end_inset
@@ -3655,9 +3531,7 @@ ER.U.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-19.25
+20.33
 \end_layout
 
 \end_inset
@@ -3666,9 +3540,7 @@ ER.U.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-20.00
+21.00
 \end_layout
 
 \end_inset
@@ -3677,9 +3549,7 @@ ER.U.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.13
+0.15
 \end_layout
 
 \end_inset
@@ -3688,8 +3558,6 @@ ER.U.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.17
 \end_layout
 
@@ -3699,9 +3567,7 @@ ER.U.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.19
+0.20
 \end_layout
 
 \end_inset
@@ -3710,9 +3576,7 @@ ER.U.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.01
+0.00
 \end_layout
 
 \end_inset
@@ -3721,9 +3585,7 @@ ER.U.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.02
+0.03
 \end_layout
 
 \end_inset
@@ -3732,8 +3594,6 @@ ER.U.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.06
 \end_layout
 
@@ -3756,8 +3616,6 @@ ER.E.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 19.00
 \end_layout
 
@@ -3767,9 +3625,7 @@ ER.E.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-20.24
+20.57
 \end_layout
 
 \end_inset
@@ -3778,8 +3634,6 @@ ER.E.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 22.00
 \end_layout
 
@@ -3789,9 +3643,7 @@ ER.E.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.13
+0.15
 \end_layout
 
 \end_inset
@@ -3800,9 +3652,7 @@ ER.E.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.17
+0.18
 \end_layout
 
 \end_inset
@@ -3811,8 +3661,6 @@ ER.E.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.20
 \end_layout
 
@@ -3822,8 +3670,6 @@ ER.E.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.00
 \end_layout
 
@@ -3833,8 +3679,6 @@ ER.E.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.03
 \end_layout
 
@@ -3844,8 +3688,6 @@ ER.E.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.06
 \end_layout
 
@@ -3868,9 +3710,7 @@ ER.U.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-18.00
+18.81
 \end_layout
 
 \end_inset
@@ -3879,9 +3719,7 @@ ER.U.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-19.10
+20.33
 \end_layout
 
 \end_inset
@@ -3890,9 +3728,7 @@ ER.U.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-20.00
+22.00
 \end_layout
 
 \end_inset
@@ -3901,9 +3737,7 @@ ER.U.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.14
+0.15
 \end_layout
 
 \end_inset
@@ -3912,9 +3746,7 @@ ER.U.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.16
+0.18
 \end_layout
 
 \end_inset
@@ -3923,9 +3755,7 @@ ER.U.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.19
+0.20
 \end_layout
 
 \end_inset
@@ -3934,8 +3764,6 @@ ER.U.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.00
 \end_layout
 
@@ -3945,8 +3773,6 @@ ER.U.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.03
 \end_layout
 
@@ -3956,9 +3782,7 @@ ER.U.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.06
+0.05
 \end_layout
 
 \end_inset
@@ -3980,9 +3804,7 @@ ER.E.RND.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-18.00
+18.81
 \end_layout
 
 \end_inset
@@ -3991,9 +3813,7 @@ ER.E.RND.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-20.36
+20.37
 \end_layout
 
 \end_inset
@@ -4002,8 +3822,6 @@ ER.E.RND.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 22.00
 \end_layout
 
@@ -4013,9 +3831,7 @@ ER.E.RND.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.12
+0.14
 \end_layout
 
 \end_inset
@@ -4024,8 +3840,6 @@ ER.E.RND.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.18
 \end_layout
 
@@ -4035,8 +3849,6 @@ ER.E.RND.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.21
 \end_layout
 
@@ -4046,8 +3858,6 @@ ER.E.RND.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.00
 \end_layout
 
@@ -4057,8 +3867,6 @@ ER.E.RND.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.03
 \end_layout
 
@@ -4068,9 +3876,7 @@ ER.E.RND.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.08
+0.06
 \end_layout
 
 \end_inset
@@ -4093,8 +3899,6 @@ ER.U.RND.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-17.82
 \end_layout
 
 \end_inset
@@ -4104,8 +3908,6 @@ ER.U.RND.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-19.29
 \end_layout
 
 \end_inset
@@ -4115,8 +3917,6 @@ ER.U.RND.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-21.00
 \end_layout
 
 \end_inset
@@ -4126,8 +3926,6 @@ ER.U.RND.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-0.11
 \end_layout
 
 \end_inset
@@ -4137,8 +3935,6 @@ ER.U.RND.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-0.16
 \end_layout
 
 \end_inset
@@ -4148,8 +3944,6 @@ ER.U.RND.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-0.20
 \end_layout
 
 \end_inset
@@ -4159,8 +3953,6 @@ ER.U.RND.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-0.00
 \end_layout
 
 \end_inset
@@ -4170,8 +3962,6 @@ ER.U.RND.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-0.03
 \end_layout
 
 \end_inset
@@ -4181,8 +3971,6 @@ ER.U.RND.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-0.08
 \end_layout
 
 \end_inset
@@ -4204,9 +3992,7 @@ ER.E.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-29.00
+16.00
 \end_layout
 
 \end_inset
@@ -4215,9 +4001,7 @@ ER.E.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-33.23
+17.36
 \end_layout
 
 \end_inset
@@ -4226,9 +4010,7 @@ ER.E.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-43.00
+19.00
 \end_layout
 
 \end_inset
@@ -4237,9 +4019,7 @@ ER.E.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.27
+0.14
 \end_layout
 
 \end_inset
@@ -4248,9 +4028,7 @@ ER.E.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.30
+0.16
 \end_layout
 
 \end_inset
@@ -4259,9 +4037,7 @@ ER.E.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.37
+0.17
 \end_layout
 
 \end_inset
@@ -4270,9 +4046,7 @@ ER.E.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.01
+0.00
 \end_layout
 
 \end_inset
@@ -4281,9 +4055,7 @@ ER.E.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.04
+0.02
 \end_layout
 
 \end_inset
@@ -4292,9 +4064,7 @@ ER.E.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.06
+0.04
 \end_layout
 
 \end_inset
@@ -4316,8 +4086,6 @@ ER.U.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 16.00
 \end_layout
 
@@ -4327,9 +4095,7 @@ ER.U.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-17.37
+17.20
 \end_layout
 
 \end_inset
@@ -4338,8 +4104,6 @@ ER.U.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 18.00
 \end_layout
 
@@ -4349,9 +4113,7 @@ ER.U.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.13
+0.12
 \end_layout
 
 \end_inset
@@ -4360,8 +4122,6 @@ ER.U.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.16
 \end_layout
 
@@ -4371,8 +4131,6 @@ ER.U.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.18
 \end_layout
 
@@ -4382,8 +4140,6 @@ ER.U.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.00
 \end_layout
 
@@ -4393,8 +4149,6 @@ ER.U.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.02
 \end_layout
 
@@ -4404,9 +4158,7 @@ ER.U.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.04
+0.05
 \end_layout
 
 \end_inset
@@ -4428,8 +4180,6 @@ ER.E.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 16.00
 \end_layout
 
@@ -4439,9 +4189,7 @@ ER.E.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-19.34
+17.40
 \end_layout
 
 \end_inset
@@ -4450,9 +4198,7 @@ ER.E.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-21.00
+19.00
 \end_layout
 
 \end_inset
@@ -4461,8 +4207,6 @@ ER.E.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.13
 \end_layout
 
@@ -4472,9 +4216,7 @@ ER.E.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.17
+0.16
 \end_layout
 
 \end_inset
@@ -4483,9 +4225,7 @@ ER.E.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.20
+0.18
 \end_layout
 
 \end_inset
@@ -4494,8 +4234,6 @@ ER.E.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.00
 \end_layout
 
@@ -4505,8 +4243,6 @@ ER.E.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.02
 \end_layout
 
@@ -4516,8 +4252,6 @@ ER.E.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.05
 \end_layout
 
@@ -4540,8 +4274,6 @@ ER.U.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 16.00
 \end_layout
 
@@ -4551,9 +4283,7 @@ ER.U.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-17.40
+17.25
 \end_layout
 
 \end_inset
@@ -4562,8 +4292,6 @@ ER.U.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 19.00
 \end_layout
 
@@ -4573,8 +4301,6 @@ ER.U.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.13
 \end_layout
 
@@ -4584,8 +4310,6 @@ ER.U.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.16
 \end_layout
 
@@ -4595,8 +4319,6 @@ ER.U.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.18
 \end_layout
 
@@ -4606,8 +4328,6 @@ ER.U.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.00
 \end_layout
 
@@ -4617,8 +4337,6 @@ ER.U.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.02
 \end_layout
 
@@ -4628,9 +4346,7 @@ ER.U.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.05
+0.04
 \end_layout
 
 \end_inset
@@ -4652,9 +4368,7 @@ ER.E.MAX.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-16.00
+15.84
 \end_layout
 
 \end_inset
@@ -4663,9 +4377,7 @@ ER.E.MAX.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-19.22
+17.42
 \end_layout
 
 \end_inset
@@ -4674,9 +4386,7 @@ ER.E.MAX.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-21.00
+20.00
 \end_layout
 
 \end_inset
@@ -4685,8 +4395,6 @@ ER.E.MAX.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.12
 \end_layout
 
@@ -4696,9 +4404,7 @@ ER.E.MAX.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.17
+0.16
 \end_layout
 
 \end_inset
@@ -4707,9 +4413,7 @@ ER.E.MAX.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-0.20
+0.18
 \end_layout
 
 \end_inset
@@ -4718,8 +4422,6 @@ ER.E.MAX.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.00
 \end_layout
 
@@ -4729,8 +4431,6 @@ ER.E.MAX.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.02
 \end_layout
 
@@ -4740,8 +4440,6 @@ ER.E.MAX.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
 0.06
 \end_layout
 
@@ -4765,8 +4463,6 @@ ER.U.MAX.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-15.84
 \end_layout
 
 \end_inset
@@ -4776,8 +4472,6 @@ ER.U.MAX.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-17.40
 \end_layout
 
 \end_inset
@@ -4787,8 +4481,6 @@ ER.U.MAX.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-28.00
 \end_layout
 
 \end_inset
@@ -4798,8 +4490,6 @@ ER.U.MAX.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-0.12
 \end_layout
 
 \end_inset
@@ -4809,8 +4499,6 @@ ER.U.MAX.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-0.16
 \end_layout
 
 \end_inset
@@ -4820,8 +4508,6 @@ ER.U.MAX.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-0.25
 \end_layout
 
 \end_inset
@@ -4831,8 +4517,6 @@ ER.U.MAX.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-0.00
 \end_layout
 
 \end_inset
@@ -4842,8 +4526,6 @@ ER.U.MAX.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-0.02
 \end_layout
 
 \end_inset
@@ -4853,8 +4535,6 @@ ER.U.MAX.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-0.05
 \end_layout
 
 \end_inset
@@ -5094,9 +4774,7 @@ ER.E.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-00.000
+0.00
 \end_layout
 
 \end_inset
@@ -5105,9 +4783,7 @@ ER.E.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-559.815
+0.00
 \end_layout
 
 \end_inset
@@ -5116,9 +4792,7 @@ ER.E.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-559.815
+0.00
 \end_layout
 
 \end_inset
@@ -5127,9 +4801,7 @@ ER.E.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-8212536.525
+7.91
 \end_layout
 
 \end_inset
@@ -5138,9 +4810,7 @@ ER.E.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-9730894.424
+9.29
 \end_layout
 
 \end_inset
@@ -5149,9 +4819,7 @@ ER.E.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-9731159.166
+9.14
 \end_layout
 
 \end_inset
@@ -5173,9 +4841,7 @@ ER.U.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-16.000
+0.00
 \end_layout
 
 \end_inset
@@ -5184,9 +4850,7 @@ ER.U.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-578.482
+0.00
 \end_layout
 
 \end_inset
@@ -5195,9 +4859,7 @@ ER.U.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-578.482
+0.00
 \end_layout
 
 \end_inset
@@ -5206,9 +4868,7 @@ ER.U.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-6946963.612
+6.95
 \end_layout
 
 \end_inset
@@ -5217,9 +4877,7 @@ ER.U.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-8442077.254
+8.03
 \end_layout
 
 \end_inset
@@ -5228,9 +4886,7 @@ ER.U.MIN.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-8441312.937
+8.03
 \end_layout
 
 \end_inset
@@ -5252,9 +4908,7 @@ ER.E.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-00.000
+0.00
 \end_layout
 
 \end_inset
@@ -5263,9 +4917,7 @@ ER.E.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-554.289
+0.00
 \end_layout
 
 \end_inset
@@ -5274,9 +4926,7 @@ ER.E.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-554.289
+0.00
 \end_layout
 
 \end_inset
@@ -5285,9 +4935,7 @@ ER.E.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-8003742.641
+8.06
 \end_layout
 
 \end_inset
@@ -5296,9 +4944,7 @@ ER.E.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-9638631.952
+9.41
 \end_layout
 
 \end_inset
@@ -5307,9 +4953,7 @@ ER.E.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-9639249.246
+9.41
 \end_layout
 
 \end_inset
@@ -5331,9 +4975,7 @@ ER.U.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-19.360
+0.00
 \end_layout
 
 \end_inset
@@ -5342,9 +4984,7 @@ ER.U.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-578.771
+0.00
 \end_layout
 
 \end_inset
@@ -5353,9 +4993,7 @@ ER.U.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-578.753
+0.00
 \end_layout
 
 \end_inset
@@ -5364,9 +5002,7 @@ ER.U.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-6603151.712
+7.52
 \end_layout
 
 \end_inset
@@ -5375,9 +5011,7 @@ ER.U.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-7978142.149
+8.79
 \end_layout
 
 \end_inset
@@ -5386,9 +5020,7 @@ ER.U.MIN.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-7978176.341
+8.79
 \end_layout
 
 \end_inset
@@ -5410,9 +5042,7 @@ ER.E.MIN.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-00.680
+0.00
 \end_layout
 
 \end_inset
@@ -5421,9 +5051,7 @@ ER.E.MIN.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-556.968
+0.00
 \end_layout
 
 \end_inset
@@ -5432,9 +5060,7 @@ ER.E.MIN.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-556.970
+0.00
 \end_layout
 
 \end_inset
@@ -5443,9 +5069,7 @@ ER.E.MIN.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-7836018.384
+8.00
 \end_layout
 
 \end_inset
@@ -5454,9 +5078,7 @@ ER.E.MIN.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-9458235.070
+9.33
 \end_layout
 
 \end_inset
@@ -5465,9 +5087,7 @@ ER.E.MIN.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-9458238.513
+9.33
 \end_layout
 
 \end_inset
@@ -5490,8 +5110,6 @@ ER.U.MIN.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-13.332
 \end_layout
 
 \end_inset
@@ -5501,8 +5119,6 @@ ER.U.MIN.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-572.047
 \end_layout
 
 \end_inset
@@ -5512,8 +5128,6 @@ ER.U.MIN.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-571.888
 \end_layout
 
 \end_inset
@@ -5523,8 +5137,6 @@ ER.U.MIN.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-6798009.460
 \end_layout
 
 \end_inset
@@ -5534,8 +5146,6 @@ ER.U.MIN.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-8205517.198
 \end_layout
 
 \end_inset
@@ -5545,8 +5155,6 @@ ER.U.MIN.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-8203161.027
 \end_layout
 
 \end_inset
@@ -5568,9 +5176,7 @@ ER.E.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-00.000
+0.00
 \end_layout
 
 \end_inset
@@ -5579,9 +5185,7 @@ ER.E.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-550.574
+0.00
 \end_layout
 
 \end_inset
@@ -5590,9 +5194,7 @@ ER.E.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-550.574
+0.00
 \end_layout
 
 \end_inset
@@ -5601,9 +5203,7 @@ ER.E.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-14697949.170
+23.84
 \end_layout
 
 \end_inset
@@ -5612,9 +5212,7 @@ ER.E.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-15406022.891
+23.93
 \end_layout
 
 \end_inset
@@ -5623,9 +5221,7 @@ ER.E.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-15413831.753
+24.30
 \end_layout
 
 \end_inset
@@ -5647,9 +5243,7 @@ ER.U.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-24.000
+0.00
 \end_layout
 
 \end_inset
@@ -5658,9 +5252,7 @@ ER.U.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-569.149
+0.00
 \end_layout
 
 \end_inset
@@ -5669,9 +5261,7 @@ ER.U.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-569.241
+0.00
 \end_layout
 
 \end_inset
@@ -5680,9 +5270,7 @@ ER.U.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-20345490.564
+23.75
 \end_layout
 
 \end_inset
@@ -5691,9 +5279,7 @@ ER.U.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-20426408.745
+24.21
 \end_layout
 
 \end_inset
@@ -5702,9 +5288,7 @@ ER.U.RND.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-20426628.601
+24.21
 \end_layout
 
 \end_inset
@@ -5726,9 +5310,7 @@ ER.E.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-00.000
+0.00
 \end_layout
 
 \end_inset
@@ -5737,9 +5319,7 @@ ER.E.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-556.156
+0.00
 \end_layout
 
 \end_inset
@@ -5748,9 +5328,7 @@ ER.E.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-554.271
+0.00
 \end_layout
 
 \end_inset
@@ -5759,9 +5337,7 @@ ER.E.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-20656078.704
+23.10
 \end_layout
 
 \end_inset
@@ -5770,9 +5346,7 @@ ER.E.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-20955332.275
+23.35
 \end_layout
 
 \end_inset
@@ -5781,9 +5355,7 @@ ER.E.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-20887669.571
+23.42
 \end_layout
 
 \end_inset
@@ -5805,9 +5377,7 @@ ER.U.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-12.800
+0.00
 \end_layout
 
 \end_inset
@@ -5816,9 +5386,7 @@ ER.U.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-569.241
+0.00
 \end_layout
 
 \end_inset
@@ -5827,9 +5395,7 @@ ER.U.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-569.241
+0.00
 \end_layout
 
 \end_inset
@@ -5838,9 +5404,7 @@ ER.U.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-21417605.836
+22.77
 \end_layout
 
 \end_inset
@@ -5849,9 +5413,7 @@ ER.U.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-21657405.147
+23.08
 \end_layout
 
 \end_inset
@@ -5860,9 +5422,7 @@ ER.U.RND.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-21658066.919
+23.08
 \end_layout
 
 \end_inset
@@ -5884,9 +5444,7 @@ ER.E.RND.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-00.000
+0.00
 \end_layout
 
 \end_inset
@@ -5895,9 +5453,7 @@ ER.E.RND.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-554.303
+0.00
 \end_layout
 
 \end_inset
@@ -5906,9 +5462,7 @@ ER.E.RND.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-554.309
+0.00
 \end_layout
 
 \end_inset
@@ -5917,9 +5471,7 @@ ER.E.RND.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-21244226.714
+23.72
 \end_layout
 
 \end_inset
@@ -5928,9 +5480,7 @@ ER.E.RND.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-21531947.153
+24.02
 \end_layout
 
 \end_inset
@@ -5939,9 +5489,7 @@ ER.E.RND.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-21531827.331
+24.02
 \end_layout
 
 \end_inset
@@ -5964,8 +5512,6 @@ ER.U.RND.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-13.864
 \end_layout
 
 \end_inset
@@ -5975,8 +5521,6 @@ ER.U.RND.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-570.644
 \end_layout
 
 \end_inset
@@ -5986,8 +5530,6 @@ ER.U.RND.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-570.338
 \end_layout
 
 \end_inset
@@ -5997,8 +5539,6 @@ ER.U.RND.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-20546677.218
 \end_layout
 
 \end_inset
@@ -6008,8 +5548,6 @@ ER.U.RND.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-20825172.682
 \end_layout
 
 \end_inset
@@ -6019,8 +5557,6 @@ ER.U.RND.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-20819536.398
 \end_layout
 
 \end_inset
@@ -6042,9 +5578,7 @@ ER.E.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-00.000
+0.00
 \end_layout
 
 \end_inset
@@ -6053,9 +5587,7 @@ ER.E.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-550.574
+0.00
 \end_layout
 
 \end_inset
@@ -6064,9 +5596,7 @@ ER.E.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-559.908
+0.00
 \end_layout
 
 \end_inset
@@ -6075,9 +5605,7 @@ ER.E.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-97205814.999
+98.05
 \end_layout
 
 \end_inset
@@ -6086,9 +5614,7 @@ ER.E.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-97095118.826
+97.85
 \end_layout
 
 \end_inset
@@ -6097,9 +5623,7 @@ ER.E.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-98696055.257
+97.85
 \end_layout
 
 \end_inset
@@ -6121,9 +5645,7 @@ ER.U.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-16.000
+0.00
 \end_layout
 
 \end_inset
@@ -6132,9 +5654,7 @@ ER.U.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-578.667
+0.00
 \end_layout
 
 \end_inset
@@ -6143,9 +5663,7 @@ ER.U.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-588.000
+0.00
 \end_layout
 
 \end_inset
@@ -6154,9 +5672,7 @@ ER.U.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-98045255.067
+98.05
 \end_layout
 
 \end_inset
@@ -6165,9 +5681,7 @@ ER.U.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-99462406.933
+97.85
 \end_layout
 
 \end_inset
@@ -6176,9 +5690,7 @@ ER.U.MAX.U
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-99462406.933
+99.46
 \end_layout
 
 \end_inset
@@ -6200,9 +5712,7 @@ ER.E.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-00.000
+0.00
 \end_layout
 
 \end_inset
@@ -6211,9 +5721,7 @@ ER.E.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-554.345
+0.00
 \end_layout
 
 \end_inset
@@ -6222,9 +5730,7 @@ ER.E.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-556.230
+0.00
 \end_layout
 
 \end_inset
@@ -6233,9 +5739,7 @@ ER.E.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-98030600.998
+98.05
 \end_layout
 
 \end_inset
@@ -6244,9 +5748,7 @@ ER.E.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-98483769.301
+98.50
 \end_layout
 
 \end_inset
@@ -6255,9 +5757,7 @@ ER.E.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-98804584.513
+98.50
 \end_layout
 
 \end_inset
@@ -6279,9 +5779,7 @@ ER.U.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-17.600
+0.00
 \end_layout
 
 \end_inset
@@ -6290,9 +5788,7 @@ ER.U.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-576.726
+0.00
 \end_layout
 
 \end_inset
@@ -6301,9 +5797,7 @@ ER.U.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-578.611
+0.00
 \end_layout
 
 \end_inset
@@ -6312,9 +5806,7 @@ ER.U.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-98034715.287
+98.05
 \end_layout
 
 \end_inset
@@ -6323,9 +5815,7 @@ ER.U.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-98807950.140
+98.82
 \end_layout
 
 \end_inset
@@ -6334,9 +5824,7 @@ ER.U.MAX.K
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-98807989.849
+98.82
 \end_layout
 
 \end_inset
@@ -6358,9 +5846,7 @@ ER.E.MAX.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-00.000
+0.00
 \end_layout
 
 \end_inset
@@ -6369,9 +5855,7 @@ ER.E.MAX.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-556.028
+0.00
 \end_layout
 
 \end_inset
@@ -6380,9 +5864,7 @@ ER.E.MAX.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-556.025
+0.00
 \end_layout
 
 \end_inset
@@ -6391,9 +5873,7 @@ ER.E.MAX.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-98031969.500
+98.05
 \end_layout
 
 \end_inset
@@ -6402,9 +5882,7 @@ ER.E.MAX.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-98672125.385
+98.71
 \end_layout
 
 \end_inset
@@ -6413,9 +5891,7 @@ ER.E.MAX.L
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\size footnotesize
-98671854.401
+98.71
 \end_layout
 
 \end_inset
@@ -6438,8 +5914,6 @@ ER.U.MAX.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-13.597
 \end_layout
 
 \end_inset
@@ -6449,8 +5923,6 @@ ER.U.MAX.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-571.738
 \end_layout
 
 \end_inset
@@ -6460,8 +5932,6 @@ ER.U.MAX.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-572.052
 \end_layout
 
 \end_inset
@@ -6471,8 +5941,6 @@ ER.U.MAX.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-98031703.555
 \end_layout
 
 \end_inset
@@ -6482,8 +5950,6 @@ ER.U.MAX.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-98672375.410
 \end_layout
 
 \end_inset
@@ -6493,8 +5959,6 @@ ER.U.MAX.L
 
 \begin_layout Plain Layout
 
-\size footnotesize
-98698322.324
 \end_layout
 
 \end_inset
@@ -6525,7 +5989,7 @@ UDP / Ethernet Vergleich: RX- / TX-Bitrate pro Netzwerkinterface
 \end_layout
 
 \begin_layout Paragraph
-Fazit
+Interpretation: Auswahl der signifikanten Resultat-Parameter
 \end_layout
 
 \begin_layout Standard
@@ -6537,6 +6001,14 @@ Fazit
 \end_inset
 
 Lorem Ipsum
+\end_layout
+
+\begin_layout Subparagraph
+Fazit
+\end_layout
+
+\begin_layout Standard
+Dolor sit amet
 \end_layout
 
 \begin_layout Subsubsection

@@ -243,8 +243,8 @@ def sendpacketout( packet, data ):
                 if int(cursor)%frametogen==0:
                     cursor = 0
 
-                if int(head[cursor]) > mtu:
-                    head[cursor] = mtu
+                if int(head[cursor]) > (mtu+ETH_OVERHEAD):
+                    head[cursor] = (mtu+ETH_OVERHEAD)
                 packettosend = Raw(packet[0:calcsizeofrandompayload(head[cursor])])
                 packettosendlength = len(packettosend)
                 bytecount = sendpacketonsocket(packettosend)
