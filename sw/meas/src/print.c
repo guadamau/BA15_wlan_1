@@ -29,14 +29,14 @@ void print_one_interval( FILE* fp, stats_res_t* results )
            "*******************************************************************************************\n\n"
            " Process specific statistics, interval no: %5d\n\n"
            " PID:  %d \n"
-           " Time: elapsed %3.2lfs, user %3.2lfs, sys %3.2lfs, overhead %dus\n"
+           " Time: elapsed %5.3lfs, user %3.2lfs, sys %3.2lfs, overhead %dus\n"
            " CPU:  cpu workload %3.2lf%%\n\n\n"
            " Machine wide network stats for PRP involved interfaces, not process specific:\n\n"
            " Interface       RX Bytes       TX Bytes      RX Bitrate [Mbit/s]      TX Bitrate [Mbit/s]\n"
            " =========================================================================================\n"
-           " prp (%.4s)  %12lld   %12lld                   %6.2lf                   %6.2lf\n"
-           " if0 (%.4s)  %12lld   %12lld                   %6.2lf                   %6.2lf\n"
-           " if1 (%.4s)  %12lld   %12lld                   %6.2lf                   %6.2lf\n"
+           " prp (%.4s)  %12lld   %12lld                 %8.2lf                 %8.2lf\n"
+           " if0 (%.4s)  %12lld   %12lld                 %8.2lf                 %8.2lf\n"
+           " if1 (%.4s)  %12lld   %12lld                 %8.2lf                 %8.2lf\n"
            " =========================================================================================\n\n"
            "*******************************************************************************************\n",
            results->interval_no,
@@ -66,77 +66,77 @@ void print_one_interval( FILE* fp, stats_res_t* results )
 
 void print_overall_stats( FILE* fp, stats_res_overall_t* overall_stats )
 {
-  uint16_t int_dur = overall_stats->interval_duration;
+  uint32_t int_dur = overall_stats->interval_duration;
 
   /* too lazy to write "overall_stats" every time... */
   stats_res_overall_t* os = overall_stats;
   
   fprintf( fp, 
-           "*******************************************************************************************\n\n"
+           "*************************************************************************************************\n\n"
            " Overall statistics of Process with PID: %6d   |   Total elapsed time [s]:   %10.2lf\n"
            "                                                  |   Total overhead time [us]: %10d\n"
-           " Total no of intervals:         %4d\n"
-           " Duration of each interval [s]: %4d\n\n"
-           " -----------------------------------------------------------------------------------------\n"
+           " Total no of intervals:         %9d\n"
+           " Duration of each interval [s]: %9.3f\n\n"
+           " -----------------------------------------------------------------------------------------------\n"
            " Elapsed time [s]:   Average: %7.2lf\n"
-           " (per interval)      Min:     %7.2lf at interval: [%4ds, %4ds]\n"
-           "                     Max:     %7.2lf at interval: [%4ds, %4ds]\n"
-           " -----------------------------------------------------------------------------------------\n"
+           " (per interval)      Min:     %7.2lf at interval: [%9.3fs, %9.3fs]\n"
+           "                     Max:     %7.2lf at interval: [%9.3fs, %9.3fs]\n"
+           " -----------------------------------------------------------------------------------------------\n"
            " Overhead time [us]: Average: %7d\n"
-           " (per interval)      Min:     %7d at interval: [%4ds, %4ds]\n"
-           "                     Max:     %7d at interval: [%4ds, %4ds]\n"
-           " -----------------------------------------------------------------------------------------\n"
+           " (per interval)      Min:     %7d at interval: [%9.3fs, %9.3fs]\n"
+           "                     Max:     %7d at interval: [%9.3fs, %9.3fs]\n"
+           " -----------------------------------------------------------------------------------------------\n"
            " Usertime [s]:       Average: %7.2lf\n"
-           "                     Min:     %7.2lf at interval: [%4ds, %4ds]\n"
-           "                     Max:     %7.2lf at interval: [%4ds, %4ds]\n"
-           " -----------------------------------------------------------------------------------------\n"
+           "                     Min:     %7.2lf at interval: [%9.3fs, %9.3fs]\n"
+           "                     Max:     %7.2lf at interval: [%9.3fs, %9.3fs]\n"
+           " -----------------------------------------------------------------------------------------------\n"
            " Systemtime [s]:     Average: %7.2lf\n"
-           "                     Min:     %7.2lf at interval: [%4ds, %4ds]\n"
-           "                     Max:     %7.2lf at interval: [%4ds, %4ds]\n"
-           " -----------------------------------------------------------------------------------------\n"
+           "                     Min:     %7.2lf at interval: [%9.3fs, %9.3fs]\n"
+           "                     Max:     %7.2lf at interval: [%9.3fs, %9.3fs]\n"
+           " -----------------------------------------------------------------------------------------------\n"
            " CPU workload [%%]:   Average: %7.2lf\n"
-           "                     Min:     %7.2lf at interval: [%4ds, %4ds]\n"
-           "                     Max:     %7.2lf at interval: [%4ds, %4ds]\n"
-           " -----------------------------------------------------------------------------------------\n"
+           "                     Min:     %7.2lf at interval: [%9.3fs, %9.3fs]\n"
+           "                     Max:     %7.2lf at interval: [%9.3fs, %9.3fs]\n"
+           " -----------------------------------------------------------------------------------------------\n"
            "\n\n\n"
            " Machine wide statistics of the network interfaces: \n"
            " Following statistics are bound to a specific NIC not to the PID mentioned above.\n"
-           " =========================================================================================\n\n"
+           " ===============================================================================================\n\n"
            " Statistics for virtual PRP interface with label: %.4s\n"
-           " -----------------------------------------------------------------------------------------\n"
-           "             RX [Mbit/s]    | at interval     ||| TX [Mbit/s]    | at interval\n"
-           "            -----------------------------------------------------------------------\n"
-           " Average:            %6.2lf |             --- |||         %6.2lf |             ---\n"
-           " Min:                %6.2lf |  [%4ds, %4ds] |||         %6.2lf |  [%4ds, %4ds]\n"
-           " Max:                %6.2lf |  [%4ds, %4ds] |||         %6.2lf |  [%4ds, %4ds]\n"
-           "            -----------------------------------------------------------------------\n\n"
+           " -----------------------------------------------------------------------------------------------\n"
+           "             RX [Mbit/s] | at interval              ||| TX [Mbit/s] | at interval\n"
+           "            ------------------------------------------------------------------------------------\n"
+           " Average:       %8.2lf |                      --- |||    %8.2lf |                      ---\n"
+           " Min:           %8.2lf | [%9.3fs, %9.3fs] |||    %8.2lf | [%9.3fs, %9.3fs]\n"
+           " Max:           %8.2lf | [%9.3fs, %9.3fs] |||    %8.2lf | [%9.3fs, %9.3fs]\n"
+           "            ------------------------------------------------------------------------------------\n\n"
            " Total received bytes:    %13lld\n"
            " Total transmitted bytes: %13lld\n\n"
-           " -----------------------------------------------------------------------------------------\n\n"
+           " -----------------------------------------------------------------------------------------------\n\n"
            " Statistics for first PRP involved physical interface with label: %.4s\n"
-           " -----------------------------------------------------------------------------------------\n"
-           "             RX [Mbit/s]    | at interval     ||| TX [Mbit/s]    | at interval\n"
-           "            -----------------------------------------------------------------------\n"
-           " Average:            %6.2lf |             --- |||         %6.2lf |             ---\n"
-           " Min:                %6.2lf |  [%4ds, %4ds] |||         %6.2lf |  [%4ds, %4ds]\n"
-           " Max:                %6.2lf |  [%4ds, %4ds] |||         %6.2lf |  [%4ds, %4ds]\n"
-           "            -----------------------------------------------------------------------\n\n"
+           " -----------------------------------------------------------------------------------------------\n"
+           "             RX [Mbit/s] | at interval              ||| TX [Mbit/s] | at interval\n"
+           "            ------------------------------------------------------------------------------------\n"
+           " Average:       %8.2lf |                      --- |||    %8.2lf |                      ---\n"
+           " Min:           %8.2lf | [%9.3fs, %9.3fs] |||    %8.2lf | [%9.3fs, %9.3fs]\n"
+           " Max:           %8.2lf | [%9.3fs, %9.3fs] |||    %8.2lf | [%9.3fs, %9.3fs]\n"
+           "            ------------------------------------------------------------------------------------\n\n"
            " Total received bytes:    %13lld\n"
            " Total transmitted bytes: %13lld\n\n"
-           " -----------------------------------------------------------------------------------------\n\n"
+           " -----------------------------------------------------------------------------------------------\n\n"
            " Statistics for second PRP involved physical interface with label: %.4s\n"
-           " -----------------------------------------------------------------------------------------\n"
-           "             RX [Mbit/s]    | at interval     ||| TX [Mbit/s]    | at interval\n"
-           "            -----------------------------------------------------------------------\n"
-           " Average:            %6.2lf |             --- |||         %6.2lf |             ---\n"
-           " Min:                %6.2lf |  [%4ds, %4ds] |||         %6.2lf |  [%4ds, %4ds]\n"
-           " Max:                %6.2lf |  [%4ds, %4ds] |||         %6.2lf |  [%4ds, %4ds]\n"
-           "            -----------------------------------------------------------------------\n\n"
+           " -----------------------------------------------------------------------------------------------\n"
+           "             RX [Mbit/s] | at interval              ||| TX [Mbit/s] | at interval\n"
+           "            ------------------------------------------------------------------------------------\n"
+           " Average:       %8.2lf |                      --- |||    %8.2lf |                      ---\n"
+           " Min:           %8.2lf | [%9.3fs, %9.3fs] |||    %8.2lf | [%9.3fs, %9.3fs]\n"
+           " Max:           %8.2lf | [%9.3fs, %9.3fs] |||    %8.2lf | [%9.3fs, %9.3fs]\n"
+           "            ------------------------------------------------------------------------------------\n\n"
            " Total received bytes:    %13lld\n"
            " Total transmitted bytes: %13lld\n\n"
-           " -----------------------------------------------------------------------------------------\n\n"
-           " =========================================================================================\n\n"
-           "*******************************************************************************************\n"
+           " -----------------------------------------------------------------------------------------------\n\n"
+           " ===============================================================================================\n\n"
+           "*************************************************************************************************\n"
 
            ,
            
@@ -145,62 +145,62 @@ void print_overall_stats( FILE* fp, stats_res_overall_t* overall_stats )
            os->etime_sec_total,
            os->otime_usec_total,
            os->no_intervals,
-           os->interval_duration,
+           ms_to_s( os->interval_duration ),
            
            /* elapsed time per interval */
            os->etime_sec_avg,
            
            os->etime_sec_min,
-           os->etime_sec_min_interval * int_dur,
-           os->etime_sec_min_interval * int_dur + int_dur,
+           ms_to_s( ( os->etime_sec_min_interval * int_dur ) ),
+           ms_to_s( ( os->etime_sec_min_interval * int_dur + int_dur ) ),
 
            os->etime_sec_max,
-           os->etime_sec_max_interval * int_dur,
-           os->etime_sec_max_interval * int_dur + int_dur,
+           ms_to_s( ( os->etime_sec_max_interval * int_dur ) ),
+           ms_to_s( ( os->etime_sec_max_interval * int_dur + int_dur ) ),
            
            /* overhead time per interval */
            ( uint32_t )os->otime_usec_avg,
            
            os->otime_usec_min,
-           os->otime_usec_min_interval * int_dur,
-           os->otime_usec_min_interval * int_dur + int_dur,
+           ms_to_s( ( os->otime_usec_min_interval * int_dur ) ),
+           ms_to_s( ( os->otime_usec_min_interval * int_dur + int_dur ) ),
 
            os->otime_usec_max,
-           os->otime_usec_max_interval * int_dur,
-           os->otime_usec_max_interval * int_dur + int_dur,
+           ms_to_s( ( os->otime_usec_max_interval * int_dur ) ),
+           ms_to_s( ( os->otime_usec_max_interval * int_dur + int_dur ) ),
            
            /* usertime */
            os->utime_sec_avg,
            
            os->utime_sec_min,
-           os->utime_sec_min_interval * int_dur,
-           os->utime_sec_min_interval * int_dur + int_dur,
+           ms_to_s( ( os->utime_sec_min_interval * int_dur ) ),
+           ms_to_s( ( os->utime_sec_min_interval * int_dur + int_dur ) ),
 
            os->utime_sec_max,
-           os->utime_sec_max_interval * int_dur,
-           os->utime_sec_max_interval * int_dur + int_dur,
+           ms_to_s( ( os->utime_sec_max_interval * int_dur ) ),
+           ms_to_s( ( os->utime_sec_max_interval * int_dur + int_dur ) ),
            
            /* systemtime */
            os->stime_sec_avg,
            
            os->stime_sec_min,
-           os->stime_sec_min_interval * int_dur,
-           os->stime_sec_min_interval * int_dur + int_dur,
+           ms_to_s( ( os->stime_sec_min_interval * int_dur ) ),
+           ms_to_s( ( os->stime_sec_min_interval * int_dur + int_dur ) ),
 
            os->stime_sec_max,
-           os->stime_sec_max_interval * int_dur,
-           os->stime_sec_max_interval * int_dur + int_dur,
+           ms_to_s( ( os->stime_sec_max_interval * int_dur ) ),
+           ms_to_s( ( os->stime_sec_max_interval * int_dur + int_dur ) ),
 
            /* cpu percentage */
            os->cpu_percent_avg,
            
            os->cpu_percent_min,
-           os->cpu_percent_min_interval * int_dur,
-           os->cpu_percent_min_interval * int_dur + int_dur,
+           ms_to_s( ( os->cpu_percent_min_interval * int_dur ) ),
+           ms_to_s( ( os->cpu_percent_min_interval * int_dur + int_dur ) ),
 
            os->cpu_percent_max,
-           os->cpu_percent_max_interval * int_dur,
-           os->cpu_percent_max_interval * int_dur + int_dur,
+           ms_to_s( ( os->cpu_percent_max_interval * int_dur ) ),
+           ms_to_s( ( os->cpu_percent_max_interval * int_dur + int_dur ) ),
 
            /* prp interface */
            os->if_name_prp,
@@ -209,20 +209,20 @@ void print_overall_stats( FILE* fp, stats_res_overall_t* overall_stats )
            bit_s_to_mbit_s( os->tx_bitrate_prp_avg ),
 
            bit_s_to_mbit_s( os->rx_bitrate_prp_min ),
-           os->rx_bitrate_prp_min_interval * int_dur,
-           os->rx_bitrate_prp_min_interval * int_dur + int_dur,
+           ms_to_s( ( os->rx_bitrate_prp_min_interval * int_dur ) ),
+           ms_to_s( ( os->rx_bitrate_prp_min_interval * int_dur + int_dur ) ),
            
            bit_s_to_mbit_s( os->tx_bitrate_prp_min ),
-           os->tx_bitrate_prp_min_interval * int_dur,
-           os->tx_bitrate_prp_min_interval * int_dur + int_dur,
+           ms_to_s( ( os->tx_bitrate_prp_min_interval * int_dur ) ),
+           ms_to_s( ( os->tx_bitrate_prp_min_interval * int_dur + int_dur ) ),
            
            bit_s_to_mbit_s( os->rx_bitrate_prp_max ),
-           os->rx_bitrate_prp_max_interval * int_dur,
-           os->rx_bitrate_prp_max_interval * int_dur + int_dur,
+           ms_to_s( ( os->rx_bitrate_prp_max_interval * int_dur ) ),
+           ms_to_s( ( os->rx_bitrate_prp_max_interval * int_dur + int_dur ) ),
            
            bit_s_to_mbit_s( os->tx_bitrate_prp_max ),
-           os->tx_bitrate_prp_max_interval * int_dur,
-           os->tx_bitrate_prp_max_interval * int_dur + int_dur,
+           ms_to_s( ( os->tx_bitrate_prp_max_interval * int_dur ) ),
+           ms_to_s( ( os->tx_bitrate_prp_max_interval * int_dur + int_dur ) ),
 
            os->rx_bytes_prp_total,
            os->tx_bytes_prp_total,
@@ -234,20 +234,20 @@ void print_overall_stats( FILE* fp, stats_res_overall_t* overall_stats )
            bit_s_to_mbit_s( os->tx_bitrate_if0_avg ),
 
            bit_s_to_mbit_s( os->rx_bitrate_if0_min ),
-           os->rx_bitrate_if0_min_interval * int_dur,
-           os->rx_bitrate_if0_min_interval * int_dur + int_dur,
+           ms_to_s( ( os->rx_bitrate_if0_min_interval * int_dur ) ),
+           ms_to_s( ( os->rx_bitrate_if0_min_interval * int_dur + int_dur ) ),
            
            bit_s_to_mbit_s( os->tx_bitrate_if0_min ),
-           os->tx_bitrate_if0_min_interval * int_dur,
-           os->tx_bitrate_if0_min_interval * int_dur + int_dur,
+           ms_to_s( ( os->tx_bitrate_if0_min_interval * int_dur ) ),
+           ms_to_s( ( os->tx_bitrate_if0_min_interval * int_dur + int_dur ) ),
            
            bit_s_to_mbit_s( os->rx_bitrate_if0_max ),
-           os->rx_bitrate_if0_max_interval * int_dur,
-           os->rx_bitrate_if0_max_interval * int_dur + int_dur,
+           ms_to_s( ( os->rx_bitrate_if0_max_interval * int_dur ) ),
+           ms_to_s( ( os->rx_bitrate_if0_max_interval * int_dur + int_dur ) ),
            
            bit_s_to_mbit_s( os->tx_bitrate_if0_max ),
-           os->tx_bitrate_if0_max_interval * int_dur,
-           os->tx_bitrate_if0_max_interval * int_dur + int_dur,
+           ms_to_s( ( os->tx_bitrate_if0_max_interval * int_dur ) ),
+           ms_to_s( ( os->tx_bitrate_if0_max_interval * int_dur + int_dur ) ),
 
            os->rx_bytes_if0_total,
            os->tx_bytes_if0_total,
@@ -259,20 +259,20 @@ void print_overall_stats( FILE* fp, stats_res_overall_t* overall_stats )
            bit_s_to_mbit_s( os->tx_bitrate_if1_avg ),
 
            bit_s_to_mbit_s( os->rx_bitrate_if1_min ),
-           os->rx_bitrate_if1_min_interval * int_dur,
-           os->rx_bitrate_if1_min_interval * int_dur + int_dur,
+           ms_to_s( ( os->rx_bitrate_if1_min_interval * int_dur ) ),
+           ms_to_s( ( os->rx_bitrate_if1_min_interval * int_dur + int_dur ) ),
            
            bit_s_to_mbit_s( os->tx_bitrate_if1_min ),
-           os->tx_bitrate_if1_min_interval * int_dur,
-           os->tx_bitrate_if1_min_interval * int_dur + int_dur,
+           ms_to_s( ( os->tx_bitrate_if1_min_interval * int_dur ) ),
+           ms_to_s( ( os->tx_bitrate_if1_min_interval * int_dur + int_dur ) ),
            
            bit_s_to_mbit_s( os->rx_bitrate_if1_max ),
-           os->rx_bitrate_if1_max_interval * int_dur,
-           os->rx_bitrate_if1_max_interval * int_dur + int_dur,
+           ms_to_s( ( os->rx_bitrate_if1_max_interval * int_dur ) ),
+           ms_to_s( ( os->rx_bitrate_if1_max_interval * int_dur + int_dur ) ),
            
            bit_s_to_mbit_s( os->tx_bitrate_if1_max ),
-           os->tx_bitrate_if1_max_interval * int_dur,
-           os->tx_bitrate_if1_max_interval * int_dur + int_dur,
+           ms_to_s( ( os->tx_bitrate_if1_max_interval * int_dur ) ),
+           ms_to_s( ( os->tx_bitrate_if1_max_interval * int_dur + int_dur ) ),
 
            os->rx_bytes_if1_total,
            os->tx_bytes_if1_total

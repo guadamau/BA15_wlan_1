@@ -47,7 +47,8 @@ Optional parameters : -n -v -P
 
 -i      INTERVAL        Defines the interval time 
                         of one measurement interval in seconds.
-                        No floating point values allowed.
+                        Also floating point values >= 0.010 
+                        are allowed.
 
 -n      NO OF INTERVALS Defines how many times a measurement
                         interval should be repeated.

@@ -26,7 +26,7 @@
    Purpose:    Monitor system- and user-time and further parameters 
                of a given process by its PID over a specified timespan.
                
-   Desc:       We have a timer resolution of 10 ms here.
+   Desc:       We have use a timer resolution of 1 us here.
                To determine the resolution of the times-function,
                use "sysconf( _SC_CLK_TCK );".
                It will return the amount of clock ticks per second.
@@ -58,8 +58,8 @@
 
 #define DEF_STORE_PATH "/tmp"
 
-#define MIN_TIME_VAL      1
-#define MAX_TIME_VAL   7200
+#define MIN_TIME_VAL          10   /* in milliseconds */
+#define MAX_TIME_VAL   7200*1000   /* in milliseconds */
 
 #define README_FILE    "README"
 
@@ -119,7 +119,7 @@ int main( int argc, char* argv[] )
   meas_buffer_meta_t buffers_metadata;
   meas_buffer_t** buffers = NULL;
 
-  ttimer_t timer;
+  gtimer_t timer;
   gtimer_t overhead_timer;
 
   const char* errstr;
@@ -127,6 +127,8 @@ int main( int argc, char* argv[] )
   char proc_loc[ 16 ] = { '\0' };
 
   uint32_t i;
+
+  float interval_flt;
 
   args.pid             =  0;
   args.interval        = -1;
@@ -172,10 +174,20 @@ int main( int argc, char* argv[] )
       case 'i' :
       {
         check_opt_str_len( optarg );
-        args.interval = strtonum( optarg, MIN_TIME_VAL, MAX_TIME_VAL, &errstr );
-        if( errstr )
+        interval_flt = strtof( optarg, NULL );
+        
+        if( errno )
         {
-          errx( 1, "specified timespan is %s: %s\n", errstr, optarg );
+          perror( "Failed to parse the interval duration. Exiting.\n" );
+          print_usage();
+          exit( EXIT_FAILURE );
+        }
+
+        args.interval = ( ( int32_t )( interval_flt * 1000 ) );
+
+        if( args.interval < MIN_TIME_VAL || args.interval > MAX_TIME_VAL )
+        {
+          perror( "Please choose a valid interval duration. Exiting. \n" );
           print_usage();
           exit( EXIT_FAILURE );
         }
@@ -285,19 +297,19 @@ int main( int argc, char* argv[] )
   {
     /* ============================================================== */
     
-    startTTimer( timer );
+    startGTimer( timer );
     
     startGTimer( overhead_timer );
     read_to_meas_buffers( buffers, buffers_metadata.unique_paths_count, i );
     stopGTimer( overhead_timer );
 
-    usleep( ( args.interval * 1000 * 1000 ) 
+    usleep( ( args.interval * 1000 ) 
             - getWallGUTime( overhead_timer ) );
     
-    stopTTimer( timer );
+    stopGTimer( timer );
 
     ( time_values + i )->otime_usec = getWallGUTime( overhead_timer );
-    ( time_values + i )->etime_sec = getWallTTime( timer );
+    ( time_values + i )->etime_sec = getWallGTime( timer );
 
     /* ============================================================== */
   }

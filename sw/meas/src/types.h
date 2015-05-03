@@ -151,7 +151,7 @@ typedef struct
 
   pid_t      pid;
 
-  uint16_t   interval_duration;
+  uint32_t   interval_duration;
 
   uint32_t   no_intervals;
 

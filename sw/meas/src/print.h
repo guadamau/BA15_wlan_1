@@ -34,6 +34,7 @@
 #include "types.h"
 
 #define bit_s_to_mbit_s( X )   ( X / ( double )( 1000 * 1000 ) )
+#define ms_to_s( X )           ( ( float )X / ( float )1000 )
 
 /* function prototypes */
 void output_results_single( void* output_loc, stats_res_t* results, char* file_prefix );

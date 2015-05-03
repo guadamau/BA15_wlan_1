@@ -112,7 +112,7 @@ stats_res_t* evaluate_interval_data( stats_t* start_data, stats_t* end_data, uin
 
   /* machine wide network data, not process specific */
 
-  if( results->etime_sec > 0.0 )
+  if( results->etime_sec > 0.000000 )
   {
 
     /* 
