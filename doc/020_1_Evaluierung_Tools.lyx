@@ -7148,7 +7148,8 @@ Die Werte von bwm-ng / meas konnten auf die Werte von iperf3 über folgende
 \begin_layout Standard
 Als Annahme zu diesem Rechnungsweg diente, dass iperf3 lediglich die versendete
  Payload betrachtet, bzw.
- dessen Werte auf Layer 4 anstelle Layer 2 bezieht.
+ dessen Werte auf Layer 4 anstelle Layer 2 bezieht und die Datenmenge fälschlich
+erweise mit Faktor 1024 berechnet.
 \end_layout
 
 \begin_layout Standard

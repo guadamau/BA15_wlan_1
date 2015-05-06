@@ -23,7 +23,7 @@ for i in $(find $1 | sort); do
     INT_FILE=$i
     DIR_NAME=$(dirname $i)
     DIR_OUT=$(echo ${DIR_NAME}/out/${INT_FILE_NAME})
-    awk '{printf("%010f %s\n", NR/100, $0)}' ${INT_FILE} > "${INT_FILE}.awk"
+    awk '{printf("%010f %s\n", NR/10, $0)}' ${INT_FILE} > "${INT_FILE}.awk"
     rm ${INT_FILE}
     mv "${INT_FILE}.awk" ${INT_FILE}
 done
