@@ -73,9 +73,14 @@ All parameters except -m, -n, -P, -S are mandatory
                     TCP Minimal size: Header (Ethernet + IP + TCP = 66)
                                       + 1 Byte Data (can't send 0 Bytes)
         MAX         Load will only contain frames with maximum size (MTU).
-        RANDOM      Load will contain frames of random sizes.
-                    Size-values are taken from textfile so that the load 
-                    can be reproduced. The values are normally distributed
+        CUSTOM      Load will contain frames of sizes loaded line by line
+                    from the file "custom_framesizes.txt" in the same
+                    directory as shck. If there are more frames / packets
+                    to send than lines in the file it will loop through
+                    the file.
+                    Sizes bigger than the specified MTU (-m Parameter)
+                    will be shrinked to the size of the previously 
+                    defined MTU.
 
 -S	    SERVERMODE  Start shck in Server-Mode an the target to recieve UDP
         		    and TCP-packets

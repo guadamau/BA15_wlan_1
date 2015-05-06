@@ -440,7 +440,7 @@ MAX
 \begin_inset Quotes fld
 \end_inset
 
-RANDOM
+CUSTOM
 \begin_inset Quotes frd
 \end_inset
 
@@ -467,15 +467,19 @@ MAX
 \begin_inset Quotes fld
 \end_inset
 
-RANDOM
+CUSTOM
 \begin_inset Quotes frd
 \end_inset
 
- als Argument erhalten die Frames / Pakete jeweils eine zufällige Grösse.
- Diese Grössen werden aus einer Datei ausgelesen, die mit Zufallswerten
- zwischen 64 und 1500 generiert wurde.
- So kann eine zufällige Netzwerklast generiert werden, die dennoch reproduzierba
-r ist.
+ als Argument erhalten die Frames / Pakete jeweils eine Grösse aus einer
+ Liste, die Zeile für Zeile eingelesen wird.
+ Diese Grössen werden aus einer Datei ausgelesen, die sich im selben Ordner
+ wie shck befindet.
+ Dabei werden automatisch Grössen, die grösser als die angegebene MTU (-m
+ Parameter) sind, auf die maximal mögliche Grösse gesenkt.
+ Müssen mehr Frames / Pakete als Zeilen in der Liste versendet werden, wird
+ die Liste wieder von dessen Beginn aus abgearbeitet, sobald shck das Ende
+ der Liste erreicht.
 \end_layout
 
 \end_inset

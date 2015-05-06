@@ -169,6 +169,12 @@ def calcsizeofrandompayload(current_randomsize):
     else:
         return int(size)
 
+def file_len(fname):
+    with open("custom_framesizes.txt", "r") as f:
+        for i, l in enumerate(f):
+            pass
+    return i + 1
+
 def generate_package( data ):
     """returns the final content that needs to be send by the sockets.
 
@@ -202,7 +208,7 @@ def generate_package( data ):
 def sendpacketout( packet, data ):
     """Creates the needed socket and sends the prepared data x times (specified per -n parameter) over it
 
-    For the RANDOM-sizetype, the function reads a prepared textfile which contains a specific
+    For the CUSTOM-sizetype, the function reads a prepared textfile which contains a specific
     size in bytes per line, prepares and sends the frame/packet per line.
     """
     try:
@@ -223,7 +229,7 @@ def sendpacketout( packet, data ):
         ss = StreamSocket(s)
         sendpacketonsocket = ss.send
     
-        if sizetype == 'RANDOM':
+        if sizetype == 'CUSTOM':
             global payload_size
             count = 0
             packet = generate_package(data)
@@ -232,15 +238,17 @@ def sendpacketout( packet, data ):
                 frametogen = count_frames
             else:
                 frametogen = 1000000
-            with open("random_framesizes.txt", "r") as randomsizes:
-                head = [next(randomsizes) for x in xrange(int(frametogen))]
+
+            filelength = file_len("custom_framesizes.txt")
+            with open("custom_framesizes.txt", "r") as randomsizes:
+                head = [next(randomsizes) for x in xrange(0,filelength)]
             cursor = 0
             while (count < count_frames):
 
                 if (count==count_frames and unlimited_count == False):
                     break
 
-                if int(cursor)%frametogen==0:
+                if (int(cursor)%frametogen==0 or int(cursor)%(len(head))==0):
                     cursor = 0
 
                 if int(head[cursor]) > (mtu+ETH_OVERHEAD):
@@ -289,7 +297,7 @@ def sendpacket( data ):
             payload_size -= PRP_OVERHEAD
         packet = generate_package(data)
         sendpacketout(packet, data)
-    elif sizetype == 'RANDOM':
+    elif sizetype == 'CUSTOM':
         payload_size = int(mtu)
         if prp_enabled == True:
             payload_size -= PRP_OVERHEAD
@@ -360,10 +368,10 @@ def main(argv):
             sys.exit()
         elif opt in ("-s"):
             global sizetype
-            if (arg == 'MIN' or arg == 'RANDOM' or arg == 'MAX'):
+            if (arg == 'MIN' or arg == 'CUSTOM' or arg == 'MAX'):
                 sizetype = arg
             else:
-                print('No valid sizetype selected (MIN, RANDOM, MAX)')
+                print('No valid sizetype selected (MIN, CUSTOM, MAX)')
                 sys.exit()
         elif opt in ("-t"):
             global transmission_type

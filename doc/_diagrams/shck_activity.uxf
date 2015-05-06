@@ -4,7 +4,7 @@
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>873</x>
+      <x>855</x>
       <y>18</y>
       <w>18</w>
       <h>18</h>
@@ -15,7 +15,7 @@
   <element>
     <id>UMLObject</id>
     <coordinates>
-      <x>414</x>
+      <x>396</x>
       <y>0</y>
       <w>882</w>
       <h>999</h>
@@ -28,7 +28,7 @@ halign=left</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>864</x>
+      <x>846</x>
       <y>54</y>
       <w>36</w>
       <h>36</h>
@@ -39,7 +39,7 @@ halign=left</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>873</x>
+      <x>855</x>
       <y>27</y>
       <w>27</w>
       <h>45</h>
@@ -50,7 +50,7 @@ halign=left</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>891</x>
+      <x>873</x>
       <y>63</y>
       <w>198</w>
       <h>63</h>
@@ -62,7 +62,7 @@ m2=[Server-Modus (-S)]</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>684</x>
+      <x>666</x>
       <y>63</y>
       <w>198</w>
       <h>63</h>
@@ -74,7 +74,7 @@ m2=[Client-Modus]</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>1026</x>
+      <x>1008</x>
       <y>108</y>
       <w>90</w>
       <h>63</h>
@@ -87,7 +87,7 @@ UDP-Socket
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>1026</x>
+      <x>1008</x>
       <y>198</y>
       <w>90</w>
       <h>72</h>
@@ -101,7 +101,7 @@ annehmen</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1062</x>
+      <x>1044</x>
       <y>162</y>
       <w>27</w>
       <h>54</h>
@@ -112,7 +112,7 @@ annehmen</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1062</x>
+      <x>1044</x>
       <y>261</y>
       <w>27</w>
       <h>54</h>
@@ -123,7 +123,7 @@ annehmen</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>1026</x>
+      <x>1008</x>
       <y>297</y>
       <w>90</w>
       <h>54</h>
@@ -136,7 +136,7 @@ beendet</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>1053</x>
+      <x>1035</x>
       <y>396</y>
       <w>36</w>
       <h>36</h>
@@ -147,7 +147,7 @@ beendet</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1062</x>
+      <x>1044</x>
       <y>342</y>
       <w>27</w>
       <h>72</h>
@@ -158,7 +158,7 @@ beendet</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>1179</x>
+      <x>1161</x>
       <y>396</y>
       <w>90</w>
       <h>36</h>
@@ -170,7 +170,7 @@ schliessen</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1080</x>
+      <x>1062</x>
       <y>405</y>
       <w>117</w>
       <h>36</h>
@@ -182,7 +182,7 @@ m2=[-t TCP]</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1107</x>
+      <x>1089</x>
       <y>135</y>
       <w>135</w>
       <h>279</h>
@@ -193,7 +193,7 @@ m2=[-t TCP]</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>972</x>
+      <x>954</x>
       <y>225</y>
       <w>99</w>
       <h>216</h>
@@ -205,7 +205,7 @@ m2=[-t UDP]</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1062</x>
+      <x>1044</x>
       <y>423</y>
       <w>144</w>
       <h>459</h>
@@ -218,7 +218,7 @@ terminiert (Ctrl+C)]</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>612</x>
+      <x>594</x>
       <y>108</y>
       <w>171</w>
       <h>72</h>
@@ -232,7 +232,7 @@ verwenden zu können</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>675</x>
+      <x>657</x>
       <y>225</y>
       <w>36</w>
       <h>36</h>
@@ -243,7 +243,7 @@ verwenden zu können</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>684</x>
+      <x>666</x>
       <y>171</y>
       <w>27</w>
       <h>72</h>
@@ -254,7 +254,7 @@ verwenden zu können</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>801</x>
+      <x>783</x>
       <y>198</y>
       <w>153</w>
       <h>90</h>
@@ -269,7 +269,7 @@ festlegen)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>702</x>
+      <x>684</x>
       <y>234</y>
       <w>117</w>
       <h>36</h>
@@ -281,7 +281,7 @@ m2=[-t ETH]</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>684</x>
+      <x>666</x>
       <y>252</y>
       <w>108</w>
       <h>99</h>
@@ -293,7 +293,7 @@ m2=[-t ETH]</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>729</x>
+      <x>711</x>
       <y>279</y>
       <w>162</w>
       <h>90</h>
@@ -304,7 +304,7 @@ m2=[-t ETH]</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>648</x>
+      <x>630</x>
       <y>333</y>
       <w>90</w>
       <h>36</h>
@@ -316,7 +316,7 @@ bestimmen</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>675</x>
+      <x>657</x>
       <y>396</y>
       <w>36</w>
       <h>36</h>
@@ -327,7 +327,7 @@ bestimmen</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>684</x>
+      <x>666</x>
       <y>360</y>
       <w>27</w>
       <h>54</h>
@@ -338,13 +338,12 @@ bestimmen</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>837</x>
+      <x>819</x>
       <y>378</y>
       <w>117</w>
       <h>72</h>
     </coordinates>
-    <panel_attributes>Liste mit 
-zufälligen 
+    <panel_attributes>Liste mit  
 Werten in Array 
 einlesen</panel_attributes>
     <additional_attributes/>
@@ -352,7 +351,7 @@ einlesen</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>576</x>
+      <x>558</x>
       <y>405</y>
       <w>117</w>
       <h>36</h>
@@ -364,19 +363,19 @@ m2=[-s MIN]</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>702</x>
+      <x>684</x>
       <y>405</y>
       <w>153</w>
       <h>36</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-m2=[-s RANDOM]</panel_attributes>
+m2=[-s CUSTOM]</panel_attributes>
     <additional_attributes>150.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>432</x>
+      <x>414</x>
       <y>387</y>
       <w>153</w>
       <h>54</h>
@@ -389,7 +388,7 @@ erzeugen</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>603</x>
+      <x>585</x>
       <y>558</y>
       <w>171</w>
       <h>72</h>
@@ -403,7 +402,7 @@ erzeugen</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>675</x>
+      <x>657</x>
       <y>477</y>
       <w>36</w>
       <h>36</h>
@@ -414,7 +413,7 @@ erzeugen</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>684</x>
+      <x>666</x>
       <y>504</y>
       <w>81</w>
       <h>72</h>
@@ -426,7 +425,7 @@ erzeugen</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>684</x>
+      <x>666</x>
       <y>423</y>
       <w>27</w>
       <h>72</h>
@@ -437,7 +436,7 @@ erzeugen</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>864</x>
+      <x>846</x>
       <y>477</y>
       <w>108</w>
       <h>36</h>
@@ -448,7 +447,7 @@ erzeugen</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>702</x>
+      <x>684</x>
       <y>486</y>
       <w>180</w>
       <h>36</h>
@@ -460,7 +459,7 @@ m2=[PRP-Modus (-P)]</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>765</x>
+      <x>747</x>
       <y>504</y>
       <w>171</w>
       <h>108</h>
@@ -471,7 +470,7 @@ m2=[PRP-Modus (-P)]</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>684</x>
+      <x>666</x>
       <y>441</y>
       <w>225</w>
       <h>36</h>
@@ -482,7 +481,7 @@ m2=[PRP-Modus (-P)]</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>603</x>
+      <x>585</x>
       <y>657</y>
       <w>171</w>
       <h>45</h>
@@ -494,7 +493,7 @@ UDP-Socket öffnen</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>495</x>
+      <x>477</x>
       <y>432</y>
       <w>216</w>
       <h>225</h>
@@ -505,7 +504,7 @@ UDP-Socket öffnen</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>684</x>
+      <x>666</x>
       <y>621</y>
       <w>27</w>
       <h>54</h>
@@ -516,7 +515,7 @@ UDP-Socket öffnen</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>603</x>
+      <x>585</x>
       <y>792</y>
       <w>171</w>
       <h>45</h>
@@ -528,7 +527,7 @@ UDP-Socket öffnen</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>675</x>
+      <x>657</x>
       <y>720</y>
       <w>36</w>
       <h>36</h>
@@ -539,7 +538,7 @@ UDP-Socket öffnen</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>684</x>
+      <x>666</x>
       <y>747</y>
       <w>117</w>
       <h>63</h>
@@ -551,7 +550,7 @@ m2=[-s (MIN|MAX)]</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>684</x>
+      <x>666</x>
       <y>693</y>
       <w>27</w>
       <h>45</h>
@@ -562,7 +561,7 @@ m2=[-s (MIN|MAX)]</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>828</x>
+      <x>810</x>
       <y>630</y>
       <w>180</w>
       <h>153</h>
@@ -570,7 +569,7 @@ m2=[-s (MIN|MAX)]</panel_attributes>
     <panel_attributes>Maxmial grosses
 Frame / Paket
 kürzen, sodass
-es dem aktuellem zuf.
+es dem aktuellem 
 Wert im Array entspricht
 (Ist das Ende des Arrays
 erreicht, wird wieder
@@ -581,19 +580,19 @@ eingelesen)</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>702</x>
+      <x>684</x>
       <y>729</y>
       <w>144</w>
       <h>36</h>
     </coordinates>
     <panel_attributes>lt=&lt;-
-m2=[-s RANDOM]</panel_attributes>
+m2=[-s CUSTOM]</panel_attributes>
     <additional_attributes>140.0;10.0;10.0;10.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>765</x>
+      <x>747</x>
       <y>774</y>
       <w>171</w>
       <h>63</h>
@@ -604,7 +603,7 @@ m2=[-s RANDOM]</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>675</x>
+      <x>657</x>
       <y>855</y>
       <w>36</w>
       <h>36</h>
@@ -615,7 +614,7 @@ m2=[-s RANDOM]</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>684</x>
+      <x>666</x>
       <y>828</y>
       <w>27</w>
       <h>45</h>
@@ -626,7 +625,7 @@ m2=[-s RANDOM]</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>576</x>
+      <x>558</x>
       <y>729</y>
       <w>117</w>
       <h>162</h>
@@ -638,7 +637,7 @@ m2=[-s RANDOM]</panel_attributes>
   <element>
     <id>Text</id>
     <coordinates>
-      <x>432</x>
+      <x>414</x>
       <y>765</y>
       <w>153</w>
       <h>99</h>
@@ -649,7 +648,7 @@ m2=[-s RANDOM]</panel_attributes>
   <element>
     <id>UMLState</id>
     <coordinates>
-      <x>630</x>
+      <x>612</x>
       <y>945</y>
       <w>135</w>
       <h>36</h>
@@ -660,7 +659,7 @@ m2=[-s RANDOM]</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>684</x>
+      <x>666</x>
       <y>882</y>
       <w>252</w>
       <h>81</h>
@@ -673,7 +672,7 @@ entspricht -n Argument]</panel_attributes>
   <element>
     <id>UMLSpecialState</id>
     <coordinates>
-      <x>1062</x>
+      <x>1044</x>
       <y>864</y>
       <w>18</w>
       <h>18</h>
@@ -684,7 +683,7 @@ entspricht -n Argument]</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>702</x>
+      <x>684</x>
       <y>864</y>
       <w>378</w>
       <h>36</h>
@@ -696,7 +695,7 @@ m2=[Applikation wird terminiert (Ctrl+C)]</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>756</x>
+      <x>738</x>
       <y>873</y>
       <w>333</w>
       <h>108</h>
