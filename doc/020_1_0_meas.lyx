@@ -1096,8 +1096,8 @@ reference "par:Ablauf-einer-Messserie"
  zwischenspeichert und die Auswertungen und Ausgaben erst nach Beenden einer
  Messserie durchgeführt werden.
  Die Funktion, welche für das Auslesen der Werte aus dem /proc-Dateisystem
- zuständig ist wurde mit möglichst wenigen Instruktionen implementiert und
- hat folgenden Funktionskörper:
+ zuständig ist, wurde mit möglichst wenigen Instruktionen implementiert
+ und hat folgende Charakteristik:
 \end_layout
 
 \begin_layout Standard
@@ -1108,7 +1108,23 @@ status open
 
 
 \backslash
-lstinputlisting[caption={gausskern.m - Algorithmus der Gauss-Kern-Funktion},
+vspace{7mm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[caption={Funktionskörper, Auslesen aus dem /proc-Dateisystem},
   captionpos=b,language=C]{_src_lst/meas_read_to_meas_buffers.c}
 \end_layout
 
@@ -1122,6 +1138,102 @@ label{lst:meas_read_to_meas_buffers}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Aufgrund dieser weiteren Optimierung wurde abermals ein betrachtlicher Gewinn
+ an Performanz erreicht.
+ Die durchschnittliche Zeit für das Auslesen der Dateien aus dem /proc-Dateisyst
+em beträgt nach der zweiten Optimierungsstufe noch 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$~ 100 
+\backslash
+mu s$
+\end_layout
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _diagrams/meas_read_times_3.svg
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Messfehler nach zweiter Optimierungsstufe.
+ Intervallzeit 1 s.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nach diesen beiden Optimierungsstufen wurde eine im Rahmen dieser Arbeit
+ akzeptable Zeitspanne erreicht, um die statistischen Werte auszulesen.
+ Ferner sei erwähnt, dass auch die Aktualisierungs-Frequenz der Netzwerkstatisti
+ken im /proc-Dateisystem auf 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$100 
+\backslash
+mu s$
+\end_layout
+
+\end_inset
+
+ limitiert ist, siehe MMMMMMMMM.
+ Nach diesen Optimierungen ist es nicht mehr möglich, ausgewertete Resultate
+ direkt während der Messung auf einer Ausgabekonsole zu verfolgen.
+ Der Fokus dieser Arbeit liegt jedoch darin, Messungen aufzuzeichnen und
+ anschliessend die ausgewerteten Resultate zu dokumentieren.
+\end_layout
+
+\begin_layout Subparagraph
+Systemcalls und Datenkonsistenz
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+fdafd
 \end_layout
 
 \end_body
