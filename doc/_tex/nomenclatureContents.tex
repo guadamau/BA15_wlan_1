@@ -32,7 +32,8 @@
 \newcommand{\protoheaddesc}{Der Protokoll-Header enthält alle nötigen Metainformationen, die ein bestimmtes Kommunikationprotokoll braucht, um Daten austauschen zu können. Beispielfelder eines Protokoll-Headers: Quell- und Zieladresse, Port, Fragment-ID, etc.}
 \newcommand{\cpointerdesc}{Ein Pointer in der Programmiersprache C, repräsentiert eine Speicheradresse.}
 \newcommand{\fcsdesc}{Die \textbf{Frame Check Sequence} befindet sich am Ende eines Ethernet Frames. Sie hat eine Grösse von 4 Byte und wird von der sendenden Hardware (Ethernet-Controller) basierend auf dem Frame-Inhalt meist mittels CRC-Verfahrens berechnet und anschliessend am Ende eines jeden Frames platziert. Die empfangende Hardware berechnet für jedes empfangene Frame ebenfalls eine Frame Check Sequence und vergleicht diese mit der FCS am Ende des empfangenen Frames. Wenn beide FCS übereinstimmen, wird das Frame dem Netzwerk-Protokoll-Stack des Betriebssystems weitergereicht. Im Falle einer Divergenz der beiden FCS wird das Frame verworfen.}
-\newcommand{\crcdesc}{\textbf{Cyclic Redundancy Check} ist ein Verfahren, basierend auf der modularen Polynomdivision (mod 2), welches dazu verwendet wird, einen Prüfwert.}
+\newcommand{\crcdesc}{\textbf{Cyclic Redundancy Check} ist ein Verfahren, basierend auf der modularen Polynomdivision (mod 2), welches dazu verwendet wird, einen Prüfwert über ein bestimmtes Datenfeld zu berechnen.}
+\newcommand{\mmiodesc}{Ist ein Verfahren zur Kommunikation einer Zentraleinheit mit Peripheriegeräten. Die I/O-Register von elektronischen Bauelementen, mit denen angeschlossene Hardware gesteuert wird, werden in den Hauptspeicher-Adressraum abgebildet. Der Zugriff auf die Bauelemente kann dann über übliche Speicherzugriffsroutinen geschehen. Es werden keine besonderen Befehle benötigt wie bei der Realisierung der Ein-/Ausgabe mittels I/O-Ports am Prozessor. Gegenüber einem separaten I/O-Bus besitzt Memory Mapped I/O den Vorteil, dass man in der Regel über Strukturen und Pointer aus einer Hochsprache wie C oder C++ vollständig auf die Hardware zugreifen kann, ohne Teile des Programms in Assembler bzw. Maschinensprache schreiben zu müssen. \cite{MMIO_Page}}
 
 
 % *****************************************************************************
@@ -66,3 +67,4 @@
 \nomenclature{C-Pointer}{\cpointerdesc}
 \nomenclature{FCS}{\fcsdesc}
 \nomenclature{CRC}{\crcdesc}
+\nomenclature{Memory Mapped I/O}{\mmiodesc}

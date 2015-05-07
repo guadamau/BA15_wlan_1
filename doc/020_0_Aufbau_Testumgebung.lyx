@@ -330,6 +330,14 @@ eth0
 
 \begin_layout Plain Layout
 1 GBit/s
+\begin_inset Newline newline
+\end_inset
+
+Broadcom Corporation NetXtreme
+\begin_inset Newline newline
+\end_inset
+
+BCM5704 Gigabit Ethernet (rev 02)
 \end_layout
 
 \end_inset
@@ -358,6 +366,14 @@ eth1
 
 \begin_layout Plain Layout
 1 GBit/s
+\begin_inset Newline newline
+\end_inset
+
+Broadcom Corporation NetXtreme
+\begin_inset Newline newline
+\end_inset
+
+BCM5704 Gigabit Ethernet (rev 02)
 \end_layout
 
 \end_inset
@@ -386,6 +402,14 @@ eth2
 
 \begin_layout Plain Layout
 100 MBit/s
+\begin_inset Newline newline
+\end_inset
+
+3Com Corporation
+\begin_inset Newline newline
+\end_inset
+
+3c905C-TX/TX-M [Tornado] (rev 74)
 \end_layout
 
 \end_inset
@@ -410,6 +434,10 @@ Debian 7.8.0 32bit (i686 / x86 CPU)
 \end_inset
 
 Version mit Non-Free-Firmware inklusive
+\begin_inset Newline newline
+\end_inset
+
+(Broadcom Tigon3 Treiber)
 \end_layout
 
 \end_inset
@@ -426,7 +454,14 @@ Version mit Non-Free-Firmware inklusive
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Hardware-Eigenschaften der Server 
+Hardware-Eigenschaften der Server
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:HardwareEigenschaftenServer"
+
+\end_inset
+
+ 
 \end_layout
 
 \end_inset

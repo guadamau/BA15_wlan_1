@@ -1060,10 +1060,21 @@ key "procfs"
 \end_layout
 
 \begin_layout Standard
-Jedes mal, wenn auf eine Datei aus dem /proc-Filesystem ein read()-Systemcall
+Jedes mal, wenn auf eine Datei aus dem /proc-Dateisystem ein read()-Systemcall
  ausgeführt wird, werden die aktuellsten Statistiken ausgelesen.
- Der Kernel hat einen Memory-Bereich, wo er sämtliche Statistiken abgelegt
- hat und aktualisiert.
+ Der Kernel besitzt einen Memory-Bereich, wo sämtliche Statistiken abgelegt
+ werden.
+ Zu diesem Memory-Bereich gehören auch Adressräume, die von Gerätetreibern
+ von so genannten 
+\begin_inset Quotes fld
+\end_inset
+
+Memory Mapped Hardware Devices
+\begin_inset Quotes frd
+\end_inset
+
+ genutzt werden, um direkt auf Hardware-Ressourcen (Register) zugreifen
+ zu können, dies wird mittels Memory-Mapped-I/O-Verfahren realisiert.
  /proc ist im Wesentlichen und sehr vereinfacht gesagt ein Zeiger auf diesen
  Kernel-Memory-Bereich.
 \end_layout
@@ -1108,11 +1119,8 @@ key "Advanced_Linux_Programming"
 \end_layout
 
 \begin_layout Standard
-Die Files in /proc sind eine für Menschen lesbare Ausgabe von besagten Werten
- aus dem Kernel-Memory-Bereich.
- Nun ist es so, dass die Statistiken von einigen Devices selbst aktualisiert
- werden (nicht der Kernel/Scheduler fragt periodisch die Geräte-Parameter
- ab).
+Die Statistiken von einigen Devices selbst aktualisiert werden (nicht der
+ Kernel/Scheduler fragt periodisch die Geräte-Parameter ab).
  Ich vermute mal, das ist via Interrupts gelöst.
  Zu diesen Devices gehören auch unsere Broadcom-NICs.
 \end_layout
