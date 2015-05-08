@@ -52,6 +52,10 @@
 \usepackage{pstricks} 
 \usepackage{pst-plot}
 
+% format in verbatim
+\usepackage{fancyvrb}
+\usepackage{bera}
+
 % Definitionen fuer CodeListings
 \definecolor{middlegray}{rgb}{0.5,0.5,0.5}
 \definecolor{lightgray}{rgb}{0.8,0.8,0.8}

@@ -883,6 +883,14 @@ IPv4-Konfiguration:
 \end_layout
 
 \begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
 \begin_inset Float table
 placement H
 wide false
@@ -1019,6 +1027,463 @@ Konfigurationsdaten - PRP-Netzwerk
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subsubsection
+Netzwerkgeschwindigkeiten
+\end_layout
+
+\begin_layout Standard
+Die in die Server eingebauten Broadcom-Interfaces haben einen maximalen
+ Datendurchsatz von 1 GBit/s (OSI-Layer 1).
+ Im Rahmen dieser Arbeit wird die Netzwerkgeschwindigkeit auf 100 MBit/s
+ reduziert.
+ Dies wird erreicht durch den Einsatz der Software ethtool.
+ Die Reduzierung lässt sich dadurch erklären, dass für die Messungen Hardware
+ im Einsatz ist, die über Netzwerk-Interfaces verfügt, welche lediglich
+ Geschwindigkeiten von maximal 100 MBit/s verarbeiten können.
+ Ferner sind auf diese Weise Performanz-Engpässe einfacher zu erörtern (Netzwerk
+-Interface oder CPU).
+ Netzwerkkarten limitierte Engpässe entstehen schneller mit 100 MBit/s als
+ mit 1 GBit/s.
+\end_layout
+
+\begin_layout Standard
+Das Festlegen der Geschwindigkeiten des Interfaces 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ geschieht mittels folgendem ethtool-Befehl:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{verbatim} 
+\end_layout
+
+\begin_layout Plain Layout
+
+ethtool -s eth0 speed 100 duplex full autoneg on
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die maximal mögliche Geschwindigkeit des Interfaces wird hier auf 100 MBit/s
+ reduziert.
+ Desweiteren wird die Autonegotiation eingeschaltet.
+ Dies ist notwendig, da im Falle ausgeschalteter Autonegotiation beispielsweise
+ eine ECI-Box (siehe 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:eci-box"
+
+\end_inset
+
+) keine Verbindung mehr herstellen kann mit den Broadcom-Interfaces der
+ Server.
+\end_layout
+
+\begin_layout Subsubsection
+/proc-Netzwerkstatistiken
+\end_layout
+
+\begin_layout Standard
+Um möglichst genaue Messresultate zu erhalten, sollten die Statistiken der
+ Netzwerk-Interfaces möglichst zeitnah im /proc-Dateisystem aktualisiert
+ werden.
+ Wie sich das Aktualisierungsverhalten von Neztwerk-Interfaces charakterisiert,
+ hängt von den Netzwerk-Interfaces (Hardware) selbst ab.
+\end_layout
+
+\begin_layout Standard
+Bei den in dieser Arbeit druchgeführten Messungen werden die Interface-Statistik
+en von 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ und 
+\begin_inset Quotes fld
+\end_inset
+
+eth1
+\begin_inset Quotes frd
+\end_inset
+
+ (siehe 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:HardwareEigenschaftenServer"
+
+\end_inset
+
+) betrachtet.
+ Für Messungen bezüglich des PRP-Protokolls wird durch den PRP-1 stack ein
+ virtuelles Netzwerk-Interface erstellt 
+\begin_inset Quotes fld
+\end_inset
+
+prp1
+\begin_inset Quotes frd
+\end_inset
+
+.
+ Das virtuelle Interface des PRP-1 stacks wiederum benutzt die physische
+ Netzwerk-Hardware 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ und 
+\begin_inset Quotes fld
+\end_inset
+
+eth1
+\begin_inset Quotes frd
+\end_inset
+
+, um Daten zu empfangen, respektive zu transmittieren.
+\end_layout
+
+\begin_layout Standard
+Bei den physischen Interfaces 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ und 
+\begin_inset Quotes fld
+\end_inset
+
+eth1
+\begin_inset Quotes frd
+\end_inset
+
+ handelt es sich um Hardware des Herstellers Broadcom.
+ Die Netzwerkkarten bieten die Möglichkeit, das Aktualisierungs-Intervall
+ der Statistiken manuell zu modifizieren.
+ Die Broadcom-Interfaces haben im Auslieferungszustand ein Aktualisierungsinterv
+all von einer Sekunde eingestellt.
+\end_layout
+
+\begin_layout Standard
+Die Modifikation des Statistik-Intervalls lässt sich mit ethtool wie folgt
+ durchführen:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Plain Layout
+
+ethtool -C eth0 stats-block-usecs 100
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die vorgängig gezeigte Kommandozeile setzt ein Statistik-Aktualisierungs-Interva
+ll von 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$100 
+\backslash
+mu s$
+\end_layout
+
+\end_inset
+
+ für das Interface 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+.
+ Damit die Änderung aktiv wird, muss anschliessend das Interface 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ neu gestartet werden.
+ Um sicherzustellen, dass die Änderungen übernommen wurden, können die Einstellu
+ngen des entsprechenden Netzwerk-Interfaces abgefragt werden:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Plain Layout
+
+ethtool -c eth0
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Was eine Ausgabe folgender Form erzeugt:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{Verbatim}[commandchars=
+\backslash
+
+\backslash
+
+\backslash
+{
+\backslash
+}]
+\end_layout
+
+\begin_layout Plain Layout
+
+Coalesce parameters for eth0: 
+\end_layout
+
+\begin_layout Plain Layout
+
+Adaptive RX: off  TX: off 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{stats-block-usecs: 100} 
+\end_layout
+
+\begin_layout Plain Layout
+
+sample-interval: 0 
+\end_layout
+
+\begin_layout Plain Layout
+
+pkt-rate-low: 0 
+\end_layout
+
+\begin_layout Plain Layout
+
+pkt-rate-high: 0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+rx-usecs: 20 
+\end_layout
+
+\begin_layout Plain Layout
+
+rx-frames: 5 
+\end_layout
+
+\begin_layout Plain Layout
+
+rx-usecs-irq: 20 
+\end_layout
+
+\begin_layout Plain Layout
+
+rx-frames-irq: 5
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+tx-usecs: 72 
+\end_layout
+
+\begin_layout Plain Layout
+
+tx-frames: 53 
+\end_layout
+
+\begin_layout Plain Layout
+
+tx-usecs-irq: 20 
+\end_layout
+
+\begin_layout Plain Layout
+
+tx-frames-irq: 5
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+rx-usecs-low: 0 
+\end_layout
+
+\begin_layout Plain Layout
+
+rx-frame-low: 0 
+\end_layout
+
+\begin_layout Plain Layout
+
+tx-usecs-low: 0 
+\end_layout
+
+\begin_layout Plain Layout
+
+tx-frame-low: 0
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+rx-usecs-high: 0 
+\end_layout
+
+\begin_layout Plain Layout
+
+rx-frame-high: 0 
+\end_layout
+
+\begin_layout Plain Layout
+
+tx-usecs-high: 0 
+\end_layout
+
+\begin_layout Plain Layout
+
+tx-frame-high: 0
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{Verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Broadcom-Interfaces (eth0 und eth1) haben standardmässig ein Interrupt-Inter
+vall von 1 Sekunde eingestellt, für das aktualisieren ihrer statistischen
+ Werte.
+ Du kannst Dir sicher ausmalen, was das heisst.
+ Krasses Beispiel: Wenn wir mit meas alle 10 ms eine Messung durchführen,
+ haben die ersten 99 Intervalle 0 TX-Bytes und das 100.
+ Intervall hat dann ca.
+ 12500000 TX-Bytes.
+ Dies resultiert dann in einer Bitrate von 12500000 * 8 / ( 1000*1000 )
+ / 0.010 = 10000 MBit/s.
+ Haha.
+\end_layout
+
+\begin_layout Standard
+Die meisten NICs lassen es zu, dieses Interrupt-Intervall abzuändern (in-memory
+ statistic block).
+ Ja, unsere Broadcom-NICs gehören auch dazu, yay.
+ Um das ganze zu testen, habe ich ein Bash-Script geschrieben, welches die
+ PRP-NICs entsprechend konfiguriert: "/home/scripts/set_prp_nics_proc_refresh_fr
+equency.sh" Also Refresh-Rate habe ich mal 100 Mikrosekunden gewählt.
+ ACHTUNG: VORERST NUR AUF SRV01 AUSGEFÜHRT.
+\end_layout
+
+\begin_layout Standard
+Nun sehen die Intervall Results anständiger aus, exemplarisch eine Messserie
+ mit Intervall 0.017s: "/tmp/meas_interval_results_143061602
 \end_layout
 
 \begin_layout Subsection

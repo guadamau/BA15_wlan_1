@@ -1114,45 +1114,5 @@ key "Advanced_Linux_Programming"
 
 \end_layout
 
-\begin_layout Subsection
-/proc-Netzwerkstatistiken
-\end_layout
-
-\begin_layout Standard
-Die Statistiken von einigen Devices selbst aktualisiert werden (nicht der
- Kernel/Scheduler fragt periodisch die Geräte-Parameter ab).
- Ich vermute mal, das ist via Interrupts gelöst.
- Zu diesen Devices gehören auch unsere Broadcom-NICs.
-\end_layout
-
-\begin_layout Standard
-Die Broadcom-Interfaces (eth0 und eth1) haben standardmässig ein Interrupt-Inter
-vall von 1 Sekunde eingestellt, für das aktualisieren ihrer statistischen
- Werte.
- Du kannst Dir sicher ausmalen, was das heisst.
- Krasses Beispiel: Wenn wir mit meas alle 10 ms eine Messung durchführen,
- haben die ersten 99 Intervalle 0 TX-Bytes und das 100.
- Intervall hat dann ca.
- 12500000 TX-Bytes.
- Dies resultiert dann in einer Bitrate von 12500000 * 8 / ( 1000*1000 )
- / 0.010 = 10000 MBit/s.
- Haha.
-\end_layout
-
-\begin_layout Standard
-Die meisten NICs lassen es zu, dieses Interrupt-Intervall abzuändern (in-memory
- statistic block).
- Ja, unsere Broadcom-NICs gehören auch dazu, yay.
- Um das ganze zu testen, habe ich ein Bash-Script geschrieben, welches die
- PRP-NICs entsprechend konfiguriert: "/home/scripts/set_prp_nics_proc_refresh_fr
-equency.sh" Also Refresh-Rate habe ich mal 100 Mikrosekunden gewählt.
- ACHTUNG: VORERST NUR AUF SRV01 AUSGEFÜHRT.
-\end_layout
-
-\begin_layout Standard
-Nun sehen die Intervall Results anständiger aus, exemplarisch eine Messserie
- mit Intervall 0.017s: "/tmp/meas_interval_results_143061602
-\end_layout
-
 \end_body
 \end_document

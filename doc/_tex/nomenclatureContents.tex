@@ -34,6 +34,11 @@
 \newcommand{\fcsdesc}{Die \textbf{Frame Check Sequence} befindet sich am Ende eines Ethernet Frames. Sie hat eine Grösse von 4 Byte und wird von der sendenden Hardware (Ethernet-Controller) basierend auf dem Frame-Inhalt meist mittels CRC-Verfahrens berechnet und anschliessend am Ende eines jeden Frames platziert. Die empfangende Hardware berechnet für jedes empfangene Frame ebenfalls eine Frame Check Sequence und vergleicht diese mit der FCS am Ende des empfangenen Frames. Wenn beide FCS übereinstimmen, wird das Frame dem Netzwerk-Protokoll-Stack des Betriebssystems weitergereicht. Im Falle einer Divergenz der beiden FCS wird das Frame verworfen.}
 \newcommand{\crcdesc}{\textbf{Cyclic Redundancy Check} ist ein Verfahren, basierend auf der modularen Polynomdivision (mod 2), welches dazu verwendet wird, einen Prüfwert über ein bestimmtes Datenfeld zu berechnen.}
 \newcommand{\mmiodesc}{Ist ein Verfahren zur Kommunikation einer Zentraleinheit mit Peripheriegeräten. Die I/O-Register von elektronischen Bauelementen, mit denen angeschlossene Hardware gesteuert wird, werden in den Hauptspeicher-Adressraum abgebildet. Der Zugriff auf die Bauelemente kann dann über übliche Speicherzugriffsroutinen geschehen. Es werden keine besonderen Befehle benötigt wie bei der Realisierung der Ein-/Ausgabe mittels I/O-Ports am Prozessor. Gegenüber einem separaten I/O-Bus besitzt Memory Mapped I/O den Vorteil, dass man in der Regel über Strukturen und Pointer aus einer Hochsprache wie C oder C++ vollständig auf die Hardware zugreifen kann, ohne Teile des Programms in Assembler bzw. Maschinensprache schreiben zu müssen. \cite{MMIO_Page}}
+\newcommand{\ethtdesc}{Software, die dazu verwendet werden kann, Gerätetreiber- und Hardware-Parameter von kabelgebundenen Netzwerk-Interfaces auszulesen, respektive zu modifizieren.}
+\newcommand{\autonegdesc}{Ist ein Ethernet-Mechanismus, der es zwei miteinander verbundenen Geräten ermöglicht, automatisch die optimalen Grundeinstellungen bezüglich Geschwindigkeit, Duplex-Mode und Flow Control auszuhandeln. Während der Verhandlung teilen sich die beiden verbundenen Geräte ihre Eigenschaften mit und wählen dann die optimalen Einstellungen aus, welche beide Geräte unterstützen. Dieses Prozedere findet zu Beginn eines Verbindungsaufbaus zweier via Ethernetlink verbundenen Geräten statt.}
+\newcommand{\mindesc}{Kurzform für Minimum}
+\newcommand{\maxdesc}{Kurzform für Maximum}
+\newcommand{\avgdesc}{Kurzform für Average, zu Deutsch Durchschnitt}
 
 
 % *****************************************************************************
@@ -68,3 +73,8 @@
 \nomenclature{FCS}{\fcsdesc}
 \nomenclature{CRC}{\crcdesc}
 \nomenclature{Memory Mapped I/O}{\mmiodesc}
+\nomenclature{ethtool}{\ethtdesc}
+\nomenclature{Autonegotiation}{\autonegdesc}
+\nomenclature{Min}{\mindesc}
+\nomenclature{Max}{\maxdesc}
+\nomenclature{Avg}{\avgdesc}

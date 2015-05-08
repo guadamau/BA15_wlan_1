@@ -2685,9 +2685,9 @@ Beschrieb
 \begin_inset Text
 
 \begin_layout Plain Layout
-Kleine Box, welche bei einem 10/100 Base-TX Netzwerkanschluss dazwischen
+Netzwerkperipherie, welche bei einem 10/100 Base-TX Netzwerkanschluss dazwischen
  geschaltet werden kann und benötigt somit weder Modifikationen an Hardware
- oder zusätzlichen Treibern.
+ oder zusätzliche Treiber.
 \end_layout
 
 \end_inset
@@ -2770,6 +2770,13 @@ Durch das Erzwingen von Frameverlust kann die Stabilität von PRP und dessen
 \begin_layout Plain Layout
 Weitere Hilfsmittel: Ethernet Cable Interceptor (ECI)
 \end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:eci-box"
 
 \end_inset
 
