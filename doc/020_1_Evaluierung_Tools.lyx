@@ -7112,24 +7112,6 @@ Die Werte von bwm-ng / meas konnten auf die Werte von iperf3 über folgende
 \begin_layout Standard
 \noindent
 \align center
-\begin_inset Formula $Daten_{iperf3}=((Daten_{meas}*\frac{Payload\,von\,TCP-Paket}{Gesamtgrösse\,Paket})/1024^{2})*1'000'000$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align center
-\begin_inset Formula $Daten_{iperf3}=((12.3\,MBytes*\frac{1442\,Bytes}{1508\,Bytes})/1024^{2})*1'000'000=11.2\,MBytes$
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\noindent
-\align center
 \begin_inset Formula $Bitrate_{iperf3}=Bitrate{}_{meas}*\frac{Payload\,von\,TCP-Paket}{Gesamtgrösse\,Paket}$
 \end_inset
 
@@ -7140,6 +7122,24 @@ Die Werte von bwm-ng / meas konnten auf die Werte von iperf3 über folgende
 \noindent
 \align center
 \begin_inset Formula $Bitrate_{iperf3}=98.1\,MBytes*\frac{1442\,Bytes}{1508\,Bytes}=93.8\,MBytes$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Formula $Daten_{iperf3}=((Daten_{meas}*\frac{Payload\,von\,TCP-Paket}{Gesamtgrösse\,Paket})/1024^{2})*1'000'000$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Formula $Daten_{iperf3}=((12.3\,MBytes*\frac{1442\,Bytes}{1508\,Bytes})/1024^{2})*1'000'000=11.2\,MBytes$
 \end_inset
 
 

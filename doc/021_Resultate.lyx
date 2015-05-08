@@ -100,6 +100,10 @@ name "sec:Szenario-01:-Performance"
 \end_layout
 
 \begin_layout Standard
+
+\end_layout
+
+\begin_layout Standard
 Es folgt ein ausgezeichnetes Histogramm, generiert aus einer Textdatei:
 \end_layout
 
@@ -180,6 +184,13 @@ Test Histogram
 
 \begin_layout Section
 Szenario 02: Performance ohne PRP
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Szenario-02:-Performance"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
