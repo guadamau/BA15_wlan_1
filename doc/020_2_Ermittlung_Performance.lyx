@@ -140,6 +140,40 @@ Wird bei einem Test eigens entwickelte Software verwendet, so wird diese
  Der Quellcode der jeweiligen Software liegt dieser Arbeit bei.
 \end_layout
 
+\begin_layout Itemize
+Die effektiv verwendeten Statistik-Merkmale und signifikanten Resultat-Parameter
+ sind im Paragraph 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "par:Fazit"
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+ innerhalb Kapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Erörterung-signifikanter-Resulta"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "par:Fazit"
+
+\end_inset
+
+ aufgelistet.
+\end_layout
+
 \begin_layout Standard
 Um feststellen zu können, ob sich auf eine längere Zeit ein bestimmtes Verhalten
  ändert, werden die Tests in verschiedenen Zeitspannen durchgeführt.
@@ -2816,7 +2850,7 @@ Beispiel: Vergleich bezüglich Paketgrösse: Generierung von Last mit minimaler
 \begin_layout Enumerate
 Kurz darauf (ca.
  1 Sekunde) werden gleichzeitig die Messungen auf allen beteiligten Servern
- gestartet.
+ (meistens 1 Client und 1 Server) gestartet.
  Zum Startzeitpunkt der Messungen befindet man so sich sicher bereits an
  einem Punkt, an dem sich ein konstanter Zustand (Steady State) eingependelt
  hat.
@@ -2844,17 +2878,10 @@ t werden.
 \end_layout
 
 \begin_layout Enumerate
-Ist die Zeitspanne abgelaufen, wird die Messung beendet.
+Ist die Zeitspanne abgelaufen, werden die Messungen beendet.
  Wichtig ist hier, dass erst nach dem Abschluss der Messung mit der Generierung
  von Netzwerkverkehr aufgehört wird, da ansonsten die Messung nicht während
  einem Steady State statt findet.
-\end_layout
-
-\begin_layout Standard
-Solch eine Messung wird in jedem Szenario jeweils für jede Zeitspanne (Ultrakurz
--, Kurz- und Langzeit) ein mal durchgeführt.
- In den ermittelten Daten befinden sich Werte zur CPU-Last, Arbeitsspeicherbeleg
-ung und Netzwerkbelastung.
 \end_layout
 
 \begin_layout Standard
@@ -2933,8 +2960,8 @@ status open
 \begin_inset Tabular
 <lyxtabular version="3" rows="10" columns="3">
 <features rotate="0" tabularvalignment="middle">
-<column alignment="left" valignment="top" width="25col%">
-<column alignment="left" valignment="top" width="55col%">
+<column alignment="left" valignment="top" width="30col%">
+<column alignment="left" valignment="top" width="50col%">
 <column alignment="left" valignment="top" width="10col%">
 <row>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
@@ -2972,7 +2999,7 @@ Einheit
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3002,36 +3029,7 @@ Wert der Periode innerhalb der Zeitspanne, in der das untersuchte Objekt
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Usertime Minimum
-\end_layout
-
-\end_inset
-</cell>
-<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-s
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3040,7 +3038,36 @@ Systemtime Minimum
 
 \end_inset
 </cell>
-<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Usertime Minimum
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3060,7 +3087,7 @@ s
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3090,36 +3117,7 @@ Wert der Periode innerhalb der Zeitspanne, in der das untersuchte Objekt
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Usertime Maximum
-\end_layout
-
-\end_inset
-</cell>
-<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-s
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3128,7 +3126,36 @@ Systemtime Maximum
 
 \end_inset
 </cell>
-<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Usertime Maximum
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3148,7 +3175,7 @@ s
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3179,16 +3206,16 @@ Durchschnitt der Werte alle Perioden.
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Usertime Durchschnitt
+Systemtime Durchschnitt
 \end_layout
 
 \end_inset
 </cell>
-<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3208,16 +3235,16 @@ s
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Systemtime Durchschnitt
+Usertime Durchschnitt
 \end_layout
 
 \end_inset
 </cell>
-<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell multirow="4" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3279,8 +3306,8 @@ status open
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="3">
 <features rotate="0" tabularvalignment="middle">
-<column alignment="left" valignment="top" width="25col%">
-<column alignment="left" valignment="top" width="55col%">
+<column alignment="left" valignment="top" width="30col%">
+<column alignment="left" valignment="top" width="50col%">
 <column alignment="left" valignment="top" width="10col%">
 <row>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
@@ -3318,16 +3345,16 @@ Einheit
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Netzwerkbelastung Download Minimum
+RX-Bitrate (Download) Minimum
 \end_layout
 
 \end_inset
 </cell>
-<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3341,23 +3368,23 @@ Kleinste Netzwerkbelastung der Periode innerhalb der Zeitspanne, in der
 \begin_inset Text
 
 \begin_layout Plain Layout
-Byte/s
+MBit/s
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Netzwerkbelastung Upload Minimum
+TX-Bitrate (Upload) Minimum
 \end_layout
 
 \end_inset
 </cell>
-<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3377,16 +3404,16 @@ Netzwerkbelastung Upload Minimum
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Netzwerkbelastung Download Maximum
+RX-Bitrate (Download) Maximum
 \end_layout
 
 \end_inset
 </cell>
-<cell multirow="3" alignment="left" valignment="middle" topline="true" leftline="true" usebox="none">
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3400,23 +3427,23 @@ Grösste Netzwerkbelastung der Periode innerhalb der Zeitspanne, in der das
 \begin_inset Text
 
 \begin_layout Plain Layout
-Byte/s
+MBit/s
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Netzwerkbelastung Upload Maximum
+TX-Bitrate (Upload) Maximum
 \end_layout
 
 \end_inset
 </cell>
-<cell multirow="4" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3436,11 +3463,11 @@ Netzwerkbelastung Upload Maximum
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Netzwerkbelastung Download Durchschnitt
+RX-Bitrate (Download) Durchschnitt
 \end_layout
 
 \end_inset
@@ -3459,23 +3486,23 @@ Durchschnittliche Netzwerkbelastung über die ganze Zeitspanne, in der gemessen
 \begin_inset Text
 
 \begin_layout Plain Layout
-Byte/s
+MBit/s
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Netzwerkbelastung Upload Durchschnitt
+TX-Bitrate (Upload) Durchschnitt
 \end_layout
 
 \end_inset
 </cell>
-<cell multirow="4" alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell multirow="4" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -3818,6 +3845,13 @@ Darauf wird ein Vergleich zwischen den Netzwerkströmen 1 & 4, 2 & 5 und
 \begin_layout Subsubsection
 Erörterung signifikanter Resultat-Parameter: UDP / Ethernet Vergleich &
  Notwendigkeit der Langzeit-Tests
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Erörterung-signifikanter-Resulta"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -4298,7 +4332,7 @@ ER.U.MIN.U
 \begin_layout Plain Layout
 
 \size footnotesize
-54.00
+62.98
 \end_layout
 
 \end_inset
@@ -4309,7 +4343,7 @@ ER.U.MIN.U
 \begin_layout Plain Layout
 
 \size footnotesize
-56.25
+63.96
 \end_layout
 
 \end_inset
@@ -4320,7 +4354,7 @@ ER.U.MIN.U
 \begin_layout Plain Layout
 
 \size footnotesize
-58.00
+65.00
 \end_layout
 
 \end_inset
@@ -4331,7 +4365,7 @@ ER.U.MIN.U
 \begin_layout Plain Layout
 
 \size footnotesize
-0.43
+0.52
 \end_layout
 
 \end_inset
@@ -4342,7 +4376,7 @@ ER.U.MIN.U
 \begin_layout Plain Layout
 
 \size footnotesize
-0.49
+0.56
 \end_layout
 
 \end_inset
@@ -4353,7 +4387,7 @@ ER.U.MIN.U
 \begin_layout Plain Layout
 
 \size footnotesize
-0.53
+0.61
 \end_layout
 
 \end_inset
@@ -4375,7 +4409,7 @@ ER.U.MIN.U
 \begin_layout Plain Layout
 
 \size footnotesize
-0.07
+0.08
 \end_layout
 
 \end_inset
@@ -4386,7 +4420,7 @@ ER.U.MIN.U
 \begin_layout Plain Layout
 
 \size footnotesize
-0.13
+0.12
 \end_layout
 
 \end_inset
@@ -4522,7 +4556,7 @@ ER.U.MIN.K
 \begin_layout Plain Layout
 
 \size footnotesize
-53.99
+55.00
 \end_layout
 
 \end_inset
@@ -4533,7 +4567,7 @@ ER.U.MIN.K
 \begin_layout Plain Layout
 
 \size footnotesize
-56.44
+64.14
 \end_layout
 
 \end_inset
@@ -4544,7 +4578,7 @@ ER.U.MIN.K
 \begin_layout Plain Layout
 
 \size footnotesize
-58.00
+66.00
 \end_layout
 
 \end_inset
@@ -4555,7 +4589,7 @@ ER.U.MIN.K
 \begin_layout Plain Layout
 
 \size footnotesize
-0.44
+0.47
 \end_layout
 
 \end_inset
@@ -4566,7 +4600,7 @@ ER.U.MIN.K
 \begin_layout Plain Layout
 
 \size footnotesize
-0.49
+0.56
 \end_layout
 
 \end_inset
@@ -4577,7 +4611,7 @@ ER.U.MIN.K
 \begin_layout Plain Layout
 
 \size footnotesize
-0.54
+0.61
 \end_layout
 
 \end_inset
@@ -4588,7 +4622,7 @@ ER.U.MIN.K
 \begin_layout Plain Layout
 
 \size footnotesize
-0.02
+0.04
 \end_layout
 
 \end_inset
@@ -4599,7 +4633,7 @@ ER.U.MIN.K
 \begin_layout Plain Layout
 
 \size footnotesize
-0.07
+0.08
 \end_layout
 
 \end_inset
@@ -6065,7 +6099,7 @@ ER.U.MIN.U
 \begin_layout Plain Layout
 
 \size footnotesize
-6.21
+7.61
 \end_layout
 
 \end_inset
@@ -6076,7 +6110,7 @@ ER.U.MIN.U
 \begin_layout Plain Layout
 
 \size footnotesize
-6.46
+7.70
 \end_layout
 
 \end_inset
@@ -6087,7 +6121,7 @@ ER.U.MIN.U
 \begin_layout Plain Layout
 
 \size footnotesize
-6.62
+7.77
 \end_layout
 
 \end_inset
@@ -6098,7 +6132,7 @@ ER.U.MIN.U
 \begin_layout Plain Layout
 
 \size footnotesize
-7.25
+8.88
 \end_layout
 
 \end_inset
@@ -6109,7 +6143,7 @@ ER.U.MIN.U
 \begin_layout Plain Layout
 
 \size footnotesize
-7.54
+8.98
 \end_layout
 
 \end_inset
@@ -6120,7 +6154,7 @@ ER.U.MIN.U
 \begin_layout Plain Layout
 
 \size footnotesize
-7.73
+9.06
 \end_layout
 
 \end_inset
@@ -6131,7 +6165,7 @@ ER.U.MIN.U
 \begin_layout Plain Layout
 
 \size footnotesize
-7.25
+8.88
 \end_layout
 
 \end_inset
@@ -6142,7 +6176,7 @@ ER.U.MIN.U
 \begin_layout Plain Layout
 
 \size footnotesize
-7.54
+8.98
 \end_layout
 
 \end_inset
@@ -6153,7 +6187,7 @@ ER.U.MIN.U
 \begin_layout Plain Layout
 
 \size footnotesize
-7.73
+9.06
 \end_layout
 
 \end_inset
@@ -6289,7 +6323,7 @@ ER.U.MIN.K
 \begin_layout Plain Layout
 
 \size footnotesize
-6.16
+6.46
 \end_layout
 
 \end_inset
@@ -6300,7 +6334,7 @@ ER.U.MIN.K
 \begin_layout Plain Layout
 
 \size footnotesize
-6.59
+7.36
 \end_layout
 
 \end_inset
@@ -6311,7 +6345,7 @@ ER.U.MIN.K
 \begin_layout Plain Layout
 
 \size footnotesize
-6.87
+7.46
 \end_layout
 
 \end_inset
@@ -6322,7 +6356,7 @@ ER.U.MIN.K
 \begin_layout Plain Layout
 
 \size footnotesize
-7.18
+7.54
 \end_layout
 
 \end_inset
@@ -6333,7 +6367,7 @@ ER.U.MIN.K
 \begin_layout Plain Layout
 
 \size footnotesize
-7.69
+8.59
 \end_layout
 
 \end_inset
@@ -6344,7 +6378,7 @@ ER.U.MIN.K
 \begin_layout Plain Layout
 
 \size footnotesize
-8.02
+8.70
 \end_layout
 
 \end_inset
@@ -6355,7 +6389,7 @@ ER.U.MIN.K
 \begin_layout Plain Layout
 
 \size footnotesize
-7.18
+7.54
 \end_layout
 
 \end_inset
@@ -6366,7 +6400,7 @@ ER.U.MIN.K
 \begin_layout Plain Layout
 
 \size footnotesize
-7.69
+8.59
 \end_layout
 
 \end_inset
@@ -6377,7 +6411,7 @@ ER.U.MIN.K
 \begin_layout Plain Layout
 
 \size footnotesize
-8.02
+8.70
 \end_layout
 
 \end_inset
@@ -7330,6 +7364,13 @@ MIN
 \end_inset
 
 
+\begin_inset CommandInset label
+LatexCommand label
+name "par:Lasttyp-MIN"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7342,8 +7383,7 @@ MIN
 \begin_inset Quotes frd
 \end_inset
 
- am stärksten, nämlich um ca.
- 9% pro Zeitspanne unterscheiden.
+ am stärksten, nämlich um ein paar Prozent pro Zeitspanne unterscheiden.
  Dabei ist stets die CPU-Belastung der Ethernet-Netzwerklasten höher als
  die durch UDP.
  Die erzielten Bitraten der Netzwerkströme dieses Lasttyps sind weit unter
@@ -8130,6 +8170,55 @@ Da sich Übertragungen via TCP von denen per UDP lediglich im Socket und
 
 \begin_layout Subparagraph
 Fazit
+\begin_inset CommandInset label
+LatexCommand label
+name "par:Fazit"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aufgrund den vorhin ermittelten Werten genügt es den UDP-Verkehr zu analysieren
+ und daraus Ergebnisse für den Layer-2-Datenverkehr abzuleiten, welcher
+ in den nächsten Szenarien nicht in Betracht gezogen wird.
+\end_layout
+
+\begin_layout Standard
+Was für den Layer-2-Datenstrom aus dem UDP-Netzwerkverkehr abgeleitet werden
+ kann, ist Paragraph 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand formatted
+reference "par:Lasttyp-MIN"
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "par:Lasttyp-MIN"
+
+\end_inset
+
+ zu entnehmen: Bei Übertragungen des Lasttyps 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+ erzielt die Ethernet-Variante aus den im vorhin erwähnten Paragraph erläuterten
+ Grund eine marginal höhere CPU- und Netzwerk-Last.
 \end_layout
 
 \begin_layout Standard
@@ -8355,7 +8444,7 @@ Langzeit
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Für die Szenarien in Frage kommende Netzwerklasten
+Für die nachfolgenden Szenarien in Frage kommende Netzwerklasten
 \end_layout
 
 \end_inset
@@ -8368,6 +8457,93 @@ Für die Szenarien in Frage kommende Netzwerklasten
 
 \end_layout
 
+\begin_layout Standard
+Für jede generierte Netzwerklast werden pro Teilnehmer (z.B.
+ shck-Client und shck-Server) folgende Statistik-Merkmale in den Resultaten
+ (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Resultate"
+
+\end_inset
+
+) aufgelistet:
+\end_layout
+
+\begin_layout Itemize
+CPU-Last
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+CPU-Last [%] (jeweils Minimum, Durchschnitt und Maximum)
+\end_layout
+
+\begin_layout Itemize
+Systemtime [s] (jeweils Minimum, Durchschnitt und Maximum)
+\end_layout
+
+\begin_layout Itemize
+Usertime [s] (jeweils Minimum, Durchschnitt und Maximum)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Netzwerkbelastung pro verwendetes Netzwerk-Interface (Normalfall: 
+\begin_inset Quotes fld
+\end_inset
+
+prp1
+\begin_inset Quotes frd
+\end_inset
+
+, 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+, 
+\begin_inset Quotes fld
+\end_inset
+
+eth1
+\begin_inset Quotes frd
+\end_inset
+
+)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+RX-Bitrate (Download) [MBit/s] (jeweils Minimum, Durchschnitt und Maximum)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Wird nichts empfangen bzw.
+ beträgt die RX-Bitrate konstant 0.00 (Beispiel: UDP-Traffic-Generierung
+ betrachtet auf sendendem shck-Client), so wird dieses Merkmal für die entsprech
+ende Netzwerklast nicht aufgeführt.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+TX-Bitrate (Download) [MBit/s] (jeweils Minimum, Durchschnitt und Maximum)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Wird nichts versendet bzw.
+ beträgt die TX-Bitrate konstant 0.00 (Beispiel: UDP-Traffic-Generierung
+ betrachtet auf empfangendem shck-Server), so wird dieses Merkmal für die
+ entsprechende Netzwerklast nicht aufgeführt.
+\end_layout
+
+\end_deeper
+\end_deeper
 \begin_layout Subsubsection
 Szenario 01: Performance im PRP-Netzwerk
 \begin_inset CommandInset label
@@ -9000,6 +9176,16 @@ Szenario 03: Effekt von Laufzeitunterscheidungen zwischen Netzwerk A und
  B
 \end_layout
 
+\begin_layout Standard
+Asymmetrie A & B -> zusatzdelay
+\end_layout
+
+\begin_layout Standard
+Interessanter fall: schwankender delay -> mal netz schneller und langsam
+ -> oszillierend ECI via Python automatisieren? Paragon mit Variablem Delay
+ dazwischen hängen 
+\end_layout
+
 \begin_layout Subsubsection
 Szenario 04: Zeitweiser Ausfall eines Netzwerkpfades
 \end_layout
@@ -9016,8 +9202,30 @@ TCP, UDP, Ethernet
 Szenario 06: Einfluss nicht entfernter Duplikate auf Funktion und Performance
 \end_layout
 
+\begin_layout Standard
+Delay Ankunft zwischen Original und Duplikat zu gross
+\end_layout
+
+\begin_layout Standard
+Möglich? Neue SeqNr hat gleiche wie alte wo noch in PRP Tabelle ist
+\end_layout
+
+\begin_layout Standard
+Kann Speicher an Duplikaten im Stack komplett ausgelastet werden?
+\end_layout
+
+\begin_layout Standard
+Wie geht stack vor wenn Duplikattabelle voll? Wenn zb LAN_A aus? wird ältestes
+ überschrieben? 
+\end_layout
+
 \begin_layout Subsubsection
 Szenario 07: Auswirkungen, wenn Frames out-of-sequence ankommen
+\end_layout
+
+\begin_layout Standard
+Out of sequence erzwingen (Langes zuerst, dann kurzes -> kurzes kommt vor
+ langem an)
 \end_layout
 
 \begin_layout Subsubsection
