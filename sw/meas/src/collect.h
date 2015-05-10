@@ -33,18 +33,6 @@
 
 #include "types.h"
 
-#define INDEX_UTIME         0
-#define INDEX_STIME         1
-#define INDEX_IF_NAME_PRP   2
-#define INDEX_RX_BYTES_PRP  3
-#define INDEX_TX_BYTES_PRP  4
-#define INDEX_IF_NAME_IF0   5
-#define INDEX_RX_BYTES_IF0  6
-#define INDEX_TX_BYTES_IF0  7
-#define INDEX_IF_NAME_IF1   8
-#define INDEX_RX_BYTES_IF1  9
-#define INDEX_TX_BYTES_IF1 10
-
 
 /* function prototypes */
 stats_t* get_stat_vals( file_params_t** file_params_list, meas_buffer_t** meas_buffers,

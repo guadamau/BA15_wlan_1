@@ -39,7 +39,7 @@
 #include <unistd.h>
 #include <float.h>
 
-
+#define MAX_PROC_VALS        128
 #define FILE_BUFFER_SIZE    1024
 #define STD_STRING_MALLOC   1024
 #define PATH_LEN             256
@@ -59,11 +59,12 @@
 typedef struct 
 {
 
-  pid_t    pid;
-  int32_t  interval;
-  uint32_t no_intervals;
-  uint8_t  verbosity_level;
-  char     store_path[ FILE_BUFFER_SIZE ];
+  pid_t         pid;
+  unsigned char prp_mode;
+  int32_t       interval;
+  uint32_t      no_intervals;
+  uint8_t       verbosity_level;
+  char          store_path[ FILE_BUFFER_SIZE ];
 
 } cmd_args_t;
 
@@ -150,6 +151,8 @@ typedef struct
 {
 
   pid_t      pid;
+  
+  char       storage_path[ PATH_LEN ];
 
   uint32_t   interval_duration;
 

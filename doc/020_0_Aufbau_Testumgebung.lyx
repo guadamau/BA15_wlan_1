@@ -1355,94 +1355,12 @@ pkt-rate-high: 0
 
 \begin_layout Plain Layout
 
-rx-usecs: 20 
+rx-usecs: 20
 \end_layout
 
 \begin_layout Plain Layout
 
-rx-frames: 5 
-\end_layout
-
-\begin_layout Plain Layout
-
-rx-usecs-irq: 20 
-\end_layout
-
-\begin_layout Plain Layout
-
-rx-frames-irq: 5
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-tx-usecs: 72 
-\end_layout
-
-\begin_layout Plain Layout
-
-tx-frames: 53 
-\end_layout
-
-\begin_layout Plain Layout
-
-tx-usecs-irq: 20 
-\end_layout
-
-\begin_layout Plain Layout
-
-tx-frames-irq: 5
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-rx-usecs-low: 0 
-\end_layout
-
-\begin_layout Plain Layout
-
-rx-frame-low: 0 
-\end_layout
-
-\begin_layout Plain Layout
-
-tx-usecs-low: 0 
-\end_layout
-
-\begin_layout Plain Layout
-
-tx-frame-low: 0
-\end_layout
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\begin_layout Plain Layout
-
-rx-usecs-high: 0 
-\end_layout
-
-\begin_layout Plain Layout
-
-rx-frame-high: 0 
-\end_layout
-
-\begin_layout Plain Layout
-
-tx-usecs-high: 0 
-\end_layout
-
-\begin_layout Plain Layout
-
-tx-frame-high: 0
+...
 \end_layout
 
 \begin_layout Plain Layout
@@ -1455,6 +1373,28 @@ end{Verbatim}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Es wurde ein Aktualisierungs-Intervall mit einer Dauer von 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$100 
+\backslash
+mu s$
+\end_layout
+
+\end_inset
+
+ gewählt.
+ Mit kürzeren Intervallen wäre der maximale Messfehler noch kleiner, jedoch
+ besteht die Gefahr, dass die Performanz des Netzwerk-Interfaces unter dieser
+ Konfiguration beeinträchtigt würde, was Geschwindigkeitseinbussen in der
+ Datenübermittlung zur Folge hätte.
+ Userspace applikation meas, bla bla Genauigkeit bla bla ...
 \end_layout
 
 \begin_layout Standard

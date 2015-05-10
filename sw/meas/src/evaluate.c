@@ -50,6 +50,7 @@ stats_res_t* evaluate_interval_data( stats_t* start_data, stats_t* end_data, uin
     exit( EXIT_FAILURE );
   }
 
+
   /* set the interval number to a result set */
   results->interval_no = interval_no;
   /* ****************************************** */
@@ -242,7 +243,16 @@ stats_res_overall_t* evaluate_overall_data( stats_res_t** results_list, uint32_t
   
   
   /* ****************************************** */
-
+  
+  
+  /* init the storage path with null bytes. 
+   * storage path is set later when 
+   * printing the results in print.c */
+  memset( overall_results->storage_path, '\0', 
+          PATH_LEN * sizeof( char ) );
+  /* ****************************************** */
+  
+  
   /* take pid of the first */
   overall_results->pid = ( *( results_list + 0 ) )->pid;
   /* ****************************************** */

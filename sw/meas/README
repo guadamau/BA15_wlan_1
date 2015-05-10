@@ -43,12 +43,29 @@ Parameters:
 ############################################################
 
 Mandatory parameters: -p -i
-Optional parameters : -n -v -P
+Optional parameters : -n -v -P -m
 
 -i      INTERVAL        Defines the interval time 
                         of one measurement interval in seconds.
                         Also floating point values >= 0.010 
                         are allowed.
+
+-m      MODE            Select a mode. 
+                        Valid parameters: 0 or 1
+                        Mode 0: Watch and report a single interface.
+                                For the BA15_wlan_1 environment 
+                                it is set to "eth0".
+                        Mode 1: Watch the virtual PRP interface 
+                                including its physical
+                                two interfaces.
+                        Note:   If the mappings of the interfaces
+                                change for example in use with
+                                another environment than 
+                                BA15_wlan_1 this has to be
+                                adjusted in attrs.h / attrs.c
+                                ( File coordinates in:
+                                /proc/net/dev ... )
+                        The default value is 1.
 
 -n      NO OF INTERVALS Defines how many times a measurement
                         interval should be repeated.

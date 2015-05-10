@@ -37,10 +37,13 @@
 #define ms_to_s( X )           ( ( float )X / ( float )1000 )
 
 /* function prototypes */
-void output_results_single( void* output_loc, stats_res_t* results, char* file_prefix );
+void output_results_single( void* output_loc, stats_res_t* results, char* file_prefix, 
+                            unsigned char prp_enabled );
+
 void output_results_all( void* output_loc, stats_res_t** results_list, uint32_t res_list_len, 
-                         char* file_prefix );
+                         char* file_prefix, unsigned char prp_enabled );
+
 void output_results_overall( void* output_loc, stats_res_overall_t* overall_stats, 
-                             char* file_prefix );
+                             char* file_prefix, unsigned char prp_enabled );
 
 #endif /* MEAS_PRINT_H_ */

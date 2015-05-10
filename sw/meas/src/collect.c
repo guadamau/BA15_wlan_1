@@ -27,13 +27,8 @@
 
 #include "pstring.h"
 
-#define MAX_CMD_LINES        16
-#define TOKEN_MALLOC_SIZE     8
-#define LINE_DELIM         "\n"
-
-
 /* 
- * read the global vars of the command lines: 
+ * To have propper read access to the global vars:
  * 
  * init_paths
  * init_search
@@ -44,6 +39,11 @@
  * 
  * */
 #include "attrs.h"
+
+
+#define TOKEN_MALLOC_SIZE     8
+#define LINE_DELIM         "\n"
+
 
 /* private function prototypes */
 unsigned char is_printable_str( const char* str );
@@ -176,7 +176,7 @@ file_params_t** create_file_params( cmd_args_t args )
     perror( "At least one command line has to be configured.\n" );
     exit( EXIT_FAILURE );
   }
-  else if( cmd_line_count > MAX_CMD_LINES )
+  else if( cmd_line_count > MAX_PROC_VALS )
   {
     perror( "C'mon, srsly? Set a realistic vlaue to cmd_line_count.\n" );
     exit( EXIT_FAILURE );

@@ -47,6 +47,7 @@
 #include <limits.h>
 #include <unistd.h>
 
+#include "attrs.h"
 #include "mtimer.h"
 #include "collect.h"
 #include "evaluate.h"
@@ -131,6 +132,7 @@ int main( int argc, char* argv[] )
   float interval_flt;
 
   args.pid             =  0;
+  args.prp_mode        =  1;
   args.interval        = -1;
   args.no_intervals    =  0;
   args.verbosity_level =  0;
@@ -144,7 +146,7 @@ int main( int argc, char* argv[] )
    * Specifiying the expected options
    * The two options p and t expect numbers as argument.
    * */
-  while( ( option = getopt( argc, argv, "p:i:n:v:P:" ) ) != -1 )
+  while( ( option = getopt( argc, argv, "p:i:n:v:P:m:" ) ) != -1 )
   {
     switch( option )
     {
@@ -233,6 +235,18 @@ int main( int argc, char* argv[] )
         }
         break;
       }
+      case 'm' :
+      {
+        check_opt_str_len( optarg );
+        args.prp_mode = strtonum( optarg, 0, 1, &errstr );
+        if( errstr )
+        {
+          errx( 1, "specify a valid mode. %s: %s\n", errstr, optarg );
+          print_usage();
+          exit( EXIT_FAILURE );
+        }
+        break;
+      }
       default:
       {
         print_usage();
@@ -241,6 +255,9 @@ int main( int argc, char* argv[] )
       }
     }
   }
+  /* Initially set up the values we want to get from /proc. */
+  set_prp_mode( args.prp_mode );
+  init_proc_properties();
   
   if( args.pid == 0 || args.interval == -1 )
   {
@@ -337,7 +354,7 @@ int main( int argc, char* argv[] )
      * at this verbosity level */
     if( args.verbosity_level == 2 )
     {
-      output_results_single( ( void* )stdout, *( results_list + ( i - 1 ) ), NULL );
+      output_results_single( ( void* )stdout, *( results_list + ( i - 1 ) ), NULL, prp_enabled );
     }
     start_data = NULL;
     end_data = NULL;
@@ -358,11 +375,11 @@ int main( int argc, char* argv[] )
   
   if( args.verbosity_level == 1 || args.verbosity_level == 2 )
   {
-    output_results_overall( ( void* )stdout, overall_stats, NULL );
+    output_results_overall( ( void* )stdout, overall_stats, NULL, prp_enabled );
   }
   
-  output_results_all( args.store_path, results_list, args.no_intervals, FILE_PREFIX_1 );
-  output_results_overall( args.store_path, overall_stats, FILE_PREFIX_2 );
+  output_results_all( args.store_path, results_list, args.no_intervals, FILE_PREFIX_1, prp_enabled );
+  output_results_overall( args.store_path, overall_stats, FILE_PREFIX_2, prp_enabled );
   
   clear_file_params( file_params_list );
 
