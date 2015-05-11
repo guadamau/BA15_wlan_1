@@ -1106,6 +1106,13 @@ reference "tab:eci-box"
 
 \begin_layout Subsubsection
 /proc-Netzwerkstatistiken
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:proc-Netzwerkstatistiken"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1391,24 +1398,31 @@ mu s$
 
  gewählt.
  Mit kürzeren Intervallen wäre der maximale Messfehler noch kleiner, jedoch
- besteht die Gefahr, dass die Performanz des Netzwerk-Interfaces unter dieser
+ besteht die Gefahr, dass die Performanz der Netzwerk-Interfaces unter dieser
  Konfiguration beeinträchtigt würde, was Geschwindigkeitseinbussen in der
  Datenübermittlung zur Folge hätte.
- Userspace applikation meas, bla bla Genauigkeit bla bla ...
+\end_layout
+
+\begin_layout Standard
+--------------------------------------------------------------------------------
+---------------
+\end_layout
+
+\begin_layout Standard
+--- umschreiben für BA-inhalt
 \end_layout
 
 \begin_layout Standard
 Die Broadcom-Interfaces (eth0 und eth1) haben standardmässig ein Interrupt-Inter
 vall von 1 Sekunde eingestellt, für das aktualisieren ihrer statistischen
  Werte.
- Du kannst Dir sicher ausmalen, was das heisst.
  Krasses Beispiel: Wenn wir mit meas alle 10 ms eine Messung durchführen,
  haben die ersten 99 Intervalle 0 TX-Bytes und das 100.
  Intervall hat dann ca.
  12500000 TX-Bytes.
  Dies resultiert dann in einer Bitrate von 12500000 * 8 / ( 1000*1000 )
  / 0.010 = 10000 MBit/s.
- Haha.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -1424,6 +1438,11 @@ equency.sh" Also Refresh-Rate habe ich mal 100 Mikrosekunden gewählt.
 \begin_layout Standard
 Nun sehen die Intervall Results anständiger aus, exemplarisch eine Messserie
  mit Intervall 0.017s: "/tmp/meas_interval_results_143061602
+\end_layout
+
+\begin_layout Standard
+--------------------------------------------------------------------------------
+---------------
 \end_layout
 
 \begin_layout Subsection

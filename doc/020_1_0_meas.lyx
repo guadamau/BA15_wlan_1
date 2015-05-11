@@ -1214,7 +1214,14 @@ mu s$
 
 \end_inset
 
- limitiert ist, siehe MMMMMMMMM.
+ limitiert ist, siehe 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:proc-Netzwerkstatistiken"
+
+\end_inset
+
+.
  Nach diesen Optimierungen ist es nicht mehr möglich, ausgewertete Resultate
  direkt während der Messung auf einer Ausgabekonsole zu verfolgen.
  Der Fokus dieser Arbeit liegt jedoch darin, Messungen aufzuzeichnen und
@@ -1233,7 +1240,7 @@ Systemcalls und Datenkonsistenz
 \begin_inset Newline newline
 \end_inset
 
-fdafd
+WIP
 \end_layout
 
 \end_body
