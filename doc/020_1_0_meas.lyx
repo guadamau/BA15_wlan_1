@@ -106,11 +106,73 @@ measurement
 \begin_inset Quotes frd
 \end_inset
 
-) programmiert, bei der die CPU-Last berechnet wird, um die Ergebnisse von
- pidstat und top verifizieren zu können.
+) entwickelt, bei der die CPU-Last einzelner Prozesse evaluiert wird.
  Des Weiteren ermittelt meas neben der CPU-Last, die System- und Usertime
- eines Prozesses, sowie sämtliche statistischen Daten zu allen PRP-involvierten
- Netzwerk-Interfaces.
+ eines Prozesses.
+ 
+\end_layout
+
+\begin_layout Standard
+Zusätzlich unterstützt meas zwei Modi im Hinblick aut das Testszenario 02
+ (siehe 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Szenario-02:-Performance"
+
+\end_inset
+
+):
+\end_layout
+
+\begin_layout Itemize
+Ermitteln von Statistiken aller PRP-involvierten Netzwerk-Interfaces 
+\begin_inset Newline newline
+\end_inset
+
+[z.
+ B.: 
+\begin_inset Quotes fld
+\end_inset
+
+prp1
+\begin_inset Quotes frd
+\end_inset
+
+ (virtuell), 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ (physisch), 
+\begin_inset Quotes fld
+\end_inset
+
+eth1
+\begin_inset Quotes frd
+\end_inset
+
+ (physisch)]
+\end_layout
+
+\begin_layout Itemize
+Ermitteln von Statistiken eines einzeln physischen Netzwerk-Interfaces (ohne
+ PRP)
+\begin_inset Newline newline
+\end_inset
+
+[z.
+ B.: 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ (physisch)]
 \end_layout
 
 \begin_layout Paragraph
@@ -125,8 +187,8 @@ measurement
 \begin_inset Newline newline
 \end_inset
 
-Die nachfolgend gezeigte Grafik, soll eine Übersicht um den Gesamtumfang
- der Software meas aufzeigen:
+Die nachfolgende Grafik, soll eine Übersicht um den Gesamtumfang der Software
+ meas illustrieren:
 \end_layout
 
 \begin_layout Standard
@@ -218,7 +280,7 @@ meas-Datentypen
 \begin_inset Newline newline
 \end_inset
 
-Um zusammengehörende Datentypen sinnvoll zu gliedern werden C-Structs verwendet:
+Um zusammengehörende Daten sinnvoll zu gliedern werden C-Structs verwendet:
 \end_layout
 
 \begin_layout Standard
@@ -596,9 +658,103 @@ attrs
 \end_layout
 
 \begin_layout Standard
-Repräsentiert eine Header-Datei, in welcher definiert wird, welche /proc-Dateien
- ausgelesen werden sollen, und an welchen Koordinaten der gewünschte Wert
- in der spezifizierten Datei liegt.
+Diese Komponente repräsentiert die Schnittstelle zum /proc-Dateisystem.
+ Hier wird spezifiziert, welche Dateien ausgelesen werden und an welcher
+ Position (Zeile/Spalte) sich der Datenwert pro Datei befindet, welcher
+ für die Statistikevaluation benötigt wird.
+\end_layout
+
+\begin_layout Standard
+Diese Konfigurationsparameter sind in globalen Variablen gespeichert und
+ werden beim Starten der Applikation festgelegt.
+ Andere Module greifen während des Ablaufs einer Messserie nur lesend auf
+ die Variablen zu.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{language=C,tabsize=2}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[caption={Deklaration der Konfigurationsfelder},captionpos=b]
+\end_layout
+
+\begin_layout Plain Layout
+
+...
+\end_layout
+
+\begin_layout Plain Layout
+
+unsigned char prp_enabled;
+\end_layout
+
+\begin_layout Plain Layout
+
+unsigned char cmd_line_count;
+\end_layout
+
+\begin_layout Plain Layout
+
+char init_paths    [ MAX_PROC_VALS ][ PATH_LEN ];
+\end_layout
+
+\begin_layout Plain Layout
+
+char init_search   [ MAX_PROC_VALS ][ PATH_LEN ];
+\end_layout
+
+\begin_layout Plain Layout
+
+char init_val_pos  [ MAX_PROC_VALS ][ PATH_LEN ];
+\end_layout
+
+\begin_layout Plain Layout
+
+char init_val_delim[ MAX_PROC_VALS ][ PATH_LEN ];
+\end_layout
+
+\begin_layout Plain Layout
+
+char init_val_types[ MAX_PROC_VALS ][ PATH_LEN ];
+\end_layout
+
+\begin_layout Plain Layout
+
+...
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+prp_enabled gibt Auskunft darüber, ob die meas-Appliktion im PRP-Mode gestartet
+ wurde oder nicht.
+ cmd_line_count enthält die Information darüber, wie viele Werte jeweils
+ aus dem /proc-Dateisystem gelesen werden.
+\end_layout
+
+\begin_layout Standard
+Initialisierung eines Konfigurations-Datenfeldes:
 \end_layout
 
 \begin_layout Standard
@@ -627,31 +783,20 @@ begin{lstlisting}[caption={Beispiel eines Konfigurationsfeldes, /proc-Dateipfade
 
 \begin_layout Plain Layout
 
-const char const* init_paths[] =     {                                 
-        
+strncpy( init_paths[ INDEX_UTIME        ], "/proc/$PID$/stat", PATH_LEN
+ );   
 \end_layout
 
 \begin_layout Plain Layout
 
-                                       "/proc/$PID$/stat", /* utime %lu
- */
+strncpy( init_paths[ INDEX_STIME        ], "/proc/$PID$/stat", PATH_LEN
+ );   
 \end_layout
 
 \begin_layout Plain Layout
 
-                                       "/proc/$PID$/stat", /* stime %lu
- */
-\end_layout
-
-\begin_layout Plain Layout
-
-                                       "/proc/net/dev"     /* traffic stats
- of nics */
-\end_layout
-
-\begin_layout Plain Layout
-
-                                     };
+strncpy( init_paths[ INDEX_IF_NAME_PRP  ], "/proc/net/dev"   , PATH_LEN
+ );
 \end_layout
 
 \begin_layout Plain Layout
@@ -674,6 +819,10 @@ end{lstlisting}
 \begin_layout Standard
 Mit $-Zeichen umgebene Zeichen im Dateipfad werden in diesem Fall durch
  die Prozess-ID ersetzt, die dem Programm als Argument übergeben wird.
+\end_layout
+
+\begin_layout Standard
+Initialisierung eines Konfigurations-Datenfeldes:
 \end_layout
 
 \begin_layout Standard
@@ -702,28 +851,27 @@ n},captionpos=b]
 
 \begin_layout Plain Layout
 
-const char const* init_val_pos[] =   {
+strncpy( init_val_pos[ INDEX_UTIME        ], "1:14", PATH_LEN );   
 \end_layout
 
 \begin_layout Plain Layout
 
-                                       "1:14",
+strncpy( init_val_pos[ INDEX_STIME        ], "1:15", PATH_LEN );   
 \end_layout
 
 \begin_layout Plain Layout
 
-                                       "1:15",
+strncpy( init_val_pos[ INDEX_IF_NAME_PRP  ], "7:1" , PATH_LEN );
 \end_layout
 
 \begin_layout Plain Layout
 
-                                       "7:1"                           
-          
+strncpy( init_val_pos[ INDEX_RX_BYTES_PRP ], "7:2" , PATH_LEN );
 \end_layout
 
 \begin_layout Plain Layout
 
-                                     };
+strncpy( init_val_pos[ INDEX_TX_BYTES_PRP ], "7:10", PATH_LEN );
 \end_layout
 
 \begin_layout Plain Layout
@@ -1228,7 +1376,7 @@ reference "sub:proc-Netzwerkstatistiken"
  anschliessend die ausgewerteten Resultate zu dokumentieren.
 \end_layout
 
-\begin_layout Subparagraph
+\begin_layout Paragraph
 Systemcalls und Datenkonsistenz
 \end_layout
 
@@ -1240,7 +1388,68 @@ Systemcalls und Datenkonsistenz
 \begin_inset Newline newline
 \end_inset
 
-WIP
+Um von den Dateien aus /proc zu lesen, wurden direkt die Systemcalls des
+ Betriebssystems 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$open()$
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$read()$
+\end_layout
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$lseek()$
+\end_layout
+
+\end_inset
+
+ und 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$close()$
+\end_layout
+
+\end_inset
+
+ verwendet.
+ Beim Öffnen der Dateien (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$open()$
+\end_layout
+
+\end_inset
+
+-Systemcall) werden die Flags O_RDONLY (nur Lesezugriff) und O_SYNC verwendet.
+ O_SYNC garantiert die Datenkonsistenz.
+ Gleichzeitige Lese- und Schreibzugriffe auf Dateien werden somit vermieden.
+ Diese Situation könnte auftreten, wenn beispielsweise der Kernel die /proc-Stat
+istiken aktualisiert und zur gleichen Zeit
 \end_layout
 
 \end_body

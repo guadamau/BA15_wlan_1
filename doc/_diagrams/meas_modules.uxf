@@ -4,28 +4,37 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>552</x>
+      <x>288</x>
       <y>416</y>
-      <w>128</w>
-      <h>136</h>
+      <w>176</w>
+      <h>240</h>
     </coordinates>
     <panel_attributes>*attrs.h*
 --
 
-init_paths[]
-init_search[]
-init_val_pos[]
-init_val_delim[]
-init_val_types[]
+prp_enabled
 cmd_line_count
+init_paths[][]
+init_search[][]
+init_val_pos[][]
+init_val_delim[][]
+init_val_types[][]
+
+void 
+set_prp_mode( 
+unsigned char prp_mode )
+
+void 
+init_proc_properties( 
+void )
 </panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>280</x>
-      <y>32</y>
+      <x>56</x>
+      <y>40</y>
       <w>424</w>
       <h>360</h>
     </coordinates>
@@ -62,9 +71,9 @@ release_meas_buffers( meas_buffer_meta_t* buffers_meta,
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>576</x>
-      <y>608</y>
-      <w>152</w>
+      <x>424</x>
+      <y>688</y>
+      <w>88</w>
       <h>80</h>
     </coordinates>
     <panel_attributes>*collect.c*
@@ -77,19 +86,19 @@ release_meas_buffers( meas_buffer_meta_t* buffers_meta,
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>680</x>
-      <y>384</y>
+      <x>464</x>
+      <y>392</y>
       <w>24</w>
-      <h>240</h>
+      <h>312</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;280.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;370.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>792</x>
-      <y>32</y>
+      <x>568</x>
+      <y>40</y>
       <w>416</w>
       <h>168</h>
     </coordinates>
@@ -110,8 +119,8 @@ file_params_t
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>696</x>
-      <y>112</y>
+      <x>472</x>
+      <y>120</y>
       <w>112</w>
       <h>24</h>
     </coordinates>
@@ -121,8 +130,8 @@ file_params_t
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>744</x>
-      <y>368</y>
+      <x>520</x>
+      <y>376</y>
       <w>368</w>
       <h>168</h>
     </coordinates>
@@ -144,8 +153,8 @@ evaluate_overall_data( stats_res_t** results_list,
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>800</x>
-      <y>560</y>
+      <x>576</x>
+      <y>568</y>
       <w>408</w>
       <h>248</h>
     </coordinates>
@@ -173,8 +182,8 @@ output_results_overall( void* output_loc,
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>712</x>
-      <y>240</y>
+      <x>488</x>
+      <y>248</y>
       <w>248</w>
       <h>96</h>
     </coordinates>
@@ -191,19 +200,19 @@ string_replace_ext( char* search,
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>712</x>
-      <y>328</y>
+      <x>488</x>
+      <y>336</y>
       <w>24</w>
-      <h>296</h>
+      <h>368</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;350.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;440.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1088</x>
-      <y>192</y>
+      <x>864</x>
+      <y>200</y>
       <w>24</w>
       <h>192</h>
     </coordinates>
@@ -213,8 +222,8 @@ string_replace_ext( char* search,
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1136</x>
-      <y>192</y>
+      <x>912</x>
+      <y>200</y>
       <w>24</w>
       <h>384</h>
     </coordinates>
@@ -224,8 +233,8 @@ string_replace_ext( char* search,
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>992</x>
-      <y>240</y>
+      <x>768</x>
+      <y>248</y>
       <w>96</w>
       <h>56</h>
     </coordinates>
@@ -239,8 +248,8 @@ string_replace_ext( char* search,
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>952</x>
-      <y>272</y>
+      <x>728</x>
+      <y>280</y>
       <w>56</w>
       <h>24</h>
     </coordinates>
@@ -250,8 +259,8 @@ string_replace_ext( char* search,
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>592</x>
-      <y>712</y>
+      <x>368</x>
+      <y>776</y>
       <w>168</w>
       <h>80</h>
     </coordinates>
@@ -265,19 +274,19 @@ string_replace_ext( char* search,
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>744</x>
-      <y>528</y>
+      <x>520</x>
+      <y>536</y>
       <w>24</w>
-      <h>200</h>
+      <h>256</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;230.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;300.0</additional_attributes>
   </element>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>1032</x>
-      <y>904</y>
+      <x>808</x>
+      <y>912</y>
       <w>176</w>
       <h>80</h>
     </coordinates>
@@ -291,8 +300,8 @@ string_replace_ext( char* search,
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>1112</x>
-      <y>800</y>
+      <x>888</x>
+      <y>808</y>
       <w>24</w>
       <h>120</h>
     </coordinates>
@@ -302,8 +311,8 @@ string_replace_ext( char* search,
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>280</x>
-      <y>856</y>
+      <x>56</x>
+      <y>864</y>
       <w>704</w>
       <h>128</h>
     </coordinates>
@@ -319,9 +328,9 @@ string_replace_ext( char* search,
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>280</x>
+      <x>56</x>
       <y>416</y>
-      <w>216</w>
+      <w>208</w>
       <h>400</h>
     </coordinates>
     <panel_attributes>*mtimer.h*
@@ -359,19 +368,19 @@ printTTime( ttimer_t timer )</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>632</x>
-      <y>544</y>
+      <x>424</x>
+      <y>648</y>
       <w>24</w>
-      <h>80</h>
+      <h>56</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;80.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>768</x>
-      <y>528</y>
+      <x>544</x>
+      <y>536</y>
       <w>24</w>
       <h>344</h>
     </coordinates>
@@ -381,19 +390,19 @@ printTTime( ttimer_t timer )</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>320</x>
+      <x>96</x>
       <y>808</y>
       <w>24</w>
-      <h>64</h>
+      <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>512</x>
-      <y>384</y>
+      <x>264</x>
+      <y>392</y>
       <w>24</w>
       <h>488</h>
     </coordinates>
@@ -403,12 +412,49 @@ printTTime( ttimer_t timer )</panel_attributes>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>864</x>
-      <y>800</y>
+      <x>640</x>
+      <y>808</y>
       <w>24</w>
       <h>72</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>320</x>
+      <y>688</y>
+      <w>88</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>*attrs.c*
+--
+
+
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>336</x>
+      <y>648</y>
+      <w>24</w>
+      <h>56</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>296</x>
+      <y>648</y>
+      <w>24</w>
+      <h>232</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;270.0</additional_attributes>
   </element>
 </diagram>
