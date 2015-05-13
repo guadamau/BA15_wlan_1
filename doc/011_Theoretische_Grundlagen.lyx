@@ -1034,6 +1034,96 @@ key "Patent_TCPIP_Offload"
 \end_layout
 
 \begin_layout Section
+TCP-Window-Size
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:TCP-Window-Size"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Beim Versand von TCP-Paketen kann neben dem Prozessor und der Netzwerkanbindung
+ die TCP-Window-Size ein limitierender Faktor sein.
+ Dabei handelt es sich um einen Wert, welcher von jedem Teilnehmer im TCP-Header
+ mitgegeben wird.
+ Dieser besagt in Bytes, wie viel an TCP-Paketen vom anderen gesendet werden
+ kann, ohne eine Bestätigung zu erhalten.
+ Wenn der Sender zum Beispiel vom Empfänger eine TCP-Window-Size von 16'384
+ Bytes erhält, versendet der Sender diese Anzahl an Bytes, hält dann den
+ Sendevorgang an und wartet auf eine Quittierung bevor er mit dem Sendevorgang
+ weiterfährt.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "TCP_Win_Size_Scaling"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ein Beispiel zur Ermittlung der optimalen TCP-Window-Size 
+\begin_inset Formula $x$
+\end_inset
+
+ ist das Berechnen des Produkts von Bandbreite und RTT.
+ Bei 100 MBit/s und einer RTT von 1ms (typischer RTT-Wert für ein maximal
+ grosses Paket im lokalen Netzwerk via TCP 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "RTT"
+
+\end_inset
+
+) ergibt dies folgende Rechnung:
+\end_layout
+
+\begin_layout Standard
+\noindent
+\align center
+\begin_inset Formula $x=\frac{100'000'000}{8}\,Byte/s\,*0.001\,s=12'500\,Byte$
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Somit kann der Sender hier 12'500 Bytes an Daten senden, bevor er auf eine
+ Quittierung vom Empfänger wartet.
+ Anhand diesem TCP-Window-Size-Wert müsste der Sender in diesem Beispiel
+ nicht warten, bis er die Quittierung für die ersten 6'250 Bytes (Bandbreite
+ multipliziert mit der Dauer eines Weges: 0.5ms) vom Empfänger erhält, sondern
+ könnte die Zeit, in welcher die Quittierung übertragen wird, für das Senden
+ weiterer 6'250 Bytes nutzen.
+ Dies liegt daran, dass die RTT als Faktor miteinbezogen wurde, welche den
+ Hin- und Rückweg eines Pakets beinhaltet.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "TCP_Win_Size_Scaling"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ob die TCP-Window-Size ein limitierender Faktor beim TCP-Verkehr dieser
+ Arbeit darstellt wird in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Einfluss-von-TCP-Window-Size"
+
+\end_inset
+
+ untersucht.
+\end_layout
+
+\begin_layout Section
 /proc-Dateisystem
 \begin_inset CommandInset label
 LatexCommand label

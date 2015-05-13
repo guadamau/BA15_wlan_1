@@ -8545,6 +8545,34 @@ Wird nichts versendet bzw.
 \end_deeper
 \end_deeper
 \begin_layout Subsubsection
+Einfluss von TCP-Window-Size
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Einfluss-von-TCP-Window-Size"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bei TCP-Netzwerklasten könnte es vorkommen, dass die TCP-Window-Size (siehe
+ Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:TCP-Window-Size"
+
+\end_inset
+
+) neben der CPU und der Netzwerkanbindung ein limitierender Faktor darstellt.
+ Dazu werden 2 unterschiedliche TCP-Netzwerklasten betrachtet: Eine Last
+ mit minimal und eine weitere Last mit maximal grossen TCP-Paketen, welche
+ jeweils für eine Minute versendet wird.
+ Diese Zeitspanne genügt, um bei konstantem Versand von TCP-Paketen aussagekräft
+ige TCP-Window-Size-Werte zu erhalten.
+\end_layout
+
+\begin_layout Subsubsection
 Szenario 01: Performance im PRP-Netzwerk
 \begin_inset CommandInset label
 LatexCommand label
@@ -9074,6 +9102,13 @@ reference "sec:Szenario-01:-Performance"
 
 \begin_layout Subsubsection
 Szenario 02: Performance ohne PRP
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Szenario-02:-Performance"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
