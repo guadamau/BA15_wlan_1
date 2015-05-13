@@ -8565,11 +8565,337 @@ reference "sec:TCP-Window-Size"
 \end_inset
 
 ) neben der CPU und der Netzwerkanbindung ein limitierender Faktor darstellt.
- Dazu werden 2 unterschiedliche TCP-Netzwerklasten betrachtet: Eine Last
- mit minimal und eine weitere Last mit maximal grossen TCP-Paketen, welche
- jeweils für eine Minute versendet wird.
+ Dazu werden 2 unterschiedliche TCP-Netzwerklasten mittels tshark betrachtet:
+ Eine Last mit minimal und eine weitere Last mit maximal grossen TCP-Paketen,
+ welche jeweils für eine Minute versendet wird.
  Diese Zeitspanne genügt, um bei konstantem Versand von TCP-Paketen aussagekräft
 ige TCP-Window-Size-Werte zu erhalten.
+\end_layout
+
+\begin_layout Standard
+Zu beachten ist, dass tshark die CPU erheblich beansprucht und somit ein
+ Engpass beim Prozessor entstehen oder sich weiter verengen könnte, worunter
+ die RX-/TX-Bitraten in Mitleidenschaft gezogen werden könnten.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/020_3_window_size_tshark_top.png
+	lyxscale 50
+	scale 60
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Ressourcen-Nutzung, dargestellt mit top (shck mit -t TCP -s MAX und tshark)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In den folgenden Grafiken ist ersichtlich, dass sich die TCP-Window-Size-Werte
+ bei der Last mit minimalen Paketgrössen (Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+) weder in den TCP-Paketen vom Sender noch vom Empfänger ändern.
+ Das bedeutet, dass bei diesem Lasttyp die Performance nicht von TCP limitiert
+ wird.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/020_3_window_size_min_client.png
+	lyxscale 50
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/020_2_window_size_min_server.png
+	lyxscale 50
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+TCP-Window-Size, Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+ (oben sendender Client, unten empfangender Server)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Beim Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MAX
+\begin_inset Quotes frd
+\end_inset
+
+ ist beim Client dasselbe wie beim Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+ ersichtlich, jedoch ist beim Server zu Beginn eine Steigung festzustellen.
+ Danach schwankt der Wert um das erreichte Maximum, fällt aber nie wieder
+ auf den Anfangswert zurück.
+ Wie beim Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+ wird auch hier die Performance nicht von TCP limitiert, da alle TCP-Window-Size
+-Werte nie auf 0 fallen und damit den Durchsatz beeinträchtigen würden.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/020_3_window_size_max_client.png
+	lyxscale 50
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/020_3_window_size_max_server.png
+	lyxscale 50
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+TCP-Window-Size, Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MAX
+\begin_inset Quotes frd
+\end_inset
+
+ (oben sendender Client, unten empfangender Server)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ein weiterer Grund, dass die TCP-Window-Size kein limitierender Faktor ist,
+ zeigen die Resultate von Szenario 01 (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Szenario-01:-Performance-1"
+
+\end_inset
+
+) in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Szenario-01:-Performance"
+
+\end_inset
+
+.
+ Dort ist ersichtlich, dass beim Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MAX
+\begin_inset Quotes frd
+\end_inset
+
+ der theoretische Grenzwert (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Theoretische-Grenzwerte"
+
+\end_inset
+
+) erreicht wird und die Netzwerkanbindung der limitierende Faktor ist.
+ Da bei diesem Lasttyp aufgrund der gegenüber dem Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+ höher möglichen Durchsatzrate auch der TCP-Window-Size-Wert grösser ausfallen
+ würde (siehe vorherige Abbildungen), kann es beim Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+ nur die CPU sein, die einen Engpass bildet.
+\end_layout
+
+\begin_layout Standard
+Des Weiteren sind Lücken in den vorherigen Abbildungen festzustellen, welche
+ bedeuten, dass zu diesem Zeitpunkt Wireshark kein Paket aufgezeichnet hat.
+ Wären keine Pakete zu diesem Zeitpunkt übermittelt worden, würde bei der
+ Ausgabe von meas ein Minimum von 0 MBit/s aufgezeigt werden, was jedoch
+ nicht der Fall ist.
+ Dies wird in der tshark-Aufzeichnung in Wireshark wie folgt aufgezeigt:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/020_3_window_size_max_server_tcp_wireshark.png
+	lyxscale 50
+	scale 55
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Wireshark-Meldung bei TCP-Netzwerklast: 
+\begin_inset Quotes fld
+\end_inset
+
+Previous segment not captured
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Als Ursache dafür ist anzunehmen, dass tshark beim Aufzeichnen wegen dem
+ Prozessor (hohe Lastbeanspruchung, die ebenfalls vom PRP-1 stack und shck
+ benötigt wird) oder dem Festplattenspeicher an seine Grenzen gerät und
+ er dem Netzwerkverkehr nicht mehr ganz folgen kann.
+\end_layout
+
+\begin_layout Standard
+Schlussendlich kann man sagen, dass die TCP-Window-Size kein limitierender
+ Faktor darstellt und TCP-Verkehr lediglich durch die CPU oder das Netzwerk
+ beeinträchtigt werden kann.
 \end_layout
 
 \begin_layout Subsubsection
