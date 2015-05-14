@@ -1449,7 +1449,16 @@ $open()$
  O_SYNC garantiert die Datenkonsistenz.
  Gleichzeitige Lese- und Schreibzugriffe auf Dateien werden somit vermieden.
  Diese Situation könnte auftreten, wenn beispielsweise der Kernel die /proc-Stat
-istiken aktualisiert und zur gleichen Zeit
+istiken aktualisiert und zur gleichen Zeit meas lesend auf die entsprechende
+ Datei zuzugreifen versucht.
+\end_layout
+
+\begin_layout Standard
+Verifizierung
+\end_layout
+
+\begin_layout Standard
+Um sicherzustellen, ob
 \end_layout
 
 \end_body
