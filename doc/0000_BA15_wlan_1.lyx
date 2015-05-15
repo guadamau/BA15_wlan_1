@@ -222,7 +222,7 @@ width=.8\textwidth
 \end{axis} 
 \end{tikzpicture}}
 \end_preamble
-\options bibliography=totocnumbered,listof=totocnumbered
+\options bibliography=totocnumbered,listof=totocnumbered,numbers=noenddot
 \use_default_options true
 \maintain_unincluded_children false
 \language ngerman

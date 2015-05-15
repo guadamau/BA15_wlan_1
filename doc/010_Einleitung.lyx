@@ -181,6 +181,33 @@ reference "sec:Offizielle-Aufgabenstellung"
 ) zugestellt, welche die nachfolgenden Hauptanforderungen umfasst:
 \end_layout
 
+\begin_layout Itemize
+Studium von PRP und Aufbau Testumgebung
+\end_layout
+
+\begin_layout Itemize
+Ermittlung der Leistungsfähigkeit der Implementierung unter manigfaltigen
+ Aspekten
+\end_layout
+
+\begin_layout Itemize
+Untersuchung, Bewertung und ggf.
+ Entwicklung von Tools
+\end_layout
+
+\begin_layout Itemize
+Einfluss von Offload-Mechanismen aufzeigen
+\end_layout
+
+\begin_layout Itemize
+Auswirkung von PRP auf das Endsystem, insbesondere auf die Belastung von
+ CPU und Memory studieren
+\end_layout
+
+\begin_layout Itemize
+Grundsätze und Rahmenbedingungen formulieren
+\end_layout
+
 \begin_layout Subsection
 Erwartetes Resultat
 \end_layout

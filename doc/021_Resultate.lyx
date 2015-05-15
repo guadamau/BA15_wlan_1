@@ -6694,7 +6694,7 @@ shck-Client
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -7860,7 +7860,7 @@ Resultat Szenario 02 auf shck-Client ohne PRP: CPU-Last, System- / Usertime
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -8217,7 +8217,7 @@ Resultat Szenario 02 auf shck-Client ohne PRP: RX-Bitrate [MBit/s]
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -8762,7 +8762,7 @@ shck-Server
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -9928,7 +9928,7 @@ Resultat Szenario 02 auf shck-Server ohne PRP: CPU-Last, System- / Usertime
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -10469,7 +10469,7 @@ Resultat Szenario 02 auf shck-Server ohne PRP: RX-Bitrate [MBit/s]
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -10834,7 +10834,7 @@ shck-Client
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -11091,7 +11091,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.99
 \end_layout
 
 \end_inset
@@ -11100,7 +11100,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+99.97
 \end_layout
 
 \end_inset
@@ -11109,7 +11109,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+100.99
 \end_layout
 
 \end_inset
@@ -11118,7 +11118,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.08
 \end_layout
 
 \end_inset
@@ -11127,7 +11127,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.11
 \end_layout
 
 \end_inset
@@ -11136,7 +11136,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.16
 \end_layout
 
 \end_inset
@@ -11145,7 +11145,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.85
 \end_layout
 
 \end_inset
@@ -11154,7 +11154,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.89
 \end_layout
 
 \end_inset
@@ -11163,7 +11163,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.92
 \end_layout
 
 \end_inset
@@ -11185,7 +11185,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.99
 \end_layout
 
 \end_inset
@@ -11194,7 +11194,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+99.99
 \end_layout
 
 \end_inset
@@ -11203,7 +11203,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+100.99
 \end_layout
 
 \end_inset
@@ -11212,7 +11212,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.05
 \end_layout
 
 \end_inset
@@ -11221,7 +11221,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.11
 \end_layout
 
 \end_inset
@@ -11230,7 +11230,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.16
 \end_layout
 
 \end_inset
@@ -11239,7 +11239,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.84
 \end_layout
 
 \end_inset
@@ -11248,7 +11248,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.89
 \end_layout
 
 \end_inset
@@ -11257,7 +11257,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.95
 \end_layout
 
 \end_inset
@@ -11279,7 +11279,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+51.99
 \end_layout
 
 \end_inset
@@ -11288,7 +11288,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+53.30
 \end_layout
 
 \end_inset
@@ -11297,7 +11297,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+54.99
 \end_layout
 
 \end_inset
@@ -11306,7 +11306,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.08
 \end_layout
 
 \end_inset
@@ -11315,7 +11315,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.12
 \end_layout
 
 \end_inset
@@ -11324,7 +11324,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.16
 \end_layout
 
 \end_inset
@@ -11333,7 +11333,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.37
 \end_layout
 
 \end_inset
@@ -11342,7 +11342,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.42
 \end_layout
 
 \end_inset
@@ -11351,7 +11351,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.45
 \end_layout
 
 \end_inset
@@ -11373,7 +11373,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+49.00
 \end_layout
 
 \end_inset
@@ -11382,7 +11382,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+52.71
 \end_layout
 
 \end_inset
@@ -11391,7 +11391,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+58.99
 \end_layout
 
 \end_inset
@@ -11400,7 +11400,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.06
 \end_layout
 
 \end_inset
@@ -11409,7 +11409,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.11
 \end_layout
 
 \end_inset
@@ -11418,7 +11418,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.16
 \end_layout
 
 \end_inset
@@ -11427,7 +11427,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.37
 \end_layout
 
 \end_inset
@@ -11436,7 +11436,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.41
 \end_layout
 
 \end_inset
@@ -11445,7 +11445,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.48
 \end_layout
 
 \end_inset
@@ -11467,7 +11467,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.99
 \end_layout
 
 \end_inset
@@ -11476,7 +11476,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+99.98
 \end_layout
 
 \end_inset
@@ -11485,7 +11485,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+100.99
 \end_layout
 
 \end_inset
@@ -11494,7 +11494,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.22
 \end_layout
 
 \end_inset
@@ -11503,7 +11503,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.29
 \end_layout
 
 \end_inset
@@ -11512,7 +11512,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.37
 \end_layout
 
 \end_inset
@@ -11521,7 +11521,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.63
 \end_layout
 
 \end_inset
@@ -11530,7 +11530,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.71
 \end_layout
 
 \end_inset
@@ -11539,7 +11539,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.78
 \end_layout
 
 \end_inset
@@ -11561,7 +11561,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.99
 \end_layout
 
 \end_inset
@@ -11570,7 +11570,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+99.99
 \end_layout
 
 \end_inset
@@ -11579,7 +11579,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+100.99
 \end_layout
 
 \end_inset
@@ -11588,7 +11588,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.21
 \end_layout
 
 \end_inset
@@ -11597,7 +11597,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.29
 \end_layout
 
 \end_inset
@@ -11606,7 +11606,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.38
 \end_layout
 
 \end_inset
@@ -11615,7 +11615,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.61
 \end_layout
 
 \end_inset
@@ -11624,7 +11624,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.71
 \end_layout
 
 \end_inset
@@ -11633,7 +11633,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.79
 \end_layout
 
 \end_inset
@@ -11655,7 +11655,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+35.00
 \end_layout
 
 \end_inset
@@ -11664,7 +11664,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+35.98
 \end_layout
 
 \end_inset
@@ -11673,7 +11673,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+37.00
 \end_layout
 
 \end_inset
@@ -11682,7 +11682,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.03
 \end_layout
 
 \end_inset
@@ -11691,7 +11691,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.06
 \end_layout
 
 \end_inset
@@ -11700,7 +11700,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.09
 \end_layout
 
 \end_inset
@@ -11709,7 +11709,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.28
 \end_layout
 
 \end_inset
@@ -11718,7 +11718,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.30
 \end_layout
 
 \end_inset
@@ -11727,7 +11727,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.32
 \end_layout
 
 \end_inset
@@ -11749,7 +11749,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+35.00
 \end_layout
 
 \end_inset
@@ -11758,7 +11758,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+36.71
 \end_layout
 
 \end_inset
@@ -11767,7 +11767,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+38.00
 \end_layout
 
 \end_inset
@@ -11776,7 +11776,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.03
 \end_layout
 
 \end_inset
@@ -11785,7 +11785,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.06
 \end_layout
 
 \end_inset
@@ -11794,7 +11794,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.12
 \end_layout
 
 \end_inset
@@ -11803,7 +11803,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.25
 \end_layout
 
 \end_inset
@@ -11812,7 +11812,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.31
 \end_layout
 
 \end_inset
@@ -11821,7 +11821,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.34
 \end_layout
 
 \end_inset
@@ -11856,7 +11856,7 @@ Resultat Szenario 02 auf shck-Client mit PRP: CPU-Last, System- / Usertime
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -12208,7 +12208,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.74
 \end_layout
 
 \end_inset
@@ -12217,7 +12217,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.76
 \end_layout
 
 \end_inset
@@ -12226,7 +12226,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.76
 \end_layout
 
 \end_inset
@@ -12235,7 +12235,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.01
 \end_layout
 
 \end_inset
@@ -12244,7 +12244,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.02
 \end_layout
 
 \end_inset
@@ -12253,7 +12253,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.03
 \end_layout
 
 \end_inset
@@ -12262,7 +12262,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.01
 \end_layout
 
 \end_inset
@@ -12271,7 +12271,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.02
 \end_layout
 
 \end_inset
@@ -12280,7 +12280,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.03
 \end_layout
 
 \end_inset
@@ -12302,7 +12302,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.72
 \end_layout
 
 \end_inset
@@ -12311,7 +12311,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.77
 \end_layout
 
 \end_inset
@@ -12320,7 +12320,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.78
 \end_layout
 
 \end_inset
@@ -12329,7 +12329,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.98
 \end_layout
 
 \end_inset
@@ -12338,7 +12338,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.04
 \end_layout
 
 \end_inset
@@ -12347,7 +12347,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.05
 \end_layout
 
 \end_inset
@@ -12356,7 +12356,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.98
 \end_layout
 
 \end_inset
@@ -12365,7 +12365,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.04
 \end_layout
 
 \end_inset
@@ -12374,7 +12374,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.05
 \end_layout
 
 \end_inset
@@ -12396,7 +12396,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.15
 \end_layout
 
 \end_inset
@@ -12405,7 +12405,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.15
 \end_layout
 
 \end_inset
@@ -12414,7 +12414,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.16
 \end_layout
 
 \end_inset
@@ -12423,7 +12423,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.48
 \end_layout
 
 \end_inset
@@ -12432,7 +12432,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.48
 \end_layout
 
 \end_inset
@@ -12441,7 +12441,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.48
 \end_layout
 
 \end_inset
@@ -12450,7 +12450,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.48
 \end_layout
 
 \end_inset
@@ -12459,7 +12459,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.48
 \end_layout
 
 \end_inset
@@ -12468,7 +12468,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.48
 \end_layout
 
 \end_inset
@@ -12490,7 +12490,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.12
 \end_layout
 
 \end_inset
@@ -12499,7 +12499,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.15
 \end_layout
 
 \end_inset
@@ -12508,7 +12508,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.25
 \end_layout
 
 \end_inset
@@ -12517,7 +12517,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.44
 \end_layout
 
 \end_inset
@@ -12526,7 +12526,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.48
 \end_layout
 
 \end_inset
@@ -12535,7 +12535,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.59
 \end_layout
 
 \end_inset
@@ -12544,7 +12544,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.44
 \end_layout
 
 \end_inset
@@ -12553,7 +12553,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.48
 \end_layout
 
 \end_inset
@@ -12562,7 +12562,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.59
 \end_layout
 
 \end_inset
@@ -12597,7 +12597,7 @@ Resultat Szenario 02 auf shck-Client mit PRP: RX-Bitrate [MBit/s]
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -12949,7 +12949,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.92
 \end_layout
 
 \end_inset
@@ -12958,7 +12958,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.93
 \end_layout
 
 \end_inset
@@ -12967,7 +12967,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.94
 \end_layout
 
 \end_inset
@@ -12976,7 +12976,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.18
 \end_layout
 
 \end_inset
@@ -12985,7 +12985,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.20
 \end_layout
 
 \end_inset
@@ -12994,7 +12994,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.20
 \end_layout
 
 \end_inset
@@ -13003,7 +13003,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.18
 \end_layout
 
 \end_inset
@@ -13012,7 +13012,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.20
 \end_layout
 
 \end_inset
@@ -13021,7 +13021,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.20
 \end_layout
 
 \end_inset
@@ -13043,7 +13043,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.88
 \end_layout
 
 \end_inset
@@ -13052,7 +13052,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.94
 \end_layout
 
 \end_inset
@@ -13061,7 +13061,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.95
 \end_layout
 
 \end_inset
@@ -13070,7 +13070,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.14
 \end_layout
 
 \end_inset
@@ -13079,7 +13079,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.21
 \end_layout
 
 \end_inset
@@ -13088,7 +13088,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.22
 \end_layout
 
 \end_inset
@@ -13097,7 +13097,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.14
 \end_layout
 
 \end_inset
@@ -13106,7 +13106,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.21
 \end_layout
 
 \end_inset
@@ -13115,7 +13115,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.22
 \end_layout
 
 \end_inset
@@ -13137,7 +13137,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.01
 \end_layout
 
 \end_inset
@@ -13146,7 +13146,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.05
 \end_layout
 
 \end_inset
@@ -13155,7 +13155,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.09
 \end_layout
 
 \end_inset
@@ -13164,7 +13164,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.65
 \end_layout
 
 \end_inset
@@ -13173,7 +13173,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.70
 \end_layout
 
 \end_inset
@@ -13182,7 +13182,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.72
 \end_layout
 
 \end_inset
@@ -13191,7 +13191,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.65
 \end_layout
 
 \end_inset
@@ -13200,7 +13200,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.70
 \end_layout
 
 \end_inset
@@ -13209,7 +13209,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.74
 \end_layout
 
 \end_inset
@@ -13231,7 +13231,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+96.39
 \end_layout
 
 \end_inset
@@ -13240,7 +13240,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.05
 \end_layout
 
 \end_inset
@@ -13249,7 +13249,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+99.28
 \end_layout
 
 \end_inset
@@ -13258,7 +13258,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+97.03
 \end_layout
 
 \end_inset
@@ -13267,7 +13267,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.70
 \end_layout
 
 \end_inset
@@ -13276,7 +13276,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.74
 \end_layout
 
 \end_inset
@@ -13285,7 +13285,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+97.03
 \end_layout
 
 \end_inset
@@ -13294,7 +13294,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.70
 \end_layout
 
 \end_inset
@@ -13303,7 +13303,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.76
 \end_layout
 
 \end_inset
@@ -13325,7 +13325,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+7.05
 \end_layout
 
 \end_inset
@@ -13334,7 +13334,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+7.19
 \end_layout
 
 \end_inset
@@ -13343,7 +13343,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+7.25
 \end_layout
 
 \end_inset
@@ -13352,7 +13352,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+8.22
 \end_layout
 
 \end_inset
@@ -13361,7 +13361,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+8.39
 \end_layout
 
 \end_inset
@@ -13370,7 +13370,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+8.46
 \end_layout
 
 \end_inset
@@ -13379,7 +13379,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+8.22
 \end_layout
 
 \end_inset
@@ -13388,7 +13388,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+8.39
 \end_layout
 
 \end_inset
@@ -13397,7 +13397,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+8.46
 \end_layout
 
 \end_inset
@@ -13419,7 +13419,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+6.83
 \end_layout
 
 \end_inset
@@ -13428,7 +13428,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+7.05
 \end_layout
 
 \end_inset
@@ -13437,7 +13437,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+7.17
 \end_layout
 
 \end_inset
@@ -13446,7 +13446,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+7.97
 \end_layout
 
 \end_inset
@@ -13455,7 +13455,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+8.23
 \end_layout
 
 \end_inset
@@ -13464,7 +13464,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+8.36
 \end_layout
 
 \end_inset
@@ -13473,7 +13473,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+7.97
 \end_layout
 
 \end_inset
@@ -13482,7 +13482,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+8.23
 \end_layout
 
 \end_inset
@@ -13491,7 +13491,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+8.36
 \end_layout
 
 \end_inset
@@ -13513,7 +13513,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+97.69
 \end_layout
 
 \end_inset
@@ -13522,7 +13522,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.06
 \end_layout
 
 \end_inset
@@ -13531,7 +13531,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.47
 \end_layout
 
 \end_inset
@@ -13540,7 +13540,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.66
 \end_layout
 
 \end_inset
@@ -13549,7 +13549,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.70
 \end_layout
 
 \end_inset
@@ -13558,7 +13558,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.72
 \end_layout
 
 \end_inset
@@ -13567,7 +13567,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.66
 \end_layout
 
 \end_inset
@@ -13576,7 +13576,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.71
 \end_layout
 
 \end_inset
@@ -13585,7 +13585,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.72
 \end_layout
 
 \end_inset
@@ -13607,7 +13607,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+97.64
 \end_layout
 
 \end_inset
@@ -13616,7 +13616,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.06
 \end_layout
 
 \end_inset
@@ -13625,7 +13625,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.45
 \end_layout
 
 \end_inset
@@ -13634,7 +13634,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.66
 \end_layout
 
 \end_inset
@@ -13643,7 +13643,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.71
 \end_layout
 
 \end_inset
@@ -13652,7 +13652,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.72
 \end_layout
 
 \end_inset
@@ -13661,7 +13661,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.66
 \end_layout
 
 \end_inset
@@ -13670,7 +13670,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.71
 \end_layout
 
 \end_inset
@@ -13679,7 +13679,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.73
 \end_layout
 
 \end_inset
@@ -13718,7 +13718,7 @@ shck-Server
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -13975,7 +13975,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+19.00
 \end_layout
 
 \end_inset
@@ -13984,7 +13984,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+20.80
 \end_layout
 
 \end_inset
@@ -13993,7 +13993,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+22.00
 \end_layout
 
 \end_inset
@@ -14002,7 +14002,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.04
 \end_layout
 
 \end_inset
@@ -14011,7 +14011,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.09
 \end_layout
 
 \end_inset
@@ -14020,7 +14020,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.12
 \end_layout
 
 \end_inset
@@ -14029,7 +14029,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.09
 \end_layout
 
 \end_inset
@@ -14038,7 +14038,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.12
 \end_layout
 
 \end_inset
@@ -14047,7 +14047,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.16
 \end_layout
 
 \end_inset
@@ -14069,7 +14069,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+18.00
 \end_layout
 
 \end_inset
@@ -14078,7 +14078,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+20.43
 \end_layout
 
 \end_inset
@@ -14087,7 +14087,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+22.00
 \end_layout
 
 \end_inset
@@ -14096,7 +14096,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.04
 \end_layout
 
 \end_inset
@@ -14105,7 +14105,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.09
 \end_layout
 
 \end_inset
@@ -14114,7 +14114,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.14
 \end_layout
 
 \end_inset
@@ -14123,7 +14123,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.06
 \end_layout
 
 \end_inset
@@ -14132,7 +14132,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.11
 \end_layout
 
 \end_inset
@@ -14141,7 +14141,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.16
 \end_layout
 
 \end_inset
@@ -14163,7 +14163,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+42.99
 \end_layout
 
 \end_inset
@@ -14172,7 +14172,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+46.31
 \end_layout
 
 \end_inset
@@ -14181,7 +14181,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+51.00
 \end_layout
 
 \end_inset
@@ -14190,7 +14190,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.17
 \end_layout
 
 \end_inset
@@ -14199,7 +14199,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.21
 \end_layout
 
 \end_inset
@@ -14208,7 +14208,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.25
 \end_layout
 
 \end_inset
@@ -14217,7 +14217,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.22
 \end_layout
 
 \end_inset
@@ -14226,7 +14226,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.26
 \end_layout
 
 \end_inset
@@ -14235,7 +14235,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.31
 \end_layout
 
 \end_inset
@@ -14257,7 +14257,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+42.00
 \end_layout
 
 \end_inset
@@ -14266,7 +14266,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+45.51
 \end_layout
 
 \end_inset
@@ -14275,7 +14275,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+50.00
 \end_layout
 
 \end_inset
@@ -14284,7 +14284,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.15
 \end_layout
 
 \end_inset
@@ -14293,7 +14293,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.20
 \end_layout
 
 \end_inset
@@ -14302,7 +14302,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.25
 \end_layout
 
 \end_inset
@@ -14311,7 +14311,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.20
 \end_layout
 
 \end_inset
@@ -14320,7 +14320,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.25
 \end_layout
 
 \end_inset
@@ -14329,7 +14329,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.31
 \end_layout
 
 \end_inset
@@ -14351,7 +14351,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+39.00
 \end_layout
 
 \end_inset
@@ -14360,7 +14360,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+57.43
 \end_layout
 
 \end_inset
@@ -14369,7 +14369,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+59.00
 \end_layout
 
 \end_inset
@@ -14378,7 +14378,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.13
 \end_layout
 
 \end_inset
@@ -14387,7 +14387,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.19
 \end_layout
 
 \end_inset
@@ -14396,7 +14396,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.28
 \end_layout
 
 \end_inset
@@ -14405,7 +14405,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.26
 \end_layout
 
 \end_inset
@@ -14414,7 +14414,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.38
 \end_layout
 
 \end_inset
@@ -14423,7 +14423,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.45
 \end_layout
 
 \end_inset
@@ -14445,7 +14445,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+52.99
 \end_layout
 
 \end_inset
@@ -14454,7 +14454,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+55.84
 \end_layout
 
 \end_inset
@@ -14463,7 +14463,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+58.00
 \end_layout
 
 \end_inset
@@ -14472,7 +14472,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.10
 \end_layout
 
 \end_inset
@@ -14481,7 +14481,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.18
 \end_layout
 
 \end_inset
@@ -14490,7 +14490,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.26
 \end_layout
 
 \end_inset
@@ -14499,7 +14499,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.30
 \end_layout
 
 \end_inset
@@ -14508,7 +14508,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.38
 \end_layout
 
 \end_inset
@@ -14517,7 +14517,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.45
 \end_layout
 
 \end_inset
@@ -14539,7 +14539,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+19.00
 \end_layout
 
 \end_inset
@@ -14548,7 +14548,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+31.53
 \end_layout
 
 \end_inset
@@ -14557,7 +14557,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+38.00
 \end_layout
 
 \end_inset
@@ -14566,7 +14566,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.08
 \end_layout
 
 \end_inset
@@ -14575,7 +14575,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.11
 \end_layout
 
 \end_inset
@@ -14584,7 +14584,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.15
 \end_layout
 
 \end_inset
@@ -14593,7 +14593,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.09
 \end_layout
 
 \end_inset
@@ -14602,7 +14602,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.20
 \end_layout
 
 \end_inset
@@ -14611,7 +14611,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.27
 \end_layout
 
 \end_inset
@@ -14633,7 +14633,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+16.00
 \end_layout
 
 \end_inset
@@ -14642,7 +14642,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+31.05
 \end_layout
 
 \end_inset
@@ -14651,7 +14651,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+38.00
 \end_layout
 
 \end_inset
@@ -14660,7 +14660,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.06
 \end_layout
 
 \end_inset
@@ -14669,7 +14669,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.12
 \end_layout
 
 \end_inset
@@ -14678,7 +14678,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.17
 \end_layout
 
 \end_inset
@@ -14687,7 +14687,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.10
 \end_layout
 
 \end_inset
@@ -14696,7 +14696,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.19
 \end_layout
 
 \end_inset
@@ -14705,7 +14705,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+0.27
 \end_layout
 
 \end_inset
@@ -14740,7 +14740,7 @@ Resultat Szenario 02 auf shck-Server mit PRP: CPU-Last, System- / Usertime
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -15092,7 +15092,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.86
 \end_layout
 
 \end_inset
@@ -15101,7 +15101,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.93
 \end_layout
 
 \end_inset
@@ -15110,7 +15110,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.94
 \end_layout
 
 \end_inset
@@ -15119,7 +15119,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.11
 \end_layout
 
 \end_inset
@@ -15128,7 +15128,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.19
 \end_layout
 
 \end_inset
@@ -15137,7 +15137,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.20
 \end_layout
 
 \end_inset
@@ -15146,7 +15146,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.11
 \end_layout
 
 \end_inset
@@ -15155,7 +15155,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.19
 \end_layout
 
 \end_inset
@@ -15164,7 +15164,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.20
 \end_layout
 
 \end_inset
@@ -15186,7 +15186,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.63
 \end_layout
 
 \end_inset
@@ -15195,7 +15195,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.94
 \end_layout
 
 \end_inset
@@ -15204,7 +15204,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.95
 \end_layout
 
 \end_inset
@@ -15213,7 +15213,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.86
 \end_layout
 
 \end_inset
@@ -15222,7 +15222,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.21
 \end_layout
 
 \end_inset
@@ -15231,7 +15231,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.22
 \end_layout
 
 \end_inset
@@ -15240,7 +15240,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.86
 \end_layout
 
 \end_inset
@@ -15249,7 +15249,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.21
 \end_layout
 
 \end_inset
@@ -15258,7 +15258,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.22
 \end_layout
 
 \end_inset
@@ -15280,7 +15280,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.03
 \end_layout
 
 \end_inset
@@ -15289,7 +15289,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.04
 \end_layout
 
 \end_inset
@@ -15298,7 +15298,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.07
 \end_layout
 
 \end_inset
@@ -15307,7 +15307,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.68
 \end_layout
 
 \end_inset
@@ -15316,7 +15316,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.70
 \end_layout
 
 \end_inset
@@ -15325,7 +15325,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.75
 \end_layout
 
 \end_inset
@@ -15334,7 +15334,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.63
 \end_layout
 
 \end_inset
@@ -15343,7 +15343,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.70
 \end_layout
 
 \end_inset
@@ -15352,7 +15352,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.75
 \end_layout
 
 \end_inset
@@ -15374,7 +15374,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+97.77
 \end_layout
 
 \end_inset
@@ -15383,7 +15383,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.04
 \end_layout
 
 \end_inset
@@ -15392,7 +15392,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.07
 \end_layout
 
 \end_inset
@@ -15401,7 +15401,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.42
 \end_layout
 
 \end_inset
@@ -15410,7 +15410,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.69
 \end_layout
 
 \end_inset
@@ -15419,7 +15419,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.75
 \end_layout
 
 \end_inset
@@ -15428,7 +15428,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.43
 \end_layout
 
 \end_inset
@@ -15437,7 +15437,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.69
 \end_layout
 
 \end_inset
@@ -15446,7 +15446,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.75
 \end_layout
 
 \end_inset
@@ -15468,7 +15468,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+5.22
 \end_layout
 
 \end_inset
@@ -15477,7 +15477,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+7.16
 \end_layout
 
 \end_inset
@@ -15486,7 +15486,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+7.26
 \end_layout
 
 \end_inset
@@ -15495,7 +15495,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+6.09
 \end_layout
 
 \end_inset
@@ -15504,7 +15504,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+8.35
 \end_layout
 
 \end_inset
@@ -15513,7 +15513,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+8.47
 \end_layout
 
 \end_inset
@@ -15522,7 +15522,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+6.09
 \end_layout
 
 \end_inset
@@ -15531,7 +15531,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+8.35
 \end_layout
 
 \end_inset
@@ -15540,7 +15540,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+8.47
 \end_layout
 
 \end_inset
@@ -15562,7 +15562,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+6.82
 \end_layout
 
 \end_inset
@@ -15571,7 +15571,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+7.05
 \end_layout
 
 \end_inset
@@ -15580,7 +15580,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+7.17
 \end_layout
 
 \end_inset
@@ -15589,7 +15589,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+7.96
 \end_layout
 
 \end_inset
@@ -15598,7 +15598,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+8.23
 \end_layout
 
 \end_inset
@@ -15607,7 +15607,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+8.36
 \end_layout
 
 \end_inset
@@ -15616,7 +15616,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+7.96
 \end_layout
 
 \end_inset
@@ -15625,7 +15625,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+8.23
 \end_layout
 
 \end_inset
@@ -15634,7 +15634,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+8.36
 \end_layout
 
 \end_inset
@@ -15656,7 +15656,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+63.72
 \end_layout
 
 \end_inset
@@ -15665,7 +15665,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+97.48
 \end_layout
 
 \end_inset
@@ -15674,7 +15674,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.07
 \end_layout
 
 \end_inset
@@ -15683,7 +15683,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+64.14
 \end_layout
 
 \end_inset
@@ -15692,7 +15692,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.12
 \end_layout
 
 \end_inset
@@ -15701,7 +15701,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.75
 \end_layout
 
 \end_inset
@@ -15710,7 +15710,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+64.09
 \end_layout
 
 \end_inset
@@ -15719,7 +15719,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.12
 \end_layout
 
 \end_inset
@@ -15728,7 +15728,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.75
 \end_layout
 
 \end_inset
@@ -15750,7 +15750,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+56.68
 \end_layout
 
 \end_inset
@@ -15759,7 +15759,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+97.91
 \end_layout
 
 \end_inset
@@ -15768,7 +15768,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.07
 \end_layout
 
 \end_inset
@@ -15777,7 +15777,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+57.05
 \end_layout
 
 \end_inset
@@ -15786,7 +15786,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.56
 \end_layout
 
 \end_inset
@@ -15795,7 +15795,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.75
 \end_layout
 
 \end_inset
@@ -15804,7 +15804,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+57.05
 \end_layout
 
 \end_inset
@@ -15813,7 +15813,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.56
 \end_layout
 
 \end_inset
@@ -15822,7 +15822,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+98.75
 \end_layout
 
 \end_inset
@@ -15857,7 +15857,7 @@ Resultat Szenario 02 auf shck-Server mit PRP: RX-Bitrate [MBit/s]
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -16209,7 +16209,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.70
 \end_layout
 
 \end_inset
@@ -16218,7 +16218,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.76
 \end_layout
 
 \end_inset
@@ -16227,7 +16227,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.76
 \end_layout
 
 \end_inset
@@ -16236,7 +16236,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.95
 \end_layout
 
 \end_inset
@@ -16245,7 +16245,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.02
 \end_layout
 
 \end_inset
@@ -16254,7 +16254,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.03
 \end_layout
 
 \end_inset
@@ -16263,7 +16263,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.95
 \end_layout
 
 \end_inset
@@ -16272,7 +16272,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.02
 \end_layout
 
 \end_inset
@@ -16281,7 +16281,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.03
 \end_layout
 
 \end_inset
@@ -16303,7 +16303,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.50
 \end_layout
 
 \end_inset
@@ -16312,7 +16312,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.77
 \end_layout
 
 \end_inset
@@ -16321,7 +16321,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.78
 \end_layout
 
 \end_inset
@@ -16330,7 +16330,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.73
 \end_layout
 
 \end_inset
@@ -16339,7 +16339,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.04
 \end_layout
 
 \end_inset
@@ -16348,7 +16348,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.05
 \end_layout
 
 \end_inset
@@ -16357,7 +16357,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+1.73
 \end_layout
 
 \end_inset
@@ -16366,7 +16366,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.04
 \end_layout
 
 \end_inset
@@ -16375,7 +16375,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.05
 \end_layout
 
 \end_inset
@@ -16397,7 +16397,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.15
 \end_layout
 
 \end_inset
@@ -16406,7 +16406,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.15
 \end_layout
 
 \end_inset
@@ -16415,7 +16415,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.17
 \end_layout
 
 \end_inset
@@ -16424,7 +16424,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.48
 \end_layout
 
 \end_inset
@@ -16433,7 +16433,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.48
 \end_layout
 
 \end_inset
@@ -16442,7 +16442,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.50
 \end_layout
 
 \end_inset
@@ -16451,7 +16451,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.48
 \end_layout
 
 \end_inset
@@ -16460,7 +16460,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.48
 \end_layout
 
 \end_inset
@@ -16469,7 +16469,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.50
 \end_layout
 
 \end_inset
@@ -16491,7 +16491,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.12
 \end_layout
 
 \end_inset
@@ -16500,7 +16500,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.15
 \end_layout
 
 \end_inset
@@ -16509,7 +16509,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.25
 \end_layout
 
 \end_inset
@@ -16518,7 +16518,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.44
 \end_layout
 
 \end_inset
@@ -16527,7 +16527,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.48
 \end_layout
 
 \end_inset
@@ -16536,7 +16536,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.58
 \end_layout
 
 \end_inset
@@ -16545,7 +16545,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.44
 \end_layout
 
 \end_inset
@@ -16554,7 +16554,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.48
 \end_layout
 
 \end_inset
@@ -16563,7 +16563,7 @@ Max
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+2.58
 \end_layout
 
 \end_inset
@@ -16600,14 +16600,35 @@ Interpretation
 \begin_layout Section
 Szenario 03: Effekt von Laufzeitunterscheidungen zwischen Netzwerk A und
  B
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Szenario-03:-Effekt"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
 Szenario 04: Zeitweiser Ausfall eines Netzwerkpfades
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Szenario-04:-Zeitweiser"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
 Szenario 05: Abhängigkeit vom verwendeten Protokoll
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Szenario-05:-Abhängigkeit"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -16616,14 +16637,35 @@ TCP, UDP, Ethernet
 
 \begin_layout Section
 Szenario 06: Einfluss nicht entfernter Duplikate auf Funktion und Performance
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Szenario-06:-Einfluss"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
 Szenario 07: Auswirkungen, wenn Frames out-of-sequence ankommen
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Szenario-07:-Auswirkungen,"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
 Szenario 08: Einluss von Offload-Mechanismen
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Szenario-08:-Einluss"
+
+\end_inset
+
+
 \end_layout
 
 \end_body
