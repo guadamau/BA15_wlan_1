@@ -1400,6 +1400,13 @@ $open()$
 
 \end_inset
 
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "open_man_page"
+
+\end_inset
+
 , 
 \begin_inset ERT
 status open
@@ -1408,6 +1415,13 @@ status open
 
 $read()$
 \end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "read_man_page"
 
 \end_inset
 
@@ -1422,6 +1436,13 @@ $lseek()$
 
 \end_inset
 
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "lseek_man_page"
+
+\end_inset
+
  und 
 \begin_inset ERT
 status open
@@ -1430,6 +1451,13 @@ status open
 
 $close()$
 \end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "close_man_page"
 
 \end_inset
 
@@ -1453,12 +1481,43 @@ istiken aktualisiert und zur gleichen Zeit meas lesend auf die entsprechende
  Datei zuzugreifen versucht.
 \end_layout
 
-\begin_layout Standard
-Verifizierung
+\begin_layout Paragraph
+Funktionstests
 \end_layout
 
 \begin_layout Standard
-Um sicherzustellen, ob
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Um sicherzustellen, ob die Werte korrekt ausgelesen und in entsprechende
+ Zahlenformate umgewandelt werden, wurde ein Unit-Test geschrieben.
+ Der Test liest Werte aus einer Datei, und vergleicht die erhaltenen Resultate
+ mit erwarteten Werten.
+ Wenn ein ausgelesener Wert nicht mit dem erwarteten Wert übereinstimmt,
+ schlägt der gesamte Test fehl.
+ Für das Vergleichen der Werte die 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$assert()$
+\end_layout
+
+\end_inset
+
+-Funktion 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "assert_man_page"
+
+\end_inset
+
+ verwendet.
 \end_layout
 
 \end_body
