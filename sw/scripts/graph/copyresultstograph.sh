@@ -1,11 +1,19 @@
 #!/bin/bash
 
-SEARCHSTR=('*cpu_load*' '*net_prp1_rx_bitrate*' '*net_prp1_tx_bitrate*')
+#resync results with server - uncomment to sync
+#sync_results.sh fresh
+
+#parse results to histogram files - uncomment to parse
+#bash ../meas_interval_parse/parsefolder.sh ~/BA_result_inbox
+
+SEARCHSTR=('*cpu_load*' '*net_prp1_rx_bitrate*' '*net_prp1_tx_bitrate*' '*net_eth0_rx_bitrate*' '*net_eth0_tx_bitrate*' '*net_eth1_rx_bitrate*' '*net_eth1_tx_bitrate*')
 OUTDIR="${HOME}/BA15_wlan_1/sw/scripts/graph"
+GRAPHGENSCRIPT="${OUTDIR}/gengraph.sh"
+echo '#!/bin/bash' > "${GRAPHGENSCRIPT}"
+chmod 755 "${GRAPHGENSCRIPT}"
 
 for s in ${SEARCHSTR[@]}; do
-    echo $s
-    for i in $(find ~/BA_result_inbox -name $s); do
+    for i in $(find ~/BA_result_inbox -name $s | sort -r); do
         FILEPATH=$i
         POSITIONOFTESTING=$(echo $i | grep -b -o 'testing' | cut -d":" -f1)
         POSITIONOFLOADDESC=$(echo $i | grep -b -o '[0-9][0-9]\.[UT]\.M[IA][NX]\.[UKL]' | cut -d":" -f1)
@@ -22,7 +30,7 @@ for s in ${SEARCHSTR[@]}; do
             NEWFILEPATH="${OUTDIR}/${SCENARIODESC}/${NEWFILENAME}"
             if [ ! -z $POSITIONOFLOADDESCINTSEC ]
             then
-                NEWFILEPATH="${NEWFILEPATH}_$(echo ${FILEPATH:POSITIONOFLOADDESCINTSEC} | cut -d"/" -f1)"
+                NEWFILEPATH="${NEWFILEPATH}_$(echo ${FILEPATH:(POSITIONOFLOADDESCINTSEC-1)} | cut -d"/" -f1 | cut -d"." -f1)"
             fi
             cp "${FILEPATH}" "${NEWFILEPATH}"
             awk '{printf("%010f %s\n", NR, $0)}' "${NEWFILEPATH}" > "${NEWFILEPATH}.awk"
@@ -30,12 +38,22 @@ for s in ${SEARCHSTR[@]}; do
             mv "${NEWFILEPATH}.awk" ${NEWFILEPATH}
             
             #generate gnuplot files
-            GNUPLOTSCRIPT="${OUTDIR}/${SCENARIODESC}/$(echo ${s} | cut -d"*" -f2).py"
+            GNUPLOTSCRIPT="${OUTDIR}/${SCENARIODESC}/$(echo ${s} | cut -d"*" -f2)_${SERVER}"
+            if [ ! -z $POSITIONOFLOADDESCINTSEC ]
+            then
+                GNUPLOTSCRIPT="${GNUPLOTSCRIPT}.${LOADDESC}"
+            fi
+            GNUPLOTSCRIPT="${GNUPLOTSCRIPT}.py"
             if [ ! -f $GNUPLOTSCRIPT ]
             then
                 echo '#!/usr/bin/env gnuplot' >> ${GNUPLOTSCRIPT}
                 echo 'set terminal svg size 1000,600 enhanced font "Helvetica,20"' >> ${GNUPLOTSCRIPT}
-                echo 'set output "'"$(echo ${s} | cut -d"*" -f2)_${SERVER}"'.svg"' >> ${GNUPLOTSCRIPT}
+                if [ ! -z $POSITIONOFLOADDESCINTSEC ]
+                then
+                    echo 'set output "'"${OUTDIR}/${SCENARIODESC}/$(echo ${s} | cut -d"*" -f2)_${SERVER}.${LOADDESC}"'.svg"' >> ${GNUPLOTSCRIPT}
+                else
+                    echo 'set output "'"${OUTDIR}/${SCENARIODESC}/$(echo ${s} | cut -d"*" -f2)_${SERVER}"'.svg"' >> ${GNUPLOTSCRIPT}
+                fi
                 case ${s} in
                     '*cpu_load*')
                         echo 'set ylabel "CPU-Last [%]"' >> ${GNUPLOTSCRIPT}
@@ -52,9 +70,10 @@ for s in ${SEARCHSTR[@]}; do
                 echo 'set auto x' >> ${GNUPLOTSCRIPT}
                 echo 'set grid y' >> ${GNUPLOTSCRIPT}
                 echo 'set auto y' >> ${GNUPLOTSCRIPT}
-                echo 'set key center top box' >> ${GNUPLOTSCRIPT}
-                echo 'plot [0:300] [0:100] \' >> ${GNUPLOTSCRIPT}
+                echo 'set key outside right center box' >> ${GNUPLOTSCRIPT}
+                echo 'plot \' >> ${GNUPLOTSCRIPT}
                 chmod 755 ${GNUPLOTSCRIPT}
+                echo "${GNUPLOTSCRIPT}" >> ${GRAPHGENSCRIPT}
             fi            
 
             TITLE="${LOADDESC}"
@@ -63,7 +82,12 @@ for s in ${SEARCHSTR[@]}; do
             then
                 TITLE="${LOADDESC}.$(echo ${FILEPATH:(POSITIONOFLOADDESCINTSEC-1)} | cut -d"/" -f1 | cut -d"." -f1)"
             fi
-            echo '"'"${NEWFILEPATH}"'" using 1:2 title "'"${TITLE}"'" with lines, \' >> ${GNUPLOTSCRIPT}
+            echo '"'"${NEWFILEPATH}"'" using 1:2 title "'"${TITLE}"'" lw 3 with lines, \' >> ${GNUPLOTSCRIPT}
         fi
     done
 done
+
+bash ${GRAPHGENSCRIPT}
+rm ${GRAPHGENSCRIPT}
+
+echo "done"
