@@ -140,6 +140,43 @@ Resultat Szenario 01 auf shck-Client: CPU-Last, System- / Usertime
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/01/cpu_load_srv01.svg
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 01 auf shck-Client: CPU-Last
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 placement H
 wide false
@@ -176,6 +213,51 @@ Resultat Szenario 01 auf shck-Client: RX-Bitrate [MBit/s]
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/01/net_prp1_rx_bitrate_srv01.svg
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 01 auf shck-Client: RX-Bitrate auf 
+\begin_inset Quotes fld
+\end_inset
+
+prp1
+\begin_inset Quotes frd
+\end_inset
+
+-Netzwerk-Interface [MBit/s]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 placement H
 wide false
@@ -199,6 +281,51 @@ filename "_tex/01/txsrv01.tex"
 
 \begin_layout Plain Layout
 Resultat Szenario 01 auf shck-Client: TX-Bitrate [MBit/s]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/01/net_prp1_tx_bitrate_srv01.svg
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 01 auf shck-Client: TX-Bitrate auf 
+\begin_inset Quotes fld
+\end_inset
+
+prp1
+\begin_inset Quotes frd
+\end_inset
+
+-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -252,6 +379,43 @@ Resultat Szenario 01 auf shck-Server: CPU-Last, System- / Usertime
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/01/cpu_load_srv02.svg
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 01 auf shck-Server: CPU-Last
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 placement H
 wide false
@@ -288,6 +452,51 @@ Resultat Szenario 01 auf shck-Server: RX-Bitrate [MBit/s]
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/01/net_prp1_rx_bitrate_srv02.svg
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 01 auf shck-Server: RX-Bitrate auf 
+\begin_inset Quotes fld
+\end_inset
+
+prp1
+\begin_inset Quotes frd
+\end_inset
+
+-Netzwerk-Interface [MBit/s]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 placement H
 wide false
@@ -311,6 +520,51 @@ filename "_tex/01/txsrv02.tex"
 
 \begin_layout Plain Layout
 Resultat Szenario 01 auf shck-Server: TX-Bitrate [MBit/s]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/01/net_prp1_tx_bitrate_srv02.svg
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 01 auf shck-Server: TX-Bitrate auf 
+\begin_inset Quotes fld
+\end_inset
+
+prp1
+\begin_inset Quotes frd
+\end_inset
+
+-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -430,7 +684,7 @@ shck-Client
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1592,11 +1846,48 @@ Resultat Szenario 02 auf shck-Client ohne PRP: CPU-Last, System- / Usertime
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/02_noPRP/cpu_load_srv01.svg
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 02 auf shck-Client ohne PRP: CPU-Last
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1949,11 +2240,56 @@ Resultat Szenario 02 auf shck-Client ohne PRP: RX-Bitrate [MBit/s]
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/02_noPRP/net_eth0_rx_bitrate_srv01.svg
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 02 auf shck-Client ohne PRP: RX-Bitrate auf 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+-Netzwerk-Interface [MBit/s]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2477,6 +2813,51 @@ Max
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Client ohne PRP: TX-Bitrate [MBit/s]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/02_noPRP/net_eth0_tx_bitrate_srv01.svg
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 02 auf shck-Client ohne PRP: TX-Bitrate auf 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -3660,6 +4041,43 @@ Resultat Szenario 02 auf shck-Server ohne PRP: CPU-Last, System- / Usertime
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/02_noPRP/cpu_load_srv02.svg
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 02 auf shck-Server ohne PRP: CPU-Last
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 placement H
 wide false
@@ -4201,6 +4619,51 @@ Resultat Szenario 02 auf shck-Server ohne PRP: RX-Bitrate [MBit/s]
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/02_noPRP/net_eth0_rx_bitrate_srv02.svg
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 02 auf shck-Server ohne PRP: RX-Bitrate auf 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+-Netzwerk-Interface [MBit/s]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 placement H
 wide false
@@ -4557,6 +5020,51 @@ Resultat Szenario 02 auf shck-Server ohne PRP: TX-Bitrate [MBit/s]
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/02_noPRP/net_eth0_tx_bitrate_srv02.svg
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 02 auf shck-Server ohne PRP: TX-Bitrate auf 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+-Netzwerk-Interface [MBit/s]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Mit PRP
 \end_layout
@@ -4589,6 +5097,43 @@ filename "_tex/02_PRP/cpusrv01.tex"
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Client mit PRP: CPU-Last, System- / Usertime
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/02_PRP/cpu_load_srv01.svg
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 02 auf shck-Client mit PRP: CPU-Last
 \end_layout
 
 \end_inset
@@ -4638,6 +5183,51 @@ Resultat Szenario 02 auf shck-Client mit PRP: RX-Bitrate [MBit/s]
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/02_PRP/net_prp1_rx_bitrate_srv01.svg
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 02 auf shck-Client mit PRP: RX-Bitrate auf 
+\begin_inset Quotes fld
+\end_inset
+
+prp1
+\begin_inset Quotes frd
+\end_inset
+
+-Netzwerk-Interface [MBit/s]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 placement H
 wide false
@@ -4661,6 +5251,51 @@ filename "_tex/02_PRP/txsrv01.tex"
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Client mit PRP: TX-Bitrate [MBit/s]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/02_PRP/net_prp1_tx_bitrate_srv01.svg
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 02 auf shck-Client mit PRP: TX-Bitrate auf 
+\begin_inset Quotes fld
+\end_inset
+
+prp1
+\begin_inset Quotes frd
+\end_inset
+
+-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -4714,6 +5349,43 @@ Resultat Szenario 02 auf shck-Server mit PRP: CPU-Last, System- / Usertime
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/02_PRP/cpu_load_srv02.svg
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 02 auf shck-Server mit PRP: CPU-Last
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 placement H
 wide false
@@ -4750,6 +5422,51 @@ Resultat Szenario 02 auf shck-Server mit PRP: RX-Bitrate [MBit/s]
 \end_layout
 
 \begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/02_PRP/net_prp1_rx_bitrate_srv02.svg
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 02 auf shck-Server mit PRP: RX-Bitrate auf 
+\begin_inset Quotes fld
+\end_inset
+
+prp1
+\begin_inset Quotes frd
+\end_inset
+
+-Netzwerk-Interface [MBit/s]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 placement H
 wide false
@@ -4773,6 +5490,51 @@ filename "_tex/02_PRP/txsrv02.tex"
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Server mit PRP: TX-Bitrate [MBit/s]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/02_PRP/net_prp1_tx_bitrate_srv02.svg
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 02 auf shck-Server mit PRP: TX-Bitrate auf 
+\begin_inset Quotes fld
+\end_inset
+
+prp1
+\begin_inset Quotes frd
+\end_inset
+
+-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset

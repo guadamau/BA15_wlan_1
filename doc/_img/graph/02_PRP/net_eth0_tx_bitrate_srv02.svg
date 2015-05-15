@@ -237,33 +237,17 @@
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="1.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='black'  d='M746.9,416.1 L746.9,116.1 L985.9,116.1 L985.9,416.1 L746.9,416.1 Z  '/></g>
+	<path stroke='black'  d='M746.9,386.1 L746.9,146.1 L985.9,146.1 L985.9,386.1 L746.9,386.1 Z  '/></g>
 	<g id="gnuplot_plot_1" ><title>02.U.MIN.U</title>
 <g fill="none" color="white" stroke="black" stroke-width="3.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
-<g fill="none" color="black" stroke="currentColor" stroke-width="3.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(886.9,138.6)" stroke="none" fill="black" font-family="Helvetica" font-size="20.00"  text-anchor="end">
-		<text><tspan font-family="Helvetica" >02.U.MIN.U</tspan></text>
-	</g>
-</g>
-<g fill="none" color="black" stroke="currentColor" stroke-width="3.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='rgb(148,   0, 211)'  d='M900.9,131.1 L971.9,131.1 M93.1,504.0 L95.2,504.0 L97.3,504.0 L99.4,504.0 L101.5,504.0 L103.6,504.0
-		L105.7,504.0 L107.7,504.0 L109.8,504.0 L111.9,504.0 L114.0,504.0 L116.1,504.0 L118.2,504.0 L120.3,504.0
-		L122.4,504.0 L124.5,504.0 L126.6,504.0 L128.7,504.0 L130.8,504.0 L132.9,504.0 L135.0,504.0 L137.0,504.0
-		L139.1,504.0 L141.2,504.0 L143.3,504.0 L145.4,504.0 L147.5,504.0 L149.6,504.0 L151.7,504.0 L153.8,504.0
-		L155.9,504.0 L158.0,504.0 L160.1,504.0 L162.2,504.0 L164.3,504.0 L166.3,504.0 L168.4,504.0 L170.5,504.0
-		L172.6,504.0 L174.7,504.0 L176.8,504.0 L178.9,504.0 L181.0,504.0 L183.1,504.0 L185.2,504.0 L187.3,504.0
-		L189.4,504.0 L191.5,504.0 L193.6,504.0 L195.7,504.0 L197.7,504.0 L199.8,504.0 L201.9,504.0 L204.0,504.0
-		L206.1,504.0 L208.2,504.0 L210.3,504.0 L212.4,504.0 L214.5,504.0 L216.6,504.0  '/></g>
-	</g>
-	<g id="gnuplot_plot_2" ><title>02.U.MIN.U</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="3.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(886.9,168.6)" stroke="none" fill="black" font-family="Helvetica" font-size="20.00"  text-anchor="end">
 		<text><tspan font-family="Helvetica" >02.U.MIN.U</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="3.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='rgb(  0, 158, 115)'  d='M900.9,161.1 L971.9,161.1 M93.1,504.0 L95.2,504.0 L97.3,504.0 L99.4,504.0 L101.5,504.0 L103.6,504.0
+	<path stroke='rgb(148,   0, 211)'  d='M900.9,161.1 L971.9,161.1 M93.1,504.0 L95.2,504.0 L97.3,504.0 L99.4,504.0 L101.5,504.0 L103.6,504.0
 		L105.7,504.0 L107.7,504.0 L109.8,504.0 L111.9,504.0 L114.0,504.0 L116.1,504.0 L118.2,504.0 L120.3,504.0
 		L122.4,504.0 L124.5,504.0 L126.6,504.0 L128.7,504.0 L130.8,504.0 L132.9,504.0 L135.0,504.0 L137.0,504.0
 		L139.1,504.0 L141.2,504.0 L143.3,504.0 L145.4,504.0 L147.5,504.0 L149.6,504.0 L151.7,504.0 L153.8,504.0
@@ -272,14 +256,14 @@
 		L189.4,504.0 L191.5,504.0 L193.6,504.0 L195.7,504.0 L197.7,504.0 L199.8,504.0 L201.9,504.0 L204.0,504.0
 		L206.1,504.0 L208.2,504.0 L210.3,504.0 L212.4,504.0 L214.5,504.0 L216.6,504.0  '/></g>
 	</g>
-	<g id="gnuplot_plot_3" ><title>02.U.MIN.K</title>
+	<g id="gnuplot_plot_2" ><title>02.U.MIN.K</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="3.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(886.9,198.6)" stroke="none" fill="black" font-family="Helvetica" font-size="20.00"  text-anchor="end">
 		<text><tspan font-family="Helvetica" >02.U.MIN.K</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="3.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='rgb( 86, 180, 233)'  d='M900.9,191.1 L971.9,191.1 M93.1,504.0 L95.2,504.0 L97.3,504.0 L99.4,504.0 L101.5,504.0 L103.6,504.0
+	<path stroke='rgb(  0, 158, 115)'  d='M900.9,191.1 L971.9,191.1 M93.1,504.0 L95.2,504.0 L97.3,504.0 L99.4,504.0 L101.5,504.0 L103.6,504.0
 		L105.7,504.0 L107.7,504.0 L109.8,504.0 L111.9,504.0 L114.0,504.0 L116.1,504.0 L118.2,504.0 L120.3,504.0
 		L122.4,504.0 L124.5,504.0 L126.6,504.0 L128.7,504.0 L130.8,504.0 L132.9,504.0 L135.0,504.0 L137.0,504.0
 		L139.1,504.0 L141.2,504.0 L143.3,504.0 L145.4,504.0 L147.5,504.0 L149.6,504.0 L151.7,504.0 L153.8,504.0
@@ -318,60 +302,14 @@
 		L691.7,504.0 L693.8,504.0 L695.9,504.0 L698.0,504.0 L700.1,504.0 L702.2,504.0 L704.2,504.0 L706.3,504.0
 		L708.4,504.0 L710.5,504.0 L712.6,504.0 L714.7,504.0 L716.8,504.0 L718.9,504.0  '/></g>
 	</g>
-	<g id="gnuplot_plot_4" ><title>02.U.MIN.K</title>
+	<g id="gnuplot_plot_3" ><title>02.U.MAX.U</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="3.00" stroke-linecap="butt" stroke-linejoin="miter">
 	<g transform="translate(886.9,228.6)" stroke="none" fill="black" font-family="Helvetica" font-size="20.00"  text-anchor="end">
-		<text><tspan font-family="Helvetica" >02.U.MIN.K</tspan></text>
-	</g>
-</g>
-<g fill="none" color="black" stroke="currentColor" stroke-width="3.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='rgb(230, 159,   0)'  d='M900.9,221.1 L971.9,221.1 M93.1,504.0 L95.2,504.0 L97.3,504.0 L99.4,504.0 L101.5,504.0 L103.6,504.0
-		L105.7,504.0 L107.7,504.0 L109.8,504.0 L111.9,504.0 L114.0,504.0 L116.1,504.0 L118.2,504.0 L120.3,504.0
-		L122.4,504.0 L124.5,504.0 L126.6,504.0 L128.7,504.0 L130.8,504.0 L132.9,504.0 L135.0,504.0 L137.0,504.0
-		L139.1,504.0 L141.2,504.0 L143.3,504.0 L145.4,504.0 L147.5,504.0 L149.6,504.0 L151.7,504.0 L153.8,504.0
-		L155.9,504.0 L158.0,504.0 L160.1,504.0 L162.2,504.0 L164.3,504.0 L166.3,504.0 L168.4,504.0 L170.5,504.0
-		L172.6,504.0 L174.7,504.0 L176.8,504.0 L178.9,504.0 L181.0,504.0 L183.1,504.0 L185.2,504.0 L187.3,504.0
-		L189.4,504.0 L191.5,504.0 L193.6,504.0 L195.7,504.0 L197.7,504.0 L199.8,504.0 L201.9,504.0 L204.0,504.0
-		L206.1,504.0 L208.2,504.0 L210.3,504.0 L212.4,504.0 L214.5,504.0 L216.6,504.0 L218.7,504.0 L220.8,504.0
-		L222.9,504.0 L225.0,504.0 L227.0,504.0 L229.1,504.0 L231.2,504.0 L233.3,504.0 L235.4,504.0 L237.5,504.0
-		L239.6,504.0 L241.7,504.0 L243.8,504.0 L245.9,504.0 L248.0,504.0 L250.1,504.0 L252.2,504.0 L254.3,504.0
-		L256.3,504.0 L258.4,504.0 L260.5,504.0 L262.6,504.0 L264.7,504.0 L266.8,504.0 L268.9,504.0 L271.0,504.0
-		L273.1,504.0 L275.2,504.0 L277.3,504.0 L279.4,504.0 L281.5,504.0 L283.6,504.0 L285.6,504.0 L287.7,504.0
-		L289.8,504.0 L291.9,504.0 L294.0,504.0 L296.1,504.0 L298.2,504.0 L300.3,504.0 L302.4,504.0 L304.5,504.0
-		L306.6,504.0 L308.7,504.0 L310.8,504.0 L312.9,504.0 L315.0,504.0 L317.0,504.0 L319.1,504.0 L321.2,504.0
-		L323.3,504.0 L325.4,504.0 L327.5,504.0 L329.6,504.0 L331.7,504.0 L333.8,504.0 L335.9,504.0 L338.0,504.0
-		L340.1,504.0 L342.2,504.0 L344.3,504.0 L346.3,504.0 L348.4,504.0 L350.5,504.0 L352.6,504.0 L354.7,504.0
-		L356.8,504.0 L358.9,504.0 L361.0,504.0 L363.1,504.0 L365.2,504.0 L367.3,504.0 L369.4,504.0 L371.5,504.0
-		L373.6,504.0 L375.6,504.0 L377.7,504.0 L379.8,504.0 L381.9,504.0 L384.0,504.0 L386.1,504.0 L388.2,504.0
-		L390.3,504.0 L392.4,504.0 L394.5,504.0 L396.6,504.0 L398.7,504.0 L400.8,504.0 L402.9,504.0 L405.0,504.0
-		L407.0,504.0 L409.1,504.0 L411.2,504.0 L413.3,504.0 L415.4,504.0 L417.5,504.0 L419.6,504.0 L421.7,504.0
-		L423.8,504.0 L425.9,504.0 L428.0,504.0 L430.1,504.0 L432.2,504.0 L434.3,504.0 L436.3,504.0 L438.4,504.0
-		L440.5,504.0 L442.6,504.0 L444.7,504.0 L446.8,504.0 L448.9,504.0 L451.0,504.0 L453.1,504.0 L455.2,504.0
-		L457.3,504.0 L459.4,504.0 L461.5,504.0 L463.6,504.0 L465.6,504.0 L467.7,504.0 L469.8,504.0 L471.9,504.0
-		L474.0,504.0 L476.1,504.0 L478.2,504.0 L480.3,504.0 L482.4,504.0 L484.5,504.0 L486.6,504.0 L488.7,504.0
-		L490.8,504.0 L492.9,504.0 L494.9,504.0 L497.0,504.0 L499.1,504.0 L501.2,504.0 L503.3,504.0 L505.4,504.0
-		L507.5,504.0 L509.6,504.0 L511.7,504.0 L513.8,504.0 L515.9,504.0 L518.0,504.0 L520.1,504.0 L522.2,504.0
-		L524.3,504.0 L526.3,504.0 L528.4,504.0 L530.5,504.0 L532.6,504.0 L534.7,504.0 L536.8,504.0 L538.9,504.0
-		L541.0,504.0 L543.1,504.0 L545.2,504.0 L547.3,504.0 L549.4,504.0 L551.5,504.0 L553.6,504.0 L555.6,504.0
-		L557.7,504.0 L559.8,504.0 L561.9,504.0 L564.0,504.0 L566.1,504.0 L568.2,504.0 L570.3,504.0 L572.4,504.0
-		L574.5,504.0 L576.6,504.0 L578.7,504.0 L580.8,504.0 L582.9,504.0 L584.9,504.0 L587.0,504.0 L589.1,504.0
-		L591.2,504.0 L593.3,504.0 L595.4,504.0 L597.5,504.0 L599.6,504.0 L601.7,504.0 L603.8,504.0 L605.9,504.0
-		L608.0,504.0 L610.1,504.0 L612.2,504.0 L614.3,504.0 L616.3,504.0 L618.4,504.0 L620.5,504.0 L622.6,504.0
-		L624.7,504.0 L626.8,504.0 L628.9,504.0 L631.0,504.0 L633.1,504.0 L635.2,504.0 L637.3,504.0 L639.4,504.0
-		L641.5,504.0 L643.6,504.0 L645.6,504.0 L647.7,504.0 L649.8,504.0 L651.9,504.0 L654.0,504.0 L656.1,504.0
-		L658.2,504.0 L660.3,504.0 L662.4,504.0 L664.5,504.0 L666.6,504.0 L668.7,504.0 L670.8,504.0 L672.9,504.0
-		L674.9,504.0 L677.0,504.0 L679.1,504.0 L681.2,504.0 L683.3,504.0 L685.4,504.0 L687.5,504.0 L689.6,504.0
-		L691.7,504.0 L693.8,504.0 L695.9,504.0 L698.0,504.0 L700.1,504.0 L702.2,504.0 L704.2,504.0 L706.3,504.0
-		L708.4,504.0 L710.5,504.0 L712.6,504.0 L714.7,504.0 L716.8,504.0 L718.9,504.0  '/></g>
-	</g>
-	<g id="gnuplot_plot_5" ><title>02.U.MAX.U</title>
-<g fill="none" color="black" stroke="currentColor" stroke-width="3.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(886.9,258.6)" stroke="none" fill="black" font-family="Helvetica" font-size="20.00"  text-anchor="end">
 		<text><tspan font-family="Helvetica" >02.U.MAX.U</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="3.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='rgb(240, 228,  66)'  d='M900.9,251.1 L971.9,251.1 M93.1,504.0 L95.2,504.0 L97.3,504.0 L99.4,504.0 L101.5,504.0 L103.6,504.0
+	<path stroke='rgb( 86, 180, 233)'  d='M900.9,221.1 L971.9,221.1 M93.1,504.0 L95.2,504.0 L97.3,504.0 L99.4,504.0 L101.5,504.0 L103.6,504.0
 		L105.7,504.0 L107.7,504.0 L109.8,504.0 L111.9,504.0 L114.0,504.0 L116.1,504.0 L118.2,504.0 L120.3,504.0
 		L122.4,504.0 L124.5,504.0 L126.6,504.0 L128.7,504.0 L130.8,504.0 L132.9,504.0 L135.0,504.0 L137.0,504.0
 		L139.1,504.0 L141.2,504.0 L143.3,504.0 L145.4,504.0 L147.5,504.0 L149.6,504.0 L151.7,504.0 L153.8,504.0
@@ -380,14 +318,14 @@
 		L189.4,504.0 L191.5,504.0 L193.6,504.0 L195.7,504.0 L197.7,504.0 L199.8,504.0 L201.9,504.0 L204.0,504.0
 		L206.1,504.0 L208.2,504.0 L210.3,504.0 L212.4,504.0 L214.5,504.0 L216.6,504.0  '/></g>
 	</g>
-	<g id="gnuplot_plot_6" ><title>02.U.MAX.K</title>
+	<g id="gnuplot_plot_4" ><title>02.U.MAX.K</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="3.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(886.9,288.6)" stroke="none" fill="black" font-family="Helvetica" font-size="20.00"  text-anchor="end">
+	<g transform="translate(886.9,258.6)" stroke="none" fill="black" font-family="Helvetica" font-size="20.00"  text-anchor="end">
 		<text><tspan font-family="Helvetica" >02.U.MAX.K</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="3.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='rgb(  0, 114, 178)'  d='M900.9,281.1 L971.9,281.1 M93.1,504.0 L95.2,504.0 L97.3,504.0 L99.4,504.0 L101.5,504.0 L103.6,504.0
+	<path stroke='rgb(230, 159,   0)'  d='M900.9,251.1 L971.9,251.1 M93.1,504.0 L95.2,504.0 L97.3,504.0 L99.4,504.0 L101.5,504.0 L103.6,504.0
 		L105.7,504.0 L107.7,504.0 L109.8,504.0 L111.9,504.0 L114.0,504.0 L116.1,504.0 L118.2,504.0 L120.3,504.0
 		L122.4,504.0 L124.5,504.0 L126.6,504.0 L128.7,504.0 L130.8,504.0 L132.9,504.0 L135.0,504.0 L137.0,504.0
 		L139.1,504.0 L141.2,504.0 L143.3,504.0 L145.4,504.0 L147.5,504.0 L149.6,504.0 L151.7,504.0 L153.8,504.0
@@ -426,14 +364,14 @@
 		L691.7,504.0 L693.8,504.0 L695.9,504.0 L698.0,504.0 L700.1,504.0 L702.2,504.0 L704.2,504.0 L706.3,504.0
 		L708.4,504.0 L710.5,504.0 L712.6,504.0 L714.7,504.0 L716.8,504.0 L718.9,504.0  '/></g>
 	</g>
-	<g id="gnuplot_plot_7" ><title>02.T.MIN.U</title>
+	<g id="gnuplot_plot_5" ><title>02.T.MIN.U</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="3.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(886.9,318.6)" stroke="none" fill="black" font-family="Helvetica" font-size="20.00"  text-anchor="end">
+	<g transform="translate(886.9,288.6)" stroke="none" fill="black" font-family="Helvetica" font-size="20.00"  text-anchor="end">
 		<text><tspan font-family="Helvetica" >02.T.MIN.U</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="3.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='rgb(229,  30,  16)'  d='M900.9,311.1 L971.9,311.1 M93.1,194.7 L95.2,185.1 L97.3,185.1 L99.4,185.1 L101.5,183.6 L103.6,183.6
+	<path stroke='rgb(240, 228,  66)'  d='M900.9,281.1 L971.9,281.1 M93.1,194.7 L95.2,185.1 L97.3,185.1 L99.4,185.1 L101.5,183.6 L103.6,183.6
 		L105.7,182.0 L107.7,183.6 L109.8,182.0 L111.9,183.6 L114.0,183.6 L116.1,183.6 L118.2,183.6 L120.3,183.6
 		L122.4,182.0 L124.5,183.6 L126.6,183.6 L128.7,183.6 L130.8,183.6 L132.9,183.6 L135.0,183.6 L137.0,183.6
 		L139.1,182.0 L141.2,183.6 L143.3,182.0 L145.4,183.6 L147.5,183.6 L149.6,183.6 L151.7,183.6 L153.8,183.6
@@ -442,14 +380,14 @@
 		L189.4,182.0 L191.5,182.0 L193.6,182.0 L195.7,182.0 L197.7,183.6 L199.8,182.0 L201.9,182.0 L204.0,182.0
 		L206.1,183.6 L208.2,183.6 L210.3,183.6 L212.4,183.6 L214.5,183.6 L216.6,183.6  '/></g>
 	</g>
-	<g id="gnuplot_plot_8" ><title>02.T.MIN.K</title>
+	<g id="gnuplot_plot_6" ><title>02.T.MIN.K</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="3.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(886.9,348.6)" stroke="none" fill="black" font-family="Helvetica" font-size="20.00"  text-anchor="end">
+	<g transform="translate(886.9,318.6)" stroke="none" fill="black" font-family="Helvetica" font-size="20.00"  text-anchor="end">
 		<text><tspan font-family="Helvetica" >02.T.MIN.K</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="3.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='rgb(  0,   0,   0)'  d='M900.9,341.1 L971.9,341.1 M93.1,229.6 L95.2,180.4 L97.3,180.4 L99.4,180.4 L101.5,182.0 L103.6,180.4
+	<path stroke='rgb(  0, 114, 178)'  d='M900.9,311.1 L971.9,311.1 M93.1,229.6 L95.2,180.4 L97.3,180.4 L99.4,180.4 L101.5,182.0 L103.6,180.4
 		L105.7,180.4 L107.7,178.8 L109.8,180.4 L111.9,180.4 L114.0,180.4 L116.1,180.4 L118.2,180.4 L120.3,180.4
 		L122.4,180.4 L124.5,180.4 L126.6,180.4 L128.7,180.4 L130.8,180.4 L132.9,180.4 L135.0,180.4 L137.0,180.4
 		L139.1,180.4 L141.2,180.4 L143.3,180.4 L145.4,180.4 L147.5,180.4 L149.6,180.4 L151.7,180.4 L153.8,180.4
@@ -488,14 +426,14 @@
 		L691.7,182.0 L693.8,180.4 L695.9,182.0 L698.0,182.0 L700.1,182.0 L702.2,180.4 L704.2,180.4 L706.3,182.0
 		L708.4,182.0 L710.5,182.0 L712.6,182.0 L714.7,182.0 L716.8,180.4 L718.9,180.4  '/></g>
 	</g>
-	<g id="gnuplot_plot_9" ><title>02.T.MAX.U</title>
+	<g id="gnuplot_plot_7" ><title>02.T.MAX.U</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="3.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(886.9,378.6)" stroke="none" fill="black" font-family="Helvetica" font-size="20.00"  text-anchor="end">
+	<g transform="translate(886.9,348.6)" stroke="none" fill="black" font-family="Helvetica" font-size="20.00"  text-anchor="end">
 		<text><tspan font-family="Helvetica" >02.T.MAX.U</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="3.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='rgb(148,   0, 211)'  d='M900.9,371.1 L971.9,371.1 M93.1,107.4 L95.2,110.6 L97.3,110.6 L99.4,110.6 L101.5,110.6 L103.6,110.6
+	<path stroke='rgb(229,  30,  16)'  d='M900.9,341.1 L971.9,341.1 M93.1,107.4 L95.2,110.6 L97.3,110.6 L99.4,110.6 L101.5,110.6 L103.6,110.6
 		L105.7,110.6 L107.7,110.6 L109.8,110.6 L111.9,110.6 L114.0,110.6 L116.1,110.6 L118.2,110.6 L120.3,110.6
 		L122.4,110.6 L124.5,110.6 L126.6,110.6 L128.7,110.6 L130.8,110.6 L132.9,110.6 L135.0,110.6 L137.0,110.6
 		L139.1,110.6 L141.2,110.6 L143.3,110.6 L145.4,110.6 L147.5,110.6 L149.6,110.6 L151.7,110.6 L153.8,110.6
@@ -504,14 +442,14 @@
 		L189.4,110.6 L191.5,110.6 L193.6,110.6 L195.7,110.6 L197.7,110.6 L199.8,110.6 L201.9,110.6 L204.0,110.6
 		L206.1,110.6 L208.2,110.6 L210.3,110.6 L212.4,110.6 L214.5,110.6 L216.6,110.6  '/></g>
 	</g>
-	<g id="gnuplot_plot_10" ><title>02.T.MAX.K</title>
+	<g id="gnuplot_plot_8" ><title>02.T.MAX.K</title>
 <g fill="none" color="black" stroke="currentColor" stroke-width="3.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<g transform="translate(886.9,408.6)" stroke="none" fill="black" font-family="Helvetica" font-size="20.00"  text-anchor="end">
+	<g transform="translate(886.9,378.6)" stroke="none" fill="black" font-family="Helvetica" font-size="20.00"  text-anchor="end">
 		<text><tspan font-family="Helvetica" >02.T.MAX.K</tspan></text>
 	</g>
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="3.00" stroke-linecap="butt" stroke-linejoin="miter">
-	<path stroke='rgb(  0, 158, 115)'  d='M900.9,401.1 L971.9,401.1 M93.1,107.4 L95.2,110.6 L97.3,110.6 L99.4,110.6 L101.5,110.6 L103.6,110.6
+	<path stroke='rgb(  0,   0,   0)'  d='M900.9,371.1 L971.9,371.1 M93.1,107.4 L95.2,110.6 L97.3,110.6 L99.4,110.6 L101.5,110.6 L103.6,110.6
 		L105.7,110.6 L107.7,110.6 L109.8,110.6 L111.9,110.6 L114.0,110.6 L116.1,110.6 L118.2,110.6 L120.3,110.6
 		L122.4,110.6 L124.5,110.6 L126.6,110.6 L128.7,110.6 L130.8,110.6 L132.9,110.6 L135.0,110.6 L137.0,110.6
 		L139.1,110.6 L141.2,110.6 L143.3,110.6 L145.4,110.6 L147.5,116.9 L149.6,110.6 L151.7,110.6 L153.8,110.6
@@ -550,7 +488,7 @@
 		L691.7,110.6 L693.8,110.6 L695.9,110.6 L698.0,110.6 L700.1,110.6 L702.2,110.6 L704.2,110.6 L706.3,110.6
 		L708.4,110.6 L710.5,110.6 L712.6,110.6 L714.7,110.6 L716.8,110.6 L718.9,110.6  '/></g>
 	</g>
-<g fill="none" color="white" stroke="rgb(  0, 158, 115)" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
+<g fill="none" color="white" stroke="rgb(  0,   0,   0)" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>
 <g fill="none" color="black" stroke="currentColor" stroke-width="2.00" stroke-linecap="butt" stroke-linejoin="miter">
 </g>

@@ -10,8 +10,6 @@ set auto y
 set key outside right center box
 plot \
 "/home/guadagnini/BA15_wlan_1/sw/scripts/graph/02_PRP/srv02_02.U.MIN.U_net_prp1_rx_bitrate" using 1:2 title "02.U.MIN.U" lw 3 with lines, \
-"/home/guadagnini/BA15_wlan_1/sw/scripts/graph/02_PRP/srv02_02.U.MIN.U_net_prp1_rx_bitrate" using 1:2 title "02.U.MIN.U" lw 3 with lines, \
-"/home/guadagnini/BA15_wlan_1/sw/scripts/graph/02_PRP/srv02_02.U.MIN.K_net_prp1_rx_bitrate" using 1:2 title "02.U.MIN.K" lw 3 with lines, \
 "/home/guadagnini/BA15_wlan_1/sw/scripts/graph/02_PRP/srv02_02.U.MIN.K_net_prp1_rx_bitrate" using 1:2 title "02.U.MIN.K" lw 3 with lines, \
 "/home/guadagnini/BA15_wlan_1/sw/scripts/graph/02_PRP/srv02_02.U.MAX.U_net_prp1_rx_bitrate" using 1:2 title "02.U.MAX.U" lw 3 with lines, \
 "/home/guadagnini/BA15_wlan_1/sw/scripts/graph/02_PRP/srv02_02.U.MAX.K_net_prp1_rx_bitrate" using 1:2 title "02.U.MAX.K" lw 3 with lines, \

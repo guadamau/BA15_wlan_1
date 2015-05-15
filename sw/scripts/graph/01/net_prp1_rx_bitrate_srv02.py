@@ -14,7 +14,6 @@ plot \
 "/home/guadagnini/BA15_wlan_1/sw/scripts/graph/01/srv02_01.U.MAX.U_net_prp1_rx_bitrate" using 1:2 title "01.U.MAX.U" lw 3 with lines, \
 "/home/guadagnini/BA15_wlan_1/sw/scripts/graph/01/srv02_01.U.MAX.K_net_prp1_rx_bitrate" using 1:2 title "01.U.MAX.K" lw 3 with lines, \
 "/home/guadagnini/BA15_wlan_1/sw/scripts/graph/01/srv02_01.T.MIN.U_net_prp1_rx_bitrate" using 1:2 title "01.T.MIN.U" lw 3 with lines, \
-"/home/guadagnini/BA15_wlan_1/sw/scripts/graph/01/srv02_01.T.MIN.U_net_prp1_rx_bitrate" using 1:2 title "01.T.MIN.U" lw 3 with lines, \
 "/home/guadagnini/BA15_wlan_1/sw/scripts/graph/01/srv02_01.T.MIN.K_net_prp1_rx_bitrate" using 1:2 title "01.T.MIN.K" lw 3 with lines, \
 "/home/guadagnini/BA15_wlan_1/sw/scripts/graph/01/srv02_01.T.MAX.U_net_prp1_rx_bitrate" using 1:2 title "01.T.MAX.U" lw 3 with lines, \
 "/home/guadagnini/BA15_wlan_1/sw/scripts/graph/01/srv02_01.T.MAX.K_net_prp1_rx_bitrate" using 1:2 title "01.T.MAX.K" lw 3 with lines, \
