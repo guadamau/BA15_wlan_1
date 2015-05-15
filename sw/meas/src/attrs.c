@@ -16,6 +16,7 @@
 
 #include "attrs.h"
 
+
 /* private function declarations */
 void initerr( void );
 

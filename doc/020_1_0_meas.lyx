@@ -1488,7 +1488,7 @@ Um sicherzustellen, ob die Werte korrekt ausgelesen und in entsprechende
  mit erwarteten Werten.
  Wenn ein ausgelesener Wert nicht mit dem erwarteten Wert übereinstimmt,
  schlägt der gesamte Test fehl.
- Für das Vergleichen der Werte die 
+ Für das Vergleichen der Werte wird die 
 \begin_inset ERT
 status open
 
@@ -1517,15 +1517,15 @@ status open
 
 
 \backslash
-lstinputlisting[caption={Funktionskörper, Unit Test},  captionpos=b,language=C]{
-_src_lst/meas_read_to_meas_buffers.c}
+lstinputlisting[caption={Implementierung, meas Unit Test},  captionpos=b,languag
+e=C]{_src_lst/meas_unit_test.c}
 \end_layout
 
 \begin_layout Plain Layout
 
 
 \backslash
-label{lst:meas_read_to_meas_buffers}
+label{lst:meas_unit_test}
 \end_layout
 
 \end_inset
