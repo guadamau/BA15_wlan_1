@@ -2658,7 +2658,14 @@ Name
 \begin_layout Plain Layout
 
 \series bold
-Calnex Paragon
+Calnex Paragon 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "paragon_user_guide"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
