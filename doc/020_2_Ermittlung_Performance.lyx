@@ -10363,6 +10363,51 @@ Eine ECI-Box verursacht auf einem Netzwerkpfad einen Delay von
 \end_layout
 
 \begin_layout Standard
+Gesteuert werden die ECI-Boxen, welche am Host 
+\begin_inset Quotes fld
+\end_inset
+
+GATEWAY PC
+\begin_inset Quotes frd
+\end_inset
+
+ (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Standorte"
+
+\end_inset
+
+) via USB angeschlossen sind, über Python-Scripts.
+ Auf diesem Host wird in diesem Szenario ein Bash-Skript ausgeführt, welches
+ das Python-Skript zur ECI-Box-Steuerung ausführt und auf dem Host 
+\begin_inset Quotes fld
+\end_inset
+
+srv03
+\begin_inset Quotes frd
+\end_inset
+
+ via SSH über das Netzwerk Ext die Messung auf 
+\begin_inset Quotes fld
+\end_inset
+
+srv01
+\begin_inset Quotes frd
+\end_inset
+
+ und 
+\begin_inset Quotes fld
+\end_inset
+
+srv02
+\begin_inset Quotes frd
+\end_inset
+
+ startet.
+\end_layout
+
+\begin_layout Standard
 Fälle:
 \end_layout
 
