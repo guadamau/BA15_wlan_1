@@ -2461,6 +2461,13 @@ Hilfsmittel zum Messen von Ressourcennutzung und Performanceparametern:
 \end_inset
 
 
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:valgrind_desc"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3610,6 +3617,13 @@ Verwendete Tools und ihre Aufgaben in dieser Arbeit
 
 \begin_layout Subsection
 Verifizierung der Messwerte
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Verifizierung-der-Messwerte"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

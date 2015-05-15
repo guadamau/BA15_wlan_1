@@ -1199,7 +1199,7 @@ eth1
  handelt es sich um Hardware des Herstellers Broadcom.
  Die Netzwerkkarten bieten die Möglichkeit, das Aktualisierungs-Intervall
  der Statistiken manuell zu modifizieren.
- Die Broadcom-Interfaces haben im Auslieferungszustand ein Aktualisierungsinterv
+ Im Auslieferungszustand haben die Broadcom-Interfaces ein Aktualisierungsinterv
 all von einer Sekunde eingestellt.
 \end_layout
 
@@ -1404,45 +1404,226 @@ mu s$
 \end_layout
 
 \begin_layout Standard
---------------------------------------------------------------------------------
----------------
+Das Kommando: 
 \end_layout
 
 \begin_layout Standard
---- umschreiben für BA-inhalt
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Plain Layout
+
+ethtool -i eth0
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Die Broadcom-Interfaces (eth0 und eth1) haben standardmässig ein Interrupt-Inter
-vall von 1 Sekunde eingestellt, für das aktualisieren ihrer statistischen
- Werte.
- Krasses Beispiel: Wenn wir mit meas alle 10 ms eine Messung durchführen,
- haben die ersten 99 Intervalle 0 TX-Bytes und das 100.
- Intervall hat dann ca.
- 12500000 TX-Bytes.
- Dies resultiert dann in einer Bitrate von 12500000 * 8 / ( 1000*1000 )
- / 0.010 = 10000 MBit/s.
+Liefert Informationen über den Gerätetreiber des Interfaces mit dem Namen
  
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+:
 \end_layout
 
 \begin_layout Standard
-Die meisten NICs lassen es zu, dieses Interrupt-Intervall abzuändern (in-memory
- statistic block).
- Ja, unsere Broadcom-NICs gehören auch dazu, yay.
- Um das ganze zu testen, habe ich ein Bash-Script geschrieben, welches die
- PRP-NICs entsprechend konfiguriert: "/home/scripts/set_prp_nics_proc_refresh_fr
-equency.sh" Also Refresh-Rate habe ich mal 100 Mikrosekunden gewählt.
- ACHTUNG: VORERST NUR AUF SRV01 AUSGEFÜHRT.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{Verbatim}[commandchars=
+\backslash
+
+\backslash
+
+\backslash
+{
+\backslash
+}]
+\end_layout
+
+\begin_layout Plain Layout
+
+driver: tg3
+\end_layout
+
+\begin_layout Plain Layout
+
+version: 3.121
+\end_layout
+
+\begin_layout Plain Layout
+
+firmware-version: 5704-v3.26
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{bus-info: 0000:02:00.0}
+\end_layout
+
+\begin_layout Plain Layout
+
+supports-statistics: yes 
+\end_layout
+
+\begin_layout Plain Layout
+
+supports-test: yes 
+\end_layout
+
+\begin_layout Plain Layout
+
+supports-eeprom-access: yes 
+\end_layout
+
+\begin_layout Plain Layout
+
+supports-register-dump: yes 
+\end_layout
+
+\begin_layout Plain Layout
+
+supports-priv-flags: no
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{Verbatim}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-Nun sehen die Intervall Results anständiger aus, exemplarisch eine Messserie
- mit Intervall 0.017s: "/tmp/meas_interval_results_143061602
+Über die Zeile, welche die Bus-Info ausgibt, kann in der Datei /proc/iomem
+ erörtert werden, auf welchen Bereich im Hauptadressraum des Betriebssystems
+ die Speicheradressen des Interfaces 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ übersetzt werden.
+ Über diesen Mechanismus wird vom Betriebssystem beispielsweise auf die
+ statistischen Daten des Interfaces zugegriffen.
 \end_layout
 
 \begin_layout Standard
---------------------------------------------------------------------------------
----------------
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Plain Layout
+
+cat /proc/iomem | grep 0000:02:00.0
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Adressbereiche für den Bus 0000:02:00.0:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Plain Layout
+
+febb0000-febbffff : 0000:02:00.0 
+\end_layout
+
+\begin_layout Plain Layout
+
+febc0000-febcffff : 0000:02:00.0 
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$febcffff_{h} - febb0000_{h} + 00000001_{h} = 20000_{h} = 131072_{d} = 128
+ kByte$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ein Broadcom Interface verfügt über einen Speicher von 128 kByte.
 \end_layout
 
 \begin_layout Subsection

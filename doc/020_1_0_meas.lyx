@@ -113,7 +113,7 @@ measurement
 \end_layout
 
 \begin_layout Standard
-Zusätzlich unterstützt meas zwei Modi im Hinblick aut das Testszenario 02
+Zusätzlich unterstützt meas zwei Modi im Hinblick auf das Testszenario 02
  (siehe 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -173,6 +173,16 @@ eth0
 \end_inset
 
  (physisch)]
+\end_layout
+
+\begin_layout Subparagraph
+Netzwerkstatistiken, Quelldaten 
+\end_layout
+
+\begin_layout Standard
+Die Messresultate bezüglich erhaltener und transmittierter Bytes sowie die
+ Berechnungnen von Bitraten basieren ausschliesslich auf Werten, welche
+ das Betriebssystem vom Data-Link-Layer aufzeichnet.
 \end_layout
 
 \begin_layout Paragraph
@@ -1080,13 +1090,6 @@ Resultate ohne Optimierungen
 \end_layout
 
 \begin_layout Standard
-\begin_inset space \hfill{}
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
 Beim Durchführen erster Messserien mit meas, wurde ein Messfehler von 
 \begin_inset ERT
 status open
@@ -1144,13 +1147,6 @@ Resultate nach erster Optimierungsstufe
 \end_layout
 
 \begin_layout Standard
-\begin_inset space \hfill{}
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
 Nach sorgfältiger Analyse des Quellcodes wurde festgestellt, dass das Interpreti
 eren und Kopieren der gelesenen Werte sehr viel Zeit in Anspruch nahmen.
  Hauptsächlich durch zahlreiche Aufrufe der memcpy-Funktion mit nur kleinen
@@ -1216,13 +1212,6 @@ Resultate nach zweiter Optimierungsstufe
 \end_layout
 
 \begin_layout Standard
-\begin_inset space \hfill{}
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
 Zusätzlich zum Auslesen der Werte wurden die Statistiken eines Intervalls
  bereits ausgewertet.
  Ebenfalls wurde je nach Konfigurationsparameter der Software pro Intervall
@@ -1517,7 +1506,879 @@ key "assert_man_page"
 
 \end_inset
 
- verwendet.
+ verwendet:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[caption={Funktionskörper, Unit Test},  captionpos=b,language=C]{
+_src_lst/meas_read_to_meas_buffers.c}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{lst:meas_read_to_meas_buffers}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Speicherüberprüfung
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Bei der Implemtierung der meas-Applikation wurde das Konzept der dynamischen
+ Speicherallozierung (
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$malloc()$
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "malloc_man_page"
+
+\end_inset
+
+, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$free()$
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "free_man_page"
+
+\end_inset
+
+) angewendet.
+ Um zu überprüfen, ob jede Allokation von Speicher jeweils wieder korrekt
+ freigegeben wurde, also keine sogenannten 
+\begin_inset Quotes fld
+\end_inset
+
+Speicherlecks
+\begin_inset Quotes frd
+\end_inset
+
+ entstehen, wurde die Profiling-Software 
+\begin_inset Quotes fld
+\end_inset
+
+valgrind
+\begin_inset Quotes frd
+\end_inset
+
+ (siehe Tabelle 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:valgrind_desc"
+
+\end_inset
+
+) eingesetzt.
+ Nach jedem Release einer Version von meas wird ein Profiling-Rerport erstellt.
+ Dieser hat die nachfolgend gezeigte Form:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begingroup     
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fontsize{8pt}{11pt}
+\backslash
+selectfont
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{Verbatim}[commandchars=
+\backslash
+
+\backslash
+
+\backslash
+{
+\backslash
+}]
+\end_layout
+
+\begin_layout Plain Layout
+
+==20699== Memcheck, a memory error detector 
+\end_layout
+
+\begin_layout Plain Layout
+
+==20699== Copyright (C) 2002-2013, and GNU GPL'd, by Julian Seward et al.
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+==20699== Using Valgrind-3.10.1 and LibVEX; rerun with -h for copyright info
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+==20699== Command: ./meas -p 2430 -i 0.01 -n 500 -v 1 -m 1 
+\end_layout
+
+\begin_layout Plain Layout
+
+==20699==  
+\end_layout
+
+\begin_layout Plain Layout
+
+no of intervals: 500 Using "/tmp" as file output location.
+\end_layout
+
+\begin_layout Plain Layout
+
+Writing to: /tmp/meas_interval_results_1431290017 
+\end_layout
+
+\begin_layout Plain Layout
+
+Writing to: /tmp/meas_overall_stats_1431290017 
+\end_layout
+
+\begin_layout Plain Layout
+
+==20699==  
+\end_layout
+
+\begin_layout Plain Layout
+
+==20699== HEAP SUMMARY: 
+\end_layout
+
+\begin_layout Plain Layout
+
+==20699==     in use at exit: 0 bytes in 0 blocks 
+\end_layout
+
+\begin_layout Plain Layout
+
+==20699==   total heap usage: 1,613 allocs, 1,613 frees, 12,835,336 bytes
+ allocated 
+\end_layout
+
+\begin_layout Plain Layout
+
+==20699==  
+\end_layout
+
+\begin_layout Plain Layout
+
+==20699== 
+\backslash
+textbf{All heap blocks were freed -- no leaks are possible}
+\end_layout
+
+\begin_layout Plain Layout
+
+==20699==  
+\end_layout
+
+\begin_layout Plain Layout
+
+==20699== For counts of detected and suppressed errors, rerun with: -v 
+\end_layout
+
+\begin_layout Plain Layout
+
+==20699== 
+\backslash
+textbf{ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 13 from 6)}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{Verbatim}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+endgroup
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Plausibilitätskontrolle
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Um sicherzustellen, ob die berechneten Statistiken/Resultate von meas plausible
+ Werte aufweisen, wurden diese Resultaten anderer Tools, gegenübergestellt.
+ In Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Verifizierung-der-Messwerte"
+
+\end_inset
+
+ sind die Ergebnisse der besagten Gegenüberstellung detailliert beschrieben.
+ Des Weiteren wurden Messungen durchgeführt mit maximaler Lasterzeugung
+ bezüglich Data-Link-Layer.
+ Diese Resultate wurden sodann mit der theoretischen Obergrenze, die eine
+ Bitrate eines 100-MBit/s-Interface erreichen kann, verglichen, siehe Kapitel
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "par:Frames-mit-maximaler"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Paragraph
+Ausgaben der Messresultate
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Als Ausgabe von meas wird die Funktion 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$fprintf()$
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "fprintf_man_page"
+
+\end_inset
+
+ verwendet, welche eine Textausgabe auf verschiedene Ausgabegeräte ermöglicht.
+ Exemplarische Ausgabe eines Messintervalls in eine Textdatei:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begingroup
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fontsize{8pt}{11pt}
+\backslash
+selectfont
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{Verbatim}[commandchars=
+\backslash
+
+\backslash
+
+\backslash
+{
+\backslash
+}]
+\end_layout
+
+\begin_layout Plain Layout
+
+********************************************************************************
+***********
+\end_layout
+
+\begin_layout Plain Layout
+
+ Process specific statistics, interval no:     0
+\end_layout
+
+\begin_layout Plain Layout
+
+ PID:  7327   Time: elapsed 1.000s, user 0.31s, sys 0.06s, overhead 120us 
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ CPU:  cpu workload 36.99%
+\end_layout
+
+\begin_layout Plain Layout
+
+ Machine wide network stats for PRP involved interfaces, not process specific:
+\end_layout
+
+\begin_layout Plain Layout
+
+ Interface       RX Bytes       TX Bytes      RX Bitrate [MBit/s]      TX
+ Bitrate [MBit/s] 
+\end_layout
+
+\begin_layout Plain Layout
+
+ ===============================================================================
+==========  
+\end_layout
+
+\begin_layout Plain Layout
+
+ prp (prp1)             0       12287184                     0.00       
+             98.28  
+\end_layout
+
+\begin_layout Plain Layout
+
+ if0 (eth0)           140       12339892                     0.00       
+             98.71  
+\end_layout
+
+\begin_layout Plain Layout
+
+ if1 (eth1)           140       12339892                     0.00       
+             98.71
+\end_layout
+
+\begin_layout Plain Layout
+
+ ===============================================================================
+==========
+\end_layout
+
+\begin_layout Plain Layout
+
+********************************************************************************
+***********
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{Verbatim}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+endgroup
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+Exemplarische Ausgabe eines Reports über eine gesamte Messserie in eine
+ Textdatei:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begingroup     
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+fontsize{7pt}{9pt}
+\backslash
+selectfont
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{Verbatim}[commandchars=
+\backslash
+
+\backslash
+
+\backslash
+{
+\backslash
+}]
+\end_layout
+
+\begin_layout Plain Layout
+
+********************************************************************************
+*****************
+\end_layout
+
+\begin_layout Plain Layout
+
+ Native location: /results/testing/02_PRP/02.U.MAX.K
+\end_layout
+
+\begin_layout Plain Layout
+
+ Overall statistics of Process with PID:   7327   |   Total elapsed time
+ [s]:       300.02
+\end_layout
+
+\begin_layout Plain Layout
+
+                                                  |   Total overhead time
+ [us]:      35966  
+\end_layout
+
+\begin_layout Plain Layout
+
+ Total no of intervals:               300  
+\end_layout
+
+\begin_layout Plain Layout
+
+ Duration of each interval [s]:     1.000
+\end_layout
+
+\begin_layout Plain Layout
+
+ -------------------------------------------------------------------------------
+----------------
+\end_layout
+
+\begin_layout Plain Layout
+
+ Elapsed time [s]:   Average:    1.00  
+\end_layout
+
+\begin_layout Plain Layout
+
+ (per interval)      Min:        1.00 at interval: [  100.000s,   101.000s]
+                      
+\end_layout
+
+\begin_layout Plain Layout
+
+                     Max:        1.00 at interval: [  244.000s,   245.000s]
+\end_layout
+
+\begin_layout Plain Layout
+
+ -------------------------------------------------------------------------------
+----------------
+\end_layout
+
+\begin_layout Plain Layout
+
+ Overhead time [us]: Average:     119
+\end_layout
+
+\begin_layout Plain Layout
+
+ (per interval)      Min:          89 at interval: [  162.000s,   163.000s]
+\end_layout
+
+\begin_layout Plain Layout
+
+                     Max:         232 at interval: [  100.000s,   101.000s]
+\end_layout
+
+\begin_layout Plain Layout
+
+ -------------------------------------------------------------------------------
+----------------
+\end_layout
+
+\begin_layout Plain Layout
+
+ Usertime [s]:       Average:    0.31
+\end_layout
+
+\begin_layout Plain Layout
+
+                     Min:        0.25 at interval: [  264.000s,   265.000s]
+\end_layout
+
+\begin_layout Plain Layout
+
+                     Max:        0.34 at interval: [   78.000s,    79.000s]
+\end_layout
+
+\begin_layout Plain Layout
+
+ -------------------------------------------------------------------------------
+----------------
+\end_layout
+
+\begin_layout Plain Layout
+
+ Systemtime [s]:     Average:    0.06
+\end_layout
+
+\begin_layout Plain Layout
+
+                     Min:        0.03 at interval: [    5.000s,     6.000s]
+\end_layout
+
+\begin_layout Plain Layout
+
+                     Max:        0.12 at interval: [  264.000s,   265.000s]
+\end_layout
+
+\begin_layout Plain Layout
+
+ -------------------------------------------------------------------------------
+----------------
+\end_layout
+
+\begin_layout Plain Layout
+
+ CPU workload [%]:   Average:   36.71
+\end_layout
+
+\begin_layout Plain Layout
+
+                     Min:       35.00 at interval: [  130.000s,   131.000s]
+\end_layout
+
+\begin_layout Plain Layout
+
+                     Max:       38.00 at interval: [   33.000s,    34.000s]
+\end_layout
+
+\begin_layout Plain Layout
+
+ -------------------------------------------------------------------------------
+----------------
+\end_layout
+
+\begin_layout Plain Layout
+
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+ Machine wide statistics of the network interfaces:
+\end_layout
+
+\begin_layout Plain Layout
+
+ Following statistics are bound to a specific NIC not to the PID mentioned
+ above.
+\end_layout
+
+\begin_layout Plain Layout
+
+ ===============================================================================
+================
+\end_layout
+
+\begin_layout Plain Layout
+
+ Statistics for virtual PRP interface with label: prp1
+\end_layout
+
+\begin_layout Plain Layout
+
+ -------------------------------------------------------------------------------
+----------------
+\end_layout
+
+\begin_layout Plain Layout
+
+             RX [MBit/s] | at interval              ||| TX [MBit/s] | at
+ interval
+\end_layout
+
+\begin_layout Plain Layout
+
+            --------------------------------------------------------------------
+----------------
+\end_layout
+
+\begin_layout Plain Layout
+
+ Average:           0.00 |                      --- |||       98.06 |    
+                  ---
+\end_layout
+
+\begin_layout Plain Layout
+
+ Min:               0.00 | [    0.000s,     1.000s] |||       97.64 | [   38.000s,
+    39.000s]
+\end_layout
+
+\begin_layout Plain Layout
+
+ Max:               0.00 | [  286.000s,   287.000s] |||       98.45 | [  114.000s,
+   115.000s]
+\end_layout
+
+\begin_layout Plain Layout
+
+            --------------------------------------------------------------------
+----------------
+\end_layout
+
+\begin_layout Plain Layout
+
+ Total received bytes:              660
+\end_layout
+
+\begin_layout Plain Layout
+
+ Total transmitted bytes:    3677415293
+\end_layout
+
+\begin_layout Plain Layout
+
+ -------------------------------------------------------------------------------
+----------------
+\end_layout
+
+\begin_layout Plain Layout
+
+ Statistics for first PRP involved physical interface with label: eth0
+\end_layout
+
+\begin_layout Plain Layout
+
+ -------------------------------------------------------------------------------
+----------------
+\end_layout
+
+\begin_layout Plain Layout
+
+             RX [MBit/s] | at interval              ||| TX [MBit/s] | at
+ interval
+\end_layout
+
+\begin_layout Plain Layout
+
+            --------------------------------------------------------------------
+----------------
+\end_layout
+
+\begin_layout Plain Layout
+
+ Average:           0.00 |                      --- |||       98.71 |    
+                  ---
+\end_layout
+
+\begin_layout Plain Layout
+
+ Min:               0.00 | [    1.000s,     2.000s] |||       98.66 | [   68.000s,
+    69.000s]
+\end_layout
+
+\begin_layout Plain Layout
+
+ Max:               0.00 | [  202.000s,   203.000s] |||       98.72 | [    9.000s,
+    10.000s]
+\end_layout
+
+\begin_layout Plain Layout
+
+            --------------------------------------------------------------------
+----------------
+\end_layout
+
+\begin_layout Plain Layout
+
+ Total received bytes:            21700
+\end_layout
+
+\begin_layout Plain Layout
+
+ Total transmitted bytes:    3701774730
+\end_layout
+
+\begin_layout Plain Layout
+
+ -------------------------------------------------------------------------------
+----------------
+\end_layout
+
+\begin_layout Plain Layout
+
+ Statistics for second PRP involved physical interface with label: eth1
+\end_layout
+
+\begin_layout Plain Layout
+
+ -------------------------------------------------------------------------------
+----------------
+\end_layout
+
+\begin_layout Plain Layout
+
+             RX [MBit/s] | at interval              ||| TX [MBit/s] | at
+ interval
+\end_layout
+
+\begin_layout Plain Layout
+
+            --------------------------------------------------------------------
+----------------
+\end_layout
+
+\begin_layout Plain Layout
+
+ Average:           0.00 |                      --- |||       98.71 |    
+                  ---
+\end_layout
+
+\begin_layout Plain Layout
+
+ Min:               0.00 | [    1.000s,     2.000s] |||       98.66 | [   68.000s,
+    69.000s]
+\end_layout
+
+\begin_layout Plain Layout
+
+ Max:               0.00 | [  202.000s,   203.000s] |||       98.73 | [  259.000s,
+   260.000s]
+\end_layout
+
+\begin_layout Plain Layout
+
+            --------------------------------------------------------------------
+----------------
+\end_layout
+
+\begin_layout Plain Layout
+
+ Total received bytes:            21700
+\end_layout
+
+\begin_layout Plain Layout
+
+ Total transmitted bytes:    3701774730
+\end_layout
+
+\begin_layout Plain Layout
+
+ -------------------------------------------------------------------------------
+----------------
+\end_layout
+
+\begin_layout Plain Layout
+
+ ===============================================================================
+================
+\end_layout
+
+\begin_layout Plain Layout
+
+********************************************************************************
+*****************
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{Verbatim}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+endgroup
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body
