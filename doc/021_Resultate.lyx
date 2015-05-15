@@ -16621,7 +16621,7 @@ name "sec:Szenario-04:-Zeitweiser"
 \end_layout
 
 \begin_layout Section
-Szenario 05: Abhängigkeit vom verwendeten Protokoll
+Szenario 05: Abhängigkeit vom verwendeten Protokoll (TCP/UDP)
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Szenario-05:-Abhängigkeit"
@@ -16632,7 +16632,24 @@ name "sec:Szenario-05:-Abhängigkeit"
 \end_layout
 
 \begin_layout Standard
-TCP, UDP, Ethernet
+In diesem Abschnitt wird ein Vergleich zwischen TCP- und UDP-Verkehr vorgenommen.
+ Dazu dienen die Resultate aus Szenario 01 (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Szenario-01:-Performance"
+
+\end_inset
+
+).
+ Der Vergleich zwischen reiner Layer-2- und UDP-Netzwerklast wird in Kapitel
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Erörterung-signifikanter-Resulta"
+
+\end_inset
+
+ durchgeführt.
 \end_layout
 
 \begin_layout Section

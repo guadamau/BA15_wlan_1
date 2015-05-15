@@ -2885,6 +2885,38 @@ Ist die Zeitspanne abgelaufen, werden die Messungen beendet.
 \end_layout
 
 \begin_layout Standard
+Sofern es nicht anders erwähnt wird, erfolgt die Netzwerkgenerierung (shck-Clien
+t) auf dem Server 
+\begin_inset Quotes fld
+\end_inset
+
+srv01
+\begin_inset Quotes frd
+\end_inset
+
+ während auf 
+\begin_inset Quotes fld
+\end_inset
+
+srv02
+\begin_inset Quotes frd
+\end_inset
+
+ der shck-Server läuft.
+ Gemessen wird dabei auf beiden Hosts.
+ Gestartet wird das Ganze anhand eines Bash-Scripts auf 
+\begin_inset Quotes fld
+\end_inset
+
+srv03
+\begin_inset Quotes frd
+\end_inset
+
+, welches über das Netzwerk Ext via SSH die Messungen auf beiden Hosts beinahe
+ zeitgleich (direkt nacheinander) startet.
+\end_layout
+
+\begin_layout Standard
 Die Werte werden jeweils wie folgt berechnet:
 \end_layout
 
@@ -9934,7 +9966,7 @@ reference "sec:Aufbau-der-Testumgebung"
 \end_inset
 
 ) nicht modifiziert.
- Stattdessen werden Netzwerk-Interfaces während der Messung nach einem bestimmte
+ Stattdessen werden Netzwerkanbindungen während der Messung nach einem bestimmte
 n Intervall (z.B.
  alle 10 Sekunden) aktiviert / deaktiviert.
  Dadurch soll herausgefunden werden wie der PRP-1 stack mit zeitweisen Ausfällen
@@ -9954,7 +9986,7 @@ status open
 \noindent
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="4" columns="2">
+<lyxtabular version="3" rows="5" columns="2">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="left" valignment="top" width="20col%">
 <column alignment="left" valignment="top" width="20col%">
@@ -10003,7 +10035,7 @@ KNA
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -10012,11 +10044,31 @@ Intervall von 2s
 
 \end_inset
 </cell>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 02s
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Intervall von 3s
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+03s
 \end_layout
 
 \end_inset
@@ -10070,6 +10122,98 @@ Fälle von zeitweisem Ausfall eines Netzwerkpfades
 Der oben erwähnte Netzwerklast-Suffix ist bei der Bezeichnung der entsprechenden
  Netzwerklast angehängt und weist auf den verwendeten Intervall in Sekunden
  oder den Komplettausfall hin.
+\end_layout
+
+\begin_layout Standard
+Es bestünde die Möglichkeit, die Netzwerk-Interfaces direkt über die Kommandozei
+le auf dem Host zu aktivieren / deaktivieren, jedoch werden dann die Nutzungssta
+tistiken des entsprechenden Interfaces im /proc-Dateisystem zurückgesetzt.
+ Da diese Statistiken für die Messungen mit meas essenziell sind, stellt
+ dieses Vorgehen hier keine Option dar.
+ Aus diesem Grund werden bei dem Host 
+\begin_inset Quotes fld
+\end_inset
+
+srv01
+\begin_inset Quotes frd
+\end_inset
+
+ ECI-Boxen (siehe Tabelle 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:ECI-Weitere-Hilfsmittel:-Ethernet"
+
+\end_inset
+
+) bei den Netzwerk-Interfaces 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ und 
+\begin_inset Quotes fld
+\end_inset
+
+eth1
+\begin_inset Quotes frd
+\end_inset
+
+ dazwischen geschaltet.
+ Diese werden bei beiden Interfaces dazwischen geschaltet, damit die beiden
+ Netzwerkanbindungen äquivalent zueinander bleiben (selbe Distanz / Verzögerung).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/020_2_top_UDP_MIN_MAX.png
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Netzwerkaufbau, beschränkt auf die Komponenten, die in Szenario 04 zum Einsatz
+ kommen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Eine ECI-Box verursacht auf einem Netzwerkpfad einen Delay von 
+\begin_inset Formula $1.144\pm6\mu s$
+\end_inset
+
+, was vernachlässigt werden kann, da dieser Delay bei beiden Netzwerkanbindungen
+ auftritt und weil die versendeten Pakete zwar um diesen Delay später ankommen,
+ jedoch im Steady State gemessen wird, in welchem ständig die selbe Last
+ versendet wird.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -10217,7 +10361,36 @@ Szenario 05: Abhängigkeit vom verwendeten Protokoll
 \end_layout
 
 \begin_layout Standard
-TCP, UDP, Ethernet
+Innerhalb dieses Szenarios werden keine Messungen vorgenommen, sondern die
+ Resultate aus Szenario 01 (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Szenario-01:-Performance-1"
+
+\end_inset
+
+) für den Vergleich zwischen TCP- und UDP-Netzwerklasten übernommen.
+ Die Resultate und Interpretation zum Vergleich TCP/UDP sind in Kapitel
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Szenario-05:-Abhängigkeit"
+
+\end_inset
+
+ aufgeführt.
+\end_layout
+
+\begin_layout Standard
+Für den Vergleich zwischen reiner Layer-2- und UDP-Netzwerklast kann das
+ Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Erörterung-signifikanter-Resulta"
+
+\end_inset
+
+ konsultiert werden.
 \end_layout
 
 \begin_layout Standard
@@ -10232,7 +10405,7 @@ width "100col%"
 special "none"
 height "1in"
 height_special "totalheight"
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
