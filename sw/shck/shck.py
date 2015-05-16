@@ -70,13 +70,13 @@ except ImportError:
     sys.exit(0)
 
 if not os.geteuid()==0:
-    sys.exit("ERROR:\nOnly root can run this script\nUse sudo or run as root")
+    sys.exit("ERROR:Only root can run this script\nUse sudo or run as root")
 
 #
 # functions
 #
 def printheader():
-    sys.stdout.write('#######################################\n shck - generate and send network load\n#######################################\n')
+    sys.stdout.write('####################################### shck - generate and send network load\n#######################################\n')
 
 printheader()
 
@@ -201,7 +201,7 @@ def generate_package( data ):
             sys.exit()
         return cutpayload(data)
     else:
-        sys.stdout.write('\nERROR: Wrong transmission_type in generate_package()\n')
+        sys.stdout.write('ERROR: Wrong transmission_type in generate_package()\n')
         sys.exit()
 
     
@@ -277,7 +277,7 @@ def sendpacketout( packet, data ):
         if serr.errno != errno.ECONNREFUSED:
             raise serr
         else:
-            print('\nERROR (Connection refused by target):\nshck needs to run in Server-Mode (-S) with -t ' + transmission_type + '\nand on the same port (-p PORTNUMBER) on the target host!\nTry again after starting shck in Server-Mode on the target.')
+            print('ERROR (Connection refused by target):\nshck needs to run in Server-Mode (-S) with -t ' + transmission_type + '\nand on the same port (-p PORTNUMBER) on the target host!\nTry again after starting shck in Server-Mode on the target.')
             sys.exit()
 
 def sendpacket( data ):
@@ -318,7 +318,7 @@ def server():
                 s.bind((HOST, PORT_TCP))
                 s.listen(1)
                 conn, addr = s.accept()
-                print('\nConnected by ' + str(addr))
+                print('Connected by ' + str(addr))
                 count = 0
                 while 1:
                     data = conn.recv(4096)
@@ -331,7 +331,7 @@ def server():
                 if serr.errno !=  errno.ECONNRESET:
                     raise serr
                 else:
-                    print('\nConnection reset by peer, ready for new connection...')
+                    print('Connection reset by peer, ready for new connection...')
     elif transmission_type == 'UDP':
         s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         s.bind((HOST, PORT_UDP))
@@ -341,7 +341,7 @@ def server():
             data, addr = s.recvfrom(4096)
             print ('\rRecieved messages: ' + str(count) + ''),
     else:
-        print('\nINVALID TRANSMISSION_TYPE! Choose TCP or UDP!\n')
+        print('INVALID TRANSMISSION_TYPE! Choose TCP or UDP!\n')
     
 
 def printhelp():
@@ -415,21 +415,21 @@ def main(argv):
         printhelp()
         sys.exit()
     elif (srvmode == True):
-        print('PID of shck: ' + str(os.getpid()) + '\nRunning in SERVER MODE' + '\n-TRANSMISSION_TYPE: ' + str(transmission_type) + '\n\nListening...')
+        print('PID of shck: ' + str(os.getpid()) + 'Running in SERVER MODE' + '\n-TRANSMISSION_TYPE: ' + str(transmission_type) + '\n\nListening...')
         server()                                # start server-mode
 
     else:
-        print('PID of shck: ' + str(os.getpid()) + '\nLoad characteristics:\nDestination: ' + str(target) + '\n-SIZETYPE: ' + str(sizetype) + '\n-TRANSMISSION_TYPE: ' + str(transmission_type) + '\n-PRP-mode enabled: ' + str(prp_enabled) + '\n-Interface: ' + str(interface) + '\n-FILE: ' + str(datafile))
+        print('PID of shck: ' + str(os.getpid()) + 'Load characteristics:\nDestination: ' + str(target) + '\n-SIZETYPE: ' + str(sizetype) + '\n-TRANSMISSION_TYPE: ' + str(transmission_type) + '\n-PRP-mode enabled: ' + str(prp_enabled) + '\n-Interface: ' + str(interface) + '\n-FILE: ' + str(datafile))
         if (unlimited_count == True):
             print('-Frame / Packet count: unlimited (Stop by pressing Ctrl+C)')
         else:
             print('-Frame / Packet count: ' + str(count_frames))
-        print('\n\nSending load...')
+        print('\nSending load...')
 
         payload=getpayloadfromfile( datafile )  # get payload from file
         sendpacket( payload )                   # send frames with specified payload
 
-        print('\nDone\nshck is finished\n')
+        print('Done\nshck is finished\n')
     sys.exit()
 
 #
@@ -438,7 +438,7 @@ def main(argv):
 try:
     main(sys.argv[1:])
 except (KeyboardInterrupt, SystemExit):
-    sys.stdout.write("\n######################################\n Goodbye!\n this traffic generation was brought to you by shck \n######################################\n")
+    sys.stdout.write("######################################\n Goodbye!\n this traffic generation was brought to you by shck \n######################################\n")
     sys.exit()
 except:
     raise

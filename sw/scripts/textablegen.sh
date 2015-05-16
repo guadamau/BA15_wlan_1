@@ -41,7 +41,7 @@ for i in $(find ~/BA_result_inbox -name '*meas_overall*' | sort -r); do
                                 FILES=(${FILES[@]} ${TEXFILE})
                                 echo '\begin{tabular}{|>{\raggedright}p{0.12\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|}' > ${TEXFILE}
                                 echo '\hline ' >> ${TEXFILE}
-                                echo '\multirow{2}{0.12\columnwidth}{\textbf{\footnotesize{}Bezeichnung}} & \multicolumn{3}{l|}{\textbf{\footnotesize{}CPU-Last {[}\%{]}}} & \multicolumn{3}{l|}{\textbf{\footnotesize{}Systemtime {[}s{]}}} & \multicolumn{3}{l|}{\textbf{\footnotesize{}Usertime {[}s{]}}}\tabularnewline' >> ${TEXFILE}
+                                echo '\multirow{2}{0.12\columnwidth}{\textbf{\footnotesize{}Name}} & \multicolumn{3}{l|}{\textbf{\footnotesize{}CPU-Last {[}\%{]}}} & \multicolumn{3}{l|}{\textbf{\footnotesize{}Systemtime {[}s{]}}} & \multicolumn{3}{l|}{\textbf{\footnotesize{}Usertime {[}s{]}}}\tabularnewline' >> ${TEXFILE}
                                 echo '\cline{2-10} ' >> ${TEXFILE}
                                 echo '& \textbf{\footnotesize{}Min} & \textbf{\footnotesize{}Avg} & \textbf{\footnotesize{}Max} & \textbf{\footnotesize{}Min} & \textbf{\footnotesize{}Avg} & \textbf{\footnotesize{}Max} & \textbf{\footnotesize{}Min} & \textbf{\footnotesize{}Avg} & \textbf{\footnotesize{}Max}\tabularnewline' >> ${TEXFILE}
                                 echo '\hline ' >> ${TEXFILE}
@@ -67,7 +67,7 @@ for i in $(find ~/BA_result_inbox -name '*meas_overall*' | sort -r); do
                                 FILES=(${FILES[@]} ${TEXFILE})
                                 echo '\begin{tabular}{|>{\raggedright}p{0.12\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|}' > ${TEXFILE}
                                 echo '\hline ' >> ${TEXFILE}
-                                echo '\multirow{3}{0.12\columnwidth}{\textbf{\footnotesize{}Bezeichnung}} & \multicolumn{9}{l|}{\textbf{\footnotesize{}RX-Bitrate {[}MBit/s{]}}}\tabularnewline' >> ${TEXFILE}
+                                echo '\multirow{3}{0.12\columnwidth}{\textbf{\footnotesize{}Name}} & \multicolumn{9}{l|}{\textbf{\footnotesize{}RX-Bitrate {[}MBit/s{]}}}\tabularnewline' >> ${TEXFILE}
                                 echo '\cline{2-10} ' >> ${TEXFILE}
                                 echo '& \multicolumn{3}{l|}{\textbf{\footnotesize{}prp1}} & \multicolumn{3}{l|}{\textbf{\footnotesize{}eth0}} & \multicolumn{3}{l|}{\textbf{\footnotesize{}eth1}}\tabularnewline' >> ${TEXFILE}
                                 echo '\cline{2-10} ' >> ${TEXFILE}
@@ -98,7 +98,7 @@ for i in $(find ~/BA_result_inbox -name '*meas_overall*' | sort -r); do
                                 FILES=(${FILES[@]} ${TEXFILE})
                                 echo '\begin{tabular}{|>{\raggedright}p{0.12\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|}' > ${TEXFILE}
                                 echo '\hline ' >> ${TEXFILE}
-                                echo '\multirow{3}{0.12\columnwidth}{\textbf{\footnotesize{}Bezeichnung}} & \multicolumn{9}{l|}{\textbf{\footnotesize{}TX-Bitrate {[}MBit/s{]}}}\tabularnewline' >> ${TEXFILE}
+                                echo '\multirow{3}{0.12\columnwidth}{\textbf{\footnotesize{}Name}} & \multicolumn{9}{l|}{\textbf{\footnotesize{}TX-Bitrate {[}MBit/s{]}}}\tabularnewline' >> ${TEXFILE}
                                 echo '\cline{2-10} ' >> ${TEXFILE}
                                 echo '& \multicolumn{3}{l|}{\textbf{\footnotesize{}prp1}} & \multicolumn{3}{l|}{\textbf{\footnotesize{}eth0}} & \multicolumn{3}{l|}{\textbf{\footnotesize{}eth1}}\tabularnewline' >> ${TEXFILE}
                                 echo '\cline{2-10} ' >> ${TEXFILE}

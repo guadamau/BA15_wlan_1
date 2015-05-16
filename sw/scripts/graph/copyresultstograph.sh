@@ -47,6 +47,7 @@ for s in ${SEARCHSTR[@]}; do
             if [ ! -f $GNUPLOTSCRIPT ]
             then
                 echo '#!/usr/bin/env gnuplot' >> ${GNUPLOTSCRIPT}
+
                 echo 'set terminal svg size 1000,600 enhanced font "Helvetica,20"' >> ${GNUPLOTSCRIPT}
                 if [ ! -z $POSITIONOFLOADDESCINTSEC ]
                 then
@@ -64,6 +65,19 @@ for s in ${SEARCHSTR[@]}; do
                     '*net_prp1_tx_bitrate*')
                         echo 'set ylabel "Bitrate [MBit/s]"' >> ${GNUPLOTSCRIPT}
                         ;;
+                    '*net_eth0_rx_bitrate*')
+                        echo 'set ylabel "Bitrate [MBit/s]"' >> ${GNUPLOTSCRIPT}
+                        ;;
+                    '*net_eth0_tx_bitrate*')
+                        echo 'set ylabel "Bitrate [MBit/s]"' >> ${GNUPLOTSCRIPT}
+                        ;;
+                    '*net_eth1_rx_bitrate*')
+                        echo 'set ylabel "Bitrate [MBit/s]"' >> ${GNUPLOTSCRIPT}
+                        ;;
+                    '*net_eth1_tx_bitrate*')
+                        echo 'set ylabel "Bitrate [MBit/s]"' >> ${GNUPLOTSCRIPT}
+                        ;;
+
                 esac
                 echo 'set xlabel "Zeit [s]"' >> ${GNUPLOTSCRIPT}
                 echo 'set grid x' >> ${GNUPLOTSCRIPT}
@@ -71,7 +85,11 @@ for s in ${SEARCHSTR[@]}; do
                 echo 'set grid y' >> ${GNUPLOTSCRIPT}
                 echo 'set auto y' >> ${GNUPLOTSCRIPT}
                 echo 'set key outside right center box' >> ${GNUPLOTSCRIPT}
-                echo 'plot \' >> ${GNUPLOTSCRIPT}
+                echo 'unset colorbox' >> ${GNUPLOTSCRIPT}
+                #echo 'set palette model RGB rgbformulae 35,13,10 #rainbow (blue-green-yellow-red)' >> ${GNUPLOTSCRIPT}
+                echo "set palette file '${HOME}/BA15_wlan_1/sw/scripts/graph/sst.gpf'" >> ${GNUPLOTSCRIPT}
+
+                echo 'plot n=0, \' >> ${GNUPLOTSCRIPT}
                 chmod 755 ${GNUPLOTSCRIPT}
                 echo "${GNUPLOTSCRIPT}" >> ${GRAPHGENSCRIPT}
             fi            
@@ -82,7 +100,7 @@ for s in ${SEARCHSTR[@]}; do
             then
                 TITLE="${LOADDESC}.$(echo ${FILEPATH:(POSITIONOFLOADDESCINTSEC-1)} | cut -d"/" -f1 | cut -d"." -f1)"
             fi
-            echo '"'"${NEWFILEPATH}"'" using 1:2 title "'"${TITLE}"'" lw 3 with lines, \' >> ${GNUPLOTSCRIPT}
+            echo 'n=n+1, "'"${NEWFILEPATH}"'" using 1:2:0 title "'"${TITLE}"'" lc palette frac (n-1)/10.0 lw 3 lt 2 with lines, \' >> ${GNUPLOTSCRIPT}
         fi
     done
 done
