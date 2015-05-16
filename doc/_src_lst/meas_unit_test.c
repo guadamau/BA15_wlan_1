@@ -7,34 +7,7 @@
 
 int main( int argc, char* argv[] )
 {
-  cmd_args_t args;
- 
-  stats_t* data_snapshot = NULL;
-  
-  file_params_t** file_params_list = NULL;
-  
-  meas_buffer_meta_t buffers_metadata;
-  meas_buffer_t** buffers = NULL;
-
-  uint32_t i;
-
-  args.pid             =  0;
-  args.prp_mode        =  0;
-  args.interval        =  10*1000;
-  args.no_intervals    =  1;
-  args.verbosity_level =  0;
-  
-  memset( args.store_path, '\0', PATH_LEN );
-  
-  set_prp_mode( args.prp_mode );
-  init_proc_properties();
-  
-  data_snapshot = ( stats_t* )malloc( sizeof( stats_t ) * 1 );
-  if( data_snapshot == NULL )
-  {
-    perror( "Memory allocation failure. Exiting...\n" );
-    exit( EXIT_FAILURE );
-  }
+  ...
   
   file_params_list = create_file_params( args );
   
@@ -56,10 +29,5 @@ int main( int argc, char* argv[] )
 
   printf( "All unit tests successful.\n" ); 
 
-  free( data_snapshot );
-  data_snapshot = NULL;
-  
-  clear_file_params( file_params_list );
- 
-  return EXIT_SUCCESS;
+  ...
 }

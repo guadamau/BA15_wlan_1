@@ -109,7 +109,9 @@ measurement
 ) entwickelt, bei der die CPU-Last einzelner Prozesse evaluiert wird.
  Des Weiteren ermittelt meas neben der CPU-Last, die System- und Usertime
  eines Prozesses.
- 
+ Meas unterstützt nur das Überwachen von Single-Threaded-Prozessen.
+ Diese Limitierung wurde aufgrund der Gegebenheit, dass im Rahmen dieser
+ Arbeit nur Single-Threaded-Prozesse beobachtet werden, in Kauf genommen.
 \end_layout
 
 \begin_layout Standard
@@ -1517,7 +1519,7 @@ status open
 
 
 \backslash
-lstinputlisting[caption={Implementierung, meas Unit Test},  captionpos=b,languag
+lstinputlisting[caption={Code-Ausschnitt, meas Unit Test},  captionpos=b,languag
 e=C]{_src_lst/meas_unit_test.c}
 \end_layout
 
@@ -1825,7 +1827,11 @@ key "fprintf_man_page"
 \end_inset
 
  verwendet, welche eine Textausgabe auf verschiedene Ausgabegeräte ermöglicht.
- Exemplarische Ausgabe eines Messintervalls in eine Textdatei:
+ 
+\end_layout
+
+\begin_layout Standard
+Exemplarische Ausgabe eines Messintervalls in eine Textdatei:
 \end_layout
 
 \begin_layout Standard

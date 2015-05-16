@@ -553,7 +553,31 @@ TCP-Pakete
 \series bold
 77 Byte 
 \series default
-und mit einem VLAN-Tag 81 Byte
+und mit einem VLAN-Tag 81 Byte.
+ Bezüglich der Grösse von TCP-Paketen gibt es aufgrund der Beschaffenheit
+ von TCP-Sockets Ungenauigkeiten, worauf im Paragraph 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "par:TCP-Sockets-und-bytegenaue"
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "par:TCP-Sockets-und-bytegenaue"
+
+\end_inset
+
+ näher eingegangen wird.
 \begin_inset Newline newline
 \end_inset
 
@@ -2807,6 +2831,12 @@ name "par:Einfluss von Intervallgroessen"
 \end_layout
 
 \begin_layout Standard
+Die Messgenauigkeit bezüglich der Netzwerkstatistiken wird durch einige
+ unumgänglichen Faktoren beeinträchtigt.
+ Dies wird deutlich sichtbar, je kürzer ein Messintervall gewählt wird.
+\end_layout
+
+\begin_layout Standard
 i = Intervallgrösse
 \end_layout
 
@@ -3486,6 +3516,43 @@ eth1
 \begin_layout Plain Layout
 TX-Bitrate pro Intervallgrösse und Netzwerk-Interface [MBit/s] shck -s MAX
  -t UDP
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _diagrams/meas_overhead.svg
+	lyxscale 50
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+U.MAX.100000x: Verlauf der TX-Bitrate des PRP-Netzwerk-Interfaces
 \end_layout
 
 \end_inset
