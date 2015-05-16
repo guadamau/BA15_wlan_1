@@ -137,9 +137,9 @@ key "scapy"
 \begin_layout Standard
 Der Grund für die Erstellung von shck ist, dass kein Tool gefunden wurde,
  mit welchem die von den Testfällen geforderte Netzwerklast generiert werden
- konnte (Zum Beispiel TCP-Pakete, welche permanent mit der minimalen Grösse
- versendet werden oder das Versenden von reinen Ethernet-Frames mit zufälligen
- und dennoch reproduzierbaren Grössen).
+ konnte (Zum Beispiel UDP-Pakete, welche permanent mit der minimalen Grösse
+ versendet werden oder das Versenden von reinen Ethernet-Frames mit beliebigen
+ Grössen).
  Mit shck ist es möglich genau definierte Lasten zu erzeugen.
 \end_layout
 
@@ -1086,6 +1086,48 @@ Wireshark: TCP-Paket mit minimaler Länge, versendet über Standard-Interface
 \end_inset
 
 
+\end_layout
+
+\begin_layout Subparagraph
+TCP-Sockets und bytegenaue Grössen
+\begin_inset CommandInset label
+LatexCommand label
+name "par:TCP-Sockets-und-bytegenaue"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Es ist mit dem in Python erzeugten TCP-Socket nicht möglich, TCP-Pakete
+ bytegenau zu erzeugen, da der TCP/IP-Stack teilweise die ihm übermittelten
+ Daten gruppiert auch wenn diesem die Daten mit mehreren Send-Befehlen zugestell
+t werden.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Python_sockets_TCP"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aus diesem Grund besteht die Möglichkeit, dass die Frames etwas grösser
+ ausfallen können, worunter die Reproduzierbarkeit leidet.
+ Untersuchungen haben ergeben, dass die Netzwerklasten immer noch reproduzierbar
+ sind, jedoch nicht mehr die exakt selben Werte.
+ Dies kann u.a.
+ anhand der Ergebnisse des Szenarios 01 in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Szenario-01:-Performance"
+
+\end_inset
+
+ festgestellt werden.
 \end_layout
 
 \begin_layout Standard

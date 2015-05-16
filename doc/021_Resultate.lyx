@@ -1060,99 +1060,20 @@ reference "sub:Einschwingzeit-/-Steady"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Itemize
-Schwankungsband bei CPU viel kleiner als in Steady State 0.1s vs 1s Untersuchung
- jedoch Interval kleiner -> viel signifikante schwankungen siehe Kapitel
- 
+ fallen diese kleiner aus.
+ Dies ist auf den Einfluss der gewählten Messintervallgrössen zurück zu
+ führen.
+ Bei der Steady-State-Untersuchung selektierte man ein Intervall von 0.1s,
+ der Allgemeinfall, wie er u.a.
+ in diesem Szenario angewandt wird, beträgt jedoch 1s.
+ Die daraus entstehenden Konsequenzen werden in Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "par:Einfluss von Intervallgroessen"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-Es folgt ein ausgezeichnetes Histogramm, generiert aus einer Textdatei:
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Note Comment
-status open
-
-\begin_layout Plain Layout
-\begin_inset CommandInset include
-LatexCommand input
-filename "_histo/szenario_01/histograms.tex"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset Float figure
-placement H
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-histocpu{_histo/randomtest.hist}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Plain Layout
-\begin_inset Caption Standard
-
-\begin_layout Plain Layout
-Test Histogram
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
+ erläutert.
 \end_layout
 
 \begin_layout Section
