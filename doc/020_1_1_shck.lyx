@@ -1131,6 +1131,15 @@ reference "sec:Szenario-01:-Performance"
 \end_layout
 
 \begin_layout Standard
+Eine Möglichkeit, bytegenaue Grössen zu erzielen, wäre, vor jedem Send-Befehl
+ den TCP-Socket zu öffnen und dann wieder zu schliessen, was aber kein realistis
+cher Vorgang wäre, da übliche Kommunikationen via TCP sich in dieser Weise
+ nicht charakterisieren.
+ Eine TCP-Verbindung wird erst geschlossen, wenn der Sender alles übermittelt
+ hat, was er in diesem Moment übertragen wollte.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage newpage
 \end_inset
 
