@@ -3570,8 +3570,8 @@ reference "sub:Theoretische-Grenzwerte"
 
 \begin_layout Standard
 Mit der nachfolgenden Grafik wird aufgezeigt, dass der Messfeher (roter
- Abschnitt) immer die selbe Länge aufweist, unabhängig von der Länge des
- Messintervalls.
+ Abschnitt) immer eine ähnliche Länge aufweist, unabhängig von der Länge
+ des Messintervalls.
 \end_layout
 
 \begin_layout Standard
@@ -3587,7 +3587,7 @@ status open
 \begin_inset Graphics
 	filename _diagrams/meas_overhead.svg
 	lyxscale 50
-	scale 55
+	scale 40
 
 \end_inset
 
@@ -3598,7 +3598,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-U.MAX.100000x: Verlauf der TX-Bitrate des PRP-Netzwerk-Interfaces
+Verhältnis zwischen Messintervall und Messfehler
 \end_layout
 
 \end_inset
@@ -3609,10 +3609,56 @@ U.MAX.100000x: Verlauf der TX-Bitrate des PRP-Netzwerk-Interfaces
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Die Länge des Messfehlers kann jeweils nicht genau bestimmt werden.
+ In welcher Grössenordnung sich ein Messfehler ergibt, ist stark davon abhängig,
+ wie viele Prozesse auf einem Betriebssystem ausgeführt werden und wie stark
+ diese die CPU belasten.
+ Beobachtet man beispielsweise das Verhalten der meas-Applikation während
+ einer Messung des PRP-1 stacks, stellt man fest, dass ca.
+ 4 mal mehr Context-Switches ausgeführt werden müssen, sobald die shck-Applikati
+on über den PRP-1 stack eine maximale Netzwerklast generiert, als wenn sich
+ der PRP-1 stack im 
+\begin_inset Quotes fld
+\end_inset
+
+Leerlauf
+\begin_inset Quotes frd
+\end_inset
+
+ befindet.
+\end_layout
+
+\begin_layout Standard
+Die Messung der Context-Switches wrude mit dem Tool 
+\begin_inset Quotes fld
+\end_inset
+
+perf
+\begin_inset Quotes frd
+\end_inset
+
+ gemessen.
+ 
+\begin_inset Quotes fld
+\end_inset
+
+perf
+\begin_inset Quotes frd
+\end_inset
+
+ ist ein Tool, welches es ermöglicht, Reports von Programmen, die sich in
+ Ausführung befinden, zu erstellen.
+\end_layout
+
+\begin_layout Standard
+Befehl für das Erstellen eines Reports
 \end_layout
 
 \begin_layout Subsection
-Ablauf eines Szenarios zur Performanceermittlung
+Ablauf eines Szenarios zur Performance-Ermittlung
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Ablauf-eines-Szenarios"
