@@ -58,7 +58,7 @@ for i in $(find ~/BA_result_inbox -name '*meas_overall*' | sort -r); do
                             USRMAX=$(cat ${FILEPATH} | grep 'Max' | head -n 3 | tail -n 1 | tr -s ' ' | cut -d' ' -f3)
                
                             echo '\hline ' >> ${TEXFILE}
-                            echo '{\footnotesize{}'"${LOADDESC}"'} & {\footnotesize{}'"${CPUMIN}"'} & {\footnotesize{}'"${CPUAVG}"'} & {\footnotesize{}'"${CPUMAX}"'} & {\footnotesize{}'"${SYSMIN}"'} & {\footnotesize{}'"${SYSAVG}"'} & {\footnotesize{}'"${SYSMAX}"'} & {\footnotesize{}'"${USRMIN}"'} & {\footnotesize{}'"${USRAVG}"'} & {\footnotesize{}'"${USRMAX}"'}\tabularnewline' >> ${TEXFILE}
+                            echo '{\footnotesize{}'"${LOADDESC}"'} & \multicolumn{1}{|r|}{\footnotesize{}'"${CPUMIN}"'} & \multicolumn{1}{|r|}{\footnotesize{}'"${CPUAVG}"'} & \multicolumn{1}{|r|}{\footnotesize{}'"${CPUMAX}"'} & \multicolumn{1}{|r|}{\footnotesize{}'"${SYSMIN}"'} & \multicolumn{1}{|r|}{\footnotesize{}'"${SYSAVG}"'} & \multicolumn{1}{|r|}{\footnotesize{}'"${SYSMAX}"'} & \multicolumn{1}{|r|}{\footnotesize{}'"${USRMIN}"'} & \multicolumn{1}{|r|}{\footnotesize{}'"${USRAVG}"'} & \multicolumn{1}{|r|}{\footnotesize{}'"${USRMAX}"'}\tabularnewline' >> ${TEXFILE}
                             echo '\hline ' >> ${TEXFILE}
                             ;;
                      'rx')
@@ -88,7 +88,7 @@ for i in $(find ~/BA_result_inbox -name '*meas_overall*' | sort -r); do
                             if [ ${IF0AVG} != "0.00" ]
                             then
                                 echo '\hline ' >> ${TEXFILE}
-                                echo '{\footnotesize{}'"${LOADDESC}"'} & {\footnotesize{}'"${PRPMIN}"'} & {\footnotesize{}'"${PRPAVG}"'} & {\footnotesize{}'"${PRPMAX}"'} & {\footnotesize{}'"${IF0MIN}"'} & {\footnotesize{}'"${IF0AVG}"'} & {\footnotesize{}'"${IF0MAX}"'} & {\footnotesize{}'"${IF1MIN}"'} & {\footnotesize{}'"${IF1AVG}"'} & {\footnotesize{}'"${IF1MAX}"'}\tabularnewline' >> ${TEXFILE}
+                                echo '{\footnotesize{}'"${LOADDESC}"'} & \multicolumn{1}{|r|}{\footnotesize{}'"${PRPMIN}"'} & \multicolumn{1}{|r|}{\footnotesize{}'"${PRPAVG}"'} & \multicolumn{1}{|r|}{\footnotesize{}'"${PRPMAX}"'} & \multicolumn{1}{|r|}{\footnotesize{}'"${IF0MIN}"'} & \multicolumn{1}{|r|}{\footnotesize{}'"${IF0AVG}"'} & \multicolumn{1}{|r|}{\footnotesize{}'"${IF0MAX}"'} & \multicolumn{1}{|r|}{\footnotesize{}'"${IF1MIN}"'} & \multicolumn{1}{|r|}{\footnotesize{}'"${IF1AVG}"'} & \multicolumn{1}{|r|}{\footnotesize{}'"${IF1MAX}"'}\tabularnewline' >> ${TEXFILE}
                                 echo '\hline ' >> ${TEXFILE}
                             fi
                             ;;
@@ -119,7 +119,7 @@ for i in $(find ~/BA_result_inbox -name '*meas_overall*' | sort -r); do
                             if [ ${IF0AVG} != "0.00" ]
                             then
                                 echo '\hline ' >> ${TEXFILE}
-                                echo '{\footnotesize{}'"${LOADDESC}"'} & {\footnotesize{}'"${PRPMIN}"'} & {\footnotesize{}'"${PRPAVG}"'} & {\footnotesize{}'"${PRPMAX}"'} & {\footnotesize{}'"${IF0MIN}"'} & {\footnotesize{}'"${IF0AVG}"'} & {\footnotesize{}'"${IF0MAX}"'} & {\footnotesize{}'"${IF1MIN}"'} & {\footnotesize{}'"${IF1AVG}"'} & {\footnotesize{}'"${IF1MAX}"'}\tabularnewline' >> ${TEXFILE}
+                                echo '{\footnotesize{}'"${LOADDESC}"'} & \multicolumn{1}{|r|}{\footnotesize{}'"${PRPMIN}"'} & \multicolumn{1}{|r|}{\footnotesize{}'"${PRPAVG}"'} & \multicolumn{1}{|r|}{\footnotesize{}'"${PRPMAX}"'} & \multicolumn{1}{|r|}{\footnotesize{}'"${IF0MIN}"'} & \multicolumn{1}{|r|}{\footnotesize{}'"${IF0AVG}"'} & \multicolumn{1}{|r|}{\footnotesize{}'"${IF0MAX}"'} & \multicolumn{1}{|r|}{\footnotesize{}'"${IF1MIN}"'} & \multicolumn{1}{|r|}{\footnotesize{}'"${IF1AVG}"'} & \multicolumn{1}{|r|}{\footnotesize{}'"${IF1MAX}"'}\tabularnewline' >> ${TEXFILE}
                                 echo '\hline ' >> ${TEXFILE}
                             fi
                             ;;
