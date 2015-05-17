@@ -3827,7 +3827,7 @@ reference "sec:Szenario-01:-Performance"
 \end_inset
 
  eingesehen werden, da diese vom Ausstieg einer einzelnen NIC nicht beeinflusst
- wird.
+ werden.
  Analog dazu gilt das für das aktive Interface 
 \begin_inset Quotes fld
 \end_inset
@@ -4011,6 +4011,18 @@ A
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightred}
+\end_layout
+
+\end_inset
+
 CPU [%]
 \end_layout
 
@@ -4021,7 +4033,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 63.63
 \end_layout
 
@@ -4032,7 +4059,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 62.54
 \end_layout
 
@@ -4043,7 +4085,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 16.72
 \end_layout
 
@@ -4054,7 +4111,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 16.66
 \end_layout
 
@@ -4065,7 +4137,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 31.01
 \end_layout
 
@@ -4076,7 +4163,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 30.90
 \end_layout
 
@@ -4087,7 +4189,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 35.51
 \end_layout
 
@@ -4098,7 +4215,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 35.07
 \end_layout
 
@@ -4122,6 +4254,18 @@ CPU [%]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightgreen}
+\end_layout
+
+\end_inset
+
 RX [MBit/s]
 \end_layout
 
@@ -4132,7 +4276,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -4143,7 +4302,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -4154,7 +4328,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -4165,7 +4354,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -4176,7 +4380,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -4187,7 +4406,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -4198,7 +4432,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -4209,7 +4458,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -4233,6 +4497,18 @@ RX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightblue}
+\end_layout
+
+\end_inset
+
 TX [MBit/s]
 \end_layout
 
@@ -4243,7 +4519,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -4254,7 +4545,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -4265,7 +4571,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -4276,7 +4597,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -4287,7 +4623,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -4298,7 +4649,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -4309,7 +4675,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -4320,7 +4701,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -4346,6 +4742,18 @@ TX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightred}
+\end_layout
+
+\end_inset
+
 CPU [%]
 \end_layout
 
@@ -4356,7 +4764,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 64.71
 \end_layout
 
@@ -4367,7 +4790,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 63.62
 \end_layout
 
@@ -4378,7 +4816,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 17.38
 \end_layout
 
@@ -4389,7 +4842,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 17.42
 \end_layout
 
@@ -4400,7 +4868,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 31.91
 \end_layout
 
@@ -4411,7 +4894,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 31.77
 \end_layout
 
@@ -4422,7 +4920,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 37.51
 \end_layout
 
@@ -4433,7 +4946,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 36.68
 \end_layout
 
@@ -4457,6 +4985,18 @@ CPU [%]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightgreen}
+\end_layout
+
+\end_inset
+
 RX [MBit/s]
 \end_layout
 
@@ -4467,7 +5007,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -4478,7 +5033,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -4489,7 +5059,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -4500,7 +5085,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -4511,7 +5111,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.73
 \end_layout
 
@@ -4522,7 +5137,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.75
 \end_layout
 
@@ -4533,7 +5163,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 1.07
 \end_layout
 
@@ -4544,7 +5189,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.94
 \end_layout
 
@@ -4568,6 +5228,18 @@ RX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightblue}
+\end_layout
+
+\end_inset
+
 TX [MBit/s]
 \end_layout
 
@@ -4578,7 +5250,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 3.23
 \end_layout
 
@@ -4589,7 +5276,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 3.70
 \end_layout
 
@@ -4600,7 +5302,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 39.91
 \end_layout
 
@@ -4611,7 +5328,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 39.66
 \end_layout
 
@@ -4622,7 +5354,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.87
 \end_layout
 
@@ -4633,7 +5380,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.88
 \end_layout
 
@@ -4644,7 +5406,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 45.48
 \end_layout
 
@@ -4655,7 +5432,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 40.49
 \end_layout
 
@@ -4681,6 +5473,18 @@ TX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightred}
+\end_layout
+
+\end_inset
+
 CPU [%]
 \end_layout
 
@@ -4691,7 +5495,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 63.66
 \end_layout
 
@@ -4702,7 +5521,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 62.61
 \end_layout
 
@@ -4713,7 +5547,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 17.33
 \end_layout
 
@@ -4724,7 +5573,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 17.40
 \end_layout
 
@@ -4735,7 +5599,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 31.90
 \end_layout
 
@@ -4746,7 +5625,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 31.71
 \end_layout
 
@@ -4757,7 +5651,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 36.65
 \end_layout
 
@@ -4768,7 +5677,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 37.91
 \end_layout
 
@@ -4792,6 +5716,18 @@ CPU [%]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightgreen}
+\end_layout
+
+\end_inset
+
 RX [MBit/s]
 \end_layout
 
@@ -4802,7 +5738,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -4813,7 +5764,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -4824,7 +5790,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -4835,7 +5816,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -4846,7 +5842,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.80
 \end_layout
 
@@ -4857,7 +5868,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.75
 \end_layout
 
@@ -4868,7 +5894,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.96
 \end_layout
 
@@ -4879,7 +5920,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.91
 \end_layout
 
@@ -4903,6 +5959,18 @@ RX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightblue}
+\end_layout
+
+\end_inset
+
 TX [MBit/s]
 \end_layout
 
@@ -4913,7 +5981,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 3.23
 \end_layout
 
@@ -4924,7 +6007,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 3.26
 \end_layout
 
@@ -4935,7 +6033,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 34.97
 \end_layout
 
@@ -4946,7 +6059,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 38.36
 \end_layout
 
@@ -4957,7 +6085,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.92
 \end_layout
 
@@ -4968,7 +6111,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.88
 \end_layout
 
@@ -4979,7 +6137,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 41.66
 \end_layout
 
@@ -4990,7 +6163,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 39.48
 \end_layout
 
@@ -5016,6 +6204,18 @@ TX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightred}
+\end_layout
+
+\end_inset
+
 CPU [%]
 \end_layout
 
@@ -5026,7 +6226,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 64.20
 \end_layout
 
@@ -5037,7 +6252,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 64.13
 \end_layout
 
@@ -5048,7 +6278,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 17.33
 \end_layout
 
@@ -5059,7 +6304,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 17.40
 \end_layout
 
@@ -5070,7 +6330,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 33.01
 \end_layout
 
@@ -5081,7 +6356,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 32.01
 \end_layout
 
@@ -5092,7 +6382,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 36.15
 \end_layout
 
@@ -5103,7 +6408,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 36.91
 \end_layout
 
@@ -5127,6 +6447,18 @@ CPU [%]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightgreen}
+\end_layout
+
+\end_inset
+
 RX [MBit/s]
 \end_layout
 
@@ -5137,7 +6469,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -5148,7 +6495,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -5159,7 +6521,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -5170,7 +6547,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -5181,7 +6573,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.74
 \end_layout
 
@@ -5192,7 +6599,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.68
 \end_layout
 
@@ -5203,7 +6625,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.79
 \end_layout
 
@@ -5214,7 +6651,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.83
 \end_layout
 
@@ -5238,6 +6690,18 @@ RX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightblue}
+\end_layout
+
+\end_inset
+
 TX [MBit/s]
 \end_layout
 
@@ -5248,7 +6712,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 3.21
 \end_layout
 
@@ -5259,7 +6738,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 3.36
 \end_layout
 
@@ -5270,7 +6764,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 40.64
 \end_layout
 
@@ -5281,7 +6790,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 37.78
 \end_layout
 
@@ -5292,7 +6816,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.88
 \end_layout
 
@@ -5303,7 +6842,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.82
 \end_layout
 
@@ -5314,7 +6868,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 34.99
 \end_layout
 
@@ -5325,7 +6894,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 36.29
 \end_layout
 
@@ -5351,6 +6935,18 @@ TX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightred}
+\end_layout
+
+\end_inset
+
 CPU [%]
 \end_layout
 
@@ -5361,7 +6957,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 63.28
 \end_layout
 
@@ -5372,7 +6983,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 63.67
 \end_layout
 
@@ -5383,7 +7009,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 17.42
 \end_layout
 
@@ -5394,7 +7035,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 17.56
 \end_layout
 
@@ -5405,7 +7061,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 32.25
 \end_layout
 
@@ -5416,7 +7087,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 32.08
 \end_layout
 
@@ -5427,7 +7113,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 36.63
 \end_layout
 
@@ -5438,7 +7139,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 36.17
 \end_layout
 
@@ -5462,6 +7178,18 @@ CPU [%]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightgreen}
+\end_layout
+
+\end_inset
+
 RX [MBit/s]
 \end_layout
 
@@ -5472,7 +7200,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -5483,7 +7226,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -5494,7 +7252,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -5505,7 +7278,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -5516,7 +7304,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.62
 \end_layout
 
@@ -5527,7 +7330,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.63
 \end_layout
 
@@ -5538,7 +7356,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.79
 \end_layout
 
@@ -5549,7 +7382,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.78
 \end_layout
 
@@ -5573,6 +7421,18 @@ RX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightblue}
+\end_layout
+
+\end_inset
+
 TX [MBit/s]
 \end_layout
 
@@ -5583,7 +7443,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 3.07
 \end_layout
 
@@ -5594,7 +7469,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 3.25
 \end_layout
 
@@ -5605,7 +7495,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 36.12
 \end_layout
 
@@ -5616,7 +7521,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 35.90
 \end_layout
 
@@ -5627,7 +7547,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.79
 \end_layout
 
@@ -5638,7 +7573,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.80
 \end_layout
 
@@ -5649,7 +7599,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 35.97
 \end_layout
 
@@ -5660,7 +7625,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 36.03
 \end_layout
 
@@ -5686,6 +7666,18 @@ TX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightred}
+\end_layout
+
+\end_inset
+
 CPU [%]
 \end_layout
 
@@ -5696,7 +7688,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 62.95
 \end_layout
 
@@ -5707,7 +7714,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 62.64
 \end_layout
 
@@ -5718,7 +7740,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 17.33
 \end_layout
 
@@ -5729,7 +7766,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 17.36
 \end_layout
 
@@ -5740,7 +7792,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 31.58
 \end_layout
 
@@ -5751,7 +7818,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 31.85
 \end_layout
 
@@ -5762,7 +7844,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 36.88
 \end_layout
 
@@ -5773,7 +7870,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 36.11
 \end_layout
 
@@ -5797,6 +7909,18 @@ CPU [%]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightgreen}
+\end_layout
+
+\end_inset
+
 RX [MBit/s]
 \end_layout
 
@@ -5807,7 +7931,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -5818,7 +7957,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -5829,7 +7983,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -5840,7 +8009,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -5851,7 +8035,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.55
 \end_layout
 
@@ -5862,7 +8061,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.56
 \end_layout
 
@@ -5873,7 +8087,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.69
 \end_layout
 
@@ -5884,7 +8113,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.68
 \end_layout
 
@@ -5908,6 +8152,18 @@ RX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightblue}
+\end_layout
+
+\end_inset
+
 TX [MBit/s]
 \end_layout
 
@@ -5918,7 +8174,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.85
 \end_layout
 
@@ -5929,7 +8200,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.85
 \end_layout
 
@@ -5940,7 +8226,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 33.15
 \end_layout
 
@@ -5951,7 +8252,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 33.12
 \end_layout
 
@@ -5962,7 +8278,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.74
 \end_layout
 
@@ -5973,7 +8304,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.73
 \end_layout
 
@@ -5984,7 +8330,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 33.11
 \end_layout
 
@@ -5995,7 +8356,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 33.20
 \end_layout
 
@@ -6021,6 +8397,18 @@ TX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightred}
+\end_layout
+
+\end_inset
+
 CPU [%]
 \end_layout
 
@@ -6031,7 +8419,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 63.78
 \end_layout
 
@@ -6042,7 +8445,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 63.82
 \end_layout
 
@@ -6053,7 +8471,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 17.13
 \end_layout
 
@@ -6064,7 +8497,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 17.17
 \end_layout
 
@@ -6075,7 +8523,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 31.33
 \end_layout
 
@@ -6086,7 +8549,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 31.69
 \end_layout
 
@@ -6097,7 +8575,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 36.48
 \end_layout
 
@@ -6108,7 +8601,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 35.44
 \end_layout
 
@@ -6132,6 +8640,18 @@ CPU [%]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightgreen}
+\end_layout
+
+\end_inset
+
 RX [MBit/s]
 \end_layout
 
@@ -6142,7 +8662,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -6153,7 +8688,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -6164,7 +8714,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -6175,7 +8740,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -6186,7 +8766,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.48
 \end_layout
 
@@ -6197,7 +8792,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.47
 \end_layout
 
@@ -6208,7 +8818,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.61
 \end_layout
 
@@ -6219,7 +8844,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.58
 \end_layout
 
@@ -6243,6 +8883,18 @@ RX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightblue}
+\end_layout
+
+\end_inset
+
 TX [MBit/s]
 \end_layout
 
@@ -6253,7 +8905,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.30
 \end_layout
 
@@ -6264,7 +8931,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.49
 \end_layout
 
@@ -6275,7 +8957,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 27.57
 \end_layout
 
@@ -6286,7 +8983,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 29.11
 \end_layout
 
@@ -6297,7 +9009,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.68
 \end_layout
 
@@ -6308,7 +9035,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.66
 \end_layout
 
@@ -6319,7 +9061,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 31.41
 \end_layout
 
@@ -6330,7 +9087,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 29.58
 \end_layout
 
@@ -6356,6 +9128,18 @@ TX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightred}
+\end_layout
+
+\end_inset
+
 CPU [%]
 \end_layout
 
@@ -6366,7 +9150,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 62.98
 \end_layout
 
@@ -6377,7 +9176,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 62.82
 \end_layout
 
@@ -6388,7 +9202,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 17.10
 \end_layout
 
@@ -6399,7 +9228,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 17.16
 \end_layout
 
@@ -6410,7 +9254,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 31.68
 \end_layout
 
@@ -6421,7 +9280,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 31.67
 \end_layout
 
@@ -6432,7 +9306,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 36.30
 \end_layout
 
@@ -6443,7 +9332,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 35.70
 \end_layout
 
@@ -6467,6 +9371,18 @@ CPU [%]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightgreen}
+\end_layout
+
+\end_inset
+
 RX [MBit/s]
 \end_layout
 
@@ -6477,7 +9393,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -6488,7 +9419,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -6499,7 +9445,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -6510,7 +9471,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -6521,7 +9497,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.28
 \end_layout
 
@@ -6532,7 +9523,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.28
 \end_layout
 
@@ -6543,7 +9549,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.37
 \end_layout
 
@@ -6554,7 +9575,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.37
 \end_layout
 
@@ -6578,6 +9614,18 @@ RX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightblue}
+\end_layout
+
+\end_inset
+
 TX [MBit/s]
 \end_layout
 
@@ -6588,7 +9636,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 1.93
 \end_layout
 
@@ -6599,7 +9662,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 1.95
 \end_layout
 
@@ -6610,7 +9688,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 21.64
 \end_layout
 
@@ -6621,7 +9714,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 21.54
 \end_layout
 
@@ -6632,7 +9740,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.48
 \end_layout
 
@@ -6643,7 +9766,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.48
 \end_layout
 
@@ -6654,7 +9792,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 21.81
 \end_layout
 
@@ -6665,7 +9818,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 21.66
 \end_layout
 
@@ -6691,6 +9859,18 @@ TX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightred}
+\end_layout
+
+\end_inset
+
 CPU [%]
 \end_layout
 
@@ -6701,7 +9881,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 59.93
 \end_layout
 
@@ -6712,7 +9907,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 62.99
 \end_layout
 
@@ -6723,7 +9933,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 17.10
 \end_layout
 
@@ -6734,7 +9959,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 17.06
 \end_layout
 
@@ -6745,7 +9985,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 31.91
 \end_layout
 
@@ -6756,7 +10011,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 31.49
 \end_layout
 
@@ -6767,7 +10037,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 35.93
 \end_layout
 
@@ -6778,7 +10063,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 35.07
 \end_layout
 
@@ -6802,6 +10102,18 @@ CPU [%]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightgreen}
+\end_layout
+
+\end_inset
+
 RX [MBit/s]
 \end_layout
 
@@ -6812,7 +10124,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -6823,7 +10150,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -6834,7 +10176,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -6845,7 +10202,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -6856,7 +10228,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -6867,7 +10254,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -6878,7 +10280,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -6889,7 +10306,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -6913,6 +10345,18 @@ RX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightblue}
+\end_layout
+
+\end_inset
+
 TX [MBit/s]
 \end_layout
 
@@ -6923,7 +10367,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.04
 \end_layout
 
@@ -6934,7 +10393,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.24
 \end_layout
 
@@ -6945,7 +10419,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 24.28
 \end_layout
 
@@ -6956,7 +10445,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 24.27
 \end_layout
 
@@ -6967,7 +10471,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.54
 \end_layout
 
@@ -6978,7 +10497,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.54
 \end_layout
 
@@ -6989,7 +10523,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 24.46
 \end_layout
 
@@ -7000,7 +10549,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 24.27
 \end_layout
 
@@ -7026,6 +10590,18 @@ TX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightred}
+\end_layout
+
+\end_inset
+
 CPU [%]
 \end_layout
 
@@ -7036,7 +10612,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 60.46
 \end_layout
 
@@ -7047,7 +10638,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 63.38
 \end_layout
 
@@ -7058,7 +10664,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 16.67
 \end_layout
 
@@ -7069,7 +10690,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 16.66
 \end_layout
 
@@ -7080,7 +10716,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 30.76
 \end_layout
 
@@ -7091,7 +10742,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 31.09
 \end_layout
 
@@ -7102,7 +10768,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 34.13
 \end_layout
 
@@ -7113,7 +10794,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 34.97
 \end_layout
 
@@ -7137,6 +10833,18 @@ CPU [%]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightgreen}
+\end_layout
+
+\end_inset
+
 RX [MBit/s]
 \end_layout
 
@@ -7147,7 +10855,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -7158,7 +10881,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -7169,7 +10907,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -7180,7 +10933,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -7191,7 +10959,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -7202,7 +10985,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -7213,7 +11011,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -7224,7 +11037,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -7248,6 +11076,18 @@ RX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightblue}
+\end_layout
+
+\end_inset
+
 TX [MBit/s]
 \end_layout
 
@@ -7258,7 +11098,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -7269,7 +11124,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -7280,7 +11150,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -7291,7 +11176,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -7302,7 +11202,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -7313,7 +11228,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -7324,7 +11254,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -7335,7 +11280,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -7543,6 +11503,18 @@ A
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightred}
+\end_layout
+
+\end_inset
+
 CPU [%]
 \end_layout
 
@@ -7553,7 +11525,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 54.71
 \end_layout
 
@@ -7564,7 +11551,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 59.57
 \end_layout
 
@@ -7575,7 +11577,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 29.86
 \end_layout
 
@@ -7586,7 +11603,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 29.82
 \end_layout
 
@@ -7597,7 +11629,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 26.65
 \end_layout
 
@@ -7608,7 +11655,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 26.67
 \end_layout
 
@@ -7619,7 +11681,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 50.40
 \end_layout
 
@@ -7630,7 +11707,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 50.76
 \end_layout
 
@@ -7654,6 +11746,18 @@ CPU [%]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightgreen}
+\end_layout
+
+\end_inset
+
 RX [MBit/s]
 \end_layout
 
@@ -7664,7 +11768,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -7675,7 +11794,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -7686,7 +11820,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -7697,7 +11846,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -7708,7 +11872,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -7719,7 +11898,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -7730,7 +11924,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -7741,7 +11950,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -7765,6 +11989,18 @@ RX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightblue}
+\end_layout
+
+\end_inset
+
 TX [MBit/s]
 \end_layout
 
@@ -7775,7 +12011,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -7786,7 +12037,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -7797,7 +12063,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -7808,7 +12089,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -7819,7 +12115,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.07
 \end_layout
 
@@ -7830,7 +12141,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.07
 \end_layout
 
@@ -7841,7 +12167,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.48
 \end_layout
 
@@ -7852,7 +12193,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.48
 \end_layout
 
@@ -7878,6 +12234,18 @@ TX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightred}
+\end_layout
+
+\end_inset
+
 CPU [%]
 \end_layout
 
@@ -7888,7 +12256,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 65.59
 \end_layout
 
@@ -7899,7 +12282,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 67.26
 \end_layout
 
@@ -7910,7 +12308,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 33.73
 \end_layout
 
@@ -7921,7 +12334,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 35.18
 \end_layout
 
@@ -7932,7 +12360,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 26.98
 \end_layout
 
@@ -7943,7 +12386,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 27.09
 \end_layout
 
@@ -7954,7 +12412,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 55.38
 \end_layout
 
@@ -7965,7 +12438,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 55.00
 \end_layout
 
@@ -7989,6 +12477,18 @@ CPU [%]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightgreen}
+\end_layout
+
+\end_inset
+
 RX [MBit/s]
 \end_layout
 
@@ -7999,7 +12499,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.97
 \end_layout
 
@@ -8010,7 +12525,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 3.38
 \end_layout
 
@@ -8021,7 +12551,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 33.94
 \end_layout
 
@@ -8032,7 +12577,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 36.66
 \end_layout
 
@@ -8043,7 +12603,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.79
 \end_layout
 
@@ -8054,7 +12629,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.82
 \end_layout
 
@@ -8065,7 +12655,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 43.17
 \end_layout
 
@@ -8076,7 +12681,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 36.94
 \end_layout
 
@@ -8100,6 +12720,18 @@ RX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightblue}
+\end_layout
+
+\end_inset
+
 TX [MBit/s]
 \end_layout
 
@@ -8110,7 +12742,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -8121,7 +12768,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -8132,7 +12794,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -8143,7 +12820,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -8154,7 +12846,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.04
 \end_layout
 
@@ -8165,7 +12872,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.04
 \end_layout
 
@@ -8176,7 +12898,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.48
 \end_layout
 
@@ -8187,7 +12924,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.48
 \end_layout
 
@@ -8213,6 +12965,18 @@ TX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightred}
+\end_layout
+
+\end_inset
+
 CPU [%]
 \end_layout
 
@@ -8223,7 +12987,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 62.14
 \end_layout
 
@@ -8234,7 +13013,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 63.30
 \end_layout
 
@@ -8245,7 +13039,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 33.60
 \end_layout
 
@@ -8256,7 +13065,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 35.08
 \end_layout
 
@@ -8267,7 +13091,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 27.35
 \end_layout
 
@@ -8278,7 +13117,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 27.13
 \end_layout
 
@@ -8289,7 +13143,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 54.51
 \end_layout
 
@@ -8300,7 +13169,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 55.02
 \end_layout
 
@@ -8324,6 +13208,18 @@ CPU [%]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightgreen}
+\end_layout
+
+\end_inset
+
 RX [MBit/s]
 \end_layout
 
@@ -8334,7 +13230,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 3.07
 \end_layout
 
@@ -8345,7 +13256,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.96
 \end_layout
 
@@ -8356,7 +13282,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 33.95
 \end_layout
 
@@ -8367,7 +13308,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 34.63
 \end_layout
 
@@ -8378,7 +13334,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.86
 \end_layout
 
@@ -8389,7 +13360,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.82
 \end_layout
 
@@ -8400,7 +13386,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 38.05
 \end_layout
 
@@ -8411,7 +13412,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 36.05
 \end_layout
 
@@ -8435,6 +13451,18 @@ RX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightblue}
+\end_layout
+
+\end_inset
+
 TX [MBit/s]
 \end_layout
 
@@ -8445,7 +13473,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -8456,7 +13499,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -8467,7 +13525,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -8478,7 +13551,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -8489,7 +13577,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.05
 \end_layout
 
@@ -8500,7 +13603,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.05
 \end_layout
 
@@ -8511,7 +13629,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.48
 \end_layout
 
@@ -8522,7 +13655,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.48
 \end_layout
 
@@ -8548,6 +13696,18 @@ TX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightred}
+\end_layout
+
+\end_inset
+
 CPU [%]
 \end_layout
 
@@ -8558,7 +13718,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 68.91
 \end_layout
 
@@ -8569,7 +13744,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 67.02
 \end_layout
 
@@ -8580,7 +13770,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 35.03
 \end_layout
 
@@ -8591,7 +13796,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 34.04
 \end_layout
 
@@ -8602,7 +13822,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 26.71
 \end_layout
 
@@ -8613,7 +13848,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 26.96
 \end_layout
 
@@ -8624,7 +13874,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 54.28
 \end_layout
 
@@ -8635,7 +13900,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 54.61
 \end_layout
 
@@ -8659,6 +13939,18 @@ CPU [%]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightgreen}
+\end_layout
+
+\end_inset
+
 RX [MBit/s]
 \end_layout
 
@@ -8669,7 +13961,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.99
 \end_layout
 
@@ -8680,7 +13987,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 3.14
 \end_layout
 
@@ -8691,7 +14013,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 38.90
 \end_layout
 
@@ -8702,7 +14039,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 34.59
 \end_layout
 
@@ -8713,7 +14065,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.80
 \end_layout
 
@@ -8724,7 +14091,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.74
 \end_layout
 
@@ -8735,7 +14117,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 31.23
 \end_layout
 
@@ -8746,7 +14143,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 32.81
 \end_layout
 
@@ -8770,6 +14182,18 @@ RX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightblue}
+\end_layout
+
+\end_inset
+
 TX [MBit/s]
 \end_layout
 
@@ -8780,7 +14204,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -8791,7 +14230,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -8802,7 +14256,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -8813,7 +14282,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -8824,7 +14308,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.01
 \end_layout
 
@@ -8835,7 +14334,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.03
 \end_layout
 
@@ -8846,7 +14360,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.48
 \end_layout
 
@@ -8857,7 +14386,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.48
 \end_layout
 
@@ -8883,6 +14427,18 @@ TX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightred}
+\end_layout
+
+\end_inset
+
 CPU [%]
 \end_layout
 
@@ -8893,7 +14449,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 62.73
 \end_layout
 
@@ -8904,7 +14475,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 67.33
 \end_layout
 
@@ -8915,7 +14501,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 33.00
 \end_layout
 
@@ -8926,7 +14527,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 33.91
 \end_layout
 
@@ -8937,7 +14553,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 26.88
 \end_layout
 
@@ -8948,7 +14579,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 26.92
 \end_layout
 
@@ -8959,7 +14605,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 53.91
 \end_layout
 
@@ -8970,7 +14631,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 54.53
 \end_layout
 
@@ -8994,6 +14670,18 @@ CPU [%]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightgreen}
+\end_layout
+
+\end_inset
+
 RX [MBit/s]
 \end_layout
 
@@ -9004,7 +14692,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.58
 \end_layout
 
@@ -9015,7 +14718,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.82
 \end_layout
 
@@ -9026,7 +14744,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 29.62
 \end_layout
 
@@ -9037,7 +14770,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 30.70
 \end_layout
 
@@ -9048,7 +14796,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.67
 \end_layout
 
@@ -9059,7 +14822,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.69
 \end_layout
 
@@ -9070,7 +14848,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 31.19
 \end_layout
 
@@ -9081,7 +14874,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 30.46
 \end_layout
 
@@ -9105,6 +14913,18 @@ RX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightblue}
+\end_layout
+
+\end_inset
+
 TX [MBit/s]
 \end_layout
 
@@ -9115,7 +14935,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -9126,7 +14961,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -9137,7 +14987,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -9148,7 +15013,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -9159,7 +15039,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.03
 \end_layout
 
@@ -9170,7 +15065,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.04
 \end_layout
 
@@ -9181,7 +15091,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.49
 \end_layout
 
@@ -9192,7 +15117,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.48
 \end_layout
 
@@ -9218,6 +15158,18 @@ TX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightred}
+\end_layout
+
+\end_inset
+
 CPU [%]
 \end_layout
 
@@ -9228,7 +15180,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 62.91
 \end_layout
 
@@ -9239,7 +15206,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 62.86
 \end_layout
 
@@ -9250,7 +15232,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 32.81
 \end_layout
 
@@ -9261,7 +15258,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 33.79
 \end_layout
 
@@ -9272,7 +15284,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 26.91
 \end_layout
 
@@ -9283,7 +15310,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 26.79
 \end_layout
 
@@ -9294,7 +15336,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 53.90
 \end_layout
 
@@ -9305,7 +15362,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 53.78
 \end_layout
 
@@ -9329,6 +15401,18 @@ CPU [%]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightgreen}
+\end_layout
+
+\end_inset
+
 RX [MBit/s]
 \end_layout
 
@@ -9339,7 +15423,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.31
 \end_layout
 
@@ -9350,7 +15449,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.31
 \end_layout
 
@@ -9361,7 +15475,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 26.83
 \end_layout
 
@@ -9372,7 +15501,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 26.98
 \end_layout
 
@@ -9383,7 +15527,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.60
 \end_layout
 
@@ -9394,7 +15553,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.61
 \end_layout
 
@@ -9405,7 +15579,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 26.95
 \end_layout
 
@@ -9416,7 +15605,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 26.80
 \end_layout
 
@@ -9440,6 +15644,18 @@ RX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightblue}
+\end_layout
+
+\end_inset
+
 TX [MBit/s]
 \end_layout
 
@@ -9450,7 +15666,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -9461,7 +15692,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -9472,7 +15718,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -9483,7 +15744,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -9494,7 +15770,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.05
 \end_layout
 
@@ -9505,7 +15796,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.04
 \end_layout
 
@@ -9516,7 +15822,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.49
 \end_layout
 
@@ -9527,7 +15848,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.48
 \end_layout
 
@@ -9553,6 +15889,18 @@ TX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightred}
+\end_layout
+
+\end_inset
+
 CPU [%]
 \end_layout
 
@@ -9563,7 +15911,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 57.01
 \end_layout
 
@@ -9574,7 +15937,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 62.15
 \end_layout
 
@@ -9585,7 +15963,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 32.58
 \end_layout
 
@@ -9596,7 +15989,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 32.66
 \end_layout
 
@@ -9607,7 +16015,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 27.08
 \end_layout
 
@@ -9618,7 +16041,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 26.74
 \end_layout
 
@@ -9629,7 +16067,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 53.31
 \end_layout
 
@@ -9640,7 +16093,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 53.37
 \end_layout
 
@@ -9664,6 +16132,18 @@ CPU [%]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightgreen}
+\end_layout
+
+\end_inset
+
 RX [MBit/s]
 \end_layout
 
@@ -9674,7 +16154,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 1.80
 \end_layout
 
@@ -9685,7 +16180,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 1.94
 \end_layout
 
@@ -9696,7 +16206,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 21.62
 \end_layout
 
@@ -9707,7 +16232,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 22.56
 \end_layout
 
@@ -9718,7 +16258,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.52
 \end_layout
 
@@ -9729,7 +16284,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.51
 \end_layout
 
@@ -9740,7 +16310,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 23.44
 \end_layout
 
@@ -9751,7 +16336,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 22.73
 \end_layout
 
@@ -9775,6 +16375,18 @@ RX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightblue}
+\end_layout
+
+\end_inset
+
 TX [MBit/s]
 \end_layout
 
@@ -9785,7 +16397,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -9796,7 +16423,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -9807,7 +16449,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -9818,7 +16475,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -9829,7 +16501,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.06
 \end_layout
 
@@ -9840,7 +16527,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.04
 \end_layout
 
@@ -9851,7 +16553,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.49
 \end_layout
 
@@ -9862,7 +16579,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.49
 \end_layout
 
@@ -9888,6 +16620,18 @@ TX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightred}
+\end_layout
+
+\end_inset
+
 CPU [%]
 \end_layout
 
@@ -9898,7 +16642,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 62.86
 \end_layout
 
@@ -9909,7 +16668,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 64.70
 \end_layout
 
@@ -9920,7 +16694,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 31.15
 \end_layout
 
@@ -9931,7 +16720,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 31.48
 \end_layout
 
@@ -9942,7 +16746,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 26.65
 \end_layout
 
@@ -9953,7 +16772,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 26.52
 \end_layout
 
@@ -9964,7 +16798,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 51.95
 \end_layout
 
@@ -9975,7 +16824,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 52.08
 \end_layout
 
@@ -9999,6 +16863,18 @@ CPU [%]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightgreen}
+\end_layout
+
+\end_inset
+
 RX [MBit/s]
 \end_layout
 
@@ -10009,7 +16885,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 1.20
 \end_layout
 
@@ -10020,7 +16911,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 1.12
 \end_layout
 
@@ -10031,7 +16937,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 12.07
 \end_layout
 
@@ -10042,7 +16963,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 13.10
 \end_layout
 
@@ -10053,7 +16989,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.30
 \end_layout
 
@@ -10064,7 +17015,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.31
 \end_layout
 
@@ -10075,7 +17041,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 13.66
 \end_layout
 
@@ -10086,7 +17067,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 13.89
 \end_layout
 
@@ -10110,6 +17106,18 @@ RX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightblue}
+\end_layout
+
+\end_inset
+
 TX [MBit/s]
 \end_layout
 
@@ -10120,7 +17128,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -10131,7 +17154,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -10142,7 +17180,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -10153,7 +17206,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -10164,7 +17232,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.04
 \end_layout
 
@@ -10175,7 +17258,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.04
 \end_layout
 
@@ -10186,7 +17284,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.49
 \end_layout
 
@@ -10197,7 +17310,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.49
 \end_layout
 
@@ -10223,6 +17351,18 @@ TX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightred}
+\end_layout
+
+\end_inset
+
 CPU [%]
 \end_layout
 
@@ -10233,7 +17373,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 59.73
 \end_layout
 
@@ -10244,7 +17399,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 62.69
 \end_layout
 
@@ -10255,7 +17425,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 29.58
 \end_layout
 
@@ -10266,7 +17451,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 29.65
 \end_layout
 
@@ -10277,7 +17477,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 26.30
 \end_layout
 
@@ -10288,7 +17503,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 26.36
 \end_layout
 
@@ -10299,7 +17529,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 50.05
 \end_layout
 
@@ -10310,7 +17555,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 50.35
 \end_layout
 
@@ -10334,6 +17594,18 @@ CPU [%]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightgreen}
+\end_layout
+
+\end_inset
+
 RX [MBit/s]
 \end_layout
 
@@ -10344,7 +17616,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -10355,7 +17642,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -10366,7 +17668,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -10377,7 +17694,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -10388,7 +17720,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -10399,7 +17746,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -10410,7 +17772,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -10421,7 +17798,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -10445,6 +17837,18 @@ RX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightblue}
+\end_layout
+
+\end_inset
+
 TX [MBit/s]
 \end_layout
 
@@ -10455,7 +17859,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -10466,7 +17885,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -10477,7 +17911,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -10488,7 +17937,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -10499,7 +17963,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.04
 \end_layout
 
@@ -10510,7 +17989,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.05
 \end_layout
 
@@ -10521,7 +18015,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.47
 \end_layout
 
@@ -10532,7 +18041,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.47
 \end_layout
 
@@ -10558,6 +18082,18 @@ TX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightred}
+\end_layout
+
+\end_inset
+
 CPU [%]
 \end_layout
 
@@ -10568,7 +18104,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 60.18
 \end_layout
 
@@ -10579,7 +18130,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 62.94
 \end_layout
 
@@ -10590,7 +18156,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 29.78
 \end_layout
 
@@ -10601,7 +18182,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 29.77
 \end_layout
 
@@ -10612,7 +18208,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 26.70
 \end_layout
 
@@ -10623,7 +18234,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 26.57
 \end_layout
 
@@ -10634,7 +18260,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 50.23
 \end_layout
 
@@ -10645,7 +18286,22 @@ CPU [%]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterred}
+\end_layout
+
+\end_inset
+
+
+\series default
 50.57
 \end_layout
 
@@ -10669,6 +18325,18 @@ CPU [%]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightgreen}
+\end_layout
+
+\end_inset
+
 RX [MBit/s]
 \end_layout
 
@@ -10679,7 +18347,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -10690,7 +18373,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -10701,7 +18399,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -10712,7 +18425,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -10723,7 +18451,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -10734,7 +18477,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -10745,7 +18503,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -10756,7 +18529,22 @@ RX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightergreen}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -10780,6 +18568,18 @@ RX [MBit/s]
 
 \series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lightblue}
+\end_layout
+
+\end_inset
+
 TX [MBit/s]
 \end_layout
 
@@ -10790,7 +18590,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -10801,7 +18616,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -10812,7 +18642,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -10823,7 +18668,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 0.00
 \end_layout
 
@@ -10834,7 +18694,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.06
 \end_layout
 
@@ -10845,7 +18720,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.06
 \end_layout
 
@@ -10856,7 +18746,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.48
 \end_layout
 
@@ -10867,7 +18772,22 @@ TX [MBit/s]
 
 \begin_layout Plain Layout
 
+\series bold
 \size tiny
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cellcolor{tbl_lighterblue}
+\end_layout
+
+\end_inset
+
+
+\series default
 2.48
 \end_layout
 
@@ -14325,6 +22245,153 @@ Verhalten des PRP-1 stacks
 
 \begin_layout Subsubsection
 Weitere Aspekte
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes fld
+\end_inset
+
+prp1
+\begin_inset Quotes frd
+\end_inset
+
+ und 
+\begin_inset Quotes fld
+\end_inset
+
+eth1
+\begin_inset Quotes frd
+\end_inset
+
+ Bitraten werden nicht beeinflusst / keine Limitierung -> nur 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+shck-Client
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Kein Einfluss auf CPU bei keinem Fall
+\end_layout
+
+\begin_layout Itemize
+1s kein Durchfluss -> Zeit für Deaktivieren/Aktivieren ECI-Box zu lange
+ sodass eth0 nicht wirklich aktiv wird
+\end_layout
+
+\begin_layout Itemize
+2s kleine TX-Bitraten jedoch bei TCP keine/kaum Quittierungen vom Server
+\end_layout
+
+\begin_layout Itemize
+3s kleine Bitraten
+\end_layout
+
+\begin_layout Itemize
+4s etwas bessere Bitraten, danach nur noch marginale Verbesserungen pro
+ erhöhte Sekunde der Intervallgrösse
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Diese Steigerung pro Intervallgrösse spiegelt sich in den graphischen Resultaten
+ wieder (besonders ersichtlich bei Intervallgrösse von 3s)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+shck-Server
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Einfluss auf CPU, wird geringer je weniger über 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ versendet wird -> Muss weniger Daten verarbeiten
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Kann so weit kommen, dass Server weniger CPU für selbe Last benötigt als
+ Client (Client sendet über eth0 und eth1, Server erhält nur eth1) (Normalfall
+ benötigt Server mehr als Client, siehe Szenario 01)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+TX-Bitrate Server entspricht der aus Szenario 01, da Verbindung zwischen
+ 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ von 
+\begin_inset Quotes fld
+\end_inset
+
+srv02
+\begin_inset Quotes frd
+\end_inset
+
+ zum Switch aktiv ist -> Server merkt nichts von Ausfall
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Man sieht in den Grafiken wie die shck-Server TX-bitrate mit der RX-bitrate
+ des Servers korrespondiert.
+ TCP: RX-Bitrate Client erst ab ca.
+ 4s ähnlich zu TX-Bitrate Server weil Server beim Senden nichts vom Ausfall
+ mitbekommt (Client erhält weniger als Server versendet)
+\end_layout
+
+\begin_layout Itemize
+In grafiken bei MAX mit intervall 2s peaks über 100 -> aktivieren interface
+ -> annahme: tx-buffer leeren (einfluss auf statistik-aktualisierung)
+\end_layout
+
+\begin_layout Itemize
+Limitierung liegt in der Zeit, in der über 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ effektiv versendet wird -> Weniger versandt, kleinere Bitrate, weniger
+ Server-CPU-Last
+\end_layout
+
+\begin_layout Itemize
+Laut standard PRP-Supervision Frames nur wenn beide Interfaces aktiv, dann
+ erkennt DAN ob anderer Host SAN oder DAN ist.
+ Im PRP-1 stack ist adapter_active immer auf 1, auch wenn Kabel getrennt
+ ist.
+ Der stack sendet sobald adapter_active==1 ist, das heisst er weiss nichts
+ vom Ausfall.
+ Die an das deaktivierte Interface gesendeten Daten sind für den PRP-1 stack
+ gesendet, werden jedoch nicht effektiv vom OS versendet -> korrekte /proc-Stati
+stiken.
 \end_layout
 
 \begin_layout Section
