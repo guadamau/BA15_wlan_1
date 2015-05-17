@@ -10909,12 +10909,32 @@ eth0
 
 \begin_layout Subsection
 Graphische Resultate
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Graphische-Resultate"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Es erfolgen zu jeder generierten Netzwerklast 6 Abbildungen (3 Merkmale
  (siehe Beginn dieses Kapitels) pro Teilnehmer), welche je alle 10 Fälle
  abdecken.
+\end_layout
+
+\begin_layout Standard
+Die in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Szenario-04:-Zeitweiser"
+
+\end_inset
+
+ beschriebene Fall-Bezeichnung ist bei der Bezeichnung der entsprechenden
+ Netzwerklast angehängt und weist auf den verwendeten Intervall in Sekunden
+ oder den Komplettausfall hin.
 \end_layout
 
 \begin_layout Standard
