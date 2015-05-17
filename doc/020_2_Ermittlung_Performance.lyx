@@ -9314,8 +9314,16 @@ reference "sec:Aufbau-der-Testumgebung"
 \end_inset
 
 ) nicht modifiziert.
- Stattdessen werden Netzwerkanbindungen während der Messung nach einem bestimmte
-n Intervall (z.B.
+ Stattdessen wird die Netzwerkanbindung ans Netzwerk A über das Netzwerk-Interfa
+ce 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ während der Messung nach einem bestimmten Intervall (z.B.
  alle 10 Sekunden) aktiviert / deaktiviert.
  Dadurch soll herausgefunden werden wie der PRP-1 stack mit zeitweisen Ausfällen
  umgeht.
@@ -9727,34 +9735,25 @@ srv02
 \end_inset
 
  startet.
+ Hier wird lediglich die ECI-Box am Interface 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ des Hosts 
+\begin_inset Quotes fld
+\end_inset
+
+srv01
+\begin_inset Quotes frd
+\end_inset
+
+ gesteuert, während die zweite ECI-Box im aktiven Zustand bleibt.
 \end_layout
 
-\begin_layout Standard
-Fälle:
-\end_layout
-
-\begin_layout Itemize
-Komplettausfall A / B
-\end_layout
-
-\begin_layout Itemize
-Ausfall in Intervall von 
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Zeitspanne*e^(-1) (guter statistischer wert, 0.367879441171)
-\end_layout
-
-\begin_layout Itemize
-Zeitspanne*2*e^(-1)
-\end_layout
-
-\begin_layout Itemize
-1s
-\end_layout
-
-\end_deeper
 \begin_layout Standard
 \begin_inset Box Shadowbox
 position "t"

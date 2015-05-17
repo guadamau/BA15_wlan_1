@@ -33,7 +33,7 @@ for s in ${SEARCHSTR[@]}; do
                 NEWFILEPATH="${NEWFILEPATH}_$(echo ${FILEPATH:(POSITIONOFLOADDESCINTSEC-1)} | cut -d"/" -f1 | cut -d"." -f1)"
             fi
             cp "${FILEPATH}" "${NEWFILEPATH}"
-            awk '{printf("%010f %s\n", NR, $0)}' "${NEWFILEPATH}" > "${NEWFILEPATH}.awk"
+            awk '{printf("%010f %s\n", NR-1, $0)}' "${NEWFILEPATH}" > "${NEWFILEPATH}.awk"
             rm "${NEWFILEPATH}"
             mv "${NEWFILEPATH}.awk" ${NEWFILEPATH}
             
@@ -100,7 +100,7 @@ for s in ${SEARCHSTR[@]}; do
             then
                 TITLE="${LOADDESC}.$(echo ${FILEPATH:(POSITIONOFLOADDESCINTSEC-1)} | cut -d"/" -f1 | cut -d"." -f1)"
             fi
-            echo 'n=n+1, "'"${NEWFILEPATH}"'" using 1:2:0 title "'"${TITLE}"'" lc palette frac (n-1)/10.0 lw 3 lt 2 with lines, \' >> ${GNUPLOTSCRIPT}
+            echo 'n=n+1, "'"${NEWFILEPATH}"'" using 1:2:0 title "'"${TITLE}"'" lc palette frac (n-1)/10.0 lw 3 lt 2 w l, \' >> ${GNUPLOTSCRIPT}
         fi
     done
 done
