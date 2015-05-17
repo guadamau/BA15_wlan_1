@@ -1044,6 +1044,13 @@ Ablaufdiagramm meas-Messserie
 
 \begin_layout Paragraph
 Minderung von Messfehlern / Optimierungen
+\begin_inset CommandInset label
+LatexCommand label
+name "par:Minderung-von-Messfehlern"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

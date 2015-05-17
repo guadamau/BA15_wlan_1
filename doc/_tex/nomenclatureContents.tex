@@ -42,6 +42,8 @@
 \newcommand{\userspacedesc}{Bereich im Arbeitsspeicher, wo normale Benutzerprozesse abgelegt respektive ausgeführt werden.}
 \newcommand{\kernelspacedesc}{Bereich im Arbeitsspeicher, welcher ausschliesslich für Prozesse des Kernels reserviert ist. In diesem Bereich werden Kernelprozesse sowie privilegierte Systemprozesse abgelegt, respektive ausgeführt.}
 \newcommand{\rttdesc}{\textbf{Round Trip Time} zu Deutsch Paketumlaufzeit. Damit ist die Zeit gemeint, welche benötigt wird, um von einer Quelle zum Ziel und wieder zurück zur Quelle zu gelangen.}
+\newcommand{\cswitchdesc}{Prozedere, welches der Scheduler eines Betriebssystems durchführt, wenn ein neuer oder wartender Prozess CPU-Zeit erhält. Der aktuell auf der CPU laufende Prozess muss alle Kontextinformationen speichern und seine Ausführung unterbrechen, wobei der neue oder wartende Prozess seine Kontextinformationen laden und die Ausführung auf der CPU beginnen muss.}
+\newcommand{\interfacedesc}{Bezeichnung für Netzwerkkarte / Netzwerk-Hardware.}
 
 % *****************************************************************************
 % Nomenclature entries
@@ -83,3 +85,5 @@
 \nomenclature{Userspace}{\userspacedesc}
 \nomenclature{Kernelspace}{\kernelspacedesc}
 \nomenclature{RTT}{\rttdesc}
+\nomenclature{Context Switch}{\cswitchdesc}
+\nomenclature{Netzwerk-Interface}{\interfacedesc}
