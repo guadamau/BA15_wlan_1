@@ -2394,5 +2394,368 @@ endgroup
 
 \end_layout
 
+\begin_layout Standard
+Der Quellcode von meas ist der Arbeit beigelegt (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:meas---Messung"
+
+\end_inset
+
+).
+ Die nachfolgende Tabelle dient der Erläuterung aller Parameter/Optionen
+ von meas:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="15col%">
+<column alignment="left" valignment="top" width="75col%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Parameter
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Beschreibung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-i
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Intervall
+\begin_inset Newline newline
+\end_inset
+
+Definiert die Intervallzeit eines Messintervalls in Sekunden.
+ Ebenfalls erlaubt sind Fliesskommazahlen grösser oder gleich 0.010 Sekunden.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-m
+\begin_inset Newline newline
+\end_inset
+
+(optional)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mode
+\begin_inset Newline newline
+\end_inset
+
+Gültige Parameter sind 0 oder 1.
+\end_layout
+
+\begin_layout Plain Layout
+Mode 0: Überwacht ein einzelnes Netzwerk-Interface.
+ Im Rahmen dieser Arbeit ist dies 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Plain Layout
+Mode 1: Überwacht das virtuelle PRP-Netzwerk-Interface 
+\begin_inset Quotes fld
+\end_inset
+
+prp1
+\begin_inset Quotes frd
+\end_inset
+
+ sowie alle PRP-involvierten Interfaces (
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ und 
+\begin_inset Quotes fld
+\end_inset
+
+eth1
+\begin_inset Quotes frd
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Plain Layout
+Anmerkung: Falls die Zuweisungen der Interfaces ändern, beispielsweise bei
+ Servern mit anderen Betriebssystenen und anderen Bezeichnungnen der Netzwerk-In
+terfaces, muss dies angepasst werden in den Dateien (attrs.h/attrs.c).
+\end_layout
+
+\begin_layout Plain Layout
+Wird der Parameter nicht definiert, wird 1 als Standardwert verwendet.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-n
+\begin_inset Newline newline
+\end_inset
+
+(optional)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Anzahl Messintervalle
+\begin_inset Newline newline
+\end_inset
+
+Definiert, wie oft ein Messintervall wiederholt werden soll.
+ Nur ganzzahlige Werte sind erlaubt.
+ Berechnung der Zeit einer gesamten Messserie: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$i * n = gesamte Zeit [s]$
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+Wird der Parameter nicht definiert, wird 1 als Standardwert verwendet.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-p
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Prozess-ID
+\begin_inset Newline newline
+\end_inset
+
+Definiert die Prozess-ID, dessen Statistiken gemessen werden sollen.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-P
+\begin_inset Newline newline
+\end_inset
+
+(optional)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Pfad
+\begin_inset Newline newline
+\end_inset
+
+Definiert den Pfad, wo die Ausgabedateien von meas abgelegt werden sollen.
+ Am Ende des Pfades darf kein Schrägstrich (/) angefügt werden.
+ Ausgabedateien pro Messserie: 
+\begin_inset Quotes fld
+\end_inset
+
+meas_interval_results_$TIMESTAMP
+\begin_inset Quotes frd
+\end_inset
+
+ und 
+\begin_inset Quotes fld
+\end_inset
+
+meas_overall_stats_$TIMESTAMP
+\begin_inset Quotes frd
+\end_inset
+
+.
+ $TIMESTAMP ist die Zeit seit dem 1.1.1970 in Sekunden.
+\end_layout
+
+\begin_layout Plain Layout
+Wird der Parameter nicht definiert, wird 
+\begin_inset Quotes fld
+\end_inset
+
+/tmp
+\begin_inset Quotes frd
+\end_inset
+
+ als Standardwert verwendet.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+-v
+\begin_inset Newline newline
+\end_inset
+
+(optional)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ausführlichkeit
+\begin_inset Newline newline
+\end_inset
+
+Gültige Werte: [0, ..., 2]
+\end_layout
+
+\begin_layout Plain Layout
+0: Keine Konsolenausgabe.
+ Nur die Ausgabedateien werden am Schluss einer Messserie abgespeichert.
+\end_layout
+
+\begin_layout Plain Layout
+1: Am Schluss der Messserie wird auf der Ausgabekonsole ein Report über
+ die Gesamtstatistiken angezeigt.
+\end_layout
+
+\begin_layout Plain Layout
+2: Am Schluss der Messserie werden auf der Ausgabekonsole die Resultate
+ aller Messintervalle, sowie ein Report über die Gesamtstatistiken angezeigt.
+\end_layout
+
+\begin_layout Plain Layout
+Wird der Parameter nicht definiert, wird 0 als Standardwert verwendet.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Parameter der Applikation 
+\begin_inset Quotes fld
+\end_inset
+
+meas
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
