@@ -119,5 +119,15 @@ filename "020_2_Ermittlung_Performance.lyx"
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset CommandInset include
+LatexCommand input
+filename "020_3_Szenarien.lyx"
+
+\end_inset
+
+
+\end_layout
+
 \end_body
 \end_document
