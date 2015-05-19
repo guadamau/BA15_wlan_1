@@ -79,6 +79,13 @@
 
 \begin_layout Subsection
 Szenarien
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Szenarien"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5201,7 +5208,7 @@ MIN
 \begin_inset Quotes frd
 \end_inset
 
- nur die CPU oder ein anderer Faktor von TCP sein, der einen Engpass bildet.
+ nur die CPU sein, der einen Engpass bildet.
 \end_layout
 
 \begin_layout Standard
@@ -5269,8 +5276,7 @@ Als Ursache dafür ist anzunehmen, dass tshark beim Aufzeichnen wegen dem
 Schlussendlich kann man sagen, dass die TCP-Window-Size kein limitierender
  Faktor darstellt und TCP-Verkehr nicht durch die TCP-Window-Size beeinträchtigt
  werden kann.
- Nicht auszuschliessen sind jedoch andere Faktoren von TCP wie zum Beispiel
- das Warten des Senders auf eine Quittierung (ACK-Paket), die CPU oder die
+ Nicht auszuschliessen sind jedoch andere Faktoren wie die CPU oder die
  Netzwerkanbindung.
 \end_layout
 
@@ -5315,7 +5321,7 @@ status open
 \begin_layout Plain Layout
 \noindent
 \begin_inset Tabular
-<lyxtabular version="3" rows="3" columns="2">
+<lyxtabular version="3" rows="4" columns="2">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="left" valignment="top" width="70col%">
 <column alignment="right" valignment="top" width="25col%">
@@ -5374,6 +5380,33 @@ reference "tab:Netzwerklasten-eines-Szenarios"
 </cell>
 </row>
 <row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Messresultate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:01-Messresultate"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
 <cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
@@ -5421,6 +5454,14 @@ name "sub:Szenario-02:-Performance"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Anhand dieses Szenarios wird festgestellt, wie gross der Ressourcenverbrauch
+ des PRP-1 stacks ausfällt.
+ Dies wird Anhand eines Vergleichs zu einem normalen, nicht redundanten
+ Netzwerk-Anschluss durchgeführt, bei welchem in beiden Fällen die selbe
+ Netzwerklast generiert wird.
 \end_layout
 
 \begin_layout Standard
@@ -5527,7 +5568,7 @@ status open
 \begin_layout Plain Layout
 \noindent
 \begin_inset Tabular
-<lyxtabular version="3" rows="3" columns="2">
+<lyxtabular version="3" rows="4" columns="2">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="left" valignment="top" width="70col%">
 <column alignment="right" valignment="top" width="25col%">
@@ -5576,6 +5617,33 @@ Seite
 \begin_inset CommandInset ref
 LatexCommand pageref
 reference "tab:Netzwerklasten-eines-Szenarios"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Messresultate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sec:Szenario-02:-Performance-1"
 
 \end_inset
 
@@ -5626,17 +5694,602 @@ reference "sec:Szenario-02:-Performance"
 
 \begin_layout Subsubsection
 Szenario 03: Effekt von Laufzeitunterscheidungen zwischen Netzwerk A und
- B
+ B / Einfluss nicht entfernter Duplikate auf Funktion und Performance
 \end_layout
 
 \begin_layout Standard
+Innerhalb dieses Szenarios wird der Einfluss auf den PRP-1 stack und dessen
+ Umgang mit Duplikaten ermittelt, indem eine Asymmetrie zwischen Netzwerk
+ A und B geschaffen wird.
+\end_layout
+
+\begin_layout Standard
+Die Konfiguration in diesem Szenario entspricht dem in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Aufbau-der-Testumgebung"
+
+\end_inset
+
+ geschilderten Aufbau, bis auf eine Ausnahme: Am Netzwerk-interface 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ des Hosts 
+\begin_inset Quotes fld
+\end_inset
+
+srv01
+\begin_inset Quotes frd
+\end_inset
+
+ wird ein Calnex Paragon Störungs-Generator (siehe Tabelle 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:Weitere-Hilfsmittel:-Calnex"
+
+\end_inset
+
+) zwischen dem Interface und dem Switch des Netzwerks A dazwischen geschlossen.
+ Mit diesem Generator ist es möglich Laufzeitunterscheidungen in Form von
+ u.a.
+ einem Delay, fehlerhaften oder verlorenen Paketen zwischen Netzwerk A und
+ B zu erzeugen.
+ Dabei bleibt Netzwerk B im ursprünglichen Zustand.
+\end_layout
+
+\begin_layout Paragraph
+Delay in Netzwerk A und Einfluss nicht entfernter Duplikate
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Laut PRP Standard 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "IEC_62439-3_2015"
+
+\end_inset
+
+ kann sich ein Frame maximal 400ms in der Tabelle zur Duplikaterkennung
+ des PRP-1 stacks aufhalten (Aging-Time).
+ Das bedeutet, dass wenn ein Duplikat mit mehr als 400ms Verspätung eintrifft,
+ es als neues Frame interpretiert und an den nächsten Layer weitergeleitet
+ anstelle dass es entfernt wird.
+ Dann müsste eine der höheren Layer mit diesen Duplikaten umgehen können.
+ TCP kann mit diese Duplikate nachträglich verwerfen, UDP nicht.
+\end_layout
+
+\begin_layout Standard
+Es stellt sich zudem die Frage, ob ein neues Frame mit einer Sequenznummer
+ im RCT in der Tabelle eintreffen kann, die bereits von einem älteren Frame
+ in der Tabelle verwendet wird (selbe Sequenznummer für unterschiedliche
+ Frames).
+ Dies könnte nur eintreffen wenn das Duplikat des älteren Frames noch nicht
+ eingetroffen ist.
+ Die Sequenznummer ist 16 Bit gross, was bedeutet, dass 
+\begin_inset Formula $2{}^{16}=65'536$
+\end_inset
+
+ Frames versendet werden müssen, um wieder bei der ersten Sequenznummer
+ anzukommen.
+ Anhand der Berechnungen für den theoretischen Grenzwert (Bitrate) in Kapitel
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Theoretische-Grenzwerte"
+
+\end_inset
+
+ ist ersichtlich, dass maximal 138'889 Frames pro Sekunde versendet werden
+ können.
+ Innerhalb der Aging-Time von 400ms wäre somit der Versand von ca.
+ 55'556 Frames möglich.
+ Demzufolge ist es aufgrund der Aging-Time nicht möglich, dass die gleiche
+ Sequenznummer für unterschiedliche Frames in der Tabelle zur Duplikaterkennung
+ eingtragen ist.
+ Die Tabellengrösse von 256 Einträgen ist ein weiterer Grund, weshalb es
+ nicht möglich ist, unterschiedliche Frames mit gleicher Sequenznummer eingetrag
+en zu haben.
+ Wenn in der Tabelle alle Einträge besetzt sind und ein neues Frame ankommt,
+ wird der älteste Eintrag verworfen, auch wenn sich dieser weniger lang
+ als 400ms darin aufhält.
+\end_layout
+
+\begin_layout Standard
+Daraus ergeben sich folgende Fälle:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="20col%">
+<column alignment="left" valignment="top" width="20col%">
+<column alignment="left" valignment="top" width="20col%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Fall
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Delay in Netzwerk A
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Kürzel
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Allgemeines Verhalten bei Delay unter der Aging-Time
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+300ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+350ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+B
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Delay entspricht der Aging-Time
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+400ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Delay ist über der Aging-Time
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+450ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+D
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+500ms
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+E
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fälle von Laufzeitunterscheidungen in Form von Delay, erzeugt in Netzwerk
+ A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Note
+status open
+
+\begin_layout Plain Layout
 Asymmetrie A & B -> zusatzdelay
 \end_layout
 
-\begin_layout Standard
+\begin_layout Plain Layout
 Interessanter fall: schwankender delay -> mal netz schneller und langsam
  -> oszillierend ECI via Python automatisieren? Paragon mit Variablem Delay
  dazwischen hängen 
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Störquellen in Netzwerk A
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Anhand dem Störungs-Generator können unterschiedliche, realistische Fälle
+ wie z.B.
+ Paketverlust simuliert werden.
+ Dieser kann auftreten wenn ein Switch im Netzwerk überlastet und somit
+ dazu gezwungen ist, Pakete zu verwerfen.
+ Des Weiteren können u.a.
+ bei Hardwaredefekten fehlerhafte Frames übertragen werden.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="20col%">
+<column alignment="left" valignment="top" width="20col%">
+<column alignment="left" valignment="top" width="20col%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Fall
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Störquelle in Netzwerk A
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Kürzel
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fälle von Laufzeitunterscheidungen in Form von Störquellen, erzeugt in Netzwerk
+ A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5651,12 +6304,12 @@ width "100col%"
 special "none"
 height "1in"
 height_special "totalheight"
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
 \begin_inset Tabular
-<lyxtabular version="3" rows="3" columns="2">
+<lyxtabular version="3" rows="4" columns="2">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="left" valignment="top" width="70col%">
 <column alignment="right" valignment="top" width="25col%">
@@ -5705,6 +6358,33 @@ Seite
 \begin_inset CommandInset ref
 LatexCommand pageref
 reference "tab:Netzwerklasten-eines-Szenarios"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Messresultate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sec:Szenario-03:-Effekt-1"
 
 \end_inset
 
@@ -5825,7 +6505,7 @@ Fall
 \begin_layout Plain Layout
 
 \series bold
-Netzwerklast-Suffix / Fall
+Kürzel
 \end_layout
 
 \end_inset
@@ -6056,11 +6736,11 @@ Fälle von zeitweisem Ausfall eines Netzwerkpfades
 \end_layout
 
 \begin_layout Standard
-Der oben erwähnte Netzwerklast-Suffix / Fall ist bei der Bezeichnung in
- den graphischen Resulaten 
+Der oben erwähnte Kürzel ist bei der Bezeichnung in den graphischen Resulaten
+ 
 \begin_inset CommandInset ref
 LatexCommand vpageref
-reference "sub:Graphische-Resultate"
+reference "sub:Graphische-Resultate-1"
 
 \end_inset
 
@@ -6233,12 +6913,12 @@ width "100col%"
 special "none"
 height "1in"
 height_special "totalheight"
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
 \begin_inset Tabular
-<lyxtabular version="3" rows="3" columns="2">
+<lyxtabular version="3" rows="4" columns="2">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="left" valignment="top" width="70col%">
 <column alignment="right" valignment="top" width="25col%">
@@ -6287,6 +6967,33 @@ Seite
 \begin_inset CommandInset ref
 LatexCommand pageref
 reference "tab:Netzwerklasten-eines-Szenarios"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Messresultate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sec:Szenario-04:-Zeitweiser-1"
 
 \end_inset
 
@@ -6344,7 +7051,7 @@ Innerhalb dieses Szenarios werden keine Messungen vorgenommen, sondern die
  Resultate aus Szenario 01 (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
-reference "sub:Szenario-01:-Performance-1"
+reference "sub:01-Messresultate"
 
 \end_inset
 
@@ -6353,7 +7060,7 @@ reference "sub:Szenario-01:-Performance-1"
  
 \begin_inset CommandInset ref
 LatexCommand vref
-reference "sec:Szenario-05:-Abhängigkeit"
+reference "sub:Interpretation"
 
 \end_inset
 
@@ -6389,7 +7096,7 @@ status open
 \begin_layout Plain Layout
 \noindent
 \begin_inset Tabular
-<lyxtabular version="3" rows="3" columns="2">
+<lyxtabular version="3" rows="4" columns="2">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="left" valignment="top" width="70col%">
 <column alignment="right" valignment="top" width="25col%">
@@ -6448,131 +7155,23 @@ reference "tab:Netzwerklasten-eines-Szenarios"
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-Resultate und Interpretation
+Messresultate
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="right" valignment="top" usebox="none">
+<cell alignment="center" valignment="top" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 Seite 
 \begin_inset CommandInset ref
 LatexCommand pageref
-reference "sec:Szenario-05:-Abhängigkeit"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-</lyxtabular>
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsubsection
-Szenario 06: Einfluss nicht entfernter Duplikate auf Funktion und Performance
-\end_layout
-
-\begin_layout Standard
-Delay Ankunft zwischen Original und Duplikat zu gross
-\end_layout
-
-\begin_layout Standard
-Möglich? Neue SeqNr hat gleiche wie alte wo noch in PRP Tabelle ist
-\end_layout
-
-\begin_layout Standard
-Kann Speicher an Duplikaten im Stack komplett ausgelastet werden?
-\end_layout
-
-\begin_layout Standard
-Wie geht stack vor wenn Duplikattabelle voll? Wenn zb LAN_A aus? wird ältestes
- überschrieben? 
-\end_layout
-
-\begin_layout Standard
-\begin_inset Box Shadowbox
-position "t"
-hor_pos "c"
-has_inner_box 1
-inner_pos "c"
-use_parbox 0
-use_makebox 0
-width "100col%"
-special "none"
-height "1in"
-height_special "totalheight"
-status collapsed
-
-\begin_layout Plain Layout
-\noindent
-\begin_inset Tabular
-<lyxtabular version="3" rows="3" columns="2">
-<features rotate="0" tabularvalignment="middle">
-<column alignment="left" valignment="top" width="70col%">
-<column alignment="right" valignment="top" width="25col%">
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Ablauf eines Szenarios
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Seite 
-\begin_inset CommandInset ref
-LatexCommand pageref
-reference "sub:Ablauf-eines-Szenarios"
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Generierte Netzwerklasten
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="right" valignment="top" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-Seite 
-\begin_inset CommandInset ref
-LatexCommand pageref
-reference "tab:Netzwerklasten-eines-Szenarios"
+reference "sub:01-Messresultate"
 
 \end_inset
 
@@ -6599,7 +7198,7 @@ Resultate und Interpretation
 Seite 
 \begin_inset CommandInset ref
 LatexCommand pageref
-reference "sec:Szenario-06:-Einfluss"
+reference "sub:Interpretation"
 
 \end_inset
 
@@ -6622,7 +7221,7 @@ reference "sec:Szenario-06:-Einfluss"
 \end_layout
 
 \begin_layout Subsubsection
-Szenario 07: Auswirkungen, wenn Frames out-of-sequence ankommen
+Szenario 06: Auswirkungen, wenn Frames out-of-sequence ankommen
 \end_layout
 
 \begin_layout Standard
@@ -6642,12 +7241,12 @@ width "100col%"
 special "none"
 height "1in"
 height_special "totalheight"
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
 \begin_inset Tabular
-<lyxtabular version="3" rows="3" columns="2">
+<lyxtabular version="3" rows="4" columns="2">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="left" valignment="top" width="70col%">
 <column alignment="right" valignment="top" width="25col%">
@@ -6706,6 +7305,33 @@ reference "tab:Netzwerklasten-eines-Szenarios"
 </cell>
 </row>
 <row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Messresultate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sec:Szenario-06:-Auswirkungen,-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
 <cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
@@ -6722,7 +7348,7 @@ Resultate und Interpretation
 Seite 
 \begin_inset CommandInset ref
 LatexCommand pageref
-reference "sec:Szenario-07:-Auswirkungen,"
+reference "sec:Szenario-06:-Auswirkungen,"
 
 \end_inset
 
@@ -6745,7 +7371,7 @@ reference "sec:Szenario-07:-Auswirkungen,"
 \end_layout
 
 \begin_layout Subsubsection
-Szenario 08: Einluss von Offload-Mechanismen
+Szenario 07: Einluss von Offload-Mechanismen
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Einluss-von-Offload-Mechanismen"
@@ -6767,12 +7393,12 @@ width "100col%"
 special "none"
 height "1in"
 height_special "totalheight"
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
 \begin_inset Tabular
-<lyxtabular version="3" rows="3" columns="2">
+<lyxtabular version="3" rows="4" columns="2">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="left" valignment="top" width="70col%">
 <column alignment="right" valignment="top" width="25col%">
@@ -6831,6 +7457,33 @@ reference "tab:Netzwerklasten-eines-Szenarios"
 </cell>
 </row>
 <row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Messresultate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sec:Szenario-07:-Einluss-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
 <cell alignment="left" valignment="top" usebox="none">
 \begin_inset Text
 
@@ -6847,7 +7500,7 @@ Resultate und Interpretation
 Seite 
 \begin_inset CommandInset ref
 LatexCommand pageref
-reference "sec:Szenario-08:-Einluss"
+reference "sec:Szenario-07:-Einluss"
 
 \end_inset
 

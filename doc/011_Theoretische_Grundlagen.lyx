@@ -359,9 +359,8 @@ Single Attached Node
 \end_inset
 
 , kurz SAN, genannt.
- Diese können zwar mit allnen Netzwerkteilnehmern kommunizieren, die sich
- in beiden LANs befinden, jedoch können nur andere SANs erreicht werden,
- die am selben LAN angeschlossen sind.
+ Diese können zwar mit allnen DANs kommunizieren, jedoch können nur andere
+ SANs erreicht werden, die am selben LAN angeschlossen sind.
  SANs, die mit dem anderen LAN verbunden sind, können nicht erreicht werden.
  Ein SAN weiss nichts von PRP.
  Daher erzeugen SANs beim Frameversand keine Duplikate und hängen somit
@@ -508,7 +507,7 @@ key "IEC_62439-3_2015"
 
 \end_inset
 
- alle 400 ms) sogenannte 
+ alle 2000 ms) sogenannte 
 \begin_inset Quotes fld
 \end_inset
 
@@ -716,9 +715,9 @@ Ein neues Frame trifft ein.
  Der Software-Stack muss zu diesem Zeitpunkt kontrollieren, ob ein Duplikat
  dieses Frames bereits vorgängig auf dem anderen Interface eingetroffen
  ist.
- Falls dies zutrifft, muss das Frame verworfen werden, ansonsten muss das
- Frame, respektive dessen Meta-Daten in einer Datenstruktur über eine gewisse
- Zeit gehalten werden.
+ Falls dies zutrifft, muss das Frame verworfen werden.
+ Traf vorgängig kein Duplikat ein, muss das Frame in einer Datenstruktur
+ über eine gewisse Zeit gehalten werden.
 \end_layout
 
 \begin_layout Enumerate

@@ -1875,7 +1875,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -21248,10 +21248,10 @@ name "sec:Szenario-05:-Abhängigkeit-1"
 \end_layout
 
 \begin_layout Section
-Szenario 06: Einfluss nicht entfernter Duplikate auf Funktion und Performance
+Szenario 06: Auswirkungen, wenn Frames out-of-sequence ankommen
 \begin_inset CommandInset label
 LatexCommand label
-name "sec:Szenario-06:-Einfluss-1"
+name "sec:Szenario-06:-Auswirkungen,-1"
 
 \end_inset
 
@@ -21259,21 +21259,10 @@ name "sec:Szenario-06:-Einfluss-1"
 \end_layout
 
 \begin_layout Section
-Szenario 07: Auswirkungen, wenn Frames out-of-sequence ankommen
+Szenario 07: Einluss von Offload-Mechanismen
 \begin_inset CommandInset label
 LatexCommand label
-name "sec:Szenario-07:-Auswirkungen,-1"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Section
-Szenario 08: Einluss von Offload-Mechanismen
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Szenario-08:-Einluss-1"
+name "sec:Szenario-07:-Einluss-1"
 
 \end_inset
 

@@ -122,8 +122,26 @@ name "sec:Szenario-01:-Performance"
 
 \end_layout
 
+\begin_layout Standard
+Die Interpretation dieses Szenarios befindet sich in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Interpretation"
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Messresultate
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:01-Messresultate"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -608,6 +626,13 @@ prp1
 
 \begin_layout Subsection
 Interpretation
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Interpretation"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -662,11 +687,14 @@ MIN
  Ihre Gemeinsamkeit beträgt aber darin, dass beide Ströme nicht den theoretische
 n Grenzwert erlangen.
  Bei der TCP-Last fällt hier jedoch aufgrund der Natur von TCP zusätzlich
- das Warten auf Quittierungen vom Server an, weshalb hier im Gegensatz zur
- UDP-Last nicht permanent versendet werden kann.
- Somit erzielt bei diesem Lasttyp der UDP-Datenstrom eine höhere CPU-Last,
- kann jedoch durch den häufigeren Versand von Paketen auf dem Client eine
- höhere TX-Bitrate erzielen.
+ das Erhalten von Quittierungen vom Server an, weshalb hier im Gegensatz
+ zur UDP-Last shck bzw.
+ dessen UDP-/TCP-Socket mehr Leistung beansprucht.
+ Daraus resultiert, dass weniger Ressourcen für das effektive Versenden
+ von TCP-Paketen zur Verfügung steht.
+ Somit erzielt bei diesem Lasttyp der UDP-Datenstrom beim PRP-1 stack eine
+ höhere CPU-Last, kann jedoch durch den häufigeren Versand von Paketen auf
+ dem Client eine höhere TX-Bitrate erzielen.
  Daraus lässt sich schliessen, dass der UDP-Verkehr des Lasttyps 
 \begin_inset Quotes fld
 \end_inset
@@ -676,8 +704,9 @@ MIN
 \end_inset
 
  von der CPU limitiert wird.
- Beim TCP-Verkehr des selben Lasttyps stösst man auf einen Engpass, der
- sich durch die Wartezeit auf TCP-Quittierungen ergibt.
+ Beim TCP-Verkehr des selben Lasttyps stösst man ebenfalls auf einen Engpass
+ durch den Prozessor, welcher durch das zusätzliche Verarbeiten von Quittierunge
+n weiter verengt wird.
 \end_layout
 
 \begin_layout Standard
@@ -717,7 +746,7 @@ MIN
 \begin_inset Quotes frd
 \end_inset
 
-: Einschränkung durch TCP (Warten auf Quittierungen vom Empfänger)
+: Engpass durch Prozessor
 \end_layout
 
 \begin_layout Itemize
@@ -913,7 +942,8 @@ MAX
 ) auf dem shck-Server mehr CPU-Last verursacht wird.
  Dies bedeutet, dass der PRP-1 stack für das Empfangen mehr Leistung beansprucht
  als für das Senden.
- 
+ Hierbei muss der Empfänger / Server auch Ressourcen für die Duplikaterkennung
+ aufwenden, was den höheren CPU-Verbrauch für das Empfangen erklären würde.
 \end_layout
 
 \begin_layout Standard
@@ -950,10 +980,12 @@ MIN
 \end_inset
 
 .
- Dies resultiert aus der Tatsache, dass bei TCP der Client auf Quittierungen
- wartet anstelle konstant Pakete zu senden, was eine geringere CPU-Last
- und kleinere Bitraten ergibt.
- Aus diesem Grund empfängt der PRP-1 stack bei dieser Netzwerklast weniger
+ Dies resultiert aus der Tatsache, dass bei TCP der Client Quittierungen
+ erhält und shck bzw.
+ dessen TCP-Socket diese verarbeiten muss.
+ Der PRP-1 stack erhält weniger CPU-Zeit zur Verfügung und kann somit weniger
+ senden.
+ Aus diesem Grund versendet der PRP-1 stack bei dieser Netzwerklast weniger
  Pakete als bei den anderen Datenströmen und beansprucht somit auch weniger
  Ressourcen, was die folgende Rechnung mit den ermittelten Werten (durschnittlic
 he TX-Bitrate von shck-Client auf Netzwerk-Interface 
@@ -1012,7 +1044,8 @@ Bezüglich der durchschnittlich beanspruchten Netzwerklast ist ersichtlich,
 
 \begin_layout Standard
 Letzten Endes unterscheiden sich die Messwerte von Client und Server lediglich
- in der beanspruchten CPU-Last.
+ in der beanspruchten CPU-Last, welche mit der Duplikaterkennung zu tun
+ hat, die der PRP-1 stack des Servers zusätzlich aufwenden muss.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1381,10 +1414,10 @@ Weitere Aspekte
 \end_layout
 
 \begin_layout Section
-Szenario 06: Einfluss nicht entfernter Duplikate auf Funktion und Performance
+Szenario 06: Auswirkungen, wenn Frames out-of-sequence ankommen
 \begin_inset CommandInset label
 LatexCommand label
-name "sec:Szenario-06:-Einfluss"
+name "sec:Szenario-06:-Auswirkungen,"
 
 \end_inset
 
@@ -1408,37 +1441,10 @@ Weitere Aspekte
 \end_layout
 
 \begin_layout Section
-Szenario 07: Auswirkungen, wenn Frames out-of-sequence ankommen
+Szenario 07: Einluss von Offload-Mechanismen
 \begin_inset CommandInset label
 LatexCommand label
-name "sec:Szenario-07:-Auswirkungen,"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Subsection
-Limitierungen / Engpässe
-\end_layout
-
-\begin_layout Subsection
-Verhalten zwischen shck-Client und -Server
-\end_layout
-
-\begin_layout Subsection
-Verhalten des PRP-1 stacks
-\end_layout
-
-\begin_layout Subsection
-Weitere Aspekte
-\end_layout
-
-\begin_layout Section
-Szenario 08: Einluss von Offload-Mechanismen
-\begin_inset CommandInset label
-LatexCommand label
-name "sec:Szenario-08:-Einluss"
+name "sec:Szenario-07:-Einluss"
 
 \end_inset
 
