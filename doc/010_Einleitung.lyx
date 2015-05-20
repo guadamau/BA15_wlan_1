@@ -213,7 +213,12 @@ Erwartetes Resultat
 \end_layout
 
 \begin_layout Standard
-Lorem ipsum
+Das Resultat der Arbeit soll die Funktionsweise von PRP in Form einer Software-I
+mplementation aufzeigen.
+ Durch die Performance-Ermittlung dieser Implementation und der Interpretation
+ dessen Resultate wird die Leistungsfähigkeit der Software bei unterschiedlichen
+ Bedingungen aufgezeigt.
+ Daraus wird die Auswirklung von PRP auf das Endsystem abgeleitet.
 \end_layout
 
 \begin_layout Subsection

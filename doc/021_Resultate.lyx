@@ -987,8 +987,8 @@ MIN
  senden.
  Aus diesem Grund versendet der PRP-1 stack bei dieser Netzwerklast weniger
  Pakete als bei den anderen Datenströmen und beansprucht somit auch weniger
- Ressourcen, was die folgende Rechnung mit den ermittelten Werten (durschnittlic
-he TX-Bitrate von shck-Client auf Netzwerk-Interface 
+ Ressourcen, was die folgende Rechnung mit den ermittelten Werten (durchschnittl
+iche TX-Bitrate von shck-Client auf Netzwerk-Interface 
 \begin_inset Quotes fld
 \end_inset
 
@@ -1046,6 +1046,14 @@ Bezüglich der durchschnittlich beanspruchten Netzwerklast ist ersichtlich,
 Letzten Endes unterscheiden sich die Messwerte von Client und Server lediglich
  in der beanspruchten CPU-Last, welche mit der Duplikaterkennung zu tun
  hat, die der PRP-1 stack des Servers zusätzlich aufwenden muss.
+ Zusätzlich sind beim Server bei der CPU-Last bei einigen Netzwerklasten
+ sehr langsame periodischen Schwankungen festzustellen, die beim empfangenden
+ PRP-1 stack des Servers entstehen.
+ Im Gegensatz zu dieser CPU-Last bleiben die Bitraten des Servers konstant.
+\end_layout
+
+\begin_layout Standard
+WIP ERKLAERUNG
 \end_layout
 
 \begin_layout Subsubsection
@@ -1107,6 +1115,40 @@ PROFILING WIP
 
 \begin_layout Subsubsection
 Weitere Aspekte
+\end_layout
+
+\begin_layout Standard
+Bei der CPU-Last ist des Weiteren ein markanter Unterschied zwischen den
+ Ultrakurzzeit- und Kurzzeit-Messungen der Netzwerklast mit Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+ via UDP festzustellen.
+ Der einzige Unterschied zwischen diesen Messungen liegt im Zeitpunkt, an
+ dem die Messung beendet wird.
+ Mehrere Durchläufe der Messungen ergaben das selbe Ergebnis.
+ Zusätzlich wurde sichergestellt, dass sich die Messungen nicht beeinflussen,
+ indem die Abstände zwischen den Messungen vergrössert und die Reihenfolge
+ der Messungen abgeändert wurden, jedoch ohne ein anderes Ergebnis zu erzielen.
+ Bei einer Ultrakurzzeit-Messung des vorhin erwähnten Lasttyps erhält der
+ PRP-1 stack mehr CPU-Zeit (der Engpass durch den Prozessor ist kleiner)
+ und kann somit eine höhere Bitrate erzielen.
+ Diese höhere CPU-Last spiegelt sich in der TX-Bitrate des Clients, der
+ RX-Bitrate des Servers und der daraus resultierenden CPU-Last des Servers
+ wieder.
+ Gründe für den vorhin erwähnten Unterschied konnten aus Zeitgründen nicht
+ ermittelt werden.
+ Ein Profiling des PRP-1 stacks fiel ohne neue Erkenntnisse bezüglich dieses
+ Unterschieds aus und über eine manuelle Systemüberprüfung konnten keine
+ weiteren möglichen Einflüsse festgestellt werden.
+ Eine Differenz bei der Netzwerklast-Generierung durch shck ist auszuschliessen,
+ da für beide Messungen die selben Parameter verwendet werden und bei Ultrakurzz
+eit-Messungen lediglich der Generierungs-Prozess früher per kill-Befehl
+ terminiert wird.
 \end_layout
 
 \begin_layout Standard
@@ -1363,6 +1405,10 @@ Laut standard PRP-Supervision Frames nur wenn beide Interfaces aktiv, dann
  Die an das deaktivierte Interface gesendeten Daten sind für den PRP-1 stack
  gesendet, werden jedoch nicht effektiv vom OS versendet -> korrekte /proc-Stati
 stiken.
+\end_layout
+
+\begin_layout Itemize
+Aging-Einträge werden überschrieben
 \end_layout
 
 \begin_layout Section

@@ -5547,8 +5547,67 @@ Ressourcen-Nutzung, dargestellt mit top (links shck mit -t UDP -s MIN, rechts
 \end_layout
 
 \begin_layout Standard
-Die Resultate dieses Szenarios betragen die Performance-Werte von shck und
- die beanspruchte Netzwerklast, mal mit und mal ohne PRP.
+Die Resultate dieses Szenarios betragen pro Fall die Performance-Werte von
+ shck und die beanspruchte Netzwerklast.
+\end_layout
+
+\begin_layout Paragraph
+Vergleich SAN und DAN
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Des Weiteren findet in diesem Szenario ein Vergleich zwischen SANs und DANs
+ statt, indem folgende Fälle untersucht werden:
+\end_layout
+
+\begin_layout Itemize
+Client SAN sendet an Server SAN
+\begin_inset Newline newline
+\end_inset
+
+Hier wird wie oben beschrieben lediglich das Netzwerk A verwendet und bei
+ beiden Knoten ist der PRP-1 stack deaktiviert.
+\end_layout
+
+\begin_layout Itemize
+Client SAN sendet an Server DAN
+\begin_inset Newline newline
+\end_inset
+
+Der Client hat keinen aktiven PRP-1 stack, ist nur an Netzwerk A angeschlossen
+ und sendet an den Server, bei dem der stack aktiv ist und der sich in beiden
+ Netzwerken befindet.
+\end_layout
+
+\begin_layout Itemize
+Client DAN sendet an Server SAN
+\begin_inset Newline newline
+\end_inset
+
+Der Client sendet über den PRP-1 stack an den Server, auf dem der stack
+ nicht aktiv ist und sich nur im Netzwerk A befindet.
+\end_layout
+
+\begin_layout Itemize
+Client DAN sendet an Server DAN
+\begin_inset Newline newline
+\end_inset
+
+Entspricht dem Ursprungszustand (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Aufbau-der-Testumgebung"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -5742,6 +5801,59 @@ reference "tab:Weitere-Hilfsmittel:-Calnex"
  Dabei bleibt Netzwerk B im ursprünglichen Zustand.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/020_3_scenario_03.svg
+	lyxscale 50
+	scale 50
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+PRP-Netzwerkaufbau mit Calnex Paragon an Interface 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ des Hosts 
+\begin_inset Quotes fld
+\end_inset
+
+srv01
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Paragraph
 Delay in Netzwerk A und Einfluss nicht entfernter Duplikate
 \end_layout
@@ -5823,9 +5935,9 @@ status open
 \begin_inset Tabular
 <lyxtabular version="3" rows="6" columns="3">
 <features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="40col%">
 <column alignment="left" valignment="top" width="20col%">
-<column alignment="left" valignment="top" width="20col%">
-<column alignment="left" valignment="top" width="20col%">
+<column alignment="left" valignment="top" width="10col%">
 <row>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -6033,7 +6145,7 @@ Fälle von Laufzeitunterscheidungen in Form von Delay, erzeugt in Netzwerk
 
 \begin_layout Standard
 \begin_inset Note Note
-status open
+status collapsed
 
 \begin_layout Plain Layout
 Asymmetrie A & B -> zusatzdelay
@@ -6069,6 +6181,11 @@ Anhand dem Störungs-Generator können unterschiedliche, realistische Fälle
  dazu gezwungen ist, Pakete zu verwerfen.
  Des Weiteren können u.a.
  bei Hardwaredefekten fehlerhafte Frames übertragen werden.
+ Diese beiden Fälle (Paketverlust, Übertragungsfehler) werden je mit einer
+ bestimmten Fehlerrate mit dem Störungs-Generator im Netzwerk A erzeugt
+ und gemessen.
+ Somit kann ermittelt werden, wie der PRP-1 stack Paketverluste oder Übertragung
+sfehler handhabt.
 \end_layout
 
 \begin_layout Standard
@@ -6082,11 +6199,11 @@ status open
 \noindent
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="6" columns="3">
+<lyxtabular version="3" rows="9" columns="3">
 <features rotate="0" tabularvalignment="middle">
-<column alignment="left" valignment="top" width="20col%">
-<column alignment="left" valignment="top" width="20col%">
-<column alignment="left" valignment="top" width="20col%">
+<column alignment="left" valignment="middle" width="30col%">
+<column alignment="left" valignment="middle" width="20col%">
+<column alignment="left" valignment="middle" width="10col%">
 <row>
 <cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
@@ -6105,7 +6222,7 @@ Fall
 \begin_layout Plain Layout
 
 \series bold
-Störquelle in Netzwerk A
+Fehlerrate
 \end_layout
 
 \end_inset
@@ -6123,65 +6240,36 @@ Kürzel
 </cell>
 </row>
 <row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+Paketverlust
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+25%
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+P
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6190,56 +6278,27 @@ Kürzel
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
+50%
 \end_layout
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
+Q
 \end_layout
 
 \end_inset
 </cell>
 </row>
 <row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6248,7 +6307,27 @@ Kürzel
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+75%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+R
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
@@ -6257,11 +6336,136 @@ Kürzel
 
 \end_inset
 </cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+S
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Übertragungsfehler
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+25%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+U
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
 \begin_inset Text
 
 \begin_layout Plain Layout
 
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+V
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+75%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+W
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+X
 \end_layout
 
 \end_inset
@@ -7379,6 +7583,404 @@ name "sub:Einluss-von-Offload-Mechanismen"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+In diesem Abschnitt werden die Einflüsse der in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Offload-Mechanismen"
+
+\end_inset
+
+ aufgeführten Offload-Mechanismen ermittelt.
+ 
+\end_layout
+
+\begin_layout Standard
+Folgende Mechanismen werden nicht betrachtet:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes fld
+\end_inset
+
+TCP Segmentation Offload
+\begin_inset Quotes frd
+\end_inset
+
+, weil die in dieser Arbeit generierte Netzwerklast nicht segmentiert wird,
+ sondern die TCP-Pakete total maximal so gross sind, dass sie gerade die
+ maximal erlaubte Grösse eines einzelnen Pakets erfüllen.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes fld
+\end_inset
+
+UDP Fragmentation Offload
+\begin_inset Quotes frd
+\end_inset
+
+, aus dem selben Grund wie bei 
+\begin_inset Quotes fld
+\end_inset
+
+TCP Segmentation Offload
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes fld
+\end_inset
+
+Generic Segmentation Offload
+\begin_inset Quotes frd
+\end_inset
+
+, aus dem selben Grund wie bei 
+\begin_inset Quotes fld
+\end_inset
+
+TCP Segmentation Offload
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes fld
+\end_inset
+
+Generic Recieve Offload
+\begin_inset Quotes frd
+\end_inset
+
+, aus dem selben Grund wie bei 
+\begin_inset Quotes fld
+\end_inset
+
+TCP Segmentation Offload
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes fld
+\end_inset
+
+RX/TX VLAN Acceleration
+\begin_inset Quotes frd
+\end_inset
+
+, da dies lediglich VLAN-Umgebungen betreffen würde, in der hier verwendeten
+ Umgebung jedoch kein VLAN eingesetzt wird.
+ 
+\end_layout
+
+\begin_layout Standard
+In der ursprünglichen Konfiguration (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Aufbau-der-Testumgebung"
+
+\end_inset
+
+) sind jegliche Offload-Mechanismen auf beiden physischen Netzwerk-Interfaces
+ (
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ und 
+\begin_inset Quotes fld
+\end_inset
+
+eth1
+\begin_inset Quotes frd
+\end_inset
+
+) deaktiviert.
+ Mit folgendem Kommando können diese Mechanismen einzeln aktiviert werden:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Plain Layout
+
+ethtool --offload <INTERFACE> <OFFLOAD> on
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hierbei steht <INTERFACE> für das jeweilige Netzwerk-Interface und <OFFLOAD>
+ für den jeweiligen Offload-Mechanismus.
+ In der folgenden Tabelle werden alle betrachteten Offload-Mechanismen inklusive
+ der jeweiligen <OFFLOAD>-Bezeichnung für den vorherigen Befehl und einem
+ Kürzel für die Identifikation der Resultate aufgeführt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="6" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="30col%">
+<column alignment="left" valignment="top" width="20col%">
+<column alignment="left" valignment="top" width="10col%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Offload-Mechanismus
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Bezeichnung für Befehl
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Kürzel
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RX Checksum Offload
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rx
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+R
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+TX Checksum Offload
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+tx
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+T
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Scatter-Gather
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+sg
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+S
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RX ntuple Filters and Actions
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ntuple
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+N
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+RX Hashing Offload
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+rxhash
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+H
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Offload-Mechanismen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Jeder Mechanismus wird auf beiden physischen Netzwerk-Interfaces beider
+ Hosts (Client und Server) einzeln bzw.
+ nicht in Kombination mit anderen Mechanismen aktiviert.
+\end_layout
+
+\begin_layout Standard
+Diese Mechanismen sollen die CPU erleichtern, indem je nach Mechanismus
+ bestimmte Aufgaben direkt in der NIC anstatt dem Prozessor getätigt werden.
+ Demnach sollte der Engpass durch den Prozessor bei den betroffenen Netzwerklast
+en aufgelockert werden, was in einer höheren RX-/TX-Bitrate resultieren
+ würde.
 \end_layout
 
 \begin_layout Standard

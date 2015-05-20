@@ -137,7 +137,7 @@ name "sec:Szenario-02:-Performance-1"
 \end_layout
 
 \begin_layout Subsection
-Ohne PRP
+Client SAN sendet an Server SAN
 \end_layout
 
 \begin_layout Subsubsection
@@ -2273,7 +2273,15 @@ eth0
 \end_layout
 
 \begin_layout Subsection
-Mit PRP
+Client SAN sendet an Server DAN
+\end_layout
+
+\begin_layout Subsection
+Client DAN sendet an Server SAN
+\end_layout
+
+\begin_layout Subsection
+Client DAN sendet an Server DAN
 \end_layout
 
 \begin_layout Subsubsection
