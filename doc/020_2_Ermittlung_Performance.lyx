@@ -1022,14 +1022,14 @@ Frames mit minimaler Grösse
 \end_inset
 
 Ein Frame mit minimaler Grösse nimmt bei der Übertragung effektiv 84 Byte
- ein (7 Byte Präambel + 1 Byte SFD + 64 Byte Ethernet Frame + 12 Byte IFG),
- was 672 Bit beträgt.
+ ein (7 Byte Präambel + 1 Byte SFD + 64 Byte Ethernet Frame + 6 Byte RCT
+ + 12 Byte IFG), was 720 Bit beträgt.
 \end_layout
 
 \begin_layout Standard
 \noindent
 \align center
-\begin_inset Formula $Anzahl\,Frames/s=\frac{100'000'000\,Bit/s}{672\,Bit}=148'809.52381\,Frames/s\approx148'810\,Frames/s$
+\begin_inset Formula $Anzahl\,Frames/s=\frac{100'000'000\,Bit/s}{720\,Bit}=138'888.88888\,Frames/s\approx138'889\,Frames/s$
 \end_inset
 
 
@@ -1037,14 +1037,14 @@ Ein Frame mit minimaler Grösse nimmt bei der Übertragung effektiv 84 Byte
 
 \begin_layout Standard
 Multipliziert man diese Anzahl an Frames lediglich mit der Grösse eines
- minimalen Ethernet Frames (64 Byte = 512 Bit), erhält man die effektive
- Bitrate:
+ minimalen Ethernet Frames inklusive RCT (70 Byte = 560 Bit), erhält man
+ die effektive Bitrate:
 \end_layout
 
 \begin_layout Standard
 \noindent
 \align center
-\begin_inset Formula $148'810\,Frames/s*368\,Bit=76'190'720\,Bit/s\approx76.2\,MBit/s$
+\begin_inset Formula $138'889\,Frames/s*560\,Bit=77'777'840\,Bit/s\approx77.8\,MBit/s$
 \end_inset
 
 
@@ -1053,7 +1053,7 @@ Multipliziert man diese Anzahl an Frames lediglich mit der Grösse eines
 \begin_layout Standard
 Somit liegt die maximale Bandbreite bei einer Nutzlast, die lediglich aus
  minimal grossen Frames / Paketen besteht bei ca.
- 76.2 MBit/s.
+ 77.8 MBit/s.
 \end_layout
 
 \begin_layout Standard
@@ -1081,8 +1081,8 @@ name "par:Frames-mit-maximaler"
 \end_inset
 
 Ein Frame mit maximaler Grösse nimmt effektiv 1538 Byte ein (7 Byte Präambel
- + 1 Byte SFD + 1518 Byte Ethernet Frame + 12 Byte IFG), was 12'304 Bit
- beträgt.
+ + 1 Byte SFD + 1518 Byte Ethernet Frame (inklusive 6 Byte RCT) + 12 Byte
+ IFG), was 12'304 Bit beträgt.
 \end_layout
 
 \begin_layout Standard
@@ -3576,7 +3576,7 @@ reference "sub:Theoretische-Grenzwerte"
 \end_layout
 
 \begin_layout Standard
-Mit der nachfolgenden Grafik wird aufgezeigt, dass der Messfeher (roter
+Mit der nachfolgenden Grafik wird illulstriert, dass der Messfehler (roter
  Abschnitt) immer eine ähnliche Länge aufweist, unabhängig von der Länge
  des Messintervalls.
 \end_layout
@@ -3594,7 +3594,7 @@ status open
 \begin_inset Graphics
 	filename _diagrams/meas_overhead.svg
 	lyxscale 50
-	scale 40
+	scale 35
 
 \end_inset
 
@@ -3639,7 +3639,7 @@ Leerlauf
 \end_layout
 
 \begin_layout Standard
-Die Messung der Context-Switches wrude mit dem Tool 
+Die Messung der Context-Switches wurde mit dem Tool 
 \begin_inset Quotes fld
 \end_inset
 
@@ -3661,7 +3661,18 @@ perf
 \end_layout
 
 \begin_layout Standard
-Befehl für das Erstellen eines Reports
+Es sei an dieser Stelle erwähnt, dass den vorhergehenden Ausführungen zufolge
+ auch der Effekt auftritt, dass die Schwankungsbänder bei den Steady-State-Messu
+ngen breiter sind, da dort ein Messintervall von 0.1 s verwendet wurde.
+ Bei den Testszenarien (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Szenarien"
+
+\end_inset
+
+) wird jeweils ein Messintervall von 1 s gewählt, deshalb sind dort in den
+ gemessenen Bitraten wesentlich schmalere Schwankungen ersichtlich.
 \end_layout
 
 \begin_layout Subsection
