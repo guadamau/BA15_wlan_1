@@ -5754,6 +5754,13 @@ reference "sec:Szenario-02:-Performance"
 \begin_layout Subsubsection
 Szenario 03: Effekt von Laufzeitunterscheidungen zwischen Netzwerk A und
  B / Einfluss nicht entfernter Duplikate auf Funktion und Performance
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Szenario-03:-Effekt"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7684,6 +7691,44 @@ RX/TX VLAN Acceleration
  
 \end_layout
 
+\begin_layout Itemize
+\begin_inset Quotes fld
+\end_inset
+
+RX ntuple Filters and Actions
+\begin_inset Quotes frd
+\end_inset
+
+, weil der Mechanismus nicht aktiviert werden kann (
+\begin_inset Quotes fld
+\end_inset
+
+Cannot change ...
+\begin_inset Quotes frd
+\end_inset
+
+-Fehlermeldung beim Versuch, den Mechanismus ein-/auszuschalten).
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes fld
+\end_inset
+
+RX Hashing Offload
+\begin_inset Quotes frd
+\end_inset
+
+, aus dem selben Grund wie bei 
+\begin_inset Quotes fld
+\end_inset
+
+RX ntuple Filters and Actions
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
 \begin_layout Standard
 In der ursprünglichen Konfiguration (siehe Kapitel 
 \begin_inset CommandInset ref
@@ -7760,7 +7805,7 @@ status open
 \noindent
 \align center
 \begin_inset Tabular
-<lyxtabular version="3" rows="6" columns="3">
+<lyxtabular version="3" rows="4" columns="3">
 <features rotate="0" tabularvalignment="middle">
 <column alignment="left" valignment="top" width="30col%">
 <column alignment="left" valignment="top" width="20col%">
@@ -7882,64 +7927,6 @@ sg
 
 \begin_layout Plain Layout
 S
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-RX ntuple Filters and Actions
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-ntuple
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-N
-\end_layout
-
-\end_inset
-</cell>
-</row>
-<row>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-RX Hashing Offload
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-rxhash
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-H
 \end_layout
 
 \end_inset

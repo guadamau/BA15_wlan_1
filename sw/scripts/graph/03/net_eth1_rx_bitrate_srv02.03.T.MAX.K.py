@@ -11,4 +11,8 @@ set key outside right center box
 unset colorbox
 set palette file '/home/guadagnini/BA15_wlan_1/sw/scripts/graph/sst.gpf'
 plot n=0, \
+n=n+1, "/home/guadagnini/BA15_wlan_1/sw/scripts/graph/03/srv02_03.T.MAX.K_net_eth1_rx_bitrate_E" using 1:2:0 title "03.T.MAX.K.E" lc palette frac (n-1)/10.0 lw 3 lt 2 w l, \
+n=n+1, "/home/guadagnini/BA15_wlan_1/sw/scripts/graph/03/srv02_03.T.MAX.K_net_eth1_rx_bitrate_D" using 1:2:0 title "03.T.MAX.K.D" lc palette frac (n-1)/10.0 lw 3 lt 2 w l, \
+n=n+1, "/home/guadagnini/BA15_wlan_1/sw/scripts/graph/03/srv02_03.T.MAX.K_net_eth1_rx_bitrate_C" using 1:2:0 title "03.T.MAX.K.C" lc palette frac (n-1)/10.0 lw 3 lt 2 w l, \
+n=n+1, "/home/guadagnini/BA15_wlan_1/sw/scripts/graph/03/srv02_03.T.MAX.K_net_eth1_rx_bitrate_B" using 1:2:0 title "03.T.MAX.K.B" lc palette frac (n-1)/10.0 lw 3 lt 2 w l, \
 n=n+1, "/home/guadagnini/BA15_wlan_1/sw/scripts/graph/03/srv02_03.T.MAX.K_net_eth1_rx_bitrate_A" using 1:2:0 title "03.T.MAX.K.A" lc palette frac (n-1)/10.0 lw 3 lt 2 w l, \

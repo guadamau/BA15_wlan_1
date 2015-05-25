@@ -18,6 +18,10 @@ for s in ${SEARCHSTR[@]}; do
         POSITIONOFTESTING=$(echo $i | grep -b -o 'testing' | cut -d":" -f1)
         POSITIONOFLOADDESC=$(echo $i | grep -b -o '[0-9][0-9]\.[UT]\.M[IA][NX]\.[UKL]' | cut -d":" -f1)
         POSITIONOFLOADDESCINTSEC=$(echo $i | grep -b -o '/*.eth0/' | cut -d":" -f1)
+        if [ -z $POSITIONOFLOADDESCINTSEC ]
+        then
+            POSITIONOFLOADDESCINTSEC=$(echo $i | grep -b -o '/*.desc/' | cut -d":" -f1)
+        fi
         SERVER=$(echo ${FILEPATH:POSITIONOFTESTING-6:5})
         SCENARIODESC=$(echo ${FILEPATH:POSITIONOFTESTING+8} | cut -d"/" -f1)
 
