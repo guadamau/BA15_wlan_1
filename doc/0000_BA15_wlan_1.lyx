@@ -14,6 +14,9 @@
 % Package fuer Gesamtseitenzahl
 \usepackage{lastpage}
 
+% truncate header title
+\usepackage[fit]{truncate}
+
 % Kopf- und Fusszeilendefinition
 \lhead{\includegraphics[scale=0.9]{_img/InES_small.png}}
 \rhead{\nouppercase{\rightmark}}
@@ -238,7 +241,7 @@ width=.8\textwidth
 \usepackage{esint}
 \usepackage{mathtools}
 \end_preamble
-\options bibliography=totocnumbered,listof=totocnumbered,numbers=noenddot
+\options bibliography=totocnumbered,listof=totocnumbered,numbers=noenddot,headings=optiontoheadandtoc
 \use_default_options true
 \maintain_unincluded_children false
 \language ngerman

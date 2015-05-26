@@ -78,7 +78,7 @@
 \begin_body
 
 \begin_layout Subsection
-Szenarien
+Einleitung zu den nachfolgenden Szenarien
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Szenarien"
@@ -380,9 +380,22 @@ Darauf wird ein Vergleich zwischen den Netzwerkströmen 1 & 4, 2 & 5 und
 
 \end_layout
 
-\begin_layout Subsubsection
-Erörterung signifikanter Resultat-Parameter: UDP / Ethernet Vergleich &
- Notwendigkeit der Langzeit-Tests
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Erörterung signifikanter Resultat-Parameter}]{Erörterung
+ signifikanter Resultat-Parameter: UDP / Ethernet Vergleich & Notwendigkeit
+ der Langzeit-Tests}
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Erörterung-signifikanter-Resulta"
@@ -473,18 +486,11 @@ reference "par:Bezeichnung-der-Datenströme"
  aufgeführt.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 CPU-Belastung
 \end_layout
 
 \begin_layout Standard
-\begin_inset space \hfill{}
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
 Zu beachten ist, dass in der folgenden Tabelle die Ergebnisse einer Periode
  von 1s abstammen.
  Dies bedeutet, dass z.B.
@@ -2108,18 +2114,11 @@ UDP / Ethernet Vergleich: CPU-Last, System- / Usertime
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 Netzwerk-Belastung
 \end_layout
 
 \begin_layout Standard
-\begin_inset space \hfill{}
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
 Wie auch bei der CPU-Belastung stammen in der folgenden Tabelle die Ergebnisse
  einer Periode von 1s ab.
  Aus Platzgründen werden hier lediglich die durschnittlichen Werte betrachtet.
@@ -3875,24 +3874,17 @@ UDP / Ethernet Vergleich: RX- / TX-Bitrate pro Netzwerkinterface
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 Interpretation: Auswahl der signifikanten Resultat-Parameter
 \end_layout
 
 \begin_layout Standard
-\begin_inset space \hfill{}
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
 Es stellt sich heraus, dass die gemessenen Werte innerhalb den selben Lasttypen
  sehr ähnlich ausfallen.
  
 \end_layout
 
-\begin_layout Subparagraph
+\begin_layout Paragraph
 Lasttyp 
 \begin_inset Quotes fld
 \end_inset
@@ -3912,6 +3904,13 @@ name "par:Lasttyp-MIN"
 \end_layout
 
 \begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
 Bezüglich der CPU-Belastung sticht heraus, dass sich Ethernet- und UDP-Netzwerkl
 asten innerhalb des Lasttyps 
 \begin_inset Quotes fld
@@ -3947,7 +3946,7 @@ Dadurch, dass beim Versand über UDP-Sockets das Betriebssystem häufiger
  gegenüber Ethernet-Netzwerklasten.
 \end_layout
 
-\begin_layout Subparagraph
+\begin_layout Paragraph
 Lasttyp 
 \begin_inset Quotes fld
 \end_inset
@@ -3960,6 +3959,13 @@ MAX
 \end_layout
 
 \begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
 Innerhalb dieses Lasttyps sind kaum Unterschiede zwischen den Übermittlungsarten
  festzustellen, was sich auch über die Zeitspannen des selben Lasttyps weiter
  zieht.
@@ -3975,11 +3981,18 @@ reference "sub:Theoretische-Grenzwerte"
  anstelle der CPU der Engpass darzustellen scheint.
 \end_layout
 
-\begin_layout Subparagraph
+\begin_layout Paragraph
 Zeitspannen
 \end_layout
 
 \begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
 Innerhalb einer Übertragungsart und eines Lasttyps ist über die drei Zeitspannen
  keine signifikante Änderung festzustellen (was u.a.
  auch an den schmalen Schwankungsbändern in Kapitel 
@@ -4004,7 +4017,7 @@ Da sich Übertragungen via TCP von denen per UDP lediglich im Socket und
  sind.
 \end_layout
 
-\begin_layout Subparagraph
+\begin_layout Paragraph
 Fazit
 \begin_inset CommandInset label
 LatexCommand label
@@ -4016,6 +4029,13 @@ name "par:Fazit"
 \end_layout
 
 \begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
 Aufgrund den vorhin ermittelten Werten genügt es den UDP-Verkehr zu analysieren
  und daraus Ergebnisse für den Layer-2-Datenverkehr abzuleiten, welcher
  in den nächsten Szenarien nicht in Betracht gezogen wird.
@@ -4905,7 +4925,7 @@ PRP_Supervision
  würde.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Einfluss von TCP-Window-Size
 \begin_inset CommandInset label
 LatexCommand label
@@ -5262,7 +5282,7 @@ Schlussendlich kann man sagen, dass die TCP-Window-Size kein limitierender
  Netzwerkanbindung.
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Szenario 01: Performance im PRP-Netzwerk
 \begin_inset CommandInset label
 LatexCommand label
@@ -5427,7 +5447,7 @@ reference "sec:Szenario-01:-Performance"
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Szenario 02: Performance ohne PRP
 \begin_inset CommandInset label
 LatexCommand label
@@ -5533,18 +5553,11 @@ Die Resultate dieses Szenarios betragen pro Fall die Performance-Werte von
  shck und die beanspruchte Netzwerklast.
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 Vergleich SAN und DAN
 \end_layout
 
 \begin_layout Standard
-\begin_inset space \hfill{}
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
 Des Weiteren findet in diesem Szenario ein Vergleich zwischen SANs und DANs
  statt, indem folgende Fälle untersucht werden:
 \end_layout
@@ -5733,9 +5746,26 @@ reference "sec:Szenario-02:-Performance"
 
 \end_layout
 
-\begin_layout Subsubsection
-Szenario 03: Effekt von Laufzeitunterscheidungen zwischen Netzwerk A und
- B / Einfluss nicht entfernter Duplikate auf Funktion und Performance
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 03: Effekt von Laufzeitunterscheidungen / 
+\backslash
+
+\backslash
+Einfluss nicht entfernter Duplikate}]{Szenario 03: Effekt von Laufzeitunterschei
+dungen zwischen Netzwerk A und B / Einfluss nicht entfernter Duplikate auf
+ Funktion und Performance}
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Szenario-03:-Effekt"
@@ -5759,7 +5789,7 @@ reference "sec:Aufbau-der-Testumgebung"
 
 \end_inset
 
- geschilderten Aufbau, bis auf eine Ausnahme: Am Netzwerk-interface 
+ geschilderten Aufbau, bis auf eine Ausnahme: Am Netzwerk-Interface 
 \begin_inset Quotes fld
 \end_inset
 
@@ -5843,18 +5873,18 @@ srv01
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 Delay in Netzwerk A und Einfluss nicht entfernter Duplikate
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Delay-in-Netzwerk/Einfluss nicht entf Dupl"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
-\begin_inset space \hfill{}
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
 Laut PRP Standard 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -6151,18 +6181,11 @@ Interessanter fall: schwankender delay -> mal netz schneller und langsam
 
 \end_layout
 
-\begin_layout Paragraph
+\begin_layout Subsubsection
 Störquellen in Netzwerk A
 \end_layout
 
 \begin_layout Standard
-\begin_inset space \hfill{}
-\end_inset
-
-
-\begin_inset Newline newline
-\end_inset
-
 Anhand dem Störungs-Generator können unterschiedliche, realistische Fälle
  wie z.B.
  Paketverlust simuliert werden.
@@ -6626,7 +6649,7 @@ reference "sec:Szenario-03:-Effekt"
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Szenario 04: Zeitweiser Ausfall eines Netzwerkpfades 
 \begin_inset CommandInset label
 LatexCommand label
@@ -7235,7 +7258,7 @@ reference "sec:Szenario-04:-Zeitweiser"
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Szenario 05: Abhängigkeit vom verwendeten Protokoll
 \end_layout
 
@@ -7413,13 +7436,210 @@ reference "sub:Interpretation"
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Szenario 06: Auswirkungen, wenn Frames out-of-sequence ankommen
 \end_layout
 
 \begin_layout Standard
-Out of sequence erzwingen (Langes zuerst, dann kurzes -> kurzes kommt vor
- langem an)
+In diesem Szenario besteht derselbe Aufbau wie in Szenario 03 (siehe Kapitel
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Szenario-03:-Effekt"
+
+\end_inset
+
+), bei dem am Netzwerk-Interface 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ des Hosts 
+\begin_inset Quotes fld
+\end_inset
+
+srv01
+\begin_inset Quotes frd
+\end_inset
+
+ ein Calnex Paragon Störungs-Generator (siehe Tabelle 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:Weitere-Hilfsmittel:-Calnex"
+
+\end_inset
+
+) zwischen dem Interface und dem Switch des Netzwerks A dazwischen geschlossen
+ wird.
+\end_layout
+
+\begin_layout Standard
+So kann bewirkt werden, dass die Pakete über Netzwerk A in einer anderen
+ Folge als über Netzwerk B ankommen.
+ Diese Variation der Paketabfolge kann wie in Szenario 03 dazu führen, dass
+ Duplikate vom PRP-1 stack nicht mehr erkannt werden (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Delay-in-Netzwerk/Einfluss nicht entf Dupl"
+
+\end_inset
+
+).
+ 
+\end_layout
+
+\begin_layout Standard
+Mit dem Störungs-Generator kann die Abfolge der Pakete in Netzwerk A zu
+ bestimmten Raten abgeändert werden.
+ So können die Auswirkungen auf den PRP-1 stack, wenn Frames out-of-sequence
+ ankommen, ermittelt werden.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="middle" width="20col%">
+<column alignment="left" valignment="middle" width="10col%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Rate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Kürzel
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+25%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+B
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+75%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+D
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fälle von Paket-Permutationen, erzeugt in Netzwerk A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7563,7 +7783,7 @@ reference "sec:Szenario-06:-Auswirkungen,"
 
 \end_layout
 
-\begin_layout Subsubsection
+\begin_layout Subsection
 Szenario 07: Einluss von Offload-Mechanismen
 \begin_inset CommandInset label
 LatexCommand label
