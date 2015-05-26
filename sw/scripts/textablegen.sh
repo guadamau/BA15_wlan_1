@@ -44,6 +44,8 @@ for i in $(find ~/BA_result_inbox -name '*meas_overall*' | sort -r); do
             if [ ! -z $POSITIONOFLOADDESCINTSEC ]
             then
                 LOADDESCTABLE=${LOADDESC}.$(echo ${FILEPATH:(POSITIONOFLOADDESCINTSEC-1):1})
+            else
+                LOADDESCTABLE=${LOADDESC}
             fi
                 case ${f} in
                     'cpu')
@@ -96,12 +98,12 @@ for i in $(find ~/BA_result_inbox -name '*meas_overall*' | sort -r); do
                             IF1AVG=$(cat ${FILEPATH} | grep 'Average' | head -n 8 | tail -n 1 | tr -s ' ' | cut -d' ' -f3)
                             IF1MAX=$(cat ${FILEPATH} | grep 'Max' | head -n 8 | tail -n 1 | tr -s ' ' | cut -d' ' -f3)
                
-                            if [ ${IF0AVG} != "0.00" ]
-                            then
+#                            if [ ${IF0AVG} != "0.00" ]
+#                            then
                                 echo '\hline ' >> ${TEXFILE}
                                 echo '{\tiny{}'"${LOADDESCTABLE}"'} & \multicolumn{1}{|r|}{\tiny{}'"${PRPMIN}"'} & \multicolumn{1}{|r|}{\tiny{}'"${PRPAVG}"'} & \multicolumn{1}{|r|}{\tiny{}'"${PRPMAX}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF0MIN}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF0AVG}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF0MAX}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF1MIN}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF1AVG}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF1MAX}"'}\tabularnewline' >> ${TEXFILE}
                                 echo '\hline ' >> ${TEXFILE}
-                            fi
+#                            fi
                             ;;
                         'tx')
                             if [ ! -f $TEXFILE ]
@@ -127,12 +129,12 @@ for i in $(find ~/BA_result_inbox -name '*meas_overall*' | sort -r); do
                             IF1AVG=$(cat ${FILEPATH} | grep 'Average' | head -n 8 | tail -n 1 | tr -s ' ' | cut -d' ' -f7)
                             IF1MAX=$(cat ${FILEPATH} | grep 'Max' | head -n 8 | tail -n 1 | tr -s ' ' | cut -d' ' -f9)
                
-                            if [ ${IF0AVG} != "0.00" ]
-                            then
+#                            if [ ${IF0AVG} != "0.00" ]
+#                            then
                                 echo '\hline ' >> ${TEXFILE}
                                 echo '{\tiny{}'"${LOADDESCTABLE}"'} & \multicolumn{1}{|r|}{\tiny{}'"${PRPMIN}"'} & \multicolumn{1}{|r|}{\tiny{}'"${PRPAVG}"'} & \multicolumn{1}{|r|}{\tiny{}'"${PRPMAX}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF0MIN}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF0AVG}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF0MAX}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF1MIN}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF1AVG}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF1MAX}"'}\tabularnewline' >> ${TEXFILE}
                                 echo '\hline ' >> ${TEXFILE}
-                            fi
+ #                           fi
                             ;;
                 esac
         

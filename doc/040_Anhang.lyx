@@ -93,6 +93,22 @@ markright{Teil IV: Anhang}
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+appendix
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Chapter
 Messresultate
 \begin_inset CommandInset label
@@ -163,7 +179,7 @@ shck-Client
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -181,8 +197,8 @@ filename "_tex/02_noPRP/cpusrv01.tex"
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 02 auf shck-Client ohne PRP: CPU-Last, System- / Usertime
- der shck-Applikation
+Resultat Szenario 02 auf shck-Client ohne PRP (SAN sendet an SAN): CPU-Last,
+ System- / Usertime der shck-Applikation
 \end_layout
 
 \end_inset
@@ -200,7 +216,7 @@ Resultat Szenario 02 auf shck-Client ohne PRP: CPU-Last, System- / Usertime
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -219,7 +235,8 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 02 auf shck-Client ohne PRP: CPU-Last der shck-Applikation
+Resultat Szenario 02 auf shck-Client ohne PRP (SAN sendet an SAN): CPU-Last
+ der shck-Applikation
 \end_layout
 
 \end_inset
@@ -237,7 +254,7 @@ Resultat Szenario 02 auf shck-Client ohne PRP: CPU-Last der shck-Applikation
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -576,7 +593,8 @@ Max
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 02 auf shck-Client ohne PRP: RX-Bitrate [MBit/s]
+Resultat Szenario 02 auf shck-Client ohne PRP (SAN sendet an SAN): RX-Bitrate
+ [MBit/s]
 \end_layout
 
 \end_inset
@@ -594,7 +612,7 @@ Resultat Szenario 02 auf shck-Client ohne PRP: RX-Bitrate [MBit/s]
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -613,7 +631,8 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 02 auf shck-Client ohne PRP: RX-Bitrate auf 
+Resultat Szenario 02 auf shck-Client ohne PRP (SAN sendet an SAN): RX-Bitrate
+ auf 
 \begin_inset Quotes fld
 \end_inset
 
@@ -639,7 +658,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1162,7 +1181,8 @@ Max
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 02 auf shck-Client ohne PRP: TX-Bitrate [MBit/s]
+Resultat Szenario 02 auf shck-Client ohne PRP (SAN sendet an SAN): TX-Bitrate
+ [MBit/s]
 \end_layout
 
 \end_inset
@@ -1180,7 +1200,7 @@ Resultat Szenario 02 auf shck-Client ohne PRP: TX-Bitrate [MBit/s]
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1199,7 +1219,8 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 02 auf shck-Client ohne PRP: TX-Bitrate auf 
+Resultat Szenario 02 auf shck-Client ohne PRP (SAN sendet an SAN): TX-Bitrate
+ auf 
 \begin_inset Quotes fld
 \end_inset
 
@@ -1229,7 +1250,7 @@ shck-Server
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1247,8 +1268,8 @@ filename "_tex/02_noPRP/cpusrv02.tex"
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 02 auf shck-Server ohne PRP: CPU-Last, System- / Usertime
- der shck-Applikation
+Resultat Szenario 02 auf shck-Server ohne PRP (SAN sendet an SAN): CPU-Last,
+ System- / Usertime der shck-Applikation
 \end_layout
 
 \end_inset
@@ -1266,7 +1287,7 @@ Resultat Szenario 02 auf shck-Server ohne PRP: CPU-Last, System- / Usertime
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1285,7 +1306,8 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 02 auf shck-Server ohne PRP: CPU-Last der shck-Applikation
+Resultat Szenario 02 auf shck-Server ohne PRP (SAN sendet an SAN): CPU-Last
+ der shck-Applikation
 \end_layout
 
 \end_inset
@@ -1303,7 +1325,7 @@ Resultat Szenario 02 auf shck-Server ohne PRP: CPU-Last der shck-Applikation
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1826,7 +1848,8 @@ Max
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 02 auf shck-Server ohne PRP: RX-Bitrate [MBit/s]
+Resultat Szenario 02 auf shck-Server ohne PRP (SAN sendet an SAN): RX-Bitrate
+ [MBit/s]
 \end_layout
 
 \end_inset
@@ -1844,7 +1867,7 @@ Resultat Szenario 02 auf shck-Server ohne PRP: RX-Bitrate [MBit/s]
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1863,7 +1886,8 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 02 auf shck-Server ohne PRP: RX-Bitrate auf 
+Resultat Szenario 02 auf shck-Server ohne PRP (SAN sendet an SAN): RX-Bitrate
+ auf 
 \begin_inset Quotes fld
 \end_inset
 
@@ -1889,7 +1913,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2228,7 +2252,8 @@ Max
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 02 auf shck-Server ohne PRP: TX-Bitrate [MBit/s]
+Resultat Szenario 02 auf shck-Server ohne PRP (SAN sendet an SAN): TX-Bitrate
+ [MBit/s]
 \end_layout
 
 \end_inset
@@ -2246,7 +2271,7 @@ Resultat Szenario 02 auf shck-Server ohne PRP: TX-Bitrate [MBit/s]
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2265,7 +2290,8 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 02 auf shck-Server ohne PRP: TX-Bitrate auf 
+Resultat Szenario 02 auf shck-Server ohne PRP (SAN sendet an SAN): TX-Bitrate
+ auf 
 \begin_inset Quotes fld
 \end_inset
 
@@ -2307,7 +2333,7 @@ shck-Client
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2325,8 +2351,8 @@ filename "_tex/02_PRP/cpusrv01.tex"
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 02 auf shck-Client mit PRP: CPU-Last, System- / Usertime
- der shck-Applikation
+Resultat Szenario 02 auf shck-Client mit PRP (DAN sendet an DAN): CPU-Last,
+ System- / Usertime der shck-Applikation
 \end_layout
 
 \end_inset
@@ -2344,7 +2370,7 @@ Resultat Szenario 02 auf shck-Client mit PRP: CPU-Last, System- / Usertime
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2363,7 +2389,8 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 02 auf shck-Client mit PRP: CPU-Last der shck-Applikation
+Resultat Szenario 02 auf shck-Client mit PRP (DAN sendet an DAN): CPU-Last
+ der shck-Applikation
 \end_layout
 
 \end_inset
@@ -2381,7 +2408,7 @@ Resultat Szenario 02 auf shck-Client mit PRP: CPU-Last der shck-Applikation
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2399,7 +2426,8 @@ filename "_tex/02_PRP/rxsrv01.tex"
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 02 auf shck-Client mit PRP: RX-Bitrate [MBit/s]
+Resultat Szenario 02 auf shck-Client mit PRP (DAN sendet an DAN): RX-Bitrate
+ [MBit/s]
 \end_layout
 
 \end_inset
@@ -2417,7 +2445,7 @@ Resultat Szenario 02 auf shck-Client mit PRP: RX-Bitrate [MBit/s]
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2436,7 +2464,8 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 02 auf shck-Client mit PRP: RX-Bitrate auf 
+Resultat Szenario 02 auf shck-Client mit PRP (DAN sendet an DAN): RX-Bitrate
+ auf 
 \begin_inset Quotes fld
 \end_inset
 
@@ -2462,7 +2491,7 @@ prp1
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2480,7 +2509,8 @@ filename "_tex/02_PRP/txsrv01.tex"
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 02 auf shck-Client mit PRP: TX-Bitrate [MBit/s]
+Resultat Szenario 02 auf shck-Client mit PRP (DAN sendet an DAN): TX-Bitrate
+ [MBit/s]
 \end_layout
 
 \end_inset
@@ -2498,7 +2528,7 @@ Resultat Szenario 02 auf shck-Client mit PRP: TX-Bitrate [MBit/s]
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2517,7 +2547,8 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 02 auf shck-Client mit PRP: TX-Bitrate auf 
+Resultat Szenario 02 auf shck-Client mit PRP (DAN sendet an DAN): TX-Bitrate
+ auf 
 \begin_inset Quotes fld
 \end_inset
 
@@ -2547,7 +2578,7 @@ shck-Server
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2565,8 +2596,8 @@ filename "_tex/02_PRP/cpusrv02.tex"
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 02 auf shck-Server mit PRP: CPU-Last, System- / Usertime
- der shck-Applikation
+Resultat Szenario 02 auf shck-Server mit PRP (DAN sendet an DAN): CPU-Last,
+ System- / Usertime der shck-Applikation
 \end_layout
 
 \end_inset
@@ -2584,7 +2615,7 @@ Resultat Szenario 02 auf shck-Server mit PRP: CPU-Last, System- / Usertime
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2603,7 +2634,8 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 02 auf shck-Server mit PRP: CPU-Last der shck-Applikation
+Resultat Szenario 02 auf shck-Server mit PRP (DAN sendet an DAN): CPU-Last
+ der shck-Applikation
 \end_layout
 
 \end_inset
@@ -2621,7 +2653,7 @@ Resultat Szenario 02 auf shck-Server mit PRP: CPU-Last der shck-Applikation
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2639,7 +2671,8 @@ filename "_tex/02_PRP/rxsrv02.tex"
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 02 auf shck-Server mit PRP: RX-Bitrate [MBit/s]
+Resultat Szenario 02 auf shck-Server mit PRP (DAN sendet an DAN): RX-Bitrate
+ [MBit/s]
 \end_layout
 
 \end_inset
@@ -2657,7 +2690,7 @@ Resultat Szenario 02 auf shck-Server mit PRP: RX-Bitrate [MBit/s]
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2676,7 +2709,8 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 02 auf shck-Server mit PRP: RX-Bitrate auf 
+Resultat Szenario 02 auf shck-Server mit PRP (DAN sendet an DAN): RX-Bitrate
+ auf 
 \begin_inset Quotes fld
 \end_inset
 
@@ -2702,7 +2736,7 @@ prp1
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2720,7 +2754,8 @@ filename "_tex/02_PRP/txsrv02.tex"
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 02 auf shck-Server mit PRP: TX-Bitrate [MBit/s]
+Resultat Szenario 02 auf shck-Server mit PRP (DAN sendet an DAN): TX-Bitrate
+ [MBit/s]
 \end_layout
 
 \end_inset
@@ -2738,7 +2773,7 @@ Resultat Szenario 02 auf shck-Server mit PRP: TX-Bitrate [MBit/s]
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2757,7 +2792,8 @@ status collapsed
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 02 auf shck-Server mit PRP: TX-Bitrate auf 
+Resultat Szenario 02 auf shck-Server mit PRP (DAN sendet an DAN): TX-Bitrate
+ auf 
 \begin_inset Quotes fld
 \end_inset
 
@@ -2780,10 +2816,26 @@ prp1
 
 \begin_layout Section
 Szenario 03: Effekt von Laufzeitunterscheidungen zwischen Netzwerk A und
- B
+ B / Einfluss nicht entfernter Duplikate auf Funktion und Performance
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Szenario-03:-Effekt-1"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+chaptermark{Szenario 03: Effekt von Laufzeitunterscheidungen}
+\end_layout
 
 \end_inset
 

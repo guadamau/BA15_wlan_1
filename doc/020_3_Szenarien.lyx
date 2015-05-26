@@ -4845,28 +4845,10 @@ eth1
 RX-Bitrate (Download) [MBit/s] (jeweils Minimum, Durchschnitt und Maximum)
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Wird nichts empfangen bzw.
- beträgt die RX-Bitrate konstant 0.00 (Beispiel: UDP-Traffic-Generierung
- betrachtet auf sendendem shck-Client auf PRP-Netzwerk-Interface), so wird
- dieses Merkmal für die entsprechende Netzwerklast nicht aufgeführt.
-\end_layout
-
-\end_deeper
 \begin_layout Itemize
 TX-Bitrate (Download) [MBit/s] (jeweils Minimum, Durchschnitt und Maximum)
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Wird nichts versendet bzw.
- beträgt die TX-Bitrate konstant 0.00 (Beispiel: UDP-Traffic-Generierung
- betrachtet auf empfangendem shck-Server auf PRP-Netzwerk-Interface), so
- wird dieses Merkmal für die entsprechende Netzwerklast nicht aufgeführt.
-\end_layout
-
-\end_deeper
 \end_deeper
 \begin_layout Standard
 Bei der Netzwerkbelastung sind in einer PRP-Umgebung die RX-/TX-Bitraten
