@@ -232,6 +232,11 @@ width=.8\textwidth
 \addplot+[darkblue!20!black,fill=darkblue!80!white,hist={data=x}] file {#1}; 
 \end{axis} 
 \end{tikzpicture}}
+
+% Math packages
+\usepackage{amsmath}
+\usepackage{esint}
+\usepackage{mathtools}
 \end_preamble
 \options bibliography=totocnumbered,listof=totocnumbered,numbers=noenddot
 \use_default_options true

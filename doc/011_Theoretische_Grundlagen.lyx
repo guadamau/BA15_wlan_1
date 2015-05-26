@@ -706,12 +706,24 @@ name "sub:Frame-Duplikaten"
 
 \begin_layout Standard
 Bei der Handhabung von Frame-Duplikaten sind zwei Aspekte von zentraler
- Beteutung, die genauer betrachtet werden müssen.
+ Bedeutung.
  
 \end_layout
 
 \begin_layout Enumerate
-Ein neues Frame trifft ein.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Duplikaterkennung:}
+\end_layout
+
+\end_inset
+
+ Ein neues Frame trifft ein.
  Der Software-Stack muss zu diesem Zeitpunkt kontrollieren, ob ein Duplikat
  dieses Frames bereits vorgängig auf dem anderen Interface eingetroffen
  ist.
@@ -721,13 +733,25 @@ Ein neues Frame trifft ein.
 \end_layout
 
 \begin_layout Enumerate
-Da der Speicher einer Maschine endlich ist, müssen die Metadaten der erhaltenen
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Aging:}
+\end_layout
+
+\end_inset
+
+ Da der Speicher einer Maschine endlich ist, müssen die Metadaten der erhaltenen
  Frames nach einer gewissen Zeitspanne wieder aus der Datenstruktur entfernt
  werden.
  Dies wird mittels Software-Timer erreicht.
  Nach Ablauf eines gewissen Timer-Intervalls muss die Datenstruktur, in
- der die Metadaten der Frames gehalten werden, aktualisiert und das älteste
- Frame verworfen werden.
+ der die Metadaten der Frames gehalten werden, aktualisiert und die ältesten
+ Frames verworfen werden.
 \end_layout
 
 \begin_layout Subsubsection
@@ -757,8 +781,17 @@ Aging-Timer
 20 ms
 \series default
 .
- Mit jedem Timer-Tick der Applikation wird die Datenstruktur aktualisiert
- und die ältesten Frame-Meta-Daten werden gelöscht.
+ Bei jedem fünften Timer-Tick des Aging-Timers, also alle 100 ms, wird die
+ Datenstruktur reorganisiert, indem das so genannte 
+\begin_inset Quotes fld
+\end_inset
+
+Aging
+\begin_inset Quotes frd
+\end_inset
+
+ durchgeführt wird.
+ Die ältesten Frame-Metadaten werden somit wieder freigegeben.
 \end_layout
 
 \begin_layout Itemize
@@ -795,21 +828,267 @@ Datenhaltung von Frame-Metadaten
 \end_layout
 
 \begin_layout Standard
-Als Datenstruktur, um die Metadaten erstmals eingetroffener Frames zu halten,
- wird eine Hash-Table verwendet.
- Die Tabelle hat eine Grösse von 256 Einträgen.
- Aus der Sequenznummer eines Frames wird nun ein Hash-Wert gebildet.
- Dieser Hash-Wert repräsentiert sogleich die Index-Nummer des
+Frames, die über einen PRP-Stack verarbeitet werden, weisen folgende Metadaten
+ auf, welche für die Datenhaltung innerhalb der PRP-Stack-Applikation von
+ zentraler Bedeutung sind: 
+\end_layout
+
+\begin_layout Itemize
+MAC-Adresse des Senders (48 Bit)
+\end_layout
+
+\begin_layout Itemize
+Sequenznummer (16 Bit)
 \end_layout
 
 \begin_layout Standard
-Erzeugung des Hashwertes: Bei der Ankunft eines PRP-Frames wird die Sequenznumme
-r, welche sich im Redundancy Control Trailer befindet, herausgelesen.
- Eine Sequenznummer umfasst 16 Bit.
+Dieses Paar (Quell-MAC-Adresse und Sequenznummer) dient der eindeutigen
+ Identifizierung eines PRP-Frames.
+ Ein solches Identifizierungspaar kann sich also erst wiederholen, nachdem
+ jede der Sequenznummern im Intervall, 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$[0, 2^{16}-1] = [0, ..., 65535]$
 \end_layout
 
-\begin_layout Subsubsection
-Supervision-Frames
+\end_inset
+
+, vom sendenden Host einmal verwendet wurde.
+\end_layout
+
+\begin_layout Standard
+Die Zeit, welche vergeht, bis sich Sequenznummern wiederholen, hängt von
+ der Geschwindigkeit, mit der die Netzwerk-Interfaces betrieben werden,
+ ab.
+ Bei allen Testreihen dieser Arbeit wurde eine Geschwindigkeit von 100 MBit/s
+ verwendet, siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Netzwerkgeschwindigkeiten"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Maximale Anzahl Frames mit minimaler Grösse (64 Bytes), die pro Sekunde,
+ respektive Millisekunde mit einem 100-MBit/s-Interface versendet werden
+ können:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{equation*}
+\end_layout
+
+\begin_layout Plain Layout
+
+n = 
+\backslash
+frac{
+\backslash
+frac{100 
+\backslash
+text{ MBit/s}}{8 
+\backslash
+text{ Bit/Byte}}}{
+\backslash
+splitfrac{7 
+\backslash
+text{ Byte Präambel} + 1 
+\backslash
+text{ Byte Start Frame Delimiter} + 60 
+\backslash
+text{ Byte min.
+ Framegrösse} }{+ 6 
+\backslash
+text{ Byte PRP-1-RCT} + 4 
+\backslash
+text{ Byte Frame Check Sequence} + 12 
+\backslash
+text{ Byte Interframe Gap}}}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{equation*}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{equation*}
+\end_layout
+
+\begin_layout Plain Layout
+
+= 
+\backslash
+frac{12500000 
+\backslash
+text{ Byte/s}}{90 
+\backslash
+text{ Byte}} = 138888.
+\backslash
+overline{88} 
+\backslash
+text{ Frames/s @ 100 MBit/s}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{equation*}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{equation*}
+\end_layout
+
+\begin_layout Plain Layout
+
+= 138.
+\backslash
+overline{88} 
+\backslash
+text{ Frames/ms @ 100 MBit/s}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{equation*}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Zeit, um 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$2^{16}$
+\end_layout
+
+\end_inset
+
+ Frames mit minimaler Grösse zu versenden:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{equation*}
+\end_layout
+
+\begin_layout Plain Layout
+
+= 
+\backslash
+frac{2^{16}}{138.
+\backslash
+overline{88} 
+\backslash
+text{ Frames/ms @ 100 MBit/s}} = 471.8592 
+\backslash
+text{ ms}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{equation*}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Im PRP-Standard 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "IEC_62439-3_2015"
+
+\end_inset
+
+ ist definiert, dass ein Eintrag von Frame-Metadaten maximal 400 ms in der
+ Datenstruktur einer PRP-Implementation gehalten werden darf.
+ Somit ist garantiert, dass sich keine unterschiedlichen Frames mit gleichen
+ Metadaten (Quell-MAC-Adresse und Sequenznummer) in der Datenstruktur gehalten
+ werden, da die aufgewendete Zeit, bis alle Sequenznummern bei einem sendenden
+ Host durchlaufen sind, im schnellsten Fall mehr als 400 ms beträgt.
+\end_layout
+
+\begin_layout Paragraph
+Datenstruktur
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Als Datenstruktur, um die Metadaten erstmals eingetroffener Frames zu halten,
+ wird in der PRP-1-stack-Implementation eine Tabelle verwendet.
+ Ein einzelner Tabelleneintrag ist wiederum eine Datenstruktur in Form einer
+ Linked-List.
+ Die Tabelle hat eine Grösse von 256 Einträgen.
+ Aus der 16-Bit-Sequenznummer eines Frames wird aus den niederwertigen 8
+ Bit ein 8 Bit breiter Hash-Wert gebildet.
+ Dieser Hash-Wert repräsentiert sogleich die Index-Nummer für den Tabelleneintra
+g.
 \end_layout
 
 \begin_layout Section
@@ -873,7 +1152,7 @@ key "Scatter_Gather"
 \end_layout
 
 \begin_layout Minisec
-TCP Segmenation Offload (TSO)
+TCP Segmentation Offload (TSO)
 \end_layout
 
 \begin_layout Standard
