@@ -907,12 +907,14 @@ splitfrac{7
 \backslash
 text{ Byte Präambel} + 1 
 \backslash
-text{ Byte Start Frame Delimiter} + 64 
+text{ Byte Start Frame Delimiter} + 60 
 \backslash
 text{ Byte min.
  Framegrösse} }{+ 6 
 \backslash
-text{ Byte PRP-1-RCT} + 12 
+text{ Byte PRP-1-RCT} + 4 
+\backslash
+text{ Byte Frame Check Sequence} + 12 
 \backslash
 text{ Byte Interframe Gap}}}
 \end_layout
@@ -1062,7 +1064,8 @@ key "IEC_62439-3_2015"
  Datenstruktur einer PRP-Implementation gehalten werden darf.
  Somit ist garantiert, dass sich keine unterschiedlichen Frames mit gleichen
  Metadaten (Quell-MAC-Adresse und Sequenznummer) in der Datenstruktur gehalten
- werden.
+ werden, da die aufgewendete Zeit, bis alle Sequenznummern bei einem sendenden
+ Host durchlaufen sind, im schnellsten Fall mehr als 400 ms beträgt.
 \end_layout
 
 \begin_layout Paragraph
@@ -1084,12 +1087,8 @@ Als Datenstruktur, um die Metadaten erstmals eingetroffener Frames zu halten,
  Die Tabelle hat eine Grösse von 256 Einträgen.
  Aus der 16-Bit-Sequenznummer eines Frames wird aus den niederwertigen 8
  Bit ein 8 Bit breiter Hash-Wert gebildet.
- Dieser Hash-Wert repräsentiert sogleich die Index-Nummer, für den Tabelleneintr
-ag.
-\end_layout
-
-\begin_layout Subsubsection
-Supervision-Frames
+ Dieser Hash-Wert repräsentiert sogleich die Index-Nummer für den Tabelleneintra
+g.
 \end_layout
 
 \begin_layout Section
