@@ -1063,8 +1063,8 @@ Verhalten des PRP-1 stacks
 \begin_layout Standard
 Die ermittelten Messwerte zeigen auf, dass sich der PRP-1 stack durchgehend
  mehr im Kernelspace (Systemtime) als im Userspace (Usertime) befindet.
- Somit beschäftigt sich der PRP-1 stack häufiger mit dem Betriebssystem-Funktion
-en als mit den administrativen Aufgaben des PRP-Protokolls.
+ Somit beschäftigt sich der PRP-1 stack häufiger mit Betriebssystem-Funktionen
+ als mit den administrativen Aufgaben des PRP-Protokolls.
 \end_layout
 
 \begin_layout Standard
@@ -1104,13 +1104,137 @@ Anfügen und Entfernen des RCTs am und vom Frame
 \end_layout
 
 \begin_layout Itemize
-Organisation der Tabelle zur Duplikaterkennung (Aging, Einträge hinzufügen
+Organisation der Datenstruktur zur Duplikaterkennung (Aging, Einträge hinzufügen
  / löschen)
 \end_layout
 
 \end_deeper
+\begin_layout Subsubsection
+Profiling
+\end_layout
+
 \begin_layout Standard
-PROFILING WIP
+Um die vorhergehenden Aussagen zum Verhalten des PRP-1 stacks additional
+ zu belegen, wird ein Profiling mit dem Tool 
+\begin_inset Quotes fld
+\end_inset
+
+perf
+\begin_inset Quotes frd
+\end_inset
+
+ (siehe Tabelle 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:perf"
+
+\end_inset
+
+) erstellt.
+ Das Profiling soll aufzeigen, welchen Anteil Funktionen aus dem Kernelspace
+ haben, also Funktionen, die initial durch System-Calls aufgerufen wurden.
+\end_layout
+
+\begin_layout Standard
+Um die Reports von perf grafisch darzustellen, werden sogenannte 
+\begin_inset Quotes fld
+\end_inset
+
+Flame Graphs
+\begin_inset Quotes frd
+\end_inset
+
+ eingesetzt.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "flamegraphs-home"
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Paragraph
+Interpretation eines Flame Graphs
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Die Interpretation eines Flame Graphs ist wie folgt zu verstehen:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Abszissenachse:}
+\end_layout
+
+\end_inset
+
+ Prozentualer zeitlicher Anteil, welcher eine Funktion auf der CPU verbraucht.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Ordinatenachse:}
+\end_layout
+
+\end_inset
+
+ Anzeige des Call-Stacks aller Funktionsaufrufe.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Blau markierte Balken:}
+\end_layout
+
+\end_inset
+
+ Übergang Userspace/Kernelspace.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Restliche Farben:}
+\end_layout
+
+\end_inset
+
+ Nicht von Bedeutung.
+ Diese Farben werden mit einem Zufallsgenerator ausgewählt.
+ Die Rot/Orange/Gelb-Abstufungen dienen lediglich dazu, einzelne Balken
+ optisch besser zu trennen.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1207,7 +1331,7 @@ Weitere Aspekte
 
 \begin_layout Section
 Szenario 03: Effekt von Laufzeitunterscheidungen zwischen Netzwerk A und
- B
+ B / Einfluss nicht entfernter Duplikate auf Funktion und Performance
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Szenario-03:-Effekt"
