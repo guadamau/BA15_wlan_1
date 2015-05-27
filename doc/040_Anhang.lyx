@@ -44590,14 +44590,6 @@ end{figure}
 \end_layout
 
 \begin_layout Chapter
-Projektmanagement
-\end_layout
-
-\begin_layout Section
-Präzisierung der Aufgabenstellung
-\end_layout
-
-\begin_layout Section
 Besprechungsprotokolle
 \end_layout
 
@@ -44607,7 +44599,7 @@ ten.
  Der Inhalt dieser Protokolle lautet wie folgt:
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Kalenderwoche 07: 09.02.2015
 \end_layout
 
@@ -44704,7 +44696,7 @@ PRP-Umgebung aufbauen
 \end_layout
 
 \end_deeper
-\begin_layout Subsection
+\begin_layout Section
 Kalenderwoche 08: 16.02.2015
 \end_layout
 
@@ -44720,7 +44712,7 @@ Fokus auf PRP-1, Satz spendieren an PRP-0
 Aging beobachten
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Kalenderwoche 09: 23.02.2015
 \end_layout
 
@@ -44791,7 +44783,7 @@ Nächste Schritte: PRP- und Stack-Dokumentation abschliessen, Tests erstellen,
  Tools evaluieren
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Kalenderwoche 10: 02.03.2015
 \end_layout
 
@@ -44816,7 +44808,7 @@ TCP-Durchsatz: Wie leidet er bei Paketverlust?
 Offload-Mechanismen anschauen
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Kalenderwoche 11: 09.03.2015
 \end_layout
 
@@ -44853,7 +44845,7 @@ Weniger im Fokus dieser Arbeit
 \end_layout
 
 \end_deeper
-\begin_layout Subsection
+\begin_layout Section
 Kalenderwoche 12: 16.03.2015
 \end_layout
 
@@ -44919,7 +44911,7 @@ dd-Befehl erzeugt viel Systemtime, bc-Befehl viel Usertime
 \end_layout
 
 \end_deeper
-\begin_layout Subsection
+\begin_layout Section
 Kalenderwoche 13: 23.03.2015
 \end_layout
 
@@ -44972,7 +44964,7 @@ Performancemässig besteht zwischen UDP- und Ethernet-Netzwerklast ein kleiner
 t werden.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Kalenderwoche 14: 30.03.2015
 \end_layout
 
@@ -44994,7 +44986,7 @@ Wenn nicht ähnlich, muss auch mit Layer-2-Frames getestet werden
 Nächste 2 Montage ist Herr Weibel abwesend, jedoch per E-Mail erreichbar
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Kalenderwoche 16: 13.04.2015
 \end_layout
 
@@ -45023,7 +45015,7 @@ Unnötige Casts entfernen
 Gründe für Tool-Auswahl konkretisieren
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Kalenderwoche 17: 20.04.2015
 \end_layout
 
@@ -45067,7 +45059,7 @@ Einfluss der Ankunftsreihenfolge auf Duplikaterkennung überprüfen
 Messresultate von Szenario 01 mit Histogrammen senden
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Kalenderwoche 18: 27.04.2015
 \end_layout
 
@@ -45100,7 +45092,7 @@ Nur notwenige Prozesse dürfen auf dem System in Betrieb sein
 Welche Messungen sind notwendig? Braucht es 1h lange Tests?
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Kalenderwoche 19: 04.05.2015
 \end_layout
 
@@ -45136,7 +45128,7 @@ Ausformulieren, weshalb meas nur Singlethreaded-Prozesse/-Applikationen
  überwacht.
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Kalenderwoche 20: 11.05.2015
 \end_layout
 
@@ -45173,7 +45165,7 @@ Szenario 03 hat eine niedrige Priorität
 Punkt am Ende einer Kapitelnummer entfernen
 \end_layout
 
-\begin_layout Subsection
+\begin_layout Section
 Kalenderwoche 21: 18.05.2015
 \end_layout
 
