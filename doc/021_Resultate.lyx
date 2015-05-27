@@ -1063,8 +1063,8 @@ Verhalten des PRP-1 stacks
 \begin_layout Standard
 Die ermittelten Messwerte zeigen auf, dass sich der PRP-1 stack durchgehend
  mehr im Kernelspace (Systemtime) als im Userspace (Usertime) befindet.
- Somit beschäftigt sich der PRP-1 stack häufiger mit dem Betriebssystem-Funktion
-en als mit den administrativen Aufgaben des PRP-Protokolls.
+ Somit beschäftigt sich der PRP-1 stack häufiger mit Betriebssystem-Funktionen
+ als mit den administrativen Aufgaben des PRP-Protokolls.
 \end_layout
 
 \begin_layout Standard
@@ -1104,13 +1104,495 @@ Anfügen und Entfernen des RCTs am und vom Frame
 \end_layout
 
 \begin_layout Itemize
-Organisation der Tabelle zur Duplikaterkennung (Aging, Einträge hinzufügen
+Organisation der Datenstruktur zur Duplikaterkennung (Aging, Einträge hinzufügen
  / löschen)
 \end_layout
 
 \end_deeper
+\begin_layout Subsubsection
+Profiling
+\end_layout
+
 \begin_layout Standard
-PROFILING WIP
+Um die vorhergehenden Aussagen zum Verhalten des PRP-1 stacks additional
+ zu belegen, wird ein Profiling mit dem Tool 
+\begin_inset Quotes fld
+\end_inset
+
+perf
+\begin_inset Quotes frd
+\end_inset
+
+ (siehe Tabelle 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:perf"
+
+\end_inset
+
+) erstellt.
+ Das Profiling soll aufzeigen, welche Funktionen am meisten CPU-Zeit verbrauchen
+, wie gross der Anteil an Kernelspace-Funktionen ist und wie auf dem gesamten
+ Betriebssystem die Prozesse und deren Funktionen verteilt sind.
+\end_layout
+
+\begin_layout Standard
+Um die Reports von perf grafisch darzustellen, werden sogenannte 
+\begin_inset Quotes fld
+\end_inset
+
+Flame Graphs
+\begin_inset Quotes frd
+\end_inset
+
+ eingesetzt.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "flamegraphs-home"
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Paragraph
+Interpretation eines Flame Graphs
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Die Interpretation eines Flame Graphs ist wie folgt zu verstehen:
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Abszissenachse:}
+\end_layout
+
+\end_inset
+
+ Prozentualer zeitlicher Anteil, welcher eine Funktion auf der CPU verbraucht.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Ordinatenachse:}
+\end_layout
+
+\end_inset
+
+ Anzeige des Call-Stacks aller Funktionsaufrufe.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Blau markierte Balken:}
+\end_layout
+
+\end_inset
+
+ Übergang Userspace/Kernelspace, initiiert durch einen System-Call.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{Restliche Farben:}
+\end_layout
+
+\end_inset
+
+ Nicht von Bedeutung.
+ Die Farben werden mit einem Zufallsgenerator ausgewählt.
+ Die Rot/Orange/Gelb-Abstufungen dienen lediglich dazu, einzelne Balken
+ optisch besser zu trennen.
+\end_layout
+
+\begin_layout Paragraph
+Ausgangslage
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Für das Erstellen der Profildaten wurden die Betriebssysteme zweier Maschinen
+ (srv03 und srv02) über einen Zeitraum von 60 Sekunden aufgezeichnet.
+ Als Netzwerklast wurden TCP-Pakete verwendet, da Client- und die Server-Applika
+tion Daten versenden sowie empfangen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "50col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+shck-Client (srv03)
+\end_layout
+
+\begin_layout Itemize
+shck generiert TCP-Daten
+\begin_inset Newline newline
+\end_inset
+
+mit maximaler Frame-Grösse
+\begin_inset Newline newline
+\end_inset
+
+via PRP-Interface
+\end_layout
+
+\begin_layout Itemize
+keine weiteren Prozesse,
+\begin_inset Newline newline
+\end_inset
+
+welche CPU-Zeit beanspruchen
+\begin_inset Newline newline
+\end_inset
+
+(ausser PRP-1 stack)
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "50col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+
+\series bold
+shck-Server (srv02)
+\end_layout
+
+\begin_layout Itemize
+shck empfängt TCP-Daten
+\begin_inset Newline newline
+\end_inset
+
+mit maximaler Frame-Grösse
+\begin_inset Newline newline
+\end_inset
+
+via PRP-Interface
+\end_layout
+
+\begin_layout Itemize
+keine weiteren Prozesse,
+\begin_inset Newline newline
+\end_inset
+
+welche CPU-Zeit beanspruchen
+\begin_inset Newline newline
+\end_inset
+
+(ausser PRP-1 stack)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Paragraph
+Alle Prozesse des Betriebssystems
+\end_layout
+
+\begin_layout Subparagraph
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+shck-Client (Sender)
+\end_layout
+
+\begin_layout Subparagraph
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _diagrams/021_profiling/perf-kernel_60s_all_procs_tcp_sender_ba.svg
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Flame Graph des shck-Clients, alle Prozesse
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+shck-Server (Empfänger)
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _diagrams/021_profiling/perf-kernel_60s_all_procs_tcp_receiver_ba.svg
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Flame Graph des shck-Servers, alle Prozesse
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Werden alle Prozesse des Betriebssystems betrachtet, ist festzustellen,
+ dass der PRP-1 stack beim Empfangen mehr CPU-Zeit zur Verfügung hat.
+ Ein Grund dafür ist, dass der shck-Server signifikant weniger CPU-Zeit
+ beansprucht, als der shck-Client, welcher die TCP-Pakete generieren und
+ versenden muss.
+ Der markante Anteil des idle-Prozesses, lässt sich dadurch erklären, dass
+ das Profiling bezüglich aller Prozesse des Betriebssystems durchgeführt
+ wurde und somit auch alle Ressourcen der Maschine (1 Core mit 2 CPUs) kumulativ
+ miteingerechnet werden.
+ Die Separierung zwischen Userspace- und Kernelspace-Funktionen wurde für
+ diese Gesamtübersicht weggelassen.
+\end_layout
+
+\begin_layout Paragraph
+Spezifischer Prozess des PRP-1 stacks
+\end_layout
+
+\begin_layout Subparagraph
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+shck-Client (Sender)
+\end_layout
+
+\begin_layout Subparagraph
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _diagrams/021_profiling/perf-kernel_60s_prp1_stack_tcp_sender_ba.svg
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Flame Graph des shck-Clients, spezifisch PRP-1 stack
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subparagraph
+shck-Server (Empfänger)
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _diagrams/021_profiling/perf-kernel_60s_prp1_stack_tcp_receiver_ba.svg
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Flame Graph des shck-Servers, spezifisch PRP-1 stack
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bei der detaillierten Betrachtung des PRP-1-stack-Prozesses fällt auf, dass,
+ unabhängig davon ob Client oder Server, für das Senden von Frames generell
+ mehr CPU-Zeit aufgewendet werden muss als für das Empfangen.
+ Da bei der Lastengenerierung ausschliesslich Frames mit maximaler Grösse
+ versendet werden, wird seitens des sendenden Hosts (Client) mehr Rechenzeit
+ auf der CPU in Anspruch genommen, um die ausgehenden Frames zu verarbeiten.
+ Beim Server müssen jeweils nur TCP-Ack-Messages versendet werden, was bedeutet,
+ dass deutlich weniger Datenmengen verarbeitet werden müssen und somit weniger
+ CPU-Zeit angefordert wird.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1207,7 +1689,7 @@ Weitere Aspekte
 
 \begin_layout Section
 Szenario 03: Effekt von Laufzeitunterscheidungen zwischen Netzwerk A und
- B
+ B / Einfluss nicht entfernter Duplikate auf Funktion und Performance
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Szenario-03:-Effekt"
