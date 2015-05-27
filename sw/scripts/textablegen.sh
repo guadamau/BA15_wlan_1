@@ -75,16 +75,28 @@ for i in $(find ~/BA_result_inbox -name '*meas_overall*' | sort -r); do
                             echo '\hline ' >> ${TEXFILE}
                             ;;
                      'rx')
+                            PRPACTIVE=$(cat ${FILEPATH} | grep prp1 )
                             if [ ! -f $TEXFILE ]
                             then
                                 FILES=(${FILES[@]} ${TEXFILE})
-                                echo '\tiny\begin{tabular}{|>{\raggedright}p{0.12\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|}' > ${TEXFILE}
-                                echo '\hline ' >> ${TEXFILE}
-                                echo '\multirow{3}{0.12\columnwidth}{\textbf{\tiny{}Name}} & \multicolumn{9}{l|}{\textbf{\tiny{}RX-Bitrate {[}MBit/s{]}}}\tabularnewline' >> ${TEXFILE}
-                                echo '\cline{2-10} ' >> ${TEXFILE}
-                                echo '& \multicolumn{3}{l|}{\textbf{\tiny{}prp1}} & \multicolumn{3}{l|}{\textbf{\tiny{}eth0}} & \multicolumn{3}{l|}{\textbf{\tiny{}eth1}}\tabularnewline' >> ${TEXFILE}
-                                echo '\cline{2-10} ' >> ${TEXFILE}
-                                echo '& \textbf{\tiny{}Min} & \textbf{\tiny{}Avg} & \textbf{\tiny{}Max} & \textbf{\tiny{}Min} & \textbf{\tiny{}Avg} & \textbf{\tiny{}Max} & \textbf{\tiny{}Min} & \textbf{\tiny{}Avg} & \textbf{\tiny{}Max}\tabularnewline' >> ${TEXFILE}
+                                if [[ -z $PRPACTIVE ]]
+                                then
+                                    echo '\tiny\begin{tabular}{|>{\raggedright}p{0.12\columnwidth}|>{\raggedleft}p{0.06\columnwidth}|>{\raggedleft}p{0.06\columnwidth}|>{\raggedleft}p{0.06\columnwidth}|}' > ${TEXFILE}
+                                    echo '\hline ' >> ${TEXFILE}
+                                    echo '\multirow{3}{0.12\columnwidth}{\textbf{\tiny{}Bezeichnung}} & \multicolumn{3}{l|}{\textbf{\tiny{}RX-Bitrate {[}MBit/s{]}}}\tabularnewline' >> ${TEXFILE}
+                                    echo '\cline{2-4} ' >> ${TEXFILE}
+                                    echo '& \multicolumn{3}{l|}{\textbf{\tiny{}eth0}}\tabularnewline' >> ${TEXFILE}
+                                    echo '\cline{2-4} ' >> ${TEXFILE}
+                                    echo '& \textbf{\tiny{}Min} & \textbf{\tiny{}Avg} & \textbf{\tiny{}Max}\tabularnewline' >> ${TEXFILE}
+                                else
+                                    echo '\tiny\begin{tabular}{|>{\raggedright}p{0.12\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|}' > ${TEXFILE}
+                                    echo '\hline ' >> ${TEXFILE}
+                                    echo '\multirow{3}{0.12\columnwidth}{\textbf{\tiny{}Name}} & \multicolumn{9}{l|}{\textbf{\tiny{}RX-Bitrate {[}MBit/s{]}}}\tabularnewline' >> ${TEXFILE}
+                                    echo '\cline{2-10} ' >> ${TEXFILE}
+                                    echo '& \multicolumn{3}{l|}{\textbf{\tiny{}prp1}} & \multicolumn{3}{l|}{\textbf{\tiny{}eth0}} & \multicolumn{3}{l|}{\textbf{\tiny{}eth1}}\tabularnewline' >> ${TEXFILE}
+                                    echo '\cline{2-10} ' >> ${TEXFILE}
+                                    echo '& \textbf{\tiny{}Min} & \textbf{\tiny{}Avg} & \textbf{\tiny{}Max} & \textbf{\tiny{}Min} & \textbf{\tiny{}Avg} & \textbf{\tiny{}Max} & \textbf{\tiny{}Min} & \textbf{\tiny{}Avg} & \textbf{\tiny{}Max}\tabularnewline' >> ${TEXFILE}
+                                fi
                                 echo '\hline ' >> ${TEXFILE}
                             fi
                 
@@ -101,21 +113,38 @@ for i in $(find ~/BA_result_inbox -name '*meas_overall*' | sort -r); do
 #                            if [ ${IF0AVG} != "0.00" ]
 #                            then
                                 echo '\hline ' >> ${TEXFILE}
-                                echo '{\tiny{}'"${LOADDESCTABLE}"'} & \multicolumn{1}{|r|}{\tiny{}'"${PRPMIN}"'} & \multicolumn{1}{|r|}{\tiny{}'"${PRPAVG}"'} & \multicolumn{1}{|r|}{\tiny{}'"${PRPMAX}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF0MIN}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF0AVG}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF0MAX}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF1MIN}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF1AVG}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF1MAX}"'}\tabularnewline' >> ${TEXFILE}
+                                if [[ -z $PRPACTIVE ]]
+                                then
+                                    echo '{\tiny{}'"${LOADDESCTABLE}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF0MIN}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF0AVG}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF0MAX}"'}\tabularnewline' >> ${TEXFILE}
+                                else
+                                    echo '{\tiny{}'"${LOADDESCTABLE}"'} & \multicolumn{1}{|r|}{\tiny{}'"${PRPMIN}"'} & \multicolumn{1}{|r|}{\tiny{}'"${PRPAVG}"'} & \multicolumn{1}{|r|}{\tiny{}'"${PRPMAX}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF0MIN}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF0AVG}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF0MAX}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF1MIN}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF1AVG}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF1MAX}"'}\tabularnewline' >> ${TEXFILE}
+                                fi
                                 echo '\hline ' >> ${TEXFILE}
 #                            fi
                             ;;
                         'tx')
+                            PRPACTIVE=$(cat ${FILEPATH} | grep prp1 )
                             if [ ! -f $TEXFILE ]
                             then
                                 FILES=(${FILES[@]} ${TEXFILE})
-                                echo '\tiny\begin{tabular}{|>{\raggedright}p{0.12\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|}' > ${TEXFILE}
-                                echo '\hline ' >> ${TEXFILE}
-                                echo '\multirow{3}{0.12\columnwidth}{\textbf{\tiny{}Name}} & \multicolumn{9}{l|}{\textbf{\tiny{}TX-Bitrate {[}MBit/s{]}}}\tabularnewline' >> ${TEXFILE}
-                                echo '\cline{2-10} ' >> ${TEXFILE}
-                                echo '& \multicolumn{3}{l|}{\textbf{\tiny{}prp1}} & \multicolumn{3}{l|}{\textbf{\tiny{}eth0}} & \multicolumn{3}{l|}{\textbf{\tiny{}eth1}}\tabularnewline' >> ${TEXFILE}
-                                echo '\cline{2-10} ' >> ${TEXFILE}
-                                echo '& \textbf{\tiny{}Min} & \textbf{\tiny{}Avg} & \textbf{\tiny{}Max} & \textbf{\tiny{}Min} & \textbf{\tiny{}Avg} & \textbf{\tiny{}Max} & \textbf{\tiny{}Min} & \textbf{\tiny{}Avg} & \textbf{\tiny{}Max}\tabularnewline' >> ${TEXFILE}
+                                if [[ -z $PRPACTIVE ]]
+                                then
+                                    echo '\tiny\begin{tabular}{|>{\raggedright}p{0.12\columnwidth}|>{\raggedleft}p{0.06\columnwidth}|>{\raggedleft}p{0.06\columnwidth}|>{\raggedleft}p{0.06\columnwidth}|}' > ${TEXFILE}
+                                    echo '\hline ' >> ${TEXFILE}
+                                    echo '\multirow{3}{0.12\columnwidth}{\textbf{\tiny{}Bezeichnung}} & \multicolumn{3}{l|}{\textbf{\tiny{}TX-Bitrate {[}MBit/s{]}}}\tabularnewline' >> ${TEXFILE}
+                                    echo '\cline{2-4} ' >> ${TEXFILE}
+                                    echo '& \multicolumn{3}{l|}{\textbf{\tiny{}eth0}}\tabularnewline' >> ${TEXFILE}
+                                    echo '\cline{2-4} ' >> ${TEXFILE}
+                                    echo '& \textbf{\tiny{}Min} & \textbf{\tiny{}Avg} & \textbf{\tiny{}Max}\tabularnewline' >> ${TEXFILE}
+                                else
+                                    echo '\tiny\begin{tabular}{|>{\raggedright}p{0.12\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|>{\raggedright}p{0.06\columnwidth}|}' > ${TEXFILE}
+                                    echo '\hline ' >> ${TEXFILE}
+                                    echo '\multirow{3}{0.12\columnwidth}{\textbf{\tiny{}Name}} & \multicolumn{9}{l|}{\textbf{\tiny{}TX-Bitrate {[}MBit/s{]}}}\tabularnewline' >> ${TEXFILE}
+                                    echo '\cline{2-10} ' >> ${TEXFILE}
+                                    echo '& \multicolumn{3}{l|}{\textbf{\tiny{}prp1}} & \multicolumn{3}{l|}{\textbf{\tiny{}eth0}} & \multicolumn{3}{l|}{\textbf{\tiny{}eth1}}\tabularnewline' >> ${TEXFILE}
+                                    echo '\cline{2-10} ' >> ${TEXFILE}
+                                    echo '& \textbf{\tiny{}Min} & \textbf{\tiny{}Avg} & \textbf{\tiny{}Max} & \textbf{\tiny{}Min} & \textbf{\tiny{}Avg} & \textbf{\tiny{}Max} & \textbf{\tiny{}Min} & \textbf{\tiny{}Avg} & \textbf{\tiny{}Max}\tabularnewline' >> ${TEXFILE}
+                                fi
                                 echo '\hline ' >> ${TEXFILE}
                             fi
                 
@@ -132,7 +161,12 @@ for i in $(find ~/BA_result_inbox -name '*meas_overall*' | sort -r); do
 #                            if [ ${IF0AVG} != "0.00" ]
 #                            then
                                 echo '\hline ' >> ${TEXFILE}
-                                echo '{\tiny{}'"${LOADDESCTABLE}"'} & \multicolumn{1}{|r|}{\tiny{}'"${PRPMIN}"'} & \multicolumn{1}{|r|}{\tiny{}'"${PRPAVG}"'} & \multicolumn{1}{|r|}{\tiny{}'"${PRPMAX}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF0MIN}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF0AVG}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF0MAX}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF1MIN}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF1AVG}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF1MAX}"'}\tabularnewline' >> ${TEXFILE}
+                                if [[ -z $PRPACTIVE ]]
+                                then
+                                    echo '{\tiny{}'"${LOADDESCTABLE}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF0MIN}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF0AVG}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF0MAX}"'}\tabularnewline' >> ${TEXFILE}
+                                else
+                                    echo '{\tiny{}'"${LOADDESCTABLE}"'} & \multicolumn{1}{|r|}{\tiny{}'"${PRPMIN}"'} & \multicolumn{1}{|r|}{\tiny{}'"${PRPAVG}"'} & \multicolumn{1}{|r|}{\tiny{}'"${PRPMAX}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF0MIN}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF0AVG}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF0MAX}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF1MIN}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF1AVG}"'} & \multicolumn{1}{|r|}{\tiny{}'"${IF1MAX}"'}\tabularnewline' >> ${TEXFILE}
+                                fi
                                 echo '\hline ' >> ${TEXFILE}
  #                           fi
                             ;;

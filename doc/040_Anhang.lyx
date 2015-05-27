@@ -241,7 +241,7 @@ shck-Client
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -323,7 +323,7 @@ Resultat Szenario 02 auf shck-Client ohne PRP (SAN sendet an SAN): CPU-Last
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -342,7 +342,15 @@ filename "_tex/02_noPRP/rxsrv01.tex"
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Client ohne PRP (SAN sendet an SAN): RX-Bitrate
- [MBit/s]
+ auf 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -360,7 +368,7 @@ Resultat Szenario 02 auf shck-Client ohne PRP (SAN sendet an SAN): RX-Bitrate
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -413,7 +421,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -432,7 +440,15 @@ filename "_tex/02_noPRP/txsrv01.tex"
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Client ohne PRP (SAN sendet an SAN): TX-Bitrate
- [MBit/s]
+ auf 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -450,7 +466,7 @@ Resultat Szenario 02 auf shck-Client ohne PRP (SAN sendet an SAN): TX-Bitrate
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -507,7 +523,7 @@ shck-Server
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -544,7 +560,7 @@ Resultat Szenario 02 auf shck-Server ohne PRP (SAN sendet an SAN): CPU-Last,
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -589,7 +605,7 @@ Resultat Szenario 02 auf shck-Server ohne PRP (SAN sendet an SAN): CPU-Last
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -608,7 +624,15 @@ filename "_tex/02_noPRP/rxsrv02.tex"
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Server ohne PRP (SAN sendet an SAN): RX-Bitrate
- [MBit/s]
+ auf 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -626,7 +650,7 @@ Resultat Szenario 02 auf shck-Server ohne PRP (SAN sendet an SAN): RX-Bitrate
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -679,7 +703,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -698,7 +722,15 @@ filename "_tex/02_noPRP/txsrv02.tex"
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Server ohne PRP (SAN sendet an SAN): TX-Bitrate
- [MBit/s]
+ auf 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -716,7 +748,7 @@ Resultat Szenario 02 auf shck-Server ohne PRP (SAN sendet an SAN): TX-Bitrate
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -821,7 +853,7 @@ Resultat Szenario 02 auf shck-Client (SAN sendet an DAN): CPU-Last, System-
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -866,7 +898,7 @@ ikation
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -884,7 +916,16 @@ filename "_tex/02_SAN_DAN/rxsrv01.tex"
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 02 auf shck-Client (SAN sendet an DAN): RX-Bitrate [MBit/s]
+Resultat Szenario 02 auf shck-Client (SAN sendet an DAN): RX-Bitrate auf
+ 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -902,7 +943,7 @@ Resultat Szenario 02 auf shck-Client (SAN sendet an DAN): RX-Bitrate [MBit/s]
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -955,7 +996,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -973,7 +1014,16 @@ filename "_tex/02_SAN_DAN/txsrv01.tex"
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 02 auf shck-Client (SAN sendet an DAN): TX-Bitrate [MBit/s]
+Resultat Szenario 02 auf shck-Client (SAN sendet an DAN): TX-Bitrate auf
+ 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -991,7 +1041,7 @@ Resultat Szenario 02 auf shck-Client (SAN sendet an DAN): TX-Bitrate [MBit/s]
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1166,7 +1216,7 @@ Resultat Szenario 02 auf shck-Server (SAN sendet an DAN): RX-Bitrate [MBit/s]
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1530,7 +1580,7 @@ Resultat Szenario 02 auf shck-Client (DAN sendet an SAN): TX-Bitrate [MBit/s]
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1669,7 +1719,7 @@ ikation
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1687,7 +1737,16 @@ filename "_tex/02_DAN_SAN/rxsrv02.tex"
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 02 auf shck-Server (DAN sendet an SAN): RX-Bitrate [MBit/s]
+Resultat Szenario 02 auf shck-Server (DAN sendet an SAN): RX-Bitrate auf
+ 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -1705,7 +1764,7 @@ Resultat Szenario 02 auf shck-Server (DAN sendet an SAN): RX-Bitrate [MBit/s]
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1758,7 +1817,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1776,7 +1835,16 @@ filename "_tex/02_DAN_SAN/txsrv02.tex"
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 02 auf shck-Server (DAN sendet an SAN): TX-Bitrate [MBit/s]
+Resultat Szenario 02 auf shck-Server (DAN sendet an SAN): TX-Bitrate auf
+ 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -1794,7 +1862,7 @@ Resultat Szenario 02 auf shck-Server (DAN sendet an SAN): TX-Bitrate [MBit/s]
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -32762,6 +32830,3636 @@ name "sec:Szenario-06:-Auswirkungen,-1"
 
 \end_layout
 
+\begin_layout Subsection
+Numerische Ergebnisse
+\end_layout
+
+\begin_layout Standard
+shck-Client
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset CommandInset include
+LatexCommand input
+filename "_tex/06/cpusrv01.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06 auf shck-Client: CPU-Last, System- / Usertime der shck-Appl
+ikation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset CommandInset include
+LatexCommand input
+filename "_tex/06/rxsrv01.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06 auf shck-Client: RX-Bitrate [MBit/s]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset CommandInset include
+LatexCommand input
+filename "_tex/06/txsrv01.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06 auf shck-Client: TX-Bitrate [MBit/s]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+shck-Server
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset CommandInset include
+LatexCommand input
+filename "_tex/06/cpusrv02.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06 auf shck-Server: CPU-Last, System- / Usertime der shck-Appl
+ikation
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset CommandInset include
+LatexCommand input
+filename "_tex/06/rxsrv02.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06 auf shck-Server: RX-Bitrate [MBit/s]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset CommandInset include
+LatexCommand input
+filename "_tex/06/txsrv02.tex"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06 auf shck-Server: TX-Bitrate [MBit/s]
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Graphische Resultate
+\end_layout
+
+\begin_layout Standard
+Es erfolgen zu jeder generierten Netzwerklast 6 Abbildungen (3 Merkmale
+ (siehe Beginn dieses Kapitels) pro Teilnehmer), welche je alle 5 Fälle
+ in Form von Delay abdecken.
+\end_layout
+
+\begin_layout Standard
+Das Interface 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ ist welches, dessen Durchsatz beinträchtigt wird, weshalb hier nur dieses
+ aufgeführt wird.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+U.MIN.U
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "47text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Client CPU
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "35text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Server CPU
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/cpu_load_srv01.06.U.MIN.U.svg
+	lyxscale 50
+	scale 25
+	special trim=0 0 290 0,clip=true
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/cpu_load_srv02.06.U.MIN.U.svg
+	lyxscale 50
+	scale 25
+	BoundingBox 0bp 0bp 1000bp 600bp
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -10bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06: CPU-Last des PRP-1 stacks der Netzwerklast U.MIN.U auf
+ shck-Client und -Server
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -20bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "47text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Client RX eth0
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "35text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Server RX eth0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_rx_bitrate_srv01.06.U.MIN.U.svg
+	lyxscale 50
+	scale 25
+	special trim=0 0 290 0,clip=true
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_rx_bitrate_srv02.06.U.MIN.U.svg
+	lyxscale 50
+	scale 25
+	BoundingBox 0bp 0bp 1000bp 600bp
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -10bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06: RX-Bitrate auf Interface 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ der Netzwerklast U.MIN.U auf shck-Client und -Server
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -20bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "47text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Client TX eth0
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "35text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Server TX eth0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_tx_bitrate_srv01.06.U.MIN.U.svg
+	lyxscale 50
+	scale 25
+	special trim=0 0 290 0,clip=true
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_tx_bitrate_srv02.06.U.MIN.U.svg
+	lyxscale 50
+	scale 25
+	BoundingBox 0bp 0bp 1000bp 600bp
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -10bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06: TX-Bitrate auf Interface 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ der Netzwerklast U.MIN.U auf shck-Client und -Server
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+U.MIN.K
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "47text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Client CPU
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "35text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Server CPU
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/cpu_load_srv01.06.U.MIN.K.svg
+	lyxscale 50
+	scale 25
+	special trim=0 0 290 0,clip=true
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/cpu_load_srv02.06.U.MIN.K.svg
+	lyxscale 50
+	scale 25
+	BoundingBox 0bp 0bp 1000bp 600bp
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -10bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06: CPU-Last des PRP-1 stacks der Netzwerklast U.MIN.K auf
+ shck-Client und -Server
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -20bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "47text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Client RX eth0
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "35text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Server RX eth0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_rx_bitrate_srv01.06.U.MIN.K.svg
+	lyxscale 50
+	scale 25
+	special trim=0 0 290 0,clip=true
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_rx_bitrate_srv02.06.U.MIN.K.svg
+	lyxscale 50
+	scale 25
+	BoundingBox 0bp 0bp 1000bp 600bp
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -10bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06: RX-Bitrate auf Interface 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ der Netzwerklast U.MIN.K auf shck-Client und -Server
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -20bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "47text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Client TX eth0
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "35text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Server TX eth0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_tx_bitrate_srv01.06.U.MIN.K.svg
+	lyxscale 50
+	scale 25
+	special trim=0 0 290 0,clip=true
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_tx_bitrate_srv02.06.U.MIN.K.svg
+	lyxscale 50
+	scale 25
+	BoundingBox 0bp 0bp 1000bp 600bp
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -10bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06: TX-Bitrate auf Interface 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ der Netzwerklast U.MIN.K auf shck-Client und -Server
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+U.MAX.U
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "47text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Client CPU
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "35text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Server CPU
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/cpu_load_srv01.06.U.MAX.U.svg
+	lyxscale 50
+	scale 25
+	special trim=0 0 290 0,clip=true
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/cpu_load_srv02.06.U.MAX.U.svg
+	lyxscale 50
+	scale 25
+	BoundingBox 0bp 0bp 1000bp 600bp
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -10bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06: CPU-Last des PRP-1 stacks der Netzwerklast U.MAX.U auf
+ shck-Client und -Server
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -20bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "47text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Client RX eth0
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "35text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Server RX eth0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_rx_bitrate_srv01.06.U.MAX.U.svg
+	lyxscale 50
+	scale 25
+	special trim=0 0 290 0,clip=true
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_rx_bitrate_srv02.06.U.MAX.U.svg
+	lyxscale 50
+	scale 25
+	BoundingBox 0bp 0bp 1000bp 600bp
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -10bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06: RX-Bitrate auf Interface 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ der Netzwerklast U.MAX.U auf shck-Client und -Server
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -20bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "47text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Client TX eth0
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "35text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Server TX eth0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_tx_bitrate_srv01.06.U.MAX.U.svg
+	lyxscale 50
+	scale 25
+	special trim=0 0 290 0,clip=true
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_tx_bitrate_srv02.06.U.MAX.U.svg
+	lyxscale 50
+	scale 25
+	BoundingBox 0bp 0bp 1000bp 600bp
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -10bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06: TX-Bitrate auf Interface 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ der Netzwerklast U.MAX.U auf shck-Client und -Server
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+U.MAX.K
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "47text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Client CPU
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "35text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Server CPU
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/cpu_load_srv01.06.U.MAX.K.svg
+	lyxscale 50
+	scale 25
+	special trim=0 0 290 0,clip=true
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/cpu_load_srv02.06.U.MAX.K.svg
+	lyxscale 50
+	scale 25
+	BoundingBox 0bp 0bp 1000bp 600bp
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -10bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06: CPU-Last des PRP-1 stacks der Netzwerklast U.MAX.K auf
+ shck-Client und -Server
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -20bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "47text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Client RX eth0
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "35text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Server RX eth0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_rx_bitrate_srv01.06.U.MAX.K.svg
+	lyxscale 50
+	scale 25
+	special trim=0 0 290 0,clip=true
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_rx_bitrate_srv02.06.U.MAX.K.svg
+	lyxscale 50
+	scale 25
+	BoundingBox 0bp 0bp 1000bp 600bp
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -10bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06: RX-Bitrate auf Interface 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ der Netzwerklast U.MAX.K auf shck-Client und -Server
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -20bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "47text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Client TX eth0
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "35text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Server TX eth0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_tx_bitrate_srv01.06.U.MAX.K.svg
+	lyxscale 50
+	scale 25
+	special trim=0 0 290 0,clip=true
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_tx_bitrate_srv02.06.U.MAX.K.svg
+	lyxscale 50
+	scale 25
+	BoundingBox 0bp 0bp 1000bp 600bp
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -10bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06: TX-Bitrate auf Interface 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ der Netzwerklast U.MAX.K auf shck-Client und -Server
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+T.MIN.U
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "47text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Client CPU
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "35text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Server CPU
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/cpu_load_srv01.06.T.MIN.U.svg
+	lyxscale 50
+	scale 25
+	special trim=0 0 290 0,clip=true
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/cpu_load_srv02.06.T.MIN.U.svg
+	lyxscale 50
+	scale 25
+	BoundingBox 0bp 0bp 1000bp 600bp
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -10bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06: CPU-Last des PRP-1 stacks der Netzwerklast T.MIN.U auf
+ shck-Client und -Server
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -20bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "47text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Client RX eth0
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "35text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Server RX eth0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_rx_bitrate_srv01.06.T.MIN.U.svg
+	lyxscale 50
+	scale 25
+	special trim=0 0 290 0,clip=true
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_rx_bitrate_srv02.06.T.MIN.U.svg
+	lyxscale 50
+	scale 25
+	BoundingBox 0bp 0bp 1000bp 600bp
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -10bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06: RX-Bitrate auf Interface 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ der Netzwerklast T.MIN.U auf shck-Client und -Server
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -20bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "47text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Client TX eth0
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "35text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Server TX eth0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_tx_bitrate_srv01.06.T.MIN.U.svg
+	lyxscale 50
+	scale 25
+	special trim=0 0 290 0,clip=true
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_tx_bitrate_srv02.06.T.MIN.U.svg
+	lyxscale 50
+	scale 25
+	BoundingBox 0bp 0bp 1000bp 600bp
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -10bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06: TX-Bitrate auf Interface 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ der Netzwerklast T.MIN.U auf shck-Client und -Server
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+T.MIN.K
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "47text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Client CPU
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "35text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Server CPU
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/cpu_load_srv01.06.T.MIN.K.svg
+	lyxscale 50
+	scale 25
+	special trim=0 0 290 0,clip=true
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/cpu_load_srv02.06.T.MIN.K.svg
+	lyxscale 50
+	scale 25
+	BoundingBox 0bp 0bp 1000bp 600bp
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -10bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06: CPU-Last des PRP-1 stacks der Netzwerklast T.MIN.K auf
+ shck-Client und -Server
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -20bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "47text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Client RX eth0
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "35text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Server RX eth0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_rx_bitrate_srv01.06.T.MIN.K.svg
+	lyxscale 50
+	scale 25
+	special trim=0 0 290 0,clip=true
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_rx_bitrate_srv02.06.T.MIN.K.svg
+	lyxscale 50
+	scale 25
+	BoundingBox 0bp 0bp 1000bp 600bp
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -10bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06: RX-Bitrate auf Interface 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ der Netzwerklast T.MIN.K auf shck-Client und -Server
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -20bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "47text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Client TX eth0
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "35text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Server TX eth0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_tx_bitrate_srv01.06.T.MIN.K.svg
+	lyxscale 50
+	scale 25
+	special trim=0 0 290 0,clip=true
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_tx_bitrate_srv02.06.T.MIN.K.svg
+	lyxscale 50
+	scale 25
+	BoundingBox 0bp 0bp 1000bp 600bp
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -10bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06: TX-Bitrate auf Interface 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ der Netzwerklast T.MIN.K auf shck-Client und -Server
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+T.MAX.U
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "47text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Client CPU
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "35text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Server CPU
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/cpu_load_srv01.06.T.MAX.U.svg
+	lyxscale 50
+	scale 25
+	special trim=0 0 290 0,clip=true
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/cpu_load_srv02.06.T.MAX.U.svg
+	lyxscale 50
+	scale 25
+	BoundingBox 0bp 0bp 1000bp 600bp
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -10bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06: CPU-Last des PRP-1 stacks der Netzwerklast T.MAX.U auf
+ shck-Client und -Server
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -20bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "47text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Client RX eth0
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "35text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Server RX eth0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_rx_bitrate_srv01.06.T.MAX.U.svg
+	lyxscale 50
+	scale 25
+	special trim=0 0 290 0,clip=true
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_rx_bitrate_srv02.06.T.MAX.U.svg
+	lyxscale 50
+	scale 25
+	BoundingBox 0bp 0bp 1000bp 600bp
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -10bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06: RX-Bitrate auf Interface 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ der Netzwerklast T.MAX.U auf shck-Client und -Server
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -20bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "47text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Client TX eth0
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "35text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Server TX eth0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_tx_bitrate_srv01.06.T.MAX.U.svg
+	lyxscale 50
+	scale 25
+	special trim=0 0 290 0,clip=true
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_tx_bitrate_srv02.06.T.MAX.U.svg
+	lyxscale 50
+	scale 25
+	BoundingBox 0bp 0bp 1000bp 600bp
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -10bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06: TX-Bitrate auf Interface 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ der Netzwerklast T.MAX.U auf shck-Client und -Server
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Newpage pagebreak
+\end_inset
+
+T.MAX.K
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "47text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Client CPU
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "35text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Server CPU
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/cpu_load_srv01.06.T.MAX.K.svg
+	lyxscale 50
+	scale 25
+	special trim=0 0 290 0,clip=true
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/cpu_load_srv02.06.T.MAX.K.svg
+	lyxscale 50
+	scale 25
+	BoundingBox 0bp 0bp 1000bp 600bp
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -10bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06: CPU-Last des PRP-1 stacks der Netzwerklast T.MAX.K auf
+ shck-Client und -Server
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -20bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "47text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Client RX eth0
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "35text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Server RX eth0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_rx_bitrate_srv01.06.T.MAX.K.svg
+	lyxscale 50
+	scale 25
+	special trim=0 0 290 0,clip=true
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_rx_bitrate_srv02.06.T.MAX.K.svg
+	lyxscale 50
+	scale 25
+	BoundingBox 0bp 0bp 1000bp 600bp
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -10bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06: RX-Bitrate auf Interface 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ der Netzwerklast T.MAX.K auf shck-Client und -Server
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -20bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align left
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "47text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Client TX eth0
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "35text%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+
+\series bold
+shck-Server TX eth0
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_tx_bitrate_srv01.06.T.MAX.K.svg
+	lyxscale 50
+	scale 25
+	special trim=0 0 290 0,clip=true
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/graph/06/net_eth0_tx_bitrate_srv02.06.T.MAX.K.svg
+	lyxscale 50
+	scale 25
+	BoundingBox 0bp 0bp 1000bp 600bp
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -10bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Resultat Szenario 06: TX-Bitrate auf Interface 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ der Netzwerklast T.MAX.K auf shck-Client und -Server
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Szenario 07: Einluss von Offload-Mechanismen
 \begin_inset CommandInset label
@@ -40910,11 +44608,608 @@ ten.
 \end_layout
 
 \begin_layout Subsection
-Kalenderwoche xx: xx.xx.2015
+Kalenderwoche 07: 09.02.2015
 \end_layout
 
 \begin_layout Itemize
-Lorem ipsum
+Es handelt sich bei dieser Arbeit um PRP in Form einer OpenSource-Softwareschich
+t (PRP-1 stack) auf GitHub.
+\end_layout
+
+\begin_layout Itemize
+Das Verhalten des PRP-1 stacks im Detail unter verschiedenen Bedinungen
+ unbekannt.
+\end_layout
+
+\begin_layout Itemize
+Bezug auf Linux Endsysteme
+\end_layout
+
+\begin_layout Itemize
+Man sollte immer nur einen Faktor pro Messung ändern können.
+\end_layout
+
+\begin_layout Itemize
+PRP arbeitet auf MAC-Layer (PRP-Daten werden hinter Paket angehängt, welches
+ das Frame als PRP-Frame identifiziert).
+\end_layout
+
+\begin_layout Itemize
+Delay via Paragon in Link einbaubar (Erzeugt Delay und Verlust).
+\end_layout
+
+\begin_layout Itemize
+Duplikaterkennung in PRP: Wenn Delay zwischen Original und Duplikat zu gross,
+ dann wird Duplikat als neues Frame erkannt.
+ Wird von TCP als Duplikat erkannt, bei UDP jedoch nicht (kommt auf dahinter
+ stehende Software an).
+\end_layout
+
+\begin_layout Itemize
+PRP-Umgebung von ZHAW-Netzwerk entkoppeln.
+\end_layout
+
+\begin_layout Itemize
+Falls Zeit vorhanden, kann noch folgendes analysiert werden:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Andere PRP-Implementierung von Schweizer Firma auf Windows-Basis.
+\end_layout
+
+\begin_layout Itemize
+Virtualisierung (Was geschieht zwischen VMs und Virtuellem Switch? Ist es
+ messbar?).
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Weiteres Vorgehen:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+PRP Aufbau studieren
+\end_layout
+
+\begin_layout Itemize
+Mit Tools vertraut werden und auf bestimmte konzentrieren
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Jedes Tool genau untersuchen wär nicht sinnvoll.
+\end_layout
+
+\begin_layout Itemize
+Häufig genutzt und genannt: iperf
+\end_layout
+
+\begin_layout Itemize
+Was bedeutet das Ergebnis?
+\end_layout
+
+\begin_layout Itemize
+Was misst iperf? Muss verglichen werden.
+\end_layout
+
+\begin_layout Itemize
+Genau definierte Last muss generierbar sein.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+PRP-Umgebung aufbauen
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Kalenderwoche 08: 16.02.2015
+\end_layout
+
+\begin_layout Itemize
+PRP-Erkennung in Wireshark aktivieren
+\end_layout
+
+\begin_layout Itemize
+Fokus auf PRP-1, Satz spendieren an PRP-0
+\end_layout
+
+\begin_layout Itemize
+Aging beobachten
+\end_layout
+
+\begin_layout Subsection
+Kalenderwoche 09: 23.02.2015
+\end_layout
+
+\begin_layout Itemize
+RCT ist 6 Bytes
+\end_layout
+
+\begin_layout Itemize
+Adapter_active in 
+\begin_inset Quotes fld
+\end_inset
+
+Environment Config
+\begin_inset Quotes frd
+\end_inset
+
+ im PRP-1 stack nicht aktuell
+\end_layout
+
+\begin_layout Itemize
+RAM bei allen Servern auf 2GB gesetzt
+\end_layout
+
+\begin_layout Itemize
+Frameverlust durch ECI-Box oder Paragon simulieren
+\end_layout
+
+\begin_layout Itemize
+Rahmenbedingungen und Tests erstellen
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Jedes Tool einzeln laufen lassen
+\end_layout
+
+\begin_layout Itemize
+Tools vergleichen
+\end_layout
+
+\begin_layout Itemize
+Toolwahl begründen
+\end_layout
+
+\begin_layout Itemize
+Wie CPU-Leistung messen?
+\end_layout
+
+\begin_layout Itemize
+Mit Profiler PRP-1 stack messen
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Physische Netzwerk-Interfaces auf 100 MBit/s setzen
+\end_layout
+
+\begin_layout Itemize
+Wer macht Bottleneck, I/O oder CPU?
+\end_layout
+
+\begin_layout Itemize
+iperf neuste Instanz herunterladen (Erfahrungsgemäss besser)
+\end_layout
+
+\begin_layout Itemize
+Nächste Schritte: PRP- und Stack-Dokumentation abschliessen, Tests erstellen,
+ Tools evaluieren
+\end_layout
+
+\begin_layout Subsection
+Kalenderwoche 10: 02.03.2015
+\end_layout
+
+\begin_layout Itemize
+Wie geht der PRP-1 stack vor, wenn die Duplikattabelle voll ist (z.B.
+ wenn LAN_A aus ist)? Wird das älteste Frame überschrieben?
+\end_layout
+
+\begin_layout Itemize
+Zuverlässigkeit der Resultate ermitteln
+\end_layout
+
+\begin_layout Itemize
+Kriterien für Tools notieren
+\end_layout
+
+\begin_layout Itemize
+TCP-Durchsatz: Wie leidet er bei Paketverlust?
+\end_layout
+
+\begin_layout Itemize
+Offload-Mechanismen anschauen
+\end_layout
+
+\begin_layout Subsection
+Kalenderwoche 11: 09.03.2015
+\end_layout
+
+\begin_layout Itemize
+Eigene Software für CPU-Messung in Entwicklung
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+mit Timer von OS
+\end_layout
+
+\begin_layout Itemize
+Werte von /proc-Dateisystem
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Memory eher untergeordnete Bedeutung
+\end_layout
+
+\begin_layout Itemize
+Chrakteristiken bestimmen
+\end_layout
+
+\begin_layout Itemize
+iperf3 erzielt ohne Autonegotiation 25 MBit/s, mit Autoneg.
+ 100 MBit/s
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Weniger im Fokus dieser Arbeit
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Kalenderwoche 12: 16.03.2015
+\end_layout
+
+\begin_layout Itemize
+Programme und Scripts erstellt
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Bis jetzt nur Single-Threaded
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Offload-Mechanismen auf Server aktiviert oder deaktiviert? Im Normalfall
+ aus.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Was für Mechanismen gibt es? Wie funktionieren sie?
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Switch sendet alle 30s LLDP-Pakete, muss deaktiviert werden.
+ Falls dies nicht möglich ist, sollte es keinen merkbaren Einfluss erzielen.
+\end_layout
+
+\begin_layout Itemize
+3 Fälle beim Versenden von Netzwerklast betrachten:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Alles grosse Frames (Schlimmer Fall)
+\end_layout
+
+\begin_layout Itemize
+Alles kleine Frames (Schlimmer Fall)
+\end_layout
+
+\begin_layout Itemize
+Random Fall
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Testing
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Zuverlässigkeiten
+\end_layout
+
+\begin_layout Itemize
+Bottleneck bei Netzwerk soll bei NIC sein, sonst misst man CPU
+\end_layout
+
+\begin_layout Itemize
+dd-Befehl erzeugt viel Systemtime, bc-Befehl viel Usertime
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Kalenderwoche 13: 23.03.2015
+\end_layout
+
+\begin_layout Itemize
+Vergleich meas-Messungen mit und ohne PRP
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Restliche Prozesse anschauen: Was benötigen diese ohne PRP-1 stack?
+\end_layout
+
+\begin_layout Itemize
+iperf-Messungen anschauen und vergleichen
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Offloading-Mechanismen
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Möglichkeiten in tg3-Treiber- (NIC-Treiber) Dokumenten oder Quellcode anschauen.
+\end_layout
+
+\begin_layout Itemize
+Ethernet Controller Datenblatt konsultieren
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+PRP-Interface-MTU beträgt 1494 Bytes, anders als im PRP-Standard definiert
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+MTU vom PRP-1 stack einsetzen wie sie jetzt ist.
+\end_layout
+
+\begin_layout Itemize
+Keine Modifikationen am stack vornehmen
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Performancemässig besteht zwischen UDP- und Ethernet-Netzwerklast ein kleiner
+ Unterschied.
+ Wenn das nachgewiesen werden kann, kann auf die Ethernet-Netzwerklast verzichte
+t werden.
+\end_layout
+
+\begin_layout Subsection
+Kalenderwoche 14: 30.03.2015
+\end_layout
+
+\begin_layout Itemize
+meas ist Hauptapplikation für die Messungen, wird mit anderen Tools verglichen
+\end_layout
+
+\begin_layout Itemize
+UDP- und Layer-2-Netzwerklast Vergleich
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Wenn nicht ähnlich, muss auch mit Layer-2-Frames getestet werden
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Nächste 2 Montage ist Herr Weibel abwesend, jedoch per E-Mail erreichbar
+\end_layout
+
+\begin_layout Subsection
+Kalenderwoche 16: 13.04.2015
+\end_layout
+
+\begin_layout Itemize
+Ein Stromausfall fand vor dem Karfreitag statt, wobei ein Server nicht wieder
+ automatisch hochgefahren ist.
+ Da kein direkter Zugang zum Raum mit den Servern besteht, konnte am Karfreitag
+ nicht mit den Servern gearbeitet werden.
+\end_layout
+
+\begin_layout Itemize
+Python-Script shck optimieren
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Profiling mit Hilfe von perf, python, etc.
+\end_layout
+
+\begin_layout Itemize
+Unnötige Casts entfernen
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Gründe für Tool-Auswahl konkretisieren
+\end_layout
+
+\begin_layout Subsection
+Kalenderwoche 17: 20.04.2015
+\end_layout
+
+\begin_layout Itemize
+\begin_inset Quotes fld
+\end_inset
+
+Zuverlässigkeitsüberprüfung
+\begin_inset Quotes frd
+\end_inset
+
+ ist ein eher unpassender Titel, eher 
+\begin_inset Quotes fld
+\end_inset
+
+Verifizierung
+\begin_inset Quotes frd
+\end_inset
+
+ oder 
+\begin_inset Quotes fld
+\end_inset
+
+Konsistenzüberprüfung
+\begin_inset Quotes frd
+\end_inset
+
+ nehmen.
+\end_layout
+
+\begin_layout Itemize
+Bei der Erzeugung von Asymmetrie zwischen Netzwerk A und B wäre es noch
+ interessant, was ein schwankender Delay für Konsequenzen haben würde.
+\end_layout
+
+\begin_layout Itemize
+Einfluss der Ankunftsreihenfolge auf Duplikaterkennung überprüfen
+\end_layout
+
+\begin_layout Itemize
+Messresultate von Szenario 01 mit Histogrammen senden
+\end_layout
+
+\begin_layout Subsection
+Kalenderwoche 18: 27.04.2015
+\end_layout
+
+\begin_layout Itemize
+Bitratenangabe in MBit/s auf ca.
+ 3 signifikante Stellen, Angabe in Bit/s zu unübersichtlich und zu genau.
+\end_layout
+
+\begin_layout Itemize
+Tests mehrmals laufen lassen
+\end_layout
+
+\begin_layout Itemize
+Minimal mögliche Payload beträgt 46 Bytes
+\end_layout
+
+\begin_layout Itemize
+Mit Wireshark Netzwerklast kontrollieren
+\end_layout
+
+\begin_layout Itemize
+Theoretische Grenzwerte berechnen
+\end_layout
+
+\begin_layout Itemize
+Nur notwenige Prozesse dürfen auf dem System in Betrieb sein
+\end_layout
+
+\begin_layout Itemize
+Welche Messungen sind notwendig? Braucht es 1h lange Tests?
+\end_layout
+
+\begin_layout Subsection
+Kalenderwoche 19: 04.05.2015
+\end_layout
+
+\begin_layout Itemize
+Bei den Grafiken, welche die Beschaffenheit des Frameaufbaus von shck erläutern,
+ muss erwähnt werden, dass der TCP- und IP-Header generell eine variable
+ Grösse haben.
+\end_layout
+
+\begin_layout Itemize
+Bei der Erklärung der Lasttypen, einen Verweis auf die Frame-Grafiken einfügen.
+\end_layout
+
+\begin_layout Itemize
+Netzwerklast Random Fall entfernen
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Anstelle der Random-Last sollte ein beliebig definierbares Lastmuster angegeben
+ werden können.
+ Aus diesem Grund wird der Lasttyp "Random" für die Testserien ferner nicht
+ mehr berücksichtigt.
+ Begründung: Lastmuster sollten pro Anwendungsfall spezifisch definiert
+ werden können.
+ Normalverteilte Random-Last ist zu generisch und damit nicht wirklich aussagekr
+äftig.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Ausformulieren, weshalb meas nur Singlethreaded-Prozesse/-Applikationen
+ überwacht.
+\end_layout
+
+\begin_layout Subsection
+Kalenderwoche 20: 11.05.2015
+\end_layout
+
+\begin_layout Itemize
+TCP-Window-Size untersuchen
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Bei TCP-Netzwerklasten gibt es 3 mögliche limitierende Faktoren: CPU, Netzanbind
+ung, TCP-Protokoll.
+ Limitierung durch TCP überprüfen.
+\end_layout
+
+\begin_layout Itemize
+Stream aufzeichnen und Entwicklung analysieren
+\end_layout
+
+\begin_layout Itemize
+In theoretischen Grundlagen aufführen
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Netzwerk A und B unterschiedlich gross machen, z.B.
+ alle SANs bei A.
+\end_layout
+
+\begin_layout Itemize
+Szenario 03 hat eine niedrige Priorität
+\end_layout
+
+\begin_layout Itemize
+Punkt am Ende einer Kapitelnummer entfernen
+\end_layout
+
+\begin_layout Subsection
+Kalenderwoche 21: 18.05.2015
+\end_layout
+
+\begin_layout Itemize
+Automatisierungsvorgang (gnuplot, Bash, etc.) in Anhang erwähnen
+\end_layout
+
+\begin_layout Itemize
+Zusammenfassung beinhaltet Kernaussagen
+\end_layout
+
+\begin_layout Itemize
+Szenario 01 ist Normalfall
+\end_layout
+
+\begin_layout Itemize
+Szenario 04 betrifft Duplikaterkennung
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Kein Einfluss auf CPU (Nur je mehr Daten auf dem Server ankommen, desto
+ mehr CPU wird auf dem Server erzielt, Client bleibt gleich)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Messresultate in den Anhang, ansonsten verliert der Leser den Überblick.
+\end_layout
+
+\begin_layout Itemize
+Wäre noch interessant: shck Version mit fixer Bandbreitenangabe
+\end_layout
+
+\begin_layout Itemize
+Nächste Woche ist Herr Weibel abwesend, jedoch per E-Mail erreichbar
 \end_layout
 
 \begin_layout Chapter
