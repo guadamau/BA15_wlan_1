@@ -1044,16 +1044,14 @@ Bezüglich der durchschnittlich beanspruchten Netzwerklast ist ersichtlich,
 
 \begin_layout Standard
 Letzten Endes unterscheiden sich die Messwerte von Client und Server lediglich
- in der beanspruchten CPU-Last, welche mit der Duplikaterkennung zu tun
- hat, die der PRP-1 stack des Servers zusätzlich aufwenden muss.
- Zusätzlich sind beim Server bei der CPU-Last bei einigen Netzwerklasten
- sehr langsame periodischen Schwankungen festzustellen, die beim empfangenden
- PRP-1 stack des Servers entstehen.
- Im Gegensatz zu dieser CPU-Last bleiben die Bitraten des Servers konstant.
-\end_layout
+ in der beanspruchten CPU-Last, worauf im Profiling, siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Profiling"
 
-\begin_layout Standard
-WIP ERKLAERUNG
+\end_inset
+
+, genauer eingegangen wird.
 \end_layout
 
 \begin_layout Subsubsection
@@ -1111,6 +1109,13 @@ Organisation der Datenstruktur zur Duplikaterkennung (Aging, Einträge hinzufüg
 \end_deeper
 \begin_layout Subsubsection
 Profiling
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Profiling"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1783,6 +1788,13 @@ PRP_Trailer_T_remove_trailer
 
 \begin_layout Subsubsection
 Profiling Fazit
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Profiling-Fazit"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1813,7 +1825,7 @@ Dies wiederum resultiert darin, dass die PRP-1-stack-Applikation des sendenden
 
 \begin_layout Standard
 Die PRP-1-stack-Applikation verbringt die meiste Ausführungszeit im Kernelspace.
- Beim transmittieren von Paketen entsteht der folgende Datenfluss:
+ Beim Transmittieren von Paketen entsteht der folgende Datenfluss:
 \end_layout
 
 \begin_layout Standard
@@ -1998,25 +2010,45 @@ MIN
  via UDP festzustellen.
  Der einzige Unterschied zwischen diesen Messungen liegt im Zeitpunkt, an
  dem die Messung beendet wird.
- Mehrere Durchläufe der Messungen ergaben das selbe Ergebnis.
+ Mehrere Durchläufe der Messungen ergaben stets das selbe Ergebnis.
  Zusätzlich wurde sichergestellt, dass sich die Messungen nicht beeinflussen,
  indem die Abstände zwischen den Messungen vergrössert und die Reihenfolge
  der Messungen abgeändert wurden, jedoch ohne ein anderes Ergebnis zu erzielen.
- Bei einer Ultrakurzzeit-Messung des vorhin erwähnten Lasttyps erhält der
- PRP-1 stack mehr CPU-Zeit (der Engpass durch den Prozessor ist kleiner)
+ ??? Bei einer Ultrakurzzeit-Messung des vorhin erwähnten Lasttyps, erhält
+ der PRP-1 stack mehr CPU-Zeit (der Engpass durch den Prozessor ist kleiner)
  und kann somit eine höhere Bitrate erzielen.
  Diese höhere CPU-Last spiegelt sich in der TX-Bitrate des Clients, der
  RX-Bitrate des Servers und der daraus resultierenden CPU-Last des Servers
  wieder.
- Gründe für den vorhin erwähnten Unterschied konnten aus Zeitgründen nicht
- ermittelt werden.
- 
+ ???
 \end_layout
 
 \begin_layout Standard
-Ein Profiling des PRP-1 stacks fiel ohne neue Erkenntnisse bezüglich dieses
- Unterschieds aus und über eine manuelle Systemüberprüfung konnten keine
- weiteren möglichen Einflüsse festgestellt werden.
+Ferner sind beim Server bei der CPU-Last bei einigen Netzwerklasten sehr
+ langsame periodischen Schwankungen festzustellen, die beim empfangenden
+ PRP-1 stack des Servers entstehen.
+ Im Gegensatz der schwankenden CPU-Last bleiben die Bitraten des Servers
+ jedoch konstant.
+\end_layout
+
+\begin_layout Standard
+Im Fazit über das Profiling des PRP-1 stacks, siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Profiling-Fazit"
+
+\end_inset
+
+, wird erwähnt, dass der Scheduler des Betriebssystems einen Einfluss auf
+ die unterschiedlichen CPU-Auslastungen haben könnte.
+ Im Rahmen der vorliegenden Arbeit kann diese These jedoch aus Zeitgründen
+ nicht näher untersucht und durch weitere Testszenarien zusätzlich belegt
+ werden.
+\end_layout
+
+\begin_layout Standard
+Über eine manuelle Systemüberprüfung konnten keine weiteren möglichen Einflüsse
+ festgestellt werden.
  Eine Differenz bei der Netzwerklast-Generierung durch shck ist auszuschliessen,
  da für beide Messungen die selben Parameter verwendet werden und bei Ultrakurzz
 eit-Messungen lediglich der Generierungs-Prozess früher per kill-Befehl
@@ -2037,7 +2069,7 @@ reference "sub:Einschwingzeit-/-Steady"
  fallen diese kleiner aus.
  Dies ist auf den Einfluss der gewählten Messintervallgrössen zurück zu
  führen.
- Bei der Steady-State-Untersuchung selektierte man ein Intervall von 0.1s,
+ Bei der Steady-State-Untersuchung wurde ein Intervall von 0.1s selektiert,
  der Allgemeinfall, wie er u.a.
  in diesem Szenario angewandt wird, beträgt jedoch 1s.
  Die daraus entstehenden Konsequenzen werden in Kapitel 
