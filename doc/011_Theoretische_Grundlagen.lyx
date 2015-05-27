@@ -694,6 +694,29 @@ key "PRP-1_SW_Stack"
 \end_layout
 
 \begin_layout Subsubsection
+Schnitstelle zum Betriebssystem
+\end_layout
+
+\begin_layout Standard
+Als Schnittstelle zwischen dem Betriebssystem und der PRP-1-stack-Applikation
+ wird die pcap-Bibliothek 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "pcap-manpage"
+
+\end_inset
+
+ verwendet.
+ Die pcap-Bibliothek stellt die Funktionalität zur Verfügung, um beispielsweise
+ mittels Dateideskriptoren und/oder Sockets auf virtuelle sowie physische
+ Netzwerk-Interfaces zuzugreifen.
+ Mittels pcap ist es möglich, Zugriff auf sämtliche Datenströme, die ein
+ Netzwerk-Interface passieren, zu erlangen.
+ Diese Eigenschaft von pcap wird dazu verwendet, um die Netzwerk-Interfaces
+ des Betriebssystems mit den Funktionalitäten des PRP-Protokolls zu verbinden.
+\end_layout
+
+\begin_layout Subsubsection
 Frame-Duplikate
 \begin_inset CommandInset label
 LatexCommand label

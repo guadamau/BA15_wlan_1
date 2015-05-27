@@ -1252,8 +1252,8 @@ Ausgangslage
 
 Für das Erstellen der Profildaten wurden die Betriebssysteme zweier Maschinen
  (srv03 und srv02) über einen Zeitraum von 60 Sekunden aufgezeichnet.
- Als Netzwerklast wurden TCP-Pakete verwendet, da Client- und die Server-Applika
-tion Daten versenden sowie empfangen.
+ Als Netzwerklast wurden TCP-Pakete verwendet, da die Client- und die Server-App
+likation Daten versenden sowie empfangen.
 \end_layout
 
 \begin_layout Standard
@@ -1475,7 +1475,7 @@ Werden alle Prozesse des Betriebssystems betrachtet, ist festzustellen,
 \end_layout
 
 \begin_layout Paragraph
-Spezifischer Prozess des PRP-1 stacks
+Spezifischer Prozess PRP-1 stack
 \end_layout
 
 \begin_layout Subparagraph
@@ -1595,6 +1595,392 @@ Bei der detaillierten Betrachtung des PRP-1-stack-Prozesses fällt auf, dass,
  CPU-Zeit angefordert wird.
 \end_layout
 
+\begin_layout Standard
+Die beiden Flame Graphs des PRP-1 stacks zeigen auf, dass die Applikation
+ zwar als Userspace-Applikation gestartet wird, jedoch verbringt sie den
+ grössten Teil ihrer Ausführungszeit im Kernelspace.
+ Dies ist darauf zurückzuführen, dass der PRP-1 stack als Hauptaufgabe die
+ Kommunikation mit dem virtuellen PRP-Interface wahrzunehmen hat.
+ Das Analysieren von Frames und Verwalten der Duplikattabelle stellt dagegen
+ einen verhältnismässig kleinen Anteil dar.
+\end_layout
+
+\begin_layout Subparagraph
+PRP-Transmit-Funktion
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _diagrams/021_profiling/PRP_T_transmit.png
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Flame Graph der PRP-Transmit-Funktion
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Flame-Graph-der"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Beim Versenden von Frames wird im PRP-Stack die Funktion 
+\begin_inset Quotes fld
+\end_inset
+
+PRP_T_transmit
+\begin_inset Quotes frd
+\end_inset
+
+ aufgerufen.
+ Dies geschieht im Userspace.
+ Um die zu sendenden Daten zu transmittieren, müssen diese in den Kernelspace
+ kopiert werden, was mit dem Aufruf der Funktion 
+\begin_inset Quotes fld
+\end_inset
+
+__copy_from_user_ll
+\begin_inset Quotes frd
+\end_inset
+
+ vollzogen wird.
+ Der zeitliche Anteil, um User-Daten in den Kernel-Space zu kopieren, hängt
+ von der Grösse der zu versendenden Pakete ab.
+ Anschliessend werden für das Transmittieren zahlreiche Kernelspace-Funktionen
+ aufgerufen.
+\end_layout
+
+\begin_layout Subparagraph
+PRP-Receive-Funktion
+\end_layout
+
+\begin_layout Standard
+\begin_inset space \hfill{}
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _diagrams/021_profiling/PRP_T_receive.png
+	lyxscale 50
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Flame Graph der PRP-Receive-Funktion
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Receive-Funktion des PRP-1 stacks ist in der obigen Abbildung als komplette
+ Kernelspace-Funktion abgebildet.
+ Dies liegt daran, dass die Callback-Funktion 
+\begin_inset Quotes fld
+\end_inset
+
+PcapReceive_callback
+\begin_inset Quotes frd
+\end_inset
+
+ von pcap-Funktionen aus dem Kernelspace aufgerufen wird, sobald ein Frame
+ eintrifft, welches verarbeitet werden muss.
+ Beim Empfang von Frames, sind es die Funktionen des PRP-1 stacks, namentlich
+ 
+\begin_inset Quotes fld
+\end_inset
+
+PRP_DiscardAlgorithm_T_search_entry
+\begin_inset Quotes frd
+\end_inset
+
+ für das Durchsuchen der Duplikattabelle und das Aufnehmen neuer Frames
+ in die Duplikattabelle, 
+\begin_inset Quotes fld
+\end_inset
+
+PRP_Trailer_T_get_trailer
+\begin_inset Quotes frd
+\end_inset
+
+ um den RCT aus einem ankommenden Frame zu lesen und 
+\begin_inset Quotes fld
+\end_inset
+
+PRP_Trailer_T_remove_trailer
+\begin_inset Quotes frd
+\end_inset
+
+ um diesen zu entfernen, welche die meiste CPU-Zeit beanspruchen.
+ Der anschliessende Write-System-Call, um das aufbereitete Frame dem virtuellen
+ PRP-Interface weiterzureichen, benötigt vergleichsweise wenig CPU-Zeit.
+\end_layout
+
+\begin_layout Subsubsection
+Profiling Fazit
+\end_layout
+
+\begin_layout Standard
+Beim Profiling aller Prozesse des Betriebssystems wird sichtbar, dass die
+ Zuteilung der CPU-Zeiten stark vom Scheduler des Betriebssystems abhängt.
+ Der Netzwerklastgenerator 
+\begin_inset Quotes fld
+\end_inset
+
+shck
+\begin_inset Quotes frd
+\end_inset
+
+ benötigt für das Erstellen und Senden der Pakete mehr CPU-Zeit als für
+ das Empfangen.
+ 
+\end_layout
+
+\begin_layout Standard
+Dies wiederum resultiert darin, dass die PRP-1-stack-Applikation des sendenden
+ Hosts weniger CPU-Zeit zur Verfügung hat als diejenige des empfangenden
+ Hosts.
+ Bei Netzwerklasten mit überwiegend Paketen, die eine maximale Paketgrösse
+ aufweisen, ist dies kein limitierender Faktor, vorausgesetzt, es befinden
+ sich nicht zu viele zusätzlich laufenden Prozesse auf dem Betriebssystem,
+ welche die CPU auslasten.
+\end_layout
+
+\begin_layout Standard
+Die PRP-1-stack-Applikation verbringt die meiste Ausführungszeit im Kernelspace.
+ Beim transmittieren von Paketen entsteht der folgende Datenfluss:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _diagrams/021_profiling/us_ks_overhead.svg
+	lyxscale 50
+	scale 70
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Userspace/Kernelspace-Datenfluss, PRP-1 stack transmit
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Daten, die von der ursprünglichen Applikation aus versendet wurden, werden
+ vom PRP-1 stack wieder in den Userspace kopiert, und gelangen anschliessend
+ erneut in den Kernelspace, um über die physischen Interfaces, eth0 und
+ eth1, transmittiert zu werden.
+ Dies sind zwei zusätzliche Kopiervorgänge zwischen Kernel- und Userspace,
+ verglichen mit einem herkömmlichen Sendevorgang über ein physisches Netzwerk-In
+terface.
+\end_layout
+
+\begin_layout Standard
+Die Kopiervorgänge nehmen ein im Verhältnis grosses Zeitquantum in Anspruch,
+ wie dies beispielsweise in Abbildung 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Flame-Graph-der"
+
+\end_inset
+
+ sichtbar ist.
+ Die Funktion 
+\begin_inset Quotes fld
+\end_inset
+
+__copy_from_user_ll
+\begin_inset Quotes frd
+\end_inset
+
+ verbraucht einen prozentual hohen Anteil an CPU-Zeit, gegenüber anderen
+ Funktionen beim Transmittieren eines Pakets.
+ Wenn der PRP-1 stack auschliesslich im Kernlspace betrieben würde, könnte
+ dieser Overhead vermieden werden.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _diagrams/021_pie_chart_kernel_user_cpu_tcp_max.svg
+	lyxscale 50
+	display false
+	scale 20
+	special trim=0 0 290 0,clip=true
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _diagrams/021_pie_chart_kernel_user_count_tcp_max.svg
+	lyxscale 50
+	display false
+	scale 25
+	BoundingBox 0bp 0bp 1000bp 600bp
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset VSpace -10bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Grobübersicht, Anteil Kernelspace und Userspace des PRP-1 stacks
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Ein weiterer Aspekt, der für eine Portierung des PRP-1 stacks in ein Kernel-Modu
+l sprechen würde, wäre der Umstand, dass die Funktionen des PRP-Protokolls
+ (Verwalten der Duplikaterkennungs-Tabelle, etc.) in ihrer Ausführung prioritär
+ vom Betriebssystem-Scheduler behandelt würden.
+\end_layout
+
+\begin_layout Standard
+Dies würde auch nach sich ziehen, dass die Timer-Deadlines, welche in der
+ PRP-1-stack-Implementierung eine zentrale Rolle einnehmen (Supervision
+ Frames, Aging-Timer), marginal genauer eingehalten werden könnten.
+ Da die Timer jedoch nur eine Genauigkeit im Bereich von Millisekunden einhalten
+ müssen, wäre dieser Faktor vernachlässigbar.
+\end_layout
+
 \begin_layout Subsubsection
 Weitere Aspekte
 \end_layout
@@ -1624,7 +2010,11 @@ MIN
  wieder.
  Gründe für den vorhin erwähnten Unterschied konnten aus Zeitgründen nicht
  ermittelt werden.
- Ein Profiling des PRP-1 stacks fiel ohne neue Erkenntnisse bezüglich dieses
+ 
+\end_layout
+
+\begin_layout Standard
+Ein Profiling des PRP-1 stacks fiel ohne neue Erkenntnisse bezüglich dieses
  Unterschieds aus und über eine manuelle Systemüberprüfung konnten keine
  weiteren möglichen Einflüsse festgestellt werden.
  Eine Differenz bei der Netzwerklast-Generierung durch shck ist auszuschliessen,
