@@ -221,8 +221,21 @@ reference "sub:Client-DAN-sendet-1"
 
 \end_layout
 
-\begin_layout Subsection
-Client SAN sendet an Server SAN
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 02: Client SAN sendet an Server SAN}]{Client SAN
+ sendet an Server SAN}
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Client-SAN-sendet"
@@ -796,8 +809,21 @@ eth0
 
 \end_layout
 
-\begin_layout Subsection
-Client SAN sendet an Server DAN
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 02: Client SAN sendet an Server DAN}]{Client SAN
+ sendet an Server DAN}
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Client-SAN-sendet-1"
@@ -1353,8 +1379,21 @@ prp1
 
 \end_layout
 
-\begin_layout Subsection
-Client DAN sendet an Server SAN
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 02: Client DAN sendet an Server SAN}]{Client DAN
+ sendet an Server SAN}
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Client-DAN-sendet"
@@ -1910,8 +1949,21 @@ eth0
 
 \end_layout
 
-\begin_layout Subsection
-Client DAN sendet an Server DAN
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 02: Client DAN sendet an Server DAN}]{Client DAN
+ sendet an Server DAN}
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Client-DAN-sendet-1"
@@ -2519,8 +2571,20 @@ reference "sub:03-Übertragungsfehler-in-Netzwerk"
 )
 \end_layout
 
-\begin_layout Subsection
-Delay in Netzwerk A
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 03: Delay in Netzwerk A}]{Delay in Netzwerk A}
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:03-Delay-in-Netzwerk"
@@ -6443,8 +6507,21 @@ eth0
 
 \end_layout
 
-\begin_layout Subsection
-Paketverlust in Netzwerk A
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 03: Paketverlust in Netzwerk A}]{Paketverlust
+ in Netzwerk A}
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:03-Paketverlust-in-Netzwerk"
@@ -10272,8 +10349,21 @@ eth0
 
 \end_layout
 
-\begin_layout Subsection
-Übertragungsfehler in Netzwerk A
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 03: Übertragungsfehler in Netzwerk A}]{Übertragungsfeh
+ler in Netzwerk A}
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:03-Übertragungsfehler-in-Netzwerk"
@@ -14461,8 +14551,20 @@ Fälle von zeitweisem Ausfall eines Netzwerkpfades
 
 \end_layout
 
-\begin_layout Subsection
-Numerische Ergebnisse
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 04: Numerische Ergebnisse}]{Numerische Ergebnisse}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -29449,8 +29551,20 @@ eth0
 
 \end_layout
 
-\begin_layout Subsection
-Graphische Resultate
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 04: Graphische Resultate}]{Graphische Resultate}
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Graphische-Resultate-1"
@@ -32858,8 +32972,20 @@ name "sec:Szenario-06:-Auswirkungen,-1"
 
 \end_layout
 
-\begin_layout Subsection
-Numerische Ergebnisse
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 06: Numerische Ergebnisse}]{Numerische Ergebnisse}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -33095,8 +33221,20 @@ Resultat Szenario 06 auf shck-Server: TX-Bitrate [MBit/s]
 
 \end_layout
 
-\begin_layout Subsection
-Graphische Resultate
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 06: Graphische Resultate}]{Graphische Resultate}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -36721,8 +36859,20 @@ Offload-Mechanismen
 
 \end_layout
 
-\begin_layout Subsection
-Numerische Ergebnisse
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 07: Numerische Ergebnisse}]{Numerische Ergebnisse}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -41043,8 +41193,20 @@ eth0
 
 \end_layout
 
-\begin_layout Subsection
-Graphische Resultate
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 07: Graphische Resultate}]{Graphische Resultate}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

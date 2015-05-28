@@ -211,8 +211,20 @@ reference "sub:Interpretation"
 .
 \end_layout
 
-\begin_layout Subsection
-Messresultate
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 01: Messresultate}]{Messresultate}
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:01-Messresultate"
@@ -744,8 +756,20 @@ prp1
 
 \end_layout
 
-\begin_layout Subsection
-Interpretation
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 01: Interpretation}]{Interpretation}
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Interpretation"
@@ -1390,7 +1414,7 @@ Ausgangslage
 \end_inset
 
 Für das Erstellen der Profildaten wurden die Betriebssysteme zweier Maschinen
- (srv03 und srv02) über einen Zeitraum von 60 Sekunden aufgezeichnet.
+ (srv01 und srv02) über einen Zeitraum von 60 Sekunden aufgezeichnet.
  Als Netzwerklast wurden TCP-Pakete verwendet, da die Client- und die Server-App
 likation Daten versenden sowie empfangen.
 \end_layout
@@ -1412,7 +1436,7 @@ status open
 \begin_layout Plain Layout
 
 \series bold
-shck-Client (srv03)
+shck-Client (srv01)
 \end_layout
 
 \begin_layout Itemize
@@ -1620,7 +1644,38 @@ Werden alle Prozesse des Betriebssystems betrachtet, ist festzustellen,
  Ein Grund dafür ist, dass der shck-Server signifikant weniger CPU-Zeit
  beansprucht, als der shck-Client, welcher die TCP-Pakete generieren und
  versenden muss.
- Der markante Anteil des idle-Prozesses, lässt sich dadurch erklären, dass
+ Das bedeutet, dass bei Netzwerklasten, die einen Engpass beim Prozessor
+ verursachen, dieser Engpass durch shck auf dem Client weiter verengt werden
+ kann.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bei Netzwerklasten mit Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MAX
+\begin_inset Quotes frd
+\end_inset
+
+ ist jedoch die Netzwerkanbindung der limitierende Faktor, wobei dort der
+ Prozessor nicht komplett ausgelastet wird.
+ Hier erhält der PRP-1 stack auf dem Server mehr Platz, da shck auf dem
+ Server weniger CPU-Last beansprucht.
+ Trotzdem benötigt dieser PRP-1 stack auch mehr Platz, da das Empfangen
+ von Frames mehr Leistung benötigt als das Senden.
+\end_layout
+
+\begin_layout Standard
+Der markante Anteil des idle-Prozesses, lässt sich dadurch erklären, dass
  das Profiling bezüglich aller Prozesse des Betriebssystems durchgeführt
  wurde und somit auch alle Ressourcen der Maschine (1 Core mit 2 CPUs) kumulativ
  miteingerechnet werden.
@@ -1755,14 +1810,23 @@ Flame Graph des shck-Servers, spezifisch PRP-1 stack
 
 \begin_layout Standard
 Bei der detaillierten Betrachtung des PRP-1-stack-Prozesses fällt auf, dass,
- unabhängig davon ob Client oder Server, für das Senden von Frames generell
- mehr CPU-Zeit aufgewendet werden muss als für das Empfangen.
- Da bei der Lastengenerierung ausschliesslich Frames mit maximaler Grösse
- versendet werden, wird seitens des sendenden Hosts (Client) mehr Rechenzeit
- auf der CPU in Anspruch genommen, um die ausgehenden Frames zu verarbeiten.
- Beim Server müssen jeweils nur TCP-Ack-Messages versendet werden, was bedeutet,
- dass deutlich weniger Datenmengen verarbeitet werden müssen und somit weniger
- CPU-Zeit angefordert wird.
+ unabhängig davon ob Client oder Server, für das Empfangen von Frames generell
+ mehr CPU-Zeit aufgewendet werden muss als für das Senden.
+ Selbst beim Senden von Paketen mit maximaler Grösse wird für das Empfangen
+ der Quittierungen auf dem Client mehr CPU-Zeit beansprucht.
+ Wird die beanspruchte Last vom Client für das Senden mit der Last vom Server
+ für das Empfangen verglichen, ist klar ersichtlich, dass der Server mehr
+ Leistung für den Empfang der Pakete benötigt.
+ Der Versand und die Verarbeitung der Quittierungen bei TCP verursachen
+ zusätzliche CPU-Last, welche bei Datenströmen mit Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MAX
+\begin_inset Quotes frd
+\end_inset
+
+ jedoch die Limitierungs-Charakteristiken nicht verändern.
 \end_layout
 
 \begin_layout Standard
@@ -1773,13 +1837,6 @@ Die beiden Flame Graphs des PRP-1 stacks zeigen auf, dass die Applikation
  Kommunikation mit dem virtuellen PRP-Interface wahrzunehmen hat.
  Das Analysieren von Frames und Verwalten der Duplikattabelle stellt dagegen
  einen verhältnismässig kleinen Anteil dar.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
 \end_layout
 
 \begin_layout Paragraph
@@ -2221,6 +2278,45 @@ reference "par:Einfluss von Intervallgroessen"
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{center}
+\backslash
+fcolorbox{black}{yellow}{
+\backslash
+begin{minipage}[t]{1.0
+\backslash
+textwidth}
+\end_layout
+
+\begin_layout Plain Layout
+
+In den Interpretationen der nachfolgenden Szenarien wird dieses Szenario
+ als Vergleichsgrundlage betrachtet.
+ Diese Interpretationen legen den Fokus auf die ermittelten Differenzen
+ zwischen dessen und diesem Szenario.
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{minipage}}
+\backslash
+end{center}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Box Shadowbox
 position "t"
 hor_pos "c"
@@ -2345,20 +2441,71 @@ name "sec:Szenario-02:-Performance"
 
 \end_layout
 
-\begin_layout Subsection
-Limitierungen / Engpässe
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 02: Limitierungen / Engpässe}]{Limitierungen /
+ Engpässe}
 \end_layout
 
-\begin_layout Subsection
-Verhalten zwischen shck-Client und -Server
+\end_inset
+
+
 \end_layout
 
-\begin_layout Subsection
-Verhalten des PRP-1 stacks
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 02: Verhalten zwischen shck-Client und -Server}]{Verha
+lten zwischen shck-Client und -Server}
 \end_layout
 
-\begin_layout Subsection
-Weitere Aspekte
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 02: Verhalten des PRP-1 stacks}]{Verhalten des
+ PRP-1 stacks}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 02: Weitere Aspekte}]{Weitere Aspekte}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2502,9 +2649,26 @@ reference "sec:Szenario-02:-Performance-1"
 
 \end_layout
 
-\begin_layout Section
-Szenario 03: Effekt von Laufzeitunterscheidungen zwischen Netzwerk A und
- B / Einfluss nicht entfernter Duplikate auf Funktion und Performance
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+section[head={Szenario 03: Effekt von Laufzeitunterscheidungen / 
+\backslash
+
+\backslash
+Einfluss nicht entfernter Duplikate}]{Szenario 03: Effekt von Laufzeitunterschei
+dungen zwischen Netzwerk A und B / Einfluss nicht entfernter Duplikate auf
+ Funktion und Performance}
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Szenario-03:-Effekt"
@@ -2514,20 +2678,71 @@ name "sec:Szenario-03:-Effekt"
 
 \end_layout
 
-\begin_layout Subsection
-Limitierungen / Engpässe
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 03: Limitierungen / Engpässe}]{Limitierungen /
+ Engpässe}
 \end_layout
 
-\begin_layout Subsection
-Verhalten zwischen shck-Client und -Server
+\end_inset
+
+
 \end_layout
 
-\begin_layout Subsection
-Verhalten des PRP-1 stacks
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 03: Verhalten zwischen shck-Client und -Server}]{Verha
+lten zwischen shck-Client und -Server}
 \end_layout
 
-\begin_layout Subsection
-Weitere Aspekte
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 03: Verhalten des PRP-1 stacks}]{Verhalten des
+ PRP-1 stacks}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 03: Weitere Aspekte}]{Weitere Aspekte}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2682,20 +2897,71 @@ name "sec:Szenario-04:-Zeitweiser"
 
 \end_layout
 
-\begin_layout Subsection
-Limitierungen / Engpässe
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 04: Limitierungen / Engpässe}]{Limitierungen /
+ Engpässe}
 \end_layout
 
-\begin_layout Subsection
-Verhalten zwischen shck-Client und -Server
+\end_inset
+
+
 \end_layout
 
-\begin_layout Subsection
-Verhalten des PRP-1 stacks
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 04: Verhalten zwischen shck-Client und -Server}]{Verha
+lten zwischen shck-Client und -Server}
 \end_layout
 
-\begin_layout Subsection
-Weitere Aspekte
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 04: Verhalten des PRP-1 stacks}]{Verhalten des
+ PRP-1 stacks}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 04: Weitere Aspekte}]{Weitere Aspekte}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -3022,20 +3288,71 @@ reference "sub:Erörterung-signifikanter-Resulta"
  durchgeführt.
 \end_layout
 
-\begin_layout Subsection
-Limitierungen / Engpässe
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 05: Limitierungen / Engpässe}]{Limitierungen /
+ Engpässe}
 \end_layout
 
-\begin_layout Subsection
-Verhalten zwischen shck-Client und -Server
+\end_inset
+
+
 \end_layout
 
-\begin_layout Subsection
-Verhalten des PRP-1 stacks
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 05: Verhalten zwischen shck-Client und -Server}]{Verha
+lten zwischen shck-Client und -Server}
 \end_layout
 
-\begin_layout Subsection
-Weitere Aspekte
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 05: Verhalten des PRP-1 stacks}]{Verhalten des
+ PRP-1 stacks}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 05: Weitere Aspekte}]{Weitere Aspekte}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3190,20 +3507,71 @@ name "sec:Szenario-06:-Auswirkungen,"
 
 \end_layout
 
-\begin_layout Subsection
-Limitierungen / Engpässe
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 06: Limitierungen / Engpässe}]{Limitierungen /
+ Engpässe}
 \end_layout
 
-\begin_layout Subsection
-Verhalten zwischen shck-Client und -Server
+\end_inset
+
+
 \end_layout
 
-\begin_layout Subsection
-Verhalten des PRP-1 stacks
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 06: Verhalten zwischen shck-Client und -Server}]{Verha
+lten zwischen shck-Client und -Server}
 \end_layout
 
-\begin_layout Subsection
-Weitere Aspekte
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 06: Verhalten des PRP-1 stacks}]{Verhalten des
+ PRP-1 stacks}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 06: Weitere Aspekte}]{Weitere Aspekte}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3358,20 +3726,71 @@ name "sec:Szenario-07:-Einluss"
 
 \end_layout
 
-\begin_layout Subsection
-Limitierungen / Engpässe
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 07: Limitierungen / Engpässe}]{Limitierungen /
+ Engpässe}
 \end_layout
 
-\begin_layout Subsection
-Verhalten zwischen shck-Client und -Server
+\end_inset
+
+
 \end_layout
 
-\begin_layout Subsection
-Verhalten des PRP-1 stacks
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 07: Verhalten zwischen shck-Client und -Server}]{Verha
+lten zwischen shck-Client und -Server}
 \end_layout
 
-\begin_layout Subsection
-Weitere Aspekte
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 07: Verhalten des PRP-1 stacks}]{Verhalten des
+ PRP-1 stacks}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 07: Weitere Aspekte}]{Weitere Aspekte}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
