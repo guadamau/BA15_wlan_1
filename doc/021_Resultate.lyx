@@ -111,6 +111,84 @@ reference "chap:Messresultate"
  Resultatmenge jeweils interpretiert wurde.
 \end_layout
 
+\begin_layout Standard
+Um das Verständnis der Messresultate zu stärken, muss man sich folgenden
+ Abhängigkeiten sowie dem Zusammenspiel von Client und Server bewusst sein:
+ Auf dem Client wird die Netzwerklast generiert und an dessen PRP-1 stack
+ gesendet.
+ Dieser bereitet die Frames zum Versand vor (CPU-Last wird beansprucht)
+ und leitet es an seine beiden physischen Interfaces weiter, die dann die
+ Frames versenden (eine bestimmte TX-Bitrate beim Client wird erzielt).
+ Der Server erhält die Frames (eine bestimmte RX-Bitrate beim Server wird
+ erzielt) und leitet sie an dessen PRP-1 stack weiter, der die Frames verarbeite
+n muss (CPU-Zeit wird benötigt).
+ 
+\end_layout
+
+\begin_layout Standard
+Bei einer UDP-Netzwerklast würde sich das immer so weiterführen, solange
+ der Client Daten an den Server sendet.
+ Bei TCP muss der Server die empfangenen Daten quittieren, was wiederum
+ CPU-Last beansprucht.
+ Diese Quittungen sendet der Server über den PRP-1 stack an den Client (TX-Bitra
+te beim Server und RX-Bitrate beim Client werden erzielt).
+ Dieser muss dann die Quittungen verarbeiten und benötigt wiederum CPU-Last.
+ Es besteht somit Grund zur Annahme, dass zwei Netzwerklasten, welche sich
+ lediglich im Protokoll (TCP, UDP) unterscheiden, die TCP-Last mehr Leistung
+ vom Prozessor beansprucht als die UDP-Last.
+\end_layout
+
+\begin_layout Standard
+Der vorhin geschilderte Ablauf und die daraus entstehenden Abhängigkeiten
+ der Testparameter (CPU, Bitrate) werden in der folgenden Abbildung verdeutlicht
+:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _diagrams/021_dependencies_values.svg
+	lyxscale 50
+	display false
+	scale 40
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Beeinflussung der Testparameter beim Versand von TCP-Netzwerklast
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Szenario 01: Performance im PRP-Netzwerk
 \begin_inset CommandInset label
@@ -130,7 +208,7 @@ reference "sub:Interpretation"
 
 \end_inset
 
-
+.
 \end_layout
 
 \begin_layout Subsection
@@ -223,6 +301,13 @@ Resultat Szenario 01 auf shck-Client: CPU-Last des PRP-1 stacks
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 placement H
 wide false
@@ -298,6 +383,13 @@ prp1
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -384,6 +476,13 @@ prp1
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 shck-Server
 \end_layout
@@ -457,6 +556,13 @@ Resultat Szenario 01 auf shck-Server: CPU-Last des PRP-1 stacks
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -544,6 +650,13 @@ prp1
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 placement H
 wide false
@@ -619,6 +732,13 @@ prp1
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -961,6 +1081,13 @@ MAX
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Bei der Netzwerklast via TCP mit Lasttyp 
 \begin_inset Quotes fld
 \end_inset
@@ -1052,6 +1179,13 @@ reference "sub:Profiling"
 \end_inset
 
 , genauer eingegangen wird.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -1354,10 +1488,6 @@ welche CPU-Zeit beanspruchen
 \end_inset
 
 
-\begin_inset Newpage pagebreak
-\end_inset
-
-
 \end_layout
 
 \begin_layout Paragraph
@@ -1425,14 +1555,13 @@ Flame Graph des shck-Clients, alle Prozesse
 \end_layout
 
 \begin_layout Standard
-\begin_inset space \hfill{}
+\begin_inset VSpace -20bp
 \end_inset
 
 
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -1565,14 +1694,13 @@ Flame Graph des shck-Clients, spezifisch PRP-1 stack
 \end_layout
 
 \begin_layout Standard
-\begin_inset space \hfill{}
+\begin_inset VSpace -20bp
 \end_inset
 
 
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -1645,6 +1773,13 @@ Die beiden Flame Graphs des PRP-1 stacks zeigen auf, dass die Applikation
  Kommunikation mit dem virtuellen PRP-Interface wahrzunehmen hat.
  Das Analysieren von Frames und Verwalten der Duplikattabelle stellt dagegen
  einen verhältnismässig kleinen Anteil dar.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Paragraph
@@ -1821,6 +1956,13 @@ PRP_Trailer_T_remove_trailer
  um diesen zu entfernen, welche die meiste CPU-Zeit beanspruchen.
  Der anschliessende Write-System-Call, um das aufbereitete Frame dem virtuellen
  PRP-Interface weiterzureichen, benötigt vergleichsweise wenig CPU-Zeit.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -2003,20 +2145,23 @@ MIN
 \begin_inset Quotes frd
 \end_inset
 
- via UDP festzustellen.
+ via UDP festzustellen, obwohl sie gleich sein müssten.
  Der einzige Unterschied zwischen diesen Messungen liegt im Zeitpunkt, an
  dem die Messung beendet wird.
  Mehrere Durchläufe der Messungen ergaben stets das selbe Ergebnis.
  Zusätzlich wurde sichergestellt, dass sich die Messungen nicht beeinflussen,
  indem die Abstände zwischen den Messungen vergrössert und die Reihenfolge
  der Messungen abgeändert wurden, jedoch ohne ein anderes Ergebnis zu erzielen.
- ??? Bei einer Ultrakurzzeit-Messung des vorhin erwähnten Lasttyps, erhält
- der PRP-1 stack mehr CPU-Zeit (der Engpass durch den Prozessor ist kleiner)
- und kann somit eine höhere Bitrate erzielen.
+ Bei einer Ultrakurzzeit-Messung des vorhin erwähnten Lasttyps, erhält der
+ PRP-1 stack mehr CPU-Zeit (der Engpass durch den Prozessor ist kleiner)
+ und kann somit eine marginal höhere Bitrate erzielen.
  Diese höhere CPU-Last spiegelt sich in der TX-Bitrate des Clients, der
  RX-Bitrate des Servers und der daraus resultierenden CPU-Last des Servers
  wieder.
- ???
+ Eine Differenz bei der Netzwerklast-Generierung durch shck ist auszuschliessen,
+ da für beide Messungen die selben Parameter verwendet werden und bei Ultrakurzz
+eit-Messungen lediglich der Generierungs-Prozess früher per kill-Befehl
+ terminiert wird.
 \end_layout
 
 \begin_layout Standard
@@ -2045,10 +2190,7 @@ reference "sub:Profiling-Fazit"
 \begin_layout Standard
 Über eine manuelle Systemüberprüfung konnten keine weiteren möglichen Einflüsse
  festgestellt werden.
- Eine Differenz bei der Netzwerklast-Generierung durch shck ist auszuschliessen,
- da für beide Messungen die selben Parameter verwendet werden und bei Ultrakurzz
-eit-Messungen lediglich der Generierungs-Prozess früher per kill-Befehl
- terminiert wird.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2078,6 +2220,120 @@ reference "par:Einfluss von Intervallgroessen"
  erläutert.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="70col%">
+<column alignment="right" valignment="top" width="25col%">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ablauf eines Szenarios
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:Ablauf-eines-Szenarios"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Generierte Netzwerklasten
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "tab:Netzwerklasten-eines-Szenarios"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Szenariobeschrieb
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:Szenario-01:-Performance-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Szenario 02: Performance ohne PRP
 \begin_inset CommandInset label
@@ -2103,6 +2359,147 @@ Verhalten des PRP-1 stacks
 
 \begin_layout Subsection
 Weitere Aspekte
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="70col%">
+<column alignment="right" valignment="top" width="25col%">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ablauf eines Szenarios
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:Ablauf-eines-Szenarios"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Generierte Netzwerklasten
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "tab:Netzwerklasten-eines-Szenarios"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Szenariobeschrieb
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:Szenario-02:-Performance"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Messresultate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sec:Szenario-02:-Performance-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -2131,6 +2528,147 @@ Verhalten des PRP-1 stacks
 
 \begin_layout Subsection
 Weitere Aspekte
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="70col%">
+<column alignment="right" valignment="top" width="25col%">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ablauf eines Szenarios
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:Ablauf-eines-Szenarios"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Generierte Netzwerklasten
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "tab:Netzwerklasten-eines-Szenarios"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Szenariobeschrieb
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:Szenario-03:-Effekt"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Messresultate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sec:Szenario-03:-Effekt-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -2311,6 +2849,147 @@ stiken.
 Aging-Einträge werden überschrieben
 \end_layout
 
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="70col%">
+<column alignment="right" valignment="top" width="25col%">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ablauf eines Szenarios
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:Ablauf-eines-Szenarios"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Generierte Netzwerklasten
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "tab:Netzwerklasten-eines-Szenarios"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Szenariobeschrieb
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:Szenario-04:-Zeitweiser"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Messresultate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sec:Szenario-04:-Zeitweiser-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Szenario 05: Abhängigkeit vom verwendeten Protokoll (TCP/UDP)
 \begin_inset CommandInset label
@@ -2359,6 +3038,147 @@ Verhalten des PRP-1 stacks
 Weitere Aspekte
 \end_layout
 
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="70col%">
+<column alignment="right" valignment="top" width="25col%">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ablauf eines Szenarios
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:Ablauf-eines-Szenarios"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Generierte Netzwerklasten
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "tab:Netzwerklasten-eines-Szenarios"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Szenariobeschrieb
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:Szenario-05:-Abhängigkeit"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Messresultate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sec:Szenario-05:-Abhängigkeit-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Szenario 06: Auswirkungen, wenn Frames out-of-sequence ankommen
 \begin_inset CommandInset label
@@ -2386,6 +3206,147 @@ Verhalten des PRP-1 stacks
 Weitere Aspekte
 \end_layout
 
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="70col%">
+<column alignment="right" valignment="top" width="25col%">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ablauf eines Szenarios
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:Ablauf-eines-Szenarios"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Generierte Netzwerklasten
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "tab:Netzwerklasten-eines-Szenarios"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Szenariobeschrieb
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:Szenario-06:-Auswirkungen,"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Messresultate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sec:Szenario-06:-Auswirkungen,-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Szenario 07: Einluss von Offload-Mechanismen
 \begin_inset CommandInset label
@@ -2411,6 +3372,147 @@ Verhalten des PRP-1 stacks
 
 \begin_layout Subsection
 Weitere Aspekte
+\end_layout
+
+\begin_layout Standard
+\begin_inset Box Shadowbox
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "100col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\noindent
+\begin_inset Tabular
+<lyxtabular version="3" rows="4" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="70col%">
+<column alignment="right" valignment="top" width="25col%">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ablauf eines Szenarios
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:Ablauf-eines-Szenarios"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Generierte Netzwerklasten
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "tab:Netzwerklasten-eines-Szenarios"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Szenariobeschrieb
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:Einluss-von-Offload-Mechanismen"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Messresultate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sec:Szenario-07:-Einluss-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_body

@@ -197,6 +197,113 @@ Nachweis:
 
 \end_layout
 
+\begin_layout Itemize
+Studium von PRP und Aufbau Testumgebung
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+PRP-Umgebung aufbauen, die aus zwei Netzwerken A und B sowie zwei bis drei
+ Endsystemen besteht
+\end_layout
+
+\begin_layout Itemize
+Konfigurationen definieren, in welchen die Leistungsfähigkeit der Implementierun
+g ermittelt werden kann, wobei u.a.
+ folgende Aspekte beachtet werden sollen wie:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Effekt von Laufzeitunterscheidungen zwischen Netz A und Netz B
+\end_layout
+
+\begin_layout Itemize
+Zeitweiser Ausfall eines Netzwerkpfades
+\end_layout
+
+\begin_layout Itemize
+Abhängigkeit vom verwendeten Protokoll (TCP, UDP)
+\end_layout
+
+\begin_layout Itemize
+Einfluss nicht entfernter Duplikate auf Funktion und Performance
+\end_layout
+
+\begin_layout Itemize
+Auswirkung, wenn Frames out-of-sequence ankommen
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Untersuchung von Tools
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Aufzeigen, was die ermittelten Resultate aussagen bzw.
+ wie sie zu interpretieren sind
+\end_layout
+
+\begin_layout Itemize
+Einfluss von Offload-Mechanismen klären
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Verhalten der PRP Implementierung
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Auswirkung der Anwendung von PRP auf das Endsystem studieren
+\end_layout
+
+\begin_layout Itemize
+DAN- und SAN-Endknoten vergleichen
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Generalisierung
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Grundsätze und Rahmenbedingungen formulieren
+\end_layout
+
+\begin_layout Itemize
+Bewertung der untersuchten Tools
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Ziele
+\end_layout
+
+\begin_layout Itemize
+Für einige ausgewählte Tools und Messmethoden herrscht Klarheit, welche
+ Messungen sie ermöglichen und wie die Resultate zu interpretieren sind.
+\end_layout
+
+\begin_layout Itemize
+Es liegt ein PRP- Testnetzwerk vor, welches erlaubt, die relevanten Szenarien
+ auszumessen.
+\end_layout
+
+\begin_layout Itemize
+Die InES-Implementierung von PRP ist in Bezug auf Leistungsfähigkeit und
+ Ressourcenbedarf evaluiert.
+\end_layout
+
+\begin_layout Itemize
+Es sollen einige grundsätzliche Aussagen gemacht werden darüber, wie und
+ mit welcher Zuverlässigkeit man die Performance in physikalischen und virtuelle
+n Konfigurationen messen kann.
+\end_layout
+
 \begin_layout Section
 Rückblick
 \end_layout
