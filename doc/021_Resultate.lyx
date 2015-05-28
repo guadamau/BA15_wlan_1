@@ -2979,15 +2979,18 @@ PRP-Interface RX-Bitrate über theoretischem Maximum bei NWLast mit Lasttyp
  MAX
 \end_layout
 
+\end_deeper
 \begin_layout Itemize
 PRP RX Bitrate müsste kleiner als eth0 und eth1 RX bitrate sein (bei eth0
  und eth1 wird RCT mitgezählt, bei prp1 nicht).
  Macht keinen sinn.
- auch bei eth0 müsste eine konstante rate eintreffen, wenn auch zeitversetzt
- (Bitraten sinnlos bis auf die von eth1)
+ auch bei eth0 müsste eine konstante rate eintreffen, wenn auch zeitversetzt.
 \end_layout
 
-\end_deeper
+\begin_layout Itemize
+ab ca 30ms delay werden bitraten sinnlos
+\end_layout
+
 \end_deeper
 \begin_layout Itemize
 Paketverlust / Übertragungsfehler in NW A
@@ -4154,7 +4157,7 @@ subsection[head={Szenario 07: Weitere Aspekte}]{Weitere Aspekte}
 \end_layout
 
 \begin_layout Itemize
-client
+client & server
 \end_layout
 
 \begin_deeper
@@ -4168,7 +4171,12 @@ RX normal
 
 \end_deeper
 \begin_layout Itemize
-server
+kein merkbarer einfluss
+\end_layout
+
+\begin_layout Itemize
+Fragmentieroffloadmechanismen können ohne fragmente nicht angeschaut werden
+ -> für zukunft
 \end_layout
 
 \begin_layout Standard

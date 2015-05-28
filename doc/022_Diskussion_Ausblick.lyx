@@ -83,10 +83,24 @@ Diskussion und Ausblick
 
 \begin_layout Section
 Besprechung der Ergebnisse
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Besprechung-der-Ergebnisse"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Lorem ipsum
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Besprechung-der-Ergebnisse"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
