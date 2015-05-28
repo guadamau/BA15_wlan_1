@@ -7260,6 +7260,13 @@ reference "sec:Szenario-04:-Zeitweiser"
 
 \begin_layout Subsection
 Szenario 05: Abhängigkeit vom verwendeten Protokoll
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Szenario-05:-Abhängigkeit"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -7438,6 +7445,13 @@ reference "sub:Interpretation"
 
 \begin_layout Subsection
 Szenario 06: Auswirkungen, wenn Frames out-of-sequence ankommen
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Szenario-06:-Auswirkungen,"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
