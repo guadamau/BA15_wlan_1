@@ -2508,6 +2508,164 @@ subsection[head={Szenario 02: Weitere Aspekte}]{Weitere Aspekte}
 
 \end_layout
 
+\begin_layout Itemize
+SAN to SAN vergleich mit DAN to DAN
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+DAN to DAN ist Szenario 01, nur sind CPU werte von shck statt prp1 stack
+\end_layout
+
+\begin_layout Itemize
+Client
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+CPU Client bei MIN immer 100% (CPU Bottleneck durch shck)
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Client und Server SANSAN braucht weniger CPU bei MAX als DANDAN: Benötigt
+ shck mehr CPU für versand über PRP-1-interface? Unterschied UDPMAX zu TCPMAX
+ bei DANDAN viel höher als bei SANSAN.
+ --> Annahme: Kommunikation shck mit virtuellem PRP-Interface aufwändiger
+ als shck direkt mit NIC
+\end_layout
+
+\begin_layout Itemize
+Client und Server: Durch CPU limitierte Last mit Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+ erzielt ohne PRP eine höhere Bitraten beim Versand von Paketen und erhalten
+ von TCP-Quittierungen (Weil beide ohne PRP arbeiten).
+ Ohne PRP wird der Engpass geöffnet.
+\end_layout
+
+\begin_layout Itemize
+Bei TCP höhere Bitrate bei Quittierungen (auch bei MAX marginal) (Server
+ TX, Client RX)
+\end_layout
+
+\begin_layout Itemize
+Server
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Keine Schwankungen bei Server bei CPU-Last: shck alleine ohne PRP läuft
+ konstant.
+ Wenn 2 Prozesse shck und stack viel brauchen kommen lange schwankungen
+ ins spiel
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+SAN to DAN (SAN Client mit Client SANSAN / DAN Server mit Server DANDAN)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+SAN Client selbe CPU werte wie bei SAN to SAN
+\end_layout
+
+\begin_layout Itemize
+SAN Client erhält bei TCP MIN markant weniger Quittierungen als bei SAN
+ to SAN (Server hat hier PRP stack und somit einen engeren Prozessor-Engpass)
+ RX Client
+\end_layout
+
+\begin_layout Itemize
+SAN Client TX Unterschied bei TCP MIN, erhält weniger ACKs von Server als
+ bei ohne PRP und kann somit weniger schnell senden
+\end_layout
+
+\begin_layout Itemize
+DAN Server hat mehr CPU bei Lasttyp MIN als bei ServerDANDAN, weil er mehr
+ Pakete vom Client ohne PRP erhält (höhere client TX bitrate als mit PRP).
+\end_layout
+
+\begin_layout Itemize
+DAN Server hat bei CPU keine schwankungen obwohl er PRP an hat (Client hat
+ kein PRP): Schwankungen werden demnach vom sendenden PRP-Interface des
+ Clients mit PRP beeinflusst.
+\end_layout
+
+\begin_layout Itemize
+DAN Server RX erhält bei MIN höhere Rate weil client ohne PRP mehr MIN senden
+ kann -> kann somit auch mehr TCP MIN ACKs zurück senden
+\end_layout
+
+\begin_layout Itemize
+DAN Server RX erhält bei MAX mehr, weil vom Client Frames ohne RCT kommen
+ und somit 6 byte mehr daten das maximale Frame ausfüllen können.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+DAN to SAN (DAN client mit clientDANDAN / San server mit Server SANSAN)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Client CPU unterschied TCP MAX: wenn von PRP server ACKs erhält braucht
+ mehr CPU: Annahme: Kommunikation shck mit virtuellem PRP-Interface aufwändiger
+ als shck direkt mit NIC
+\end_layout
+
+\begin_layout Itemize
+Client RX erhält von PRP losem Server mehr (SAN Server kann schneller quittieren
+)
+\end_layout
+
+\begin_layout Itemize
+Client TX höhere MIN Bitrate (markant bei TCP), SAN Server kann Frames schneller
+ abarbeiten und quittieren
+\end_layout
+
+\begin_layout Itemize
+SAN Server CPU bei MIN tiefer weil Data von DAN Client kommt (weniger Durchsatz
+ mit PRP).
+ Dieser kleinere Durchsatz spiegelt sich auch in der Server RX-Bitrate sowie
+ der Menge an Quittierungen (TX Bitrate) wieder.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+DAN to DAN (vergl.
+ scen01)
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Bitraten gleich
+\end_layout
+
+\begin_layout Itemize
+Server
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+CPU bei UMINU wieder wenig höher als UMINK: shck gibt CPU PRP1 an
+\end_layout
+
+\begin_layout Itemize
+CPU - schwankungen von shck selbe wie bei PRP-1 stack: Muss von Betriebssystem
+ internen Mechanismen (Scheduler) stammen.
+ Verhalten Scheduler wäre zu untersuchen (Zeitgründe!)
+\end_layout
+
+\end_deeper
+\end_deeper
 \begin_layout Standard
 \begin_inset Box Shadowbox
 position "t"
@@ -2745,6 +2903,37 @@ subsection[head={Szenario 03: Weitere Aspekte}]{Weitere Aspekte}
 
 \end_layout
 
+\begin_layout Itemize
+Delay in NW A
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+DelayAngabe ist in eine Richtung: Bei 300ms braucht ein Paket min.
+ 600ms hin und zurück
+\end_layout
+
+\begin_layout Itemize
+Client
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+CPU bei UDP keine markanten Abweichungen, bei TCP schon: Dauert viel länger
+ bis Quittierung ankommt und sendet somit die Pakete wiederholt
+\end_layout
+
+\begin_layout Itemize
+TCP MIN TX Bitrate höher
+\end_layout
+
+\begin_layout Itemize
+TCP MAX nicht mehr max Bitrate, weder CPU noch Netzwerkanbindung limitieren
+ -> Engpass durch TCP
+\end_layout
+
+\end_deeper
+\end_deeper
 \begin_layout Standard
 \begin_inset Box Shadowbox
 position "t"

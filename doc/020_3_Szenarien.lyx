@@ -5938,7 +5938,10 @@ en zu haben.
 \end_layout
 
 \begin_layout Standard
-Daraus ergeben sich folgende Fälle:
+Daraus ergeben sich folgende Fälle (Delay pro Richtung und in beide Richtungen,
+ was heisst, dass z.B.
+ ein Paket bei 300ms Delay für den Hin- und Rückweg min.
+ 600ms benötigt):
 \end_layout
 
 \begin_layout Standard

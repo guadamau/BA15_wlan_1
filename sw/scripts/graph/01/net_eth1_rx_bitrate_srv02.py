@@ -17,6 +17,5 @@ n=n+1, "/home/guadagnini/BA15_wlan_1/sw/scripts/graph/01/srv02_01.U.MAX.U_net_et
 n=n+1, "/home/guadagnini/BA15_wlan_1/sw/scripts/graph/01/srv02_01.U.MAX.K_net_eth1_rx_bitrate" using 1:2:0 title "01.U.MAX.K" lc palette frac (n-1)/10.0 lw 3 lt 2 w l, \
 n=n+1, "/home/guadagnini/BA15_wlan_1/sw/scripts/graph/01/srv02_01.T.MIN.U_net_eth1_rx_bitrate" using 1:2:0 title "01.T.MIN.U" lc palette frac (n-1)/10.0 lw 3 lt 2 w l, \
 n=n+1, "/home/guadagnini/BA15_wlan_1/sw/scripts/graph/01/srv02_01.T.MIN.K_net_eth1_rx_bitrate" using 1:2:0 title "01.T.MIN.K" lc palette frac (n-1)/10.0 lw 3 lt 2 w l, \
-n=n+1, "/home/guadagnini/BA15_wlan_1/sw/scripts/graph/01/srv02_01.T.MIN.K_net_eth1_rx_bitrate" using 1:2:0 title "01.T.MIN.K" lc palette frac (n-1)/10.0 lw 3 lt 2 w l, \
 n=n+1, "/home/guadagnini/BA15_wlan_1/sw/scripts/graph/01/srv02_01.T.MAX.U_net_eth1_rx_bitrate" using 1:2:0 title "01.T.MAX.U" lc palette frac (n-1)/10.0 lw 3 lt 2 w l, \
 n=n+1, "/home/guadagnini/BA15_wlan_1/sw/scripts/graph/01/srv02_01.T.MAX.K_net_eth1_rx_bitrate" using 1:2:0 title "01.T.MAX.K" lc palette frac (n-1)/10.0 lw 3 lt 2 w l, \
