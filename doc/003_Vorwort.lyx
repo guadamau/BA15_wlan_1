@@ -132,10 +132,24 @@ myTitle
 \end_layout
 
 \begin_layout Standard
-Der Inhalt der Projektarbeit, welche die Autoren vorgängig im 5.
- Semester verfassten, behandelte im Wesentlichen das programmieren einer
- Netzwerk-Simulationsumgebung, welche Daten mittels eines Redundanz-Protokolls
- (HSR) übermittelte.
+Der Inhalt der Projektarbeit 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "pa-thesis"
+
+\end_inset
+
+, die die Autoren vorgängig im 5.
+ Semester verfassten, behandelte im Wesentlichen das Programmieren einer
+ Netzwerk-Simulationsumgebung, welche Daten mittels eines auf dem Data-Link-Laye
+r fungierenden Redundanz-Protokoll übermittelte.
+\end_layout
+
+\begin_layout Standard
+Während dem Erarbeiten dieser Projektarbeit nutzten wir die Chance, um unser
+ Wissen bezüglich Ethernet-Datenübermittlung und Layer-2-Protokollen zu
+ erweitern.
+ Nach
 \end_layout
 
 \begin_layout Standard
