@@ -1354,13 +1354,17 @@ welche CPU-Zeit beanspruchen
 \end_inset
 
 
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Paragraph
 Alle Prozesse des Betriebssystems
 \end_layout
 
-\begin_layout Subparagraph
+\begin_layout Standard
 \begin_inset space \hfill{}
 \end_inset
 
@@ -1368,18 +1372,23 @@ Alle Prozesse des Betriebssystems
 \begin_inset Newline newline
 \end_inset
 
-shck-Client (Sender)
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{shck-Client (Sender)}
 \end_layout
 
-\begin_layout Subparagraph
-\begin_inset space \hfill{}
 \end_inset
 
 
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
@@ -1390,9 +1399,8 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename _diagrams/021_profiling/perf-kernel_60s_all_procs_tcp_sender_ba.svg
-	lyxscale 50
-	scale 40
+	filename _diagrams/021_profiling/perf-kernel_60s_all_procs_tcp_sender_ba.png
+	width 100text%
 
 \end_inset
 
@@ -1416,10 +1424,6 @@ Flame Graph des shck-Clients, alle Prozesse
 
 \end_layout
 
-\begin_layout Subparagraph
-shck-Server (Empfänger)
-\end_layout
-
 \begin_layout Standard
 \begin_inset space \hfill{}
 \end_inset
@@ -1429,6 +1433,22 @@ shck-Server (Empfänger)
 \end_inset
 
 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{shck-Server (Empfänger)}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
@@ -1439,9 +1459,9 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename _diagrams/021_profiling/perf-kernel_60s_all_procs_tcp_receiver_ba.svg
+	filename _diagrams/021_profiling/perf-kernel_60s_all_procs_tcp_receiver_ba.png
 	lyxscale 50
-	scale 40
+	width 100text%
 
 \end_inset
 
@@ -1483,7 +1503,7 @@ Werden alle Prozesse des Betriebssystems betrachtet, ist festzustellen,
 Spezifischer Prozess PRP-1 stack
 \end_layout
 
-\begin_layout Subparagraph
+\begin_layout Standard
 \begin_inset space \hfill{}
 \end_inset
 
@@ -1491,18 +1511,23 @@ Spezifischer Prozess PRP-1 stack
 \begin_inset Newline newline
 \end_inset
 
-shck-Client (Sender)
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{shck-Client (Sender)}
 \end_layout
 
-\begin_layout Subparagraph
-\begin_inset space \hfill{}
 \end_inset
 
 
-\begin_inset Newline newline
-\end_inset
+\end_layout
 
-
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
@@ -1513,9 +1538,9 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename _diagrams/021_profiling/perf-kernel_60s_prp1_stack_tcp_sender_ba.svg
+	filename _diagrams/021_profiling/perf-kernel_60s_prp1_stack_tcp_sender_ba.png
 	lyxscale 50
-	scale 40
+	width 100text%
 
 \end_inset
 
@@ -1539,10 +1564,6 @@ Flame Graph des shck-Clients, spezifisch PRP-1 stack
 
 \end_layout
 
-\begin_layout Subparagraph
-shck-Server (Empfänger)
-\end_layout
-
 \begin_layout Standard
 \begin_inset space \hfill{}
 \end_inset
@@ -1552,6 +1573,22 @@ shck-Server (Empfänger)
 \end_inset
 
 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+textbf{shck-Server (Empfänger)}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float figure
 placement H
 wide false
@@ -1562,9 +1599,9 @@ status open
 \noindent
 \align center
 \begin_inset Graphics
-	filename _diagrams/021_profiling/perf-kernel_60s_prp1_stack_tcp_receiver_ba.svg
+	filename _diagrams/021_profiling/perf-kernel_60s_prp1_stack_tcp_receiver_ba.png
 	lyxscale 50
-	scale 40
+	width 100text%
 
 \end_inset
 
@@ -1610,7 +1647,7 @@ Die beiden Flame Graphs des PRP-1 stacks zeigen auf, dass die Applikation
  einen verhältnismässig kleinen Anteil dar.
 \end_layout
 
-\begin_layout Subparagraph
+\begin_layout Paragraph
 PRP-Transmit-Funktion
 \end_layout
 
@@ -1635,7 +1672,7 @@ status open
 \begin_inset Graphics
 	filename _diagrams/021_profiling/PRP_T_transmit.png
 	lyxscale 50
-	scale 40
+	width 100text%
 
 \end_inset
 
@@ -1693,7 +1730,7 @@ __copy_from_user_ll
  aufgerufen.
 \end_layout
 
-\begin_layout Subparagraph
+\begin_layout Paragraph
 PRP-Receive-Funktion
 \end_layout
 
@@ -1718,7 +1755,7 @@ status open
 \begin_inset Graphics
 	filename _diagrams/021_profiling/PRP_T_receive.png
 	lyxscale 50
-	scale 40
+	width 100text%
 
 \end_inset
 
@@ -1841,7 +1878,7 @@ status open
 \begin_inset Graphics
 	filename _diagrams/021_profiling/us_ks_overhead.svg
 	lyxscale 50
-	scale 70
+	width 100text%
 
 \end_inset
 
@@ -1895,7 +1932,7 @@ __copy_from_user_ll
 
  verbraucht einen prozentual hohen Anteil an CPU-Zeit, gegenüber anderen
  Funktionen beim Transmittieren eines Pakets.
- Wenn der PRP-1 stack auschliesslich im Kernlspace betrieben würde, könnte
+ Wenn der PRP-1 stack ausschliesslich im Kernlspace betrieben würde, könnte
  dieser Overhead vermieden werden.
 \end_layout
 
@@ -1909,53 +1946,12 @@ status open
 \begin_layout Plain Layout
 \noindent
 \align center
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
 \begin_inset Graphics
-	filename _diagrams/021_pie_chart_kernel_user_cpu_tcp_max.svg
+	filename _diagrams/021_profiling/pie_charts_combined.svg
 	lyxscale 50
 	display false
-	scale 20
-	special trim=0 0 290 0,clip=true
+	width 100text%
 
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset Float figure
-wide false
-sideways false
-status open
-
-\begin_layout Plain Layout
-\noindent
-\align center
-\begin_inset Graphics
-	filename _diagrams/021_pie_chart_kernel_user_count_tcp_max.svg
-	lyxscale 50
-	display false
-	scale 25
-	BoundingBox 0bp 0bp 1000bp 600bp
-
-\end_inset
-
-
-\end_layout
-
-\end_inset
-
-
-\begin_inset VSpace -10bp
 \end_inset
 
 
@@ -1965,7 +1961,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Grobübersicht, Anteil Kernelspace und Userspace des PRP-1 stacks
+Grobübersicht Verhältnis zwischen Userspace und Kernelspace 
 \end_layout
 
 \end_inset
@@ -1979,10 +1975,10 @@ Grobübersicht, Anteil Kernelspace und Userspace des PRP-1 stacks
 \end_layout
 
 \begin_layout Standard
-Ein weiterer Aspekt, der für eine Portierung des PRP-1 stacks in ein Kernel-Modu
-l sprechen würde, wäre der Umstand, dass die Funktionen des PRP-Protokolls
- (Verwalten der Duplikaterkennungs-Tabelle, etc.) in ihrer Ausführung prioritär
- vom Betriebssystem-Scheduler behandelt würden.
+Ein zusätzlicher Aspekt, der für eine Portierung des PRP-1 stacks in ein
+ Kernel-Modul sprechen würde, wäre der Umstand, dass die Funktionen des
+ PRP-Protokolls (Verwalten der Duplikaterkennungs-Tabelle, etc.) in ihrer
+ Ausführung prioritär vom Betriebssystem-Scheduler behandelt würden.
 \end_layout
 
 \begin_layout Standard
@@ -2027,7 +2023,7 @@ MIN
 Ferner sind beim Server bei der CPU-Last bei einigen Netzwerklasten sehr
  langsame periodischen Schwankungen festzustellen, die beim empfangenden
  PRP-1 stack des Servers entstehen.
- Im Gegensatz der schwankenden CPU-Last bleiben die Bitraten des Servers
+ Im Gegensatz zu der schwankenden CPU-Last bleiben die Bitraten des Servers
  jedoch konstant.
 \end_layout
 
