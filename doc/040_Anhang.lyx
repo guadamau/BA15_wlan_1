@@ -14293,7 +14293,7 @@ Zur Erinnerung:
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -32973,6 +32973,166 @@ name "sec:Szenario-06:-Auswirkungen,-1"
 \end_layout
 
 \begin_layout Standard
+Die in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Szenario-06:-Auswirkungen,"
+
+\end_inset
+
+ beschriebene Fall-Bezeichnung ist bei der Bezeichnung der entsprechenden
+ Netzwerklast angehängt und weist auf den verwendeten Anteil an Paketvertauschun
+gen hin.
+\end_layout
+
+\begin_layout Standard
+Zur Erinnerung:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="middle" width="20col%">
+<column alignment="left" valignment="middle" width="10col%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Rate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Kürzel
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+25%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+A
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+B
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+75%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+C
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+100%
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+D
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Fälle von Paket-Permutationen, erzeugt in Netzwerk A
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -37737,7 +37897,7 @@ cellcolor{tbl_lighterred}
 
 \end_inset
 
-57.15
+59.10
 \end_layout
 
 \end_inset
@@ -37760,7 +37920,7 @@ cellcolor{tbl_lighterred}
 
 \end_inset
 
-55.24
+66.00
 \end_layout
 
 \end_inset
@@ -38175,7 +38335,7 @@ cellcolor{tbl_lighterblue}
 
 \end_inset
 
-7.36
+7.76
 \end_layout
 
 \end_inset
@@ -38198,7 +38358,7 @@ cellcolor{tbl_lighterblue}
 
 \end_inset
 
-7.01
+8.26
 \end_layout
 
 \end_inset
@@ -39896,7 +40056,7 @@ cellcolor{tbl_lighterred}
 
 \end_inset
 
-57.05
+62.41
 \end_layout
 
 \end_inset
@@ -39919,7 +40079,7 @@ cellcolor{tbl_lighterred}
 
 \end_inset
 
-53.55
+68.97
 \end_layout
 
 \end_inset
@@ -40115,7 +40275,7 @@ cellcolor{tbl_lightergreen}
 
 \end_inset
 
-7.36
+7.76
 \end_layout
 
 \end_inset
@@ -40138,7 +40298,7 @@ cellcolor{tbl_lightergreen}
 
 \end_inset
 
-7.01
+8.26
 \end_layout
 
 \end_inset

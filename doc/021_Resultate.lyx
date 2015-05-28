@@ -170,6 +170,13 @@ status open
 
 \begin_layout Plain Layout
 Beeinflussung der Testparameter beim Versand von TCP-Netzwerklast
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Beeinflussung-der-Testparameter"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2190,6 +2197,13 @@ Dies würde auch nach sich ziehen, dass die Timer-Deadlines, welche in der
 
 \begin_layout Subsubsection
 Weitere Aspekte
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:01:Weitere-Aspekte"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2300,6 +2314,10 @@ In den Interpretationen der nachfolgenden Szenarien wird dieses Szenario
  als Vergleichsgrundlage betrachtet.
  Diese Interpretationen legen den Fokus auf die ermittelten Differenzen
  zwischen dessen und diesem Szenario.
+ Sollte auf etwas in den nachfolgenden Interpretationen nicht eingegangen
+ werden, so ist es in dieser Interpretation oder in Kapitel 
+\backslash
+vref{sec:Besprechung-der-Ergebnisse} nachzulesen.
 \end_layout
 
 \begin_layout Plain Layout
@@ -2932,7 +2950,110 @@ TCP MAX nicht mehr max Bitrate, weder CPU noch Netzwerkanbindung limitieren
  -> Engpass durch TCP
 \end_layout
 
+\begin_layout Itemize
+TCP Client CPU: Client hält ACK von Server lange in seiner Tabelle bis das
+ duplikat ankommt oder er den Eintrag verwerfen muss.
+ Während er den Eintrag gespeichert hält kommen weitere Pakete an, die er
+ verwalten muss.
+ Er hat mehr besetzte Einträge in seiner Tabelle und hat somit einen höheren
+ Aufwand bei der Eintragverwaltung, was mehr Prozessorleistung beansprucht.
+ 
+\begin_inset Newline newline
+\end_inset
+
+WIP PROFILING
+\end_layout
+
 \end_deeper
+\begin_layout Itemize
+TCP MIN CPU geht manchmal stark runter
+\end_layout
+
+\begin_layout Itemize
+Server
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+PRP-Interface RX-Bitrate über theoretischem Maximum bei NWLast mit Lasttyp
+ MAX
+\end_layout
+
+\begin_layout Itemize
+PRP RX Bitrate müsste kleiner als eth0 und eth1 RX bitrate sein (bei eth0
+ und eth1 wird RCT mitgezählt, bei prp1 nicht).
+ Macht keinen sinn.
+ auch bei eth0 müsste eine konstante rate eintreffen, wenn auch zeitversetzt
+ (Bitraten sinnlos bis auf die von eth1)
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Paketverlust / Übertragungsfehler in NW A
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Haben beide gleichen Effekt
+\end_layout
+
+\begin_layout Itemize
+Client
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+CPU TCP höhere CPU
+\end_layout
+
+\begin_layout Itemize
+RX TCP MIN ok, TCP MAX viel mehr (ausser bei 100% paketverlust, dort normal)
+ ??? WIP
+\end_layout
+
+\begin_layout Itemize
+TX wie 01, normal
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Server
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Bei 100% Paketverlust geringste CPU pro NW-Last, weil dort nie Duplikate
+ ankommen, die abgehandelt werden müssen.
+ Restliche Werte nahe am Normalzustand (Szenario 01).
+ Unterschied bei UDP MIN Messungen in Szenario 01 erläutert (Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:01:Weitere-Aspekte"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Itemize
+RX Server normal (ausser eth0, dort ist verlust/error bemerkbar)
+\end_layout
+
+\begin_layout Itemize
+TX TCP MIN ok, TCP MAX viel mehr (ausser bei 100% paketverlust, dort normal)
+ Server ist der verursacher ??? WIP
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Komische Steigung bei TX SRV - RX CLIENT bei TCP MAX
+\end_layout
+
+\begin_layout Itemize
+Keine schwankungen
+\end_layout
+
 \end_deeper
 \begin_layout Standard
 \begin_inset Box Shadowbox
@@ -3214,6 +3335,12 @@ Diese Steigerung pro Intervallgrösse spiegelt sich in den graphischen Resultate
 \end_layout
 
 \end_deeper
+\begin_layout Itemize
+Wenn ECI-Box Interface ausschaltet, merkt es der Client und sendet nichts
+ mehr über dieses interface.
+ Beim Paragon merkt der Client nichts davon.
+\end_layout
+
 \end_deeper
 \begin_layout Itemize
 shck-Server
@@ -3297,11 +3424,21 @@ Laut standard PRP-Supervision Frames nur wenn beide Interfaces aktiv, dann
  vom Ausfall.
  Die an das deaktivierte Interface gesendeten Daten sind für den PRP-1 stack
  gesendet, werden jedoch nicht effektiv vom OS versendet -> korrekte /proc-Stati
-stiken.
+stiken bei eth0.
 \end_layout
 
 \begin_layout Itemize
 Aging-Einträge werden überschrieben
+\end_layout
+
+\begin_layout Itemize
+Intervallgrössen in Graphen anhand deren Spitzen in Client TX und RX, server
+ RX und server CPU ersichtlich.
+ Server meint beide Interfaces seien UP.
+\end_layout
+
+\begin_layout Itemize
+keine schwankungen
 \end_layout
 
 \begin_layout Standard
@@ -3545,6 +3682,10 @@ subsection[head={Szenario 05: Weitere Aspekte}]{Weitere Aspekte}
 \end_layout
 
 \begin_layout Standard
+Siehe 01
+\end_layout
+
+\begin_layout Standard
 \begin_inset Box Shadowbox
 position "t"
 hor_pos "c"
@@ -3761,6 +3902,36 @@ subsection[head={Szenario 06: Weitere Aspekte}]{Weitere Aspekte}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Itemize
+TCP MIN CPU höher, Rest ok -> Verarbeitung der grossen Anzahl an Quittierungen,
+ die Duplikate sind und in einer veränderten Abfolge ankommen.
+ Mehr Iterationen durch Duplikattabelle
+\end_layout
+
+\begin_layout Itemize
+RX / TX normal
+\end_layout
+
+\begin_layout Itemize
+Sprünge in Graphen dieses Szenarios durch CPU client, beeinflusst restliche
+ werte, siehe Abbildung 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:Beeinflussung-der-Testparameter"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Gilt für Client und Server
+\end_layout
+
+\begin_layout Itemize
+Wieder schwankung cpu server
 \end_layout
 
 \begin_layout Standard
@@ -3980,6 +4151,24 @@ subsection[head={Szenario 07: Weitere Aspekte}]{Weitere Aspekte}
 \end_inset
 
 
+\end_layout
+
+\begin_layout Itemize
+client
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+CPU normal
+\end_layout
+
+\begin_layout Itemize
+RX normal
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+server
 \end_layout
 
 \begin_layout Standard

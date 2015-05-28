@@ -13,5 +13,5 @@ set palette file '/home/guadagnini/BA15_wlan_1/sw/scripts/graph/sst.gpf'
 plot n=0, \
 n=n+1, "/home/guadagnini/BA15_wlan_1/sw/scripts/graph/03_pkt/srv01_03.T.MAX.U_net_eth0_tx_bitrate_S" using 1:2:0 title "03.T.MAX.U.S" lc palette frac (n-1)/10.0 lw 3 lt 2 w l, \
 n=n+1, "/home/guadagnini/BA15_wlan_1/sw/scripts/graph/03_pkt/srv01_03.T.MAX.U_net_eth0_tx_bitrate_R" using 1:2:0 title "03.T.MAX.U.R" lc palette frac (n-1)/10.0 lw 3 lt 2 w l, \
-n=n+1, "/home/guadagnini/BA15_wlan_1/sw/scripts/graph/03_pkt/srv01_03.T.MAX.U_net_eth0_tx_bitrate_P" using 1:2:0 title "03.T.MAX.U.P" lc palette frac (n-1)/10.0 lw 3 lt 2 w l, \
+n=n+1, "/home/guadagnini/BA15_wlan_1/sw/scripts/graph/03_pkt/srv01_03.T.MAX.U_net_eth0_tx_bitrate_Q" using 1:2:0 title "03.T.MAX.U.Q" lc palette frac (n-1)/10.0 lw 3 lt 2 w l, \
 n=n+1, "/home/guadagnini/BA15_wlan_1/sw/scripts/graph/03_pkt/srv01_03.T.MAX.U_net_eth0_tx_bitrate_P" using 1:2:0 title "03.T.MAX.U.P" lc palette frac (n-1)/10.0 lw 3 lt 2 w l, \
