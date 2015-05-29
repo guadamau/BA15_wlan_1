@@ -7837,9 +7837,18 @@ TCP Segmentation Offload
 \begin_inset Quotes frd
 \end_inset
 
-, weil die in dieser Arbeit generierte Netzwerklast nicht segmentiert wird,
- sondern die TCP-Pakete total maximal so gross sind, dass sie gerade die
- maximal erlaubte Grösse eines einzelnen Pakets erfüllen.
+
+\begin_inset Newline newline
+\end_inset
+
+Aufgrund der Fokussierung dieser Arbeit auf Frames / Pakete, die der minimalen
+ oder maximalen Grösse eines Ethernet-Frames entsprechen, wurde keine Netzwerkla
+st mit Fragmentierung konzipiert und versandt.
+ Des Weiteren ist es über das virtuelle PRP-Interface nicht möglich, diesen
+ Offload-Mechanismus einzusetzen, da der PRP-1 stack alles, was er von der
+ oberen Schicht erhält, als Ethernet-Frames den physischen Interfaces weitergibt.
+ Das heisst, dass grosse TCP-/UDP-Pakete bereits auf Betriebssystem-Ebene
+ fragmentiert und in Ethernet-Frames verpackt werden.
 \end_layout
 
 \begin_layout Itemize

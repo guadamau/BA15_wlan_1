@@ -1931,6 +1931,13 @@ __copy_from_user_ll
 
 \begin_layout Paragraph
 PRP-Receive-Funktion
+\begin_inset CommandInset label
+LatexCommand label
+name "par:PRP-Receive-Funktion"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2233,6 +2240,10 @@ MIN
  da für beide Messungen die selben Parameter verwendet werden und bei Ultrakurzz
 eit-Messungen lediglich der Generierungs-Prozess früher per kill-Befehl
  terminiert wird.
+ Es besteht Grund zur Annahme, dass diese Unterschiede durch vom Betriebssystem
+ stammende Mechanismen (Scheduler) erzeugt werden.
+ Das Verhalten des Schedulers wäre zu untersuchen, was jedoch aus Zeitgründen
+ nicht mehr durchgeführt werden kann.
 \end_layout
 
 \begin_layout Standard
@@ -2849,8 +2860,8 @@ MAX
  die Kombination des PRP-1 stacks und shck auf Client und Server entstehen.
  Daraus besteht Grund zur Annahme, dass diese Schwankungen durch vom Betriebssys
 tem stammende Mechanismen (Scheduler) erzeugt werden.
- Das Verhalten des Schedulers wäre zu untersuchen, was aus Zeitgründen nicht
- mehr durchgeführt werden kann.
+ Das Verhalten des Schedulers wäre zu untersuchen, was jedoch aus Zeitgründen
+ nicht mehr durchgeführt werden kann.
 \end_layout
 
 \begin_layout Standard
@@ -3038,8 +3049,72 @@ status open
 
 
 \backslash
-subsection[head={Szenario 03: Limitierungen / Engpässe}]{Limitierungen /
- Engpässe}
+subsection[head={Szenario 03: Delay in Netzwerk A und Einfluss nicht entfernter
+ Duplikate}]{Delay in Netzwerk A und Einfluss nicht entfernter Duplikate}
+\end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "03-Delay in Netzwerk A und Einfluss nicht entfernter Duplikate"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Sobald ein Delay, der grösser oder gleich der Aging-Time von 400ms ist,
+ pro Richtung in Netzwerk A eingefügt wird, wird das Duplikat vom PRP-1
+ stack nicht mehr als solches erkannt und unter der Annahme, dass es sich
+ um ein neues Frame handelt, auf die höheren Layer durchgelassen.
+ Dies wird anhand des ping-Befehls, der auf dem Client mit dem Server als
+ Ziel ausgeführt wird, klar.
+ Dort werden durchgelassene Duplikate mit einem 
+\begin_inset Quotes fld
+\end_inset
+
+(DUP!)
+\begin_inset Quotes frd
+\end_inset
+
+ im Verlauf gekennzeichnet.
+ Des Weiteren wird ersichtlich, dass bei einem Delay, der genau der Aging-Time
+ entspricht, manche Duplikate noch erkannt werden.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/021_scen_03_delay_ping.png
+	lyxscale 50
+	scale 35
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Einfluss von Delays in Netzwerk A auf ping
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -3048,192 +3123,250 @@ subsection[head={Szenario 03: Limitierungen / Engpässe}]{Limitierungen /
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-subsection[head={Szenario 03: Verhalten zwischen shck-Client und -Server}]{Verha
-lten zwischen shck-Client und -Server}
-\end_layout
+Betrachtet man die Messresultate dieses Szenarios in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:03-Delay-in-Netzwerk"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-subsection[head={Szenario 03: Verhalten des PRP-1 stacks}]{Verhalten des
- PRP-1 stacks}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-subsection[head={Szenario 03: Weitere Aspekte}]{Weitere Aspekte}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Delay in NW A
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-DelayAngabe ist in eine Richtung: Bei 300ms braucht ein Paket min.
- 600ms hin und zurück
-\end_layout
-
-\begin_layout Itemize
-Client
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-CPU bei UDP keine markanten Abweichungen, bei TCP schon: Dauert viel länger
- bis Quittierung ankommt und sendet somit die Pakete wiederholt
-\end_layout
-
-\begin_layout Itemize
-TCP MIN TX Bitrate höher
-\end_layout
-
-\begin_layout Itemize
-TCP MAX nicht mehr max Bitrate, weder CPU noch Netzwerkanbindung limitieren
- -> Engpass durch TCP
-\end_layout
-
-\begin_layout Itemize
-TCP Client CPU: Client hält ACK von Server lange in seiner Tabelle bis das
- duplikat ankommt oder er den Eintrag verwerfen muss.
- Während er den Eintrag gespeichert hält kommen weitere Pakete an, die er
- verwalten muss.
- Er hat mehr besetzte Einträge in seiner Tabelle und hat somit einen höheren
- Aufwand bei der Eintragverwaltung, was mehr Prozessorleistung beansprucht.
+, ist festzustellen, dass bei den UDP-Netzwerklasten keine markanten Abweichunge
+n auftreten.
  
-\begin_inset Newline newline
+\end_layout
+
+\begin_layout Standard
+Beim TCP-Verkehr ist eine starke Steigerung der CPU-Last bei Client und
+ Server aufzufinden.
+ Die Bitraten bei jedem Fall scheinen aus folgenden Gründen nicht aussagekräftig
+ und somit nicht interpretierbar zu sein:
+\end_layout
+
+\begin_layout Itemize
+Die RX-Bitraten sämtlicher Netzwerklasten auf Client und Server des PRP-Interfac
+es sind höher als die entsprechenden RX-Bitraten der physischen Netzwerk-Interfa
+ces.
+\end_layout
+
+\begin_layout Itemize
+Bezüglich PRP-Interface: Die TX-Bitraten des Clients stimmen nicht mit den
+ RX-Bitraten des Servers überein, sowie auch nicht die TX-Bitraten des Servers
+ mit den RX-Bitraten des Clients.
+ 
+\end_layout
+
+\begin_layout Itemize
+Die in Szenario 02 beim Fall 
+\begin_inset Quotes fld
 \end_inset
 
-WIP PROFILING
+SAN sendet an SAN
+\begin_inset Quotes frd
+\end_inset
+
+ erzielten Bitraten des TCP-Verkehrs mit Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+ (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Client-SAN-sendet"
+
+\end_inset
+
+) sind die in dieser Arbeit höchstmöglichen Werte, da dort der kleinste
+ Prozessor-Engpass aufgrund der Abwesenheit des PRP-1 stacks liegt.
+ Die Limitierung durch die Netzwerkanbindung bleibt zudem über die ganze
+ Arbeit unverändert.
+ Die Bitraten dieser TCP-Last mit Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+ überschreitet die vorhin erwähnten höchstmöglichen Werte, was alleine von
+ der Logik her nicht möglich ist, weil in diesem Szenario der PRP-1 stack
+ aktiv ist und der Prozessor-Engpass für shck nicht weiter geöffnet werden
+ kann als in Szenario 02.
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
-TCP MIN CPU geht manchmal stark runter
+\begin_layout Standard
+Dass z.B.
+ die RX-Bitraten beim PRP-Interface des Servers beim UDP-Verkehr des Lasttyps
+ 
+\begin_inset Quotes fld
+\end_inset
+
+MAX
+\begin_inset Quotes frd
+\end_inset
+
+ über 100 MBit/s betragen und höher als die der entsprechenden physischen
+ Interfaces sind, hätte bei den Fällen sein können, bei denen der Delay
+ über oder gleich der Aging-Time entspricht.
+ Bei diesen hätte der PRP-1 stack die Duplikate auch weitergeleitet und
+ mitgezählt, was erklärbar gewesen wäre.
+ Da dieses Verhalten jedoch auch bei den Fällen mit Delay-Zeiten unter der
+ Aging-Time auftritt, besteht Grund zur Annahme, dass die Messungen nicht
+ aussagekräftig sind.
 \end_layout
 
-\begin_layout Itemize
-Server
+\begin_layout Standard
+Es wurden anhand konstantem Versand von TCP-Netzwerklast des Lasttyps 
+\begin_inset Quotes fld
+\end_inset
+
+MAX
+\begin_inset Quotes frd
+\end_inset
+
+ weitere Versuche mit unterschiedlichen Delays getätigt, um feststellen
+ zu können, ab welchem Delay die in diesem Szenario auffindbaren Messresultate
+ erzielt werden.
+ Bei einem Delay von 20ms waren die Werte noch annehmbar, jedoch ab einem
+ Delay von 30ms entsprachen sie den Werten dieses Szenarios.
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-PRP-Interface RX-Bitrate über theoretischem Maximum bei NWLast mit Lasttyp
- MAX
+\begin_layout Standard
+PROFILING WIP
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
-PRP RX Bitrate müsste kleiner als eth0 und eth1 RX bitrate sein (bei eth0
- und eth1 wird RCT mitgezählt, bei prp1 nicht).
- Macht keinen sinn.
- auch bei eth0 müsste eine konstante rate eintreffen, wenn auch zeitversetzt.
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 03: Störquellen in Netzwerk A}]{Störquellen in
+ Netzwerk A}
 \end_layout
 
-\begin_layout Itemize
-ab ca 30ms delay werden bitraten sinnlos
+\end_inset
+
+
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
-Paketverlust / Übertragungsfehler in NW A
+\begin_layout Standard
+Beim Vergleich der Messresultate bei Paketverlust in Netzwerk A mit den
+ Resultaten bei Übertragungsfehlern in Netzwerk A stellt sich heraus, dass
+ beide den gleichen Effekt erzielen.
+ Als einziger Unterschied ist die marginal höhere Bitrate (ca.
+ 1 MBit/s) beim Versand von UDP-Datenströmen mit Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+ festzustellen.
+ 
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Haben beide gleichen Effekt
+\begin_layout Standard
+Des Weiteren kann bei beiden Störungstypen erkannt werden, dass die Bitraten
+ für die TCP-Quittierungen (Client-RX- und Server-TX-Bitrate) beim TCP-Verkehr
+ mit Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MAX
+\begin_inset Quotes frd
+\end_inset
+
+ bei einer Fehlerrate von 100% stark sinkt.
+ Zwischen den Fehlerraten von 25%, 50% und 75% sind keine markanten Unterschiede
+ festzustellen.
 \end_layout
 
-\begin_layout Itemize
-Client
+\begin_layout Standard
+Bei der TCP-Last wird bezüglich beiden Lasttypen ersichtlich, dass die CPU-Last
+ im Vergleich zum Normalfall (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Szenario-01:-Performance-1"
+
+\end_inset
+
+) (besonders beim Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MAX
+\begin_inset Quotes frd
+\end_inset
+
+) höher ausfällt.
+ Jedoch scheinen die Client-RX- und Server-TX-Bitraten beim TCP-Verkehr
+ des Lasttyps 
+\begin_inset Quotes fld
+\end_inset
+
+MAX
+\begin_inset Quotes frd
+\end_inset
+
+ mit Fehlerraten, die nicht 100% betragen, nicht aussagekräftig zu sein,
+ aus dem Grund, der in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "03-Delay in Netzwerk A und Einfluss nicht entfernter Duplikate"
+
+\end_inset
+
+ als dritter Listenpunkt (bezieht sich auf Szenario 02) aufgeführt ist.
+ Eine weitere These wäre, dass der Server bei dieser Last viel mehr Quittierunge
+n versendet, was aufgrund der stabilen Verbindung über Netzwerk B nicht
+ begründet wäre.
+ Die Client-TX-Bitraten entsprechen denen vom Normalfall.
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-CPU TCP höhere CPU
+\begin_layout Standard
+Bezüglich der Server-CPU-Last ist diese jeweils bei pro Netzwerklast bei
+ einer Fehlerrate von 100% am geringsten, da dort nie Duplikate ankommen,
+ die vom Server abgehandelt werden müssen.
+ Bis auf die oben erwähnten Werte, befinden sich die Bitraten des Servers
+ in der Nähe des Normalzustands.
 \end_layout
 
-\begin_layout Itemize
-RX TCP MIN ok, TCP MAX viel mehr (ausser bei 100% paketverlust, dort normal)
- ??? WIP
-\end_layout
+\begin_layout Standard
+Zudem ist bei den CPU-Werten bei der UDP-Netzwerklast mit Lasttyp 
+\begin_inset Quotes fld
+\end_inset
 
-\begin_layout Itemize
-TX wie 01, normal
-\end_layout
+MIN
+\begin_inset Quotes frd
+\end_inset
 
-\end_deeper
-\begin_layout Itemize
-Server
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Bei 100% Paketverlust geringste CPU pro NW-Last, weil dort nie Duplikate
- ankommen, die abgehandelt werden müssen.
- Restliche Werte nahe am Normalzustand (Szenario 01).
- Unterschied bei UDP MIN Messungen in Szenario 01 erläutert (Kapitel 
+ wie in Szenario 01 ein Unterschied zwischen den Messungen, die sich lediglich
+ in der Dauer unterscheiden, festzustellen.
+ Darauf wird bereits in Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sub:01:Weitere-Aspekte"
 
 \end_inset
 
-).
+ eingegangen.
 \end_layout
 
-\begin_layout Itemize
-RX Server normal (ausser eth0, dort ist verlust/error bemerkbar)
+\begin_layout Standard
+In den jeweiligen graphischen Resultaten (siehe Kapitel, das auf die entsprechen
+den Messresultate folgt) ist besonders beim Vergleich der Client-TX- und
+ Server-RX-Bitraten die Beeinflussung der Störung festzustellen.
+ Daraus lässt sich schliessen, dass je höher die Fehlerrate ist, desto weniger
+ Daten beim Server ankommen.
 \end_layout
 
-\begin_layout Itemize
-TX TCP MIN ok, TCP MAX viel mehr (ausser bei 100% paketverlust, dort normal)
- Server ist der verursacher ??? WIP
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Komische Steigung bei TX SRV - RX CLIENT bei TCP MAX
-\end_layout
-
-\begin_layout Itemize
-Keine schwankungen
-\end_layout
-
-\end_deeper
 \begin_layout Standard
 \begin_inset Box Shadowbox
 position "t"
@@ -3620,6 +3753,13 @@ status open
 subsection[head={Szenario 04: Verhalten des PRP-1 stacks}]{Verhalten des
  PRP-1 stacks}
 \end_layout
+
+\end_inset
+
+
+\begin_inset CommandInset label
+LatexCommand label
+name "04-Verhalten des PRP-1 stacks"
 
 \end_inset
 
@@ -4301,6 +4441,13 @@ reference "sec:Szenario-05:-Abhängigkeit-1"
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Szenario 06: Auswirkungen, wenn Frames out-of-sequence ankommen
 \begin_inset CommandInset label
@@ -4310,6 +4457,179 @@ name "sec:Szenario-06:-Auswirkungen,"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Aus den Messresultaten dieses Szenarios in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Szenario-06:-Auswirkungen,-1"
+
+\end_inset
+
+ ist ersichtlich, dass die CPU-Lasten und die Bitraten vom Client und Server
+ bezogen auf Szenario 01 (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Szenario-01:-Performance-1"
+
+\end_inset
+
+) bis auf eine Ausnahme übereinstimmen.
+ Des Weiteren weisen die Resultate der unterschiedlichen Fälle keine markanten
+ Differenzen auf.
+ Diese vorhin erwähnte Ausnahme bilden die erhöhten Prozessor-Lasten auf
+ Client und Server (besonders auf dem Client) bei den TCP-Netzwerklasten
+ mit Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Diese Erhöhung entsteht dadurch, dass der stack viele Pakete (beim Client
+ TCP-Quittierungen) erhält, die vom einen Netzwerk aus nicht in der korrekten
+ Abfolge eintreffen und somit einen Mehraufwand bei der Duplikatverwaltung
+ mit sich ziehen.
+ Dieser Mehraufwand ist proportional zur restlichen Abhandlung der Pakete
+ bei allen Netzwerklasten ausser bei der über TCP mit Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+ so klein, dass dieser sich nicht beim Vergleich der Messwerte herausfiltern
+ lässt.
+\end_layout
+
+\begin_layout Standard
+Konkret lässt sich dieser Mehraufwand wie folgt erklären: Wie im Paragraph
+ 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "par:PRP-Receive-Funktion"
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+ innerhalb des Kapitels 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Profiling"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "par:PRP-Receive-Funktion"
+
+\end_inset
+
+ nachgelesen werden kann, benötigt die PRP-1-stack-Funktion 
+\begin_inset Quotes fld
+\end_inset
+
+PRP_DiscardAlgorithm_T_search_entry
+\begin_inset Quotes frd
+\end_inset
+
+ einen beachtlichen Anteil der CPU-Last innerhalb des PRP-1 stacks beim
+ Empfang von Frames.
+ Diese Funktion beschäftigt sich mit dem Durchsuchen der Duplikattabelle
+ und dem Aufnehmen neues Frames in diese Tabelle.
+ Da in diesem Szenario die Abfolge der Frames auf einem Pfad abgeändert
+ wird, benötigt der stack durchschnittlich mehr Zeit für das Auffinden des
+ entsprechenden Eintrags in der Duplikattabelle.
+\end_layout
+
+\begin_layout Standard
+WIP
+\end_layout
+
+\begin_layout Standard
+, was anhand der folgenden Abbildung dargestellt wird.
+\end_layout
+
+\begin_layout Standard
+-
+\end_layout
+
+\begin_layout Standard
+Auf die unterschiedlichen Messresultate bezüglich der UDP-Netzwerklast mit
+ Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+ sowie auch auf die langsamen periodischen Schwankungen, die bei der CPU-Last
+ des Servers entstehen, wird in der Interpretation von Szenario 01 in Kapitel
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:01:Weitere-Aspekte"
+
+\end_inset
+
+ eingegangen.
+\end_layout
+
+\begin_layout Standard
+Innerhalb dieses Szenarios fällt im Vergleich zum Szenario 01 auf, dass
+ beim UDP-Verkehr mit Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+ die Werte dort zwar unterschiedlich, aber konstant sind.
+ Bei unterschiedlichen Messungen dieser Netzwerklast in diesem Szenario
+ steigt / sinkt die CPU-Last des Clients nach über einer Minute auf einen
+ bestimmten Wert und verharrt während dem Rest der Messung dort.
+ Anhand der graphischen Resultate dieses Szenarios 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "06-Graphische Resultate"
+
+\end_inset
+
+ ist der vorhin erwähnte Ablauf klar ersichtlich, sowie auch die Beeinflussung
+ der Testparameter, auf die zu Beginn des Kapitels 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Resultate"
+
+\end_inset
+
+ eingegangen wird.
+ Die Gründe für diesen Ablauf werden in der Interpretation von Szenario
+ 01 in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:01:Weitere-Aspekte"
+
+\end_inset
+
+ erläutert.
 \end_layout
 
 \begin_layout Standard
@@ -4383,30 +4703,6 @@ subsection[head={Szenario 06: Weitere Aspekte}]{Weitere Aspekte}
 TCP MIN CPU höher, Rest ok -> Verarbeitung der grossen Anzahl an Quittierungen,
  die Duplikate sind und in einer veränderten Abfolge ankommen.
  Mehr Iterationen durch Duplikattabelle
-\end_layout
-
-\begin_layout Itemize
-RX / TX normal
-\end_layout
-
-\begin_layout Itemize
-Sprünge in Graphen dieses Szenarios durch CPU client, beeinflusst restliche
- werte, siehe Abbildung 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "fig:Beeinflussung-der-Testparameter"
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-Gilt für Client und Server
-\end_layout
-
-\begin_layout Itemize
-Wieder schwankung cpu server
 \end_layout
 
 \begin_layout Standard
@@ -4562,93 +4858,45 @@ name "sec:Szenario-07:-Einluss"
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-subsection[head={Szenario 07: Limitierungen / Engpässe}]{Limitierungen /
- Engpässe}
-\end_layout
+Beim Vergleich der Messresultate dieses Szenarios (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Szenario-07:-Einluss-1"
 
 \end_inset
 
+) mit denen aus Szenario 01 (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:01-Messresultate"
 
+\end_inset
+
+) konnten keine merkbaren Einflüsse auf die PRP-Umgebung ermittelt werden.
+ Somit kann gesagt werden, dass die 3 untersuchten Mechanismen (RX- / TX
+ Checksum Offload, Scatter-Gather) die CPU nicht / kaum erleichtern bzw.
+ könnte der Gewinn so gering sein, dass er proportional zum Gesamtaufwand
+ verschwindend klein ist.
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-subsection[head={Szenario 07: Verhalten zwischen shck-Client und -Server}]{Verha
-lten zwischen shck-Client und -Server}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-subsection[head={Szenario 07: Verhalten des PRP-1 stacks}]{Verhalten des
- PRP-1 stacks}
-\end_layout
+Aufgrund der Fokussierung dieser Arbeit auf Frames / Pakete, die der minimalen
+ oder maximalen Grösse eines Ethernet-Frames entsprechen, wurde keine Netzwerkla
+st mit Fragmentierung konzipiert und versandt.
+ Des Weiteren ist es über das virtuelle PRP-Interface nicht möglich, die
+ Offload-Mechanismen bezüglich Fragmentierung einzusetzen, da der PRP-1
+ stack alles, was er von der oberen Schicht erhält, als Ethernet-Frames
+ den physischen Interfaces weitergibt.
+ Das heisst, dass grosse TCP-/UDP-Pakete bereits auf Betriebssystem-Ebene
+ fragmentiert und in Ethernet-Frames verpackt werden.
+ Deshalb wurde ein Grossteil der im Szenariobeschrieb auf Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:Einluss-von-Offload-Mechanismen"
 
 \end_inset
 
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-subsection[head={Szenario 07: Weitere Aspekte}]{Weitere Aspekte}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-client & server
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-CPU normal
-\end_layout
-
-\begin_layout Itemize
-RX normal
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-kein merkbarer einfluss
-\end_layout
-
-\begin_layout Itemize
-Fragmentieroffloadmechanismen können ohne fragmente nicht angeschaut werden
- -> für zukunft
+ aufgeführten Mechanismen nicht näher analysiert.
 \end_layout
 
 \begin_layout Standard
