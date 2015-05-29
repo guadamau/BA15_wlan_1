@@ -87,6 +87,13 @@ meas
 \end_inset
 
 
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:meas"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

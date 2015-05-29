@@ -182,6 +182,13 @@ Einfluss durch Betriebssystem in INterpret 01 / Weitere Aspekte.
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Erfüllung der Aufgabenstellung 
 \begin_inset CommandInset label
@@ -193,6 +200,44 @@ name "sec:Erfüllung-der-Aufgabenstellung"
 
 \end_layout
 
+\begin_layout Standard
+In diesem Kapitel wird die Erfüllung der Aufgabenstellung 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Aufgabenstellung"
+
+\end_inset
+
+ überprüft, wobei jede Anforderung der Aufgabenstellung als 
+\begin_inset Quotes fld
+\end_inset
+
+Soll
+\begin_inset Quotes frd
+\end_inset
+
+-Text eingefügt wird.
+ Im entsprechenden 
+\begin_inset Quotes fld
+\end_inset
+
+Ist
+\begin_inset Quotes frd
+\end_inset
+
+-Bereich ist aufgeführt, wie die Aufgabenstellung erfüllt wurde und im 
+\begin_inset Quotes fld
+\end_inset
+
+Nachweis
+\begin_inset Quotes frd
+\end_inset
+
+-Abschnitt wird die Erfüllung der Aufgabenstellung belegt.
+ Des Weiteren decken diese Tätigkeiten alle Ziele, die in der Aufgabenstellung
+ aufgelistet werden, ab.
+\end_layout
+
 \begin_layout Subsection
 Studium von PRP und Aufbau Testumgebung
 \end_layout
@@ -201,132 +246,6 @@ Studium von PRP und Aufbau Testumgebung
 Aufbau Testumgebung
 \end_layout
 
-\begin_layout Subsubsection
-Konfigurationen zur Ermittlung der Leistungsfähigkeit der Implementierung
-\end_layout
-
-\begin_layout Itemize
-Studium von PRP und Aufbau Testumgebung
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-PRP-Umgebung aufbauen, die aus zwei Netzwerken A und B sowie zwei bis drei
- Endsystemen besteht
-\end_layout
-
-\begin_layout Itemize
-Konfigurationen definieren, in welchen die Leistungsfähigkeit der Implementierun
-g ermittelt werden kann, wobei u.a.
- folgende Aspekte beachtet werden sollen wie:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Effekt von Laufzeitunterscheidungen zwischen Netz A und Netz B
-\end_layout
-
-\begin_layout Itemize
-Zeitweiser Ausfall eines Netzwerkpfades
-\end_layout
-
-\begin_layout Itemize
-Abhängigkeit vom verwendeten Protokoll (TCP, UDP)
-\end_layout
-
-\begin_layout Itemize
-Einfluss nicht entfernter Duplikate auf Funktion und Performance
-\end_layout
-
-\begin_layout Itemize
-Auswirkung, wenn Frames out-of-sequence ankommen
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Subsection
-Untersuchung von Tools
-\end_layout
-
-\begin_layout Subsubsection
-Blackbox-Ansatz
-\end_layout
-
-\begin_layout Standard
-meas und shck
-\end_layout
-
-\begin_layout Subsubsection
-Whitebox-Ansatz
-\end_layout
-
-\begin_layout Standard
-Profiling - Flame Graph
-\end_layout
-
-\begin_layout Subsubsection
-Interpretation der Resultate
-\end_layout
-
-\begin_layout Subsubsection
-Offload-Mechanismen
-\end_layout
-
-\begin_layout Standard
-Theor Grundl + Szen 07
-\end_layout
-
-\begin_layout Itemize
-Untersuchung von Tools
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Aufzeigen, was die ermittelten Resultate aussagen bzw.
- wie sie zu interpretieren sind
-\end_layout
-
-\begin_layout Itemize
-Einfluss von Offload-Mechanismen klären
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
-Verhalten der PRP-Implementierung
-\end_layout
-
-\begin_layout Itemize
-Verhalten der PRP Implementierung
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Auswirkung der Anwendung von PRP auf das Endsystem studieren
-\end_layout
-
-\begin_layout Itemize
-DAN- und SAN-Endknoten vergleichen
-\end_layout
-
-\end_deeper
-\begin_layout Subsection
-Generalisierung
-\end_layout
-
-\begin_layout Itemize
-Generalisierung
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Grundsätze und Rahmenbedingungen formulieren
-\end_layout
-
-\begin_layout Itemize
-Bewertung der untersuchten Tools
-\end_layout
-
-\end_deeper
 \begin_layout Standard
 \begin_inset Float table
 placement H
@@ -354,6 +273,13 @@ Soll
 \begin_inset Text
 
 \begin_layout Plain Layout
+Es ist eine einfache PRP-Umgebung aufzubauen, die aus zwei Netzwerken A
+ und B (je durch einen Ethernet-Switch repräsentiert) sowie zwei bis drei
+ Endsystemen bestehen.
+ Das Protokoll und seine Implementierung sind zu studieren.
+\begin_inset Newline newline
+\end_inset
+
 
 \end_layout
 
@@ -374,6 +300,688 @@ Ist
 \begin_inset Text
 
 \begin_layout Plain Layout
+Die einfache PRP-Umgebung wurde aufgebaut und dokumentiert.
+ Darauf erfolgte das Studieren des PRP-Protokolls und des PRP-1 stacks von
+ ZHAW Institute of Embedded Systems.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nachweis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dokumentiert wurde der Aufbau der PRP-Umgebung in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Aufbau-der-Testumgebung"
+
+\end_inset
+
+.
+ Dort wird unter anderem auf die verwendete Hardware, der physische Netzwerkaufb
+au sowie die IP-Adressierung der Netzwerk-Interfaces und die Netzwerkgeschwindig
+keit eingegangen.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Nachweis: Aufbau PRP-Umgebung und Studium von PRP und dessen Implementierung
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Konfigurationen zur Ermittlung der Leistungsfähigkeit der Implementierung
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="10text%">
+<column alignment="left" valignment="top" width="90text%">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Soll
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Es sollen Konfigurationen definiert werden, in welchen die Leistungsfähigkeit
+ der Implementierung bzw.
+ der zusätzlichen Bedarf von Ressourcen ermitteln werden können.
+ Dabei sollen unter anderem Aspekte beachtet werden wie:
+\end_layout
+
+\begin_layout Itemize
+Effekt von Laufzeitunterschieden zwischen Netz A und Netz B.
+\begin_inset VSpace -5bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Zeitweiser Ausfall eines Netzwerkpfades.
+\begin_inset VSpace -5bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Abhängigkeit vom verwendeten Protokoll (TCP, UDP).
+\begin_inset VSpace -5bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Einfluss nicht entfernter Duplikate auf Funktion und Performance.
+\begin_inset VSpace -5bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Auswirkung auf Applikationen, wenn Frames out-of-sequence ankommen
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ist
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Die Konfigurationen wurden in Form von Szenarien definiert, wobei jeder
+ Aspekt im entsprechenden Szenario untergebracht wird.
+ Daraus, dass jedes Szenario die selben Messungen unter unterschiedlichen
+ Umständen durchführt, können die Szenarien übersichtlich verglichen und
+ interpretiert werden.
+ Des Weiteren wurde ein Szenario für den Normalfall geschaffen, der als
+ Referenzpunkt für die Interpretation der anderen Szenarien dient.
+\end_layout
+
+\begin_layout Plain Layout
+Vor der effektiven Szenarien-Definierung wurden u.a.
+ Grundsätze und Rahmenbedingungen aufgestellt, der allgemeine Ablauf eines
+ Szenarios festgelegt und signifikante Resultat-Parameter erörtert, um den
+ Szenarien eine gemeinsame Basis zu bieten.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nachweis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Im Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Ermittlung-der-Performance"
+
+\end_inset
+
+ werden sämtliche Szenarien-Definitionen sowie auch die dafür nötige Basis
+ u.a.
+ in Form von Grundsätzen und Rahmenbedingungen, vorgängigen Untersuchungen
+ und Erörterung signifikanter Resultat-Parameter definiert.
+\end_layout
+
+\begin_layout Plain Layout
+Die oben erwähnten Aspekte werden in den folgenden Szenarien behandelt:
+\end_layout
+
+\begin_layout Itemize
+Szenario 03 in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Szenario-03:-Effekt"
+
+\end_inset
+
+: Effekt von Laufzeitunterschieden zwischen Netz A und Netz B.
+\begin_inset VSpace -5bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Szenario 04 in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Szenario-04:-Zeitweiser"
+
+\end_inset
+
+: Zeitweiser Ausfall eines Netzwerkpfades.
+\begin_inset VSpace -5bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Szenario 05 in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Szenario-05:-Abhängigkeit"
+
+\end_inset
+
+: Abhängigkeit vom verwendeten Protokoll (TCP, UDP).
+\begin_inset VSpace -5bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Szenario 03 in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Szenario-03:-Effekt"
+
+\end_inset
+
+: Einfluss nicht entfernter Duplikate auf Funktion und Performance.
+\begin_inset VSpace -5bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Szenario 06 in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Szenario-06:-Auswirkungen,"
+
+\end_inset
+
+: Auswirkung auf Applikationen, wenn Frames out-of-sequence ankommen
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\begin_inset VSpace -5bp
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Nachweis: Konfigurationen zur Ermittlung der Leistungsfähigkeit der Implementier
+ung
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Untersuchung von Tools
+\end_layout
+
+\begin_layout Subsubsection
+Blackbox-Ansatz
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="10text%">
+<column alignment="left" valignment="top" width="90text%">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Soll
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Für den Blackbox-Ansatz existieren diverse Tools, welche die Nutzung von
+ Ressourcen bzw.
+ Performanceparameter messen (z.B.
+ ping, BWping, iperf, netperf, flowgrind, top, ntop, atop, sar, und viele
+ andere mehr).
+\end_layout
+
+\begin_layout Plain Layout
+Neben Linux-Bordmitteln sind auch selbst entwickelte Hilfsmittel (z.B.
+ Applikationen, die eine genau definierte Last erzeugen) und dedizierte
+ Messgeräte in Betracht zu ziehen.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ist
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Die im Rahmen dieser Arbeit selbst entwickelten Tools meas und shck dienten
+ für das Messen mit Blackbox-Ansatz der Ressourcen-Nutzung bzw.
+ der Performanceparameter.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nachweis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Wie meas und shck verwendet werden wird im Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Ablauf-eines-Szenarios"
+
+\end_inset
+
+ erläutert, in welchem aufgeführt ist, dass bei einer Messung zu Beginn
+ eine Netzwerklast-Generierung mit shck gestartet wird.
+ Kurze Zeit darauf wird meas auf dem Sender und Empfänger gestartet und
+ die Performanceparameter gemessen.
+ Nach der Messung wird die Netzwerklast-Generierung beendet.
+\end_layout
+
+\begin_layout Plain Layout
+Mehr zu meas ist in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:meas"
+
+\end_inset
+
+ aufzufinden.
+ shck wird in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Netzwerklast-Generierung-shck"
+
+\end_inset
+
+ beschrieben.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Nachweis: Blackbox-Ansatz
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Whitebox-Ansatz
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="10text%">
+<column alignment="left" valignment="top" width="90text%">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Soll
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Voraussetzung für den Whitebox-Ansatz ist der Zugriff auf den Programmcode
+ der zu untersuchenden Funktion.
+ Mittels Profiling-Tools kann man einen Einblick in das Ausführungsverhalten
+ des Codes gewinnen.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ist
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Der PRP-1 stack wurde in diversen Szenarien mit dem Profiling-Tool 
+\begin_inset Quotes fld
+\end_inset
+
+perf
+\begin_inset Quotes frd
+\end_inset
+
+ (siehe Tabelle 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:perf"
+
+\end_inset
+
+) mit dem Whitebox-Ansatz untersucht sowie anhand von sogenannten Flame
+ Graphen (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Profiling"
+
+\end_inset
+
+) visualisiert.
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nachweis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Das Profiling des PRP-1 stacks wird hauptsächlich in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Interpretation"
+
+\end_inset
+
+ durchgeführt.
+ Dort wird der Profiling-Vorgang erläutert und die Resultate interpretiert.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Nachweis: Whitebox-Ansatz
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Interpretation der Resultate
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status collapsed
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="10text%">
+<column alignment="left" valignment="top" width="90text%">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Soll
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Mit Hilfe von geeigneten Kalibrier- und Vergleichsmessungen soll aufgezeigt
+ werden, was die ermittelten Resultate aussagen bzw.
+ wie sie zu interpretieren sind.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ist
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+s
+\begin_inset Newline newline
+\end_inset
+
 
 \end_layout
 
@@ -411,7 +1019,228 @@ Nachweis
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Nachweis: 
+Nachweis: Interpretation der Resultate
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Offload-Mechanismen
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="10text%">
+<column alignment="left" valignment="top" width="90text%">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Soll
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Es soll auch geklärt werden, welchen Einfluss die Offload-Mechanismen moderner
+ Ethernet- Adapter haben.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ist
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+s
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nachweis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Nachweis: Offload-Mechanismen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Theor Grundl + Szen 07
+\end_layout
+
+\begin_layout Subsection
+Verhalten der PRP-Implementierung
+\end_layout
+
+\begin_layout Subsubsection
+Auswirkung von PRP auf das Endsystem / Vergleich von DAN und SAN
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="10text%">
+<column alignment="left" valignment="top" width="90text%">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Soll
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Es ist zu studieren, wie sich die Anwendung von PRP auf das Endsystem auswirkt,
+ insbesondere auf die Belastung von CPU und Memory.
+ Dabei sollen dual und single attached Endknoten verglichen werden.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ist
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+s
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nachweis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Nachweis: Auswirkung von PRP auf das Endsystem / Vergleich von DAN und SAN
 \end_layout
 
 \end_inset
@@ -425,28 +1254,220 @@ Nachweis:
 \end_layout
 
 \begin_layout Subsection
-Ziele
+Generalisierung
 \end_layout
 
-\begin_layout Itemize
-Für einige ausgewählte Tools und Messmethoden herrscht Klarheit, welche
- Messungen sie ermöglichen und wie die Resultate zu interpretieren sind.
+\begin_layout Subsubsection
+Grundsätze und Rahmenbedingungen
 \end_layout
 
-\begin_layout Itemize
-Es liegt ein PRP- Testnetzwerk vor, welches erlaubt, die relevanten Szenarien
- auszumessen.
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="10text%">
+<column alignment="left" valignment="top" width="90text%">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Soll
 \end_layout
 
-\begin_layout Itemize
-Die InES-Implementierung von PRP ist in Bezug auf Leistungsfähigkeit und
- Ressourcenbedarf evaluiert.
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Die Messungen und die Interpretation der Resultate werden nur dann eine
+ Aussagekraft ha- ben, wenn gewisse Grundsätze und Rahmenbedingungen eingehalten
+ sind.
+ Diese Grunds- ätze und Rahmenbedingungen sind zu formulieren.
 \end_layout
 
-\begin_layout Itemize
-Es sollen einige grundsätzliche Aussagen gemacht werden darüber, wie und
- mit welcher Zuverlässigkeit man die Performance in physikalischen und virtuelle
-n Konfigurationen messen kann.
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ist
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+s
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nachweis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Nachweis: Grundsätze und Rahmenbedingungen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Bewertung der untersuchten Tools
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Tabular
+<lyxtabular version="3" rows="3" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="10text%">
+<column alignment="left" valignment="top" width="90text%">
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Soll
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ebenso soll eine Bewertung der unter- suchten Tools abgegeben werden.
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ist
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+s
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Nachweis
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Nachweis: Bewertung der untersuchten Tools
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
