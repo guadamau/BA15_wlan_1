@@ -32950,6 +32950,13 @@ eth0
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Szenario 05: Abhängigkeit vom verwendeten Protokoll (TCP/UDP)
 \begin_inset CommandInset label
@@ -32959,6 +32966,41 @@ name "sec:Szenario-05:-Abhängigkeit-1"
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Die CPU-Last des PRP-1 stacks ist in den Messresultaten von Szenario 01
+ in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:01-Messresultate"
+
+\end_inset
+
+ aufzufinden.
+ Die durch shck erzeugte Prozessor-Nutzung kann in den Messresultaten von
+ Szenario 02 nachvollzogen werden, wobei dort der Fall 
+\begin_inset Quotes fld
+\end_inset
+
+Client DAN sendet an Server DAN
+\begin_inset Quotes frd
+\end_inset
+
+ in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Client-DAN-sendet-1"
+
+\end_inset
+
+ betrachtet werden muss, der die selbe Konfiguration wie in Szenario 01
+ behandelt.
+\end_layout
+
+\begin_layout Standard
+In beiden vorhin aufgeführten Kapiteln sind die selben RX-/TX-Bitraten bei
+ Client und Server aufzufinden.
 \end_layout
 
 \begin_layout Section
@@ -33127,6 +33169,13 @@ Fälle von Paket-Permutationen, erzeugt in Netzwerk A
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
