@@ -107,31 +107,6 @@ addcontentsline{toc}{chapter}{Vorwort}
 \end_layout
 
 \begin_layout Standard
-Arbeit 
-\begin_inset Quotes fld
-\end_inset
-
-
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-myTitle
-\end_layout
-
-\end_inset
-
-
-\begin_inset Quotes frd
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
 Der Inhalt der Projektarbeit 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -139,43 +114,33 @@ key "pa-thesis"
 
 \end_inset
 
-, die die Autoren vorgängig im 5.
- Semester verfassten, behandelte im Wesentlichen das Programmieren einer
+, die von uns im 5.
+ Semester verfasst wurde, behandelte im Wesentlichen das Programmieren einer
  Netzwerk-Simulationsumgebung, welche Daten mittels eines auf dem Data-Link-Laye
-r fungierenden Redundanz-Protokoll übermittelte.
+r fungierenden Redundanz-Protokoll (HSR) übermittelte.
+ Die Spezifikationen des HSR-Protokolls sind im selben IEC-Standard 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "IEC_62439-3_2015"
+
+\end_inset
+
+ festgehalten, wie diejenigen des in dieser Arbeit untersuchten PRP-Protokolls.
 \end_layout
 
 \begin_layout Standard
-Während dem Erarbeiten dieser Projektarbeit nutzten wir die Chance, um unser
- Wissen bezüglich Ethernet-Datenübermittlung und Layer-2-Protokollen zu
- erweitern.
- Nach
+Während dem Erarbeiten dieser Projektarbeit nahmen wir die Gelegenheit wahr,
+ um unser Wissen bezüglich Ethernet-Datenübermittlung und Layer-2-Protokollen
+ zu erweitern.
+ Nach erfolgreichem Abschluss der Projektarbeit war unser Interesse geweckt,
+ zuvor nur simuliertes Verhalten von Datenströmen in Netzwerken auch in
+ Anwendungen, wie sie in der Praxis existieren, zu analysieren.
 \end_layout
 
 \begin_layout Standard
-Ab dem 4.
- Semester des Informatik-Studiums werden erstmals Module unterrichtet, die
- spezifisch für die jeweilig gewählte Fachrichtung der Studierenden ausgelegt
- sind.
- Wir haben zum einen die Fachrichtung Service Engineering (Mauro Guadagnini)
- und zum anderen Embedded Systems (Prosper Leibundgut) selektiert.
- In der Fachrichtung Service Engineering geht es primär darum, die Fachkenntniss
-e über das Errichten und Unterhalten umfangreicher Services und Netzwerk-Infrast
-rukturen weiter zu vertiefen.
- Die Fachrichtung Embedded Systems befasst sich hauptsächlich damit, Firmware
- für eingebettete Systeme zu entwickeln, die ohne oder nur mit minimalistischen
- Betriebssystemen betrieben werden.
- Solche Geräte haben oft die Anforderung zu erfüllen, Datenverarbeitungen
- in Echtzeit auszuführen.
- Nicht selten müssen diese Geräte auch über eine Netzwerkschnittstelle verfügen,
- um Daten an entfernte Netzwerkteilnehmer zu übermitteln, beziehungsweise
- diesen einen Zugriff auf besagte Geräte zu ermöglichen.
-\end_layout
-
-\begin_layout Standard
-Unser gemeinsames Interesse liegt im Bereich von netzwerkbasierten Anwendungen
- und performanter Datenübertragung.
- Bei der Wahl der ausgeschriebenen Projektarbeiten fiel uns die Arbeit 
+Die Möglichkeit, unser Wissen im Themengebiet ausfallsicherer Netzwerke
+ und redundanter Datenübertragung weiter zu vertiefen, bot sich uns mit
+ der Wahl dieser Bachelor-Arbeit mit dem Titel 
 \begin_inset Quotes fld
 \end_inset
 
@@ -196,20 +161,71 @@ myTitle
 \begin_inset Quotes frd
 \end_inset
 
- auf.
- Die Entscheidung, uns für diese Arbeit einzuschreiben, war nach kurzer
- Zeit getroffen.
- Wir zeigen beide grosses Interesse an gehaltvollen Technologien und so
- sahen wir es als zusätzliche Gelegenheit, ein tieferes Verständnis für
- Netzwerksimulationen, das HSR-Protokoll und Interspersing Express Traffic
- zu gewinnen, was uns im Verlaufe der Umsetzung dieser Arbeit auch gelungen
- ist.
+.
+ Zur Abhandlung der Arbeit wurde uns ein grosszügiger Rahmen abgesteckt,
+ innerhalb dessen wir die Möglichkeit hatten, Messwerkzeuge zu evaluieren
+ oder diese in Form von selbst entwickelter Software bereitzustellen.
 \end_layout
 
 \begin_layout Standard
-Unser herzlicher Dank gilt Herrn Prof.
- Hans Weibel für die geduldige und fachkundige Arbeitsbetreuung in Form
- von Impulsen und Diskussionen, die zu geeigneten Lösungsansätzen verhalfen.
+Im Verlaufe dieser Arbeit ist es uns gelungen, wichtige Erkenntnisse aufzunehmen
+, diese zu interpretieren und zu verarbeiten.
+ Besonders wertvoll und lehrreich war das Studium des Quellcodes des PRP-1
+ stacks, sowie das Entwickeln der Applikationen 
+\begin_inset Quotes fld
+\end_inset
+
+meas
+\begin_inset Quotes frd
+\end_inset
+
+, zur Aufzeichnung und Auswertung von Netzwerkverkehr und CPU-Auslastung,
+ und 
+\begin_inset Quotes fld
+\end_inset
+
+shck
+\begin_inset Quotes frd
+\end_inset
+
+, ein Netzwerk-Lastengenerator.
+ Ein ebenso aufschlussreicher Aspekt war für uns das Analysieren und Interpretie
+ren sämtlicher Messresultate.
+\end_layout
+
+\begin_layout Standard
+Unser herzlicher Dank gilt den Herren Prof.
+ Hans Weibel und David Blatter für die geduldige und fachkundige Arbeitsbetreuun
+g in Form von Impulsen, Diskussionen und unterstützenden Hinweisen, die
+ zu geeigneten Lösungsansätzen verhalfen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+vspace{7mm}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Winterthur, im Juni 2015
+\end_layout
+
+\begin_layout Standard
+Mauro Guadagnini
+\begin_inset Newline newline
+\end_inset
+
+Prosper Leibundgut
 \end_layout
 
 \end_body

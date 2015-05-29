@@ -5885,7 +5885,7 @@ name "sub:Delay-in-Netzwerk/Einfluss nicht entf Dupl"
 \end_layout
 
 \begin_layout Standard
-Laut PRP Standard 
+Laut PRP-Standard 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "IEC_62439-3_2015"
@@ -5906,7 +5906,7 @@ Es stellt sich zudem die Frage, ob ein neues Frame mit einer Sequenznummer
  im RCT in der Tabelle eintreffen kann, die bereits von einem älteren Frame
  in der Tabelle verwendet wird (selbe Sequenznummer für unterschiedliche
  Frames).
- Dies könnte nur eintreffen wenn das Duplikat des älteren Frames noch nicht
+ Dies könnte nur eintreffen, wenn das Duplikat des älteren Frames noch nicht
  eingetroffen ist.
  Die Sequenznummer ist 16 Bit gross, was bedeutet, dass 
 \begin_inset Formula $2{}^{16}=65'536$
@@ -5929,11 +5929,13 @@ reference "sub:Theoretische-Grenzwerte"
  Demzufolge ist es aufgrund der Aging-Time nicht möglich, dass die gleiche
  Sequenznummer für unterschiedliche Frames in der Tabelle zur Duplikaterkennung
  eingtragen ist.
- Die Tabellengrösse von 256 Einträgen ist ein weiterer Grund, weshalb es
- nicht möglich ist, unterschiedliche Frames mit gleicher Sequenznummer eingetrag
-en zu haben.
+ Die Intervallzeit des Aging-Timers der PRP-1-stack-Implementation, ist
+ ein weiterer Grund dafür, weshalb es nicht möglich ist, unterschiedliche
+ Frames mit gleicher Sequenznummer eingetragen zu haben.
+ Die Aging-Routine sorgt dafür, dass die Frame-Einträge bereinigt werden
+ und nur die aktuellsten Frame-Metadaten eingetragen bleiben.
  Wenn in der Tabelle alle Einträge besetzt sind und ein neues Frame ankommt,
- wird der älteste Eintrag verworfen, auch wenn sich dieser weniger lang
+ wird der älteste Eintrag verworfen, auch wenn sich dieser weniger lange
  als 400ms darin aufhält.
 \end_layout
 

@@ -107,7 +107,54 @@ addcontentsline{toc}{chapter}{Zusammenfassung}
 \end_layout
 
 \begin_layout Standard
-Lorem ipsum
+Verteilte Systeme, dessen Kommunikationskanäle mittels Ethernet-Netzwerken
+ realisiert werden, haben oft die Anforderung, ein hohes Mass an Ausfallsicherhe
+it gewährleisten zu müssen.
+ Eine Möglichkeit dies zu verwirklichen, bietet das 
+\begin_inset Quotes fld
+\end_inset
+
+Parallel Redundancy Protocol
+\begin_inset Quotes frd
+\end_inset
+
+ (folgend bezeichnet als PRP-Protokoll).
+ Das PRP-Protokoll ermöglicht eine redundante Datenübertragung über zwei
+ physisch vollständig unabhängige Ethernet-Netzwerke.
+ Im Zentrum dieser Arbeit liegt das Evaluieren und Anwenden von geeigneten
+ Messmethoden, sowie das Auswerten der entstehenden Befunde, bezüglich Datenüber
+mittlungen unter Zuhilfenahme des PRP-Protokolls.
+\end_layout
+
+\begin_layout Standard
+Initial wurden verschiedene Mess-Szenarien definiert.
+ Für die Durchführung dieser Szenarien wurden zwei Applikationen entwickelt,
+ 
+\begin_inset Quotes fld
+\end_inset
+
+shck
+\begin_inset Quotes frd
+\end_inset
+
+, zur Generierung von Netzwerklasten und 
+\begin_inset Quotes fld
+\end_inset
+
+meas
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Im Zentrum dieser Arbeit liegt das Evaluieren von geeigneten Messmethoden,
+ um gehaltvolle Messresultate festzuhalten, die bezüglich Performanz und
+ Ressourcenverbrauch entstehen.
+ Dabei werden diese Messmethoden auf die Übermittlung von Daten unter Zuhilfenah
+me des PRP-Protokolls angewendet.
+ 
 \end_layout
 
 \end_body
