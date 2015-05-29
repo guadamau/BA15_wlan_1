@@ -2448,12 +2448,132 @@ reference "sub:Szenario-01:-Performance-1"
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Szenario 02: Performance ohne PRP
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Szenario-02:-Performance"
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Messresultate dieses Szenarios (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Szenario-02:-Performance-1"
+
+\end_inset
+
+) führen für jeden Fall die Prozessor-Leistungs-Werte von shck anstelle
+ des PRP-1 stacks auf.
+ Es werden die Fälle dieses Szenarios untereinander oder mit dem Szenario
+ 01 (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Szenario-01:-Performance-1"
+
+\end_inset
+
+) verglichen.
+ Die Vergleiche werden wie folgt durchgeführt:
+\end_layout
+
+\begin_layout Itemize
+Client SAN sendet an Server SAN
+\begin_inset Newline newline
+\end_inset
+
+Die Client- und Server-Werte werden mit den Werten des Falls 
+\begin_inset Quotes fld
+\end_inset
+
+Client DAN sendet an Server DAN
+\begin_inset Quotes frd
+\end_inset
+
+ verglichen, welcher der Konfiguration in Szenario 01 entspricht, der Unterschie
+d jedoch darin liegt, dass die CPU-Werte von shck anstelle des PRP-1 stacks
+ gemessen werden.
+ So können die Leistungsdifferenzen zwischen einer PRP- und Nicht-PRP-Umgebung
+ mit den selben Netzwerklasten festgestellt werden.
+\end_layout
+
+\begin_layout Itemize
+Client SAN sendet an Server DAN
+\begin_inset Newline newline
+\end_inset
+
+Die ermittelten Werte des Clients werden in diesem Fall mit den Client-Werten
+ des vorherigen Falls abgewägt, um sagen zu können, wie sich die Performance
+ des Clients ändert, wenn er mit einem Server mit aktivem PRP-1 stack kommunizie
+rt.
+ Bezüglich den Server-Werten dieses Falls: Diese werden mit den entsprechenden
+ Werten des letzten Falls dieses Szenarios verglichen, womit die Performanceunte
+rschiede bei der Netzwerklast-Generierung von einem SAN aus ermittelt werden
+ können.
+\end_layout
+
+\begin_layout Itemize
+Client DAN sendet an Server SAN
+\begin_inset Newline newline
+\end_inset
+
+Hier werden die ermittelten Resultate des Clients mit denen des Falls 
+\begin_inset Quotes fld
+\end_inset
+
+Client DAN sendet an Server DAN
+\begin_inset Quotes frd
+\end_inset
+
+ abgewägt.
+ Daraus kann gesagt werden, wie sich die Leistungsbeanspruchung des Clients
+ ändert, wenn dieser seine Netzwerklast an einen SAN sendet.
+ Die Werte des Servers dieses Falls werden mit dem ersten Fall dieses Szenarios
+ verglichen, um analysieren zu können, welche Performanceunterschiede sich
+ beim Server, der die Last von einem DAN erhält, ergeben.
+\end_layout
+
+\begin_layout Itemize
+Client DAN sendet an Server DAN
+\begin_inset Newline newline
+\end_inset
+
+Dieser Fall dient als Anhaltspunkt für die Analyse der restlichen Fälle
+ dieses Szenarios, weil es sich bei diesem Fall um die gleiche Konfiguration
+ wie bei Szenario 01 (siehe 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Szenario-01:-Performance-1"
+
+\end_inset
+
+) handelt.
+ Der Unterschied liegt in dem Prozess, dessen durch ihn verursachte CPU-Last
+ gemessen wurde (shck anstelle des PRP-1 stacks).
+ Die Gründe für diesen Perspektivenwechsel sind im Szenariobeschrieb auf
+ Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:Szenario-02:-Performance"
+
+\end_inset
+
+ erläutert.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -2477,6 +2597,74 @@ subsection[head={Szenario 02: Limitierungen / Engpässe}]{Limitierungen /
 \end_layout
 
 \begin_layout Standard
+Bezüglich den Limitierungen bei den unterschiedlichen Netzwerklasten sind
+ im Vergleich zum ersten Szenario bei keinem Fall festzustellen.
+ Klar ersichtlich wird hier jedoch, dass der Prozessor-Engpass bei den Lasten
+ mit Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+ (TCP und UDP) bei shck entsteht, da die CPU-Werte beim Client bei diesen
+ Lasten der grösstmöglichen Leistung eines single-threaded Prozesses entsprechen.
+ 
+\end_layout
+
+\begin_layout Standard
+Des Weiteren erzielen diese Lasten mit Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+ in einer Nicht-PRP-Umgebung (SAN an SAN) höhere Bitraten beim Versand von
+ Paketen und Erhalten von Quittierungen, da durch die Abwesenheit des PRP-1
+ stacks auf beiden Seiten der Prozessor-Engpass weiter geöffnet wird und
+ somit mehr Zeit für die Netzwerklast-Generierung aufgewendet werden kann.
+ Dazu kann auch bei der TCP-Last vom Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MAX
+\begin_inset Quotes frd
+\end_inset
+
+ eine marginal höhere Bitrate bei den Quittierungen festgestellt werden.
+\end_layout
+
+\begin_layout Standard
+Wird das Zusammenspiel zwischen SAN Client an DAN Server mit einer Nicht-PRP-Umg
+ebung verglichen, ist ersichtlich, dass der Client bei der TCP-Last mit
+ 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+-Lasttyp markant weniger Quittierungen erhält.
+ Dies erklärt sich durch den Prozessor-Engpass, der beim Server durch den
+ aktiven PRP-1 stack wieder eingeengt wird, weshalb dieser weniger TCP-Quittieru
+ngen als ein SAN senden kann.
+ Dadurch, dass der SAN-Client weniger Quittierungen vom DAN-Server erhält,
+ kann der Client auch weniger TCP-Netzwerklast vom Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+ versenden.
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -2488,6 +2676,75 @@ subsection[head={Szenario 02: Verhalten zwischen shck-Client und -Server}]{Verha
 lten zwischen shck-Client und -Server}
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Beim Vergleich vom DAN-Server bei SAN zu DAN mit einer PRP-Umgebung wird
+ festgestellt, dass der Server beim Empfangen des Lasttyps 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+ vom SAN-Client mehr CPU-Last beansprucht als wenn der Server die Daten
+ von einem DAN-Client erhalten würde.
+ Dies entsteht aus der Tatsache, dass der SAN-Client mehr Prozessor-Zeit
+ zur Verfügung für das Senden von Datenströmen hat und somit auch mehr Daten
+ beim Server eintreffen (Client-TX-Bitrate, Server-RX-Bitrate und somit
+ auch Server-CPU-Last steigen bei dieser bestimmten Netzwerklast).
+ Der Server kann darauf auch mehr TCP-Quittierungen senden.
+ Des Weiteren erzielt das PRP-Netzwerk-Interface des DAN-Servers beim Lasttyp
+ 
+\begin_inset Quotes fld
+\end_inset
+
+MAX
+\begin_inset Quotes frd
+\end_inset
+
+ eine höhere RX-Bitrate, weil ohne den Versand über den PRP-1 stack die
+ 6 Byte für den RCT in der Payload wegfallen und somit 6 Byte mehr pro Frame
+ übertragen werden können.
+\end_layout
+
+\begin_layout Standard
+Vergleicht man die SAN-Server mit den DAN-Server wird festgestellt, dass
+ ein SAN-Server die Frames schneller verarbeiten und bei TCP auch schneller
+ quittieren kann.
+ Daraus resultiert auch, dass Clients eine höhere TCP-Last mit Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+ an SAN-Server senden können (Client erzielt dort höhere RX- und TX-Bitraten).
+\end_layout
+
+\begin_layout Standard
+Beim Betrachten der SAN- und DAN-Clients fällt auf, dass ein DAN-Client
+ beim Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+ weniger Durchsatz aufgrund des CPU-Engpasses erzielt und somit auch die
+ CPU-Last des Servers bei diesem Typ bei den Datenströmen eines DAN-Clients
+ geringer ausfällt.
+ Dadurch kann der Server auch weniger an den DAN-Client quittieren.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -2511,6 +2768,22 @@ subsection[head={Szenario 02: Verhalten des PRP-1 stacks}]{Verhalten des
 \end_layout
 
 \begin_layout Standard
+Bei den Fällen, in denen es sich beim Client um einen DAN handelt, ist bezüglich
+ den CPU-Werten bei den Netzwerklasten mit Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MAX
+\begin_inset Quotes frd
+\end_inset
+
+ eine Steigerung gegenüber einem SAN-Client festzustellen.
+ Daraus besteht Grund zur Annahme, dass shck für die Kommunikation mit dem
+ PRP-Interface mehr Prozessor-Ressourcen beansprucht als für die direkte
+ Kommunikation mit einem physischen Interface.
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -2526,35 +2799,16 @@ subsection[head={Szenario 02: Weitere Aspekte}]{Weitere Aspekte}
 
 \end_layout
 
-\begin_layout Itemize
-SAN to SAN vergleich mit DAN to DAN
-\end_layout
+\begin_layout Standard
+Beim Fall 
+\begin_inset Quotes fld
+\end_inset
 
-\begin_deeper
-\begin_layout Itemize
-DAN to DAN ist Szenario 01, nur sind CPU werte von shck statt prp1 stack
-\end_layout
+Client DAN sendet an Server DAN
+\begin_inset Quotes frd
+\end_inset
 
-\begin_layout Itemize
-Client
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-CPU Client bei MIN immer 100% (CPU Bottleneck durch shck)
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Client und Server SANSAN braucht weniger CPU bei MAX als DANDAN: Benötigt
- shck mehr CPU für versand über PRP-1-interface? Unterschied UDPMAX zu TCPMAX
- bei DANDAN viel höher als bei SANSAN.
- --> Annahme: Kommunikation shck mit virtuellem PRP-Interface aufwändiger
- als shck direkt mit NIC
-\end_layout
-
-\begin_layout Itemize
-Client und Server: Durch CPU limitierte Last mit Lasttyp 
+ ist bei den Server-CPU-Werten bei der UDP-Netzwerklast mit Lasttyp 
 \begin_inset Quotes fld
 \end_inset
 
@@ -2562,128 +2816,43 @@ MIN
 \begin_inset Quotes frd
 \end_inset
 
- erzielt ohne PRP eine höhere Bitraten beim Versand von Paketen und erhalten
- von TCP-Quittierungen (Weil beide ohne PRP arbeiten).
- Ohne PRP wird der Engpass geöffnet.
+ wie in Szenario 01 ein Unterschied zwischen den Messungen, die sich lediglich
+ in der Dauer unterscheiden, festzustellen.
+ Darauf wird bereits in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:01:Weitere-Aspekte"
+
+\end_inset
+
+ eingegangen.
 \end_layout
 
-\begin_layout Itemize
-Bei TCP höhere Bitrate bei Quittierungen (auch bei MAX marginal) (Server
- TX, Client RX)
+\begin_layout Standard
+Im vorhin erwähnten Kapitel wird auch auf die langsamen periodischen Schwankunge
+n eingegangen, die bei der CPU-Last eines DAN-Servers entstehen und besonders
+ stark bei den Datenströmen mit Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MAX
+\begin_inset Quotes frd
+\end_inset
+
+ ausfallen.
+ In diesem Szenario wird jedoch auch die Erkenntnis gewonnen, dass diese
+ Schwankungen nur entstehen wenn es sich bei beiden Teilnehmern (Client
+ und Server) um DANs handelt.
+ Wenn nur einer der beiden ein DAN ist, treten diese Schwankungen beim Server
+ nicht auf.
+ Dies führt zum Entschluss, dass diese Schwankungen mit der Auslastung durch
+ die Kombination des PRP-1 stacks und shck auf Client und Server entstehen.
+ Daraus besteht Grund zur Annahme, dass diese Schwankungen durch vom Betriebssys
+tem stammende Mechanismen (Scheduler) erzeugt werden.
+ Das Verhalten des Schedulers wäre zu untersuchen, was aus Zeitgründen nicht
+ mehr durchgeführt werden kann.
 \end_layout
 
-\begin_layout Itemize
-Server
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Keine Schwankungen bei Server bei CPU-Last: shck alleine ohne PRP läuft
- konstant.
- Wenn 2 Prozesse shck und stack viel brauchen kommen lange schwankungen
- ins spiel
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-SAN to DAN (SAN Client mit Client SANSAN / DAN Server mit Server DANDAN)
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-SAN Client selbe CPU werte wie bei SAN to SAN
-\end_layout
-
-\begin_layout Itemize
-SAN Client erhält bei TCP MIN markant weniger Quittierungen als bei SAN
- to SAN (Server hat hier PRP stack und somit einen engeren Prozessor-Engpass)
- RX Client
-\end_layout
-
-\begin_layout Itemize
-SAN Client TX Unterschied bei TCP MIN, erhält weniger ACKs von Server als
- bei ohne PRP und kann somit weniger schnell senden
-\end_layout
-
-\begin_layout Itemize
-DAN Server hat mehr CPU bei Lasttyp MIN als bei ServerDANDAN, weil er mehr
- Pakete vom Client ohne PRP erhält (höhere client TX bitrate als mit PRP).
-\end_layout
-
-\begin_layout Itemize
-DAN Server hat bei CPU keine schwankungen obwohl er PRP an hat (Client hat
- kein PRP): Schwankungen werden demnach vom sendenden PRP-Interface des
- Clients mit PRP beeinflusst.
-\end_layout
-
-\begin_layout Itemize
-DAN Server RX erhält bei MIN höhere Rate weil client ohne PRP mehr MIN senden
- kann -> kann somit auch mehr TCP MIN ACKs zurück senden
-\end_layout
-
-\begin_layout Itemize
-DAN Server RX erhält bei MAX mehr, weil vom Client Frames ohne RCT kommen
- und somit 6 byte mehr daten das maximale Frame ausfüllen können.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-DAN to SAN (DAN client mit clientDANDAN / San server mit Server SANSAN)
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Client CPU unterschied TCP MAX: wenn von PRP server ACKs erhält braucht
- mehr CPU: Annahme: Kommunikation shck mit virtuellem PRP-Interface aufwändiger
- als shck direkt mit NIC
-\end_layout
-
-\begin_layout Itemize
-Client RX erhält von PRP losem Server mehr (SAN Server kann schneller quittieren
-)
-\end_layout
-
-\begin_layout Itemize
-Client TX höhere MIN Bitrate (markant bei TCP), SAN Server kann Frames schneller
- abarbeiten und quittieren
-\end_layout
-
-\begin_layout Itemize
-SAN Server CPU bei MIN tiefer weil Data von DAN Client kommt (weniger Durchsatz
- mit PRP).
- Dieser kleinere Durchsatz spiegelt sich auch in der Server RX-Bitrate sowie
- der Menge an Quittierungen (TX Bitrate) wieder.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-DAN to DAN (vergl.
- scen01)
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Bitraten gleich
-\end_layout
-
-\begin_layout Itemize
-Server
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-CPU bei UMINU wieder wenig höher als UMINK: shck gibt CPU PRP1 an
-\end_layout
-
-\begin_layout Itemize
-CPU - schwankungen von shck selbe wie bei PRP-1 stack: Muss von Betriebssystem
- internen Mechanismen (Scheduler) stammen.
- Verhalten Scheduler wäre zu untersuchen (Zeitgründe!)
-\end_layout
-
-\end_deeper
-\end_deeper
 \begin_layout Standard
 \begin_inset Box Shadowbox
 position "t"
@@ -2820,6 +2989,13 @@ reference "sec:Szenario-02:-Performance-1"
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -3199,6 +3375,13 @@ reference "sec:Szenario-03:-Effekt-1"
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Szenario 04: Zeitweiser Ausfall eines Netzwerkpfades
 \begin_inset CommandInset label
@@ -3228,6 +3411,109 @@ subsection[head={Szenario 04: Limitierungen / Engpässe}]{Limitierungen /
 \end_layout
 
 \begin_layout Standard
+Die Messwerte dieses Szenarios (siehe Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sec:Szenario-04:-Zeitweiser-1"
+
+\end_inset
+
+) weisen Vergleich zur normalen PRP-Umgebung (Szenario 01, siehe Kapitel
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Szenario-01:-Performance-1"
+
+\end_inset
+
+) keine Änderungen bei den Engpässen auf.
+ Ausnahme bildet das physische Netzwerk-Interface 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ des Hosts 
+\begin_inset Quotes fld
+\end_inset
+
+srv01
+\begin_inset Quotes frd
+\end_inset
+
+, welches per ECI-Box in unterschiedlichen Zeitabständen aktiviert / deaktiviert
+ wird.
+ Diese Ausnahme ist anhand der RX- und TX-Bitraten des Clients beim Interface
+ 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ ersichtlich.
+ 
+\end_layout
+
+\begin_layout Standard
+Am Interface 
+\begin_inset Quotes fld
+\end_inset
+
+eth1
+\begin_inset Quotes frd
+\end_inset
+
+ des gleichen Hosts sind keine Änderungen festzustellen, obwohl dort auch
+ eine ECI-Box angeschlossen ist.
+ An dieser ECI-Box werden jedoch keine Änderungen vorgenommen, sodass beim
+ Interface 
+\begin_inset Quotes fld
+\end_inset
+
+eth1
+\begin_inset Quotes frd
+\end_inset
+
+ lediglich ein sehr kleiner Delay entsteht, welcher jedoch keine auffälligen
+ Änderungen an den Messwerten mit sich zieht.
+\end_layout
+
+\begin_layout Standard
+RX- und TX-Bitraten, die bei Client und Server auf den Interfaces 
+\begin_inset Quotes fld
+\end_inset
+
+prp1
+\begin_inset Quotes frd
+\end_inset
+
+ und 
+\begin_inset Quotes fld
+\end_inset
+
+eth1
+\begin_inset Quotes frd
+\end_inset
+
+ erzielt werden, zeigen im Vergleich zu Szenario 01 keine markanten Abweichungen.
+ Dies kann dadurch begründet werden, dass trotz (zeitweisem) Ausfall des
+ Interfaces 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ alle Pakete ihr Ziel erreichen und durch den Ausfall dieses Interfaces
+ lediglich weniger Duplikate am PRP-1 stack ankommen.
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -3242,9 +3528,88 @@ lten zwischen shck-Client und -Server}
 \end_inset
 
 
+\begin_inset CommandInset label
+LatexCommand label
+name "Szenario 04: Verhalten zwischen shck-Client und -Server"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+Dadurch, dass anhand des Ausfalls von 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ weniger Duplikate am PRP-1 stack ankommen, verringert sich die CPU-Last
+ des Servers, da dessen PRP-1 stack somit weniger Daten verarbeiten muss.
+ Dies kann soweit führen, dass der Server für die gleiche Last weniger Prozessor
+-Ressourcen aufwenden muss als der Client.
+\end_layout
+
+\begin_layout Standard
+Beim Client hingegen sind bezüglich der benötigten CPU-Last im Vergleich
+ mit Szenario 01 keine Änderungen aufzufinden.
+ Dies resultiert daraus, dass dessen PRP-1 stack sich immer noch mit der
+ Duplikaterstellung beschäftigt und die Daten auch an das 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+-Interface weiterleitet, wessen Daten bei einem Ausfall nicht effektiv versendet
+ werden.
+ Diese nicht versendeten Daten werden vom Betriebssystem in den entsprechenden
+ Statistiken (/proc-Dateisystem) korrekterweise nicht gezählt, weil dieses
+ den Ausfall von 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ erkennt.
+ Im Vergleich zu Szenario 03 (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Szenario-03:-Effekt"
+
+\end_inset
+
+) ist festzustellen, dass dort das Betriebssystem von 
+\begin_inset Quotes fld
+\end_inset
+
+srv01
+\begin_inset Quotes frd
+\end_inset
+
+ die Störungen am Interface 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ nicht erkennt und im Gegensatz zu diesem Szenario die Netzwerklast wie
+ üblich versendet wird.
+ Dieser gerade geschilderte Ablauf ist auch beim Komplettausfall aufzufinden.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \begin_inset ERT
 status open
 
@@ -3259,6 +3624,82 @@ subsection[head={Szenario 04: Verhalten des PRP-1 stacks}]{Verhalten des
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+Wie im zweiten Abschnitt des Kapitels 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "Szenario 04: Verhalten zwischen shck-Client und -Server"
+
+\end_inset
+
+ erläutert wird, sendet der PRP-1 stack die Daten an das ausgefallene Interface
+ weiter, obwohl es nicht aktiv ist.
+ Dies ist wegen der stack-internen Variable 
+\begin_inset Quotes fld
+\end_inset
+
+adapter_active
+\begin_inset Quotes frd
+\end_inset
+
+ der Fall.
+ Diese Variable gibt es pro Interface, das an den stack angebunden ist (
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ und 
+\begin_inset Quotes fld
+\end_inset
+
+eth1
+\begin_inset Quotes frd
+\end_inset
+
+).
+ Ist diese Variable für jedes dieser Interfaces auf 1 anstelle 0 gesetzt,
+ so nimmt der stack an, dass beide Interfaces aktiv sind.
+ Fälschlicherweise setzt der stack diese Variablen stets auf 1 und betreibt
+ auch keine Prüfung der Interfaces auf ihren Aktivitäts-Zustand.
+ Dies wurde zudem überprüft, indem der stack mit deaktiviertem 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+-Interface gestartet und die entsprechende Variable trotzdem auf 1 gesetzt
+ wurde.
+\end_layout
+
+\begin_layout Standard
+Der Server hingegen erhält beim Ausfall von 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ keine Duplikate und verwaltet somit stets eine volle Duplikattabelle (Einträge
+ werden erst aus der Tabelle entfernt, wenn das entsprechende Duplikat eingetrof
+fen ist).
+ Wie im Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:PRP-Overview"
+
+\end_inset
+
+ nachgelesen werden kann, werden die ältesten Einträge bei einer gefüllten
+ Tabelle überschrieben oder die Einträge werden entfernt, sobald sie sich
+ länger als 400ms in der Tabelle aufgehalten haben.
 \end_layout
 
 \begin_layout Standard
@@ -3277,23 +3718,17 @@ subsection[head={Szenario 04: Weitere Aspekte}]{Weitere Aspekte}
 
 \end_layout
 
-\begin_layout Itemize
-\begin_inset Quotes fld
+\begin_layout Standard
+Des Weiteren sind folgende Unterschiede zwischen den aufgestellten Fällen
+ dieses Szenarios u.a.
+ anhand deren graphischen Resultaten (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Graphische-Resultate-1"
+
 \end_inset
 
-prp1
-\begin_inset Quotes frd
-\end_inset
-
- und 
-\begin_inset Quotes fld
-\end_inset
-
-eth1
-\begin_inset Quotes frd
-\end_inset
-
- Bitraten werden nicht beeinflusst / keine Limitierung -> nur 
+) feststellbar: Wird jede Sekunde die ECI-Box an 
 \begin_inset Quotes fld
 \end_inset
 
@@ -3301,78 +3736,16 @@ eth0
 \begin_inset Quotes frd
 \end_inset
 
-
-\end_layout
-
-\begin_layout Itemize
-shck-Client
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Kein Einfluss auf CPU bei keinem Fall
-\end_layout
-
-\begin_layout Itemize
-1s kein Durchfluss -> Zeit für Deaktivieren/Aktivieren ECI-Box zu lange
- sodass eth0 nicht wirklich aktiv wird
-\end_layout
-
-\begin_layout Itemize
-2s kleine TX-Bitraten jedoch bei TCP keine/kaum Quittierungen vom Server
-\end_layout
-
-\begin_layout Itemize
-3s kleine Bitraten
-\end_layout
-
-\begin_layout Itemize
-4s etwas bessere Bitraten, danach nur noch marginale Verbesserungen pro
- erhöhte Sekunde der Intervallgrösse
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Diese Steigerung pro Intervallgrösse spiegelt sich in den graphischen Resultaten
- wieder (besonders ersichtlich bei Intervallgrösse von 3s)
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Wenn ECI-Box Interface ausschaltet, merkt es der Client und sendet nichts
- mehr über dieses interface.
- Beim Paragon merkt der Client nichts davon.
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-shck-Server
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Einfluss auf CPU, wird geringer je weniger über 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- versendet wird -> Muss weniger Daten verarbeiten
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Kann so weit kommen, dass Server weniger CPU für selbe Last benötigt als
- Client (Client sendet über eth0 und eth1, Server erhält nur eth1) (Normalfall
- benötigt Server mehr als Client, siehe Szenario 01)
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-TX-Bitrate Server entspricht der aus Szenario 01, da Verbindung zwischen
+ aktiviert / deaktiviert, so kann über dieses Interface kein Durchfluss
+ erzielt werden.
+ Daraus resultiert, dass 1 Sekunde eine zu kurze Zeit für die ECI-Box ist,
+ um wirklich aktiv zu werden und somit einen Durchfluss zu ermöglichen.
  
+\end_layout
+
+\begin_layout Standard
+Wird ein Intervall von 2s gewählt, ist es für den Client möglich, einen
+ Teil der Datenströme über 
 \begin_inset Quotes fld
 \end_inset
 
@@ -3380,33 +3753,12 @@ eth0
 \begin_inset Quotes frd
 \end_inset
 
- von 
-\begin_inset Quotes fld
-\end_inset
-
-srv02
-\begin_inset Quotes frd
-\end_inset
-
- zum Switch aktiv ist -> Server merkt nichts von Ausfall
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Man sieht in den Grafiken wie die shck-Server TX-bitrate mit der RX-bitrate
- des Servers korrespondiert.
- TCP: RX-Bitrate Client erst ab ca.
- 4s ähnlich zu TX-Bitrate Server weil Server beim Senden nichts vom Ausfall
- mitbekommt (Client erhält weniger als Server versendet)
-\end_layout
-
-\begin_layout Itemize
-In grafiken bei MAX mit intervall 2s peaks über 100 -> aktivieren interface
- -> annahme: tx-buffer leeren (einfluss auf statistik-aktualisierung)
-\end_layout
-
-\begin_layout Itemize
-Limitierung liegt in der Zeit, in der über 
+ zu versenden.
+ Dieser Teil kommt jedoch nicht beim Server an, womit man sagen kann, dass
+ dieser Teil von der ECI-Box verworfen wird.
+ Der Client erhält bei diesem Intervall bei TCP-Übertragungen zudem keine
+ Quittierungen vom Server bzw.
+ kommen die Quittierungen über das Interface 
 \begin_inset Quotes fld
 \end_inset
 
@@ -3414,34 +3766,108 @@ eth0
 \begin_inset Quotes frd
 \end_inset
 
- effektiv versendet wird -> Weniger versandt, kleinere Bitrate, weniger
- Server-CPU-Last
+ nicht an.
 \end_layout
 
-\begin_layout Itemize
-Laut standard PRP-Supervision Frames nur wenn beide Interfaces aktiv, dann
- erkennt DAN ob anderer Host SAN oder DAN ist.
- Im PRP-1 stack ist adapter_active immer auf 1, auch wenn Kabel getrennt
- ist.
- Der stack sendet sobald adapter_active==1 ist, das heisst er weiss nichts
- vom Ausfall.
- Die an das deaktivierte Interface gesendeten Daten sind für den PRP-1 stack
- gesendet, werden jedoch nicht effektiv vom OS versendet -> korrekte /proc-Stati
-stiken bei eth0.
+\begin_layout Standard
+In den graphischen Resultaten sind des Weiteren bei den Netzwerklasten mit
+ Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MAX
+\begin_inset Quotes frd
+\end_inset
+
+ und Intervallgrösse von 2s Spitzen in den Graphen zu sehen, welche über
+ 100 MBit/s reichen.
+ Als Erklärung dafür wird angenommen, dass bei der Aktivierung des Interfaces
+ es noch Daten im Buffer hat, die er senden möchte und somit dann diesen
+ Buffer leert und darauf die neuen Daten sendet.
+ Bei dieser Buffer-Entleerung könnte es sein, dass das Interface die Limitierung
+ auf 100 MBit/s nicht beachtet.
+ Das bedeutet, dass hier das Betriebssystem in Kombination mit dem physischen
+ Interface 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ Einfluss nehmen könnte.
 \end_layout
 
-\begin_layout Itemize
-Aging-Einträge werden überschrieben
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
-\begin_layout Itemize
-Intervallgrössen in Graphen anhand deren Spitzen in Client TX und RX, server
- RX und server CPU ersichtlich.
- Server meint beide Interfaces seien UP.
+\begin_layout Standard
+Ab einem Intervall von 3s kann wie beim 2s-Intervall ein Teil übermittelt
+ werden.
+ Der Unterschied liegt darin, dass ab einem Intervall von 3s nicht alles
+ von der ECI-Box verworfen wird und somit auch ein Teil der TCP-Quittierungen
+ beim Client ankommt.
+ Selbst bei einer Intervallgrösse von 9s kommt nicht der gesamte Teil, der
+ über 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ versendet wird, beim Server an und umgekehrt.
+ In diesem Szenario kommt nie genau die Menge an Daten, die über das Netzwerk
+ A versendet wurde, beim anderen Teilnehmer an.
 \end_layout
 
-\begin_layout Itemize
-keine schwankungen
+\begin_layout Standard
+Mit jeder Sekunde, um die der Intervall vergrössert wird, steigt auch der
+ Anteil an der Netzwerklast, die effektiv über das 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+-Interface versendet werden kann.
+ Beobachtet werden kann auch, dass die Steigerung der Bitrate vom Intervall
+ von 3s zu 4s grösser ist als die darauf folgenden Steigerungen.
+ Die Steigerungen pro dazukommende Sekunde bei einer Intervallgrösse ab
+ 4s fällt nur noch marginal aus.
+ Diese Tatsache spiegelt sich auch in den graphischen Resultaten wider.
+ Die Intervallgrössen sind anhand deren Spitzen in den Parametern Client-RX-,
+ Client-TX, Server-RX-Bitrate von 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ und der Server-CPU-Last ersichtlich.
+ Bei den Server-Bitraten kann festgestellt werden, dass der Server bis auf
+ die / einige nicht eintreffende Duplikate nichts von den Ausfällen merkt
+ und normal seine Datenströme übermittelt.
+\end_layout
+
+\begin_layout Standard
+Die in Szenario 01 auftretenden langsamen periodischen Schwankungen, die
+ bei der CPU-Last des Servers entstehen (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:01:Weitere-Aspekte"
+
+\end_inset
+
+), sind innerhalb dieses Szenarios nicht aufzufinden.
+ Diese Tatsache führt zum Entschluss, dass diese Schwankungen lediglich
+ bei einer konstanten Verbindung über beide Netzwerke auftritt.
 \end_layout
 
 \begin_layout Standard
@@ -3585,6 +4011,13 @@ reference "sec:Szenario-04:-Zeitweiser-1"
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Szenario 05: Abhängigkeit vom verwendeten Protokoll (TCP/UDP)
 \begin_inset CommandInset label
@@ -3618,74 +4051,113 @@ reference "sub:Erörterung-signifikanter-Resulta"
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-subsection[head={Szenario 05: Limitierungen / Engpässe}]{Limitierungen /
- Engpässe}
-\end_layout
+Der Vergleich zwischen TCP- und UDP-Datenströmen wird in Szenario 01 im
+ Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Interpretation"
 
 \end_inset
 
-
+ durchgeführt, jedoch erfolgt in diesem Kapitel eine Kurzfassung dessen
+ Ergebnisse.
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-subsection[head={Szenario 05: Verhalten zwischen shck-Client und -Server}]{Verha
-lten zwischen shck-Client und -Server}
+Die grösste Differenz, die zwischen den beiden Protokollen ermittelt wurde,
+ sind die Quittierungen, die bei TCP vom Server generiert und versandt werden.
+ Bei UDP hingegen sendet der Client lediglich seine Last, ohne eine Antwort
+ vom Server zu erhalten.
+ Diese Quittierungen lösen eine stärkere Beanspruchung der Prozessorleistung
+ auf beiden Seiten aus.
+ Der Client nimmt diese entgegen und verarbeitet sie neben dem Versand der
+ mit shck generierten Netzwerklast.
+ Der Server versendet die Quittierungen neben dem Empfangen der Netzwerklast,
+ womit beide einen Mehraufwand gegenüber dem UDP-Verkehr haben.
+ 
 \end_layout
+
+\begin_layout Standard
+Dieser Mehraufwand durch TCP betrifft den PRP-1 stack und den Netzwerklast-Gener
+ator shck.
+ Die CPU-Last des PRP-1 stacks ist in den Messresultaten von Szenario 01
+ in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:01-Messresultate"
 
 \end_inset
 
+ aufzufinden.
+ Die durch shck erzeugte Prozessor-Nutzung kann in den Messresultaten von
+ Szenario 02 nachvollzogen werden, wobei dort der Fall 
+\begin_inset Quotes fld
+\end_inset
 
-\end_layout
+Client DAN sendet an Server DAN
+\begin_inset Quotes frd
+\end_inset
 
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-subsection[head={Szenario 05: Verhalten des PRP-1 stacks}]{Verhalten des
- PRP-1 stacks}
-\end_layout
+ in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Client-DAN-sendet-1"
 
 \end_inset
 
-
+ betrachtet werden muss, der die selbe Konfiguration wie in Szenario 01
+ behandelt.
 \end_layout
 
 \begin_layout Standard
-\begin_inset ERT
-status open
+Auf die Datenströme mit Lasttyp 
+\begin_inset Quotes fld
+\end_inset
 
-\begin_layout Plain Layout
+MAX
+\begin_inset Quotes frd
+\end_inset
 
-
-\backslash
-subsection[head={Szenario 05: Weitere Aspekte}]{Weitere Aspekte}
+ hat diese Differenz keinen merkbaren Einfluss auf die gemessenen Bitraten,
+ da diese Ströme nicht durch einen Prozessor-Engpass limitiert werden.
 \end_layout
+
+\begin_layout Standard
+Hingegen wird der CPU-Engpass bei den durch den Prozessor limitierten Netzwerkla
+sten (Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+) durch TCP weiter verengt.
+ Dies hat zur Folge, dass bei der TCP-Last mit Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+ weniger Prozessor-Ressourcen für den Versand dieser TCP-Last als bei der
+ UDP-Last des gleichen Lasttyps zur Verfügung stehen, was besonders anhand
+ der erzielten TX-Bitrate auf dem Client bei den Messresultaten von Szenario
+ 01 in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:01-Messresultate"
 
 \end_inset
 
-
+ ersichtlich ist.
 \end_layout
 
 \begin_layout Standard
-Siehe 01
+Zusammengefasst kann gesagt werden, dass die Verwendung von TCP anhand dessen
+ Antworten, die vom Empfänger an den Sender zusätzlich übermittelt werden,
+ mit einer höheren CPU-Last als mit UDP verbunden ist.
 \end_layout
 
 \begin_layout Standard
