@@ -2242,8 +2242,7 @@ eit-Messungen lediglich der Generierungs-Prozess früher per kill-Befehl
  terminiert wird.
  Es besteht Grund zur Annahme, dass diese Unterschiede durch vom Betriebssystem
  stammende Mechanismen (Scheduler) erzeugt werden.
- Das Verhalten des Schedulers wäre zu untersuchen, was jedoch aus Zeitgründen
- nicht mehr durchgeführt werden kann.
+ 
 \end_layout
 
 \begin_layout Standard
@@ -2263,7 +2262,7 @@ reference "sub:Profiling-Fazit"
 \end_inset
 
 , wird erwähnt, dass der Scheduler des Betriebssystems einen Einfluss auf
- die unterschiedlichen CPU-Auslastungen haben könnte.
+ die unterschiedlichen CPU-Auslastungen und Schwankungen haben könnte.
  Im Rahmen der vorliegenden Arbeit kann diese These jedoch aus Zeitgründen
  nicht näher untersucht und durch weitere Testszenarien zusätzlich belegt
  werden.

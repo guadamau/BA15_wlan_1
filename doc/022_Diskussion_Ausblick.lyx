@@ -103,6 +103,85 @@ reference "sec:Besprechung-der-Ergebnisse"
 
 \end_layout
 
+\begin_layout Subsection
+Zuverlässigkeit von Performance-Messungen
+\end_layout
+
+\begin_layout Standard
+Faktoren für Messungen zu beachten:
+\end_layout
+
+\begin_layout Itemize
+Tools
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Tools und deren Rechnungsvorgänge undurchsichtig bzw.
+ nicht dokumentiert.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Herkömmliche Messtools generieren einen Overhead durch eine ständige Anzeige
+ der Messresultate, was einen genauigkeitsverlust mit sich zieht
+\end_layout
+
+\begin_layout Itemize
+Deshalb meas entwickelt.
+ Besonderer Wert auf Genauigkeit bei Messungen gelegt.
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Netzwerklast-Generierung nach genauen Vorgaben mit gefundenen Tools nicht
+ möglich
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Herkömmliche Netzwerklastgeneratoren verwenden teilweise eigene Applikations-Pro
+tokolle zwischen Client und Server.
+ Dadurch entsteht ein Overhead und womit eine genaue Lastdefinition verhindert
+ wird.
+\end_layout
+
+\begin_layout Itemize
+Kein adäquates Tool gefunden, um Layer-2-Frames als Last zu generieren (Für
+ Vergleich zwischen Ethernet und UDP).
+\end_layout
+
+\begin_layout Itemize
+Deshalb shck entwickelt
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Itemize
+Hardware
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Statistik-Aktualisierungs-Intervalle von Hardware vorgegeben, lässt sich
+ nicht bei jeder Hardware modifizieren.
+ Für genaue Messungen muss dieses Intervall möglichst klein sein.
+ Wie Intervall einstellen siehe /proc NWstat in Aufbau/NW//proc-NWstat &
+ Wie Einfluss von Intervall siehe ErmittlungPerf/EinflussInt
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Betriebssystem
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Einfluss durch Betriebssystem in INterpret 01 / Weitere Aspekte.
+ Benötigt weitere Untersuchungen
+\end_layout
+
+\end_deeper
 \begin_layout Section
 Erfüllung der Aufgabenstellung 
 \begin_inset CommandInset label
@@ -114,6 +193,140 @@ name "sec:Erfüllung-der-Aufgabenstellung"
 
 \end_layout
 
+\begin_layout Subsection
+Studium von PRP und Aufbau Testumgebung
+\end_layout
+
+\begin_layout Subsubsection
+Aufbau Testumgebung
+\end_layout
+
+\begin_layout Subsubsection
+Konfigurationen zur Ermittlung der Leistungsfähigkeit der Implementierung
+\end_layout
+
+\begin_layout Itemize
+Studium von PRP und Aufbau Testumgebung
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+PRP-Umgebung aufbauen, die aus zwei Netzwerken A und B sowie zwei bis drei
+ Endsystemen besteht
+\end_layout
+
+\begin_layout Itemize
+Konfigurationen definieren, in welchen die Leistungsfähigkeit der Implementierun
+g ermittelt werden kann, wobei u.a.
+ folgende Aspekte beachtet werden sollen wie:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Effekt von Laufzeitunterscheidungen zwischen Netz A und Netz B
+\end_layout
+
+\begin_layout Itemize
+Zeitweiser Ausfall eines Netzwerkpfades
+\end_layout
+
+\begin_layout Itemize
+Abhängigkeit vom verwendeten Protokoll (TCP, UDP)
+\end_layout
+
+\begin_layout Itemize
+Einfluss nicht entfernter Duplikate auf Funktion und Performance
+\end_layout
+
+\begin_layout Itemize
+Auswirkung, wenn Frames out-of-sequence ankommen
+\end_layout
+
+\end_deeper
+\end_deeper
+\begin_layout Subsection
+Untersuchung von Tools
+\end_layout
+
+\begin_layout Subsubsection
+Blackbox-Ansatz
+\end_layout
+
+\begin_layout Standard
+meas und shck
+\end_layout
+
+\begin_layout Subsubsection
+Whitebox-Ansatz
+\end_layout
+
+\begin_layout Standard
+Profiling - Flame Graph
+\end_layout
+
+\begin_layout Subsubsection
+Interpretation der Resultate
+\end_layout
+
+\begin_layout Subsubsection
+Offload-Mechanismen
+\end_layout
+
+\begin_layout Standard
+Theor Grundl + Szen 07
+\end_layout
+
+\begin_layout Itemize
+Untersuchung von Tools
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Aufzeigen, was die ermittelten Resultate aussagen bzw.
+ wie sie zu interpretieren sind
+\end_layout
+
+\begin_layout Itemize
+Einfluss von Offload-Mechanismen klären
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Verhalten der PRP-Implementierung
+\end_layout
+
+\begin_layout Itemize
+Verhalten der PRP Implementierung
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Auswirkung der Anwendung von PRP auf das Endsystem studieren
+\end_layout
+
+\begin_layout Itemize
+DAN- und SAN-Endknoten vergleichen
+\end_layout
+
+\end_deeper
+\begin_layout Subsection
+Generalisierung
+\end_layout
+
+\begin_layout Itemize
+Generalisierung
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Grundsätze und Rahmenbedingungen formulieren
+\end_layout
+
+\begin_layout Itemize
+Bewertung der untersuchten Tools
+\end_layout
+
+\end_deeper
 \begin_layout Standard
 \begin_inset Float table
 placement H
@@ -211,88 +424,6 @@ Nachweis:
 
 \end_layout
 
-\begin_layout Itemize
-Studium von PRP und Aufbau Testumgebung
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-PRP-Umgebung aufbauen, die aus zwei Netzwerken A und B sowie zwei bis drei
- Endsystemen besteht
-\end_layout
-
-\begin_layout Itemize
-Konfigurationen definieren, in welchen die Leistungsfähigkeit der Implementierun
-g ermittelt werden kann, wobei u.a.
- folgende Aspekte beachtet werden sollen wie:
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Effekt von Laufzeitunterscheidungen zwischen Netz A und Netz B
-\end_layout
-
-\begin_layout Itemize
-Zeitweiser Ausfall eines Netzwerkpfades
-\end_layout
-
-\begin_layout Itemize
-Abhängigkeit vom verwendeten Protokoll (TCP, UDP)
-\end_layout
-
-\begin_layout Itemize
-Einfluss nicht entfernter Duplikate auf Funktion und Performance
-\end_layout
-
-\begin_layout Itemize
-Auswirkung, wenn Frames out-of-sequence ankommen
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-Untersuchung von Tools
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Aufzeigen, was die ermittelten Resultate aussagen bzw.
- wie sie zu interpretieren sind
-\end_layout
-
-\begin_layout Itemize
-Einfluss von Offload-Mechanismen klären
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Verhalten der PRP Implementierung
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Auswirkung der Anwendung von PRP auf das Endsystem studieren
-\end_layout
-
-\begin_layout Itemize
-DAN- und SAN-Endknoten vergleichen
-\end_layout
-
-\end_deeper
-\begin_layout Itemize
-Generalisierung
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Grundsätze und Rahmenbedingungen formulieren
-\end_layout
-
-\begin_layout Itemize
-Bewertung der untersuchten Tools
-\end_layout
-
-\end_deeper
 \begin_layout Subsection
 Ziele
 \end_layout
