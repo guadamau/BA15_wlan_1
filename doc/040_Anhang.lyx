@@ -45610,6 +45610,10 @@ Wäre noch interessant: shck Version mit fixer Bandbreitenangabe
 Nächste Woche ist Herr Weibel abwesend, jedoch per E-Mail erreichbar
 \end_layout
 
+\begin_layout Section
+Kalenderwoche 23: 01.06.2015
+\end_layout
+
 \begin_layout Chapter
 Einrichtung ECI
 \end_layout
@@ -45724,12 +45728,684 @@ name "sec:meas---Messung"
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 shck - Netzwerklast-Generierung
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:shck---Netzwerklast-Generierung"
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bei shck handelt es sich um ein Python-Skript, welches das interaktive Paket-Man
+ipulierungs-Programm Scapy 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "scapy"
+
+\end_inset
+
+ Version 2.3.1 und Python Version 2.7 verwendet.
+ Der gesamte Quellcode befindet sich auf dem dieser Arbeit beigelegten Speicherm
+edium (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Speichermedium"
+
+\end_inset
+
+).
+ Innerhalb dieses Kapitels werden die wichtigsten Funktionen aufgezeigt,
+ um ein besseres Verständnis des Ablaufs dieser Applikation erlangen zu
+ können.
+\end_layout
+
+\begin_layout Subsection
+main()-Funktion
+\end_layout
+
+\begin_layout Standard
+Diese Funktion wird beim Start des Skripts ausgeführt.
+ Zu Beginn der Funktion werden die Kommandozeilen-Parameter ausgelesen und
+ die Funktionen für den Client- oder Server-Modus ausgeführt.
+ Im Client-Modus wird die sendpacket()-Funktion (siehe Abschnitt nach dem
+ Quellcode innerhalb dieses Kapitels) ausgeführt, wobei die server()-Funktion
+ (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:server()-Funktion"
+
+\end_inset
+
+) auf dem Server ausgeführt wird.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,numbers=left,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def main(argv):
+\end_layout
+
+\begin_layout Plain Layout
+
+...
+\end_layout
+
+\begin_layout Plain Layout
+
+    if (datafile == '' and srvmode == False):   # display help if invalid
+ parameters are set
+\end_layout
+
+\begin_layout Plain Layout
+
+        printhelp()
+\end_layout
+
+\begin_layout Plain Layout
+
+        sys.exit()
+\end_layout
+
+\begin_layout Plain Layout
+
+    elif (srvmode == True):
+\end_layout
+
+\begin_layout Plain Layout
+
+        print(...)
+\end_layout
+
+\begin_layout Plain Layout
+
+        server()                                # start server-mode
+\end_layout
+
+\begin_layout Plain Layout
+
+    else:
+\end_layout
+
+\begin_layout Plain Layout
+
+        ...
+\end_layout
+
+\begin_layout Plain Layout
+
+        payload=getpayloadfromfile( datafile )  # get payload from file
+\end_layout
+
+\begin_layout Plain Layout
+
+        sendpacket( payload )                   # send frames with specified
+ payload
+\end_layout
+
+\begin_layout Plain Layout
+
+        print('Done
+\backslash
+nshck is finished
+\backslash
+n')
+\end_layout
+
+\begin_layout Plain Layout
+
+    sys.exit()
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+shck: main()-Funktion
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Zur sendpacket()-Funktion: Diese Funktion generiert das Paket entsprechend
+ den angegebenen Parameter und übergibt es der Funktion sendpacketout()
+ (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:sendpacketout()-Funktion"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+sendpacketout()-Funktion
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:sendpacketout()-Funktion"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Diese Funktion öffnet den gewünschten Socket und sendet das ihr übergebene
+ Paket so oft wie gewünscht oder endlos in einer Schleife an den angegebenen
+ Empfänger.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,numbers=left,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def sendpacketout( packet, data ):
+\end_layout
+
+\begin_layout Plain Layout
+
+    """Creates the needed socket and sends the prepared data x times (specified
+ per -n parameter) over it
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    For the CUSTOM-sizetype, the function reads a prepared textfile which
+ contains a specific
+\end_layout
+
+\begin_layout Plain Layout
+
+    size in bytes per line, prepares and sends the frame/packet per line.
+\end_layout
+
+\begin_layout Plain Layout
+
+    """
+\end_layout
+
+\begin_layout Plain Layout
+
+    try:
+\end_layout
+
+\begin_layout Plain Layout
+
+        countend = int(count_frames)
+\end_layout
+
+\begin_layout Plain Layout
+
+        if transmission_type == 'ETH':
+\end_layout
+
+\begin_layout Plain Layout
+
+            s = socket.socket(socket.PF_PACKET, socket.SOCK_RAW)
+\end_layout
+
+\begin_layout Plain Layout
+
+            s.bind((interface,0x2015))
+\end_layout
+
+\begin_layout Plain Layout
+
+        elif transmission_type == 'UDP':
+\end_layout
+
+\begin_layout Plain Layout
+
+            s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+\end_layout
+
+\begin_layout Plain Layout
+
+            s.connect((target, portnumber_udp))
+\end_layout
+
+\begin_layout Plain Layout
+
+        elif transmission_type == 'TCP':
+\end_layout
+
+\begin_layout Plain Layout
+
+            s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+\end_layout
+
+\begin_layout Plain Layout
+
+            s.connect((target, portnumber_tcp))
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        ss = StreamSocket(s)
+\end_layout
+
+\begin_layout Plain Layout
+
+        sendpacketonsocket = ss.send
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        if sizetype == 'CUSTOM':
+\end_layout
+
+\begin_layout Plain Layout
+
+            ...
+        
+\end_layout
+
+\begin_layout Plain Layout
+
+        else:
+\end_layout
+
+\begin_layout Plain Layout
+
+            count = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+            packet = Raw(packet)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+            while count < countend:
+\end_layout
+
+\begin_layout Plain Layout
+
+                bytecount = sendpacketonsocket(packet)
+\end_layout
+
+\begin_layout Plain Layout
+
+                if int(bytecount) == len(packet):
+\end_layout
+
+\begin_layout Plain Layout
+
+                    count += 1
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+            while unlimited_count == True:
+\end_layout
+
+\begin_layout Plain Layout
+
+                ss.send(packet)
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+        s.close()
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+    except socket_error as serr:
+\end_layout
+
+\begin_layout Plain Layout
+
+        if serr.errno != errno.ECONNREFUSED:
+\end_layout
+
+\begin_layout Plain Layout
+
+            raise serr
+\end_layout
+
+\begin_layout Plain Layout
+
+        else:
+\end_layout
+
+\begin_layout Plain Layout
+
+            print('ERROR (Connection refused by target):
+\backslash
+nshck needs to run in Server-Mode (-S) with -t ' + transmission_type + '
+\backslash
+nand on the same port (-p PORTNUMBER) on the target host!...')
+\end_layout
+
+\begin_layout Plain Layout
+
+            sys.exit()
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+shck: sendpacketout()-Funktion
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+server()-Funktion
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:server()-Funktion"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die server()-Funktion öffnet den gewünschten Socket und empfängt in einer
+ Endlos-Schlaufe TCP- oder UDP-Pakete.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=Python,numbers=left,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+def server():
+\end_layout
+
+\begin_layout Plain Layout
+
+    """server-mode: listens on the specified portnumber (TCP or UDP)
+\end_layout
+
+\begin_layout Plain Layout
+
+    """
+\end_layout
+
+\begin_layout Plain Layout
+
+    HOST = ''
+\end_layout
+
+\begin_layout Plain Layout
+
+    PORT_UDP = portnumber_udp
+\end_layout
+
+\begin_layout Plain Layout
+
+    PORT_TCP = portnumber_tcp
+\end_layout
+
+\begin_layout Plain Layout
+
+    if transmission_type == 'TCP':
+\end_layout
+
+\begin_layout Plain Layout
+
+        while 1:
+\end_layout
+
+\begin_layout Plain Layout
+
+            try:
+\end_layout
+
+\begin_layout Plain Layout
+
+                s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+\end_layout
+
+\begin_layout Plain Layout
+
+                s.setsockopt(socket.SOL_SOCKET, socket.SO_REUSEADDR, 1)
+\end_layout
+
+\begin_layout Plain Layout
+
+                s.bind((HOST, PORT_TCP))
+\end_layout
+
+\begin_layout Plain Layout
+
+                s.listen(1)
+\end_layout
+
+\begin_layout Plain Layout
+
+                conn, addr = s.accept()
+\end_layout
+
+\begin_layout Plain Layout
+
+                print('Connected by ' + str(addr))
+\end_layout
+
+\begin_layout Plain Layout
+
+                count = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+                while 1:
+\end_layout
+
+\begin_layout Plain Layout
+
+                    data = conn.recv(4096)
+\end_layout
+
+\begin_layout Plain Layout
+
+                    if not data: break
+\end_layout
+
+\begin_layout Plain Layout
+
+                    count += 1
+\end_layout
+
+\begin_layout Plain Layout
+
+                    print ('
+\backslash
+rRecieved messages: ' + str(count) + '')
+\end_layout
+
+\begin_layout Plain Layout
+
+                    s.close()
+\end_layout
+
+\begin_layout Plain Layout
+
+            except socket_error as serr:
+\end_layout
+
+\begin_layout Plain Layout
+
+                if serr.errno !=  errno.ECONNRESET:
+\end_layout
+
+\begin_layout Plain Layout
+
+                    raise serr
+\end_layout
+
+\begin_layout Plain Layout
+
+                else:
+\end_layout
+
+\begin_layout Plain Layout
+
+                    print('Connection reset by peer, ready for new connection...')
+\end_layout
+
+\begin_layout Plain Layout
+
+    elif transmission_type == 'UDP':
+\end_layout
+
+\begin_layout Plain Layout
+
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+\end_layout
+
+\begin_layout Plain Layout
+
+        s.bind((HOST, PORT_UDP))
+\end_layout
+
+\begin_layout Plain Layout
+
+        count = 0
+\end_layout
+
+\begin_layout Plain Layout
+
+        while 1:
+\end_layout
+
+\begin_layout Plain Layout
+
+            count += int(1)
+\end_layout
+
+\begin_layout Plain Layout
+
+            data, addr = s.recvfrom(4096)
+\end_layout
+
+\begin_layout Plain Layout
+
+            print ('
+\backslash
+rRecieved messages: ' + str(count) + '')
+\end_layout
+
+\begin_layout Plain Layout
+
+    else:
+\end_layout
+
+\begin_layout Plain Layout
+
+        print('INVALID TRANSMISSION_TYPE! Choose TCP or UDP!
+\backslash
+n')
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+shck: server()-Funktion
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -45746,15 +46422,687 @@ name "sec:Szenarien"
 
 \end_layout
 
-\begin_layout Subsection
-Szenario 01: Performance im PRP-Netzwerk
-\begin_inset CommandInset label
-LatexCommand label
-name "sub:Szenario-01:-Performance"
+\begin_layout Standard
+Die Angaben in diesem Kapitel stützen sich auf den im Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Aufbau-der-Testumgebung"
+
+\end_inset
+
+ geschilderten Aufbau.
+ 
+\end_layout
+
+\begin_layout Standard
+Die Szenarien wurden in Form von Bash-Scripts automatisiert, damit auf allnen
+ Teilnehmern die Messung möglichst gleichzeitig ausgeführt wird.
+ Gestartet wurden die Messungen jeweils auf dem Host 
+\begin_inset Quotes fld
+\end_inset
+
+srv03
+\begin_inset Quotes frd
+\end_inset
+
+, welcher über das Netzwerk Ext (befindet sich ausserhalb des PRP-Netzwerks)
+ via SSH auf 
+\begin_inset Quotes fld
+\end_inset
+
+srv01
+\begin_inset Quotes frd
+\end_inset
+
+ und 
+\begin_inset Quotes fld
+\end_inset
+
+srv02
+\begin_inset Quotes frd
+\end_inset
+
+ die Messungen gestartet hat.
+ Eine Messung besteht jeweils aus mehreren Netzwerklasten, die individuell
+ mit einem genügenden Zeitabstand voneinander gemessen wurden.
+ Voraussetzung für eine Messung war jeweils, dass auf 
+\begin_inset Quotes fld
+\end_inset
+
+srv02
+\begin_inset Quotes frd
+\end_inset
+
+ shck bereits im Server-Modus gestartet ist.
+ Sämtliche Scripts für die Messungen befinden sich auf den Hosts im Ordner
+ /home/scripts/testing.
+ Der Inhalt des Ordners /home/scripts wurde des Weiteren über alle Hosts
+ (
+\begin_inset Quotes fld
+\end_inset
+
+srv01
+\begin_inset Quotes frd
+\end_inset
+
+, 
+\begin_inset Quotes fld
+\end_inset
+
+srv02
+\begin_inset Quotes frd
+\end_inset
+
+ und 
+\begin_inset Quotes fld
+\end_inset
+
+srv03
+\begin_inset Quotes frd
+\end_inset
+
+) vor jeder Messung synchronisiert, sodass jeder Host die selben Scripts
+ ausführt.
+ Innerhalb eines Scripts wird dann zwischen den Hosts unterschieden (
+\begin_inset Quotes fld
+\end_inset
+
+srv02
+\begin_inset Quotes frd
+\end_inset
+
+ wird in jedem Script als Server angenommen).
+\end_layout
+
+\begin_layout Standard
+Der gesamte Quellcode befindet sich auf dem dieser Arbeit beigelegten Speicherme
+dium (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Speichermedium"
+
+\end_inset
+
+).
+ Innerhalb dieses Kapitels werden die Scripts, die für das erste Szenario
+ verwendet wurden, aufgelistet.
+ Die Scripts für die weiteren Szenarien laufen jeweils ähnlich oder gar
+ gleich ab (die Scripts variieren u.a.
+ lediglich beim Speicherort der Resultate).
+\end_layout
+
+\begin_layout Standard
+Zu Beginn wird auf 
+\begin_inset Quotes fld
+\end_inset
+
+srv03
+\begin_inset Quotes frd
+\end_inset
+
+ das Bash-Script 
+\begin_inset Quotes fld
+\end_inset
+
+teststarter.sh
+\begin_inset Quotes frd
+\end_inset
+
+ mit der Szenarionummer und der Netzwerk-Ext-IP-Adresse des Clients (hier
+ von 
+\begin_inset Quotes fld
+\end_inset
+
+srv01
+\begin_inset Quotes frd
+\end_inset
+
+) gestartet.
+ In diesem Beispiel wird folgender Befehl ausgeführt:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Plain Layout
+
+/home/scripts/testing/teststarter.sh 01 192.168.99.1
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{verbatim}
+\end_layout
 
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,numbers=left,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#!/bin/sh
+\end_layout
+
+\begin_layout Plain Layout
+
+if [ -z $2 ]
+\end_layout
+
+\begin_layout Plain Layout
+
+then
+\end_layout
+
+\begin_layout Plain Layout
+
+	echo "######################################TESTSTARTER###############"
+\end_layout
+
+\begin_layout Plain Layout
+
+	echo
+\end_layout
+
+\begin_layout Plain Layout
+
+	echo "Usage: $0 ScenarioID IPclient"
+\end_layout
+
+\begin_layout Plain Layout
+
+	echo "SERVER IS ALWAYS 192.168.99.2"
+\end_layout
+
+\begin_layout Plain Layout
+
+	echo
+\end_layout
+
+\begin_layout Plain Layout
+
+	echo "Example-Parameter:  	ScenarioID  IPclient"
+\end_layout
+
+\begin_layout Plain Layout
+
+	echo "                     	01          192.168.99.1"
+\end_layout
+
+\begin_layout Plain Layout
+
+	exit 
+\end_layout
+
+\begin_layout Plain Layout
+
+fi
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+SCRIPTDIR="/home/scripts/testing" 
+\end_layout
+
+\begin_layout Plain Layout
+
+SERVER="192.168.99.2" 
+\end_layout
+
+\begin_layout Plain Layout
+
+SERVER_TEST="192.168.0.2"
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if [ $(pwd) != ${SCRIPTDIR} ] 
+\end_layout
+
+\begin_layout Plain Layout
+
+then
+\end_layout
+
+\begin_layout Plain Layout
+
+	cd ${SCRIPTDIR} 
+\end_layout
+
+\begin_layout Plain Layout
+
+fi
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+case $1 in
+\end_layout
+
+\begin_layout Plain Layout
+
+    01)
+\end_layout
+
+\begin_layout Plain Layout
+
+		SCRIPTTITLE="01_perf_prp.sh"
+\end_layout
+
+\begin_layout Plain Layout
+
+        ;;
+\end_layout
+
+\begin_layout Plain Layout
+
+    ...
+\end_layout
+
+\begin_layout Plain Layout
+
+    *)
+\end_layout
+
+\begin_layout Plain Layout
+
+        echo "Unknown ScenarioID!"
+\end_layout
+
+\begin_layout Plain Layout
+
+		exit
+\end_layout
+
+\begin_layout Plain Layout
+
+esac
+\end_layout
+
+\begin_layout Plain Layout
+
+ssh root@$2 ${SCRIPTDIR}/${SCRIPTTITLE} ${SERVER_TEST} & 
+\end_layout
+
+\begin_layout Plain Layout
+
+ssh root@${SERVER} ${SCRIPTDIR}/${SCRIPTTITLE} ${SERVER_TEST} &
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+echo "Started scenario $1 on client $2 and server ${SERVER}" 
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+/home/scripts/testing/teststarter.sh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Darauf wird auf 
+\begin_inset Quotes fld
+\end_inset
+
+srv01
+\begin_inset Quotes frd
+\end_inset
+
+ und 
+\begin_inset Quotes fld
+\end_inset
+
+srv02
+\begin_inset Quotes frd
+\end_inset
+
+ das Bash-Script /home/scripts/testing/01_perf_prp.sh ausgeführt.
+ Dieses Script startet für jede Netzwerklast sequenziell eine Messung (01_perf_p
+rp_test.sh) und übergibt der Messung die entsprechenden Parameter.
+ Im folgenden Code wird lediglich das Starten der Messung für zwei Netzwerklaste
+n aufgeführt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,numbers=left,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#!/bin/bash 
+\end_layout
+
+\begin_layout Plain Layout
+
+...
+\end_layout
+
+\begin_layout Plain Layout
+
+DESTINATION_IP=$1 
+\end_layout
+
+\begin_layout Plain Layout
+
+sleep 90
+\end_layout
+
+\begin_layout Plain Layout
+
+echo 
+\end_layout
+
+\begin_layout Plain Layout
+
+echo "### Scenario 01.U.MIN.K ############################################"
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+echo /home/scripts/testing/01_perf_prp_test.sh ${DESTINATION_IP} UDP MIN
+ 300 /results/testing/01/01.U.MIN.K 
+\end_layout
+
+\begin_layout Plain Layout
+
+sleep 90
+\end_layout
+
+\begin_layout Plain Layout
+
+echo 
+\end_layout
+
+\begin_layout Plain Layout
+
+echo "### Scenario 01.U.MIN.U ############################################"
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+echo /home/scripts/testing/01_perf_prp_test.sh ${DESTINATION_IP} UDP MIN
+ 60 /results/testing/01/01.U.MIN.U 
+\end_layout
+
+\begin_layout Plain Layout
+
+sleep 90
+\end_layout
+
+\begin_layout Plain Layout
+
+...
+\end_layout
+
+\begin_layout Plain Layout
+
+echo "######################################################################"
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+echo "TESTING COMPLETE!" 
+\end_layout
+
+\begin_layout Plain Layout
+
+echo "######################################################################"
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+/home/scripts/testing/01_perf_prp.sh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Im Script für eine einzelne Messung (hier 01_perf_prp_test.sh) wird je nach
+ Host, der das Script ausführt, die Netzwerklast-Generierung gestartet und
+ nach der Messung beendet.
+\end_layout
+
+\begin_layout Standard
+\begin_inset listings
+lstparams "language=bash,numbers=left,captionpos=b"
+inline false
+status open
+
+\begin_layout Plain Layout
+
+#!/bin/bash 
+\end_layout
+
+\begin_layout Plain Layout
+
+if [ -z $5 ] 
+\end_layout
+
+\begin_layout Plain Layout
+
+then
+\end_layout
+
+\begin_layout Plain Layout
+
+    echo "Usage: $0 DESTINATION TRANSMISSION_TYPE SIZE_TYPE DURATION OUTPUT_DEST
+INATION_DIR"
+\end_layout
+
+\begin_layout Plain Layout
+
+    exit 
+\end_layout
+
+\begin_layout Plain Layout
+
+fi
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if [ $(hostname) = "srv02" ] 
+\end_layout
+
+\begin_layout Plain Layout
+
+then
+\end_layout
+
+\begin_layout Plain Layout
+
+	OUTDIR=$5/srv 
+\end_layout
+
+\begin_layout Plain Layout
+
+else
+\end_layout
+
+\begin_layout Plain Layout
+
+	OUTDIR=$5
+\end_layout
+
+\begin_layout Plain Layout
+
+	/home/scripts/bin/shck -d $1 -t $2 -s $3 -n 0 -i prp1 -f /home/scripts/shck/tes
+tpayload -P &
+\end_layout
+
+\begin_layout Plain Layout
+
+fi
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+mkdir -p ${OUTDIR}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+sleep 5 
+\end_layout
+
+\begin_layout Plain Layout
+
+(/home/scripts/bin/meas -i 1 -n $4 -p $(pgrep prp_pcap) -v 0 -P ${OUTDIR})
+ 
+\end_layout
+
+\begin_layout Plain Layout
+
+sleep 5
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+if [ $(hostname) != "srv02" ] 
+\end_layout
+
+\begin_layout Plain Layout
+
+then
+\end_layout
+
+\begin_layout Plain Layout
+
+	kill -9 $(ps ax | grep shck | grep python | head -n 1 | sed 's/^ *//' |
+ cut -d' ' -f1) 
+\end_layout
+
+\begin_layout Plain Layout
+
+fi
+\end_layout
+
+\begin_layout Plain Layout
+
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+/home/scripts/testing/01_perf_prp_test.sh
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Messresultate werden auf dem jeweiligen Host gespeichert und via SSH
+ auf den Arbeitsrechner geladen, um daraus die Tabellen und Graphen generieren
+ zu können.
+ Diese Generierung besteht aus Bash-Scripts, welche den meas-Output parsen
+ und für die Tabellen in entsprechenden 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+latex
+\end_layout
+
+\end_inset
+
+-Code in passende Dateien umwandeln.
+ Für die Graphen werden entsprechende gnuplot-Scripts generiert, welche
+ beim Ausführen die zugehörige Grafik generieren.
+ Diese Scripts zur Tabellen- und Graphen-Generierung werden sequenziell
+ ausgeführt und in ein Bash-Script gepackt, welches den Namen 
+\begin_inset Quotes fld
+\end_inset
+
+generate_all.sh
+\begin_inset Quotes frd
+\end_inset
+
+ trägt.
 \end_layout
 
 \begin_layout Chapter

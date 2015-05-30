@@ -79,6 +79,13 @@
 
 \begin_layout Section
 Evaluierung der Tools
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Evaluierung-der-Tools"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -3314,6 +3321,13 @@ filename "020_1_1_shck.lyx"
 
 \begin_layout Subsection
 Verwendete Tools
+\begin_inset CommandInset label
+LatexCommand label
+name "sub:Verwendete-Tools"
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

@@ -934,7 +934,7 @@ Interpretation der Resultate
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \begin_inset Tabular
@@ -959,6 +959,10 @@ Soll
 Mit Hilfe von geeigneten Kalibrier- und Vergleichsmessungen soll aufgezeigt
  werden, was die ermittelten Resultate aussagen bzw.
  wie sie zu interpretieren sind.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -978,7 +982,15 @@ Ist
 \begin_inset Text
 
 \begin_layout Plain Layout
-s
+In Form von Szenarien wurden die Normalfälle (mit und ohne PRP) definiert
+ und gemessen.
+ Diese Messungen der Normalfälle dienen als Anhaltspunkte für weitere Messungen,
+ die unterschiedliche Aspekte behandeln.
+ Die Messresultate sind ebenfalls nach Szenarien geordnet im entsprechenden
+ Kapitel aufzufinden, wobei die Interpretationen der Resultate in einem
+ weiteren Kapitel (ebenfalls nach Szenarien gegliedert) aufgeführt sind.
+ Diese Interpretationen erläutern, was die ermittelten Resultate aussagen
+ und wie sie interpretiert wurden.
 \begin_inset Newline newline
 \end_inset
 
@@ -1002,7 +1014,50 @@ Nachweis
 \begin_inset Text
 
 \begin_layout Plain Layout
+Es wurde ein Szenario aufgestellt, das dem Normalfall der PRP-Umgebung entsprich
+t (Szenario 01, siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Szenario-01:-Performance-1"
 
+\end_inset
+
+) und als Anhaltspunkt zum Vergleich mit anderen Szenarien, die unterschiedliche
+ Aspekte behandeln, dient.
+ Ein Fall ohne PRP ist des Weiteren in Szenario 02 in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Szenario-02:-Performance"
+
+\end_inset
+
+ abgedeckt.
+ Die entsprechenden Messresultate sind unter anderem im Anhang in Kapitel
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Messresultate"
+
+\end_inset
+
+ aufgeführt (Die Resultate von Szenario 01 sind in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:01-Messresultate"
+
+\end_inset
+
+ zu finden).
+ Diese Resultate werden innerhalb des Kapitels 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Resultate"
+
+\end_inset
+
+ erläutert und interpretiert.
+ Wie die Resultate interpretiert werden ist ebenfalls im vorher erwähnten
+ Kapitel aufzufinden.
 \end_layout
 
 \end_inset
@@ -1065,6 +1120,10 @@ Soll
 \begin_layout Plain Layout
 Es soll auch geklärt werden, welchen Einfluss die Offload-Mechanismen moderner
  Ethernet- Adapter haben.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1084,7 +1143,11 @@ Ist
 \begin_inset Text
 
 \begin_layout Plain Layout
-s
+Der Einfluss der Offload-Mechanismen ist in der Theorie recherchiert und
+ erklärt.
+ Aufgrund des Aufbaus der in dieser Arbeit generierten Netzwerklasten, dem
+ Aufbau der PRP-Umgebung und aus Zeitgründen konnten lediglich einige Offload-Me
+chanismen überprüft und gemessen werden.
 \begin_inset Newline newline
 \end_inset
 
@@ -1108,7 +1171,24 @@ Nachweis
 \begin_inset Text
 
 \begin_layout Plain Layout
+Die Offload-Mechanismen werden in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Offload-Mechanismen"
 
+\end_inset
+
+ erklärt.
+ Szenario 07 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "sub:Einluss-von-Offload-Mechanismen"
+
+\end_inset
+
+ befasst sich mit der Auswertung unterschiedlicher Offload-Mechanismen.
+ In besagtem Szenario wird ebenfalls die Auswahl der untersuchten Mechanismen
+ begründet.
 \end_layout
 
 \end_inset
@@ -1136,10 +1216,6 @@ Nachweis: Offload-Mechanismen
 \end_inset
 
 
-\end_layout
-
-\begin_layout Standard
-Theor Grundl + Szen 07
 \end_layout
 
 \begin_layout Subsection
@@ -1180,6 +1256,10 @@ Soll
 Es ist zu studieren, wie sich die Anwendung von PRP auf das Endsystem auswirkt,
  insbesondere auf die Belastung von CPU und Memory.
  Dabei sollen dual und single attached Endknoten verglichen werden.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1199,7 +1279,30 @@ Ist
 \begin_inset Text
 
 \begin_layout Plain Layout
-s
+Die Auswirkung der Anwendung von PRP wird in Form von Szenario 01 und 02
+ studiert.
+ In Szenario 01 wird die Standard-Konfiguration einer PRP-Umgebung behandelt,
+ bei der zwei DANs für die Messung eingesetzt werden.
+ Szenario 02 beinhaltet unterschiedliche Fälle, bei denen alle möglichen
+ Kombinationen von Client als DAN/SAN und Server als DAN/SAN erstellt, gemessen
+ und interpretiert sind.
+ In der Interpretation von Szenario 02 in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "sec:Szenario-02:-Performance"
+
+\end_inset
+
+ wird die Auswirkung von PRP sowie der Vergleich von DANs und SANs erläutert.
+ Des Weiteren wird diesbezüglich in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Besprechung-der-Ergebnisse"
+
+\end_inset
+
+ eingegangen.
+ 
 \begin_inset Newline newline
 \end_inset
 
@@ -1223,7 +1326,61 @@ Nachweis
 \begin_inset Text
 
 \begin_layout Plain Layout
+Szenario 01 (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Szenario-01:-Performance-1"
 
+\end_inset
+
+) behandelt die PRP-Umgebung, bei der es sich bei jedem Teilnehmer um ein
+ DAN handelt.
+\end_layout
+
+\begin_layout Plain Layout
+Szenario 02 (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Szenario-02:-Performance"
+
+\end_inset
+
+) beinhaltet folgende Kombinationen:
+\end_layout
+
+\begin_layout Itemize
+Client SAN sendet an Server SAN
+\end_layout
+
+\begin_layout Itemize
+Client SAN sendet an Server DAN
+\end_layout
+
+\begin_layout Itemize
+Client DAN sendet an Server SAN
+\end_layout
+
+\begin_layout Itemize
+Client DAN sendet an Server DAN
+\end_layout
+
+\begin_layout Plain Layout
+Die Auswirkung von PRP auf das Endsystem sowie der Vergleich von DANs und
+ SANs wird u.a in der Interpretation von Szenario 02 in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "sec:Szenario-02:-Performance"
+
+\end_inset
+
+ und in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Besprechung-der-Ergebnisse"
+
+\end_inset
+
+ erklärt.
 \end_layout
 
 \end_inset
@@ -1289,9 +1446,13 @@ Soll
 
 \begin_layout Plain Layout
 Die Messungen und die Interpretation der Resultate werden nur dann eine
- Aussagekraft ha- ben, wenn gewisse Grundsätze und Rahmenbedingungen eingehalten
+ Aussagekraft haben, wenn gewisse Grundsätze und Rahmenbedingungen eingehalten
  sind.
- Diese Grunds- ätze und Rahmenbedingungen sind zu formulieren.
+ Diese Grundsätze und Rahmenbedingungen sind zu formulieren.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1311,7 +1472,10 @@ Ist
 \begin_inset Text
 
 \begin_layout Plain Layout
-s
+Besagte Grundsätze und Rahmenbedingungen wurden festgehalten.
+ Des Weiteren wurde der Ablauf eines Szenarios zur Performance-Ermittlung
+ definiert, nach dem in jedem Szenario vorgegangen wird.
+ Des Weiteren wurde jedes Messresultat durch mehrere Messungen überprüft.
 \begin_inset Newline newline
 \end_inset
 
@@ -1335,7 +1499,40 @@ Nachweis
 \begin_inset Text
 
 \begin_layout Plain Layout
+Die Grundsätze und Rahmenbedingungen sind in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Grundsätze-und-Rahmenbedingungen"
 
+\end_inset
+
+ erklärt.
+ Innerhalb des vorher erwähnten Kapitels werden zudem die verwendeten Einheiten,
+ die generierten Netzwerklasten, theoretische Grenzwerte und die Ermittlung
+ der Einschwingzeit erläutert.
+ Darauf folgen weitere Grundsteine für die Szenarien-Durchführung wie u.a.
+ der Einfluss von gewählten Intervallgrössen 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "par:Einfluss von Intervallgroessen"
+
+\end_inset
+
+, der Ablauf eines Szenarios 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "sub:Ablauf-eines-Szenarios"
+
+\end_inset
+
+ sowie die Erörterung der signifikanten Resultat-Parameter 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "sub:Erörterung-signifikanter-Resulta"
+
+\end_inset
+
+.
 \end_layout
 
 \end_inset
@@ -1396,7 +1593,11 @@ Soll
 \begin_inset Text
 
 \begin_layout Plain Layout
-Ebenso soll eine Bewertung der unter- suchten Tools abgegeben werden.
+Ebenso soll eine Bewertung der untersuchten Tools abgegeben werden.
+\begin_inset Newline newline
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1416,7 +1617,10 @@ Ist
 \begin_inset Text
 
 \begin_layout Plain Layout
-s
+Zu Beginn wurden Kriterien für die Toolauswahl sowie sämtliche für diese
+ Arbeit potenziell einsetzbare Tools gesammelt und grob studiert.
+ Darauf stellte erfolgte die Aufstellung und Bewertung der engeren Auswahl
+ der Tools und zuletzt wurden die Messwerte der Tools verifiziert.
 \begin_inset Newline newline
 \end_inset
 
@@ -1440,7 +1644,34 @@ Nachweis
 \begin_inset Text
 
 \begin_layout Plain Layout
+Die Evaluierung der Tools findet in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Evaluierung-der-Tools"
 
+\end_inset
+
+ statt.
+ Innerhalb besagtem Kapitel sind die Kriterien für die Toolauswahl sowie
+ die engere Auswahl der Tools und Gründe für oder gegen die Verwendung des
+ entsprechenden Tools dokumentiert.
+ Die schlussendlich in dieser Arbeit verwendeten Tools sind inklusive der
+ Versionsnummer in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Verwendete-Tools"
+
+\end_inset
+
+ aufgelistet.
+ Die Verifizierung der Messwerte findet im darauf folgenden Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "sub:Verifizierung-der-Messwerte"
+
+\end_inset
+
+ statt.
 \end_layout
 
 \end_inset
