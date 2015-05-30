@@ -1996,10 +1996,22 @@ PcapReceive_callback
 \begin_inset Quotes frd
 \end_inset
 
- von pcap-Funktionen aus dem Kernelspace aufgerufen wird, sobald ein Frame
- eintrifft, welches verarbeitet werden muss.
- Beim Empfang von Frames, sind es die Funktionen des PRP-1 stacks, namentlich
- 
+ von Funktionen aus dem Kernelspace aufgerufen wird, sobald ein Frame eintrifft,
+ welches verarbeitet werden muss.
+ Beim Empfang von Frames, werden überwiegend Kernel-Funktionen aufgerufen,
+ beispielsweise für das Kopieren von Daten aus einem Netzwerksocket-Buffer
+ in einen Kernel-Buffer (skb_copy_bits 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "kernel-sources"
+
+\end_inset
+
+).
+\end_layout
+
+\begin_layout Standard
+Bezüglich des PRP-1 stacks sind es die Funktionen 
 \begin_inset Quotes fld
 \end_inset
 
@@ -2025,7 +2037,11 @@ PRP_Trailer_T_remove_trailer
 \end_inset
 
  um diesen zu entfernen, welche die meiste CPU-Zeit beanspruchen.
- Der anschliessende Write-System-Call, um das aufbereitete Frame dem virtuellen
+ 
+\end_layout
+
+\begin_layout Standard
+Der anschliessende Write-System-Call, um das aufbereitete Frame dem virtuellen
  PRP-Interface weiterzureichen, benötigt vergleichsweise wenig CPU-Zeit.
 \end_layout
 
@@ -2214,8 +2230,8 @@ name "sub:01:Weitere-Aspekte"
 \end_layout
 
 \begin_layout Standard
-Bei der CPU-Last ist des Weiteren ein markanter Unterschied zwischen den
- Ultrakurzzeit- und Kurzzeit-Messungen der Netzwerklast mit Lasttyp 
+Bei der CPU-Last ist des Weiteren ein Unterschied zwischen den Ultrakurzzeit-
+ und Kurzzeit-Messungen der Netzwerklast mit Lasttyp 
 \begin_inset Quotes fld
 \end_inset
 
@@ -2264,7 +2280,7 @@ reference "sub:Profiling-Fazit"
 , wird erwähnt, dass der Scheduler des Betriebssystems einen Einfluss auf
  die unterschiedlichen CPU-Auslastungen und Schwankungen haben könnte.
  Im Rahmen der vorliegenden Arbeit kann diese These jedoch aus Zeitgründen
- nicht näher untersucht und durch weitere Testszenarien zusätzlich belegt
+ nicht näher untersucht und durch weitere Testszenarien ergänzend belegt
  werden.
 \end_layout
 
@@ -3122,15 +3138,15 @@ Einfluss von Delays in Netzwerk A auf ping
 \end_layout
 
 \begin_layout Standard
-Betrachtet man die Messresultate dieses Szenarios in Kapitel 
+Betrachtet man die CPU-Messresultate dieses Szenarios in Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sub:03-Delay-in-Netzwerk"
 
 \end_inset
 
-, ist festzustellen, dass bei den UDP-Netzwerklasten keine markanten Abweichunge
-n auftreten.
+, ist festzustellen, dass bei den UDP-Netzwerklasten beim sendenden Host
+ keine markanten Abweichungen auftreten.
  
 \end_layout
 
@@ -3152,6 +3168,21 @@ Bezüglich PRP-Interface: Die TX-Bitraten des Clients stimmen nicht mit den
  RX-Bitraten des Servers überein, sowie auch nicht die TX-Bitraten des Servers
  mit den RX-Bitraten des Clients.
  
+\end_layout
+
+\begin_layout Itemize
+Bezüglich RX-Bitrate des shck-Servers, Interface eth0: Die Bitrate beim
+ Interface, auf der Leitung, wo ein Delay simuliert wird, fällt deutlich
+ zusammen.
+ Dies wird am besten bei den Lasttypen 
+\begin_inset Quotes fld
+\end_inset
+
+MAX
+\begin_inset Quotes frd
+\end_inset
+
+ sichtbar.
 \end_layout
 
 \begin_layout Itemize
@@ -3234,7 +3265,62 @@ MAX
 \end_layout
 
 \begin_layout Standard
-PROFILING WIP
+Ein Profiling lieferte ebenfalls keine schlüssige Erklärung für dieses Verhalten.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _diagrams/021_profiling/prp-1-stack-delay-profiling.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Profiling des PRP-1-stacks mit Delay (300 ms) und ohne Delay (0 ms)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Generell nimmt der PRP-1 stack mehr CPU-Zeit in Anspruch, wenn auf einem
+ Netzwerkpfad ein Delay simuliert wird.
+\end_layout
+
+\begin_layout Standard
+Der Flame Graph zeigt auf, dass für das Empfangen erheblich mehr Funktionsaufruf
+e getätigt wurden, wenn in einem Netzwerk ein Delay von 300 ms existiert.
+ Überwiegend handelt es sich um Funktionen innerhalb des Betriebssystem-Kerns.
+ Die Funktionsaufrufe von PRP-1-stack-internen Funktionen selbst unterscheidet
+ sich beim Empfangen nur gering von den Funktionsaufrufen her, ob Daten
+ mit oder ohne Delay empfangen werden.
+\end_layout
+
+\begin_layout Standard
+Beim Senden sind keine deutlichen Unterschiede ersichtlich.
 \end_layout
 
 \begin_layout Standard
@@ -3288,8 +3374,24 @@ MAX
 \end_layout
 
 \begin_layout Standard
-Bei der TCP-Last wird bezüglich beiden Lasttypen ersichtlich, dass die CPU-Last
- im Vergleich zum Normalfall (siehe Kapitel 
+Bei der TCP-Last wird bezüglich beider Lasttypen (
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+ und 
+\begin_inset Quotes fld
+\end_inset
+
+MAX
+\begin_inset Quotes frd
+\end_inset
+
+) ersichtlich, dass die CPU-Last im Vergleich zum Normalfall (siehe Kapitel
+ 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sub:Szenario-01:-Performance-1"
@@ -3322,7 +3424,7 @@ reference "03-Delay in Netzwerk A und Einfluss nicht entfernter Duplikate"
 
 \end_inset
 
- als dritter Listenpunkt (bezieht sich auf Szenario 02) aufgeführt ist.
+ als vierter Listenpunkt (bezieht sich auf Szenario 02) aufgeführt ist.
  Eine weitere These wäre, dass der Server bei dieser Last viel mehr Quittierunge
 n versendet, was aufgrund der stabilen Verbindung über Netzwerk B nicht
  begründet wäre.
@@ -3330,9 +3432,9 @@ n versendet, was aufgrund der stabilen Verbindung über Netzwerk B nicht
 \end_layout
 
 \begin_layout Standard
-Bezüglich der Server-CPU-Last ist diese jeweils bei pro Netzwerklast bei
- einer Fehlerrate von 100% am geringsten, da dort nie Duplikate ankommen,
- die vom Server abgehandelt werden müssen.
+Bezüglich der Server-CPU-Last ist diese jeweils pro Netzwerklast bei einer
+ Fehlerrate von 100% am geringsten, da dort nie Duplikate ankommen, die
+ vom Server abgehandelt werden müssen.
  Bis auf die oben erwähnten Werte, befinden sich die Bitraten des Servers
  in der Nähe des Normalzustands.
 \end_layout
@@ -3364,6 +3466,58 @@ den Messresultate folgt) ist besonders beim Vergleich der Client-TX- und
  Server-RX-Bitraten die Beeinflussung der Störung festzustellen.
  Daraus lässt sich schliessen, dass je höher die Fehlerrate ist, desto weniger
  Daten beim Server ankommen.
+\end_layout
+
+\begin_layout Standard
+Bezüglich der Bitraten (Server-TX, Client-RX, Lasttyp TCP mit maximalen
+ Paketgrössen), die rund 3 mal höher sind (~6 MBit/s) als bei den Vergleichsmess
+ungen aus Szenario 01, wurde ein Profiling auf dem shck-Server durchgeführt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _diagrams/021_profiling/prp-1-stack-packet_loss-profiling.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Profiling des PRP-1-stacks mit Paketverlust (50 %) und ohne Paketverlust
+ (0 %)
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Hier wird ersichtlich, dass bezüglich der CPU-Last ungefähr doppelt so viele
+ Funktionsaufrufe der PRP-Transmit-Funktionen aufgezeichnet wurden, was
+ aber lediglich eine doppelte TX-Bitrate, also ~4 MBit/s erklären würde,
+ nicht aber die 6 MBit/s, da alle gesendeten Nachrichten TCP-Ack-Messages
+ mit derselben Grösse sind.
 \end_layout
 
 \begin_layout Standard
