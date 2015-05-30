@@ -103,85 +103,210 @@ reference "sec:Besprechung-der-Ergebnisse"
 
 \end_layout
 
+\begin_layout Standard
+schwankungen server cpu nur bei DAN zu DAN
+\end_layout
+
 \begin_layout Subsection
 Zuverlässigkeit von Performance-Messungen
 \end_layout
 
 \begin_layout Standard
-Faktoren für Messungen zu beachten:
+Um die Zuverlässigkeit von Performace-Messungen verifizieren zu können,
+ sind einige Faktoren zu berücksichtigen, welche die Messresultate verfälschen
+ oder nicht nachvollziehbar machen.
 \end_layout
 
-\begin_layout Itemize
-Tools
+\begin_layout Subsubsection
+Faktor Toolauswahl
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Tools und deren Rechnungsvorgänge undurchsichtig bzw.
- nicht dokumentiert.
+\begin_layout Standard
+Die Wahl der Tools zur Messung ist von grösster Wichtigkeit.
+ Um die Resultate einer Messung nachvollziehen zu können, ist es von Nöten,
+ dass die Rechnungsvorgänge sowie die dazu benötigten Informationsquellen
+ des Tools bekannt sind.
+ Ein Grossteil der Tools ist in dieser Hinsicht undurchsichtig bzw.
+ bietet keine Dokumentation, in welcher diese Informationen notiert sind.
+ Oft ist der einzige Weg, an diese Informationen zu gelangen, das Studieren
+ des Quellcodes des Tools.
+ Dies ist jedoch mit einem hohen Aufwand verbunden, da zuerst die entsprechenden
+ Stellen im Code lokalisiert und dann studiert werden müssen.
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Herkömmliche Messtools generieren einen Overhead durch eine ständige Anzeige
- der Messresultate, was einen genauigkeitsverlust mit sich zieht
+\begin_layout Standard
+Ein weiterer Aspekt, der bei den Tools berücksichtigt werden muss, ist der
+ durch das Tool erzeugte Overhead.
+ Dieser entsteht zum Beispiel durch eine ständige Anzeige der derzeitigen
+ Messresultate oder anderen Ausgaben.
+ Die Konsequenz dieses Overheads ist der Genauigkeitsverlust, welcher je
+ nach Messdauer und -Intervall die Resultate markant verfälschen kann.
 \end_layout
 
-\begin_layout Itemize
-Deshalb meas entwickelt.
- Besonderer Wert auf Genauigkeit bei Messungen gelegt.
+\begin_layout Standard
+Aus diesen Gründen wurde der Entschluss gefasst, eine eigene Applikation
+ zur Messung der Performance zu entwickeln.
+ Bei der Entwicklung wurde zu Gunsten der Genauigkeit der Overhead bestmöglich
+ minimiert, wofür die Ausgaben auf ein Minimum reduziert sowie keine Anzeige
+ der Werte während der Messung eingesetzt wurden.
+ Das daraus resultierende Produkt ist die Applikation meas, auf welche im
+ Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:meas"
+
+\end_inset
+
+ näher eingegangen wird.
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
-Netzwerklast-Generierung nach genauen Vorgaben mit gefundenen Tools nicht
- möglich
+\begin_layout Standard
+Bezüglich den nach genauen Vorgaben zu generierenden Netzwerklasten für
+ die Performance-Messungen konnte kein Tool aufgefunden werden, welches
+ diese Vorgaben komplett erfüllt.
+ Des Weiteren ist es für den Vergleich der Resultate anhand unterschiedlicher
+ Netzwerklasten wichtig, dass sich diese lediglich in einem Faktor unterscheiden
+ (z.B.
+ beim Protokoll oder dem Lasttyp).
+ Daher ist es nötig, dass sämtliche Netzwerklasten mit einem Tool generiert
+ werden können, da bei der Abdeckung der Lasten durch unterschiedliche Tools
+ jedes Tool bei der Generierung unterschiedlich vorgehen könnte und somit
+ die Differenzen zwischen den Tools in die Resultate einfliessen würden.
+ Die Suche nach einem Tool für die Generierung u.a.
+ reiner Layer-2-Netzwerklast oder TCP-Verkehr, der aus minimal grossen Paketen
+ besteht, fiel des Weiteren erfolglos aus.
+ Daher wurde für die Generierung der Netzwerklast eine weitere eigene Applikatio
+n entwickelt, welche alle in dieser Arbeit zu generierenden Netzwerklasten
+ abdeckt und bei welcher sich die Lasten durch den Benutzer detailliert
+ parametrisieren lasst.
+ Diese Applikation trägt den Namen shck und ist in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Netzwerklast-Generierung-shck"
+
+\end_inset
+
+ genauer erläutert.
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Herkömmliche Netzwerklastgeneratoren verwenden teilweise eigene Applikations-Pro
-tokolle zwischen Client und Server.
- Dadurch entsteht ein Overhead und womit eine genaue Lastdefinition verhindert
- wird.
+\begin_layout Subsubsection
+Faktor Hardware und gewählte Messintervalle
 \end_layout
 
-\begin_layout Itemize
-Kein adäquates Tool gefunden, um Layer-2-Frames als Last zu generieren (Für
- Vergleich zwischen Ethernet und UDP).
-\end_layout
-
-\begin_layout Itemize
-Deshalb shck entwickelt
-\end_layout
-
-\end_deeper
-\end_deeper
-\begin_layout Itemize
-Hardware
-\end_layout
-
-\begin_deeper
-\begin_layout Itemize
-Statistik-Aktualisierungs-Intervalle von Hardware vorgegeben, lässt sich
- nicht bei jeder Hardware modifizieren.
+\begin_layout Standard
+Beim Messen der Performance ist es wichtig, dass die Werte zur Berechnung
+ (z.B.
+ Anzahl an übertragenen Bytes bei einem Interface) öfters aktualisiert werden,
+ als das sie eingelesen werden.
+ Diese Statistik-Aktualisierungs-Intervalle werden von der Hardware (z.B.
+ Netzwerkkarte) vorgegeben, lassen sich jedoch nicht bei jeder Hardware
+ modifizieren.
  Für genaue Messungen muss dieses Intervall möglichst klein sein.
- Wie Intervall einstellen siehe /proc NWstat in Aufbau/NW//proc-NWstat &
- Wie Einfluss von Intervall siehe ErmittlungPerf/EinflussInt
+ 
 \end_layout
 
-\end_deeper
-\begin_layout Itemize
-Betriebssystem
+\begin_layout Standard
+Beispiel: Es ist zu ermitteln, wie viel an bestimmten Daten innerhalb von
+ 100ms versendet werden können.
+ Dazu werden die Statistik-Werte der Netzwerkkarte alle 100ms eingelesen.
+ Aktualisiert die Netzwerkkarte jedoch nur jede Sekunde seine Werte, lautet
+ das Resultat fälschlicherweise, dass innerhalb von 100ms nichts versendet
+ wurde.
+ Dies liegt daran, dass sich die Werte bezüglich der Anzahl an versendeten
+ Bytes innerhalb von 100ms nicht geändert haben.
+ Damit die richtigen Resultate bei dieser Messung ermittelt werden können,
+ muss die Netzwerkkarte seine Statistiken mindestens alle 100ms aktualisieren.
+ 
 \end_layout
 
-\begin_deeper
-\begin_layout Itemize
-Einfluss durch Betriebssystem in INterpret 01 / Weitere Aspekte.
- Benötigt weitere Untersuchungen
+\begin_layout Standard
+Die Konfiguration des Statistik-Aktualisierungs-Intervalls wird in Kapitel
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:proc-Netzwerkstatistiken"
+
+\end_inset
+
+ erklärt.
 \end_layout
 
-\end_deeper
+\begin_layout Standard
+Zudem haben die Zeitabstände, in denen die Statistik-Werte eingelesen werden,
+ einen Einfluss auf die Messresultate.
+ Der Grund dafür ist, dass das Einlesen der Werte auch Zeit benötigt.
+ Auf den Einfluss der gewählten Messintervallen wird in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "par:Einfluss von Intervallgroessen"
+
+\end_inset
+
+ eingegangen.
+\end_layout
+
+\begin_layout Standard
+Des Weiteren ist es von Nöten, dass man sich der Limitierungen durch den
+ Prozessor und der Netzanbindung bewusst ist, da dort der Engpass je nach
+ Hardware variieren kann.
+ Aus diesem Grund wurde beim Aufbau der Umgebung darauf geachtet, die selbe
+ Hardware beim Sender und Empfänger einzusetzen und die beiden Netzwerke
+ der PRP-Umgebung symmetrisch zu halten (selbe Kabellängen, selber Switch).
+\end_layout
+
+\begin_layout Subsubsection
+Faktor Betriebssystem
+\end_layout
+
+\begin_layout Standard
+Wie in der Interpretation des Szenarios 01 in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:01:Weitere-Aspekte"
+
+\end_inset
+
+ nachgelesen werden kann, beeinflusst das Betriebssystem bzw.
+ dessen Mechanismen (Scheduler) die ausgeführten Applikationen.
+ Besonders bei bezüglich der Prozessorleistung anspruchvollen Prozessen
+ (z.B.
+ Versand von UDP-Verkehr mit Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+ durch den PRP-1 stack, siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:01-Messresultate"
+
+\end_inset
+
+) ist ersichtlich, dass diese nicht bei jeder Ausführung den selben Anteil
+ an Ressourcen erhalten.
+ Der konkrete Einfluss des Betriebssystems und dessen Mechanismen auf die
+ Performance-Messungen konnte aus Zeitgründen nicht ermittelt werden, jedoch
+ wurde aufgezeigt, dass diesbezüglich ein beachtlicher Einfluss vorhanden
+ ist.
+\end_layout
+
+\begin_layout Subsubsection
+Schlussfolgerung
+\end_layout
+
+\begin_layout Standard
+Bei der Performance-Messung sind die vorhin erwähnten Faktoren zu beachten
+ und bei der Interpretation der Messresultate miteinzubeziehen, um möglichst
+ zuverlässige und nachvollziehbare Messresultate zu erhalten.
+ Um die Zuverlässigkeit der ermittelten Werte weiter zu steigern, können
+ die Messungen mehrmals durchgeführt werden.
+ Sämtliche Messungen dieser Arbeit wurden mehrmals und mit Bezug zu den
+ vorhin erwähnten Faktoren durchgeführt.
+\end_layout
+
 \begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset
@@ -1706,7 +1831,147 @@ Rückblick
 \end_layout
 
 \begin_layout Standard
-Lorem ipsum
+Alle Anforderungen der Aufgabenstellung 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Aufgabenstellung"
+
+\end_inset
+
+ sind aus unserer Sicht als erreicht zu betrachten, was in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Erfüllung-der-Aufgabenstellung"
+
+\end_inset
+
+ belegt wird.
+\end_layout
+
+\begin_layout Standard
+Für das Strukturieren der Arbeit konnten wir unsere aus der Projektarbeit
+ vom letzten Semester 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "pa-thesis"
+
+\end_inset
+
+ gewonnenen Erkenntnisse einsetzen.
+ Ein sehr grosser Vorteil bei unserem Vorgehen war, dass die Dokumentation
+ parallel zu den Messungen, Programmierarbeiten und Recherchen fortlaufend
+ gepflegt wurde und somit keine Informationen verloren gingen.
+ 
+\end_layout
+
+\begin_layout Standard
+Bei den Recherchen bezüglich des PRP-1 stacks stiessen wir bei dessen Dokumentat
+ion (Quelle!) auf einen zu wenig hohen Detaillierungsgrad und hatten somit
+ einen Mehraufwand beim Studieren des Quellcodes.
+ Zum Beispiel fehlt eine Erklärung zum Aufbau der Duplikattabelle, welche
+ in dieser Arbeit im Paragraph 
+\begin_inset Quotes fld
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand nameref
+reference "par:Datenstruktur"
+
+\end_inset
+
+
+\begin_inset Quotes frd
+\end_inset
+
+ in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Datenhaltung-von-Frame-Metadaten"
+
+\end_inset
+
+ 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "par:Datenstruktur"
+
+\end_inset
+
+ erläutert wird.
+ Die besagte Dokumentation war trotzdem eine grosse Hilfe, wobei sich besonders
+ die Ablaufdiagramme zum Empfangen und Übertragen von Frames als äusserst
+ aufschlussreich herausstellten.
+\end_layout
+
+\begin_layout Standard
+Sämtliche Messresultate wurden mit mehrfachen Messungen verifiziert, einer
+ genauen Analyse unterzogen und nach bestem Wissen interpretiert.
+ Das Interpretieren erwies sich als äusserst lehrreich, war jedoch auch
+ mit Schwierigkeiten wie zusätzlichen Recherchen oder Zeitmangel verbunden.
+ So konnte bei der Interpretation der Messresultate bei Delays, Paketverlusten
+ und Übertragungsfehlern (siehe Szenario 03 in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Szenario-03:-Effekt"
+
+\end_inset
+
+) trotz langer Auseinandersetzung und Profiling keine konkrete Erklärung
+ für das ermittelte Verhalten gefunden werden.
+ Allerding war es uns von grosser Wichtigkeit, alle gewonnenen Erkenntnisse
+ sowie auch die Gründe dafür zu notieren.
+ Eventuell hätten ein grösseres Zeitkontingent und weitere Vertiefung sich
+ als aufschlussreich erweisen können.
+\end_layout
+
+\begin_layout Standard
+Für die Entwicklung der eigenen Applikationen (meas und shck) sowie der
+ Dokumentation verwendeten wir ein Versionsverwaltungssystem («Git» mit
+ «GitHub» als Frontend).
+ Des Weiteren erfolgte eine offene Kommunikation mit den Betreuern dieser
+ Arbeit in Form von wöchentlichen Rapporten, Besprechungen und E-Mail-Konversati
+onen.
+ So wussten alle Projektbeteiligten zu jeder Zeit was zu tun ist und was
+ noch getan werden muss.
+ 
+\end_layout
+
+\begin_layout Standard
+Die Besprechungen mit den Betreuern erwiesen sich als interessant und lehrreich.
+ Des Weiteren wurde die Arbeit zwischen Studenten, Betreuer und Dozenten
+ auf einer äusserst kooperativen Ebene umgesetzt und diskutiert.
+ Leider blieb trotz einem sehr hohen Aufwand und einem geschickten Zeitmanagemen
+t in Bezug zum restlichen Unterrichtsstoff dieses Semesters wenig Zeit für
+ allfällige Detailpflege, weitere Messungen und Recherchen übrig.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Im Rückblick der Projektarbeit vom letzten Semester 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "pa-thesis"
+
+\end_inset
+
+ äusserten wir, dass wir eine weitere Arbeit im Themengebiet der redundanten
+ Netzwerke mit den selben Teilnehmern gerne in Anlauf nehmen würden.
+ Nach dieser Arbeit sind wir weiterhin dieser Ansicht.
+ 
+\end_layout
+
+\begin_layout Standard
+Zusammenfassend kann ein positives Fazit gezogen werden: Das Projekt wurde
+ mit grossem Interesse erarbeitet und wurde unserer Meinung nach erfolgreich
+ umgesetzt.
+ 
 \end_layout
 
 \begin_layout Section
@@ -1714,7 +1979,31 @@ Ausblick
 \end_layout
 
 \begin_layout Standard
-Lorem ipsum
+Die Aufgabenstellung 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Aufgabenstellung"
+
+\end_inset
+
+ enthält noch weitere Aspekte bezüglich der Virtualisierung der PRP-Umgebung,
+ die nicht zwingend im Rahmen dieser Arbeit zu erfüllen waren.
+ Diese konnten aus Zeitgründen nicht studiert werden, würden jedoch mit
+ den in dieser Arbeit geschaffenen Mittel ermittelbar sein.
+\end_layout
+
+\begin_layout Standard
+Des Weiteren wäre der genauere Einfluss von den Mechanismen des Betriebssystems
+ (Scheduler) zu studieren, um eventuell weitere Befunde bezüglich der Performanc
+e von PRP erlangen zu können.
+\end_layout
+
+\begin_layout Standard
+Den in dieser Arbeit definierten Szenarien könnte man selbstverständlich
+ weitere Konfigurationen in Form von Szenarien definieren, messen und interpreti
+eren.
+ Dank den Informationen und Daten, die in dieser Arbeit aufgeführt sind
+ oder der Arbeit beiliegen, ist dies problemlos möglich.
 \end_layout
 
 \end_body
