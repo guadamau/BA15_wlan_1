@@ -77,6 +77,13 @@
 
 \begin_body
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Ermittlung der Performance
 \begin_inset CommandInset label
@@ -491,6 +498,13 @@ Bei den Geschwindigkeiten handelt es sich, falls es nicht anders angegeben
  die Bits der Präambel, SFD und IFG davon ausgeschlossen sind.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Generierung von Datenverkehrströmen / Netzwerklast
 \begin_inset CommandInset label
@@ -875,6 +889,13 @@ MAX
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
 Zeitspanne (siehe Kapitel 
 \begin_inset CommandInset ref
@@ -1009,6 +1030,13 @@ Die Bitraten der folgenden Berechnungen beziehen sich auf den Data-Link-Layer
  (Layer 2).
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Paragraph
 Frames mit minimaler Grösse
 \end_layout
@@ -1113,6 +1141,13 @@ Multipliziert man diese Anzahl an Frames lediglich mit der Grösse eines
 Somit liegt die maximale Bandbreite bei einer Nutzlast, die lediglich aus
  maximal grossen Frames / Paketen besteht bei ca.
  98.7 MBit/s.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -3736,6 +3771,10 @@ Kurz darauf (ca.
 lastung.
  Verwendet wird für das Aufzeichnen der CPU- und Netzwerk-Daten die Applikation
  meas.
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Enumerate

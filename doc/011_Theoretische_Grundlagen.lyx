@@ -693,6 +693,13 @@ key "PRP-1_SW_Stack"
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Schnitstelle zum Betriebssystem
 \end_layout
@@ -1348,6 +1355,13 @@ key "Patent_TCPIP_Offload"
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 TCP-Window-Size
 \begin_inset CommandInset label
@@ -1436,6 +1450,13 @@ reference "sub:Einfluss-von-TCP-Window-Size"
 \end_inset
 
  untersucht.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section

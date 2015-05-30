@@ -77,6 +77,13 @@
 
 \begin_body
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Evaluierung der Tools
 \begin_inset CommandInset label
@@ -1852,26 +1859,46 @@ Sammlung an Tools, um die Systemleistung und -Aktivitäten zu überwachen,
 \begin_layout Itemize
 iostat: Legt Statistiken zur CPU und Input / Output von Geräten, Partitionen
  und Netzwerk-Dateisystemen dar.
+\begin_inset VSpace -8bp
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
 mpstat: Weist individuelle oder kombinierte, prozessorbezogene Werte auf.
+\begin_inset VSpace -8bp
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
 pidstat: Bringt Informationen zu einzelnen Prozessen bezüglich u.a.
  Input / Output, CPU, Arbeitsspeicher hervor.
+\begin_inset VSpace -8bp
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
 sar: Sammelt, veranschaulicht und speichert System-Aktivitäts-Informationen
  zu CPU, Arbeitsspeicher, Speicher, Interrupts, Netzwerkinterfaces und weiteren
  Komponenten.
+\begin_inset VSpace -8bp
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
 sadc: Backend von sar, das für das effektive Sammeln der Informationen zuständig
  ist.
+\begin_inset VSpace -8bp
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -1879,12 +1906,20 @@ sa1: Trägt Werte zur System-Aktivität zusammen und speichert sie in eine
  Datei ab, die täglich ausgewechselt wird.
  sa1 ist ein Frontend zu sadc und wurde mit dem Gedanken entwickelt, regelmässig
  ausgeführt zu werden.
+\begin_inset VSpace -8bp
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
 sa2: Schreibt eine Zusammenfassung der System-Aktivitäten, die einen Tag
  umfasst.
  Wie sa1 wurde sa2 dafür entwickelt, dass es regelmässig ausgeführt wird.
+\begin_inset VSpace -8bp
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
@@ -1892,15 +1927,27 @@ sadf: Bietet die von sar gesammelten Daten in unterschiedlichen Formaten
  (u.a.
  CSY und XML) an, um sie in Datenbanken zu laden oder mittels einem Tabellenkalk
 ulationsprogramm zu illustrieren.
+\begin_inset VSpace -8bp
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
 nfsiostat: Zeigt Statistiken bezüglich Input / Output bei Netzwerk-Dateisystemen
  auf.
+\begin_inset VSpace -8bp
+\end_inset
+
+
 \end_layout
 
 \begin_layout Itemize
 cifsiostat: Belegt Informationen zu CIFS.
+\begin_inset VSpace -8bp
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -1978,6 +2025,10 @@ Zwar wird die sysstat-Sammlung nicht komplett verwendet, jedoch erweisen
 </row>
 </lyxtabular>
 
+\end_inset
+
+
+\begin_inset VSpace -8bp
 \end_inset
 
 
@@ -3295,6 +3346,13 @@ Weitere Hilfsmittel: vmstat
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Eigene Applikationen
 \end_layout
@@ -4294,6 +4352,13 @@ Bash-Script zur Verifizierung der Messwerte der CPU-Messungen von pidstat
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -5508,6 +5573,13 @@ Bash-Script zur Verifizierung der Messwerte der Arbeitsspeicher-Messungen
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset listings
 lstparams "language=bash,numbers=left,captionpos=b"
 inline false
@@ -6129,6 +6201,13 @@ Der Interval, in dem in diesem Abschnitt gemessen wird, beträgt 1 Sekunde.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Das Bash-Skript, das auf 
 \begin_inset Quotes fld
 \end_inset
@@ -6175,8 +6254,8 @@ pts/measurement/test_reliability/net/results/srv01_iperf3 &)
 
 \begin_layout Plain Layout
 
-				(bwm-ng -t 1000 -c 10 -o csv -F /home/scripts/measurement/test_reliability/n
-et/results/srv01_iperf3/bwm.csv -I prp1 &)
+		(bwm-ng -t 1000 -c 10 -o csv -F /home/scripts/measurement/test_reliability/net
+/results/srv01_iperf3/bwm.csv -I prp1 &)
 \end_layout
 
 \begin_layout Plain Layout
@@ -6203,8 +6282,8 @@ s/measurement/test_reliability/net/results/srv01_shck &)
 
 \begin_layout Plain Layout
 
-				(bwm-ng -t 1000 -c 10 -o csv -F /home/scripts/measurement/test_reliability/n
-et/results/srv01_shck/bwm.csv -I prp1 &)
+		(bwm-ng -t 1000 -c 10 -o csv -F /home/scripts/measurement/test_reliability/net
+/results/srv01_shck/bwm.csv -I prp1 &)
 \end_layout
 
 \begin_layout Plain Layout
@@ -6302,6 +6381,13 @@ Bash-Script zur Verifizierung der Messwerte der Netzwerkbelastungs-Messungen
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -7440,6 +7526,13 @@ erweise mit Faktor 1024 berechnet.
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Die Werte für die Payload des TCP-Pakets und die Gesamtgrösse des Pakets
  stammen aus einer Wireshark-Aufzeichnung von iperf3.
 \end_layout
@@ -8250,6 +8343,13 @@ srv01
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 

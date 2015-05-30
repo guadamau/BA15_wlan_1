@@ -97,11 +97,6 @@ Server
 \end_layout
 
 \begin_layout Standard
--------------------------------------------- Bild Server -----------------------
--------------------------
-\end_layout
-
-\begin_layout Standard
 Die Testumgebung besteht aus 3 Servern mit je 3 Netzwerkanschlüssen.
  Davon werden je 2 für die PRP-Umgebung verwendet, wobei der dritte Anschluss
  lediglich für administrative Zwecke verwendet wird.
@@ -125,6 +120,13 @@ reference "sub:Einluss-von-Offload-Mechanismen"
 \end_inset
 
 ).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -479,11 +481,6 @@ Switches
 \end_layout
 
 \begin_layout Standard
--------------------------------------------- Bild Switch -----------------------
--------------------------
-\end_layout
-
-\begin_layout Standard
 Um die Server miteinander zu verbinden, werden 3 8-Port-HP-Switches verwendet,
  die über eine Kapazität von 1 GBit/s verfügen.
  2 der Switches bilden die physischen Netzwerke A und B.
@@ -492,6 +489,13 @@ Um die Server miteinander zu verbinden, werden 3 8-Port-HP-Switches verwendet,
  Switch dient dazu, ein autonomes Netzwerk zu bilden, das für administrative
  Zwecke verwendet werden kann, und es ermöglicht, via Gateway eine Verbindung
  zu einem anderen LAN herzustellen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -521,7 +525,7 @@ status open
 \begin_inset Graphics
 	filename _img/020_setup_physical.svg
 	display false
-	scale 60
+	scale 50
 
 \end_inset
 
@@ -550,11 +554,17 @@ IPv4-Konfiguration:
 \end_layout
 
 \begin_layout Standard
+Für das Administrationsnetzwerk (192.168.99.0) wird der Gateway mit der IP-Adresse
+ 192.168.99.100 verwendet.
+ Damit wird ein Zugang von einem anderen LAN aus auf die Server ermöglicht.
+\end_layout
+
+\begin_layout Standard
 \begin_inset Float table
 placement H
 wide false
 sideways false
-status open
+status collapsed
 
 \begin_layout Plain Layout
 \noindent
@@ -780,12 +790,6 @@ Konfigurationsdaten - Physisches Netzwerk
 
 \end_layout
 
-\begin_layout Standard
-Für das Administrationsnetzwerk (192.168.99.0) wird der Gateway mit der IP-Adresse
- 192.168.99.100 verwendet.
- Damit wird ein Zugang von einem anderen LAN aus auf die Server ermöglicht.
-\end_layout
-
 \begin_layout Subsubsection
 PRP-Netzwerk
 \end_layout
@@ -873,6 +877,13 @@ Aufbau der Testumgebung - PRP-Netzwerk
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -1109,6 +1120,13 @@ reference "tab:eci-box"
 
 ) keine Verbindung mehr herstellen kann mit den Broadcom-Interfaces der
  Server.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -1631,6 +1649,13 @@ $febcffff_{h} - febb0000_{h} + 00000001_{h} = 20000_{h} = 131072_{d} = 128
 
 \begin_layout Standard
 Ein Broadcom Interface verfügt über einen Speicher von 128 kByte.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection

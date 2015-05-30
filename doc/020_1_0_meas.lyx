@@ -194,6 +194,13 @@ Die Messresultate bezüglich erhaltener und transmittierter Bytes sowie die
  das Betriebssystem vom Data-Link-Layer aufzeichnet.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Paragraph
 Übersicht
 \end_layout
@@ -285,6 +292,13 @@ k zu berechnen.
  Gesamtstatistik in eine für den Benutzer lesbare Form gebracht und können
  an eine beliebige Ausgabe geleitet werden, beispielsweise Textdateien,
  Konsole, Drucker, etc.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Paragraph
@@ -560,6 +574,13 @@ Kurzbeschrieb der meas-Datentypen
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Paragraph
 Detailansicht Module
 \end_layout
@@ -770,6 +791,13 @@ prp_enabled gibt Auskunft darüber, ob die meas-Appliktion im PRP-Mode gestartet
  wurde oder nicht.
  cmd_line_count enthält die Information darüber, wie viele Werte jeweils
  aus dem /proc-Dateisystem gelesen werden.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -1484,6 +1512,13 @@ $open()$
  Diese Situation könnte auftreten, wenn beispielsweise der Kernel die /proc-Stat
 istiken aktualisiert und zur gleichen Zeit meas lesend auf die entsprechende
  Datei zuzugreifen versucht.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Paragraph
@@ -2424,6 +2459,8 @@ status open
 \begin_layout Plain Layout
 \noindent
 \align center
+
+\size small
 \begin_inset Tabular
 <lyxtabular version="3" rows="7" columns="2">
 <features rotate="0" tabularvalignment="middle">
@@ -2436,6 +2473,7 @@ status open
 \begin_layout Plain Layout
 
 \series bold
+\size small
 Parameter
 \end_layout
 
@@ -2447,6 +2485,7 @@ Parameter
 \begin_layout Plain Layout
 
 \series bold
+\size small
 Beschreibung
 \end_layout
 
@@ -2458,6 +2497,8 @@ Beschreibung
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size small
 -i
 \end_layout
 
@@ -2467,6 +2508,8 @@ Beschreibung
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size small
 Intervall
 \begin_inset Newline newline
 \end_inset
@@ -2483,6 +2526,8 @@ Definiert die Intervallzeit eines Messintervalls in Sekunden.
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size small
 -m
 \begin_inset Newline newline
 \end_inset
@@ -2496,6 +2541,8 @@ Definiert die Intervallzeit eines Messintervalls in Sekunden.
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size small
 Mode
 \begin_inset Newline newline
 \end_inset
@@ -2504,6 +2551,8 @@ Gültige Parameter sind 0 oder 1.
 \end_layout
 
 \begin_layout Plain Layout
+
+\size small
 Mode 0: Überwacht ein einzelnes Netzwerk-Interface.
  Im Rahmen dieser Arbeit ist dies 
 \begin_inset Quotes fld
@@ -2517,6 +2566,8 @@ eth0
 \end_layout
 
 \begin_layout Plain Layout
+
+\size small
 Mode 1: Überwacht das virtuelle PRP-Netzwerk-Interface 
 \begin_inset Quotes fld
 \end_inset
@@ -2545,12 +2596,16 @@ eth1
 \end_layout
 
 \begin_layout Plain Layout
+
+\size small
 Anmerkung: Falls die Zuweisungen der Interfaces ändern, beispielsweise bei
  Servern mit anderen Betriebssystenen und anderen Bezeichnungnen der Netzwerk-In
 terfaces, muss dies angepasst werden in den Dateien (attrs.h/attrs.c).
 \end_layout
 
 \begin_layout Plain Layout
+
+\size small
 Wird der Parameter nicht definiert, wird 1 als Standardwert verwendet.
 \end_layout
 
@@ -2562,6 +2617,8 @@ Wird der Parameter nicht definiert, wird 1 als Standardwert verwendet.
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size small
 -n
 \begin_inset Newline newline
 \end_inset
@@ -2575,6 +2632,8 @@ Wird der Parameter nicht definiert, wird 1 als Standardwert verwendet.
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size small
 Anzahl Messintervalle
 \begin_inset Newline newline
 \end_inset
@@ -2596,6 +2655,8 @@ $i * n = gesamte Zeit [s]$
 \end_layout
 
 \begin_layout Plain Layout
+
+\size small
 Wird der Parameter nicht definiert, wird 1 als Standardwert verwendet.
 \end_layout
 
@@ -2607,6 +2668,8 @@ Wird der Parameter nicht definiert, wird 1 als Standardwert verwendet.
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size small
 -p
 \end_layout
 
@@ -2616,6 +2679,8 @@ Wird der Parameter nicht definiert, wird 1 als Standardwert verwendet.
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size small
 Prozess-ID
 \begin_inset Newline newline
 \end_inset
@@ -2631,6 +2696,8 @@ Definiert die Prozess-ID, dessen Statistiken gemessen werden sollen.
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size small
 -P
 \begin_inset Newline newline
 \end_inset
@@ -2644,6 +2711,8 @@ Definiert die Prozess-ID, dessen Statistiken gemessen werden sollen.
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size small
 Pfad
 \begin_inset Newline newline
 \end_inset
@@ -2671,6 +2740,8 @@ meas_overall_stats_$TIMESTAMP
 \end_layout
 
 \begin_layout Plain Layout
+
+\size small
 Wird der Parameter nicht definiert, wird 
 \begin_inset Quotes fld
 \end_inset
@@ -2690,6 +2761,8 @@ Wird der Parameter nicht definiert, wird
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size small
 -v
 \begin_inset Newline newline
 \end_inset
@@ -2703,6 +2776,8 @@ Wird der Parameter nicht definiert, wird
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size small
 Ausführlichkeit
 \begin_inset Newline newline
 \end_inset
@@ -2711,21 +2786,29 @@ Gültige Werte: [0, ..., 2]
 \end_layout
 
 \begin_layout Plain Layout
+
+\size small
 0: Keine Konsolenausgabe.
  Nur die Ausgabedateien werden am Schluss einer Messserie abgespeichert.
 \end_layout
 
 \begin_layout Plain Layout
+
+\size small
 1: Am Schluss der Messserie wird auf der Ausgabekonsole ein Report über
  die Gesamtstatistiken angezeigt.
 \end_layout
 
 \begin_layout Plain Layout
+
+\size small
 2: Am Schluss der Messserie werden auf der Ausgabekonsole die Resultate
  aller Messintervalle, sowie ein Report über die Gesamtstatistiken angezeigt.
 \end_layout
 
 \begin_layout Plain Layout
+
+\size small
 Wird der Parameter nicht definiert, wird 0 als Standardwert verwendet.
 \end_layout
 

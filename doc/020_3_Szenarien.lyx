@@ -77,6 +77,13 @@
 
 \begin_body
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsection
 Einleitung zu den nachfolgenden Szenarien
 \begin_inset CommandInset label
@@ -381,6 +388,13 @@ Darauf wird ein Vergleich zwischen den Netzwerkströmen 1 & 4, 2 & 5 und
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -484,6 +498,13 @@ reference "par:Bezeichnung-der-Datenströme"
 \end_inset
 
  aufgeführt.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -2109,6 +2130,13 @@ UDP / Ethernet Vergleich: CPU-Last, System- / Usertime
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -3874,6 +3902,13 @@ UDP / Ethernet Vergleich: RX- / TX-Bitrate pro Netzwerkinterface
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Interpretation: Auswahl der signifikanten Resultat-Parameter
 \end_layout
@@ -4802,6 +4837,13 @@ name "tab:Netzwerklasten-eines-Szenarios"
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 Für jede generierte Netzwerklast werden pro Teilnehmer (z.B.
  shck-Client und shck-Server) folgende Statistik-Merkmale in den Resultaten
  (siehe Kapitel 
@@ -4923,6 +4965,13 @@ PRP_Supervision
 -Frames erzielte Bitrate gerundet 0.00 MBit/s beträgt wird es in den Resultaten
  dieser Arbeit gleich behandelt wie wenn sie effektiv 0.00 MBit/s betragen
  würde.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -5280,6 +5329,13 @@ Schlussendlich kann man sagen, dass die TCP-Window-Size kein limitierender
  werden kann.
  Nicht auszuschliessen sind jedoch andere Faktoren wie die CPU oder die
  Netzwerkanbindung.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection
@@ -6186,6 +6242,13 @@ Interessanter fall: schwankender delay -> mal netz schneller und langsam
 
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Subsubsection
 Störquellen in Netzwerk A
 \end_layout
@@ -6649,6 +6712,13 @@ reference "sec:Szenario-03:-Effekt"
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -7258,6 +7328,13 @@ reference "sec:Szenario-04:-Zeitweiser"
 
 \end_layout
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
