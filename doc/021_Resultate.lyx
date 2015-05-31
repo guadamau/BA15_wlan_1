@@ -130,9 +130,9 @@ Bei einer UDP-Netzwerklast würde sich das immer so weiterführen, solange
  der Client Daten an den Server sendet.
  Bei TCP muss der Server die empfangenen Daten quittieren, was wiederum
  CPU-Last beansprucht.
- Diese Quittungen sendet der Server über den PRP-1 stack an den Client (TX-Bitra
-te beim Server und RX-Bitrate beim Client werden erzielt).
- Dieser muss dann die Quittungen verarbeiten und benötigt wiederum CPU-Last.
+ Diese Quittierungen sendet der Server über den PRP-1 stack an den Client
+ (TX-Bitrate beim Server und RX-Bitrate beim Client werden erzielt).
+ Dieser muss dann die Quittierungen verarbeiten und benötigt wiederum CPU-Last.
  Es besteht somit Grund zur Annahme, dass zwei Netzwerklasten, welche sich
  lediglich im Protokoll (TCP, UDP) unterscheiden, die TCP-Last mehr Leistung
  vom Prozessor beansprucht als die UDP-Last.
@@ -835,12 +835,12 @@ MIN
 \end_inset
 
  ist zwischen dem TCP- und UDP-Verkehr ein grosser Unterschied festzustellen.
- Ihre Gemeinsamkeit beträgt aber darin, dass beide Ströme nicht den theoretische
+ Ihre Gemeinsamkeit besteht aber darin, dass beide Ströme nicht den theoretische
 n Grenzwert erlangen.
  Bei der TCP-Last fällt hier jedoch aufgrund der Natur von TCP zusätzlich
  das Erhalten von Quittierungen vom Server an, weshalb hier im Gegensatz
  zur UDP-Last shck bzw.
- dessen UDP-/TCP-Socket mehr Leistung beansprucht.
+ dessen TCP-Socket mehr Leistung beansprucht als dessen UDP-Socket.
  Daraus resultiert, dass weniger Ressourcen für das effektive Versenden
  von TCP-Paketen zur Verfügung steht.
  Somit erzielt bei diesem Lasttyp der UDP-Datenstrom beim PRP-1 stack eine
@@ -1141,12 +1141,11 @@ MIN
  Dies resultiert aus der Tatsache, dass bei TCP der Client Quittierungen
  erhält und shck bzw.
  dessen TCP-Socket diese verarbeiten muss.
- Der PRP-1 stack erhält weniger CPU-Zeit zur Verfügung und kann somit weniger
- senden.
+ Der PRP-1 stack erhält weniger CPU-Zeit und kann somit weniger senden.
  Aus diesem Grund versendet der PRP-1 stack bei dieser Netzwerklast weniger
- Pakete als bei den anderen Datenströmen und beansprucht somit auch weniger
- Ressourcen, was die folgende Rechnung mit den ermittelten Werten (durchschnittl
-iche TX-Bitrate von shck-Client auf Netzwerk-Interface 
+ Pakete als bei den anderen Datenströmen und beansprucht somit dafür auch
+ weniger Ressourcen, was die folgende Rechnung mit den ermittelten Werten
+ (durchschnittliche TX-Bitrate von shck-Client auf Netzwerk-Interface 
 \begin_inset Quotes fld
 \end_inset
 
@@ -1422,8 +1421,8 @@ Ausgangslage
 
 Für das Erstellen der Profildaten wurden die Betriebssysteme zweier Maschinen
  (srv01 und srv02) über einen Zeitraum von 60 Sekunden aufgezeichnet.
- Als Netzwerklast wurden TCP-Pakete verwendet, da die Client- und die Server-App
-likation Daten versenden sowie empfangen.
+ Als Netzwerklast wurden TCP-Pakete verwendet, da bei diesem Protokoll die
+ Client- und die Server-Applikation Daten versenden sowie empfangen.
 \end_layout
 
 \begin_layout Standard
@@ -1649,7 +1648,7 @@ Flame Graph des shck-Servers, alle Prozesse
 Werden alle Prozesse des Betriebssystems betrachtet, ist festzustellen,
  dass der PRP-1 stack beim Empfangen mehr CPU-Zeit zur Verfügung hat.
  Ein Grund dafür ist, dass der shck-Server signifikant weniger CPU-Zeit
- beansprucht, als der shck-Client, welcher die TCP-Pakete generieren und
+ beansprucht als der shck-Client, welcher die TCP-Pakete generieren und
  versenden muss.
  Das bedeutet, dass bei Netzwerklasten, die einen Engpass beim Prozessor
  verursachen, dieser Engpass durch shck auf dem Client weiter verengt werden
@@ -1682,7 +1681,7 @@ MAX
 \end_layout
 
 \begin_layout Standard
-Der markante Anteil des idle-Prozesses, lässt sich dadurch erklären, dass
+Der markante Anteil des idle-Prozesses lässt sich dadurch erklären dass
  das Profiling bezüglich aller Prozesse des Betriebssystems durchgeführt
  wurde und somit auch alle Ressourcen der Maschine (1 Core mit 2 CPUs) kumulativ
  miteingerechnet werden.
@@ -1838,8 +1837,8 @@ MAX
 
 \begin_layout Standard
 Die beiden Flame Graphs des PRP-1 stacks zeigen auf, dass die Applikation
- zwar als Userspace-Applikation gestartet wird, jedoch verbringt sie den
- grössten Teil ihrer Ausführungszeit im Kernelspace.
+ zwar als Userspace-Applikation gestartet wird, sie jedoch den grössten
+ Teil ihrer Ausführungszeit im Kernelspace verbringt.
  Dies ist darauf zurückzuführen, dass der PRP-1 stack als Hauptaufgabe die
  Kommunikation mit dem virtuellen PRP-Interface wahrzunehmen hat.
  Das Analysieren von Frames und Verwalten der Duplikattabelle stellt dagegen
@@ -1986,6 +1985,18 @@ Flame Graph der PRP-Receive-Funktion
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{sloppypar}
+\end_layout
+
+\end_inset
+
 Die Receive-Funktion des PRP-1 stacks ist in der obigen Abbildung als komplette
  Kernelspace-Funktion abgebildet.
  Dies liegt daran, dass die Callback-Funktion 
@@ -2008,14 +2019,41 @@ key "kernel-sources"
 \end_inset
 
 ).
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{sloppypar}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{sloppypar} 
+\backslash
+tolerance=1000
+\end_layout
+
+\end_inset
+
 Bezüglich des PRP-1 stacks sind es die Funktionen 
 \begin_inset Quotes fld
 \end_inset
 
-PRP_DiscardAlgorithm_T_search_entry
+PRP_DiscardAlgorithm_T_search _entry
 \begin_inset Quotes frd
 \end_inset
 
@@ -2038,18 +2076,24 @@ PRP_Trailer_T_remove_trailer
 
  um diesen zu entfernen, welche die meiste CPU-Zeit beanspruchen.
  
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{sloppypar}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
 Der anschliessende Write-System-Call, um das aufbereitete Frame dem virtuellen
  PRP-Interface weiterzureichen, benötigt vergleichsweise wenig CPU-Zeit.
-\end_layout
-
-\begin_layout Standard
-\begin_inset Newpage pagebreak
-\end_inset
-
-
 \end_layout
 
 \begin_layout Subsubsection
@@ -2133,9 +2177,24 @@ Userspace/Kernelspace-Datenfluss, PRP-1 stack transmit
 
 \begin_layout Standard
 Daten, die von der ursprünglichen Applikation aus versendet wurden, werden
- vom PRP-1 stack wieder in den Userspace kopiert, und gelangen anschliessend
- erneut in den Kernelspace, um über die physischen Interfaces, eth0 und
- eth1, transmittiert zu werden.
+ vom PRP-1 stack wieder in den Userspace kopiert und gelangen anschliessend
+ erneut in den Kernelspace, um über die physischen Interfaces, 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ und 
+\begin_inset Quotes fld
+\end_inset
+
+eth1
+\begin_inset Quotes frd
+\end_inset
+
+, transmittiert zu werden.
  Dies sind zwei zusätzliche Kopiervorgänge zwischen Kernel- und Userspace,
  verglichen mit einem herkömmlichen Sendevorgang über ein physisches Netzwerk-In
 terface.
@@ -2159,10 +2218,10 @@ __copy_from_user_ll
 \begin_inset Quotes frd
 \end_inset
 
- verbraucht einen prozentual hohen Anteil an CPU-Zeit, gegenüber anderen
+ verbraucht einen prozentual hohen Anteil an CPU-Zeit gegenüber anderen
  Funktionen beim Transmittieren eines Pakets.
- Wenn der PRP-1 stack ausschliesslich im Kernlspace betrieben würde, könnte
- dieser Overhead vermieden werden.
+ Wenn der PRP-1 stack ausschliesslich im Kernelspace betrieben werden würde,
+ könnte dieser Overhead vermieden werden.
 \end_layout
 
 \begin_layout Standard
@@ -2207,7 +2266,7 @@ Grobübersicht Verhältnis zwischen Userspace und Kernelspace
 Ein zusätzlicher Aspekt, der für eine Portierung des PRP-1 stacks in ein
  Kernel-Modul sprechen würde, wäre der Umstand, dass die Funktionen des
  PRP-Protokolls (Verwalten der Duplikaterkennungs-Tabelle, etc.) in ihrer
- Ausführung prioritär vom Betriebssystem-Scheduler behandelt würden.
+ Ausführung prioritär vom Betriebssystem-Scheduler behandelt werden würden.
 \end_layout
 
 \begin_layout Standard
@@ -2216,6 +2275,11 @@ Dies würde auch nach sich ziehen, dass die Timer-Deadlines, welche in der
  Frames, Aging-Timer), marginal genauer eingehalten werden könnten.
  Da die Timer jedoch nur eine Genauigkeit im Bereich von Millisekunden einhalten
  müssen, wäre dieser Faktor vernachlässigbar.
+\end_layout
+
+\begin_layout Standard
+Ferner wird durch die obige Abbildung illustriert, dass eine Userspace-Funktion
+ im Durchschnitt mehr CPU-Ressourcen benötigt als eine Kernelspace-Funktion.
 \end_layout
 
 \begin_layout Subsubsection
@@ -2563,7 +2627,7 @@ Client DAN sendet an Server DAN
 \end_inset
 
  abgewägt.
- Daraus kann gesagt werden, wie sich die Leistungsbeanspruchung des Clients
+ Daraus kann erörtert werden, wie sich die Leistungsbeanspruchung des Clients
  ändert, wenn dieser seine Netzwerklast an einen SAN sendet.
  Die Werte des Servers dieses Falls werden mit dem ersten Fall dieses Szenarios
  verglichen, um analysieren zu können, welche Performanceunterschiede sich
@@ -2664,6 +2728,20 @@ MAX
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{sloppypar} 
+\backslash
+tolerance=1000
+\end_layout
+
+\end_inset
+
 Wird das Zusammenspiel zwischen SAN Client an DAN Server mit einer Nicht-PRP-Umg
 ebung verglichen, ist ersichtlich, dass der Client bei der TCP-Last mit
  
@@ -2688,6 +2766,19 @@ MIN
 \end_inset
 
  versenden.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{sloppypar}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -2739,7 +2830,7 @@ MAX
 \end_layout
 
 \begin_layout Standard
-Vergleicht man die SAN-Server mit den DAN-Server wird festgestellt, dass
+Vergleicht man die SAN-Server mit den DAN-Servern wird festgestellt, dass
  ein SAN-Server die Frames schneller verarbeiten und bei TCP auch schneller
  quittieren kann.
  Daraus resultiert auch, dass Clients eine höhere TCP-Last mit Lasttyp 
@@ -3064,8 +3155,12 @@ status open
 
 
 \backslash
-subsection[head={Szenario 03: Delay in Netzwerk A und Einfluss nicht entfernter
- Duplikate}]{Delay in Netzwerk A und Einfluss nicht entfernter Duplikate}
+subsection[head={Szenario 03: Delay in Netzwerk A und 
+\backslash
+
+\backslash
+Einfluss nicht entfernter Duplikate}]{Delay in Netzwerk A und Einfluss nicht
+ entfernter Duplikate}
 \end_layout
 
 \end_inset
@@ -3084,10 +3179,10 @@ name "03-Delay in Netzwerk A und Einfluss nicht entfernter Duplikate"
 Sobald ein Delay, der grösser oder gleich der Aging-Time von 400ms ist,
  pro Richtung in Netzwerk A eingefügt wird, wird das Duplikat vom PRP-1
  stack nicht mehr als solches erkannt und unter der Annahme, dass es sich
- um ein neues Frame handelt, auf die höheren Layer durchgelassen.
+ um ein neues Frame handelt, an die höheren Layer weitergereicht.
  Dies wird anhand des ping-Befehls, der auf dem Client mit dem Server als
  Ziel ausgeführt wird, klar.
- Dort werden durchgelassene Duplikate mit einem 
+ Dort werden weitergereichte Duplikate mit einem 
 \begin_inset Quotes fld
 \end_inset
 
@@ -3171,10 +3266,17 @@ Bezüglich PRP-Interface: Die TX-Bitraten des Clients stimmen nicht mit den
 \end_layout
 
 \begin_layout Itemize
-Bezüglich RX-Bitrate des shck-Servers, Interface eth0: Die Bitrate beim
- Interface, auf der Leitung, wo ein Delay simuliert wird, fällt deutlich
- zusammen.
- Dies wird am besten bei den Lasttypen 
+Bezüglich RX-Bitrate des shck-Servers, Interface 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+: Die Bitrate beim Interface, auf der Leitung, wo ein Delay simuliert wird,
+ fällt deutlich zusammen.
+ Dies wird am besten beim Lasttyp 
 \begin_inset Quotes fld
 \end_inset
 
@@ -3244,8 +3346,8 @@ MAX
  Bei diesen hätte der PRP-1 stack die Duplikate auch weitergeleitet und
  mitgezählt, was erklärbar gewesen wäre.
  Da dieses Verhalten jedoch auch bei den Fällen mit Delay-Zeiten unter der
- Aging-Time auftritt, besteht Grund zur Annahme, dass die Messungen nicht
- aussagekräftig sind.
+ Aging-Time auftritt, besteht Grund zur Annahme, dass die betreffenden Messresul
+tate nicht aussagekräftig sind.
 \end_layout
 
 \begin_layout Standard
@@ -3314,9 +3416,9 @@ Generell nimmt der PRP-1 stack mehr CPU-Zeit in Anspruch, wenn auf einem
 Der Flame Graph zeigt auf, dass für das Empfangen erheblich mehr Funktionsaufruf
 e getätigt wurden, wenn in einem Netzwerk ein Delay von 300 ms existiert.
  Überwiegend handelt es sich um Funktionen innerhalb des Betriebssystem-Kerns.
- Die Funktionsaufrufe von PRP-1-stack-internen Funktionen selbst unterscheidet
- sich beim Empfangen nur gering von den Funktionsaufrufen her, ob Daten
- mit oder ohne Delay empfangen werden.
+ Die Funktionsaufrufe von PRP-1-stack-internen Funktionen selbst unterscheiden
+ sich beim Empfangen nur gering von den Funktionsaufrufen her, unabhängig
+ davon ob Daten mit oder ohne Delay empfangen werden.
 \end_layout
 
 \begin_layout Standard
@@ -3341,11 +3443,12 @@ subsection[head={Szenario 03: Störquellen in Netzwerk A}]{Störquellen in
 \end_layout
 
 \begin_layout Standard
-Beim Vergleich der Messresultate bei Paketverlust in Netzwerk A mit den
+Beim Vergleich der Messresultate bei Paketverlusten in Netzwerk A mit den
  Resultaten bei Übertragungsfehlern in Netzwerk A stellt sich heraus, dass
  beide den gleichen Effekt erzielen.
  Als einziger Unterschied ist die marginal höhere Bitrate (ca.
- 1 MBit/s) beim Versand von UDP-Datenströmen mit Lasttyp 
+ 1 MBit/s) beim Versand mit Übertragungsfehlern von UDP-Datenströmen mit
+ Lasttyp 
 \begin_inset Quotes fld
 \end_inset
 
@@ -3469,9 +3572,16 @@ den Messresultate folgt) ist besonders beim Vergleich der Client-TX- und
 \end_layout
 
 \begin_layout Standard
-Bezüglich der Bitraten (Server-TX, Client-RX, Lasttyp TCP mit maximalen
- Paketgrössen), die rund 3 mal höher sind (~6 MBit/s) als bei den Vergleichsmess
-ungen aus Szenario 01, wurde ein Profiling auf dem shck-Server durchgeführt.
+Bezüglich der Bitraten (Server-TX, Client-RX, Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MAX
+\begin_inset Quotes frd
+\end_inset
+
+ via TCP), die rund 3 mal höher sind (~6 MBit/s) als bei den Vergleichsmessungen
+ aus Szenario 01, wurde ein Profiling auf dem shck-Server durchgeführt.
 \end_layout
 
 \begin_layout Standard
@@ -3521,6 +3631,13 @@ Hier wird ersichtlich, dass bezüglich der CPU-Last ungefähr doppelt so viele
 \end_layout
 
 \begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -3539,11 +3656,11 @@ subsection[head={Szenario 03: Weitere Aspekte}]{Weitere Aspekte}
 \begin_layout Standard
 Da bei diesem Szenario bei Paketverlusten von 25 %, 50 % und 75 % sowie
  bei den Delays auch nach dem Einsatz eines Profilings keine schlüssigen
- Erklärungen gefunden werden konnten, wurde versucht, mit der Software Tshark,
- den Netzwerkverkehr des Empfangenden Hosts (shck-Server) aufzuzeichnen.
+ Erklärungen gefunden werden konnten, wurde versucht, mit der Software tshark,
+ den Netzwerkverkehr des empfangenden Hosts (shck-Server) aufzuzeichnen.
  Die Aufzeichnung konnte jedoch nicht direkt auf dem shck-Server vollzogen
- werden, da dieser mit Aufzeichnung überlastet wäre und somit das Verhalten
- des Netzwerkverkehrs verfälschen würde.
+ werden, da dieser mit der zusätzlichen Aufzeichnung überlastet wird und
+ somit das Verhalten des Netzwerkverkehrs verfälscht.
 \end_layout
 
 \begin_layout Standard
@@ -3661,8 +3778,8 @@ srv02
 \end_inset
 
  auf.
- Bei den nachfolgend gezeigten Wireshark-Aufzeichnungen wir nur der Datenverkehr
- vom 
+ Bei den nachfolgend gezeigten Wireshark-Aufzeichnungen wird nur der Datenverkeh
+r vom 
 \begin_inset Quotes fld
 \end_inset
 
@@ -3678,7 +3795,7 @@ shck
 \begin_inset Quotes frd
 \end_inset
 
--Client aufgezeichnet (Quell-Adresse: 192.168.0.2 / Zieladresse: 192.168.0.1).
+-Client aufgeführt (Quell-Adresse: 192.168.0.2 / Zieladresse: 192.168.0.1).
 \end_layout
 
 \begin_layout Subsubsection
@@ -3740,7 +3857,7 @@ Wireshark sniffer
  Dieses Verhalten von Wireshark wird auch in Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
-reference "sec:TCP-Window-Size"
+reference "sub:Einfluss-von-TCP-Window-Size"
 
 \end_inset
 
@@ -3842,8 +3959,10 @@ Wireshark sniffer
  und partiellen Paketverlusten sollten Vergleichsmessungen mit weiteren,
  leistungsfähigeren Netzwerk-Messgeräten durchgeführt werden, die eine präzise
  Aufzeichnung der Daten, wie sie über die Leitung gesendet werden, garantieren.
+ Mit dem Calnex Paragon ist eine Simulation von Delays/Paketverlusten mit
+ gleichzeitiger Paketaufzeichnung nicht möglich.
  Im Rahmen dieser Arbeit konnten diese Vorkommnisse aus Zeitgründen nicht
- mehr weiter untersucht werden.
+ mehr detaillierter untersucht werden.
 \end_layout
 
 \begin_layout Standard
@@ -4030,7 +4149,7 @@ reference "sec:Szenario-04:-Zeitweiser-1"
 
 \end_inset
 
-) weisen Vergleich zur normalen PRP-Umgebung (Szenario 01, siehe Kapitel
+) weisen im Vergleich zur normalen PRP-Umgebung (Szenario 01, siehe Kapitel
  
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -4189,6 +4308,7 @@ eth0
 \end_inset
 
  erkennt.
+ Dieser gerade geschilderte Ablauf ist auch beim Komplettausfall aufzufinden.
  Im Vergleich zu Szenario 03 (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -4214,7 +4334,6 @@ eth0
 
  nicht erkennt und im Gegensatz zu diesem Szenario die Netzwerklast wie
  üblich versendet wird.
- Dieser gerade geschilderte Ablauf ist auch beim Komplettausfall aufzufinden.
 \end_layout
 
 \begin_layout Standard
@@ -4264,7 +4383,7 @@ adapter_active
 \end_inset
 
  der Fall.
- Diese Variable gibt es pro Interface, das an den stack angebunden ist (
+ Diese Variable existiert pro Interface, das an den stack gebunden ist (
 \begin_inset Quotes fld
 \end_inset
 
@@ -4285,7 +4404,7 @@ eth1
  so nimmt der stack an, dass beide Interfaces aktiv sind.
  Fälschlicherweise setzt der stack diese Variablen stets auf 1 und betreibt
  auch keine Prüfung der Interfaces auf ihren Aktivitäts-Zustand.
- Dies wurde zudem überprüft, indem der stack mit deaktiviertem 
+ Dies wurde additional überprüft, indem der stack mit deaktiviertem 
 \begin_inset Quotes fld
 \end_inset
 
@@ -4375,17 +4494,6 @@ eth0
  zu versenden.
  Dieser Teil kommt jedoch nicht beim Server an, womit man sagen kann, dass
  dieser Teil von der ECI-Box verworfen wird.
- Der Client erhält bei diesem Intervall bei TCP-Übertragungen zudem keine
- Quittierungen vom Server bzw.
- kommen die Quittierungen über das Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- nicht an.
 \end_layout
 
 \begin_layout Standard
@@ -4774,9 +4882,9 @@ reference "sub:01-Messresultate"
 \end_layout
 
 \begin_layout Standard
-Zusammengefasst kann gesagt werden, dass die Verwendung von TCP anhand dessen
- Antworten, die vom Empfänger an den Sender zusätzlich übermittelt werden,
- mit einer höheren CPU-Last als mit UDP verbunden ist.
+Zusammengefasst kann die Aussage gemacht werden, dass die Verwendung von
+ TCP anhand dessen Antworten, die vom Empfänger an den Sender zusätzlich
+ übermittelt werden, mit einer höheren CPU-Last als mit UDP verbunden ist.
 \end_layout
 
 \begin_layout Standard
@@ -4927,8 +5035,25 @@ reference "sec:Szenario-05:-Abhängigkeit-1"
 
 \end_layout
 
-\begin_layout Section
-Szenario 06: Auswirkungen, wenn Frames out-of-sequence ankommen
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+section[head={Szenario 06: Auswirkungen, wenn 
+\backslash
+
+\backslash
+Frames out-of-sequence ankommen}]{Szenario 06: Auswirkungen, wenn Frames
+ out-of-sequence ankommen}
+\end_layout
+
+\end_inset
+
+
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Szenario-06:-Auswirkungen,"
@@ -4971,6 +5096,20 @@ MIN
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{sloppypar} 
+\backslash
+tolerance=1000
+\end_layout
+
+\end_inset
+
 Diese Erhöhung entsteht dadurch, dass der stack viele Pakete (beim Client
  TCP-Quittierungen) erhält, die vom einen Netzwerk aus nicht in der korrekten
  Abfolge eintreffen und somit einen Mehraufwand bei der Duplikatverwaltung
@@ -4986,6 +5125,19 @@ MIN
 
  so klein, dass dieser sich nicht beim Vergleich der Messwerte herausfiltern
  lässt.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{sloppypar}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5030,22 +5182,10 @@ PRP_DiscardAlgorithm_T_search_entry
  einen beachtlichen Anteil der CPU-Last innerhalb des PRP-1 stacks beim
  Empfang von Frames.
  Diese Funktion beschäftigt sich mit dem Durchsuchen der Duplikattabelle
- und dem Aufnehmen neues Frames in diese Tabelle.
+ und dem Aufnehmen neuer Frames in diese Tabelle.
  Da in diesem Szenario die Abfolge der Frames auf einem Pfad abgeändert
  wird, benötigt der stack durchschnittlich mehr Zeit für das Auffinden des
  entsprechenden Eintrags in der Duplikattabelle.
-\end_layout
-
-\begin_layout Standard
-WIP
-\end_layout
-
-\begin_layout Standard
-, was anhand der folgenden Abbildung dargestellt wird.
-\end_layout
-
-\begin_layout Standard
--
 \end_layout
 
 \begin_layout Standard
@@ -5109,79 +5249,6 @@ reference "sub:01:Weitere-Aspekte"
 \end_inset
 
  erläutert.
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-subsection[head={Szenario 06: Limitierungen / Engpässe}]{Limitierungen /
- Engpässe}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-subsection[head={Szenario 06: Verhalten zwischen shck-Client und -Server}]{Verha
-lten zwischen shck-Client und -Server}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-subsection[head={Szenario 06: Verhalten des PRP-1 stacks}]{Verhalten des
- PRP-1 stacks}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Standard
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-subsection[head={Szenario 06: Weitere Aspekte}]{Weitere Aspekte}
-\end_layout
-
-\end_inset
-
-
-\end_layout
-
-\begin_layout Itemize
-TCP MIN CPU höher, Rest ok -> Verarbeitung der grossen Anzahl an Quittierungen,
- die Duplikate sind und in einer veränderten Abfolge ankommen.
- Mehr Iterationen durch Duplikattabelle
 \end_layout
 
 \begin_layout Standard
@@ -5326,7 +5393,7 @@ reference "sec:Szenario-06:-Auswirkungen,-1"
 \end_layout
 
 \begin_layout Section
-Szenario 07: Einluss von Offload-Mechanismen
+Szenario 07: Einfluss von Offload-Mechanismen
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Szenario-07:-Einluss"

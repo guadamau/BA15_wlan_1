@@ -240,6 +240,10 @@ width=.8\textwidth
 \usepackage{amsmath}
 \usepackage{esint}
 \usepackage{mathtools}
+
+% Trennungen
+%\hypenation{<Kernel-space>}
+%\hypenation{<User-space>}
 \end_preamble
 \options bibliography=totocnumbered,listof=totocnumbered,numbers=noenddot,headings=optiontoheadandtoc
 \use_default_options true

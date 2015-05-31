@@ -801,6 +801,24 @@ Die Software-Implementation des PRP-1 stack verfügt über 3 Software-Timer,
  Ein Timer-Tick dauert 20 ms.
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{sloppypar} 
+\backslash
+tolerance=1000
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
 
 \series bold
@@ -851,6 +869,22 @@ Supervision-Timer
 .
  Ist dieses Timer-Intervall abgelaufen, wird auf beiden physischen PRP-Interface
 s ein Supervision-Frame transmittiert.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{sloppypar}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsubsection
@@ -1135,6 +1169,55 @@ Als Datenstruktur, um die Metadaten erstmals eingetroffener Frames zu halten,
 g.
 \end_layout
 
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _diagrams/011_DiscardItems_Table.svg
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Datenhaltung der Frame-Metadaten des PRP-1 stacks
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Werte der Sequenznummern in der obigen Abbildung sind zufällig gewählt
+ und dienen nur der Illustration, um die Funktionsweise der Hash-Wert-Bildung
+ aufzuzeigen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Offload-Mechanismen
 \begin_inset CommandInset label
@@ -1161,6 +1244,20 @@ RX/TX Checksum Offload
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{sloppypar} 
+\backslash
+tolerance=1000
+\end_layout
+
+\end_inset
+
 Wird der Checksum-Offload-Mechanismus aktiviert, werden die IP-, TCP- und
  UDP-Checksummen von der Netzwerkkarte anstelle dem Prozessor berechnet.
  Dieser Mechanismus lässt sich individuell für das Senden und Empfangen
@@ -1169,6 +1266,19 @@ Wird der Checksum-Offload-Mechanismus aktiviert, werden die IP-, TCP- und
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Checksum_and_Segmentation_Offloading"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{sloppypar}
+\end_layout
 
 \end_inset
 
@@ -1248,6 +1358,13 @@ Beim Generic Segmentation Offload handelt es sich um eine Generalisierung
 LatexCommand cite
 key "GRO,Generic_Segmentation_Offload,TSO_GSO"
 
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
 \end_inset
 
 
@@ -1471,6 +1588,20 @@ name "sec:proc-Dateisystem"
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{sloppypar} 
+\backslash
+tolerance=1000
+\end_layout
+
+\end_inset
+
 Bei dem /proc-Dateisystem handelt es sich um ein Pseudo-Dateisystem, welches
  als Schnittstelle für Datenstrukturen des Linux-Kernels dient.
  Üblicherweise ist dieses Dateisystem in einem Linux-Betriebssystem unter
@@ -1534,6 +1665,19 @@ r als Namen trägt.
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Advanced_Linux_Programming"
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{sloppypar}
+\end_layout
 
 \end_inset
 

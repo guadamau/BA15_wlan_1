@@ -122,8 +122,8 @@ Parallel Redundancy Protocol
  Das PRP-Protokoll ermöglicht eine redundante Datenübertragung über zwei
  physisch vollständig unabhängige Ethernet-Netzwerke.
  Im Zentrum dieser Arbeit liegt das Evaluieren und Anwenden von geeigneten
- Messmethoden, sowie das Auswerten der entstehenden Befunde, bezüglich Datenüber
-mittlungen unter Zuhilfenahme des PRP-Protokolls.
+ Messmethoden sowie das Auswerten der entstehenden Befunde, bezüglich Datenüberm
+ittlungen unter Zuhilfenahme des PRP-Protokolls.
  Initial wurden verschiedene Test-Szenarien definiert, die auf die speziellen
  Funktionalitäten des PRP-Protokolls eingehen.
  Für die Durchführung dieser Szenarien wurden zwei Applikationen entwickelt,
