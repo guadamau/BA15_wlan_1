@@ -3515,9 +3515,335 @@ Profiling des PRP-1-stacks mit Paketverlust (50 %) und ohne Paketverlust
 \begin_layout Standard
 Hier wird ersichtlich, dass bezüglich der CPU-Last ungefähr doppelt so viele
  Funktionsaufrufe der PRP-Transmit-Funktionen aufgezeichnet wurden, was
- aber lediglich eine doppelte TX-Bitrate, also ~4 MBit/s erklären würde,
- nicht aber die 6 MBit/s, da alle gesendeten Nachrichten TCP-Ack-Messages
- mit derselben Grösse sind.
+ aber lediglich eine doppelte Server-TX-Bitrate, also ~4 MBit/s erklären
+ würde, nicht aber die 6 MBit/s, da erwartet wird, dass alle gesendeten
+ Nachrichten TCP-Ack-Messages mit derselben Grösse sind.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+subsection[head={Szenario 03: Weitere Aspekte}]{Weitere Aspekte}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Da bei diesem Szenario bei Paketverlusten von 25 %, 50 % und 75 % sowie
+ bei den Delays auch nach dem Einsatz eines Profilings keine schlüssigen
+ Erklärungen gefunden werden konnten, wurde versucht, mit der Software Tshark,
+ den Netzwerkverkehr des Empfangenden Hosts (shck-Server) aufzuzeichnen.
+ Die Aufzeichnung konnte jedoch nicht direkt auf dem shck-Server vollzogen
+ werden, da dieser mit Aufzeichnung überlastet wäre und somit das Verhalten
+ des Netzwerkverkehrs verfälschen würde.
+\end_layout
+
+\begin_layout Standard
+Für die Aufzeichnungen wurde ein weiterer Rechner verwendet, der als 
+\begin_inset Quotes fld
+\end_inset
+
+Man in the Middle
+\begin_inset Quotes frd
+\end_inset
+
+ operierend auf dem Data-Link-Layer alle passierenden Daten mit der Software
+ Wireshark aufzeichnet.
+ Mit dem Calnex Paragon wurde ein Delay von 300 ms erzeugt und anschliessend
+ ein Paketverlust von 50 % simuliert, um die vom Server ausgehenden Daten
+ aufzuzeichnen.
+\end_layout
+
+\begin_layout Standard
+Die Umgebung hat den folgenden Aufbau:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _diagrams/020_3_scenario_04_sniffing.svg
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+PC mit Wireshark als 
+\begin_inset Quotes fld
+\end_inset
+
+Man in the Middle
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Quotes fld
+\end_inset
+
+srv01
+\begin_inset Quotes frd
+\end_inset
+
+ sendet die Netzwerklast an 
+\begin_inset Quotes fld
+\end_inset
+
+srv02
+\begin_inset Quotes frd
+\end_inset
+
+, mit dem 
+\begin_inset Quotes fld
+\end_inset
+
+Paragon
+\begin_inset Quotes frd
+\end_inset
+
+ wird ein Delay oder Paketverlust simuliert.
+ Der 
+\begin_inset Quotes fld
+\end_inset
+
+Wireshark sniffer
+\begin_inset Quotes frd
+\end_inset
+
+ zeichnet den Datenverkehr zwischen 
+\begin_inset Quotes fld
+\end_inset
+
+srv01
+\begin_inset Quotes frd
+\end_inset
+
+ und 
+\begin_inset Quotes fld
+\end_inset
+
+srv02
+\begin_inset Quotes frd
+\end_inset
+
+ auf.
+ Bei den nachfolgend gezeigten Wireshark-Aufzeichnungen wir nur der Datenverkehr
+ vom 
+\begin_inset Quotes fld
+\end_inset
+
+shck
+\begin_inset Quotes frd
+\end_inset
+
+-Server zum 
+\begin_inset Quotes fld
+\end_inset
+
+shck
+\begin_inset Quotes frd
+\end_inset
+
+-Client aufgezeichnet (Quell-Adresse: 192.168.0.2 / Zieladresse: 192.168.0.1).
+\end_layout
+
+\begin_layout Subsubsection
+Delay von 300 ms
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/021_mitm_delay_300ms.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Wireshark-Report bei einem Delay von 300 ms
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Der Report zeigt die von TCP versendeten Ack-Messages, was den Erwartungen
+ entspricht.
+ Jedoch kann der Datenverkehr ab einer gewissen Zeit nicht mehr aufgezeichnet
+ werden, da der aufzeichnende Rechner (
+\begin_inset Quotes fld
+\end_inset
+
+Wireshark sniffer
+\begin_inset Quotes frd
+\end_inset
+
+) überlastet wird.
+ Die Aufzeichnungnen können ab diesem Zeitpunkt nicht mehr genug zeitnah
+ gemacht werden.
+ Dieses Verhalten von Wireshark wird auch in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:TCP-Window-Size"
+
+\end_inset
+
+ behandelt.
+\end_layout
+
+\begin_layout Subsubsection
+Paketverlust von 50 %
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Graphics
+	filename _img/021_mitm_packet_loss_50_percent.png
+	lyxscale 50
+	width 100text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Wireshark-Report bei einem Paketverlust von 50 %
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bei dieser Aufzeichnung wird ersichtlich, dass einerseits TCP-Ack-Messages
+ 3-fach (mit gleicher TCP-Sequenznummer) versendet werden und andererseits
+ vom Server her eine Aktualisierung der TCP-Window-Size verlangt wird.
+ Der 3-fache Versand der TCP-Ack-Messages würde die vom Server ausgehende
+ Bitrate von ~6 MBit/s erklären.
+ Die Anforderung nach einer Aktualisierung der TCP-Window-Size lässt darauf
+ schliessen, dass der 
+\begin_inset Quotes fld
+\end_inset
+
+shck
+\begin_inset Quotes frd
+\end_inset
+
+-Server überlastet ist und dies so dem 
+\begin_inset Quotes fld
+\end_inset
+
+shck
+\begin_inset Quotes frd
+\end_inset
+
+-Client mitteilt.
+\end_layout
+
+\begin_layout Subsubsection
+Fazit
+\end_layout
+
+\begin_layout Standard
+Die beiden vorhergehenden Wireshark-Reports sind mit einer gewissen Vorsicht
+ zu interpretieren, da der 
+\begin_inset Quotes fld
+\end_inset
+
+Wireshark sniffer
+\begin_inset Quotes frd
+\end_inset
+
+ beim Aufzeichnen überlastet wurde, und nicht genau bekannt ist, ob der
+ 
+\begin_inset Quotes fld
+\end_inset
+
+Wireshark sniffer
+\begin_inset Quotes frd
+\end_inset
+
+ einen zusätzlichen Einfluss auf den Datenverkehr nimmt.
+ Bei weiterführenden Untersuchungen dieser Vorkommnisse bezüglich Delay
+ und partiellen Paketverlusten sollten Vergleichsmessungen mit weiteren,
+ leistungsfähigeren Netzwerk-Messgeräten durchgeführt werden, die eine präzise
+ Aufzeichnung der Daten, wie sie über die Leitung gesendet werden, garantieren.
+ Im Rahmen dieser Arbeit konnten diese Vorkommnisse aus Zeitgründen nicht
+ mehr weiter untersucht werden.
 \end_layout
 
 \begin_layout Standard
