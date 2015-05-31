@@ -92,12 +92,138 @@ name "sec:Besprechung-der-Ergebnisse"
 
 \end_layout
 
-\begin_layout Itemize
-schwankungen server cpu nur bei DAN zu DAN
+\begin_layout Standard
+Die in dieser Arbeit betriebenen Performance-Messungen sowie deren Interpretatio
+nen lassen auf aussagekräftige Konklusionen bezüglich der verwendeten Software
+ und den generierten Netzwerklasten schliessen.
 \end_layout
 
-\begin_layout Itemize
-cpu schwer greifbar (faktor scheduler?)
+\begin_layout Standard
+Es ist aus sämtlichen Messresultaten ersichtlich, dass die Verwendung von
+ TCP gegenüber UDP einen höheren Bedarf an Prozessorleistung beim Sender
+ und Empfänger verursacht.
+ Dies wird durch die Natur von TCP, sämtliche empfangenen Daten zu quittieren
+ begründet.
+ Der Vergleich von Netzwerklasten bestehend aus reinen Ethernet-Frames und
+ UDP-Paketen führen zum Entschluss, dass Layer-2- und UDP-Verkehr so gut
+ wie den selben Effekt auf den PRP-1 stack erzielen.
+\end_layout
+
+\begin_layout Standard
+Durch die bei TCP erhöhte CPU-Last entsteht ein engerer Engpass beim Versand
+ von Datenströmen des Lasttyps 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+, welche bereits durch den Prozessor limitiert werden.
+ Hingegen erreichen sämtliche Netzwerklasten, die aus maximal grossen Frames
+ / Paketen bestehen, die theoretische Maximalgeschwindigkeit bei der Übermittlun
+g in einer PRP-Umgebung sowie auch in einer Nicht-PRP-Umgebung.
+ Dies deutet darauf hin, dass diese Ströme des Lasttyps 
+\begin_inset Quotes fld
+\end_inset
+
+MAX
+\begin_inset Quotes frd
+\end_inset
+
+ ihr Limit durch die Netzwerkanbindung erreichen.
+\end_layout
+
+\begin_layout Standard
+Untersuchungen haben ergeben, dass der PRP-1 stack für das Empfangen mehr
+ Leistung als für das Senden beansprucht, da dieser beim Empfang viele Kernelspa
+ce-Funktionen des Betriebssystems aufrufen und eine Duplikaterkennung betreiben
+ muss.
+ Beim Versand muss der stack lediglich die Daten duplizieren und an beide
+ physischen Interfaces übergeben.
+\end_layout
+
+\begin_layout Standard
+Bei dieser Implementation von PRP in Form des PRP-1 stacks handelt es sich
+ um eine Userspace-Applikation, welche sich durch die Kommunikation mit
+ den physischen NICs länger im Kernelspace als im Userspace aufhält.
+ Anhand der Verwendung der pcap-Programmbibliothek in dieser Applikation
+ entsteht ein Overhead, da diese Bibliothek primär zum Aufzeichnen von Netzwerk-
+Verkehr konzipiert wurde.
+ Zudem hat die pcap-Programmbibliothek eher die Form einer Programmierschnittste
+lle für Userspace-Applikationen.
+ Ein low-level Zugriff auf den Netzwerk-Protokoll-Stack des Betriebssystems
+ mittels dieser Bibliothek ist somit automatisch mit einem Overhead verbunden.
+ 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "pcap-manpage"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Aus diesen Gründen erscheint es um eine Ressourceneinsparung bezüglich CPU-Last
+ schlüssig, den PRP-1 stack in eine Kernelspace-Applikation zu portieren.
+\end_layout
+
+\begin_layout Standard
+Bezüglich der Auswertung von Performance-Messungen anhand des PRP-1 stacks
+ besteht noch Potential in der Erkenntnisgewinnung durch die Evaluierung
+ der konkreten Einflüsse des Betriebssystem-Schedulers auf die Ressourcennutzung
+ des Prozessors.
+\end_layout
+
+\begin_layout Standard
+Ermittlungen in Abwesenheit des PRP-1 stacks haben ergeben, dass bei Netzwerklas
+ten mit Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+ schneller ein Prozessorengpass bei der Lastgenerierung durch shck erreicht
+ wird als durch die PRP-Softwareimplementation.
+ Die Messresultate zeigen auf, dass je mehr CPU-Zeit shck zur Verfügung
+ steht, desto mehr Datenströme generiert und versendet werden können.
+\end_layout
+
+\begin_layout Standard
+Messungen während einer in Netzwerk A generierten Störung zeigen auf, dass
+ Paketverluste und Übertragungsfehler auf einem von beiden Verbindungen
+ in Etwa die selbe Auswirkung auf den PRP-1 stack haben.
+ Der Ausfall eines Pfades hat keinen Einfluss auf die Prozessorleistungsbeanspru
+chung beim Client, wobei beim Server die beanspruchte CPU-Last mit der Anzahl
+ an erhaltenen Duplikaten sinkt.
+ Beim Stand der Drucklegung dieser Arbeit verhält sich der PRP-1 stack so,
+ dass dieser den Status eines angebundenen physischen Interfaces nicht erkennt
+ und so handelt als wenn beide Interfaces permanent aktiv sind.
+ Selbst wenn die Softwareimplementation mit inaktiven NICs gestartet wird,
+ nimmt dieser an, dass beide Interfaces aktiv sind.
+\end_layout
+
+\begin_layout Standard
+Kommen über einen Pfad die Frames out-of-sequence an, so entsteht ein Mehraufwan
+d beim Empfang der Frames, der sich in der entsprechenden CPU-Last des PRP-1
+ stacks widerspiegelt.
+ Offload-Mechanismen, die sich mit der Fragmentierung von Paketen befassen,
+ können in einer reinen PRP-Umgebung über das virtuelle PRP-Interface nicht
+ eingesetzt werden, da der PRP-1 stack bereits alles als Ethernet-Frames
+ aufbereitet.
+ Somit werden die Daten immer auf Betriebssystem-Ebene fragmentiert und
+ als Ethernet-Frames bereitgestellt.
+\end_layout
+
+\begin_layout Standard
+Schlussendlich decken die ermittelten und interpretierten Resultate der
+ Performance-Messungen das Optimierungspotential des PRP-1 stacks im Hinblick
+ auf dessen Prozessor-Ressourcennutzung auf.
+ Mit den in dieser Arbeit gewonnen Erkenntnissen lässt sich dieses Potential
+ lokalisieren und weiter untersuchen.
 \end_layout
 
 \begin_layout Subsection
@@ -2012,6 +2138,9 @@ key "Aufgabenstellung"
 Des Weiteren wäre der genauere Einfluss von den Mechanismen des Betriebssystems
  (Scheduler) oder andere Implementierungen von PRP zu studieren, um eventuell
  weitere Befunde bezüglich der Performance von PRP erlangen zu können.
+ Zusätzliche Untersuchungen bezüglich des Einflusses von Störungen in einem
+ von beiden Netzwerken der PRP-Umgebung wie Delays, Paketverluste oder Übertragu
+ngsfehlern könnten weitere Erkenntnisse bringen.
 \end_layout
 
 \begin_layout Standard
