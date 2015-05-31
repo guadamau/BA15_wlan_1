@@ -25,7 +25,7 @@
 \newcommand{\rxdesc}{\textbf{Reciever} / Empfänger.}
 \newcommand{\txdesc}{\textbf{Transmitter} / Sender.}
 \newcommand{\nicdesc}{\textbf{Network Interface Card} / Netzwerkkarte.}
-\newcommand{\socketdesc}{Sockets bilden das Bindeglied zwischen Kommunikationsprotokollen und dem Betriebssystem. Ein Socket kann auch als Endpunkt einer Verbindung angesehen werden. Da in einem unixoiden System das Konzept gilt, ''Alles ist eine Datei.'', wird ein Socket seitens Betriebssystem als Datei repräsentiert. Der sendende Prozess schreibt die Daten in seine entsprechende Socket-Datei, wobei diametral dazu ein empfangender Prozess die Daten von seiner entsprechenden Socket-Datei liest.}
+\newcommand{\socketdesc}{Sockets bilden das Bindeglied zwischen Kommunikationsprotokollen und dem Betriebssystem. Ein Socket kann auch als Endpunkt einer Verbindung angesehen werden. Da in einem unixoiden System das Konzept gilt, <<Alles ist eine Datei>>, wird ein Socket seitens Betriebssystem als Datei repräsentiert. Der sendende Prozess schreibt die Daten in seine entsprechende Socket-Datei, wobei diametral dazu ein empfangender Prozess die Daten von seiner entsprechenden Socket-Datei liest.}
 \newcommand{\headerdesc}{Eine Programm-Header-Datei hat die Dateiendung .h und enthält C-Funktionsdeklarationen sowie C-Makro-Definitionen. Die Header-Datei dient als Schnittstelle, zu den Quellcode-Dateien. Aufrufe von Funktionen, die in anderen Quellcodedateien implementiert wurden, werden durch das Einbinden der ensprechenden Header-Datei für den Compiler sichtbar.}
 \newcommand{\cmacrodesc}{Ein Makro ist ein benanntes Code-Fragment und wird meist in einer Header-Datei definert. Der Name des Fragments kann beliebig in Quellcode-Dateien platziert werden. Der C-Präprozessor ersetzt vor dem Kompilieren die Fragment-Namen durch die Code-Fragmente.}
 \newcommand{\payloaddesc}{Als Payload wird der reine Nutzdaten-Anteil eines Frames (Datalink-Layer) oder eines Paketes (Network-Layer, Transport-Layer, ...) definiert. Die Grösse des Payloads ist die Differenz der Gesamtpaketgrösse und der Grösse des entsprechenden Protokoll-Headers.}
@@ -45,6 +45,7 @@
 \newcommand{\cswitchdesc}{Prozedere, welches der Scheduler eines Betriebssystems durchführt, wenn ein neuer oder wartender Prozess CPU-Zeit erhält. Der aktuell auf der CPU laufende Prozess muss alle Kontextinformationen speichern und seine Ausführung unterbrechen, wobei der neue oder wartende Prozess seine Kontextinformationen laden und die Ausführung auf der CPU beginnen muss.}
 \newcommand{\interfacedesc}{Bezeichnung für Netzwerkkarte / Netzwerk-Hardware.}
 \newcommand{\agingtimedesc}{Zeit, welche Metadaten eines Frames maximal in der Duplikattabelle des PRP-1 stacks gehalten werden dürfen.}
+\newcommand{\lasttypdesc}{Bezeichnet die Grösse der verwendeten Frames / Pakete in der dazugehörigen Netzwerklast. Verwendet werden die Bezeichnungen <<MIN>> und <<MAX>>, welche in Kapitel \vref{sub:Generierung-von-Datenverkehrstr=0000F6} erläutert werden.}
 
 % *****************************************************************************
 % Nomenclature entries
@@ -89,3 +90,4 @@
 \nomenclature{Context Switch}{\cswitchdesc}
 \nomenclature{Netzwerk-Interface}{\interfacedesc}
 \nomenclature{Aging-Time}{\agingtimedesc}
+\nomenclature{Lasttyp}{\lasttypdesc}
