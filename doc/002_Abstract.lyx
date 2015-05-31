@@ -133,8 +133,27 @@ Parallel Redundancy Protocol
  The PRP protocol provides redundant data transmission over two entirely
  physical independent ethernet networks.
  The main focus of this project consists of the evaluation and application
- of appropriate measurement methods as well as the evaluation of the resulting
- findings, regarding data transmissions via PRP protocol.
+ of appropriate measurement methods as well as the interpretation of the
+ resulting findings, regarding data transmissions via PRP protocol.
+ In a first phase several testing scenarios were defined, which address
+ the special properties of the PRP protocol.
+ To process these sceanarios two applications were developed, 
+\begin_inset Quotes fld
+\end_inset
+
+shck
+\begin_inset Quotes frd
+\end_inset
+
+, a network load generator and 
+\begin_inset Quotes fld
+\end_inset
+
+meas
+\begin_inset Quotes frd
+\end_inset
+
+, to capture and analyze measurement data.
  
 \begin_inset ERT
 status open
