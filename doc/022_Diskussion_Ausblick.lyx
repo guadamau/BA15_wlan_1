@@ -92,19 +92,12 @@ name "sec:Besprechung-der-Ergebnisse"
 
 \end_layout
 
-\begin_layout Standard
-Lorem ipsum
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "sec:Besprechung-der-Ergebnisse"
-
-\end_inset
-
-
+\begin_layout Itemize
+schwankungen server cpu nur bei DAN zu DAN
 \end_layout
 
-\begin_layout Standard
-schwankungen server cpu nur bei DAN zu DAN
+\begin_layout Itemize
+cpu schwer greifbar (faktor scheduler?)
 \end_layout
 
 \begin_layout Subsection
@@ -1968,6 +1961,29 @@ key "pa-thesis"
 \end_layout
 
 \begin_layout Standard
+Wir sind uns der umfassenden Ausführung dieser Arbeit bewusst und möchten
+ sicher gehen, dass der Leser anhand der dargebotenen Informationen alles
+ nachvollziehen kann.
+ Der wesentliche Gehalt dieser Arbeit (Auswirkung von PRP in Form des PRP-1
+ stacks auf das Endsystem, ermittelt durch Performance-Messungen) wird im
+ Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Resultate"
+
+\end_inset
+
+ und im Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Besprechung-der-Ergebnisse"
+
+\end_inset
+
+ erläutert.
+\end_layout
+
+\begin_layout Standard
 Zusammenfassend kann ein positives Fazit gezogen werden: Das Projekt wurde
  mit grossem Interesse erarbeitet und wurde unserer Meinung nach erfolgreich
  umgesetzt.
@@ -1994,8 +2010,8 @@ key "Aufgabenstellung"
 
 \begin_layout Standard
 Des Weiteren wäre der genauere Einfluss von den Mechanismen des Betriebssystems
- (Scheduler) zu studieren, um eventuell weitere Befunde bezüglich der Performanc
-e von PRP erlangen zu können.
+ (Scheduler) oder andere Implementierungen von PRP zu studieren, um eventuell
+ weitere Befunde bezüglich der Performance von PRP erlangen zu können.
 \end_layout
 
 \begin_layout Standard

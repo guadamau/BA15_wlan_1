@@ -194,6 +194,29 @@ ren sämtlicher Messresultate.
 \end_layout
 
 \begin_layout Standard
+Wir sind uns der umfassenden Ausführung dieser Arbeit bewusst und möchten
+ sicher gehen, dass der Leser anhand der dargebotenen Informationen alles
+ nachvollziehen kann.
+ Der wesentliche Gehalt dieser Arbeit (Auswirkung von PRP in Form des PRP-1
+ stacks auf das Endsystem, ermittelt durch Performance-Messungen) wird im
+ Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Resultate"
+
+\end_inset
+
+ und im Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Besprechung-der-Ergebnisse"
+
+\end_inset
+
+ erläutert.
+\end_layout
+
+\begin_layout Standard
 Unser herzlicher Dank gilt den Herren Prof.
  Hans Weibel und David Blatter für die geduldige und fachkundige Arbeitsbetreuun
 g in Form von Impulsen, Diskussionen und unterstützenden Hinweisen, die

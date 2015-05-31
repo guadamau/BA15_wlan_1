@@ -45062,6 +45062,13 @@ Virtualisierung (Was geschieht zwischen VMs und Virtuellem Switch? Ist es
 \end_layout
 
 \end_deeper
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
 Weiteres Vorgehen:
 \end_layout
@@ -45077,7 +45084,7 @@ Mit Tools vertraut werden und auf bestimmte konzentrieren
 
 \begin_deeper
 \begin_layout Itemize
-Jedes Tool genau untersuchen wär nicht sinnvoll.
+Jedes Tool genau untersuchen wäre nicht sinnvoll.
 \end_layout
 
 \begin_layout Itemize
@@ -45116,6 +45123,13 @@ Fokus auf PRP-1, Satz spendieren an PRP-0
 
 \begin_layout Itemize
 Aging beobachten
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -45212,6 +45226,13 @@ TCP-Durchsatz: Wie leidet er bei Paketverlust?
 
 \begin_layout Itemize
 Offload-Mechanismen anschauen
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Section
@@ -45610,100 +45631,22 @@ Wäre noch interessant: shck Version mit fixer Bandbreitenangabe
 Nächste Woche ist Herr Weibel abwesend, jedoch per E-Mail erreichbar
 \end_layout
 
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
 \begin_layout Section
 Kalenderwoche 23: 01.06.2015
 \end_layout
 
-\begin_layout Chapter
-Einrichtung ECI
-\end_layout
-
 \begin_layout Standard
-In diesem Kapitel wird beschrieben wie der ECI in dieser Arbeit eingerichtet
- wird.
- Weitere Einrichtungsmöglichkeiten und Informationen zum ECI können in dessen
- Bedienungsanleitung 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "ECI-Manual"
-
-\end_inset
-
- eingesehen werden.
-\end_layout
-
-\begin_layout Standard
-Der ECI wird in dieser Arbeit auf einem Laptop mit einem Linux-Betriebssystem
- (Distribution: ArchLinux) operiert.
- Die Angaben zur Installation können für andere Computer variieren.
- Der Treiber, um den ECI ansprechen zu können, ist im Linux Kernel ab Version
- 3.0.0-19 implementiert.
- 
-\begin_inset CommandInset citation
-LatexCommand cite
-key "Virtual_COM_Port_Drv"
-
+\begin_inset Newpage pagebreak
 \end_inset
 
 
-\end_layout
-
-\begin_layout Section
-Installation der Software
-\end_layout
-
-\begin_layout Standard
-Um die Software bedienen zu können, wird eine Java-Library für serielle
- Kommunikation, die von 
-\begin_inset Flex URL
-status open
-
-\begin_layout Plain Layout
-
-http://rxtx.qbang.org/wiki/index.php/Download
-\end_layout
-
-\end_inset
-
- (Datei: 
-\family typewriter
-rxtx-2.1-7-bins-r2.zip
-\family default
-) heruntergeladen werden kann, benötigt.
- Ist die Datei 
-\family typewriter
-rxtx-2.2pre2-bins-r2.zip
-\family default
- entpackt, kopiert man 
-\family typewriter
-RXTXcomm.jar
-\family default
- nach 
-\family typewriter
-/usr/lib/jvm/java-7-openjdk/jre/lib/ext
-\family default
- und 
-\family typewriter
-x86_64-unknown-linux-gnu/librxtxSerial.so
-\family default
- nach 
-\family typewriter
-/usr/lib/jvm/java-7-openjdk/jre/lib/amd64
-\family default
-.
- 
-\end_layout
-
-\begin_layout Standard
-Des Weiteren muss der Benutzer, mit dem die Software ausgeführt wird, in
- der Benutzergruppe 
-\family typewriter
-lock
-\family default
- sein.
- Diesen für man mit folgendem Befehl dieser Gruppe hinzu: 
-\family typewriter
-sudo usermod -a -G lock $USERNAME
 \end_layout
 
 \begin_layout Chapter
