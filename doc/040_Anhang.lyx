@@ -594,6 +594,13 @@ status open
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Server ohne PRP (SAN sendet an SAN): CPU-Last
  der shck-Applikation
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ABBILDUNG-Resultat-Szenario-02"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -2248,7 +2255,7 @@ shck-Server
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2268,6 +2275,13 @@ filename "_tex/02_PRP/cpusrv02.tex"
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Server mit PRP (DAN sendet an DAN): CPU-Last,
  System- / Usertime der shck-Applikation
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:TABELLE-Resultat-Szenario-02"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -6928,6 +6942,13 @@ filename "_tex/03_pkt/txsrv02.tex"
 \begin_layout Plain Layout
 Resultat Szenario 03: Paketverlust in Netzwerk A auf shck-Server: TX-Bitrate
  [MBit/s]
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:TABELLE-Resultat-Szenario-03:"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -9068,6 +9089,13 @@ eth0
 \end_inset
 
  der Netzwerklast T.MIN.U auf shck-Client und -Server
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ABBILDUNG-Resultat-Szenario-03:"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -36269,6 +36297,13 @@ eth0
 \end_inset
 
  der Netzwerklast T.MAX.U auf shck-Client und -Server
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:ABBILDUNG-Resultat-Szenario-06:"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -39238,6 +39273,13 @@ eth0
 \end_inset
 
 -Netzwerk-Interface [MBit/s]
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:TABELLE-Resultat-Szenario-07"
+
+\end_inset
+
+
 \end_layout
 
 \end_inset
@@ -43972,7 +44014,7 @@ T.MAX.U
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -47058,11 +47100,1542 @@ name "chap:Speichermedium"
 \end_layout
 
 \begin_layout Standard
-Datenstruktur
+Auf erster Ebene sind folgende Dateien und Verzeichnisse auffindbar:
 \end_layout
 
 \begin_layout Standard
-Welcher Graph / overall was wie wo
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="8" columns="2">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="40col%">
+<column alignment="left" valignment="top" width="50col%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Name
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Beschreibung
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BA15_wlan_1_doc_source
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Beinhaltet diese Dokumentation als Quellcode im 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+LaTeX
+\end_layout
+
+\end_inset
+
+-/LyX-Format
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Messresultate
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Numerische und graphische Messresultate sämtlicher Szenarien (Inhalt wird
+ genauer in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Messresultate"
+
+\end_inset
+
+ erläutert)
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Software
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Beinhaltet den Source-Code von meas, shck und dem untersuchten PRP-1 stack.
+ Zudem sind hier die in dieser Arbeit verwendeten Scripts gespeichert.
+ Folgende Ordner befinden sich innerhalb dieses Verzeichnisses:
+\end_layout
+
+\begin_layout Itemize
+meas
+\end_layout
+
+\begin_layout Itemize
+scripts (Wird in Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Scripts"
+
+\end_inset
+
+ ausführlicher behandelt)
+\end_layout
+
+\begin_layout Itemize
+shck
+\end_layout
+
+\begin_layout Itemize
+ZHAW_PRP-1_stack
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aufgabenstellung.pdf
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Aufgabenstellung 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Aufgabenstellung"
+
+\end_inset
+
+, welche zu Beginn dieser Arbeit ausgehändigt wurde
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BA15_wlan_1.pdf
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Dieses Dokument als PDF-Datei, mit dem pdflatex-Befehl kompiliert aus dessen
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+LaTeX
+\end_layout
+
+\end_inset
+
+-/LyX-Quellcode
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BA15_wlan_1_print_300dpi.pdf
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Druckerfreundliche Version der BA15_wlan_1.pdf-Datei, bei dem die Seiten
+ als Bilder mit 300 / 600 dpi gerendert werden
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+BA15_wlan_1_print_600dpi.pdf
+\begin_inset Newline newline
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multirow="4" alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Inhalt des Speichermediums auf erster Ebene
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Messresultate
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Messresultate"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Das Verzeichnis 
+\begin_inset Quotes fld
+\end_inset
+
+Messresultate
+\begin_inset Quotes frd
+\end_inset
+
+ beinhaltet zwei Ordner, welche für den Client / Server stehen, auf welche
+ die Resultate aufgeteilt sind:
+\end_layout
+
+\begin_layout Itemize
+shck-Client_srv01
+\end_layout
+
+\begin_layout Itemize
+shck-Server_srv02
+\end_layout
+
+\begin_layout Standard
+Diese Ordner beinhalten jeweils weitere Ordner mit der Szenariokennzeichnung
+ als Beschriftung.
+ Diese Bezeichnungen haben folgende Bedeutungen:
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+placement H
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\noindent
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="14" columns="3">
+<features rotate="0" tabularvalignment="middle">
+<column alignment="left" valignment="top" width="20col%">
+<column alignment="left" valignment="top" width="50col%">
+<column alignment="left" valignment="top" width="20col%">
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Beschriftung
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Bedeutung
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Verweis
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+01
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Messresultate des Szenarios 01
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:01-Messresultate"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+02_DAN_SAN
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Messresultate des Szenarios 02: 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Quotes fld
+\end_inset
+
+Client DAN sendet an Server SAN
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:Client-DAN-sendet"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+02_noPRP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Messresultate des Szenarios 02: 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Quotes fld
+\end_inset
+
+Client SAN sendet an Server SAN
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:Client-SAN-sendet"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+02_PRP
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Messresultate des Szenarios 02: 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Quotes fld
+\end_inset
+
+Client DAN sendet an Server DAN
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:Client-DAN-sendet-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+02_SAN_DAN
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Messresultate des Szenarios 02: 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Quotes fld
+\end_inset
+
+Client SAN sendet an Server DAN
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:Client-SAN-sendet-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+03
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Messresultate des Szenarios 03: 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Quotes fld
+\end_inset
+
+Delay in Netzwerk A
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:03-Delay-in-Netzwerk"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+03_err
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Messresultate des Szenarios 03: 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Quotes fld
+\end_inset
+
+Übertragungsfehler in Netzwerk A
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:03-Übertragungsfehler-in-Netzwerk"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+03_pkt
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Messresultate des Szenarios 03: 
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Quotes fld
+\end_inset
+
+Paketverlust in Netzwerk A
+\begin_inset Quotes frd
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:03-Paketverlust-in-Netzwerk"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+04
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Messresultate des Szenarios 04
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sec:Szenario-04:-Zeitweiser-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+06
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Messresultate des Szenarios 06
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sec:Szenario-06:-Auswirkungen,-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+07
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Messresultate des Szenarios 07
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sec:Szenario-07:-Einluss-1"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+ER (nur in 
+\begin_inset Quotes fld
+\end_inset
+
+shck-Client_srv01
+\begin_inset Quotes frd
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Messresultate der Erörterung signifikanter Resultat-Parameter (siehe Kapitel
+ 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Erörterung-signifikanter-Resulta"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:Erörterung-signifikanter-Resulta"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+SS (nur in 
+\begin_inset Quotes fld
+\end_inset
+
+shck-Client_srv01
+\begin_inset Quotes frd
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Messresultate der Steady-State-Untersuchung (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sub:Einschwingzeit-/-Steady"
+
+\end_inset
+
+)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:Einschwingzeit-/-Steady"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption Standard
+
+\begin_layout Plain Layout
+Bedeutungen der Szenariokennzeichnungen
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die darin enthaltene Dateistruktur sollte selbsterklärend sein.
+ Die numerischen Werte sind jeweils in den meas-Dateien zu finden und die
+ graphischen Resultate sind als SVG-Dateien abgespeichert.
+ Es folgen nun einige Dateipfad-Angaben, anhand denen der Zugriff auf die
+ gewünschten Werte erläutert wird:
+\end_layout
+
+\begin_layout Itemize
+Numerische Ergebnisse
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Prozessorbezogene Werte der Netzwerklast 
+\color magenta
+02.T.MIN.K
+\color inherit
+ auf dem 
+\color green
+Server
+\color inherit
+ in 
+\color blue
+Szenario 02: 
+\begin_inset Quotes fld
+\end_inset
+
+DAN sendet an DAN
+\begin_inset Quotes frd
+\end_inset
+
+ 
+\color inherit
+(siehe Tabelle 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:TABELLE-Resultat-Szenario-02"
+
+\end_inset
+
+)
+\begin_inset Newline newline
+\end_inset
+
+Messresultate/
+\color green
+shck-Server_srv02
+\color inherit
+/
+\color blue
+02_PRP
+\color inherit
+/
+\color magenta
+02.T.MIN.K
+\color inherit
+/srv/
+\begin_inset Newline newline
+\end_inset
+
+meas_overall_stats_1431603189
+\end_layout
+
+\begin_layout Itemize
+TX-Bitrate der Netzwerklast 
+\color magenta
+03.T.MAX.K
+\color inherit
+.
+\color red
+S (100% Paketverlust in Netzwerk A)
+\color inherit
+ auf dem 
+\color green
+Server
+\color inherit
+ in 
+\color blue
+Szenario 03: 
+\begin_inset Quotes fld
+\end_inset
+
+Paketverlust in Netzwerk A
+\begin_inset Quotes frd
+\end_inset
+
+
+\color inherit
+ (siehe Tabelle 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "tab:TABELLE-Resultat-Szenario-03:"
+
+\end_inset
+
+)
+\begin_inset Newline newline
+\end_inset
+
+Messresultate/
+\color green
+shck-Server_srv02
+\color inherit
+/
+\color blue
+03_pkt
+\color inherit
+/
+\color magenta
+03.T.MAX.K
+\color inherit
+/srv/
+\color red
+S.eth0
+\color inherit
+/
+\begin_inset Newline newline
+\end_inset
+
+meas_overall_stats_1432302668
+\end_layout
+
+\begin_layout Itemize
+CPU-Last, RX- und TX-Bitrate der Netzwerklast 
+\color magenta
+07.U.MAX.U
+\color inherit
+.
+\color red
+S (mit 
+\begin_inset Quotes fld
+\end_inset
+
+Scatter-Gather
+\begin_inset Quotes frd
+\end_inset
+
+-Offload-Mechanismus)
+\color inherit
+ auf dem 
+\color green
+Client
+\color inherit
+ in 
+\color blue
+Szenario 07
+\color inherit
+ (siehe Tabelle 
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:TABELLE-Resultat-Szenario-07"
+
+\end_inset
+
+)
+\begin_inset Newline newline
+\end_inset
+
+Messresultate/
+\color green
+shck-Client_srv01
+\color inherit
+/
+\color blue
+07
+\color inherit
+/
+\color magenta
+07.U.MAX.U
+\color inherit
+/
+\color red
+S.desc
+\color inherit
+/
+\begin_inset Newline newline
+\end_inset
+
+meas_overall_stats_1432485900
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Graphische Resultate
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+CPU-Lasten aller Netzwerklasten auf dem 
+\color green
+Server
+\color inherit
+ in 
+\color blue
+Szenario 02: 
+\begin_inset Quotes fld
+\end_inset
+
+SAN sendet an SAN
+\begin_inset Quotes frd
+\end_inset
+
+
+\color inherit
+ (siehe Abbildung 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:ABBILDUNG-Resultat-Szenario-02"
+
+\end_inset
+
+)
+\begin_inset Newline newline
+\end_inset
+
+Messresultate/
+\color green
+shck-Server_srv02
+\color inherit
+/
+\color blue
+02_noPRP
+\color inherit
+/cpu_load_
+\color green
+srv02
+\color inherit
+.svg
+\end_layout
+
+\begin_layout Itemize
+TX-Bitraten des Interfaces 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ bei sämtlichen Fällen von Paketverlust der Netzwerklast 
+\color magenta
+03.T.MIN.U
+\color inherit
+ in 
+\color blue
+Szenario 03: 
+\begin_inset Quotes fld
+\end_inset
+
+Paketverlust in Netzwerk A
+\begin_inset Quotes frd
+\end_inset
+
+
+\color inherit
+ (siehe Abbildung 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:ABBILDUNG-Resultat-Szenario-03:"
+
+\end_inset
+
+)
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+\color green
+Client
+\color inherit
+:
+\series default
+ Messresultate/
+\color green
+shck-Client_srv01
+\color inherit
+/
+\color blue
+03_pkt
+\color inherit
+/
+\color magenta
+03.T.MIN.U
+\color inherit
+/
+\begin_inset Newline newline
+\end_inset
+
+net_eth0_tx_bitrate_
+\color green
+srv01
+\color inherit
+.
+\color magenta
+03.T.MIN.U
+\color inherit
+.svg
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+\color green
+Server
+\color inherit
+:
+\series default
+ Messresultate/
+\color green
+shck-Server_srv02
+\color inherit
+/
+\color blue
+03_pkt
+\color inherit
+/03.T.MIN.U/
+\begin_inset Newline newline
+\end_inset
+
+net_eth0_tx_bitrate_
+\color green
+srv02
+\color inherit
+.
+\color magenta
+03.T.MIN.U
+\color inherit
+.svg
+\end_layout
+
+\begin_layout Itemize
+RX-Bitraten des Interfaces 
+\begin_inset Quotes fld
+\end_inset
+
+eth0
+\begin_inset Quotes frd
+\end_inset
+
+ bei sämtlichen Fällen von Paket-Permutationen der Netzwerklast 
+\color magenta
+06.T.MAX.U
+\color inherit
+ in 
+\color blue
+Szenario 06
+\color inherit
+ (siehe Abbildung 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "fig:ABBILDUNG-Resultat-Szenario-06:"
+
+\end_inset
+
+)
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+\color green
+Client
+\color inherit
+:
+\series default
+ Messresultate/
+\color green
+shck-Client_srv01
+\color inherit
+/
+\color blue
+06
+\color inherit
+/
+\color magenta
+06.T.MAX.U
+\color inherit
+/
+\begin_inset Newline newline
+\end_inset
+
+net_eth0_rx_bitrate_
+\color green
+srv01
+\color inherit
+.
+\color magenta
+06.T.MAX.U
+\color inherit
+.svg
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+\color green
+Server
+\color inherit
+:
+\series default
+ Messresultate/
+\color green
+shck-Server_srv02
+\color inherit
+/
+\color blue
+06
+\color inherit
+/
+\color magenta
+06.T.MAX.U
+\color inherit
+/
+\begin_inset Newline newline
+\end_inset
+
+net_eth0_rx_bitrate_
+\color green
+srv02
+\color inherit
+.
+\color magenta
+06.T.MAX.U
+\color inherit
+.svg
+\end_layout
+
+\end_deeper
+\begin_layout Section
+Scripts
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Scripts"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Scripts werden in zwei Ordner aufgesplittet:
+\end_layout
+
+\begin_layout Itemize
+server
+\begin_inset Newline newline
+\end_inset
+
+Hier befinden sich die Scripts, wie sie auf den Servern der PRP-Umgebung
+ ausgeführt wurden.
+ Darunter befinden sich 
+\begin_inset Quotes fld
+\end_inset
+
+autostart.sh
+\begin_inset Quotes frd
+\end_inset
+
+, welches beim Starten des Servers ausgeführt wird und 
+\begin_inset Quotes fld
+\end_inset
+
+sync_homes.sh
+\begin_inset Quotes frd
+\end_inset
+
+, anhand welchem mit dem unison-Befehl das /home-Verzeichnis über alle 3
+ Hosts des PRP-Netzwerks synchronisiert wird.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+meas
+\begin_inset Newline newline
+\end_inset
+
+Beinhaltet die kompilierte meas-Applikation
+\end_layout
+
+\begin_layout Itemize
+measurement/test_reliability
+\begin_inset Newline newline
+\end_inset
+
+Hier sind die Bash-Scripts zum Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Verifizierung-der-Messwerte"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+shck
+\begin_inset Newline newline
+\end_inset
+
+Beinhaltet das shck-Python-Script
+\end_layout
+
+\begin_layout Itemize
+sw_stack_prp1
+\begin_inset Newline newline
+\end_inset
+
+PRP-1 stack, wie er auf den Servern ausgeführt wurde
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+workstation_used_for_doc
+\begin_inset Newline newline
+\end_inset
+
+Innerhalb diesem Ordner sind die Scripts, die auf der Arbeitsstation, auf
+ welcher die Dokumentation verfasst wurde, ausgeführt wurden.
+ Hier ist das am Ende im Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sec:Szenarien"
+
+\end_inset
+
+ erwähnten 
+\begin_inset Quotes fld
+\end_inset
+
+generate_all.sh
+\begin_inset Quotes frd
+\end_inset
+
+-Script aufzufinden, welches aus den Messresultaten 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+LaTeX
+\end_layout
+
+\end_inset
+
+-Tabellen und Graphen generiert.
+ Weiter enthalten sind in diesem Ordner die Scripts, welche das 
+\begin_inset Quotes fld
+\end_inset
+
+generate_all.sh
+\begin_inset Quotes frd
+\end_inset
+
+-Script verwendet, um seine Aufgabe zu erledigen.
 \end_layout
 
 \end_body

@@ -2407,7 +2407,7 @@ Name
 \begin_layout Plain Layout
 
 \series bold
-tshark 
+tshark / Wireshark 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "tshark"
@@ -2457,6 +2457,8 @@ Funktionen
 Bietet ähnliche Funktionen wie tcpdump und noch mehr, da tshark in der Lage
  ist, die verwendeten Protokolle im Netzwerktraffic aufzuzeigen und zu analysier
 en.
+ Bei tshark handelt es sich um die Kommandozeilen-Variante, dessen Aufzeichnunge
+n in Wireshark betrachtet werden können.
 \end_layout
 
 \end_inset
@@ -6254,8 +6256,8 @@ pts/measurement/test_reliability/net/results/srv01_iperf3 &)
 
 \begin_layout Plain Layout
 
-		(bwm-ng -t 1000 -c 10 -o csv -F /home/scripts/measurement/test_reliability/net
-/results/srv01_iperf3/bwm.csv -I prp1 &)
+        (bwm-ng -t 1000 -c 10 -o csv -F /home/scripts/measurement/test_reliabili
+ty/net/results/srv01_iperf3/bwm.csv -I prp1 &)
 \end_layout
 
 \begin_layout Plain Layout
@@ -6282,8 +6284,8 @@ s/measurement/test_reliability/net/results/srv01_shck &)
 
 \begin_layout Plain Layout
 
-		(bwm-ng -t 1000 -c 10 -o csv -F /home/scripts/measurement/test_reliability/net
-/results/srv01_shck/bwm.csv -I prp1 &)
+        (bwm-ng -t 1000 -c 10 -o csv -F /home/scripts/measurement/test_reliabili
+ty/net/results/srv01_shck/bwm.csv -I prp1 &)
 \end_layout
 
 \begin_layout Plain Layout
@@ -6373,7 +6375,7 @@ esac
 
 \begin_layout Plain Layout
 Bash-Script zur Verifizierung der Messwerte der Netzwerkbelastungs-Messungen
- (net/00_ram_reliability_test.sh)
+ (net/00_net_reliability_test.sh)
 \end_layout
 
 \end_inset
