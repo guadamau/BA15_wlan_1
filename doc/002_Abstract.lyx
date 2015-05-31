@@ -119,7 +119,23 @@ begin{otherlanguage*}{british}
 
 \end_inset
 
-Lorem ipsum.
+Distributed systems whose communication channels are realized by ethernet
+ networks often require a high degree of failure safety.
+ One way to make this happen is the usage of the 
+\begin_inset Quotes fld
+\end_inset
+
+Parallel Redundancy Protocol
+\begin_inset Quotes frd
+\end_inset
+
+ (hereafter also referred to as PRP protocol).
+ The PRP protocol provides redundant data transmission over two entirely
+ physical independent ethernet networks.
+ The main focus of this project consists of the evaluation and application
+ of appropriate measurement methods as well as the evaluation of the resulting
+ findings, regarding data transmissions via PRP protocol.
+ 
 \begin_inset ERT
 status open
 
