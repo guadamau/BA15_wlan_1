@@ -18,14 +18,29 @@
 \usepackage[fit]{truncate}
 
 % Kopf- und Fusszeilendefinition
-\lhead{\includegraphics[scale=0.9]{_img/InES_small.png}}
-\rhead{\nouppercase{\rightmark}}
+%\lhead{\includegraphics[scale=0.9]{_img/InES_small.png}}
+%\rhead{\nouppercase{\rightmark}}
+%\renewcommand{\chaptermark}[1]{\markright{#1}{}}
+%\renewcommand{\sectionmark}[1]{\markright{#1}{}}
+%\renewcommand{\subsectionmark}[1]{\markright{#1}{}}
+%\chead{}
+%\lfoot{\myTitle}
+%\rfoot{\thepage/\pageref{LastPage}}
+%\cfoot{}
+%\renewcommand{\headrulewidth}{0.1mm}
+%\renewcommand{\footrulewidth}{0.1mm}
+%\fancypagestyle{plain}
+
+\fancyhead[LO]{\includegraphics[scale=0.9]{_img/InES_small.png}}
+\fancyhead[RE]{}
+\fancyhead[LE,RO]{\nouppercase{\rightmark}}
 \renewcommand{\chaptermark}[1]{\markright{#1}{}}
 \renewcommand{\sectionmark}[1]{\markright{#1}{}}
 \renewcommand{\subsectionmark}[1]{\markright{#1}{}}
 \chead{}
-\lfoot{\myTitle}
-\rfoot{\thepage/\pageref{LastPage}}
+\fancyfoot[LO]{\myTitle}
+\fancyfoot[RE]{}
+\fancyfoot[LE,RO]{\thepage/\pageref{LastPage}}
 \cfoot{}
 \renewcommand{\headrulewidth}{0.1mm}
 \renewcommand{\footrulewidth}{0.1mm}
@@ -49,7 +64,8 @@
 
 % pdfBookmarks
 %\usepackage[bookmarks]{hyperref}
-\usepackage[breaklinks=true,bookmarks]{hyperref}
+% elimitate red borders around pagelinks in pdf
+\usepackage[breaklinks=true,bookmarks,plainpages=false,pdfborder={0 0 0}]{hyperref}
 
 %some plot packages
 \usepackage{pstricks} 
@@ -244,8 +260,11 @@ width=.8\textwidth
 % Trennungen
 %\hypenation{<Kernel-space>}
 %\hypenation{<User-space>}
+
+%disable different vertical spacing when using twoside
+\raggedbottom
 \end_preamble
-\options bibliography=totocnumbered,listof=totocnumbered,numbers=noenddot,headings=optiontoheadandtoc
+\options bibliography=totocnumbered,listof=totocnumbered,numbers=noenddot,headings=optiontoheadandtoc,twoside
 \use_default_options true
 \maintain_unincluded_children false
 \language ngerman
@@ -296,9 +315,9 @@ width=.8\textwidth
 \shortcut idx
 \color #008000
 \end_index
-\leftmargin 35mm
+\leftmargin 40mm
 \topmargin 35mm
-\rightmargin 25mm
+\rightmargin 20mm
 \bottommargin 30mm
 \headheight 18mm
 \headsep 12mm
@@ -333,7 +352,23 @@ filename "_tex/titlepage.tex"
 \begin_layout Standard
 \begin_inset External
 	template PDFPages
+	filename _pdf/Blank_Page.pdf
+	display false
+
+\end_inset
+
+
+\begin_inset External
+	template PDFPages
 	filename _pdf/Erklaerung_BA.pdf
+	display false
+
+\end_inset
+
+
+\begin_inset External
+	template PDFPages
+	filename _pdf/Blank_Page.pdf
 	display false
 
 \end_inset
