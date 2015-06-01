@@ -1167,6 +1167,28 @@ Als Datenstruktur, um die Metadaten erstmals eingetroffener Frames zu halten,
  Bit ein 8 Bit breiter Hash-Wert gebildet.
  Dieser Hash-Wert repräsentiert sogleich die Index-Nummer für den Tabelleneintra
 g.
+ Gesamthaft wird beim Starten der PRP-1-stack-Applikation Speicher im RAM
+ alloziert, um 1024 
+\begin_inset Quotes fld
+\end_inset
+
+DiscardItems
+\begin_inset Quotes frd
+\end_inset
+
+ (Frame-Metadaten) zu halten.
+ Die 1024 Datensätze verteilen sich in der vorgängig erwähnten Tabelle und
+ werden dort in Form einer Linked List abgelegt.
+ Theoretischer Extremfall: Es ist nur ein Tabelleneintrag belegt, dessen
+ Linked-List 1024 
+\begin_inset Quotes fld
+\end_inset
+
+DiscardItems
+\begin_inset Quotes frd
+\end_inset
+
+ umfasst.
 \end_layout
 
 \begin_layout Standard
@@ -1209,6 +1231,125 @@ Datenhaltung der Frame-Metadaten des PRP-1 stacks
 Die Werte der Sequenznummern in der obigen Abbildung sind zufällig gewählt
  und dienen nur der Illustration, um die Funktionsweise der Hash-Wert-Bildung
  aufzuzeigen.
+\end_layout
+
+\begin_layout Standard
+Die Dauer, bis Werte in der Datenstruktur überschrieben werden, bei einem
+ maximalen Datendurchsatz ergeben sich wie folgt:
+\end_layout
+
+\begin_layout Standard
+Bei minimaler Frame-Grösse:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{equation*}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frac{1024}{138.
+\backslash
+overline{88} 
+\backslash
+text{ Frames/ms @ 100 MBit/s}} 
+\backslash
+approx 7.373 
+\backslash
+text{ ms}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{equation*}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Bei maximaler Frame-Grösse:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{equation*}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+frac{1024}{8.128 
+\backslash
+text{ Frames/ms @ 100 MBit/s}} 
+\backslash
+approx 125.984 
+\backslash
+text{ ms}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{equation*}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Herleitungen für die Frameraten (Frames/ms @ 100 MBit/s), sind in Kapitel
+ 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "sub:Theoretische-Grenzwerte"
+
+\end_inset
+
+ ersichtlich.
+\end_layout
+
+\begin_layout Standard
+Die Aging-Time liegt somit bei einem konstanten maximalem Datendurchsatz
+ (100 MBit/s) je nach Frame-Grösse im Intervall: 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$[7.373 
+\backslash
+text{ ms}, ...,125.984 
+\backslash
+text{ ms}]$
+\end_layout
+
+\end_inset
+
+, da nach dieser Zeit automatisch Einträge überschrieben werden.
 \end_layout
 
 \begin_layout Standard

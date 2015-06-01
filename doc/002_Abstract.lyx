@@ -119,9 +119,9 @@ begin{otherlanguage*}{british}
 
 \end_inset
 
-Distributed systems whose communication channels are realized by ethernet
+Distributed systems whose communication channels are realized by Ethernet
  networks often require a high degree of failure safety.
- One way to make this happen is the usage of the 
+ One way to achieve this is the usage of the 
 \begin_inset Quotes fld
 \end_inset
 
@@ -131,13 +131,13 @@ Parallel Redundancy Protocol
 
  (hereafter also referred to as PRP protocol).
  The PRP protocol provides redundant data transmission over two entirely
- physical independent ethernet networks.
+ physical independent Ethernet networks.
  The main focus of this project consists of the evaluation and application
  of appropriate measurement methods as well as the interpretation of the
- resulting findings, regarding data transmissions via PRP protocol.
+ resulting findings, regarding data transmissions applying the PRP protocol.
  In a first phase several testing scenarios were defined, which address
  the special properties of the PRP protocol.
- To process these sceanarios two applications were developed, 
+ To process these scenarios two applications were developed, 
 \begin_inset Quotes fld
 \end_inset
 
@@ -153,7 +153,17 @@ meas
 \begin_inset Quotes frd
 \end_inset
 
-, to capture and analyze measurement data.
+, to capture and analyse measurement data.
+ As a conclusion it is stated that the implementation of the PRP protocol
+ operates mainly stable and as expected.
+ Impairments to the data rate at a data transmission speed of Fast Ethernet
+ (100 MBit/s) cannot be determined.
+ Nevertheless a remarkable CPU load is detected in general while transmitting
+ data dependent of the data volume.
+ A migration of the of the PRP protocol implementation, which currently
+ performs in userspace, to a kernel module and also optimizations of the
+ implementation regarding the communication between physical network adapters
+ and the virtual PRP network adapter can reduce the additional CPU workload.
  
 \begin_inset ERT
 status open

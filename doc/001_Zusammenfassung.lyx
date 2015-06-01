@@ -151,7 +151,7 @@ ls grösstenteils stabil und wie erwartet verhält.
  Jedoch wird generell bei Datenübermittlungen je nach Datenvolumen eine
  zusätzliche, nicht unwesentliche CPU-Last erzeugt.
  Eine Migration der PRP-Protokoll-Implementierung, die derzeit als Userspace-App
-likation fungiert, in ein Kernel-Modul, wie auch eine Implementationsoptimierung
+likation fungiert, in ein Kernel-Modul, wie auch Implementationsoptimierungen
  betreffend der Kommunikation zwischen physischen Netzwerkadaptern mit dem
  virtuellen PRP-Netzwerkadapter können dieses zusätzliche CPU-Lastaufkommen
  reduzieren.

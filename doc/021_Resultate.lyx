@@ -3176,10 +3176,10 @@ name "03-Delay in Netzwerk A und Einfluss nicht entfernter Duplikate"
 \end_layout
 
 \begin_layout Standard
-Sobald ein Delay, der grösser oder gleich der Aging-Time von 400ms ist,
- pro Richtung in Netzwerk A eingefügt wird, wird das Duplikat vom PRP-1
- stack nicht mehr als solches erkannt und unter der Annahme, dass es sich
- um ein neues Frame handelt, an die höheren Layer weitergereicht.
+Sobald ein Delay, der grösser oder gleich der maximalen Aging-Time von 400ms
+ entspricht, pro Richtung in Netzwerk A eingefügt wird, wird das Duplikat
+ vom PRP-1 stack nicht mehr als solches erkannt und unter der Annahme, dass
+ es sich um ein neues Frame handelt, an die höheren Layer weitergereicht.
  Dies wird anhand des ping-Befehls, der auf dem Client mit dem Server als
  Ziel ausgeführt wird, klar.
  Dort werden weitergereichte Duplikate mit einem 
@@ -3230,6 +3230,82 @@ Einfluss von Delays in Netzwerk A auf ping
 \end_inset
 
 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{sloppypar} 
+\backslash
+tolerance=1000
+\end_layout
+
+\end_inset
+
+Wird der PRP-1 stack konstant mit einer maximalen Datenrate (100 MBit/s)
+ belastet, und wird die Duplikattabelle gefüllt, beispielsweise durch den
+ Ausfall eines Netzwerkpfades oder durch einen Delay auf einem Netzwerkpfad,
+ reduziert sich die maximale Aging-Time von 400 ms je nach Grösse der Frames
+ auf ein Intervall von 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+$[7.373 
+\backslash
+text{ ms}, ...,125.984 
+\backslash
+text{ ms}]$
+\end_layout
+
+\end_inset
+
+ (Herleitung siehe 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "par:Datenstruktur"
+
+\end_inset
+
+).
+ Bei den Netzwerklasten, die für dieses Szenario aufgewendet werden, ist
+ also von einer maximalen Aging-Time in besagtem Intervall auszugehen.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{sloppypar}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Die Erkenntnis der sich reduzierenden maximalen Aging-Time wurde erst nach
+ der Durchführung dieses Szenarios und erneuter Konsultation des PRP-1-stack-Que
+llcodes gewonnen.
+ Deshalb wurde dieses Szenario vorgängig mit der maximalen Aging-Time (400
+ ms) des PRP-Standards 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "IEC_62439-3_2015"
+
+\end_inset
+
+ konzipiert.
+ Auf die Resultate hat diese Erkenntnis jedoch keinen Einfluss, wie später
+ erläutert wird.
 \end_layout
 
 \begin_layout Standard
@@ -3345,9 +3421,37 @@ MAX
  über oder gleich der Aging-Time entspricht.
  Bei diesen hätte der PRP-1 stack die Duplikate auch weitergeleitet und
  mitgezählt, was erklärbar gewesen wäre.
- Da dieses Verhalten jedoch auch bei den Fällen mit Delay-Zeiten unter der
+ 
+\end_layout
+
+\begin_layout Standard
+Da dieses Verhalten jedoch auch bei den Fällen mit Delay-Zeiten unter der
  Aging-Time auftritt, besteht Grund zur Annahme, dass die betreffenden Messresul
 tate nicht aussagekräftig sind.
+ Als Aging-Time wird beim Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MAX
+\begin_inset Quotes frd
+\end_inset
+
+ ein Wert von 125.984 ms erwartet und beim Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+ ein Wert von 7.373 ms (Herleitung siehe 
+\begin_inset CommandInset ref
+LatexCommand vpageref
+reference "par:Datenstruktur"
+
+\end_inset
+
+).
 \end_layout
 
 \begin_layout Standard
@@ -3362,8 +3466,11 @@ MAX
  weitere Versuche mit unterschiedlichen Delays getätigt, um feststellen
  zu können, ab welchem Delay die in diesem Szenario auffindbaren Messresultate
  erzielt werden.
- Bei einem Delay von 20ms waren die Werte noch annehmbar, jedoch ab einem
- Delay von 30ms entsprachen sie den Werten dieses Szenarios.
+ Bei einem Delay von 20 ms waren die Werte noch annehmbar, jedoch ab einem
+ Delay von 30 ms entsprachen sie den Werten dieses Szenarios.
+ Die Aging-Time wäre bei dieser Konstellation bei 125.984 ms, was darauf
+ schliessen lässt, dass dieses Verhalten nicht in direkten Zusammenhang
+ mit der Aging-Time gebracht werden kann.
 \end_layout
 
 \begin_layout Standard
@@ -3418,7 +3525,7 @@ e getätigt wurden, wenn in einem Netzwerk ein Delay von 300 ms existiert.
  Überwiegend handelt es sich um Funktionen innerhalb des Betriebssystem-Kerns.
  Die Funktionsaufrufe von PRP-1-stack-internen Funktionen selbst unterscheiden
  sich beim Empfangen nur gering von den Funktionsaufrufen her, unabhängig
- davon ob Daten mit oder ohne Delay empfangen werden.
+ davon, ob Daten mit oder ohne Delay empfangen werden.
 \end_layout
 
 \begin_layout Standard
