@@ -1648,7 +1648,8 @@ $febcffff_{h} - febb0000_{h} + 00000001_{h} = 20000_{h} = 131072_{d} = 128
 \end_layout
 
 \begin_layout Standard
-Ein Broadcom Interface verfügt über einen Speicher von 128 kByte.
+Die verwendeten Broadcom Interfaces verfügen über einen Speicher von 128
+ kByte.
 \end_layout
 
 \begin_layout Standard

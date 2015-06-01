@@ -45714,6 +45714,523 @@ name "sec:meas---Messung"
 \end_layout
 
 \begin_layout Standard
+Bei meas handelt es sich um eine C-Applikation, die Daten bzüglich Netzwerkinter
+faces und CPU-Last spezifischer Prozesse aufzeichnet, diese statistisch
+ evaluiert und anschliessend als Messreport ausgibt.
+ Der Quellcode wurde im Rahmen dieser Arbeit mit einem GNU-C-Compiler (GCC)
+ der Version 4.7.2 kompiliert.
+ Für das Linken muss die BSD-Library (-lbsd) verfügbar sein, da von der
+ Funktion 
+\begin_inset Quotes fld
+\end_inset
+
+strtonum
+\begin_inset Quotes frd
+\end_inset
+
+ Gebrauch gemacht wird, um Zeichenketten in arithmetische Datentypen umzuwandeln.
+ Der gesamte Quellcode befindet sich auf dem dieser Arbeit beigelegten Speicherm
+edium (siehe Kapitel 
+\begin_inset CommandInset ref
+LatexCommand vref
+reference "chap:Speichermedium"
+
+\end_inset
+
+).
+ Innerhalb dieses Kapitels wird nur auf die wichtigsten Funktionen eingegangen,
+ um ein besseres Verständnis des Ablaufs dieser Applikation erlangen zu
+ können.
+ Die Dokumentation der meas-Applikation kann ab Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:meas"
+
+\end_inset
+
+ eingesehen werden.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Makefile
+\end_layout
+
+\begin_layout Standard
+Mit dem der Applikation beiliegenden Makefile können alle zur Applikation
+ gehörenden Module kompiliert und zu einer ausführbaren Datei (Binary) gelinkt
+ werden.
+ 
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[caption={meas - Makefile},  captionpos=b, language={[gnu]Make}]{
+_src_lst/meas_makefile.make}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{lst:meas_makefile}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Das Makefile kann für das Kompilieren eines Debug- oder Release-Builds verwendet
+ werden.
+ Der Debug-Build verwendet keinerlei Optimierungen während des Kompiliervorgangs.
+ Somit kann der Programmablauf mittels GNU-Debugger (gdb) genau verfolgt
+ und 
+\begin_inset Quotes fld
+\end_inset
+
+Bug-Fixing
+\begin_inset Quotes frd
+\end_inset
+
+ betrieben werden.
+ 
+\end_layout
+
+\begin_layout Subsection
+Definition der Daten, die aus /proc gelesen werden
+\end_layout
+
+\begin_layout Standard
+Die nachfolgenden Code-Ausschnitte zeigen auf, wie die Informationen definiert
+ werden, die meas benötigt, um spezifische Datenwerte aus dem /proc-Dateisystem
+ zu lesen.
+ Detailliert wird darauf in der meas-Dokumentation ab Seite 
+\begin_inset CommandInset ref
+LatexCommand pageref
+reference "sub:meas"
+
+\end_inset
+
+ eingegangen.
+\end_layout
+
+\begin_layout Standard
+Initialisierung eines Konfigurations-Datenfeldes:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{language=C,tabsize=2}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[caption={Beispiel eines Konfigurationsfeldes, /proc-Dateipfade
+},captionpos=b]
+\end_layout
+
+\begin_layout Plain Layout
+
+...
+\end_layout
+
+\begin_layout Plain Layout
+
+strncpy( init_paths[ INDEX_UTIME        ], "/proc/$PID$/stat", PATH_LEN
+ );   
+\end_layout
+
+\begin_layout Plain Layout
+
+strncpy( init_paths[ INDEX_STIME        ], "/proc/$PID$/stat", PATH_LEN
+ );   
+\end_layout
+
+\begin_layout Plain Layout
+
+strncpy( init_paths[ INDEX_IF_NAME_PRP  ], "/proc/net/dev"   , PATH_LEN
+ );
+\end_layout
+
+\begin_layout Plain Layout
+
+...
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Mit $-Zeichen umgebene Zeichen im Dateipfad werden in diesem Fall durch
+ die Prozess-ID ersetzt, die dem Programm als Argument übergeben wird.
+\end_layout
+
+\begin_layout Standard
+Initialisierung eines Konfigurations-Datenfeldes:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstset{language=C,tabsize=2}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{lstlisting}[caption={Beispiel eines Konfigurationsfeldes, Datei-Koordinate
+n},captionpos=b]
+\end_layout
+
+\begin_layout Plain Layout
+
+...
+\end_layout
+
+\begin_layout Plain Layout
+
+strncpy( init_val_pos[ INDEX_UTIME        ], "1:14", PATH_LEN );   
+\end_layout
+
+\begin_layout Plain Layout
+
+strncpy( init_val_pos[ INDEX_STIME        ], "1:15", PATH_LEN );   
+\end_layout
+
+\begin_layout Plain Layout
+
+strncpy( init_val_pos[ INDEX_IF_NAME_PRP  ], "7:1" , PATH_LEN );
+\end_layout
+
+\begin_layout Plain Layout
+
+strncpy( init_val_pos[ INDEX_RX_BYTES_PRP ], "7:2" , PATH_LEN );
+\end_layout
+
+\begin_layout Plain Layout
+
+strncpy( init_val_pos[ INDEX_TX_BYTES_PRP ], "7:10", PATH_LEN );
+\end_layout
+
+\begin_layout Plain Layout
+
+...
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{lstlisting}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Eine Datei, aus der gelesen werden soll, wird als Matrix bestehend aus einzelnen
+ Zeichen betrachtet.
+ Das obige Listing zeigt die Definition der Koordinaten, welche in besagter
+ Matrix gelesen werden sollen.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+main()-Funktion
+\end_layout
+
+\begin_layout Standard
+Die main()-Funktion nimmt alle vom Benutzer definierten Übergabeparameter
+ entgegen, interpretiert diese und startet aufgrund dieser eine Messung.
+ Das folgende Code-Snippet zeigt den Ablauf einer Messung:
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[caption={meas - main()-Funktion},  captionpos=b,language=C]{_src
+_lst/meas_main_routine.c}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{lst:meas_main_routine}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+read_to_meas_buffers()-Funktion
+\end_layout
+
+\begin_layout Standard
+Während eines Messvorgangs werden die Messdaten periodisch in einen Puffer
+ gelesen.
+ Die Rohdaten werden später bei der Auswertung interpretiert und evaluiert.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[caption={meas - read
+\backslash
+_to
+\backslash
+_meas
+\backslash
+_buffers()-Funktion},  captionpos=b,language=C]{_src_lst/meas_read_to_meas_buffe
+rs.c}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{lst:meas_read_to_meas_buffers}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+get_stat_vals()-Funktion
+\end_layout
+
+\begin_layout Standard
+Nach dem Messvorgang werden alle Daten aus dem Puffer interpretiert und
+ pro Messintervall in einer Datenstruktur abgelegt.
+ Die nachfolgend gezeigte Schleife zeigt das Zuweisen der interpretierten
+ Werte.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[caption={meas - get
+\backslash
+_stat
+\backslash
+_vals()-Funktion},  captionpos=b,language=C]{_src_lst/meas_get_stat_vals.c}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{lst:meas_get_stat_vals}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Nach Beendigung dieser Schleife sind alle /proc-Werte eines einzigen Messinterva
+lls in der Datenstruktur 
+\begin_inset Quotes fld
+\end_inset
+
+data_snapshot
+\begin_inset Quotes frd
+\end_inset
+
+ abgelegt.
+\end_layout
+
+\begin_layout Subsection
+evaluate_interval_data()-Funktion
+\end_layout
+
+\begin_layout Standard
+Die folgende Funktion wertet die Daten eines einzelnen Messintervalls aus.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[caption={meas - evaluate
+\backslash
+_interval
+\backslash
+_data()-Funktion},  captionpos=b,language=C]{_src_lst/meas_evaluate_interval_dat
+a.c}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{lst:meas_evaluate_interval_data}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+evaluate_overall_data()-Funktion
+\end_layout
+
+\begin_layout Standard
+Für das Berechnen der Gesamtstatistik ist die Funktion 
+\begin_inset Quotes fld
+\end_inset
+
+evaluate_overall_data()
+\begin_inset Quotes frd
+\end_inset
+
+ zuständig.
+ Die Funktion berechnet sämtliche durchschnittlichen Werte sowie Minima
+ und Maxima über die gesamte Mess-Serie.
+ Aufgrund des Umfangs der Funktion wurde diese hier nicht publiziert.
+ Die Funktion kann jedoch dem dieser Arbeit beiliegenden Datenträger entnommen
+ und eingesehen werden (Datei: evaluate.c).
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+print_one_interval_prp()
+\end_layout
+
+\begin_layout Standard
+Die Funktion 
+\begin_inset Quotes fld
+\end_inset
+
+print_one_interval
+\begin_inset Quotes frd
+\end_inset
+
+ kann dazu verwendet werden, Statistiken einzelner Intervalle an ein Ausgabegerä
+t zu leiten, beispielsweise eine Ausgabekonsole oder eine Datei.
+\end_layout
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+lstinputlisting[caption={meas - print
+\backslash
+_one
+\backslash
+_interval
+\backslash
+_prp()-Funktion},  captionpos=b,language=C]{_src_lst/meas_print_one_interval_prp.
+c}
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+label{lst:meas_evaluate_interval_data}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+Diese Funktion steht stellvertretend für sämtliche Ausgabefunktionen von
+ meas, da diese alle nach dem selben Prinzip implementiert wurden.
+ Alle weiteren Ausgabefunktionen können dem dieser Arbeit beiliegenden Datenträg
+er entnommen und eingesehen werden (Datei: print.c).
+\end_layout
+
+\begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset
 
