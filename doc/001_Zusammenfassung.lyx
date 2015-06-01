@@ -107,7 +107,7 @@ addcontentsline{toc}{chapter}{Zusammenfassung}
 \end_layout
 
 \begin_layout Standard
-Verteilte Systeme, dessen Kommunikationskanäle mittels Ethernet-Netzwerken
+Verteilte Systeme, deren Kommunikationskanäle mittels Ethernet-Netzwerken
  realisiert werden, haben oft die Anforderung, ein hohes Mass an Ausfallsicherhe
 it gewährleisten zu müssen.
  Eine Möglichkeit dies zu verwirklichen, bietet das 
