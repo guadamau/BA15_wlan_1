@@ -108,9 +108,8 @@ addcontentsline{toc}{chapter}{Zusammenfassung}
 
 \begin_layout Standard
 Verteilte Systeme, deren Kommunikationskanäle mittels Ethernet-Netzwerken
- realisiert werden, haben oft die Anforderung, ein hohes Mass an Ausfallsicherhe
-it gewährleisten zu müssen.
- Eine Möglichkeit dies zu verwirklichen, bietet das 
+ realisiert werden, müssen oft ein hohes Mass an Ausfallsicherheit gewährleisten.
+ Eine Möglichkeit dazu bietet das 
 \begin_inset Quotes fld
 \end_inset
 
@@ -121,10 +120,14 @@ Parallel Redundancy Protocol
  (folgend bezeichnet als PRP-Protokoll).
  Das PRP-Protokoll ermöglicht eine redundante Datenübertragung über zwei
  physisch vollständig unabhängige Ethernet-Netzwerke.
- Im Zentrum dieser Arbeit liegt das Evaluieren und Anwenden von geeigneten
- Messmethoden sowie das Auswerten der entstehenden Befunde, bezüglich Datenüberm
-ittlungen unter Zuhilfenahme des PRP-Protokolls.
- Initial wurden verschiedene Test-Szenarien definiert, die auf die speziellen
+ 
+\end_layout
+
+\begin_layout Standard
+Im Zentrum dieser Arbeit liegt das Evaluieren und Anwenden von geeigneten
+ Messmethoden sowie das Auswerten der entstehenden Befunde bezüglich Datenübermi
+ttlungen unter Zuhilfenahme des PRP-Protokolls.
+ Zunächst wurden verschiedene Test-Szenarien definiert, die auf die speziellen
  Funktionalitäten des PRP-Protokolls eingehen.
  Für die Durchführung dieser Szenarien wurden zwei Applikationen entwickelt,
  
@@ -135,7 +138,7 @@ shck
 \begin_inset Quotes frd
 \end_inset
 
-, zur Generierung von Netzwerklasten und 
+ zur Generierung von Netzwerklasten und 
 \begin_inset Quotes fld
 \end_inset
 
@@ -144,14 +147,18 @@ meas
 \end_inset
 
 , um Messresultate festzuhalten und diese statistisch aufzubereiten.
- Als Konklusion wird konstatiert, dass sich die Implementierung des PRP-Protokol
-ls grösstenteils stabil und wie erwartet verhält.
+ 
+\end_layout
+
+\begin_layout Standard
+Die Arbeit führt zur Konklusion, dass sich die Implementierung des PRP-Protokoll
+s grösstenteils stabil und wie erwartet verhält.
  Eine Beeinträchtigung des Datendurchsatzes ist bei Übertragungen mittels
  Fast Ethernet (100 MBit/s) nicht festzustellen.
  Jedoch wird generell bei Datenübermittlungen je nach Datenvolumen eine
  zusätzliche, nicht unwesentliche CPU-Last erzeugt.
  Eine Migration der PRP-Protokoll-Implementierung, die derzeit als Userspace-App
-likation fungiert, in ein Kernel-Modul, wie auch Implementationsoptimierungen
+likation fungiert, in ein Kernel-Modul wie auch Implementationsoptimierungen
  betreffend der Kommunikation zwischen physischen Netzwerkadaptern mit dem
  virtuellen PRP-Netzwerkadapter können dieses zusätzliche CPU-Lastaufkommen
  reduzieren.

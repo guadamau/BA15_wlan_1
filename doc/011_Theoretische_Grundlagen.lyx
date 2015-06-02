@@ -121,7 +121,7 @@ LAN_B
 \begin_inset Quotes frd
 \end_inset
 
-) angeschlossen wird, die unabhängig von einander sind.
+) angeschlossen wird, die unabhängig voneinander sind.
  Diese beiden LANs, die sich bezüglich Performance und Topologie unterscheiden
  können, ergeben zusammen ein PRP-Netzwerk.
  Ein solcher Knoten im PRP-Netzwerk wird 
@@ -168,8 +168,8 @@ key "IEC_62439-3_2015"
 Wenn ein DANP etwas an einen anderen Netzwerkteilnehmer sendet, dupliziert
  er das Frame und übermittelt es über beide LANs.
  Beim Empfänger wird das Frame, das als Erstes ankommt, an die oberen Schichten
- weitergereicht und das Duplikat je nach nach Methode akzeptiert oder verworfen.
- Wie Duplikate erkennt und entfernt werden ist der Implementation überlassen.
+ weitergereicht und das Duplikat je nach Methode akzeptiert oder verworfen.
+ Wie Duplikate erkennt und entfernt werden, ist der Implementation überlassen.
  Auf die Duplikat-Handhabung wird genauer im Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -178,13 +178,13 @@ reference "sub:Frame-Duplikaten"
 \end_inset
 
  eingegangen.
- Für die Duplikaterzeugung und -erkennung ist die Link Redundancy Entitiy
+ Für die Duplikaterzeugung und -erkennung ist die Link Redundancy Entity
  (LRE) zuständig, welche sich zwischen den beiden Netzwerkinterfaces und
  den oberen Netzwerkschichten in einem DAN befindet.
  Um diese Frame-Redundanz handhaben zu können, wird vom LRE beim Versand
  dem Frame am Ende ein Redundancy Control Trailer (RCT) angehängt, der beim
- Empfänger von dessen LRE wieder entfernt wird und anhand von dem RCT Duplikate
- erkannt werden können.
+ Empfänger von dessen LRE wieder entfernt wird und anhand dessen Inhalt
+ Duplikate erkannt werden können.
  
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -269,7 +269,7 @@ LAN-Identifikator (4 Bit)
 \begin_inset Newline newline
 \end_inset
 
-Dieser Parameter lautet entwerder 0xA für LAN_A oder 0xB für LAN_B
+Dieser Parameter lautet entweder 0xA für LAN_A oder 0xB für LAN_B
 \end_layout
 
 \begin_layout Itemize
@@ -287,7 +287,8 @@ PRP-Suffix (16 Bit)
 \end_inset
 
 Damit ein Frame als PRP-1-Frame erkannt wird, wird der Suffix auf 0x88FB
- gesetzt 
+ gesetzt.
+ 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "PRP-Industrial_IP"
@@ -359,13 +360,13 @@ Single Attached Node
 \end_inset
 
 , kurz SAN, genannt.
- Diese können zwar mit allnen DANs kommunizieren, jedoch können nur andere
+ Diese können zwar mit allen DANs kommunizieren, jedoch können nur andere
  SANs erreicht werden, die am selben LAN angeschlossen sind.
  SANs, die mit dem anderen LAN verbunden sind, können nicht erreicht werden.
  Ein SAN weiss nichts von PRP.
  Daher erzeugen SANs beim Frameversand keine Duplikate und hängen somit
  auch kein RCT an die Frames.
- Erhält ein SAN ein Frame mit einem RCT wird dies als zusätzliches Padding
+ Erhält ein SAN ein Frame mit einem RCT, wird dies als zusätzliches Padding
  ohne Bedeutung wahrgenommen.
  
 \begin_inset CommandInset citation
@@ -378,8 +379,8 @@ key "PRP-Hirschmann"
 \end_layout
 
 \begin_layout Standard
-Eine zusätzliche Möglichkeit, um Geräte mit nur einem Netzwerkinterface
- an einem PRP-Netzwerk anzuschliessen, wäre über eine Redundancy Box (RedBox).
+Eine zusätzliche Möglichkeit, Geräte mit nur einem Netzwerkinterface an
+ einem PRP-Netzwerk anzuschliessen, wäre über eine Redundancy Box (RedBox).
  Eine RedBox ist, wie ein DANP, über beide LANs im PRP-Netzwerk eingebunden
  und bietet weitere Anschlüsse für Geräte mit nur einem Interface.
  Ein solches Gerät, das über eine RedBox am PRP-Netzwerk teilnimmt, erscheint
@@ -946,9 +947,9 @@ reference "sub:Netzwerkgeschwindigkeiten"
 \end_layout
 
 \begin_layout Standard
-Maximale Anzahl Frames mit minimaler Grösse (64 Bytes), die pro Sekunde,
+Die maximale Anzahl Frames mit minimaler Grösse (64 Bytes), die pro Sekunde,
  respektive Millisekunde mit einem 100-MBit/s-Interface versendet werden
- können:
+ können; liegt bei:
 \end_layout
 
 \begin_layout Standard

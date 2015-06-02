@@ -91,9 +91,9 @@ Stand der Technik
 
 \begin_layout Standard
 Der Standard zu PRP Version 1 (oder PRP-1) wurde unter dem Namen IEC 62439-3
- am 05.07.2012 veröffentlicht, welcher eine technische Revision des ursprünglichen
- Standards (PRP Version 0 oder PRP-0) vom 25.02.2010 darstellt und diesen
- für ungültig erklärt.
+ am 05.07.2012 veröffentlicht.
+ Er stellt eine technische Revision des ursprünglichen Standards (PRP Version
+ 0 oder PRP-0) vom 25.02.2010 dar und erklärt diesen für ungültig.
  PRP-1 wurde unter anderem entwickelt, damit es mit einem weiteren Protokoll
  für redundante Netzwerkkommunikation, HSR (High-availability Seamless Redundanc
 y) kompatibel ist, jedoch ging dabei die Kompatibilität zu PRP-0 verloren.
@@ -203,16 +203,16 @@ Untersuchung, Bewertung und ggf.
 \end_layout
 
 \begin_layout Itemize
-Einfluss von Offload-Mechanismen aufzeigen
+Aufzeigen der Einflüsse von Offload-Mechanismen
 \end_layout
 
 \begin_layout Itemize
-Auswirkung von PRP auf das Endsystem, insbesondere auf die Belastung von
- CPU und Memory studieren
+Studieren der Auswirkung von PRP auf das Endsystem, insbesondere auf die
+ Belastung von CPU und Memory
 \end_layout
 
 \begin_layout Itemize
-Grundsätze und Rahmenbedingungen formulieren
+Formulieren von Grundsätzen und Rahmenbedingungen 
 \end_layout
 
 \begin_layout Subsection
@@ -223,7 +223,7 @@ Erwartetes Resultat
 Das Resultat der Arbeit soll die Funktionsweise von PRP in Form einer Software-I
 mplementation aufzeigen.
  Durch die Performance-Ermittlung dieser Implementation und der Interpretation
- dessen Resultate wird die Leistungsfähigkeit der Software bei unterschiedlichen
+ ihrer Resultate wird die Leistungsfähigkeit der Software bei unterschiedlichen
  Bedingungen aufgezeigt.
  Daraus wird die Auswirklung von PRP auf das Endsystem abgeleitet.
 \end_layout

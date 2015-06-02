@@ -102,11 +102,11 @@ nen zeigen wichtige Erkenntnisse bezüglich der verwendeten Software und
 Es ist aus sämtlichen Messresultaten ersichtlich, dass die Verwendung von
  TCP gegenüber UDP einen höheren Bedarf an Prozessorleistung beim Sender
  und Empfänger verursacht.
- Dies wird durch die Natur von TCP, sämtliche empfangenen Daten zu quittieren
+ Dies wird durch die Natur von TCP, sämtliche empfangenen Daten zu quittieren,
  begründet.
  Der Vergleich von Netzwerklasten bestehend aus reinen Ethernet-Frames und
- UDP-Paketen führen zum Entschluss, dass Layer-2- und UDP-Verkehr so gut
- wie den selben Effekt auf den PRP-1 stack erzielen.
+ UDP-Paketen führt zum Entschluss, dass Layer-2- und UDP-Verkehr so gut
+ wie denselben Effekt auf den PRP-1 stack erzielen.
 \end_layout
 
 \begin_layout Standard
@@ -122,7 +122,7 @@ MIN
 , welche bereits durch den Prozessor limitiert werden.
  Hingegen erreichen sämtliche Netzwerklasten, die aus maximal grossen Frames
  / Paketen bestehen, die theoretische Maximalgeschwindigkeit bei der Übermittlun
-g in einer PRP-Umgebung sowie auch in einer Nicht-PRP-Umgebung.
+g sowohl in einer PRP-Umgebung als auch in einer Nicht-PRP-Umgebung.
  Dies deutet darauf hin, dass diese Ströme des Lasttyps 
 \begin_inset Quotes fld
 \end_inset
@@ -165,7 +165,7 @@ key "pcap-manpage"
 \end_layout
 
 \begin_layout Standard
-Aus diesen Gründen erscheint es um eine Ressourceneinsparung bezüglich CPU-Last
+Aus diesen Gründen erscheint es bezüglich einer Prozessorressourceneinsparung
  schlüssig, den PRP-1 stack in eine Kernelspace-Applikation zu portieren.
 \end_layout
 
@@ -195,13 +195,13 @@ MIN
 \begin_layout Standard
 Messungen während einer in Netzwerk A generierten Störung zeigen auf, dass
  Paketverluste und Übertragungsfehler auf einem von beiden Verbindungen
- in Etwa die selbe Auswirkung auf den PRP-1 stack haben.
+ in etwa dieselbe Auswirkung auf den PRP-1 stack haben.
  Der Ausfall eines Pfades hat keinen Einfluss auf die Prozessorleistungsbeanspru
 chung beim Client, wobei beim Server die beanspruchte CPU-Last mit der Anzahl
  an erhaltenen Duplikaten sinkt.
  Beim Stand der Drucklegung dieser Arbeit verhält sich der PRP-1 stack so,
  dass dieser den Status eines angebundenen physischen Interfaces nicht erkennt
- und so handelt als wenn beide Interfaces permanent aktiv sind.
+ und so handelt, als wenn beide Interfaces permanent aktiv sind.
  Selbst wenn die Softwareimplementation mit inaktiven NICs gestartet wird,
  nimmt dieser an, dass beide Interfaces aktiv sind.
 \end_layout
@@ -221,7 +221,7 @@ d beim Empfang der Frames, der sich in der entsprechenden CPU-Last des PRP-1
 \begin_layout Standard
 Schlussendlich decken die ermittelten und interpretierten Resultate der
  Performance-Messungen das Optimierungspotential des PRP-1 stacks im Hinblick
- auf dessen Prozessor-Ressourcennutzung auf.
+ auf dessen Prozessorressourcennutzung auf.
  Mit den in dieser Arbeit gewonnen Erkenntnissen lässt sich dieses Potential
  lokalisieren und weiter untersuchen.
 \end_layout
@@ -545,8 +545,8 @@ Ist
 
 \begin_layout Plain Layout
 Die einfache PRP-Umgebung wurde aufgebaut und dokumentiert.
- Darauf erfolgte das Studieren des PRP-Protokolls und des PRP-1 stacks von
- ZHAW Institute of Embedded Systems.
+ Daraufhin erfolgte das Studieren des PRP-Protokolls und des PRP-1 stacks
+ von ZHAW Institute of Embedded Systems.
 \begin_inset Newline newline
 \end_inset
 
@@ -643,7 +643,7 @@ Soll
 \begin_layout Plain Layout
 Es sollen Konfigurationen definiert werden, in welchen die Leistungsfähigkeit
  der Implementierung bzw.
- der zusätzlichen Bedarf von Ressourcen ermitteln werden können.
+ der zusätzliche Bedarf von Ressourcen ermittelt werden können.
  Dabei sollen unter anderem Aspekte beachtet werden wie:
 \end_layout
 
@@ -702,9 +702,9 @@ Ist
 \begin_layout Plain Layout
 Die Konfigurationen wurden in Form von Szenarien definiert, wobei jeder
  Aspekt im entsprechenden Szenario untergebracht wird.
- Daraus, dass jedes Szenario die selben Messungen unter unterschiedlichen
- Umständen durchführt, können die Szenarien übersichtlich verglichen und
- interpretiert werden.
+ Da jedes Szenario dieselben Messungen unter unterschiedlichen Umständen
+ durchführt, können die Szenarien übersichtlich verglichen und interpretiert
+ werden.
  Des Weiteren wurde ein Szenario für den Normalfall geschaffen, der als
  Referenzpunkt für die Interpretation der anderen Szenarien dient.
 \end_layout
