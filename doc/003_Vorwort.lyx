@@ -168,6 +168,20 @@ myTitle
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{sloppypar} 
+\backslash
+tolerance=1000
+\end_layout
+
+\end_inset
+
 Im Verlaufe dieser Arbeit ist es uns gelungen, wichtige Erkenntnisse aufzunehmen
 , diese zu interpretieren und zu verarbeiten.
  Besonders wertvoll und lehrreich war das Studium des Quellcodes des PRP-1
@@ -191,6 +205,19 @@ shck
 , ein Netzwerk-Lastengenerator.
  Ein ebenso aufschlussreicher Aspekt war für uns das Analysieren und Interpretie
 ren sämtlicher Messresultate.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{sloppypar}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

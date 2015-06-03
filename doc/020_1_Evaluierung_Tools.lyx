@@ -4101,8 +4101,7 @@ sleep 10
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Bash-Skript zur Verifizierung der Messwerte der CPU-Messungen (cpu/00_cpu_reliab
-ility_test.sh)
+Verifizierung der CPU-Messungen (cpu/00_cpu_reliability_test.sh)
 \end_layout
 
 \end_inset

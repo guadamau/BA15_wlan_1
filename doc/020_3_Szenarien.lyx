@@ -4019,10 +4019,10 @@ reference "sub:Einschwingzeit-/-Steady"
  zu sehen ist).
  Da die Ultrakurz-Zeitspanne mit 60 s z.
  B.
- für die Analyse von Laufzeitunterscheidungen zwischen Netzwerk A und B
- knapp ausfallen könnte, 5 min (Kurzzeit-Zeitspanne) dafür aber aussagekräftiger
-e Resultate liefern würde, besteht Grund dazu, lediglich diese beiden Zeitspanne
-n zu berücksichtigen.
+ für die Analyse von Laufzeitunterschieden zwischen Netzwerk A und B knapp
+ ausfallen könnte, 5 min (Kurzzeit-Zeitspanne) dafür aber aussagekräftigere
+ Resultate liefern würde, besteht Grund dazu, lediglich diese beiden Zeitspannen
+ zu berücksichtigen.
 \end_layout
 
 \begin_layout Standard
@@ -5842,7 +5842,7 @@ PRP-Netzwerkaufbau mit Calnex Paragon an Interface eth0 des Hosts srv01
 \end_layout
 
 \begin_layout Subsubsection
-Delay in Netzwerk A und Einfluss nicht entfernter Duplikate
+Delay in Netzwerk A / Einfluss nicht entfernter Duplikate
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Delay-in-Netzwerk/Einfluss nicht entf Dupl"
@@ -6122,8 +6122,7 @@ E
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Fälle von Laufzeitunterscheidungen in Form von Delay, erzeugt in Netzwerk
- A
+Fälle von Laufzeitunterschieden in Form von Delay, erzeugt in Netzwerk A
 \end_layout
 
 \end_inset
@@ -6477,7 +6476,7 @@ X
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Fälle von Laufzeitunterscheidungen in Form von Störquellen, erzeugt in Netzwerk
+Fälle von Laufzeitunterschieden in Form von Störquellen, erzeugt in Netzwerk
  A
 \end_layout
 

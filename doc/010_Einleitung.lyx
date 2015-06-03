@@ -220,12 +220,39 @@ Erwartetes Resultat
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{sloppypar} 
+\backslash
+tolerance=1000
+\end_layout
+
+\end_inset
+
 Das Resultat der Arbeit soll die Funktionsweise von PRP in Form einer Software-I
 mplementation aufzeigen.
  Durch die Performance-Ermittlung dieser Implementation und der Interpretation
  ihrer Resultate wird die Leistungsfähigkeit der Software bei unterschiedlichen
  Bedingungen aufgezeigt.
  Daraus wird die Auswirklung von PRP auf das Endsystem abgeleitet.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{sloppypar}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Subsection

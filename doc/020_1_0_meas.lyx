@@ -1041,6 +1041,20 @@ print
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{sloppypar} 
+\backslash
+tolerance=1000
+\end_layout
+
+\end_inset
+
 Die Implementationen im print-Modul dienen dazu, Datenstrukturen mit Intervall-R
 esultaten oder Gesamtstatistiken auf beliebige Ausgabegeräte auszugeben.
  Der Umstand, dass in einem unixoiden System alles als eine Datei angesehen
@@ -1050,6 +1064,21 @@ esultaten oder Gesamtstatistiken auf beliebige Ausgabegeräte auszugeben.
  übergeben werden.
  Ausgabedateien haben beispielsweise die Form einer Ausgabekonsole, einer
  einfachen Text-Datei oder einer Druckerwarteschlange.
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{sloppypar} 
+\backslash
+tolerance=1000
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Paragraph
