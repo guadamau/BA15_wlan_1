@@ -99,11 +99,11 @@ Server
 \begin_layout Standard
 Die Testumgebung besteht aus 3 Servern mit je 3 Netzwerkanschlüssen.
  Davon werden je 2 für die PRP-Umgebung verwendet, wobei der dritte Anschluss
- lediglich für administrative Zwecke verwendet wird.
+ für administrative Zwecke verwendet wird.
  So ist es möglich, von Aussen auf die Server zugreifen zu können, ohne
  das der Datenverkehr, der über die PRP-Schnittstellen transportiert wird,
  durch administrative Netzwerkprotokolle beeinflusst wird.
- Dies soll einer Verfälschung der Messergebnisse vorbeugen.
+ Dies beugt einer Verfälschung der Messergebnisse vor.
  Sämtliche Offload-Mechanismen (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -111,7 +111,7 @@ reference "sec:Offload-Mechanismen"
 
 \end_inset
 
-) sind deaktiviert, wobei dessen Einflüsse später untersucht werden (siehe
+) sind deaktiviert, wobei deren Einflüsse später untersucht werden (siehe
  Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -204,6 +204,10 @@ CPU
 
 \begin_layout Plain Layout
 Intel(R) Xeon(TM) CPU 2.40GHz
+\begin_inset Newline newline
+\end_inset
+
+2 Kern Prozessor
 \end_layout
 
 \end_inset
@@ -431,7 +435,7 @@ Betriebssystem
 \begin_inset Text
 
 \begin_layout Plain Layout
-Debian 7.8.0 32bit (i686 / x86 CPU) 
+Debian 7.8.0 32 Bit (i686 / x86 CPU) 
 \begin_inset Newline newline
 \end_inset
 
@@ -481,14 +485,14 @@ Switches
 \end_layout
 
 \begin_layout Standard
-Um die Server miteinander zu verbinden, werden 3 8-Port-HP-Switches verwendet,
- die über eine Kapazität von 1 GBit/s verfügen.
+Um die Server miteinander zu verbinden, werden 3 8-Port-Switches der Marke
+ HP verwendet, die über eine Kapazität von 1 GBit/s verfügen.
  2 der Switches bilden die physischen Netzwerke A und B.
  Diese werden dafür verwendet, um das virtuelle PRP-Netzwerk zu bilden.
  Der 3.
- Switch dient dazu, ein autonomes Netzwerk zu bilden, das für administrative
- Zwecke verwendet werden kann, und es ermöglicht, via Gateway eine Verbindung
- zu einem anderen LAN herzustellen.
+ Switch dient dazu, ein autonomes Netzwerk zur Verfügung zu stellen, welches
+ für administrative Zwecke verwendet werden kann und es ermöglicht, via
+ Gateway eine Verbindung zu einem anderen LAN herzustellen.
 \end_layout
 
 \begin_layout Standard
@@ -503,9 +507,10 @@ Netzwerke
 \end_layout
 
 \begin_layout Standard
-Um ein PRP-Netzwerk mit den 3 Servern aufzubauen, sind 2 physische Netzwerke
- nötig, die dann ein virtuelles PRP-Netzwerk bilden.
- Im Folgenden wird grafisch aufgezeigt, wie die Testumgebung aufgebaut ist.
+Um ein PRP-Netzwerk mit den 3 Servern aufzubauen, sind 2 physisch unabhängige
+ Netzwerke nötig, die gemeinsam ein virtuelles PRP-Netzwerk bilden.
+ Im Folgenden wird graphisch aufgezeigt, wie die Testumgebung aufgebaut
+ ist.
 \end_layout
 
 \begin_layout Subsubsection
@@ -554,7 +559,7 @@ IPv4-Konfiguration:
 \end_layout
 
 \begin_layout Standard
-Für das Administrationsnetzwerk (192.168.99.0) wird der Gateway mit der IP-Adresse
+Im Administrationsnetzwerk (192.168.99.0) wird ein Gateway mit der IP-Adresse
  192.168.99.100 verwendet.
  Damit wird ein Zugang von einem anderen LAN aus auf die Server ermöglicht.
 \end_layout
@@ -798,7 +803,7 @@ PRP-Netzwerk
 Ein PRP-Netzwerk basiert grundsätzlich auf dem Konzept, dass aus zwei physischen
  Netzwerken ein virtuelles Netzwerk gebildet wird, um die gewünschte Redundanz
  zu erreichen.
- Beispielsweise wird aus zwei physischen Netzwerk-Interfaces ein Virtuelles.
+ Aus zwei physischen Netzwerk-Interfaces wird ein Virtuelles.
  Die folgende Abbildung zeigt, wie die physischen Verbindungen zweier Netze
  zu einer virtuellen Verbindung eines PRP-Netzwerks werden.
 \end_layout
@@ -1053,17 +1058,25 @@ name "sub:Netzwerkgeschwindigkeiten"
 
 \begin_layout Standard
 Die in die Server eingebauten Broadcom-Interfaces haben einen maximalen
- Datendurchsatz von 1 GBit/s (OSI-Layer 1).
+ Datendurchsatz von 1 GBit/s (Layer 1).
  Im Rahmen dieser Arbeit wird die Netzwerkgeschwindigkeit auf 100 MBit/s
  reduziert.
- Dies wird erreicht durch den Einsatz der Software ethtool.
- Die Reduzierung lässt sich dadurch erklären, dass für die Messungen Hardware
+ Dies wird erreicht durch den Einsatz der Software 
+\begin_inset Quotes fld
+\end_inset
+
+ethtool
+\begin_inset Quotes frd
+\end_inset
+
+.
+ Diese Reduzierung lässt sich dadurch erklären, dass für die Messungen Hardware
  im Einsatz ist, die über Netzwerk-Interfaces verfügt, welche lediglich
  Geschwindigkeiten von maximal 100 MBit/s verarbeiten können.
  Ferner sind auf diese Weise Performanz-Engpässe einfacher zu erörtern (Netzwerk
 -Interface oder CPU).
- Netzwerkkarten limitierte Engpässe entstehen schneller mit 100 MBit/s als
- mit 1 GBit/s.
+ Durch Netzwerkkarten limitierende Engpässe entstehen schneller mit 100
+ MBit/s als mit 1 GBit/s.
 \end_layout
 
 \begin_layout Standard
@@ -1111,7 +1124,7 @@ Die maximal mögliche Geschwindigkeit des Interfaces wird hier auf 100 MBit/s
  reduziert.
  Desweiteren wird die Autonegotiation eingeschaltet.
  Dies ist notwendig, da im Falle ausgeschalteter Autonegotiation beispielsweise
- eine ECI-Box (siehe 
+ eine ECI-Box (siehe Tabelle 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "tab:eci-box"
@@ -1144,8 +1157,8 @@ name "sub:proc-Netzwerkstatistiken"
 Um möglichst genaue Messresultate zu erhalten, sollten die Statistiken der
  Netzwerk-Interfaces möglichst zeitnah im /proc-Dateisystem aktualisiert
  werden.
- Wie sich das Aktualisierungsverhalten von Neztwerk-Interfaces charakterisiert,
- hängt von den Netzwerk-Interfaces (Hardware) selbst ab.
+ Wie sich das Aktualisierungsverhalten von Netzwerk-Interfaces charakterisiert,
+ hängt von der Hardware selbst ab.
 \end_layout
 
 \begin_layout Standard
@@ -1166,7 +1179,7 @@ eth1
 \begin_inset Quotes frd
 \end_inset
 
- (siehe 
+ (siehe Tabelle 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "tab:HardwareEigenschaftenServer"
@@ -1175,7 +1188,7 @@ reference "tab:HardwareEigenschaftenServer"
 
 ) betrachtet.
  Für Messungen bezüglich des PRP-Protokolls wird durch den PRP-1 stack ein
- virtuelles Netzwerk-Interface erstellt 
+ virtuelles Netzwerk-Interface mit dem Namen 
 \begin_inset Quotes fld
 \end_inset
 
@@ -1183,45 +1196,15 @@ prp1
 \begin_inset Quotes frd
 \end_inset
 
-.
+ erstellt.
  Das virtuelle Interface des PRP-1 stacks wiederum benutzt die physische
- Netzwerk-Hardware 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- und 
-\begin_inset Quotes fld
-\end_inset
-
-eth1
-\begin_inset Quotes frd
-\end_inset
-
-, um Daten zu empfangen, respektive zu transmittieren.
+ Netzwerk-Hardware eth0 und eth1, um Daten zu empfangen, respektive zu transmitt
+ieren.
 \end_layout
 
 \begin_layout Standard
-Bei den physischen Interfaces 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- und 
-\begin_inset Quotes fld
-\end_inset
-
-eth1
-\begin_inset Quotes frd
-\end_inset
-
- handelt es sich um Hardware des Herstellers Broadcom.
+Bei den physischen Interfaces eth0 und eth1 handelt es sich um Hardware
+ des Herstellers Broadcom.
  Die Netzwerkkarten bieten die Möglichkeit, das Aktualisierungs-Intervall
  der Statistiken manuell zu modifizieren.
  Im Auslieferungszustand haben die Broadcom-Interfaces ein Aktualisierungsinterv
@@ -1269,7 +1252,9 @@ status open
 
 \begin_layout Plain Layout
 
-$100 
+$100
+\backslash
+,
 \backslash
 mu s$
 \end_layout
@@ -1285,15 +1270,8 @@ eth0
 \end_inset
 
 .
- Damit die Änderung aktiv wird, muss anschliessend das Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- neu gestartet werden.
+ Damit die Änderung aktiv wird, muss anschliessend das Interface eth0 neu
+ gestartet werden.
  Um sicherzustellen, dass die Änderungen übernommen wurden, können die Einstellu
 ngen des entsprechenden Netzwerk-Interfaces abgefragt werden:
 \end_layout
@@ -1327,7 +1305,7 @@ end{verbatim}
 \end_layout
 
 \begin_layout Standard
-Was eine Ausgabe folgender Form erzeugt:
+Dieser Befehl erzeugt eine Ausgabe der folgenden Form:
 \end_layout
 
 \begin_layout Standard
@@ -1429,7 +1407,7 @@ mu s$
 \end_layout
 
 \begin_layout Standard
-Das Kommando: 
+Das Kommando 
 \end_layout
 
 \begin_layout Standard
@@ -1461,8 +1439,8 @@ end{verbatim}
 \end_layout
 
 \begin_layout Standard
-Liefert Informationen über den Gerätetreiber des Interfaces mit dem Namen
- 
+liefert Informationen der folgenden Form über den Gerätetreiber des Interfaces
+ mit dem Namen 
 \begin_inset Quotes fld
 \end_inset
 
@@ -1554,17 +1532,9 @@ end{Verbatim}
 \begin_layout Standard
 Über die Zeile, welche die Bus-Info ausgibt, kann in der Datei /proc/iomem
  erörtert werden, auf welchen Bereich im Hauptadressraum des Betriebssystems
- die Speicheradressen des Interfaces 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- übersetzt werden.
- Über diesen Mechanismus wird vom Betriebssystem beispielsweise auf die
- statistischen Daten des Interfaces zugegriffen.
+ die Speicheradressen des Interfaces eth0 übersetzt werden.
+ Über diesen Mechanismus wird vom Betriebssystem auf die statistischen Daten
+ des Interfaces zugegriffen.
 \end_layout
 
 \begin_layout Standard
@@ -1639,7 +1609,8 @@ status open
 \begin_layout Plain Layout
 
 $febcffff_{h} - febb0000_{h} + 00000001_{h} = 20000_{h} = 131072_{d} = 128
- kByte$
+\backslash
+, kByte$
 \end_layout
 
 \end_inset
@@ -1676,8 +1647,8 @@ Die Testumgebung wurde in den Räumlichkeiten des Gebäudes TE der ZHAW in
  Die Server wurden in einem nicht öffentlichen Raum (TE524) platziert.
  Die beiden Switches (A und B) befinden sich im Arbeitsraum (TE523).
  Dies ermöglicht es, Messgeräte sowie simulierte Verzögerungen einzubauen.
- Ebenfalls können so weitere Geräte an die Netzwerke A oder B angeschlossen
- werden.
+ Ebenfalls können auf diese Weise weitere Geräte an die Netzwerke A oder
+ B angeschlossen werden.
 \end_layout
 
 \begin_layout Standard

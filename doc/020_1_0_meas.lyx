@@ -153,9 +153,9 @@ measurement
 ) entwickelt, bei der die CPU-Last einzelner Prozesse evaluiert wird.
  Des Weiteren ermittelt meas neben der CPU-Last, die System- und Usertime
  eines Prozesses.
- Meas unterstützt nur das Überwachen von Single-Threaded-Prozessen.
+ meas unterstützt nur das Überwachen von single-threaded Prozessen.
  Diese Limitierung wurde aufgrund der Gegebenheit, dass im Rahmen dieser
- Arbeit nur Single-Threaded-Prozesse beobachtet werden, in Kauf genommen.
+ Arbeit nur single-threaded Prozesse beobachtet werden, in Kauf genommen.
 \end_layout
 
 \begin_layout Standard
@@ -227,8 +227,8 @@ Netzwerkstatistiken, Quelldaten
 
 \begin_layout Standard
 Die Messresultate bezüglich erhaltener und transmittierter Bytes sowie die
- Berechnungnen von Bitraten basieren ausschliesslich auf Werten, welche
- das Betriebssystem vom Data-Link-Layer aufzeichnet.
+ Berechnungen von Bitraten basieren ausschliesslich auf Werten, welche das
+ Betriebssystem vom Data-Link-Layer aufzeichnet.
 \end_layout
 
 \begin_layout Standard
@@ -250,8 +250,8 @@ Die Messresultate bezüglich erhaltener und transmittierter Bytes sowie die
 \begin_inset Newline newline
 \end_inset
 
-Die nachfolgende Grafik, soll eine Übersicht um den Gesamtumfang der Software
- meas illustrieren:
+Die nachfolgende Graphik illustriert eine Übersicht des Gesamtumfangs der
+ Software meas:
 \end_layout
 
 \begin_layout Standard
@@ -292,8 +292,8 @@ Gesamtübersicht meas-Applikation
 
 \begin_layout Standard
 Der Betriebssystem-Kern legt periodisch statistische Daten in ein Dateisystem
- ab, welches beim Bootprozess des Betriebssytems im Arbeitsspeicher angelegt
- wird, das /proc-Dateisystem, siehe 
+ ab, welches beim Boot-Prozess des Betriebssytems im Arbeitsspeicher angelegt
+ wird, das /proc-Dateisystem, siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sec:proc-Dateisystem"
@@ -302,7 +302,7 @@ reference "sec:proc-Dateisystem"
 
 .
  Aus diesem Dateisystem sollen alle relevanten statistischen Werte für die
- meas-Applikation gelesen und ausgewertet werden.
+ resultierende meas-Statistik gelesen und ausgewertet werden.
  
 \end_layout
 
@@ -315,20 +315,32 @@ Beim Starten von meas gibt der Benutzer eine Intervall-Dauer sowie eine
 \end_layout
 
 \begin_layout Standard
-Das Sammel-Modul (collect), ist dafür zuständig, die im Attribut-Modul spezifizi
-erten Werte in ensprechende Datenstrukturen abzulegen, sowie die Werte in
+Das Sammel-Modul (collect) ist dafür zuständig, die im Attribut-Modul spezifizie
+rten Werte in entsprechende Datenstrukturen abzulegen, sowie die Werte in
  Datentypen umzuwandeln, mit denen arithmetisch gerechnet werden kann.
- Das Timer-Modul (timer) wird verwendet, um die effektive Intervall-Dauer
- und Messfehler, damit ist die Zeit gemeint, welche aufgewendet werden muss,
- um von den entsprechenden Dateien im /proc-Dateisystem zu lesen.
+ 
+\end_layout
+
+\begin_layout Standard
+Das Timer-Modul (timer) wird für die effektive Intervall-Dauer und Messfehler
+ (damit ist die Zeit gemeint, welche aufgewendet werden muss, um von den
+ entsprechenden Dateien im /proc-Dateisystem zu lesen) eingesetzt.
  Es wird ein Timer verwendet, der eine Auflösung von 1 Mikrosekunde bereitstellt.
- Das Auswertungs-Modul (evaluate) hat die Aufgabe, gesammelte Statistiken
+ 
+\end_layout
+
+\begin_layout Standard
+Das Auswertungs-Modul (evaluate) hat die Aufgabe, gesammelte Statistiken
  in Form von Intervall-Resultaten auszuwerten und zusätzlich eine Gesamtstatisti
 k zu berechnen.
- Im Print-Modul (print), werden ausgewertete Intervall-Daten, wie auch die
+ 
+\end_layout
+
+\begin_layout Standard
+Im Print-Modul (print) werden ausgewertete Intervall-Daten, wie auch die
  Gesamtstatistik in eine für den Benutzer lesbare Form gebracht und können
- an eine beliebige Ausgabe geleitet werden, beispielsweise Textdateien,
- Konsole, Drucker, etc.
+ an eine beliebige Ausgabe geleitet werden (beispielsweise Textdateien,
+ Ausgabekonsole, Drucker, etc).
 \end_layout
 
 \begin_layout Standard
@@ -350,7 +362,7 @@ meas-Datentypen
 \begin_inset Newline newline
 \end_inset
 
-Um zusammengehörende Daten sinnvoll zu gliedern werden C-Structs verwendet:
+Um zusammengehörende Daten sinnvoll zu gliedern, werden C-Structs verwendet:
 \end_layout
 
 \begin_layout Standard
@@ -451,7 +463,7 @@ time_vals_t
 \begin_layout Plain Layout
 Wird zur temporären Speicherung der pro Intervall gemessenen Zeiten verwendet.
  Die gemessenen Zeiten werden nach Ablauf aller Messintervalle dem ensprechenden
- stats_t zugefügt.
+ stats_t-Datentyp zugefügt.
 \end_layout
 
 \end_inset
@@ -513,7 +525,7 @@ file_coords_t
 
 \begin_layout Plain Layout
 Koordinaten eines Wertes im /proc-Dateisystem.
- Die Koordinaten haben die Form: Liniennummer und Zeilennummer
+ Die Koordinaten haben folgende Form: Liniennummer und Zeilennummer.
 \end_layout
 
 \end_inset
@@ -554,11 +566,10 @@ meas_buffer_t
 \begin_inset Text
 
 \begin_layout Plain Layout
-Datenstruktur eines Mess-Puffers.
- Ein Mess-Puffer wird verwendet, um die Rohdaten pro Intervall aus dem /proc-Dat
-eisystem zwischen zu speichern.
- Die Rohdaten werden erst am Schluss einer Mess-Serie aufbereitet und ausgewerte
-t.
+Datenstruktur eines Messpuffers.
+ Ein Messpuffer wird verwendet, um die Rohdaten pro Intervall aus dem /proc-Date
+isystem zwischen zu speichern.
+ Die Rohdaten werden erst am Schluss einer Messserie aufbereitet und ausgewertet.
 \end_layout
 
 \end_inset
@@ -630,8 +641,8 @@ Detailansicht Module
 \begin_inset Newline newline
 \end_inset
 
-Basierend auf der Gesamtübersicht, wurden die verschiedenen Module implementiert.
- Die Modulübersicht soll eine etwas detailliertere Übersicht darstellen.
+Basierend auf der Gesamtübersicht wurden die verschiedenen Module implementiert.
+ Die Modulübersicht stellt eine etwas detailliertere Übersicht dar.
  Bei der folgenden Illustration wurden der Übersichtlichkeit wegen pro Modul
  nur relevante, modulübergreifende Funktionen berücksichtigt.
 \end_layout
@@ -678,8 +689,8 @@ meas
 
 \begin_layout Standard
 Diese Komponente ist der Programmeinstiegspunkt.
- Sie ist für das Einlesen Programmargumente zuständig, sowie für die Koordinatio
-n des Hauptprogrammablaufs.
+ Sie ist für das Einlesen der Programmargumente zuständig, sowie für die
+ Koordination des Hauptprogrammablaufs.
  Beispielsweise werden hier die Aufrufe zum Starten einer Messung ausgeführt,
  wie auch die Intervall-Wartezeiten berechnet, etc.
 \end_layout
@@ -695,7 +706,7 @@ mtimer.h ist eine Programm-Header-Datei, die von Prof.
  Thaler (ZHAW, InIT) geschrieben wurde.
  Sie enthält C-Makros, die einen universellen, vereinfachten Zugriff auf
  verschiedene Timer-Module eines Standard-Linux-Systems ermöglichen.
- Für die meas-Applikation sind zwei Timer-Typen im Einsatz:
+ Für die meas-Applikation ist ein Timer-Typ im Einsatz:
 \end_layout
 
 \begin_layout Itemize
@@ -705,29 +716,17 @@ status open
 
 \begin_layout Plain Layout
 
-$10 ms$
-\end_layout
-
-\end_inset
-
- für das Messen der effektiven Intervallzeiten.
-\end_layout
-
-\begin_layout Itemize
-Timer mit einer Auflösung von 
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-$1 
+$1
+\backslash
+, 
 \backslash
 mu s$
 \end_layout
 
 \end_inset
 
-, um die Lesezeiten aus dem /proc-Dateisystem aufzuzeichnen.
+, um die Lesezeiten aus dem /proc-Dateisystem aufzuzeichnen, sowie um die
+ vom Benutzer definierten Intervallzeiten im Programmablauf vorzugeben.
 \end_layout
 
 \begin_layout Subparagraph
@@ -901,8 +900,8 @@ end{lstlisting}
 \end_layout
 
 \begin_layout Standard
-Mit $-Zeichen umgebene Zeichen im Dateipfad werden in diesem Fall durch
- die Prozess-ID ersetzt, die dem Programm als Argument übergeben wird.
+Mit $-Symbol umgebene Zeichen im Dateipfad werden in diesem Fall durch die
+ Prozess-ID ersetzt, die dem Programm als Argument übergeben wird.
 \end_layout
 
 \begin_layout Standard
@@ -1009,7 +1008,7 @@ attrs
  definierten Werte aus dem /proc-Dateisystem zu lesen.
  Besonders erwähnenswert sind die Lesepuffer.
  Die Initialisierung sowie die Schreib- und Leseoperationen dieser Puffer
- werden alle in diesem Programm-Modul abgehandelt.
+ werden alle in diesem Programmmodul abgehandelt.
  Des Weiteren ist 
 \begin_inset Quotes fld
 \end_inset
@@ -1020,7 +1019,7 @@ collect
 
  dafür zuständig, die in den Puffern gesammelten Rohdaten aus /proc für
  die spätere Auswertung aufzubereiten.
- Ferner befinden sich hier administrative Funktionen, die die Datenstrukturen
+ Ferner befinden sich hier administrative Funktionen, welche die Datenstrukturen
  betreffend den /proc-Datei-Metadaten behandeln.
 \end_layout
 
@@ -1033,7 +1032,7 @@ Dieses Modul enthält alle Funktionen, welche aus den gesammelten Messdaten
  statistische Werte berechnen, sowohl pro Messintervall als auch eine Gesamtstat
 istik über alle Messintervalle.
  Die berechneten Statistiken werden in den entsprechenden Datenstrukturen
- abgelegt und können anschliessend für Ausgaben auf bliebige Ausgabe-Geräte
+ abgelegt und können anschliessend für Ausgaben auf beliebige Ausgabe-Geräte
  weiterverwendet werden.
 \end_layout
 
@@ -1042,7 +1041,7 @@ print
 \end_layout
 
 \begin_layout Standard
-Die Implementationen im Print-Modul dienen dazu, Datenstrukturen mit Intervall-R
+Die Implementationen im print-Modul dienen dazu, Datenstrukturen mit Intervall-R
 esultaten oder Gesamtstatistiken auf beliebige Ausgabegeräte auszugeben.
  Der Umstand, dass in einem unixoiden System alles als eine Datei angesehen
  wird, macht es möglich, dass die Ausgabefunktionen generisch implementiert
@@ -1050,7 +1049,7 @@ esultaten oder Gesamtstatistiken auf beliebige Ausgabegeräte auszugeben.
  So kann den Ausgabefunktionen ein C-Pointer auf eine entsprechende Ausgabedatei
  übergeben werden.
  Ausgabedateien haben beispielsweise die Form einer Ausgabekonsole, einer
- einfachen Text-Datei, einer Druckerwarteschlange, etc.
+ einfachen Text-Datei oder einer Druckerwarteschlange.
 \end_layout
 
 \begin_layout Paragraph
@@ -1072,7 +1071,7 @@ name "par:Ablauf-einer-Messserie"
 \begin_inset Newline newline
 \end_inset
 
-Das folgende Sequenzdiagramm, verdeutlicht den Ablauf einer Messserie mit
+Das folgende Sequenzdiagramm verdeutlicht den Ablauf einer Messserie mit
  meas.
  Die Namen der Funktionsparameter entsprechen nicht genau denen aus dem
  Quellcode, um die Interpretaion des Sequenzdiagramms zu vereinfachen.
@@ -1147,7 +1146,9 @@ status open
 
 \begin_layout Plain Layout
 
-$1 
+$1
+\backslash
+, 
 \backslash
 mu s$
 \end_layout
@@ -1159,7 +1160,7 @@ mu s$
 \begin_inset Quotes fld
 \end_inset
 
-Overhead Time
+overhead time
 \begin_inset Quotes frd
 \end_inset
 
@@ -1177,12 +1178,14 @@ status open
 
 \begin_layout Plain Layout
 
-$~ 7 ms$
+$~ 7
+\backslash
+, ms$
 \end_layout
 
 \end_inset
 
- festgestellt, was im Vergleich zur Intervallzeit einen relativ hohen Anteil
+ festgestellt, was im Vergleich zur Intervalldauer einen relativ hohen Anteil
  darstellt.
 \end_layout
 
@@ -1241,7 +1244,9 @@ status open
 
 \begin_layout Plain Layout
 
-$~ 600 
+$~ 600
+\backslash
+, 
 \backslash
 mu s$
 \end_layout
@@ -1303,16 +1308,16 @@ Zusätzlich zum Auslesen der Werte wurden die Statistiken eines Intervalls
 Das Konzept, wie das Auslesen der Werte aus dem /proc-Dateisystem umgesetzt
  wird, wurde grundlegend geändert, zwecks weiterer Minimierung des Messfehlers,
  um eine höhere Messgenauigkeit zu erreichen.
- Wie bereits im Sequenzdiagramm (siehe 
+ Wie bereits im Sequenzdiagramm (siehe Abbildung 
 \begin_inset CommandInset ref
-LatexCommand vref
+LatexCommand vpageref
 reference "par:Ablauf-einer-Messserie"
 
 \end_inset
 
 ) ersichtlich ist, wurde ein Lesepuffer eingeführt, der die gelesenen Werte
- zwischenspeichert und die Auswertungen und Ausgaben erst nach Beenden einer
- Messserie durchgeführt werden.
+ zwischenspeichert, womit die Auswertungen und Ausgaben erst nach Beenden
+ einer Messserie durchgeführt werden.
  Die Funktion, welche für das Auslesen der Werte aus dem /proc-Dateisystem
  zuständig ist, wurde mit möglichst wenigen Instruktionen implementiert
  und hat folgende Charakteristik:
@@ -1342,8 +1347,8 @@ status open
 
 
 \backslash
-lstinputlisting[caption={Funktionskörper, Auslesen aus dem /proc-Dateisystem},
-  captionpos=b,language=C]{_src_lst/meas_read_to_meas_buffers.c}
+lstinputlisting[caption={Auslesen aus dem /proc-Dateisystem},  captionpos=b,lang
+uage=C]{_src_lst/meas_read_to_meas_buffers.c}
 \end_layout
 
 \begin_layout Plain Layout
@@ -1359,7 +1364,7 @@ label{lst:meas_read_to_meas_buffers}
 \end_layout
 
 \begin_layout Standard
-Aufgrund dieser weiteren Optimierung wurde abermals ein betrachtlicher Gewinn
+Aufgrund dieser weiteren Optimierung wurde abermals ein beachtlicher Gewinn
  an Performanz erreicht.
  Die durchschnittliche Zeit für das Auslesen der Dateien aus dem /proc-Dateisyst
 em beträgt nach der zweiten Optimierungsstufe noch 
@@ -1368,7 +1373,9 @@ status open
 
 \begin_layout Plain Layout
 
-$~ 100 
+$~ 100
+\backslash
+, 
 \backslash
 mu s$
 \end_layout
@@ -1425,7 +1432,9 @@ status open
 
 \begin_layout Plain Layout
 
-$100 
+$100
+\backslash
+, 
 \backslash
 mu s$
 \end_layout
@@ -1447,7 +1456,7 @@ reference "sub:proc-Netzwerkstatistiken"
 \end_layout
 
 \begin_layout Paragraph
-Systemcalls und Datenkonsistenz
+System-Calls und Datenkonsistenz
 \end_layout
 
 \begin_layout Standard
@@ -1458,7 +1467,7 @@ Systemcalls und Datenkonsistenz
 \begin_inset Newline newline
 \end_inset
 
-Um von den Dateien aus /proc zu lesen, wurden direkt die Systemcalls des
+Um von den Dateien aus /proc zu lesen, wurden direkt die System-Calls des
  Betriebssystems 
 \begin_inset ERT
 status open
@@ -1543,7 +1552,7 @@ $open()$
 
 \end_inset
 
--Systemcall) werden die Flags O_RDONLY (nur Lesezugriff) und O_SYNC verwendet.
+-System-Call) werden die Flags O_RDONLY (nur Lesezugriff) und O_SYNC verwendet.
  O_SYNC garantiert die Datenkonsistenz.
  Gleichzeitige Lese- und Schreibzugriffe auf Dateien werden somit vermieden.
  Diese Situation könnte auftreten, wenn beispielsweise der Kernel die /proc-Stat
@@ -1559,7 +1568,7 @@ istiken aktualisiert und zur gleichen Zeit meas lesend auf die entsprechende
 \end_layout
 
 \begin_layout Paragraph
-Funktionstests
+Funktionstest
 \end_layout
 
 \begin_layout Standard
@@ -1572,7 +1581,7 @@ Funktionstests
 
 Um sicherzustellen, ob die Werte korrekt ausgelesen und in entsprechende
  Zahlenformate umgewandelt werden, wurde ein Unit-Test geschrieben.
- Der Test liest Werte aus einer Datei, und vergleicht die erhaltenen Resultate
+ Der Test liest Werte aus einer Datei und vergleicht die erhaltenen Resultate
  mit erwarteten Werten.
  Wenn ein ausgelesener Wert nicht mit dem erwarteten Wert übereinstimmt,
  schlägt der gesamte Test fehl.
@@ -1633,7 +1642,7 @@ Speicherüberprüfung
 \begin_inset Newline newline
 \end_inset
 
-Bei der Implemtierung der meas-Applikation wurde das Konzept der dynamischen
+Bei der Implementierung der meas-Applikation wurde das Konzept der dynamischen
  Speicherallozierung (
 \begin_inset ERT
 status open
@@ -1696,7 +1705,7 @@ reference "tab:valgrind_desc"
 \end_inset
 
 ) eingesetzt.
- Nach jedem Release einer Version von meas wird ein Profiling-Rerport erstellt.
+ Nach jedem Release einer Version von meas wurde ein Profiling-Rerport erstellt.
  Dieser hat die nachfolgend gezeigte Form:
 \end_layout
 
@@ -1859,7 +1868,7 @@ Plausibilitätskontrolle
 \end_inset
 
 Um sicherzustellen, ob die berechneten Statistiken/Resultate von meas plausible
- Werte aufweisen, wurden diese Resultaten anderer Tools, gegenübergestellt.
+ Werte aufweisen, wurden diese Resultaten anderer Tools gegenübergestellt.
  In Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -1868,10 +1877,10 @@ reference "sub:Verifizierung-der-Messwerte"
 \end_inset
 
  sind die Ergebnisse der besagten Gegenüberstellung detailliert beschrieben.
- Des Weiteren wurden Messungen durchgeführt mit maximaler Lasterzeugung
+ Des Weiteren wurden Messungen durchgeführt, mit maximaler Lasterzeugung
  bezüglich Data-Link-Layer.
  Diese Resultate wurden sodann mit der theoretischen Obergrenze, die eine
- Bitrate eines 100-MBit/s-Interface erreichen kann, verglichen, siehe Kapitel
+ Bitrate eines 100-MBit/s-Interface erreichen kann, verglichen (siehe Kapitel
  
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -1879,7 +1888,7 @@ reference "par:Frames-mit-maximaler"
 
 \end_inset
 
-.
+).
 \end_layout
 
 \begin_layout Paragraph
@@ -2683,7 +2692,9 @@ status open
 
 \begin_layout Plain Layout
 
-$i * n = gesamte Zeit [s]$
+$i * n = gesamte Zeit
+\backslash
+, [s]$
 \end_layout
 
 \end_inset
@@ -2754,7 +2765,8 @@ Pfad
 \begin_inset Newline newline
 \end_inset
 
-Definiert den Pfad, wo die Ausgabedateien von meas abgelegt werden sollen.
+Definiert den Pfad, in welchem die Ausgabedateien von meas abgelegt werden
+ sollen.
  Am Ende des Pfades darf kein Schrägstrich (/) angefügt werden.
  Ausgabedateien pro Messserie: 
 \begin_inset Quotes fld
@@ -2819,7 +2831,7 @@ Ausführlichkeit
 \begin_inset Newline newline
 \end_inset
 
-Gültige Werte: [0, ..., 2]
+Gültige Werte: [0, 1, 2]
 \end_layout
 
 \begin_layout Plain Layout
@@ -2863,15 +2875,7 @@ Wird der Parameter nicht definiert, wird 0 als Standardwert verwendet.
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Parameter der Applikation 
-\begin_inset Quotes fld
-\end_inset
-
-meas
-\begin_inset Quotes frd
-\end_inset
-
-
+Parameter der Applikation meas
 \end_layout
 
 \end_inset

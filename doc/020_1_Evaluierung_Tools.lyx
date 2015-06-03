@@ -96,8 +96,9 @@ name "sec:Evaluierung-der-Tools"
 \end_layout
 
 \begin_layout Standard
-Für die Performance-Messungen werden auch bereits bestehende Tools verwendet.
- Da bereits eine Vielzahl solcher Tools existiert, wird in diesem Abschnitt
+Für die Performance-Messungen werden unter anderem bereits bestehende Tools
+ verwendet.
+ Da bereits eine Vielzahl potentieller Tools existiert, wird in diesem Abschnitt
  versucht, die Auswahl zu verwendender Tools einzugrenzen.
  Für diese Selektierung werden die Aspekte berücksichtigt, welchen gemäss
  der Aufgabenstellung 
@@ -148,7 +149,7 @@ Generierung von Netzwerktraffic über diverse Protokolle (u.a.
 \end_layout
 
 \begin_layout Itemize
-Messen von Ressourcennutzung und Performanceparametern
+Messen von Ressourcennutzung und Performance-Parametern
 \end_layout
 
 \begin_layout Itemize
@@ -157,10 +158,11 @@ Simulieren von Fehlern in der Datenübertragung
 
 \begin_layout Standard
 Es folgt eine Auflistung von Hilfsmitteln inklusive deren Beschrieb, Funktionen
- und Grund, warum es in dieser Arbeit verwendet oder nicht verwendet wird.
+ und Grund, warum das jeweilige Hilfsmittel in dieser Arbeit verwendet oder
+ nicht verwendet wird.
  Dabei wurden zuvor Hilfsmittel ausgeschlossen, die entweder eine grafische
- Oberfläche benötigen, kaum bekannt oder dessen aktuellste Version älter
- als 2012 sind.
+ Oberfläche benötigen, kaum bekannt sind oder dessen aktuellste Version
+ älter als 2012 ist.
  Im nächsten Kapitel wird die engere Auswahl der gefundenen Tools aufgelistet
  und evaluiert.
 \end_layout
@@ -231,11 +233,12 @@ Beschrieb
 \begin_layout Plain Layout
 Erzeugt Netzwerkverkehr über TCP für das Testen und Messen von TCP/IP-Stacks.
  Es wird damit geworben, dass mit flowgrind Transport-Layer-Informationen
- ausgeben kann, die üblicherweise interne TCP/IP-Stack-Informationen sind.
+ ausgegeben werden können, die üblicherweise interne TCP/IP-Stack-Informationen
+ sind.
  flowgrind wird auf mehreren Rechnern ausgeführt.
  Auf den Computern, zwischen denen die Messung stattfinden soll, wird der
- flowgrind-Deamon gestartet, während auf einem weiteren Computer den flowgrind-C
-ontroller betreibt, der die Messdaten sammelt.
+ flowgrind-Deamon gestartet, während auf einem weiteren Computer der flowgrind-C
+ontroller betrieben wird, der die Messdaten sammelt.
 \end_layout
 
 \end_inset
@@ -255,10 +258,10 @@ Funktionen
 \begin_inset Text
 
 \begin_layout Plain Layout
-flowgrind ermöglicht es, mehrere Flüsse mit gleichen oder unterschiedlichen
+flowgrind ermöglicht es, mehrere Datenflüsse mit gleichen oder unterschiedlichen
  Einstellungen gleichzeitig zu betreiben.
- Für das Testen und den Controller können verschiedene Netzwerkinterfaces
- zugeordnet werden.
+ Für das Testen können dem Controller verschiedene Netzwerkinterfaces zugeordnet
+ werden.
 \end_layout
 
 \end_inset
@@ -309,7 +312,7 @@ key "Aufgabenstellung"
 
  verlangt neben dem Messen von TCP- u.a.
  auch das Messen von UDP-Verbindungen.
- Es wird bevorzugt, dass diese Verbindungen mit dem Selben Tool betrachtet
+ Es wird bevorzugt, dass diese Verbindungen mit demselben Tool betrachtet
  werden, um einen klaren Vergleich zwischen den Protokollen zu ermöglichen.
 \end_layout
 
@@ -403,8 +406,8 @@ Beschrieb
 Dient zur Messung der Netzwerkbandbreite und ermöglicht Trafficgenerierung
  über TCP, UDP oder SCTP.
  iperf3 ist eine von Grund auf neu implementierte Lösung von iperf.
- Das Tool wird auf mehreren Computern gleichzeitig ausgeführt, mal als Server
- und mal als Client.
+ Das Tool wird auf mehreren Computern gleichzeitig ausgeführt, fungierend
+ als Server oder als Client.
 \end_layout
 
 \end_inset
@@ -469,9 +472,10 @@ Grund
 
 \begin_layout Plain Layout
 Die neuste Version von iperf3 wurde am 09.01.2015 veröffentlicht, was darauf
- schliessen lässt, dass das Tool derzeit gepflegt wird.
+ schliessen lässt, dass das Tool derzeit gepflegt und weiterentwickelt wird.
  Des Weiteren wurde den Autoren dieser Arbeit bei den Besprechungen empfohlen,
  diese Applikation zu verwenden.
+ iperf3 wird zum Vergleich mit anderen Applikationen verwendet.
 \end_layout
 
 \end_inset
@@ -568,7 +572,7 @@ Beschrieb
 \begin_inset Text
 
 \begin_layout Plain Layout
-netperf ist ähnlich wie iperf3 und bietet auch Generierung von Netzwerktraffic
+netperf ist ähnlich wie iperf3 und bietet auch Generierung von Netzwerk-Traffic
  und Messung von Verbindungen über TCP, UDP und SCTP an.
 \end_layout
 
@@ -589,8 +593,9 @@ Funktionen
 \begin_inset Text
 
 \begin_layout Plain Layout
-Weitere Features von netperf sind Histogram-Support und Informationen über
- die Nutzung der CPU.
+Features von netperf sind u.
+ a.
+ Histogram-Support und Informationen über die Nutzung der CPU.
 \end_layout
 
 \end_inset
@@ -665,7 +670,7 @@ Hilfsmittel zur Generierung von Netzwerktraffic: netperf
 \end_layout
 
 \begin_layout Subsection
-Messen von Ressourcennutzung und Performanceparametern
+Messen von Ressourcennutzung und Performance-Parametern
 \end_layout
 
 \begin_layout Standard
@@ -810,7 +815,7 @@ Erstellt regelmässig Berichte, welche in dieser Arbeit nicht von Nöten sind.
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Hilfsmittel zum Messen von Ressourcennutzung und Performanceparametern:
+Hilfsmittel zum Messen von Ressourcennutzung und Performance-Parametern:
  atop
 \end_layout
 
@@ -905,8 +910,8 @@ Funktionen
 
 \begin_layout Plain Layout
 Bietet unterschiedliche Darstellungsfunktionen, u.a.
- auch Exportierungen nach CSV & HTML und ermöglicht es, in Intervallen zu
- messen.
+ auch das Exportieren nach CSV & HTML und ermöglicht es, in Intervallen
+ zu messen.
 \end_layout
 
 \end_inset
@@ -966,7 +971,7 @@ Mit bwm-ng kann die Netzwerkbelastung in Intervallen gemessen sowie auch
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Hilfsmittel zum Messen von Ressourcennutzung und Performanceparametern:
+Hilfsmittel zum Messen von Ressourcennutzung und Performance-Parametern:
  bwm-ng
 \end_layout
 
@@ -1130,7 +1135,7 @@ ert, die über mehrere IP-Adressen verfügen.
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Hilfsmittel zum Messen von Ressourcennutzung und Performanceparametern:
+Hilfsmittel zum Messen von Ressourcennutzung und Performance-Parametern:
  NetHogs
 \end_layout
 
@@ -1227,7 +1232,7 @@ Funktionen
 \begin_layout Plain Layout
 ntop kann IP- und Nicht-IP-Traffic kombinieren und bietet seine Informationen
  via integriertem Webserver an, weshalb ein Webbrowser benötigt wird, um
- an die Informationen heran zu kommen.
+ an die Informationen zu gelangen.
 \end_layout
 
 \end_inset
@@ -1288,7 +1293,7 @@ Dadurch, dass ntop seine Informationen lediglich über den eigenen Webserver
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Hilfsmittel zum Messen von Ressourcennutzung und Performanceparametern:
+Hilfsmittel zum Messen von Ressourcennutzung und Performance-Parametern:
  ntop
 \end_layout
 
@@ -1386,7 +1391,7 @@ Funktionen
 perf kann über einen gewissen Zeitraum Informationen eines spezifischen
  Prozesses aufzeichnen, sowie Informationen über alle Prozesse eines Betriebssys
 tems sammeln.
- Alle Funktionsaufrufe werden protokolliert.
+ Sämtliche Funktionsaufrufe werden protokolliert.
 \end_layout
 
 \end_inset
@@ -1431,7 +1436,7 @@ Grund
 Um ein Profiling des PRP-1 stacks durchzuführen, ist perf ein geeignetes
  Tool.
  Aufgrund des Aufzeigens von verschachtelten Funktionsaufrufen, ermöglicht
- perf detaillierte Aussagen zu treffen bezüglich User- und Kernelspace-Zeiten.
+ perf detaillierte Aussagen bezüglich User- und Kernelspace-Zeiten zu treffen.
 \end_layout
 
 \end_inset
@@ -1448,7 +1453,7 @@ Um ein Profiling des PRP-1 stacks durchzuführen, ist perf ein geeignetes
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Hilfsmittel zum Messen von Ressourcennutzung und Performanceparametern:
+Hilfsmittel zum Messen von Ressourcennutzung und Performance-Parametern:
  perf
 \end_layout
 
@@ -1533,8 +1538,8 @@ Beschrieb
 
 \begin_layout Plain Layout
 Die Memory Map eines Prozesses kann mittels pmap angezeigt werden.
- So lässt sich genau feststellen was und wie viel auf dem Arbeitsspeicher
- durch den Prozess beansprucht wird.
+ So lässt sich genau feststellen, was und wie viel an Arbeitsspeicher durch
+ den Prozess beansprucht wird.
 \end_layout
 
 \end_inset
@@ -1554,8 +1559,9 @@ Funktionen
 \begin_inset Text
 
 \begin_layout Plain Layout
-Jeder vom Prozess beanspruchten Bereich wird u.a.
- mit dessen Startadresse, Grösse und Berechtigungen aufgewiesen.
+Jeder vom Prozess beanspruchte Bereich wird u.
+ a.
+ mit deren Startadresse, Grösse und Berechtigungen aufgewiesen.
 \end_layout
 
 \end_inset
@@ -1615,7 +1621,7 @@ Mittels pmap können ausführliche Aussagen über die Arbeitsspeichernutzung
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Hilfsmittel zum Messen von Ressourcennutzung und Performanceparametern:
+Hilfsmittel zum Messen von Ressourcennutzung und Performance-Parametern:
  pmap
 \end_layout
 
@@ -1753,8 +1759,8 @@ Grund
 \begin_inset Text
 
 \begin_layout Plain Layout
-Anhand von strace kann das Verhalten zwischen dem PRP-1 User Mode Stack
- (siehe Kapitel 
+Anhand von strace kann das Verhalten zwischen dem PRP-1 stack (siehe Kapitel
+ 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sub:Software-Implementation"
@@ -1778,7 +1784,7 @@ reference "sub:Software-Implementation"
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Hilfsmittel zum Messen von Ressourcennutzung und Performanceparametern:
+Hilfsmittel zum Messen von Ressourcennutzung und Performance-Parametern:
  strace
 \end_layout
 
@@ -1857,7 +1863,7 @@ Sammlung an Tools, um die Systemleistung und -Aktivitäten zu überwachen,
 \end_layout
 
 \begin_layout Itemize
-iostat: Legt Statistiken zur CPU und Input / Output von Geräten, Partitionen
+iostat: Legt Statistiken zur CPU und Input/Output von Geräten, Partitionen
  und Netzwerk-Dateisystemen dar.
 \begin_inset VSpace -8bp
 \end_inset
@@ -1874,8 +1880,9 @@ mpstat: Weist individuelle oder kombinierte, prozessorbezogene Werte auf.
 \end_layout
 
 \begin_layout Itemize
-pidstat: Bringt Informationen zu einzelnen Prozessen bezüglich u.a.
- Input / Output, CPU, Arbeitsspeicher hervor.
+pidstat: Bringt Informationen zu einzelnen Prozessen bezüglich u.
+ a.
+ Input/Output, CPU und Arbeitsspeicher hervor.
 \begin_inset VSpace -8bp
 \end_inset
 
@@ -1884,8 +1891,8 @@ pidstat: Bringt Informationen zu einzelnen Prozessen bezüglich u.a.
 
 \begin_layout Itemize
 sar: Sammelt, veranschaulicht und speichert System-Aktivitäts-Informationen
- zu CPU, Arbeitsspeicher, Speicher, Interrupts, Netzwerkinterfaces und weiteren
- Komponenten.
+ zu CPU, Arbeitsspeicher, Speicher, Interrupts, Netzwerk-Interfaces und
+ weiteren Komponenten.
 \begin_inset VSpace -8bp
 \end_inset
 
@@ -1913,7 +1920,7 @@ sa1: Trägt Werte zur System-Aktivität zusammen und speichert sie in eine
 \end_layout
 
 \begin_layout Itemize
-sa2: Schreibt eine Zusammenfassung der System-Aktivitäten, die einen Tag
+sa2: Erstellt eine Zusammenfassung der System-Aktivitäten, die einen Tag
  umfasst.
  Wie sa1 wurde sa2 dafür entwickelt, dass es regelmässig ausgeführt wird.
 \begin_inset VSpace -8bp
@@ -1934,7 +1941,7 @@ ulationsprogramm zu illustrieren.
 \end_layout
 
 \begin_layout Itemize
-nfsiostat: Zeigt Statistiken bezüglich Input / Output bei Netzwerk-Dateisystemen
+nfsiostat: Zeigt Statistiken bezüglich Input/Output bei Netzwerk-Dateisystemen
  auf.
 \begin_inset VSpace -8bp
 \end_inset
@@ -2038,7 +2045,7 @@ Zwar wird die sysstat-Sammlung nicht komplett verwendet, jedoch erweisen
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Hilfsmittel zum Messen von Ressourcennutzung und Performanceparametern:
+Hilfsmittel zum Messen von Ressourcennutzung und Performance-Parametern:
  sysstat
 \end_layout
 
@@ -2195,7 +2202,7 @@ Da tshark alle Funktionalitäten von tcpdump abdeckt und dazu noch mehr bietet,
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Hilfsmittel zum Messen von Ressourcennutzung und Performanceparametern:
+Hilfsmittel zum Messen von Ressourcennutzung und Performance-Parametern:
  tcpdump
 \end_layout
 
@@ -2360,7 +2367,7 @@ ch, die für diese Arbeit benötigt werden.
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Hilfsmittel zum Messen von Ressourcennutzung und Performanceparametern:
+Hilfsmittel zum Messen von Ressourcennutzung und Performance-Parametern:
  top
 \end_layout
 
@@ -2454,9 +2461,9 @@ Funktionen
 \begin_inset Text
 
 \begin_layout Plain Layout
-Bietet ähnliche Funktionen wie tcpdump und noch mehr, da tshark in der Lage
- ist, die verwendeten Protokolle im Netzwerktraffic aufzuzeigen und zu analysier
-en.
+Bietet ähnliche und auch umfassendere Funktionen wie tcpdump, da tshark
+ in der Lage ist, die verwendeten Protokolle im Netzwerk-Traffic aufzuzeigen
+ und zu analysieren.
  Bei tshark handelt es sich um die Kommandozeilen-Variante, dessen Aufzeichnunge
 n in Wireshark betrachtet werden können.
 \end_layout
@@ -2527,7 +2534,7 @@ key "PRP-Wireshark_Wiki"
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Hilfsmittel zum Messen von Ressourcennutzung und Performanceparametern:
+Hilfsmittel zum Messen von Ressourcennutzung und Performance-Parametern:
  tshark
 \end_layout
 
@@ -2602,7 +2609,7 @@ Beschrieb
 
 \begin_layout Plain Layout
 valgrind dient dazu, Linux-Applikationen zu debuggen und u.a.
- Memory-Leaks zu entdecken.
+ Memory-Leaks zu detektieren.
 \end_layout
 
 \end_inset
@@ -2624,7 +2631,7 @@ Funktionen
 \begin_layout Plain Layout
 Stellt automatisch Fehler bezüglich Memory-Management und Threading fest.
  Dazu macht valgrind ein detailliertes Profiling einer Applikation, um bei
- der Suche nach Bottlenecks zu helfen.
+ der Suche nach Engpässen behilflich zu sein.
 \end_layout
 
 \end_inset
@@ -2684,7 +2691,7 @@ Wird verwendet, um in eigens entwickelten C-Applikationen nach Fehlern zu
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Hilfsmittel zum Messen von Ressourcennutzung und Performanceparametern:
+Hilfsmittel zum Messen von Ressourcennutzung und Performance-Parametern:
  valgrind
 \end_layout
 
@@ -2769,7 +2776,7 @@ Beschrieb
 \begin_inset Text
 
 \begin_layout Plain Layout
-Arbeitet ähnlich wie ping, jedoch auf dem Ethernet-Layer.
+Arbeitet ähnlich wie ping, jedoch auf dem Data-Link-Layer.
 \end_layout
 
 \end_inset
@@ -2922,8 +2929,8 @@ Beschrieb
 \begin_inset Text
 
 \begin_layout Plain Layout
-Störungs-Generator, den man bei einem Netzwerkanschluss dazwischen einschleusen
- kann.
+Störungs-Generator, den man bei einer Verbindung zwischen zwei Netzwerkkomponent
+en dazwischen schalten kann.
 \end_layout
 
 \end_inset
@@ -2986,7 +2993,7 @@ Grund
 \begin_inset Text
 
 \begin_layout Plain Layout
-Anhand diesem Generator ist es möglich, Laufzeitunterschiede zwischen Netzwerk
+Mit diesem Generator ist es möglich, Laufzeitunterschiede zwischen Netzwerk
  A und B in der PRP-Umgebung zu erzeugen.
 \end_layout
 
@@ -3085,8 +3092,8 @@ Beschrieb
 
 \begin_layout Plain Layout
 Netzwerkperipherie, welche bei einem 10/100 Base-TX Netzwerkanschluss dazwischen
- geschaltet werden kann und benötigt somit weder Modifikationen an Hardware
- oder zusätzliche Treiber.
+ geschaltet werden kann, somit werden weder Modifikationen an Hardware oder
+ zusätzliche Treiber benötigt.
 \end_layout
 
 \end_inset
@@ -3106,8 +3113,9 @@ Funktionen
 \begin_inset Text
 
 \begin_layout Plain Layout
-Mit dem ECI können Framefehler und -Verluste erzeugt werden.
- Man kann gezielt reproduzierbare Störungen in einem Netzwerk generieren.
+Mit dem ECI können fehlerhafte Frames und Frame-Verluste erzeugt werden.
+ Damit können gezielt reproduzierbare Störungen in einem Netzwerk generiert
+ werden.
 \end_layout
 
 \end_inset
@@ -3149,7 +3157,7 @@ Grund
 \begin_inset Text
 
 \begin_layout Plain Layout
-Durch das Erzwingen von Frameverlust kann die Stabilität von PRP und dessen
+Durch das Erzwingen von Frameverlusten kann die Stabilität von PRP und deren
  Einfluss auf die Performance überprüft werden.
 \end_layout
 
@@ -3275,8 +3283,9 @@ Funktionen
 \begin_inset Text
 
 \begin_layout Plain Layout
-Stellt Durchschnitte seit dem letzten Neustart oder innerhalb einer bestimmten
- Zeitspanne dar.
+Stellt Durchschnittswerte bezüglich Netzwerkverkehr seit dem letzten Neustart
+ oder innerhalb einer bestimmten Zeitspanne dar.
+ Die Statistiken werden in einer applikationsinternen Datenbank gehalten.
 \end_layout
 
 \end_inset
@@ -3392,7 +3401,7 @@ name "sub:Verwendete-Tools"
 
 \begin_layout Standard
 In diesem Kapitel werden die in dieser Arbeit verwendeten Tools aufgelistet,
- die es durch die engere Auswahl geschafft haben.
+ die nach der engeren Auswahl definitiv selektiert wurden.
  Dazu wird aufgeführt welche Aufgabe von welcher Applikation übernommen
  wird.
 \end_layout
@@ -3588,7 +3597,8 @@ iperf3
 \begin_inset Text
 
 \begin_layout Plain Layout
-Generieren und Versenden von Netzwerktraffic über TCP und UDP
+Generieren und Versenden von Netzwerk-Traffic über TCP und UDP zum Testen
+ von meas und shck
 \end_layout
 
 \end_inset
@@ -3675,7 +3685,7 @@ pidstat (sysstat)
 \begin_inset Text
 
 \begin_layout Plain Layout
-Analyse des PRP-1 Stacks (siehe Kapitel 
+Analyse des PRP-1 stacks (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sub:Software-Implementation"
@@ -3715,7 +3725,7 @@ procps-ng
 \begin_inset Text
 
 \begin_layout Plain Layout
-Festellen des Speichers, der vom PRP-1 Stack beansprucht wird
+Festellen des Speichers, der vom PRP-1 stack beansprucht wird
 \end_layout
 
 \end_inset
@@ -3773,7 +3783,7 @@ strace
 \begin_inset Text
 
 \begin_layout Plain Layout
-Anzeigen von System-Calls des PRP-1 Stacks, um dessen Verhalten nach zu
+Anzeigen von System-Calls des PRP-1 stacks, um dessen Verhalten nach zu
  vollziehen
 \end_layout
 
@@ -3807,7 +3817,7 @@ procps-ng
 \begin_inset Text
 
 \begin_layout Plain Layout
-Performance des PRP-1 Stacks bezüglich CPU und RAM überwachen
+Performance des PRP-1 stacks bezüglich CPU und RAM überwachen
 \end_layout
 
 \end_inset
@@ -3930,11 +3940,11 @@ name "sub:CPU"
 \end_layout
 
 \begin_layout Standard
-Bei der Berechnung der CPU-Werte handelt es sich lediglich um Single-Threaded-Pr
-ozesse, da der PRP-1 stack und die Tools zur Generierung der Netzwerklast
+Bei der Berechnung der CPU-Werte handelt es sich lediglich um single-threaded
+ Prozesse, da der PRP-1 stack und die Tools zur Generierung der Netzwerklast
  single-threaded sind.
- meas behandelt aus diesem und aus Zeitgründen keine Multi-Threaded-Applikatione
-n.
+ meas unterstützt aus diesem und aus Zeitgründen keine multi-threaded Applikatio
+nen.
 \end_layout
 
 \begin_layout Standard
@@ -3946,56 +3956,45 @@ reference "iperf3"
 \end_inset
 
 ) als Server und auf einem weiteren DAN als Client ausgeführt.
- Es wird mit unterschiedlichen Tools gemessen, was der iperf3-Client von
- der CPU beansprucht.
- Dazu wird ein zweiter Fall untersucht, in welchem mit dem Befehl dd eine
- 10GB grosse Datei erstellt wird, die aus zufälligen Zahlen besteht.
+ Es wird mit unterschiedlichen Tools gemessen, was der iperf3-Client an
+ CPU beansprucht.
+ Additional wird ein zweiter Fall untersucht, in welchem mit dem Befehl
+ 
+\begin_inset Quotes fld
+\end_inset
+
+dd
+\begin_inset Quotes frd
+\end_inset
+
+ eine 10 GB grosse Datei erstellt wird, die aus zufälligen Zahlen besteht.
  Danach werden die Resultate verglichen, um aufzuzeigen, welches Tool glaubwürdi
 ge Messwerte liefert.
 \end_layout
 
 \begin_layout Standard
-Auf dem DAN 
-\begin_inset Quotes fld
-\end_inset
-
-srv02
-\begin_inset Quotes frd
-\end_inset
-
- wird der Server mit dem Befehl 
+Auf dem DAN srv02 wird der iperf3-Server mit dem Befehl 
 \family typewriter
 iperf3 -s 
 \family default
-ausgeführt, während der Client auf 
-\begin_inset Quotes fld
-\end_inset
-
-srv01
-\begin_inset Quotes frd
-\end_inset
-
- mit dem Befehl 
+ausgeführt, während der Client auf srv01 mit dem Befehl 
 \family typewriter
 iperf3 -c 192.168.0.2 -d -n 200M 
 \family default
 gestartet wird.
- Mit dem Client werden hier 200 Megabytes an 
-\begin_inset Quotes fld
-\end_inset
-
-srv02
-\begin_inset Quotes frd
-\end_inset
-
- via TCP übertragen (dabei wird der Client als Deamon ausgeführt).
+ Mit dem Client werden hier 200 Megabytes an srv02 via TCP übertragen (dabei
+ wird der Server als Daemon ausgeführt).
  Die Datei mit zufälligen Werten wird mit dem Befehl 
 \family typewriter
 dd if=/dev/urandom of=/tmp/randomfile bs=1M count=10000
 \family default
  erstellt.
- Während der Übertragung und File-Generierung wird mit den folgenden Applikation
-en die beanspruchte CPU-Leistung gemessen:
+ Während der Übertragung und Daten-Generierung wird mit den folgenden Applikatio
+nen die beanspruchte CPU-Leistung gemessen:
+\end_layout
+
+\begin_layout Itemize
+meas
 \end_layout
 
 \begin_layout Itemize
@@ -4008,14 +4007,14 @@ top
 
 \begin_layout Standard
 Eine Messung wird jeweils 5 und 10 Sekunden nach dem Start des Clients /
- der File-Generierung durchgeführt.
- Konkret werden also die Intervalle [0s, 5s] und [5s, 10s] gemessen.
+ der Daten-Generierung durchgeführt.
+ Konkret werden also die Intervalle [0 s, 5 s] und [5 s, 10 s] gemessen.
  Dabei misst jede Applikation pro Fall (dd und iperf3) zur gleichen Zeit
- wie die andere die Performance-Werte.
+ die Performance-Werte.
 \end_layout
 
 \begin_layout Standard
-Für jede Applikation wurde jeweils ein Bash-Script erstellt, bei dem die
+Für jede Applikation wurde jeweils ein Bash-Skript erstellt, bei dem die
  Ausgabe in eine Datei weitergeleitet wird.
  Das erste der folgenden Skripts wird ausgeführt, welches dd und iperf3
  nacheinander startet und jeweils die Messungen gleichzeitig ausführen lässt.
@@ -4102,7 +4101,7 @@ sleep 10
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Bash-Script zur Verifizierung der Messwerte der CPU-Messungen (cpu/00_cpu_reliab
+Bash-Skript zur Verifizierung der Messwerte der CPU-Messungen (cpu/00_cpu_reliab
 ility_test.sh)
 \end_layout
 
@@ -4235,7 +4234,7 @@ esac
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Bash-Script zur Verifizierung der Messwerte der CPU-Messungen von pidstat
+Bash-Skript zur Verifizierung der Messwerte der CPU-Messungen von pidstat
  (cpu/meas.sh)
 \end_layout
 
@@ -4345,7 +4344,7 @@ esac
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Bash-Script zur Verifizierung der Messwerte der CPU-Messungen von pidstat
+Bash-Skript zur Verifizierung der Messwerte der CPU-Messungen von pidstat
  (cpu/pidstat.sh)
 \end_layout
 
@@ -4491,7 +4490,7 @@ esac
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Bash-Script zur Verifizierung der Messwerte der CPU-Messungen von top (cpu/top.sh
+Bash-Skript zur Verifizierung der Messwerte der CPU-Messungen von top (cpu/top.sh
 )
 \end_layout
 
@@ -4506,7 +4505,7 @@ Bash-Script zur Verifizierung der Messwerte der CPU-Messungen von top (cpu/top.s
 \end_layout
 
 \begin_layout Standard
-Folgende Werte werden von pidstat, top und meas ausgegeben:
+Folgende Werte werden von meas, pidstat und top ausgegeben:
 \end_layout
 
 \begin_layout Standard
@@ -4549,7 +4548,7 @@ Tool
 
 \series bold
 \size footnotesize
-%CPU [0s, 5s]
+%CPU [0 s, 5 s]
 \end_layout
 
 \end_inset
@@ -4561,23 +4560,7 @@ Tool
 
 \series bold
 \size footnotesize
-%CPU [5s, 10s]
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-\size footnotesize
-System-
-\begin_inset Newline newline
-\end_inset
-
-time [s] [0s, 5s]
+%CPU [5 s, 10 s]
 \end_layout
 
 \end_inset
@@ -4593,7 +4576,23 @@ System-
 \begin_inset Newline newline
 \end_inset
 
-time [s] [5s, 10s]
+time [s] [0 s, 5 s]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+System-
+\begin_inset Newline newline
+\end_inset
+
+time [s] [5 s, 10 s]
 \end_layout
 
 \end_inset
@@ -4609,7 +4608,7 @@ User-
 \begin_inset Newline newline
 \end_inset
 
-time [s] [0s, 5s]
+time [s] [0 s, 5 s]
 \end_layout
 
 \end_inset
@@ -4625,7 +4624,7 @@ User-
 \begin_inset Newline newline
 \end_inset
 
-time [s] [5s, 10s]
+time [s] [5 s, 10 s]
 \end_layout
 
 \end_inset
@@ -4750,7 +4749,7 @@ pidstat-Messung von dd
 \begin_layout Plain Layout
 
 \size footnotesize
-99.60% von 5s
+99.60% von 5 s
 \begin_inset Newline newline
 \end_inset
 
@@ -4765,7 +4764,7 @@ pidstat-Messung von dd
 \begin_layout Plain Layout
 
 \size footnotesize
-99.80% von 5s
+99.80% von 5 s
 \begin_inset Newline newline
 \end_inset
 
@@ -4995,7 +4994,7 @@ pidstat-Messung von iperf3
 \begin_layout Plain Layout
 
 \size footnotesize
-3.58% von 5s
+3.58% von 5 s
 \begin_inset Newline newline
 \end_inset
 
@@ -5010,7 +5009,7 @@ pidstat-Messung von iperf3
 \begin_layout Plain Layout
 
 \size footnotesize
-3.20% von 5s
+3.20% von 5 s
 \begin_inset Newline newline
 \end_inset
 
@@ -5025,7 +5024,7 @@ pidstat-Messung von iperf3
 \begin_layout Plain Layout
 
 \size footnotesize
-0.20% von 5s
+0.20% von 5 s
 \begin_inset Newline newline
 \end_inset
 
@@ -5040,7 +5039,7 @@ pidstat-Messung von iperf3
 \begin_layout Plain Layout
 
 \size footnotesize
-0.20% von 5s
+0.20% von 5 s
 \begin_inset Newline newline
 \end_inset
 
@@ -5155,18 +5154,18 @@ Verifizierung der Messwerte der CPU-Messungen von meas, pidstat und top
 
 \begin_layout Standard
 Da top keine Angaben über System- und Usertime für einen spezifischen Prozess
- liefert, kann über diese Werte keine Angabe gemacht werden.
+ liefert, kann zu diesen Werten keine Angabe gemacht werden.
 \end_layout
 
 \begin_layout Standard
 Anhand der Resultate und der Tatsache, dass alle Applikationen das /proc-Dateisy
-stem nutzen, kann davon ausgegangen werden, dass die Resultate als zuverlässig
- zu betrachten sind.
+stem als Informationsquelle nutzen, kann davon ausgegangen werden, dass
+ die Resultate als zuverlässig zu betrachten sind.
  Abweichungen lassen sich dadurch erklären, dass die Messzeitpunkte bei
  den Programmen nicht zur exakt selben Zeit stattgefunden haben und die
  Berechnungen von Software zu Software marginal unterschiedlich sein können.
  Was jedoch aus Zeitgründen nicht belegt werden kann ist, wie pidstat und
- top weils die Werte anhand der Informationen aus dem /proc-Dateisystem
+ top jeweils die Werte anhand der Informationen aus dem /proc-Dateisystem
  berechnen, weshalb nicht ausgeschlossen werden kann, dass sich die Werte
  aufgrund unterschiedlicher Rechnungswege unterscheiden können.
 \end_layout
@@ -5189,8 +5188,8 @@ reference "sub:CPU"
 
 \end_inset
 
-) wird wieder iperf3 mit den selben Parametern ein Mal als Server und ein
- Mal als Client auf unterschiedlichen DANs ausgeführt und beim Client gemessen.
+) wird wieder iperf3 mit denselben Parametern einmal als Server und einmal
+ als Client auf unterschiedlichen DANs ausgeführt und beim Client gemessen.
  Der zweite Fall mit dd wird zudem wieder betrachtet.
  Während der Übertragung und Dateigenerierung wird mit den folgenden Applikation
 en die Arbeitsspeichernutzung gemessen:
@@ -5215,7 +5214,7 @@ hrt.
 \end_layout
 
 \begin_layout Standard
-Für jede Applikation wurde jeweils ein Bash-Script erstellt, bei dem die
+Für jede Applikation wurde jeweils ein Bash-Skript erstellt, bei dem die
  Ausgabe in eine Datei weitergeleitet wird.
  Das erste der folgenden Skripts wird ausgeführt, welches dd und iperf3
  nacheinander startet und jeweils die Messungen gleichzeitig ausführen lässt.
@@ -5302,7 +5301,7 @@ sleep 10
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Bash-Script zur Verifizierung der Messwerte der Arbeitsspeicher-Messungen
+Bash-Skript zur Verifizierung der Messwerte der Arbeitsspeicher-Messungen
  (ram/00_ram_reliability_test.sh)
 \end_layout
 
@@ -5416,7 +5415,7 @@ esac
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Bash-Script zur Verifizierung der Messwerte der Arbeitsspeicher-Messungen
+Bash-Skript zur Verifizierung der Messwerte der Arbeitsspeicher-Messungen
  von pidstat (ram/pidstat.sh)
 \end_layout
 
@@ -5560,7 +5559,7 @@ esac
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Bash-Script zur Verifizierung der Messwerte der Arbeitsspeicher-Messungen
+Bash-Skript zur Verifizierung der Messwerte der Arbeitsspeicher-Messungen
  von pmap (ram/pmap.sh)
 \end_layout
 
@@ -5706,7 +5705,7 @@ esac
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Bash-Script zur Verifizierung der Messwerte der Arbeitsspeicher-Messungen
+Bash-Skript zur Verifizierung der Messwerte der Arbeitsspeicher-Messungen
  von top (ram/top.sh)
 \end_layout
 
@@ -5721,9 +5720,24 @@ Bash-Script zur Verifizierung der Messwerte der Arbeitsspeicher-Messungen
 \end_layout
 
 \begin_layout Standard
-In dieser Arbeit werden die Werte VSZ (Virtual Memory Size) und RSS (Resident
- Set Size) betrachtet, um feststellen zu können, wie viel Speicher der Prozess
- allgemein und wie viel er davon im Arbeitsspeicher benötigt.
+In dieser Arbeit werden die Werte 
+\begin_inset Quotes fld
+\end_inset
+
+VSZ
+\begin_inset Quotes frd
+\end_inset
+
+ (Virtual Memory Size) und 
+\begin_inset Quotes fld
+\end_inset
+
+RSS
+\begin_inset Quotes frd
+\end_inset
+
+ (Resident Set Size) betrachtet, um feststellen zu können, wie viel Speicher
+ der Prozess allgemein und wie viel er davon im aktuellen Zustand benötigt.
  
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -5780,7 +5794,7 @@ VSZ in Kilobytes
 \begin_inset Newline newline
 \end_inset
 
-[0s, 5s]
+[0 s, 5 s]
 \end_layout
 
 \end_inset
@@ -5796,7 +5810,7 @@ VSZ in Kilobytes
 \begin_inset Newline newline
 \end_inset
 
-[5s, 10s]
+[5 s, 10 s]
 \end_layout
 
 \end_inset
@@ -5812,7 +5826,7 @@ RSS in Kilobytes
 \begin_inset Newline newline
 \end_inset
 
-[0s, 5s]
+[0 s, 5 s]
 \end_layout
 
 \end_inset
@@ -5828,7 +5842,7 @@ RSS in Kilobytes
 \begin_inset Newline newline
 \end_inset
 
-[5s, 10s]
+[5 s, 10 s]
 \end_layout
 
 \end_inset
@@ -6088,17 +6102,17 @@ Verifizierung der Messwerte der Arbeitsspeicher-Messungen von pidstat und
 \end_layout
 
 \begin_layout Standard
-pmap gibt keine konkreten VSZ- / RSS-Werte zurück, jedoch haben die Autoren
- dieser Arbeit den Grund zur Annahme, dass aus den Ausgabewerten von pmap
- die VSZ- und RSS-Werte berechnet werden können, weil pmap die Werte direkt
+pmap gibt keine konkreten VSZ-/RSS-Werte zurück, jedoch haben die Autoren
+ dieser Arbeit Grund zur Annahme, dass aus den Ausgabewerten von pmap die
+ VSZ- und RSS-Werte berechnet werden können, weil pmap die Werte direkt
  aus dem Pseudo-File-System /proc ausliest, in welchem die Werte vom Kernel
- direkt aufgeführt werden.
+ direkt gespeichert werden.
  Aus Prioritätsgründen wird auf die Berechnung anhand der Werte von pmap
  in dieser Arbeit nicht weiter eingegangen.
 \end_layout
 
 \begin_layout Standard
-Aus den Ergebnissen von pidstat und top lässt sich sagen, dass sich die
+Aus den Ergebnissen von pidstat und top wird festgestellt, dass sich die
  Arbeitsspeichernutzung von iperf3 innerhalb von 5 Sekunden während konstantem
  Senden nicht verändert.
  Des Weiteren werden die Ausgabewerte von pidstat und top aufgrund ihrer
@@ -6123,15 +6137,8 @@ reference "sub:CPU"
 
 \end_inset
 
-) wird eine eigens entwickelte Applikation 
-\begin_inset Quotes fld
-\end_inset
-
-meas
-\begin_inset Quotes frd
-\end_inset
-
- erwähnt, mit der die CPU-Last berechnet wird.
+) wird die eigens entwickelte Applikation meas erwähnt, mit der die CPU-Last
+ berechnet wird.
  In der gleichen Applikation wurde die Möglichkeit implementiert, die Belastung
  des Netzwerks zu messen.
  Wird anhand von iperf3 Netzwerkverkehr generiert, so werden auch von diesem
@@ -6143,15 +6150,15 @@ meas
 \begin_layout Standard
 In diesem Abschnitt wird überprüft, ob diese Angaben als zuverlässig betrachtet
  werden können.
- Dazu wird iperf3 mit den selben Parametern wie in Kapitel 
+ Dazu wird iperf3 mit denselben Parametern wie in Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sub:CPU"
 
 \end_inset
 
- ausgeführt, jedoch erfolgt hier die Messung zum gleichen Zeitpunkt, an
- dem der iperf3-Client gestartet wird.
+ ausgeführt, jedoch erfolgt hier die Messung zum gleichen Zeitpunkt wie
+ der iperf3-Client gestartet wird.
 \end_layout
 
 \begin_layout Standard
@@ -6164,42 +6171,20 @@ reference "sub:Netzwerklast-Generierung-shck"
 \end_inset
 
 ) verwendet, welche ähnlich wie iperf3 in diesem Kapitel aufgerufen wird:
- Auf dem DAN 
-\begin_inset Quotes fld
-\end_inset
-
-srv02
-\begin_inset Quotes frd
-\end_inset
-
- wird shck als Server aufgerufen, während auf 
-\begin_inset Quotes fld
-\end_inset
-
-srv01
-\begin_inset Quotes frd
-\end_inset
-
- shck als Client aufgerufen wird, welcher auch via TCP 200'000 Pakete mit
- maximaler Grösse an den Server sendet (Als Payload dient eine Datei mit
- zufällig erzeugten Werten).
+ Auf dem DAN srv02 wird shck als Server aufgerufen, während auf srv01 shck
+ als Client aufgerufen wird, welcher auch via TCP 200'000 Pakete mit maximaler
+ Grösse an den Server sendet (Als Payload dient eine Datei mit zufällig
+ erzeugten Zahlenwerten).
 \end_layout
 
 \begin_layout Standard
-Betrachtet werden in diesem Kapitel die Werte, die vom PRP-Netzwerkinterface
- des Clients 
-\begin_inset Quotes fld
-\end_inset
-
-srv01
-\begin_inset Quotes frd
-\end_inset
-
- stammen.
+Betrachtet werden in diesem Kapitel die Werte, die vom PRP-Netzwerk-Interface
+ des Clients srv01 stammen.
 \end_layout
 
 \begin_layout Standard
-Der Interval, in dem in diesem Abschnitt gemessen wird, beträgt 1 Sekunde.
+Das Intervall, innerhalb welchem in diesem Abschnitt gemessen wird, beträgt
+ 1 Sekunde.
 \end_layout
 
 \begin_layout Standard
@@ -6210,15 +6195,7 @@ Der Interval, in dem in diesem Abschnitt gemessen wird, beträgt 1 Sekunde.
 \end_layout
 
 \begin_layout Standard
-Das Bash-Skript, das auf 
-\begin_inset Quotes fld
-\end_inset
-
-srv02
-\begin_inset Quotes frd
-\end_inset
-
- ausgeführt wird, sieht wie folgt aus:
+Das Bash-Skript, das auf srv02 ausgeführt wird, sieht wie folgt aus:
 \end_layout
 
 \begin_layout Standard
@@ -6374,7 +6351,7 @@ esac
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Bash-Script zur Verifizierung der Messwerte der Netzwerkbelastungs-Messungen
+Bash-Skript zur Verifizierung der Messwerte der Netzwerkbelastungs-Messungen
  (net/00_net_reliability_test.sh)
 \end_layout
 
@@ -6396,23 +6373,7 @@ Bash-Script zur Verifizierung der Messwerte der Netzwerkbelastungs-Messungen
 \end_layout
 
 \begin_layout Standard
-Darin startet 
-\begin_inset Quotes fld
-\end_inset
-
-srv02
-\begin_inset Quotes frd
-\end_inset
-
- auf 
-\begin_inset Quotes fld
-\end_inset
-
-srv01
-\begin_inset Quotes frd
-\end_inset
-
- über das nicht-PRP-Netzwerk (
+Darin startet srv02 auf srv01 über das Administrationsnetzwerk (
 \begin_inset Quotes fld
 \end_inset
 
@@ -6420,8 +6381,9 @@ Netzwerk Ext
 \begin_inset Quotes frd
 \end_inset
 
-) über SSH die Clients sobald der Server bereit ist.
- Somit werden erst Daten übertragen wenn man auch bereit ist, diese zu empfangen.
+) via SSH die Clients, sobald der Server bereit ist.
+ Somit werden erst Daten übertragen, wenn der Server bereit ist, diese zu
+ empfangen.
 \end_layout
 
 \begin_layout Standard
@@ -7458,15 +7420,7 @@ TX-Rate
 
 \begin_layout Plain Layout
 Verifizierung der Messwerte der Netzwerkbelastungs-Messungen: Werte von
- iperf3-Client auf 
-\begin_inset Quotes fld
-\end_inset
-
-srv01
-\begin_inset Quotes frd
-\end_inset
-
-, bwm-ng und meas
+ iperf3-Client auf srv01, bwm-ng und meas
 \end_layout
 
 \end_inset
@@ -7480,8 +7434,8 @@ srv01
 \end_layout
 
 \begin_layout Standard
-Die Werte von bwm-ng / meas konnten auf die Werte von iperf3 über folgende
- Rechnungswege zurückgerechnet werden:
+Die Werte von bwm-ng/meas konnten auf die Werte von iperf3 über folgenden
+ Rechnungsweg zurückgerechnet werden:
 \end_layout
 
 \begin_layout Standard
@@ -7522,9 +7476,9 @@ Die Werte von bwm-ng / meas konnten auf die Werte von iperf3 über folgende
 
 \begin_layout Standard
 Als Annahme zu diesem Rechnungsweg diente, dass iperf3 lediglich die versendete
- Payload betrachtet, bzw.
- dessen Werte auf Layer 4 anstelle Layer 2 bezieht und die Datenmenge fälschlich
-erweise mit Faktor 1024 berechnet.
+ Payload betrachtet bzw.
+ dessen Werte sich auf Layer 4 anstelle Layer 2 beziehen und die Datenmenge
+ fälschlicherweise mit Faktor 1024 berechnet.
 \end_layout
 
 \begin_layout Standard
@@ -7651,7 +7605,7 @@ srv01 (shck-Client, tätigt Upload)
 
 \series bold
 \size footnotesize
-Interval [s]
+Intervall [s]
 \end_layout
 
 \end_inset
@@ -8329,15 +8283,7 @@ TX-Rate
 
 \begin_layout Plain Layout
 Verifizierung der Messwerte der Netzwerkbelastungs-Messungen: Werte von
- bwm-ng und meas des shck-Clients auf 
-\begin_inset Quotes fld
-\end_inset
-
-srv01
-\begin_inset Quotes frd
-\end_inset
-
-
+ bwm-ng und meas des shck-Clients auf srv01
 \end_layout
 
 \end_inset
@@ -8361,9 +8307,9 @@ srv01
 Da die Resultate der unterschiedlichen Applikationen keine grossen Abweichungen
  zueinander haben, sind die Resultate der Applikationen als zuverlässig
  einzustufen.
- Grund für die Abweichungen könnte sein, dass die Tools wahrscheinlich nicht
- immer zur exakt selben Zeit messen oder in jeder Applikation bei der Berechnung
- anders vorgegangen wird.
+ Grund für die Abweichungen könnte sein, dass die Tools nicht immer zur
+ exakt selben Zeit messen oder in jeder Applikation bei der Berechnung anders
+ vorgegangen wird.
  Wie genau bwm-ng und iperf3 bei den Berechnungen vorgehen kann aus Zeitgründen
  nicht ermittelt werden, jedoch ist der Rechenweg der meas-Applikation komplett
  ersichtlich, da es sich hierbei und eine eigens entwickelte Software handelt.
@@ -8371,12 +8317,13 @@ Da die Resultate der unterschiedlichen Applikationen keine grossen Abweichungen
 
 \begin_layout Standard
 Daraus, dass bei meas das Vorgehen bei der Berechnung selbst implementiert
- wurde und die Werte grösstenteils mit den Werten anderer Tools übereinstimmen,
- wird für die Messung der Netzwerkbandbreite meas verwendet.
+ wurde und die Werte den Werten anderer Tools entsprechen, wird für die
+ Messung der Netzwerkbandbreite meas verwendet.
  Ein weiterer Grund, der für meas spricht, ist dessen kleiner Messfehler
- von circa 100us, da meas während der Messung nur aufzeichnet und am Ende
- die Daten auswertet und ausgibt, während z.B.
- bwm-ng pro Messinterval die Daten auswertet und in die Standardausgabe
+ von circa 100 us, da meas während der Messung nur aufzeichnet und am Ende
+ einer Messserie die Daten auswertet und ausgibt, während z.
+ B.
+ bwm-ng pro Messintervall die Daten auswertet und in die Standardausgabe
  oder eine Datei schreibt.
 \end_layout
 

@@ -120,7 +120,7 @@ name "sub:Grundsätze-und-Rahmenbedingungen"
 \end_layout
 
 \begin_layout Standard
-Für die Ermittlung und Analyse der Performance werden folgende Grundsätze
+Für die Ermittlung und Analyse der Performance sind folgende Grundsätze
  und Rahmenbedingungen festgelegt:
 \end_layout
 
@@ -145,17 +145,11 @@ reference "sec:Aufbau-der-Testumgebung"
 
 \begin_layout Itemize
 Wenn ein Test in verschiedenen Variationen ausgeführt wird, wird jeder dieser
- Tests mit den selben Mitteln durchgeführt und überprüft.
+ Tests mit denselben Mitteln durchgeführt und überprüft.
 \end_layout
 
 \begin_layout Itemize
-Wird bei einem Test eigens entwickelte Software verwendet, so wird diese
- im Test erläutert oder darauf verwiesen.
- Der Quellcode der jeweiligen Software liegt dieser Arbeit bei.
-\end_layout
-
-\begin_layout Itemize
-Die effektiv verwendeten Statistik-Merkmale und signifikanten Resultat-Parameter
+Die effektiv verwendeten Statistik-Merkmale und signifikanten Resultatparameter
  sind im Paragraph 
 \begin_inset Quotes fld
 \end_inset
@@ -191,8 +185,7 @@ reference "par:Fazit"
 \begin_layout Standard
 Um feststellen zu können, ob sich auf eine längere Zeit ein bestimmtes Verhalten
  ändert, werden die Tests in verschiedenen Zeitspannen durchgeführt.
- Dabei gibt es 3 verschiedene Zeitspannen: Ultrakurzzeit-, Kurzzeit und
- Langzeit-Tests.
+ Dabei gibt es 3 verschiedene Zeitspannen: Ultrakurzzeit, Kurzzeit und Langzeit.
 \end_layout
 
 \begin_layout Standard
@@ -371,7 +364,7 @@ Zeitspannen, in denen die Tests, wenn nötig, durchgeführt werden.
 \end_layout
 
 \begin_layout Subsubsection
-Einheiten für Speicher und Netzwerkübertragungen
+Einheiten für Speichergrössen und Netzwerkübertragungen
 \end_layout
 
 \begin_layout Standard
@@ -494,7 +487,8 @@ MByte (1 MByte sind 1000 kByte)
 Bei den Geschwindigkeiten handelt es sich, falls es nicht anders angegeben
  wird, um Geschwindigkeiten auf Layer 2.
  Das heisst, dass nur die Bits, die zu einem Layer-2-Frame gehören, zählen
- und u.a.
+ und u.
+ a.
  die Bits der Präambel, SFD und IFG davon ausgeschlossen sind.
 \end_layout
 
@@ -518,8 +512,9 @@ name "sub:Generierung-von-Datenverkehrströ"
 
 \begin_layout Standard
 In diesem Kapitel werden sämtliche Typen von Netzwerklast, die in dieser
- Arbeit vorkommen, beschrieben und Erzeugung erläutert.
- Für die Generierung der Netzwerklast werden 2 verschiedene Lasttypen angewandt:
+ Arbeit vorkommen, beschrieben sowie deren Erzeugung erläutert.
+ Für die Generierung der Netzwerklast werden 2 verschiedene Lasttypen angewendet
+:
 \end_layout
 
 \begin_layout Standard
@@ -547,8 +542,8 @@ MIN
 \series bold
 Layer-2-Frames / UDP-Pakete
 \series default
-: 14 Byte Ethernet Header + 46 Byte Payload (davon bei UDP 8 Byte UDP-Header)
- + 6 Byte RCT + 4 Byte Frame Check Sequence = 
+: 14 Byte Ethernet Header + 46 Byte Payload (davon bei UDP 20 Byte IP-Header
+ + 8 Byte UDP-Header) + 6 Byte RCT + 4 Byte Frame Check Sequence = 
 \series bold
 70 Byte
 \series default
@@ -567,10 +562,10 @@ key "IEC_62439-3_2015"
 \series bold
 TCP-Pakete
 \series default
-: 14 Byte Ethernet Header + 53 Byte Payload (davon 20 Byte IP + 32 Byte
- TCP + 1 Byte Payload (es können über Sockets keine Frames / Pakete ohne
- Payload versendet werden)) + 6 Byte RCT + 4 Byte Frame Check Sequence =
- 
+: 14 Byte Ethernet Header + 53 Byte Payload [davon 20 Byte IP-Header + 32
+ Byte TCP-Header + 1 Byte Payload (es können über Sockets keine Frames/Pakete
+ ohne Payload versendet werden)] + 6 Byte RCT + 4 Byte Frame Check Sequence
+ = 
 \series bold
 77 Byte 
 \series default
@@ -604,7 +599,7 @@ reference "par:TCP-Sockets-und-bytegenaue"
 
 Hierbei handelt es sich um einen der Extremfälle, da weitaus weniger Zeit
  für die Duplikaterkennung vorhanden ist, bis das nächste Frame ankommt.
- In diesem Fall wird die maximal mögliche Anzahl an Frames / Paketen innerhalb
+ In diesem Fall wird die maximal mögliche Anzahl an Frames/Paketen innerhalb
  einer Sekunde generiert, weshalb der PRP-1 stack hier am meisten Rechenoperatio
 nen ausführen muss, was in einer hohen CPU-Last resultiert.
 \end_layout
@@ -626,10 +621,10 @@ MAX
 \begin_inset Newline newline
 \end_inset
 
-Mit RCT und ohne VLAN-Tag 1518 Byte.
+Inklusive RCT und ohne VLAN-Tag 1518 Byte.
  In dieser Arbeit wird der RCT mit in die maximale Framegrösse miteinbezogen,
- die Grösse von 1518 Byte der Standard ist und somit nicht die gesamte Netzwerkp
-eripherie neu parametrisiert werden muss.
+ da die Grösse von 1518 Byte dem Standard entspricht und somit nicht die
+ gesamte Netzwerkperipherie neu parametrisiert werden muss.
  Des Weiteren ist beim PRP-1 stack eine MTU von 1494 Byte gesetzt, was Frames
  grösser als 1518 Byte ausschliesst.
  
@@ -645,8 +640,14 @@ ader + 1494 Byte Payload + 6 Byte RCT + 4 Byte Frame Check Sequence =
 \begin_inset Newline newline
 \end_inset
 
-Im PRP-1-Standard wird angenommen, dass die jede Netzwerkkomponente eine
- von ISO/IEC/IEEE 8802-3:2014 vorhergesehene 
+Der zweite der Extremfälle, da permanent grosse Daten verarbeitet werden
+ müssen.
+ Hier wird das Netzwerk am stärksten belastet.
+\begin_inset Newline newline
+\end_inset
+
+Einschub: Im PRP-1-Standard wird angenommen, dass jede Netzwerkkomponente
+ eine von ISO/IEC/IEEE 8802-3:2014 vorhergesehene 
 \begin_inset Quotes fld
 \end_inset
 
@@ -663,12 +664,6 @@ key "IEC_62439-3_2015"
 \end_inset
 
 .
-\begin_inset Newline newline
-\end_inset
-
-Der zweite der Extremfälle, da permanent grosse Daten verarbeitet werden
- müssen.
- Hier wird das Netzwerk am stärksten belastet.
 \end_layout
 
 \begin_layout Standard
@@ -687,7 +682,7 @@ status open
 
 \begin_layout Plain Layout
 \noindent
-Die Grösse der Frames / Pakete und dessen Header wird in Kapitel 
+Die Grösse der Frames/Pakete und dessen Header wird in Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sub:Netzwerklast-Generierung-shck"
@@ -709,7 +704,7 @@ rames), TCP und UDP.
 \end_layout
 
 \begin_layout Standard
-Dies ergibt total 6 unterschiedliche Netzwerklastarten.
+Dies ergibt total 6 unterschiedliche Netzwerklasten.
  Mittels der Applikation shck (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -717,14 +712,14 @@ reference "sub:Netzwerklast-Generierung-shck"
 
 \end_inset
 
-) ist es möglich, jeden dieser Datenströme mit einer Genauigkeit zur Einheit
+) ist es möglich, jeden dieser Datenströme mit einer Genauigkeit auf ein
  Byte generieren zu können.
  
 \end_layout
 
 \begin_layout Standard
 Des Weiteren ist es möglich mit shck ein Lastmuster zu bestimmen, bei der
- jedes Frame / Paket eine andere Grösse hat (Lasttypen-Bezeichnung 
+ jedes Frame/Paket eine andere Grösse hat (Lasttypen-Bezeichnung 
 \begin_inset Quotes fld
 \end_inset
 
@@ -757,12 +752,11 @@ eilten Grössen in Betracht gezogen.
 \end_layout
 
 \begin_layout Standard
-Es gibt für jeden Anwendungsfall ein anderes Lastmuster, beispielsweise
- Internet oder Substation Automation, auf welche in dieser Arbeit nicht
- eingegangen werden.
- Mit den beigelieferten Applikationen (meas und shck) ist es jedoch möglich,
- spezifische, selbst erstellte Lastmuster für die Netzwerklastgenerierung
- mit shck anzuwenden.
+Es gibt für jeden Anwendungsfall andere Lastmuster, beispielsweise Internet
+ oder Substation Automation, auf welche in dieser Arbeit nicht eingegangen
+ werden.
+ Mit der mitgelieferten Applikation shck ist es jedoch möglich, spezifische,
+ selbst erstellte Lastmuster für die Netzwerklastgenerierung anzuwenden.
 \end_layout
 
 \begin_layout Paragraph
@@ -794,7 +788,7 @@ Nummer des Szenarios, in dem die Last generiert wird
 
 \begin_deeper
 \begin_layout Itemize
-Gehört die Last zu keinem Szenario, anstelle einer Nummer eine passende
+Gehört die Last zu keinem Szenario, wird anstelle einer Nummer eine passende
  Folge zweier Buchstaben gewählt.
 \end_layout
 
@@ -811,7 +805,7 @@ E
 \begin_inset Quotes frd
 \end_inset
 
- für Ethernet / Layer-2-Frames
+ für Ethernet/Layer-2-Frames
 \end_layout
 
 \begin_layout Itemize
@@ -839,23 +833,7 @@ U
 \end_deeper
 \end_deeper
 \begin_layout Itemize
-Lasttyp (
-\begin_inset Quotes fld
-\end_inset
-
-MIN
-\begin_inset Quotes frd
-\end_inset
-
-, 
-\begin_inset Quotes fld
-\end_inset
-
-MAX
-\begin_inset Quotes frd
-\end_inset
-
-) (siehe Kapitel 
+Lasttyp (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sub:Generierung-von-Datenverkehrströ"
@@ -874,7 +852,7 @@ MIN
 \begin_inset Quotes frd
 \end_inset
 
- für Frames / Pakete mit minimaler Grösse
+ für Frames/Pakete mit minimaler Grösse
 \end_layout
 
 \begin_layout Itemize
@@ -885,7 +863,7 @@ MAX
 \begin_inset Quotes frd
 \end_inset
 
- für Frames / Pakete mit maximaler Grösse
+ für Frames/Pakete mit maximaler Grösse
 \end_layout
 
 \end_deeper
@@ -906,8 +884,8 @@ reference "sub:Grundsätze-und-Rahmenbedingungen"
 
 ), in der die Netzwerklast generiert wird, in Form eines Buchstabens.
  Sofern es nicht anders aufgeführt ist, beträgt die Dauer für Ultrakurzzeit-Mess
-ungen 60s, für Kurzzeit-Messungen 5min und für Langzeit-Messungen 1h.
- Wird anstelle einer Zeitspanne eine Anzahl an Frames / Paketen verwendet,
+ungen 60 s, für Kurzzeit-Messungen 5 min und für Langzeit-Messungen 1 h.
+ Wird anstelle einer Zeitspanne eine Anzahl an Frames/Paketen verwendet,
  so wird hier anstelle des Buchstabens die Anzahl gefolgt von einem 
 \begin_inset Quotes fld
 \end_inset
@@ -955,9 +933,9 @@ L
 
 \end_deeper
 \begin_layout Standard
-Zum Beispiel hat eine Netzwerklast, die in Szenario 01 generiert, via TCP
- versendet wird, aus Paketen mit maximaler Grösse besteht und während 5min
- gemessen wird das folgende Kürzel: 01.T.MAX.K
+Zum Beispiel hat eine Netzwerklast, die in Szenario 01 generiert und via
+ TCP versendet wird, welche aus Paketen mit maximaler Grösse besteht und
+ während 5 min gemessen wird, das folgende Kürzel: 01.T.MAX.K
 \end_layout
 
 \begin_layout Subsubsection
@@ -972,24 +950,18 @@ name "sub:Theoretische-Grenzwerte"
 \end_layout
 
 \begin_layout Standard
-In diesem Abschnitt wird pro Lasttyp berechnet, was die maximal mögliche
- Netzwerklastung sein würde.
- Somit kann man anhand der Resultate feststellen, ob beim jeweiligen Testfall
- ein Engpass beim Prozessor oder bei der Netzwerkverbindung entsteht.
+In diesem Abschnitt wird pro Lasttyp die maximal mögliche Netzwerkbelastung
+ berechnet.
+ Somit kann anhand der Resultate festgestellet werden, ob beim jeweiligen
+ Testfall ein Engpass beim Prozessor oder bei der Netzwerkanbindung entsteht.
  
 \end_layout
 
 \begin_layout Standard
-Für Frames / Pakete mit zufälliger Grösse kann dies aufgrund ihrer Natur
- nicht konkret berechnet werden, jedoch muss dessen maximale Bandbreite
- zwischen denen der minimalen und maximalen Frames liegen.
-\end_layout
-
-\begin_layout Standard
-Die maximale Übertragungsgeschwindigkeit in der Umgebung dieser Arbeit beträgt
+Die maximale Übertragungsgeschwindigkeit im Rahmen dieser Arbeit beträgt
  auf dem Physical-Layer (Layer 1) 100 MBit/s.
- Vor jedem Frame / Paket wird die Präambel und der Start of Frame Delimiter
- (SFD) (zusammen 8 Bytes) angehängt 
+ Vor jedem Frame/Paket wird die Präambel und der Start of Frame Delimiter
+ (SFD) (betragen zusammen 8 Bytes) angehängt 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Industiral_Ethernet_Basics"
@@ -997,7 +969,7 @@ key "Industiral_Ethernet_Basics"
 \end_inset
 
 .
- Nach jedem Frame / Paket wird bei der Datenübertragung ein 
+ Nach jedem Frame/Paket wird bei der Datenübertragung ein 
 \begin_inset Quotes fld
 \end_inset
 
@@ -1005,8 +977,8 @@ Interframe Gap
 \begin_inset Quotes frd
 \end_inset
 
- (IFG) eingefügt, das bei 100 MBit/s 12 Bytes gross ist, da bei Fast Ethernet
- (100 Mbit/s) die IFG 960ns dauern muss 
+ (IFG) eingefügt, der bei 100 MBit/s 12 Bytes gross ist, da bei Fast Ethernet
+ (100 Mbit/s) die IFG-Übertragungszeit mindestens 960ns dauert 
 \begin_inset CommandInset citation
 LatexCommand cite
 key "Fast_Ethernet_and_Gigabit_Ethernet"
@@ -1064,9 +1036,9 @@ Ein Frame mit minimaler Grösse nimmt bei der Übertragung effektiv 84 Byte
 \end_layout
 
 \begin_layout Standard
-Multipliziert man diese Anzahl an Frames lediglich mit der Grösse eines
- minimalen Ethernet Frames inklusive RCT (70 Byte = 560 Bit), erhält man
- die effektive Bitrate:
+Multipliziert man diese Anzahl an Frames mit der Grösse eines minimalen
+ Ethernet Frames inklusive RCT (70 Byte = 560 Bit), erhält man die effektive
+ Bitrate:
 \end_layout
 
 \begin_layout Standard
@@ -1080,12 +1052,12 @@ Multipliziert man diese Anzahl an Frames lediglich mit der Grösse eines
 
 \begin_layout Standard
 Somit liegt die maximale Bandbreite bei einer Nutzlast, die lediglich aus
- minimal grossen Frames / Paketen besteht bei ca.
+ minimal grossen Frames/Paketen, besteht bei ca.
  77.8 MBit/s.
 \end_layout
 
 \begin_layout Standard
-Mit dem selben Rechnungsweg ergibt die maximale Bandbreite mit minimal grossen
+Mit demselben Rechnungsweg ergibt die maximale Bandbreite mit minimal grossen
  TCP-Paketen (beträgt bei der Übertragung effektiv 97 Bytes) 79.4 MBit/s.
 \end_layout
 
@@ -1123,9 +1095,8 @@ Ein Frame mit maximaler Grösse nimmt effektiv 1538 Byte ein (7 Byte Präambel
 \end_layout
 
 \begin_layout Standard
-Multipliziert man diese Anzahl an Frames lediglich mit der Grösse eines
- maximalen Ethernet Frames (1518 Byte = 12'144 Bit), erhält man die effektive
- Bitrate:
+Multipliziert man diese Anzahl an Frames mit der Grösse eines maximalen
+ Ethernet Frames (1518 Byte = 12'144 Bit), erhält man die effektive Bitrate:
 \end_layout
 
 \begin_layout Standard
@@ -1138,8 +1109,8 @@ Multipliziert man diese Anzahl an Frames lediglich mit der Grösse eines
 \end_layout
 
 \begin_layout Standard
-Somit liegt die maximale Bandbreite bei einer Nutzlast, die lediglich aus
- maximal grossen Frames / Paketen besteht bei ca.
+Somit liegt die maximale Bandbreite bei einer Nutzlast, die aus maximal
+ grossen Frames/Paketen besteht, bei ca.
  98.7 MBit/s.
 \end_layout
 
@@ -1163,28 +1134,36 @@ name "sub:Einschwingzeit-/-Steady"
 
 \begin_layout Standard
 Es folgt eine Analyse für jede Übertragungsart (Ethernet, TCP, UDP), bei
- der die Dauer bis sich das System im eingeschwungenen Zustand befindet
+ der die Dauer, bis sich das System im eingeschwungenen Zustand befindet,
  ermittelt wird.
- Des Weiteren wird pro Übertragungs- und Lastart determiniert welche Grösse
- die Schwankungen im eingeschwungenen Zustand betragen.
- Dieser eingeschwungene Zustand wird auch Steady State genannt.
+ Des Weiteren wird pro Übertragungsart und Lasttyp determiniert, welche
+ Grösse die Schwankungen im eingeschwungenen Zustand betragen.
+ Dieser eingeschwungene Zustand wird auch 
+\begin_inset Quotes fld
+\end_inset
+
+Steady State
+\begin_inset Quotes frd
+\end_inset
+
+ genannt.
 \end_layout
 
 \begin_layout Standard
 Dazu wird für jedes Protokoll und jeden Lasttyp eine Netzwerklast mit 100'000
- Frames / Paketen mit shck generiert, versendet und mit meas gemessen (meas
- wird gestartet, dann shck).
+ Frames/Paketen mit shck generiert, versendet und mit meas gemessen (meas
+ wird zuerst gestartet, dann shck).
  So wird jeweils der Verbindungsaufbau, Versand und Verbindungsabbau aufgezeichn
 et.
- Während der Aufzeichnung werden alle 100ms die aktuellen Performance-Werte
+ Während der Aufzeichnung werden alle 100 ms die aktuellen Performance-Werte
  gespeichert und am Ende ausgewertet, womit auf eine Zehntel Sekunde genau
  festgelegt werden kann, wie lange die Einschwingzeit, der Steady State
  und der Verbindungsabbau dauern.
 \end_layout
 
 \begin_layout Standard
-In den folgenden Grafiken werden die CPU-Last des PRP-1 stacks und die TX-Bitrat
-e des PRP-Netzwerk-Interfaces aufgezeigt.
+In den folgenden Graphiken werden die CPU-Last des PRP-1 stacks und die
+ TX-Bitrate des PRP-Netzwerk-Interfaces aufgezeigt.
 \end_layout
 
 \begin_layout Standard
@@ -1320,7 +1299,7 @@ Wert
 \begin_layout Plain Layout
 
 \size small
-Steady State Dauer von [s] bis [s]
+Steady-State-Dauer von [s] bis [s]
 \end_layout
 
 \end_inset
@@ -1344,7 +1323,7 @@ Steady State Dauer von [s] bis [s]
 \begin_layout Plain Layout
 
 \size small
-Durchschnitt im Steady State CPU [%]
+Durchschnitt im Steady State: CPU [%]
 \end_layout
 
 \end_inset
@@ -1368,7 +1347,7 @@ Durchschnitt im Steady State CPU [%]
 \begin_layout Plain Layout
 
 \size small
-Schwankungsband im Steady State CPU [%]
+Schwankungsband im Steady State: CPU [%]
 \end_layout
 
 \end_inset
@@ -1392,7 +1371,7 @@ Schwankungsband im Steady State CPU [%]
 \begin_layout Plain Layout
 
 \size small
-Durchschnitt im Steady State TX [MBit/s]
+Durchschnitt im Steady State: TX [MBit/s]
 \end_layout
 
 \end_inset
@@ -1416,7 +1395,7 @@ Durchschnitt im Steady State TX [MBit/s]
 \begin_layout Plain Layout
 
 \size small
-Schwankungsband im Steady State TX [MBit/s]
+Schwankungsband im Steady State: TX [MBit/s]
 \end_layout
 
 \end_inset
@@ -1590,7 +1569,7 @@ Wert
 \begin_layout Plain Layout
 
 \size small
-Steady State Dauer von [s] bis [s]
+Steady-State-Dauer von [s] bis [s]
 \end_layout
 
 \end_inset
@@ -1614,7 +1593,7 @@ Steady State Dauer von [s] bis [s]
 \begin_layout Plain Layout
 
 \size small
-Durchschnitt im Steady State CPU [%]
+Durchschnitt im Steady State: CPU [%]
 \end_layout
 
 \end_inset
@@ -1638,7 +1617,7 @@ Durchschnitt im Steady State CPU [%]
 \begin_layout Plain Layout
 
 \size small
-Schwankungsband im Steady State CPU [%]
+Schwankungsband im Steady State: CPU [%]
 \end_layout
 
 \end_inset
@@ -1662,7 +1641,7 @@ Schwankungsband im Steady State CPU [%]
 \begin_layout Plain Layout
 
 \size small
-Durchschnitt im Steady State TX [MBit/s]
+Durchschnitt im Steady State: TX [MBit/s]
 \end_layout
 
 \end_inset
@@ -1686,7 +1665,7 @@ Durchschnitt im Steady State TX [MBit/s]
 \begin_layout Plain Layout
 
 \size small
-Schwankungsband im Steady State TX [MBit/s]
+Schwankungsband im Steady State: TX [MBit/s]
 \end_layout
 
 \end_inset
@@ -1860,7 +1839,7 @@ Wert
 \begin_layout Plain Layout
 
 \size small
-Steady State Dauer von [s] bis [s]
+Steady-State-Dauer von [s] bis [s]
 \end_layout
 
 \end_inset
@@ -1884,7 +1863,7 @@ Steady State Dauer von [s] bis [s]
 \begin_layout Plain Layout
 
 \size small
-Durchschnitt im Steady State CPU [%]
+Durchschnitt im Steady State: CPU [%]
 \end_layout
 
 \end_inset
@@ -1908,7 +1887,7 @@ Durchschnitt im Steady State CPU [%]
 \begin_layout Plain Layout
 
 \size small
-Schwankungsband im Steady State CPU [%]
+Schwankungsband im Steady State: CPU [%]
 \end_layout
 
 \end_inset
@@ -1932,7 +1911,7 @@ Schwankungsband im Steady State CPU [%]
 \begin_layout Plain Layout
 
 \size small
-Durchschnitt im Steady State TX [MBit/s]
+Durchschnitt im Steady State: TX [MBit/s]
 \end_layout
 
 \end_inset
@@ -1956,7 +1935,7 @@ Durchschnitt im Steady State TX [MBit/s]
 \begin_layout Plain Layout
 
 \size small
-Schwankungsband im Steady State TX [MBit/s]
+Schwankungsband im Steady State: TX [MBit/s]
 \end_layout
 
 \end_inset
@@ -2130,7 +2109,7 @@ Wert
 \begin_layout Plain Layout
 
 \size small
-Steady State Dauer von [s] bis [s]
+Steady-State-Dauer von [s] bis [s]
 \end_layout
 
 \end_inset
@@ -2154,7 +2133,7 @@ Steady State Dauer von [s] bis [s]
 \begin_layout Plain Layout
 
 \size small
-Durchschnitt im Steady State CPU [%]
+Durchschnitt im Steady State: CPU [%]
 \end_layout
 
 \end_inset
@@ -2178,7 +2157,7 @@ Durchschnitt im Steady State CPU [%]
 \begin_layout Plain Layout
 
 \size small
-Schwankungsband im Steady State CPU [%]
+Schwankungsband im Steady State: CPU [%]
 \end_layout
 
 \end_inset
@@ -2202,7 +2181,7 @@ Schwankungsband im Steady State CPU [%]
 \begin_layout Plain Layout
 
 \size small
-Durchschnitt im Steady State TX [MBit/s]
+Durchschnitt im Steady State: TX [MBit/s]
 \end_layout
 
 \end_inset
@@ -2226,7 +2205,7 @@ Durchschnitt im Steady State TX [MBit/s]
 \begin_layout Plain Layout
 
 \size small
-Schwankungsband im Steady State TX [MBit/s]
+Schwankungsband im Steady State: TX [MBit/s]
 \end_layout
 
 \end_inset
@@ -2400,7 +2379,7 @@ Wert
 \begin_layout Plain Layout
 
 \size small
-Steady State Dauer von [s] bis [s]
+Steady-State-Dauer von [s] bis [s]
 \end_layout
 
 \end_inset
@@ -2424,7 +2403,7 @@ Steady State Dauer von [s] bis [s]
 \begin_layout Plain Layout
 
 \size small
-Durchschnitt im Steady State CPU [%]
+Durchschnitt im Steady State: CPU [%]
 \end_layout
 
 \end_inset
@@ -2448,7 +2427,7 @@ Durchschnitt im Steady State CPU [%]
 \begin_layout Plain Layout
 
 \size small
-Schwankungsband im Steady State CPU [%]
+Schwankungsband im Steady State: CPU [%]
 \end_layout
 
 \end_inset
@@ -2472,7 +2451,7 @@ Schwankungsband im Steady State CPU [%]
 \begin_layout Plain Layout
 
 \size small
-Durchschnitt im Steady State TX [MBit/s]
+Durchschnitt im Steady State: TX [MBit/s]
 \end_layout
 
 \end_inset
@@ -2496,7 +2475,7 @@ Durchschnitt im Steady State TX [MBit/s]
 \begin_layout Plain Layout
 
 \size small
-Schwankungsband im Steady State TX [MBit/s]
+Schwankungsband im Steady State: TX [MBit/s]
 \end_layout
 
 \end_inset
@@ -2670,7 +2649,7 @@ Wert
 \begin_layout Plain Layout
 
 \size small
-Steady State Dauer von [s] bis [s]
+Steady-State-Dauer von [s] bis [s]
 \end_layout
 
 \end_inset
@@ -2694,7 +2673,7 @@ Steady State Dauer von [s] bis [s]
 \begin_layout Plain Layout
 
 \size small
-Durchschnitt im Steady State CPU [%]
+Durchschnitt im Steady State: CPU [%]
 \end_layout
 
 \end_inset
@@ -2718,7 +2697,7 @@ Durchschnitt im Steady State CPU [%]
 \begin_layout Plain Layout
 
 \size small
-Schwankungsband im Steady State CPU [%]
+Schwankungsband im Steady State: CPU [%]
 \end_layout
 
 \end_inset
@@ -2742,7 +2721,7 @@ Schwankungsband im Steady State CPU [%]
 \begin_layout Plain Layout
 
 \size small
-Durchschnitt im Steady State TX [MBit/s]
+Durchschnitt im Steady State: TX [MBit/s]
 \end_layout
 
 \end_inset
@@ -2766,7 +2745,7 @@ Durchschnitt im Steady State TX [MBit/s]
 \begin_layout Plain Layout
 
 \size small
-Schwankungsband im Steady State TX [MBit/s]
+Schwankungsband im Steady State: TX [MBit/s]
 \end_layout
 
 \end_inset
@@ -2826,13 +2805,13 @@ Fazit
 \begin_inset Newline newline
 \end_inset
 
-Die längste Einschwingzeit über alle Lasttypen beträgt 0.7s.
+Die längste Einschwingzeit über alle Netzwerklasten beträgt 0.7 s.
  Das bedeutet, dass wenn meas und shck direkt nacheinander gestartet werden,
  meas garantiert nach 0.7s einen eingeschwungenen Zustand misst.
 \end_layout
 
 \begin_layout Standard
-Für die Messungen bedeutet das, dass etwa 1 Sekunde (0.7s aufgerundet) nach
+Für die Messungen bedeutet das, dass etwa 1 Sekunde (0.7 s aufgerundet) nach
  dem Start der Netzwerklastgenerierung mit der Messung begonnen werden kann,
  um garantiert nur Werte aus dem Steady State auszulesen.
  Um dies über alle Messwerte zu garantieren, wird die Messung vor der Netzwerkla
@@ -2840,7 +2819,8 @@ stgenerierung beendet.
 \end_layout
 
 \begin_layout Standard
-In den zuvor aufgeführten Graphen ist u.a.
+In den zuvor aufgeführten Graphen ist u.
+ a.
  sichtbar, dass die TX-Übertragungsrate manchmal über dem theoretischen
  Grenzwert (siehe Kapitel 
 \begin_inset CommandInset ref
@@ -2874,7 +2854,7 @@ name "par:Einfluss von Intervallgroessen"
 
 \begin_layout Standard
 Die Messgenauigkeit bezüglich der Netzwerkstatistiken wird durch einige
- unumgänglichen Faktoren beeinträchtigt:
+ unumgängliche Faktoren beeinträchtigt:
 \end_layout
 
 \begin_layout Itemize
@@ -3578,8 +3558,16 @@ eth1
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-TX-Bitrate pro Intervallgrösse und Netzwerk-Interface [MBit/s] shck -s MAX
- -t UDP
+TX-Bitrate pro Intervallgrösse und Netzwerk-Interface, bei mit shck generiertem
+ UDP-Verkehr des Lasttyps 
+\begin_inset Quotes fld
+\end_inset
+
+MAX
+\begin_inset Quotes frd
+\end_inset
+
+ [MBit/s]
 \end_layout
 
 \end_inset
@@ -3599,7 +3587,7 @@ Die gezeigten Messwerte entstanden bei einer maximalen Netzwerklast (Senden
 \end_layout
 
 \begin_layout Standard
-Betrachtet man die Maxima, wird ersichtlich, dass je kürzer ein Messintervall
+Betrachtet man die Maxima wird ersichtlich, dass je kürzer ein Messintervall
  gewählt wird, diese von theoretischen Grenzwerten (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -3611,9 +3599,10 @@ reference "sub:Theoretische-Grenzwerte"
 \end_layout
 
 \begin_layout Standard
-Mit der nachfolgenden Grafik wird illulstriert, dass der Messfehler (roter
+Mit der nachfolgenden Graphik wird illustriert, dass der Messfehler (roter
  Abschnitt) immer eine ähnliche Länge aufweist, unabhängig von der Länge
  des Messintervalls.
+ Die Abszissenachse repräsentiert jeweils die Zeit.
 \end_layout
 
 \begin_layout Standard
@@ -3654,8 +3643,8 @@ Verhältnis zwischen Messintervall und Messfehler
 \end_layout
 
 \begin_layout Standard
-Die Länge des Messfehlers kann jeweils nicht genau bestimmt werden.
- In welcher Grössenordnung sich ein Messfehler ergibt, ist stark davon abhängig,
+Die Länge/Dauer des Messfehlers kann jeweils nicht genau bestimmt werden.
+ In welcher Grössenordnung sich ein Messfehler ergibt ist stark davon abhängig,
  wie viele Prozesse auf einem Betriebssystem ausgeführt werden und wie stark
  diese die CPU belasten.
  Beobachtet man beispielsweise das Verhalten der meas-Applikation während
@@ -3683,16 +3672,6 @@ perf
 \end_inset
 
  gemessen.
- 
-\begin_inset Quotes fld
-\end_inset
-
-perf
-\begin_inset Quotes frd
-\end_inset
-
- ist ein Tool, welches es ermöglicht, Reports von Programmen, die sich in
- Ausführung befinden, zu erstellen.
 \end_layout
 
 \begin_layout Standard
@@ -3706,8 +3685,9 @@ reference "sub:Szenarien"
 
 \end_inset
 
-) wird jeweils ein Messintervall von 1 s gewählt, deshalb sind dort in den
- gemessenen Bitraten wesentlich schmalere Schwankungen ersichtlich.
+) wird jeweils ein Messintervall von 1 s gewählt.
+ Deshalb sind dort in den gemessenen Bitraten wesentlich schmalere Schwankungen
+ ersichtlich.
 \end_layout
 
 \begin_layout Subsection
@@ -3722,7 +3702,7 @@ name "sub:Ablauf-eines-Szenarios"
 \end_layout
 
 \begin_layout Standard
-Die Messungen werden in Form von Bash, Python-Scripts und C-Applikationen
+Die Messungen werden in Form von Bash, Python-Skripts und C-Applikationen
  vorbereitet (Quellcode siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -3734,17 +3714,17 @@ reference "chap:Quellcode"
 \end_layout
 
 \begin_layout Standard
-Der Vorgang einer Messung lautet wie folgt:
+Der Vorgang einer Messung hat folgenden Ablauf:
 \end_layout
 
 \begin_layout Enumerate
-Starten der Netzwerkgenerierung auf einem Rechner, sodass sie etwas länger
- als die gewählte Zeitspanne (Ultrakurz-, Kurz- oder Langzeit) Netzwerkverkehr
- stattfindet.
+Starten der Netzwerkgenerierung auf dem Client-Rechner, sodass sie etwas
+ länger als die gewählte Zeitspanne (Ultrakurz-, Kurz- oder Langzeit) Netzwerkve
+rkehr stattfindet.
  Generiert werden die Datenströme mit der Applikation shck.
- Da so die Netzwerklast immer mit der selben Applikation generiert wird,
- kann jeweils nur ein Faktor bei der Erzeugung verändert werden, was die
- Vergleiche der Resultate aussagekräftiger macht.
+ Da die Netzwerklast immer mit der selben Applikation generiert wird, kann
+ jeweils nur ein Faktor bei der Erzeugung verändert werden, was die Vergleiche
+ der Resultate aussagekräftiger macht.
  Würde man shck und iperf3 für unterschiedliche Szenarien verwenden und
  dann diese Szenarien vergleichen, könnte es sein, dass die festgestellten
  Unterschiede von den Differenzen zwischen shck und iperf3 beeinflusst werden,
@@ -3754,23 +3734,23 @@ Starten der Netzwerkgenerierung auf einem Rechner, sodass sie etwas länger
 
 Beispiel: Vergleich bezüglich Paketgrösse: Generierung von Last mit minimaler
  Paketgrösse via TCP mit shck und Generierung von Last mit maximaler Paketgrösse
- via TCP mit iperf3 anstelle mit shck.
- Würde man hier auch die Last mit maximaler Paketgrösse mit shck erzeugen,
- so würde man garantiert nur einen Faktor (Paketgrösse) bei der Netzwerklast
+ via TCP mit iperf3 anstelle von shck.
+ Würde hier auch die Last mit maximaler Paketgrösse durch shck erzeugt werden,
+ so würde sich garantiert nur ein Faktor (Paketgrösse) bei der Netzwerklast
  verändern.
 \end_layout
 
 \begin_layout Enumerate
 Kurz darauf (ca.
- 5 Sekunden) werden gleichzeitig die Messungen auf allen beteiligten Servern
+ 5 Sekunden) werden gleichzeitig die Messungen auf allen beteiligten Hosts
  (meistens 1 Client und 1 Server) gestartet.
- Zum Startzeitpunkt der Messungen befindet man so sich sicher bereits an
- einem Punkt, an dem sich ein konstanter Zustand (Steady State) eingependelt
+ Zum Startzeitpunkt der Messungen ist auf diese Weise garantiert ein Zeitpunkt
+ erreicht, an dem sich ein konstanter Zustand (Steady State) eingependelt
  hat.
  Gemessen wird die CPU-Last, welche der PRP-1 stack generiert und die Netzwerkbe
 lastung.
- Verwendet wird für das Aufzeichnen der CPU- und Netzwerk-Daten die Applikation
- meas.
+ Verwendet wird für das Aufzeichnen der Prozessor- und Netzwerk-Daten die
+ Applikation meas.
 \begin_inset Newpage pagebreak
 \end_inset
 
@@ -3780,18 +3760,18 @@ lastung.
 \begin_layout Enumerate
 Während der gewählten Zeitspanne wird die CPU-Last und die Netzwerkbelastung
  gemessen.
- Diese Daten werden für eine spätere Analyse ausgelagert.
+ Diese Daten werden für eine spätere Analyse in den Arbeitsspeicher ausgelagert.
 \begin_inset Newline newline
 \end_inset
 
 Die Messungen werden so durchgeführt, dass innerhalb der Zeitspanne immer
- nach einer bestimmten Periode die Durchschnitts-Werte dieser Periode gespeicher
-t werden.
- So lässt sich schlussendlich sagen, wann Minimum und Maximum eingetreten
- sind und wie viel der gesamte Durchschnitt beträgt.
- Es wird eine Intervallgrösse von 1 Sekunde gewählt, womit man schlussendlich
- Messdaten für die komplette Zeitspanne und für jede Sekunde innerhalb der
- Zeitspanne hat.
+ nach einem bestimmten Intervall die Durchschnitts-Werte dieser Periode
+ gespeichert werden.
+ So lässt sich am Ende eines Tests konstatieren, wann Minimum und Maximum
+ eingetreten sind und wie viel der gesamte Durchschnitt beträgt.
+ Es wird eine Intervallgrösse von 1 Sekunde gewählt, womit Messdaten für
+ die komplette Zeitspanne und für jede Sekunde innerhalb der Zeitspanne
+ evaluiert werden können.
  Anhand dieser Intervallgrösse wird zudem eine aussagekräftige Genauigkeit
  der Messwerte erzielt (siehe Kapitel 
 \begin_inset CommandInset ref
@@ -3805,40 +3785,17 @@ reference "par:Einfluss von Intervallgroessen"
 
 \begin_layout Enumerate
 Ist die Zeitspanne abgelaufen, werden die Messungen beendet.
- Wichtig ist hier, dass erst nach dem Abschluss der Messung mit der Generierung
- von Netzwerkverkehr aufgehört wird, da ansonsten die Messung nicht während
- einem Steady State statt findet.
+ Wichtig ist an dieser Stelle, dass erst nach Abschluss der Messung die
+ Generierung von Netzwerklast eingestellt wird, da ansonsten die Messung
+ nicht während einem Steady State stattgefunden hat.
 \end_layout
 
 \begin_layout Standard
 Sofern es nicht anders erwähnt wird, erfolgt die Netzwerkgenerierung (shck-Clien
-t) auf dem Server 
-\begin_inset Quotes fld
-\end_inset
-
-srv01
-\begin_inset Quotes frd
-\end_inset
-
- während auf 
-\begin_inset Quotes fld
-\end_inset
-
-srv02
-\begin_inset Quotes frd
-\end_inset
-
- der shck-Server läuft.
+t) auf dem Server srv01 während auf srv02 der shck-Server betrieben wird.
  Gemessen wird dabei auf beiden Hosts.
- Gestartet wird das Ganze anhand eines Bash-Scripts auf 
-\begin_inset Quotes fld
-\end_inset
-
-srv03
-\begin_inset Quotes frd
-\end_inset
-
-, welches über das Netzwerk Ext via SSH die Messungen auf beiden Hosts beinahe
+ Gestartet wird die Messung durch Zuhilfenahme eines Bash-Scripts auf srv03,
+ welches über das Netzwerk Ext via SSH die Messungen auf beiden Hosts beinahe
  zeitgleich (direkt nacheinander) startet.
 \end_layout
 
@@ -3859,10 +3816,9 @@ Innerhalb einer Zeitspanne wird aufgezeichnet, wie lange ein Prozess den
  Prozessor beansprucht hat.
  Diese Zeit wird durch die Dauer der Zeitspanne dividiert, was die CPU-Last
  in Prozent, die der Prozess beansprucht hat, ergibt.
- Hierbei handelt es sich lediglich um Single-Threaded-Prozesse, da der PRP-1
- stack und die Tools zur Generierung der Netzwerklast single-threaded sind.
- meas behandelt aus diesem und aus Zeitgründen keine Multi-Threaded-Applikatione
-n.
+ Hierbei handelt es sich um single-threaded Prozesse, da der PRP-1 stack
+ und shck single-threaded sind.
+ meas behandelt aus diesem Grund keine multi-threaded Applikationen.
 \end_layout
 
 \begin_layout Itemize
@@ -3877,12 +3833,12 @@ Arbeitsspeicher-Nutzung
 Der PRP-1 stack verwendet stets die gleiche Menge an Arbeitsspeicher, nämlich:
  VSZ 7528 kByte und RSS 3188 kByte.
  Diese Grösse wurde beim Test mit jeder in dieser Arbeit verwendeten Netzwerklas
-t und beim Beobachten über Monate festgestellt.
- Aus diesem Grund wird in dieser Arbeit nicht weiter auf die Arbeitsspeicher-Nut
-zung eingegangen.
- Es kann sein, dass diese Grössen auf verschiedenen Hosts variieren, jedoch
- verändern sich die Werte bezüglich der Arbeitsspeichernutzung nach dem
- Start des PRP-1 stacks nicht mehr.
+ten und beim Beobachten der Werte über Monate festgestellt.
+ Aus diesem Grund wird in dieser Arbeit nicht weiter auf die Arbeitsspeichernutz
+ung eingegangen.
+ Es kann sein, dass diese Grössen auf verschiedenen Hosts marginal variieren,
+ jedoch verändern sich die Werte bezüglich der Arbeitsspeichernutzung nach
+ dem Start des PRP-1 stacks nicht mehr.
 \end_layout
 
 \begin_layout Itemize
@@ -3894,7 +3850,7 @@ Netzwerkbelastung
 \begin_inset Newline newline
 \end_inset
 
-Zu Beginn und Ende der Messung wird jeweils ausgelesen, wie viele Bytes
+Zu Beginn und am Ende der Messung wird jeweils ausgelesen, wie viele Bytes
  empfangen und versendet wurden.
  Diese Differenz wird dann durch die Messdauer in Sekunden dividiert, um
  danach die Down- und Uploadrate in Bytes pro Sekunde zu erhalten.
@@ -4152,7 +4108,7 @@ CPU-Last Durchschnitt
 \begin_layout Plain Layout
 
 \size small
-Durchschnitt der Werte alle Perioden.
+Durchschnitt der Werte aller Perioden.
  Besagt wie viel der Zeit innerhalb der Zeitspanne die CPU für das untersuchte
  Objekt benötigt hat.
 \end_layout
@@ -4253,8 +4209,8 @@ Beschreibung der Werte vom Ergebnis einer Messung: CPU
 
 \begin_layout Standard
 Da bei der Konfiguration der Endsysteme und der Netzwerkumgebung sichergestellt
- wurde, dass nur gewollter Netzwerkverkehr besteht, kann man die Netzwerkbelastu
-ng pro Netzwerkinterface anstelle für jeden Prozess einzeln festhalten.
+ wurde, dass nur gewollter Netzwerkverkehr besteht, kann die Netzwerkbelastung
+ pro Netzwerk-Interface anstatt für jeden Prozess einzeln festgehalten werden.
 \end_layout
 
 \begin_layout Standard
@@ -4322,8 +4278,10 @@ RX-Bitrate (Download) Minimum
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size small
 Kleinste Netzwerkbelastung der Periode innerhalb der Zeitspanne, in der
- das Netzwerkinterface am wenigsten das Netzwerk belastet hat.
+ das Netzwerk-Interface am wenigsten das Netzwerk belastet hat.
 \end_layout
 
 \end_inset
@@ -4381,8 +4339,10 @@ RX-Bitrate (Download) Maximum
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size small
 Grösste Netzwerkbelastung der Periode innerhalb der Zeitspanne, in der das
- Netzwerkinterface am meisten das Netzwerk belastet hat.
+ Netzwerk-Interface am meisten das Netzwerk belastet hat.
 \end_layout
 
 \end_inset
@@ -4440,6 +4400,8 @@ RX-Bitrate (Download) Durchschnitt
 \begin_inset Text
 
 \begin_layout Plain Layout
+
+\size small
 Durchschnittliche Netzwerkbelastung über die ganze Zeitspanne, in der gemessen
  wurde.
 \end_layout
@@ -4497,7 +4459,7 @@ TX-Bitrate (Upload) Durchschnitt
 
 \begin_layout Plain Layout
 Beschreibung der Werte vom Ergebnis einer Messung: Netzwerkbelastung pro
- Netzwerkinterface
+ Netzwerk-Interface
 \end_layout
 
 \end_inset

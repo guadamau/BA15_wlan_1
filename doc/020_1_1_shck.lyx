@@ -134,7 +134,7 @@ shck Logo
 \end_layout
 
 \begin_layout Standard
-Für die Generierung der Netzwerklast wurde ein Python-Skript (mit dem Namen
+Für die Generierung der Netzwerklast wurde ein Python-Skript [mit dem Namen
  
 \begin_inset Quotes fld
 \end_inset
@@ -159,7 +159,7 @@ senden
 \begin_inset Quotes frd
 \end_inset
 
-)) programmiert.
+)] programmiert.
  Das Skript verwendet das interaktive Paket-Manipulierungs-Programm Scapy
  
 \begin_inset CommandInset citation
@@ -175,8 +175,8 @@ key "scapy"
 Der Grund für die Erstellung von shck ist, dass kein Tool gefunden wurde,
  mit welchem die von den Testfällen geforderte Netzwerklast generiert werden
  konnte (Zum Beispiel UDP-Pakete, welche permanent mit der minimalen Grösse
- versendet werden oder das Versenden von reinen Ethernet-Frames mit beliebigen
- Grössen).
+ versendet werden oder das Versenden von reinen Ethernet-Frames mit maximaler
+ Grösse).
  Mit shck ist es möglich genau definierte Lasten zu erzeugen.
 \end_layout
 
@@ -189,7 +189,7 @@ reference "sec:shck---Netzwerklast-Generierung"
 \end_inset
 
 ).
- In diesem Abschnitt gibt es eine Einführung in die Parameter/Optionen von
+ In diesem Abschnitt erfolgt eine Einführung in die Parameter/Optionen von
  shck:
 \end_layout
 
@@ -246,7 +246,7 @@ Beschreibung
 \begin_inset Text
 
 \begin_layout Plain Layout
-Destination / Ziel
+Destination/Ziel
 \begin_inset Newline newline
 \end_inset
 
@@ -272,13 +272,13 @@ Je nach Übertragungsart (Reine Layer-2-Frames, TCP- oder UDP-Pakete) ist
 \begin_inset Text
 
 \begin_layout Plain Layout
-File / Datei
+File/Datei
 \begin_inset Newline newline
 \end_inset
 
-Datei, wessen Inhalt für die Payload der Frames / Pakete verwendet werden
+Datei, wessen Inhalt als Nutzdatenanteil der Frames / Pakete verwendet werden
  soll.
- Es wird pro Frame / Paket jeweils immer nur die ersten x Bytes der Datei
+ Es werden pro Frame / Paket jeweils immer nur die ersten x Bytes der Datei
  verwendet.
 \end_layout
 
@@ -291,6 +291,10 @@ Datei, wessen Inhalt für die Payload der Frames / Pakete verwendet werden
 
 \begin_layout Plain Layout
 -h
+\begin_inset Newline newline
+\end_inset
+
+(optional)
 \end_layout
 
 \end_inset
@@ -327,7 +331,7 @@ Interface
 \begin_inset Newline newline
 \end_inset
 
-Bestimmt, über welches Netzwerkinterface die Netzwerklast versendet werden
+Bestimmt, über welches Netzwerk-Interface die Netzwerklast versendet werden
  soll.
 \end_layout
 
@@ -340,6 +344,10 @@ Bestimmt, über welches Netzwerkinterface die Netzwerklast versendet werden
 
 \begin_layout Plain Layout
 -m
+\begin_inset Newline newline
+\end_inset
+
+(optional)
 \end_layout
 
 \end_inset
@@ -369,15 +377,7 @@ Bestimmt die MTU (Standard-Wert beträgt 1500)
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Parameter der Applikation 
-\begin_inset Quotes fld
-\end_inset
-
-shck
-\begin_inset Quotes frd
-\end_inset
-
- (1/2)
+Parameter der Applikation shck (1/2)
 \end_layout
 
 \end_inset
@@ -435,6 +435,10 @@ Beschreibung
 
 \begin_layout Plain Layout
 -p
+\begin_inset Newline newline
+\end_inset
+
+(optional)
 \end_layout
 
 \end_inset
@@ -460,6 +464,10 @@ TCP-/UDP-Verbindung auf einem bestimmten Port herstellen (Standard: 52015).
 
 \begin_layout Plain Layout
 -P
+\begin_inset Newline newline
+\end_inset
+
+(optional)
 \end_layout
 
 \end_inset
@@ -472,7 +480,7 @@ PRP-Modus (benötigt kein Argument)
 \begin_inset Newline newline
 \end_inset
 
-Wird dieser Parameter mit angegeben, wird bei einer MTU von 1500 6 Bytes
+Wird dieser Parameter mit angegeben, werden bei einer MTU von 1500 6 Bytes
  der Payload abgezogen, um Platz für den RCT des PRP-Protokolls garantieren
  zu können.
 \end_layout
@@ -486,6 +494,10 @@ Wird dieser Parameter mit angegeben, wird bei einer MTU von 1500 6 Bytes
 
 \begin_layout Plain Layout
 -n
+\begin_inset Newline newline
+\end_inset
+
+(optional)
 \end_layout
 
 \end_inset
@@ -494,16 +506,16 @@ Wird dieser Parameter mit angegeben, wird bei einer MTU von 1500 6 Bytes
 \begin_inset Text
 
 \begin_layout Plain Layout
-Count / Anzahl
+Count/Anzahl
 \begin_inset Newline newline
 \end_inset
 
-Bestimmt, wie viele Frames / Pakete generiert werden.
- Der Standard-Wert ist 1 Frame / Paket.
+Bestimmt, wie viele Frames/Pakete generiert werden.
+ Der Standard-Wert ist 1 Frame/Paket.
 \begin_inset Newline newline
 \end_inset
 
-Wird die Anzahl 0 angegeben, so werden unendlich viele Frames / Pakete versendet.
+Wird die Anzahl 0 angegeben, so werden unendlich viele Frames/Pakete versendet.
 \end_layout
 
 \end_inset
@@ -523,7 +535,7 @@ Wird die Anzahl 0 angegeben, so werden unendlich viele Frames / Pakete versendet
 \begin_inset Text
 
 \begin_layout Plain Layout
-Sizetype / Grössentyp
+Sizetype/Grössentyp
 \begin_inset Newline newline
 \end_inset
 
@@ -569,8 +581,7 @@ MAX
 \begin_inset Quotes frd
 \end_inset
 
- besteht die Netzwerklast jeweils aus lauter kleinen oder grossen Frames
- / Paketen.
+ besteht die Netzwerklast jeweils aus lauter kleinen oder grossen Frames/Paketen.
  
 \begin_inset Newline newline
 \end_inset
@@ -583,15 +594,15 @@ CUSTOM
 \begin_inset Quotes frd
 \end_inset
 
- als Argument erhalten die Frames / Pakete jeweils eine Grösse aus einer
- Liste, die Zeile für Zeile eingelesen wird.
+ als Argument erhalten die Frames/Pakete jeweils eine Grösse aus einer Liste,
+ die Zeile für Zeile eingelesen wird.
  Diese Grössen werden aus einer Datei ausgelesen, die sich im selben Ordner
  wie shck befindet.
  Dabei werden automatisch Grössen, die grösser als die angegebene MTU (-m
  Parameter) sind, auf die maximal mögliche Grösse gesenkt.
- Müssen mehr Frames / Pakete als Zeilen in der Liste versendet werden, wird
- die Liste wieder von dessen Beginn aus abgearbeitet, sobald shck das Ende
- der Liste erreicht.
+ Müssen mehr Frames/Pakete als Zeilen in der Liste versendet werden, so
+ wird die Liste wieder von dessen Beginn aus abgearbeitet, sobald shck das
+ Ende der Liste erreicht.
 \end_layout
 
 \end_inset
@@ -603,6 +614,10 @@ CUSTOM
 
 \begin_layout Plain Layout
 -S
+\begin_inset Newline newline
+\end_inset
+
+(optional)
 \end_layout
 
 \end_inset
@@ -649,7 +664,7 @@ Transmission type / Übertragungsart
 \begin_inset Newline newline
 \end_inset
 
-Bestimmt, wie die Frames / Pakete versendet werden sollen.
+Bestimmt, wie die Frames/Pakete versendet werden sollen.
  Zur Auswahl stehen 
 \begin_inset Quotes fld
 \end_inset
@@ -666,7 +681,7 @@ TCP
 \begin_inset Quotes frd
 \end_inset
 
- und 
+ (Layer 4) und 
 \begin_inset Quotes fld
 \end_inset
 
@@ -674,7 +689,7 @@ UDP
 \begin_inset Quotes frd
 \end_inset
 
-.
+ (Layer 4).
  Je nach Auswahl muss das Argument zum Parameter -d definiert werden.
 \end_layout
 
@@ -692,15 +707,7 @@ UDP
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Parameter der Applikation 
-\begin_inset Quotes fld
-\end_inset
-
-shck
-\begin_inset Quotes frd
-\end_inset
-
- (2/2)
+Parameter der Applikation shck (2/2)
 \end_layout
 
 \end_inset
@@ -878,12 +885,28 @@ UDP-Pakete auf definiertem Port annehmen bis die ganze Applikation terminiert
 \end_layout
 
 \begin_layout Standard
-shck wurde anhand von Profiling-Tools und Wireshark (Whitebox-Ansatz) untersucht
-, um darauf Optimierungen an der Applikation vornehmen zu können.
+shck wurde unter Zuhilfenahme von Profiling-Tools und Wireshark untersucht,
+ um Optimierungen an der Applikation vornehmen zu können.
  So wurden die von shck generierten Netzwerklasten mit Wireshark überprüft,
  um feststellen zu können, ob die Last wie gewünscht erzeugt wird.
- Mit dem Python Profiler cProfile erzeugte man während der Ausführung von
- shck ein Profil, welches darauf mit SnakeViz (
+ Mit dem Python Profiler 
+\begin_inset Quotes fld
+\end_inset
+
+cProfile
+\begin_inset Quotes frd
+\end_inset
+
+ wurde während der Ausführung von shck ein Profil erzeugt, welches darauf
+ mit 
+\begin_inset Quotes fld
+\end_inset
+
+SnakeViz
+\begin_inset Quotes frd
+\end_inset
+
+ (
 \begin_inset Flex URL
 status open
 
@@ -898,8 +921,10 @@ https://jiffyclub.github.io/snakeviz/
 \end_layout
 
 \begin_layout Standard
-Mit diesen Mitteln konnte man determinieren, wo noch Optimierungsbedarf
- besteht, den man darauf umsetzen konnte.
+Mit diesen Mitteln konnte determiniert werden, wo noch Optimierungsbedarf
+ besteht.
+ Dieser konnte anschliessend durch einige Implementationsoptimierungen erfüllt
+ werden.
  Des Weiteren gab es Unterstützung von Martin Renold (Wissenschaftlicher
  Mitarbeiter Institute of Embedded Systems, ZHAW School of Engineering),
  welcher bei der Optimierung des Python-Codes Hilfe in Form von Beratung
@@ -918,7 +943,7 @@ Frame- / Paketaufbau
 \begin_inset Newline newline
 \end_inset
 
-Die Farbgebung in den nachfolgenden Grafiken ist wie folgt zu interpretieren:
+Die Farbgebung in den nachfolgenden Graphiken ist wie folgt zu interpretieren:
 \end_layout
 
 \begin_layout Itemize
@@ -927,11 +952,11 @@ Blau: Hardware-gesteuerte Fragmente eines Ethernet-Frames, auf die kein
 \end_layout
 
 \begin_layout Itemize
-Grün: Von PRP-1 stack erzeugtes Ethernet-Frame-Fragment.
+Grün: Vom PRP-1 stack erzeugtes Ethernet-Frame-Fragment.
 \end_layout
 
 \begin_layout Itemize
-Weiss / Transparent: Inhalt der Fragmente wird über Socket oder shck erzeugt.
+Weiss/Transparent: Inhalt der Fragmente wird über Socket durch shck erzeugt.
 \end_layout
 
 \begin_layout Standard
@@ -939,18 +964,19 @@ Es ist zu beachten, dass die IP- und TCP-Header aufgrund ihrer optionalen
  Felder variable Längen aufweisen können.
  In den nächsten Abbildungen wird jedoch von festen Grössen dieser Header
  ausgegangen, welche von shck in jedem Fall in dieser Form generiert werden.
- Diese Form wird durch die Socket-Erzeugung des Betriebssystems vorgegeben.
+ Diese Form wird durch die Socket-Initialisierung des Betriebssystems vorgegeben.
 \end_layout
 
 \begin_layout Standard
 Bei den Wireshark-Screenshots ist zu beachten, dass Wireshark die von der
- NIC erzeugten Daten (Präambel, SFD, FCS und IFG) nicht sieht und nicht
- miteinbezieht.
- Um die Layer-2-Grösse des Frames zu erhalten sind jedoch nur 4 Bytes für
+ NIC erzeugten Daten (Präambel, SFD, FCS und IFG) nicht sieht und deshalb
+ nicht miteinbezieht.
+ Um die Layer-2-Grösse des Frames zu erhalten, sind jedoch nur 4 Byte für
  die FCS der Framegrösse dazu zu rechnen.
- In den Screenshots ist des Weiteren der RCT vom PRP-1 stack grün eingefärbt.
- Dieser wird von Wireshark nicht als RCT erkannt, sondern entweder der Payload/D
-ata zugewiesen oder fälschlicherweise als 
+ In den Screenshots ist des Weiteren der RCT des PRP-1 stacks grün eingefärbt.
+ Dieser wird von Wireshark nur bei TCP und UDP erkannt und bei Ethernet-Frames
+ der Payload/Data zugewiesen.
+ Fälschlicherweise wird bei TCP/UDP ein Teil der Payload als 
 \begin_inset Quotes fld
 \end_inset
 
@@ -959,11 +985,12 @@ VSS-Monitoring ethernet trailer
 \end_inset
 
  erkannt.
+ Dies erscheint durch den zufällig generierten Inhalt zu entstehen.
 \end_layout
 
 \begin_layout Standard
-Frames / Pakete, die mit shck generiert werden, haben die folgenden Charakterist
-iken:
+Frames/Pakete, die mit shck generiert werden, haben die folgenden Charakteristik
+en:
 \end_layout
 
 \begin_layout Standard
@@ -1146,8 +1173,8 @@ name "par:TCP-Sockets-und-bytegenaue"
 \begin_layout Standard
 Es ist mit dem in Python erzeugten TCP-Socket nicht möglich, TCP-Pakete
  bytegenau zu erzeugen, da der TCP/IP-Stack teilweise die ihm übermittelten
- Daten gruppiert auch wenn diesem die Daten mit mehreren Send-Befehlen zugestell
-t werden.
+ Daten gruppiert, auch wenn diesem die Daten mit mehreren Send-Befehlen
+ zugestellt werden.
  
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1159,11 +1186,12 @@ key "Python_sockets_TCP"
 \end_layout
 
 \begin_layout Standard
-Aus diesem Grund besteht die Möglichkeit, dass die Frames etwas grösser
+Aus diesem Grund besteht die Möglichkeit, dass die Pakete etwas grösser
  ausfallen können, worunter die Reproduzierbarkeit leidet.
  Untersuchungen haben ergeben, dass die Netzwerklasten immer noch reproduzierbar
- sind, jedoch nicht mehr die exakt selben Werte.
- Dies kann u.a.
+ sind, jedoch nicht mehr die exakt selben Werte aufweisen.
+ Dies kann u.
+ a.
  anhand der Ergebnisse des Szenarios 01 in Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -1179,8 +1207,8 @@ Eine Möglichkeit, bytegenaue Grössen zu erzielen, wäre, vor jedem Send-Befehl
  den TCP-Socket zu öffnen und dann wieder zu schliessen, was aber kein realistis
 cher Vorgang wäre, da übliche Kommunikationen via TCP sich in dieser Weise
  nicht charakterisieren.
- Eine TCP-Verbindung wird erst geschlossen, wenn der Sender alles übermittelt
- hat, was er in diesem Moment übertragen wollte.
+ Eine TCP-Verbindung wird erst geschlossen, wenn der Sender alle zurzeit
+ anstehenden Daten übermittelt hat.
 \end_layout
 
 \begin_layout Standard
@@ -1286,7 +1314,7 @@ Programm-Ablauf
 \end_inset
 
 shck läuft je nach angegebenen Parametern unterschiedlich ab.
- Die Parameter, die dies bewirken, sind in der nächsten Grafik aufgeführt.
+ Die Parameter, die dies bewirken, sind in der nächsten Graphik aufgeführt.
  Die exakten Frame-/Paketgrössen sind dem Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref

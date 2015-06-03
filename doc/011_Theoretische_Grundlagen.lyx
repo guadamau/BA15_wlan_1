@@ -102,8 +102,8 @@ name "sec:PRP-Overview"
 
 \begin_layout Standard
 Bei PRP handelt es sich um ein Kommunikationsprotokoll auf Layer 2, welches
- eine Redundanz im Netzwerk gewährleistet und in den Knoten statt dem Netzwerk
- implementiert ist.
+ eine Redundanz im Netzwerk gewährleistet und in jedem Knoten implementiert
+ ist.
  Dies wird erreicht, indem ein Netzwerkknoten mit 2 Netzwerkinterfaces an
  zwei disjunkten, parallel betriebenen LANs (
 \begin_inset Quotes fld
@@ -238,7 +238,7 @@ key "IEC_62439-3_2015"
 \end_layout
 
 \begin_layout Standard
-Dieser RCT hat eine Grösse von 6 Bytes und beeinhaltet folgende Parameter
+Dieser RCT hat eine Grösse von 6 Bytes und beinhaltet folgende Parameter
  
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -349,8 +349,8 @@ key "IEC_62439-3_2015"
 \end_layout
 
 \begin_layout Standard
-Des Weiteren gibt es auch Netzwerkkomponenten, die nur über ein Netzwerkinterfac
-e verfügen und lediglich an einem LAN des PRP-Netzwerks angeschlossen sind.
+Des Weiteren gibt es auch Netzwerkkomponenten, die nur über ein Netzwerk-Interfa
+ce verfügen und lediglich an einem LAN des PRP-Netzwerks angeschlossen sind.
  Solche Geräte werden 
 \begin_inset Quotes fld
 \end_inset
@@ -365,9 +365,9 @@ Single Attached Node
  SANs, die mit dem anderen LAN verbunden sind, können nicht erreicht werden.
  Ein SAN weiss nichts von PRP.
  Daher erzeugen SANs beim Frameversand keine Duplikate und hängen somit
- auch kein RCT an die Frames.
+ auch keinen RCT an die Frames.
  Erhält ein SAN ein Frame mit einem RCT, wird dies als zusätzliches Padding
- ohne Bedeutung wahrgenommen.
+ ohne Bedeutung interpretiert.
  
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -379,7 +379,7 @@ key "PRP-Hirschmann"
 \end_layout
 
 \begin_layout Standard
-Eine zusätzliche Möglichkeit, Geräte mit nur einem Netzwerkinterface an
+Eine zusätzliche Möglichkeit, Geräte mit nur einem Netzwerk-Interface an
  einem PRP-Netzwerk anzuschliessen, wäre über eine Redundancy Box (RedBox).
  Eine RedBox ist, wie ein DANP, über beide LANs im PRP-Netzwerk eingebunden
  und bietet weitere Anschlüsse für Geräte mit nur einem Interface.
@@ -393,8 +393,8 @@ Virtual Dual Attached Node
 \end_inset
 
  (VDAN) genannt.
- Somit fungiert die RedBox als Proxy für VDANs und hat aus Management-Gründen
- eine eigene IP-Adresse.
+ Somit fungiert die RedBox als Proxy für VDANs und hat aus administrativen
+ Gründen eine eigene IP-Adresse.
  
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -499,7 +499,7 @@ key "PRP-Industrial_IP"
 \end_layout
 
 \begin_layout Standard
-Für das Redundanzmanagement und das Überprüfen, ob andere DANs im Netzwerk
+Für das Redundanz-Management und das Überprüfen, ob andere DANs im Netzwerk
  anwesend sind, sendet jede LRE via Multicast regelmässig (laut Standard
  
 \begin_inset CommandInset citation
@@ -639,8 +639,10 @@ PRP Driver
 \begin_inset Quotes frd
 \end_inset
 
- für diese Schichten wie ein normales Netzwerkinterface und stellt die LRE
- dar.
+ für diese Schichten wie ein normales Netzwerk-Interface und stellt die
+ LRE dar.
+ Der PRP-1 stack betreibt keine dynamische Speicherallozierung (sämtlicher
+ aufgewendeter Datenspeicher wird im Voraus reserviert).
  
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -965,7 +967,7 @@ begin{equation*}
 
 \begin_layout Plain Layout
 
-n = 
+
 \backslash
 frac{
 \backslash
@@ -1236,7 +1238,7 @@ Die Werte der Sequenznummern in der obigen Abbildung sind zufällig gewählt
 
 \begin_layout Standard
 Die Dauer, bis Werte in der Datenstruktur überschrieben werden, bei einem
- maximalen Datendurchsatz ergeben sich wie folgt:
+ maximalen Datendurchsatz, ergeben sich wie folgt:
 \end_layout
 
 \begin_layout Standard
@@ -1435,7 +1437,7 @@ Scatter-Gather
 Ermöglicht es, dass man Daten von und in mehrere Buffer lesen und schreiben
  kann, die im Speicher voneinander getrennt sind (Die Speicherorte der Buffer
  sind in einem Vektor gespeichert).
- So wird die Anzahl von read- und write-System-Calls von Mehreren auf Einen
+ So wird die Anzahl von read- und write-System-Calls von mehreren auf e+inen
  gesetzt, was die CPU-Last erleichtert.
  
 \begin_inset CommandInset citation
@@ -1453,7 +1455,7 @@ TCP Segmentation Offload (TSO)
 
 \begin_layout Standard
 Bei TSO wird die Belastung der CPU minimiert, indem der Netzwerkkarte grosse
- Buffer angereiht werden, welche dann von dieser in separate Pakete gesplittet
+ Buffer angereiht werden, welche dann von dieser in separate Pakete aufgeteilt
  wird (Segmentierung).
  Ohne diese Segmentierung würde ein grosses TCP-Paket zuerst von der CPU
  segmentiert und einzeln an die NIC gesendet werden.
@@ -1518,7 +1520,7 @@ Generic Recieve Offload (GRO)
 
 \begin_layout Standard
 GRO ist ein Mechanismus, der die eintreffenden Fragmente in ein grösseres
- Paket zusammenfasst, so dass vom Computer aus, der die Daten erhält, nicht
+ Paket zusammenfasst, sodass vom Computer aus, der die Daten erhält, nicht
  mehr die einzelnen Fragmente, sondern ein grosses Frame sichtbar ist.
  
 \begin_inset CommandInset citation
@@ -1531,8 +1533,8 @@ key "GRO"
 \end_layout
 
 \begin_layout Standard
-Zusammengefasst kann man sagen, dass die Mechanismen TSO, UFO, GSO und GRO
- dazu dienen, mit einer MTU von 1500 Bytes umgehen zu können.
+Zusammengefasst wird konstatiert, dass die Mechanismen TSO, UFO, GSO und
+ GRO dazu dienen, mit einer MTU von 1500 Bytes umgehen zu können.
  Mit der ansteigenden Geschwindigkeit der Netzwerkkarten werden durch die
  Limitierung der MTU mehr Frames pro Sekunde erzeugt, was eine Steigerung
  der CPU-Belastung mit sich bringt.
@@ -1554,7 +1556,7 @@ RX/TX VLAN Acceleration
 
 \begin_layout Standard
 Mittels VLAN Acceleration wird beim Senden / Empfangen der VLAN-Header in
- der NIC hinzugefügt / gekürzt.
+ der NIC anstelle der CPU hinzugefügt / gekürzt.
  
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1572,7 +1574,7 @@ RX ntuple Filters and Actions
 \begin_layout Standard
 Dieses Feature ermöglicht es, dass die Netzwerkkarte Pakete je nach Filter
  in verschiedene Queues einordnet.
- So kann zum Beispiel einem Webserver eine eigene Recieve-Queue zugeordnet
+ So kann zum Beispiel einem Webserver eine eigene Receive-Queue zugeordnet
  werden.
  Diese Filter und Queues können mit der Applikation ethtool konfiguriert
  werden.
@@ -1659,7 +1661,7 @@ Ein Beispiel zur Ermittlung der optimalen TCP-Window-Size
 \end_inset
 
  ist das Berechnen des Produkts von Bandbreite und RTT.
- Bei 100 MBit/s und einer RTT von 1ms (typischer RTT-Wert für ein maximal
+ Bei 100 MBit/s und einer RTT von 1 ms (typischer RTT-Wert für ein maximal
  grosses Paket im lokalen Netzwerk via TCP 
 \begin_inset CommandInset citation
 LatexCommand cite
@@ -1684,7 +1686,7 @@ Somit kann der Sender hier 12'500 Bytes an Daten senden, bevor er auf eine
  Quittierung vom Empfänger wartet.
  Anhand diesem TCP-Window-Size-Wert müsste der Sender in diesem Beispiel
  nicht warten, bis er die Quittierung für die ersten 6'250 Bytes (Bandbreite
- multipliziert mit der Dauer eines Weges: 0.5ms) vom Empfänger erhält, sondern
+ multipliziert mit der Dauer eines Weges: 0.5 ms) vom Empfänger erhält, sondern
  könnte die Zeit, in welcher die Quittierung übertragen wird, für das Senden
  weiterer 6'250 Bytes nutzen.
  Dies liegt daran, dass die RTT als Faktor miteinbezogen wurde, welche den
@@ -1759,10 +1761,11 @@ key "procfs"
 \end_layout
 
 \begin_layout Standard
-Jedes mal, wenn auf eine Datei aus dem /proc-Dateisystem ein read()-Systemcall
- ausgeführt wird, werden die aktuellsten Statistiken ausgelesen.
- Der Kernel besitzt einen Memory-Bereich, wo sämtliche Statistiken abgelegt
- werden.
+Jedes mal, wenn auf eine Datei aus dem /proc-Dateisystem ein read()-System-Call
+ ausgeführt wird, werden die aktuellsten System- und Prozess-Informationen
+ vom laufenden Linux-Kernel ausgelesen.
+ Der Kernel besitzt einen Memory-Bereich, in welchen sämtliche Statistiken
+ abgelegt werden.
  Zu diesem Memory-Bereich gehören auch Adressräume, die von Gerätetreibern
  von so genannten 
 \begin_inset Quotes fld
@@ -1773,14 +1776,14 @@ Memory Mapped Hardware Devices
 \end_inset
 
  genutzt werden, um direkt auf Hardware-Ressourcen (Register) zugreifen
- zu können, dies wird mittels Memory-Mapped-I/O-Verfahren realisiert.
+ zu können.
+ Dies wird mittels Memory-Mapped-I/O-Verfahren realisiert.
  /proc ist im Wesentlichen und sehr vereinfacht gesagt ein Zeiger auf diesen
  Kernel-Memory-Bereich.
 \end_layout
 
 \begin_layout Standard
-Die Datenstrukturen können ausgelesen werden, um so die aktuellsten System-
- und Prozess-Informationen vom laufenden Linux-Kernel erhalten zu können.
+Die Datenstrukturen können ausgelesen werden, um so die erhalten zu können.
  Zudem kann die Konfiguration des Linux-Kernels, während dieser in Betrieb
  ist, über das /proc-Dateisystem geändert werden.
  
@@ -1802,7 +1805,7 @@ r als Namen trägt.
  Nicht-prozessbezogene Informationen findet man im Wurzelverzeichnis des
  /proc-Dateisystems.
  Zum Beispiel befinden sich detaillierte Informationen zum Arbeitsspeicher
- unter /proc/meminfo.
+ in der Datei /proc/meminfo.
  
 \begin_inset CommandInset citation
 LatexCommand cite
