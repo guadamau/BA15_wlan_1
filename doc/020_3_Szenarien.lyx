@@ -96,7 +96,7 @@ name "sub:Szenarien"
 \end_layout
 
 \begin_layout Standard
-Es folgt eine kurze Aufführung der wichtigsten Eckdaten zum Ursprungszustand
+Es folgt eine kurze Auflistung der wichtigsten Eckdaten zum Ursprungszustand
  der Testumgebung, welche detaillierter im Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -116,13 +116,14 @@ HP ProLiant DL140
 \begin_inset Quotes frd
 \end_inset
 
- mit Debian, je an beiden Netzwerken des PRP-Netzes angeschlossen.
+ mit Debian, je an beiden physischen Netzwerken des virtuellen PRP-Netzes
+ angeschlossen.
 \end_layout
 
 \begin_layout Itemize
 Jede Netzwerkkarte der Server, die am PRP-Netz angeschlossen ist, wird mit
  100 MBit/s betrieben.
- Des Weiteren sind in diesen NICs jegliche Offload-Mechanismen (siehe Kapitel
+ Des Weiteren sind bei diesen NICs jegliche Offload-Mechanismen (siehe Kapitel
  
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -152,7 +153,7 @@ Innerhalb des PRP-Netzes findet kein Netzwerkverkehr statt, sofern auf den
 \begin_layout Itemize
 Neben den 3 aufgeführten Servern und den 2 Switches befinden sich keine
  weiteren Netzwerkkomponenten im PRP-Netz, ausser es wird im entsprechenden
- Szenario erwähnt, dass der Umgebungsaufbau gegenüber dem Standard variiert.
+ Szenario erwähnt, dass der Umgebungsaufbau gegenüber dem Standard abweicht.
 \end_layout
 
 \begin_layout Standard
@@ -164,7 +165,7 @@ reference "chap:Resultate"
 \end_inset
 
  im entsprechenden Unterkapitel aufgeführt.
- Ausnahme bildet die Erörterung signifikanter Resultat-Parameter im nächsten
+ Ausnahme bildet die Erörterung signifikanter Resultatparameter im nächsten
  Kapitel, weil das Ergebnis dieses Vergleichs als Grundlage für den Aufbau
  der Szenarien dient.
 \end_layout
@@ -402,8 +403,8 @@ status open
 
 
 \backslash
-subsection[head={Erörterung signifikanter Resultat-Parameter}]{Erörterung
- signifikanter Resultat-Parameter: UDP / Ethernet Vergleich und Notwendigkeit
+subsection[head={Erörterung signifikanter Resultatparameter}]{Erörterung
+ signifikanter Resultatparameter: UDP / Ethernet Vergleich und Notwendigkeit
  der Langzeit-Tests}
 \end_layout
 
@@ -420,32 +421,31 @@ name "sub:Erörterung-signifikanter-Resulta"
 \end_layout
 
 \begin_layout Standard
-Aufgrund der ähnlichen Verhaltensweisen von UDP-Segmenten und Layer-2-Frames
- besteht Grund zur Annahme, dass diese sich auch ähnlich auf die Performance
- auswirken.
+Aufgrund der ähnlichen Verhaltensweisen von UDP und reinem Layer-2 besteht
+ Grund zur Annahme, dass diese sich auch ähnlich auf die Performance auswirken.
  Daher wird in diesem Abschnitt untersucht, ob und was für eine Differenz
  bei der Messung von UDP- und Ethernet-Datenverkehr mit PRP entsteht.
- Aus dieser Untersuchung soll sich heraus stellen, ob es nötig ist, den
- Layer-2- vom UDP-Verkehr getrennt zu begutachten oder ob es genügt den
+ Aus dieser Untersuchung soll sich herausstellen, ob es notwendig ist, den
+ Layer-2- vom UDP-Verkehr getrennt zu begutachten oder ob es genügt, den
  UDP-Verkehr zu analysieren und daraus Ergebnisse für den Layer-2-Datenverkehr
  abzuleiten.
  Sollte es nach der Analyse in diesem Abschnitt nicht von Nöten sein, den
- Layer-2-Datenstrom separat zu begutachten, kann für die darauf folgenden
+ Layer-2-Datenstrom separat zu begutachten, wird für die darauf folgenden
  Untersuchungen lediglich TCP und UDP für die Generierung der Netzwerklast
- verwendet werden.
+ verwendet .
 \end_layout
 
 \begin_layout Standard
-Des Weiteren wird ermittelt, ob Langzeit-Tests (Dauer jeweils 1h) nötig
- sind oder ob sie die selben Resultate wie Kurzzeit-Tests (Dauer je 5min)
+Des Weiteren wird ermittelt, ob Langzeit-Tests (Dauer jeweils 1 h) notwendig
+ sind oder ob sie die selben Resultate wie Kurzzeit-Tests (Dauer je 5 min)
  erbringen.
  Würde es sich herausstellen, dass die Langzeit-Tests nicht von Nöten sind,
  so würde dies eine grosse Zeiteinsparung mit sich ziehen.
 \end_layout
 
 \begin_layout Standard
-Der Vergleich findet im PRP-Netzwerk statt, weil diese Umgebung im Fokus
- dieser Arbeit liegt.
+Der Vergleich findet im PRP-Netzwerk statt, da diese Umgebung im Fokus dieser
+ Arbeit liegt.
  Die Konfiguration der Umgebung kann in Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -460,8 +460,8 @@ ic in einem Nicht-PRP-Umfeld identisch ausfallen, weil die Umgebung die
 \end_layout
 
 \begin_layout Standard
-Betrachtet wird die Belastung der CPU durch den PRP-1 stack und der Netzwerkinte
-rfaces.
+Betrachtet wird die Belastung der CPU durch den PRP-1 stack und der Netzwerk-Int
+erfaces.
  Davon werden jeweils die kleinsten und grössten sowie die durchschnittlichen
  (in der folgenden Tabelle als 
 \begin_inset Quotes fld
@@ -471,7 +471,7 @@ Avg
 \begin_inset Quotes frd
 \end_inset
 
- betitelt) Werte, die innerhalb einer Periode von 1s während der Zeitspanne
+ betitelt) Werte, die innerhalb einer Periode von 1 s während der Zeitspanne
  erzielt wurden, aufgelistet.
  Dabei werden die Netzwerklasten nebeneinander aufgeführt, welche sich in
  der Übermittlungsart unterscheiden.
@@ -513,10 +513,10 @@ CPU-Belastung
 
 \begin_layout Standard
 Zu beachten ist, dass in der folgenden Tabelle die Ergebnisse einer Periode
- von 1s abstammen.
+ von 1 s abstammen.
  Dies bedeutet, dass z.B.
- die kleinste CPU-Last nur während 1s innerhalb der kompletten Zeitspanne
- von 5min vorgekommen sein könnte.
+ die kleinste CPU-Last nur während 1 s innerhalb der kompletten Zeitspanne
+ von 5 min vorgekommen sein könnte.
  Der durchschnittliche Wert wird hingegen aus den Ergebnissen aller Perioden
  innerhalb der Zeitspanne berechnet.
 \end_layout
@@ -552,7 +552,7 @@ status open
 
 \series bold
 \size footnotesize
-Bezeichnung
+Name
 \end_layout
 
 \end_inset
@@ -2148,49 +2148,27 @@ Netzwerk-Belastung
 
 \begin_layout Standard
 Wie auch bei der CPU-Belastung stammen in der folgenden Tabelle die Ergebnisse
- einer Periode von 1s ab.
- Aus Platzgründen werden hier lediglich die durschnittlichen Werte betrachtet.
+ einer Periode von 1 s ab.
+ Aus Platzgründen werden hier nur die durschnittlichen Werte betrachtet.
 \end_layout
 
 \begin_layout Standard
-Da der Client bei der Übertragung von reinen Layer-2-Frames und UDP-Paketen
- keine Antwort vom Server empfangen und ausser shck nur noch die PRP_Supervision
--Frames (siehe Kapitel 
+Da der Client bei der Übertragung von reinem Layer-2-Verkehr und UDP-Paketen
+ keine Antwort vom Server empfängt und ausser shck nur noch die PRP_Supervision-
+Frames (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sec:PRP-Overview"
 
 \end_inset
 
-) das Netzwerk belasten, ist die RX-Rate bei den Interfaces 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- und 
-\begin_inset Quotes fld
-\end_inset
-
-eth1
-\begin_inset Quotes frd
-\end_inset
-
+) das Netzwerk belasten, ist die RX-Rate bei den Interfaces eth0 und eth1
  verschwindend klein.
  Bei keiner der unten aufgezeichneten Netzwerklast betrug die RX-Bitrate
- mehr als 1kBit/s.
- Beim Interface 
-\begin_inset Quotes fld
-\end_inset
-
-prp1
-\begin_inset Quotes frd
-\end_inset
-
- werden PRP_Supervision-Frames nicht gezählt, was bei jeder der unten aufgeführt
-en Netzwerklast für dieses Interface eine RX-Rate von 0 Bit/s ergibt.
+ mehr als 1 kBit/s.
+ Beim Interface prp1 werden PRP_Supervision-Frames nicht gezählt, was bei
+ jeder der unten aufgeführten Netzwerklast für dieses Interface eine RX-Rate
+ von 0 Bit/s ergibt.
 \end_layout
 
 \begin_layout Standard
@@ -2224,7 +2202,7 @@ status open
 
 \series bold
 \size footnotesize
-Bezeichnung
+Name
 \end_layout
 
 \end_inset
@@ -3910,11 +3888,11 @@ UDP / Ethernet Vergleich: RX- / TX-Bitrate pro Netzwerkinterface
 \end_layout
 
 \begin_layout Subsubsection
-Interpretation: Auswahl der signifikanten Resultat-Parameter
+Interpretation: Auswahl der signifikanten Resultatparameter
 \end_layout
 
 \begin_layout Standard
-Es stellt sich heraus, dass die gemessenen Werte innerhalb den selben Lasttypen
+Es stellt sich heraus, dass die gemessenen Werte innerhalb denselben Lasttypen
  sehr ähnlich ausfallen.
  
 \end_layout
@@ -3946,8 +3924,8 @@ name "par:Lasttyp-MIN"
 \begin_inset Newline newline
 \end_inset
 
-Bezüglich der CPU-Belastung sticht heraus, dass sich Ethernet- und UDP-Netzwerkl
-asten innerhalb des Lasttyps 
+Bezüglich der CPU-Belastung fällt auf, dass sich Ethernet- und UDP-Netzwerklaste
+n innerhalb des Lasttyps 
 \begin_inset Quotes fld
 \end_inset
 
@@ -3955,7 +3933,7 @@ MIN
 \begin_inset Quotes frd
 \end_inset
 
- am stärksten, nämlich um ein paar Prozent pro Zeitspanne unterscheiden.
+ am stärksten, nämlich um wenige Prozente pro Zeitspanne unterscheiden.
  Dabei ist stets die CPU-Belastung der Ethernet-Netzwerklasten höher als
  die durch UDP.
  Die erzielten Bitraten der Netzwerkströme dieses Lasttyps sind weit unter
@@ -3974,7 +3952,7 @@ reference "sub:Theoretische-Grenzwerte"
 
 \begin_layout Standard
 Dadurch, dass beim Versand über UDP-Sockets das Betriebssystem häufiger
- zum Einsatz kommt (Generierung UDP- & IP-Header pro Paket) als beim Versand
+ zum Einsatz kommt (Generierung UDP- und IP-Header pro Paket) als beim Versand
  über Ethernet-Sockets, bleibt weniger CPU-Zeit für den PRP-1 stack übrig,
  weshalb dieser weniger UDP-Pakete als Ethernet-Frames abarbeiten kann.
  Daraus resultieren auch die in diesem Lasttyp kleineren Bitraten bei UDP-
@@ -4012,8 +3990,8 @@ reference "sub:Theoretische-Grenzwerte"
 
 \end_inset
 
-), weshalb bei der Erzeugung von Netzwerklasten dieses Lasttyps das Netzwerk
- anstelle der CPU der Engpass darzustellen scheint.
+), weshalb bei der Erzeugung von Netzwerklasten dieses Lasttyps die Netzwerkanbi
+ndung anstelle der CPU den Engpass darzustellen scheint.
 \end_layout
 
 \begin_layout Paragraph
@@ -4029,7 +4007,8 @@ Zeitspannen
 \end_inset
 
 Innerhalb einer Übertragungsart und eines Lasttyps ist über die drei Zeitspannen
- keine signifikante Änderung festzustellen (was u.a.
+ keine signifikante Änderung festzustellen (was u.
+ a.
  auch an den schmalen Schwankungsbändern in Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -4038,18 +4017,19 @@ reference "sub:Einschwingzeit-/-Steady"
 \end_inset
 
  zu sehen ist).
- Da die Ultrakurz-Zeitspanne mit 60s z.B.
+ Da die Ultrakurz-Zeitspanne mit 60 s z.
+ B.
  für die Analyse von Laufzeitunterscheidungen zwischen Netzwerk A und B
- knapp ausfallen könnte, 5min (Kurzzeit-Zeitspanne) dafür aber aussagekräftigere
- Resultate liefern würde, besteht Grund dazu, lediglich diese beiden Zeitspannen
- zu berücksichtigen.
+ knapp ausfallen könnte, 5 min (Kurzzeit-Zeitspanne) dafür aber aussagekräftiger
+e Resultate liefern würde, besteht Grund dazu, lediglich diese beiden Zeitspanne
+n zu berücksichtigen.
 \end_layout
 
 \begin_layout Standard
 Da sich Übertragungen via TCP von denen per UDP lediglich im Socket und
- verwendeten Layer-4-Protokoll unterscheiden, wird angenommen, dass für
- die Performance-Ermittlung mit TCP ebenfalls keine Langzeit-Szenarien nötig
- sind.
+ dem verwendeten Layer-4-Protokoll unterscheiden, wird angenommen, dass
+ für die Performance-Ermittlung mit TCP ebenfalls keine Langzeit-Szenarien
+ nötig sind.
 \end_layout
 
 \begin_layout Paragraph
@@ -4071,7 +4051,7 @@ name "par:Fazit"
 \begin_inset Newline newline
 \end_inset
 
-Aufgrund den vorhin ermittelten Werten genügt es den UDP-Verkehr zu analysieren
+Aufgrund der vorhin ermittelten Werte genügt es, den UDP-Verkehr zu analysieren
  und daraus Ergebnisse für den Layer-2-Datenverkehr abzuleiten, welcher
  in den nächsten Szenarien nicht in Betracht gezogen wird.
 \end_layout
@@ -4084,7 +4064,7 @@ Was für den Layer-2-Datenstrom aus dem UDP-Netzwerkverkehr abgeleitet werden
 
 
 \begin_inset CommandInset ref
-LatexCommand formatted
+LatexCommand nameref
 reference "par:Lasttyp-MIN"
 
 \end_inset
@@ -4113,8 +4093,8 @@ MIN
 \end_layout
 
 \begin_layout Standard
-Aus den oben erwähnten Gründen werden folgende Datenverkehrströme für die
- nachfolgenden Szenarien verwendet:
+Aus den oben erwähnten Gründen werden folgende Datenströme für die nachfolgenden
+ Szenarien verwendet:
 \end_layout
 
 \begin_layout Standard
@@ -4335,7 +4315,7 @@ Langzeit
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Für die nachfolgenden Szenarien in Frage kommende Netzwerklasten
+Für die nachfolgenden Szenarien in Frage kommenden Netzwerklasten
 \end_layout
 
 \end_inset
@@ -4844,7 +4824,8 @@ name "tab:Netzwerklasten-eines-Szenarios"
 \end_layout
 
 \begin_layout Standard
-Für jede generierte Netzwerklast werden pro Teilnehmer (z.B.
+Für jede generierte Netzwerklast werden pro Teilnehmer (z.
+ B.
  shck-Client und shck-Server) folgende Statistik-Merkmale in den Resultaten
  (siehe Kapitel 
 \begin_inset CommandInset ref
@@ -4875,31 +4856,8 @@ Usertime [s] (jeweils Minimum, Durchschnitt und Maximum)
 
 \end_deeper
 \begin_layout Itemize
-Netzwerkbelastung pro verwendetes Netzwerk-Interface (Normalfall: 
-\begin_inset Quotes fld
-\end_inset
-
-prp1
-\begin_inset Quotes frd
-\end_inset
-
-, 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
-, 
-\begin_inset Quotes fld
-\end_inset
-
-eth1
-\begin_inset Quotes frd
-\end_inset
-
-)
+Netzwerkbelastung pro verwendetem Netzwerk-Interface (Normalfall: prp1,
+ eth0, eth1)
 \end_layout
 
 \begin_deeper
@@ -4914,23 +4872,8 @@ TX-Bitrate (Download) [MBit/s] (jeweils Minimum, Durchschnitt und Maximum)
 \end_deeper
 \begin_layout Standard
 Bei der Netzwerkbelastung sind in einer PRP-Umgebung die RX-/TX-Bitraten
- bei den Netzwerk-Interfaces 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- und 
-\begin_inset Quotes fld
-\end_inset
-
-eth1
-\begin_inset Quotes frd
-\end_inset
-
- nie konstant 0.00 MBit/s, da stets 
+ bei den Netzwerk-Interfaces eth0 und eth1 nie konstant 0.00 MBit/s, da stets
+ 
 \begin_inset Quotes fld
 \end_inset
 
@@ -4938,15 +4881,8 @@ PRP_Supervision
 \begin_inset Quotes frd
 \end_inset
 
--Frames versendet werden, die vom Interface 
-\begin_inset Quotes fld
-\end_inset
-
-prp1
-\begin_inset Quotes frd
-\end_inset
-
- nicht gesehen werden und direkt vom PRP-1 stack kommen (siehe Kapitel 
+-Frames versendet werden, die vom Interface prp1 nicht gesehen werden und
+ direkt vom PRP-1 stack kommen (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sec:PRP-Overview"
@@ -4962,8 +4898,8 @@ PRP_Supervision
 \begin_inset Quotes frd
 \end_inset
 
--Frames erzielte Bitrate gerundet 0.00 MBit/s beträgt wird es in den Resultaten
- dieser Arbeit gleich behandelt wie wenn sie effektiv 0.00 MBit/s betragen
+-Frames erzielte Bitrate gerundet 0.00 MBit/s beträgt, wird sie in den Resultaten
+ dieser Arbeit gleich behandelt, wie wenn sie effektiv 0.00 MBit/s betragen
  würde.
 \end_layout
 
@@ -4986,7 +4922,7 @@ name "sub:Einfluss-von-TCP-Window-Size"
 \end_layout
 
 \begin_layout Standard
-Bei TCP-Netzwerklasten könnte es vorkommen, dass die TCP-Window-Size (siehe
+Bei TCP-Netzwerklasten kann es vorkommen, dass die TCP-Window-Size (siehe
  Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -5005,7 +4941,7 @@ ige TCP-Window-Size-Werte zu erhalten.
 \begin_layout Standard
 Zu beachten ist, dass tshark die CPU erheblich beansprucht und somit ein
  Engpass beim Prozessor entstehen oder sich weiter verengen könnte, worunter
- die RX-/TX-Bitraten in Mitleidenschaft gezogen werden könnten.
+ die RX-/TX-Bitraten in Mitleidenschaft gezogen würden.
 \end_layout
 
 \begin_layout Standard
@@ -5105,7 +5041,7 @@ MIN
 \begin_inset Quotes frd
 \end_inset
 
- (oben sendender Client, unten empfangender Server)
+ (oben: sendender Client, unten: empfangender Server)
 \end_layout
 
 \end_inset
@@ -5127,7 +5063,7 @@ MAX
 \begin_inset Quotes frd
 \end_inset
 
- ist beim Client dasselbe wie beim Lasttyp 
+ ist beim Client dasselbe Verhalten wie beim Lasttyp 
 \begin_inset Quotes fld
 \end_inset
 
@@ -5196,7 +5132,7 @@ MAX
 \begin_inset Quotes frd
 \end_inset
 
- (oben sendender Client, unten empfangender Server)
+ (oben: sendender Client, unten: empfangender Server)
 \end_layout
 
 \end_inset
@@ -5259,7 +5195,14 @@ MIN
 \begin_inset Quotes frd
 \end_inset
 
- nur die CPU sein, der einen Engpass bildet.
+ nur die CPU sein, die einen Engpass bildet.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -5268,7 +5211,7 @@ Des Weiteren sind Lücken in den vorherigen Abbildungen festzustellen, welche
  Wären keine Pakete zu diesem Zeitpunkt übermittelt worden, würde bei der
  Ausgabe von meas ein Minimum von 0 MBit/s aufgezeigt werden, was jedoch
  nicht der Fall ist.
- Dies wird in der tshark-Aufzeichnung in Wireshark wie folgt aufgezeigt:
+ Dies wird in der tshark-Aufzeichnung in Wireshark wie folgt dargestellt:
 \end_layout
 
 \begin_layout Standard
@@ -5319,14 +5262,14 @@ Previous segment not captured
 \begin_layout Standard
 Als Ursache dafür ist anzunehmen, dass tshark beim Aufzeichnen wegen dem
  Prozessor (hohe Lastbeanspruchung, die ebenfalls vom PRP-1 stack und shck
- benötigt wird) oder dem Festplattenspeicher an seine Grenzen gerät und
- er dem Netzwerkverkehr nicht mehr ganz folgen kann.
+ benötigt wird) oder dem Festplattenspeicher (Swapping) an seine Grenzen
+ gerät und er dem Netzwerkverkehr nicht mehr genügend zeitnah folgen kann.
 \end_layout
 
 \begin_layout Standard
-Schlussendlich kann man sagen, dass die TCP-Window-Size kein limitierender
- Faktor darstellt und TCP-Verkehr nicht durch die TCP-Window-Size beeinträchtigt
- werden kann.
+Als Schlussfolgerung wird festgestellt, dass die TCP-Window-Size kein limitieren
+der Faktor darstellt und TCP-Verkehr nicht durch die TCP-Window-Size beeinträcht
+igt werden kann.
  Nicht auszuschliessen sind jedoch andere Faktoren wie die CPU oder die
  Netzwerkanbindung.
 \end_layout
@@ -5518,8 +5461,8 @@ name "sub:Szenario-02:-Performance"
 Anhand dieses Szenarios wird festgestellt, wie gross der Ressourcenverbrauch
  des PRP-1 stacks ausfällt.
  Dies wird Anhand eines Vergleichs zu einem normalen, nicht redundanten
- Netzwerk-Anschluss durchgeführt, bei welchem in beiden Fällen die selbe
- Netzwerklast generiert wird.
+ Netzwerkanschluss durchgeführt, bei welchem in beiden Fällen dieselbe Netzwerkl
+ast generiert wird.
 \end_layout
 
 \begin_layout Standard
@@ -5534,18 +5477,17 @@ reference "sec:Aufbau-der-Testumgebung"
 \end_layout
 
 \begin_layout Itemize
-Der PRP-1 stack wird deaktiviert, woraus resultiert, dass es in diesem Szenario
- kein PRP-Netzwerkinterface (prp1) gibt und kein PRP in der Umgebung verwendet
+Der PRP-1 stack wird auf dem SAN deaktiviert, woraus resultiert, dass es
+ bei diesem Host kein PRP-Netzwerkinterface (prp1) gibt und kein PRP verwendet
  wird.
 \end_layout
 
 \begin_layout Itemize
-Anstelle des PRP-Netzwerks wird nur das Netzwerk A verwendet.
+Anstelle des PRP-Netzwerks wird vom SAN nur das Netzwerk A verwendet.
 \end_layout
 
 \begin_layout Standard
-Da der PRP-1 stack in diesem Szenario nicht in Betrieb ist, kann er nicht
- gemessen werden.
+Wenn der PRP-1 stack nicht in Betrieb ist, kann er nicht gemessen werden.
  Um die Performance-Unterschiede zwischen diesem und dem vorherigen Szenario
  (siehe Kapitel 
 \begin_inset CommandInset ref
@@ -5614,8 +5556,8 @@ Vergleich SAN und DAN
 \end_layout
 
 \begin_layout Standard
-Des Weiteren findet in diesem Szenario ein Vergleich zwischen SANs und DANs
- statt, indem folgende Fälle untersucht werden:
+Es findet in diesem Szenario ein Vergleich zwischen SANs und DANs statt,
+ indem folgende Fälle untersucht werden:
 \end_layout
 
 \begin_layout Itemize
@@ -5642,7 +5584,7 @@ Client DAN sendet an Server SAN
 \begin_inset Newline newline
 \end_inset
 
-Der Client sendet über den PRP-1 stack an den Server, auf dem der stack
+Der Client sendet über den PRP-1 stack an den Server, auf welchem der stack
  nicht aktiv ist und sich nur im Netzwerk A befindet.
 \end_layout
 
@@ -5810,12 +5752,12 @@ status open
 
 
 \backslash
-subsection[head={Szenario 03: Effekt von Laufzeitunterscheidungen / 
+subsection[head={Szenario 03: Effekt von Laufzeitunterschieden / 
 \backslash
 
 \backslash
-Einfluss nicht entfernter Duplikate}]{Szenario 03: Effekt von Laufzeitunterschei
-dungen zwischen Netzwerk A und B / Einfluss nicht entfernter Duplikate auf
+Einfluss nicht entfernter Duplikate}]{Szenario 03: Effekt von Laufzeitunterschie
+den zwischen Netzwerk A und B / Einfluss nicht entfernter Duplikate auf
  Funktion und Performance}
 \end_layout
 
@@ -5845,23 +5787,9 @@ reference "sec:Aufbau-der-Testumgebung"
 
 \end_inset
 
- geschilderten Aufbau, bis auf eine Ausnahme: Am Netzwerk-Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- des Hosts 
-\begin_inset Quotes fld
-\end_inset
-
-srv01
-\begin_inset Quotes frd
-\end_inset
-
- wird ein Calnex Paragon Störungs-Generator (siehe Tabelle 
+ geschilderten Aufbau, bis auf eine Ausnahme: Am Netzwerk-Interface eth0
+ des Hosts srv01 wird ein Calnex Paragon Störungs-Generator (siehe Tabelle
+ 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "tab:Weitere-Hilfsmittel:-Calnex"
@@ -5869,11 +5797,11 @@ reference "tab:Weitere-Hilfsmittel:-Calnex"
 \end_inset
 
 ) zwischen dem Interface und dem Switch des Netzwerks A dazwischen geschlossen.
- Mit diesem Generator ist es möglich Laufzeitunterscheidungen in Form von
- u.a.
+ Mit diesem Generator ist es möglich, Laufzeitunterschiede in Form von u.
+ a.
  einem Delay, fehlerhaften oder verlorenen Paketen zwischen Netzwerk A und
  B zu erzeugen.
- Dabei bleibt Netzwerk B im ursprünglichen Zustand.
+ Netzwerk B bleibt im ursprünglichen Zustand.
 \end_layout
 
 \begin_layout Standard
@@ -5900,23 +5828,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-PRP-Netzwerkaufbau mit Calnex Paragon an Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- des Hosts 
-\begin_inset Quotes fld
-\end_inset
-
-srv01
-\begin_inset Quotes frd
-\end_inset
-
-
+PRP-Netzwerkaufbau mit Calnex Paragon an Interface eth0 des Hosts srv01
 \end_layout
 
 \end_inset
@@ -5948,13 +5860,13 @@ key "IEC_62439-3_2015"
 
 \end_inset
 
- kann sich ein Frame maximal 400ms in der Tabelle zur Duplikaterkennung
+ kann sich ein Frame maximal 400 ms in der Tabelle zur Duplikaterkennung
  des PRP-1 stacks aufhalten (Aging-Time).
- Das bedeutet, dass wenn ein Duplikat mit mehr als 400ms Verspätung eintrifft,
- es als neues Frame interpretiert und an den nächsten Layer weitergeleitet
+ Das bedeutet, dass wenn ein Duplikat mit mehr als 400 ms Verspätung eintrifft,
+ es als neues Frame interpretiert und an den nächsten Layer weitergeleitet,
  anstelle dass es entfernt wird.
- Dann müsste eine der höheren Layer mit diesen Duplikaten umgehen können.
- TCP kann mit diese Duplikate nachträglich verwerfen, UDP nicht.
+ Dann müsste einer der höheren Layer mit diesen Duplikaten umgehen können.
+ TCP kann diese Duplikate nachträglich verwerfen, UDP nicht.
 \end_layout
 
 \begin_layout Standard
@@ -5980,8 +5892,8 @@ reference "sub:Theoretische-Grenzwerte"
 
  ist ersichtlich, dass maximal 138'889 Frames pro Sekunde versendet werden
  können.
- Innerhalb der Aging-Time von 400ms wäre somit der Versand von ca.
- 55'556 Frames möglich.
+ Innerhalb der Aging-Time von 400 ms wäre somit der Versand von maximal
+ ungefähr 55'556 Frames möglich.
  Demzufolge ist es aufgrund der Aging-Time nicht möglich, dass die gleiche
  Sequenznummer für unterschiedliche Frames in der Tabelle zur Duplikaterkennung
  eingtragen ist.
@@ -5990,16 +5902,17 @@ reference "sub:Theoretische-Grenzwerte"
  Frames mit gleicher Sequenznummer eingetragen zu haben.
  Die Aging-Routine sorgt dafür, dass die Frame-Einträge bereinigt werden
  und nur die aktuellsten Frame-Metadaten eingetragen bleiben.
- Wenn in der Tabelle alle Einträge besetzt sind und ein neues Frame ankommt,
- wird der älteste Eintrag verworfen, auch wenn sich dieser weniger lange
- als 400ms darin aufhält.
+ Wenn in der Tabelle alle Einträge besetzt sind und ein neues Frame eintrifft,
+ wird der älteste Eintrag verworfen, auch wenn sich dieser weniger lang
+ als 400 ms darin aufhält.
 \end_layout
 
 \begin_layout Standard
 Daraus ergeben sich folgende Fälle (Delay pro Richtung und in beide Richtungen,
- was heisst, dass z.B.
- ein Paket bei 300ms Delay für den Hin- und Rückweg min.
- 600ms benötigt):
+ was heisst, dass z.
+ B.
+ ein Paket bei 300 ms Delay für den Hin- und Rückweg mindestens 600 ms benötigt)
+:
 \end_layout
 
 \begin_layout Standard
@@ -6254,18 +6167,20 @@ Störquellen in Netzwerk A
 \end_layout
 
 \begin_layout Standard
-Anhand dem Störungs-Generator können unterschiedliche, realistische Fälle
- wie z.B.
- Paketverlust simuliert werden.
- Dieser kann auftreten wenn ein Switch im Netzwerk überlastet und somit
+Mit dem Störungs-Generator können unterschiedliche, realistische Fälle wie
+ z.
+ B.
+ Paketverluste simuliert werden.
+ Diese können auftreten, wenn ein Switch im Netzwerk überlastet und somit
  dazu gezwungen ist, Pakete zu verwerfen.
- Des Weiteren können u.a.
+ Des Weiteren können u.
+ a.
  bei Hardwaredefekten fehlerhafte Frames übertragen werden.
  Diese beiden Fälle (Paketverlust, Übertragungsfehler) werden je mit einer
  bestimmten Fehlerrate mit dem Störungs-Generator im Netzwerk A erzeugt
  und gemessen.
  Somit kann ermittelt werden, wie der PRP-1 stack Paketverluste oder Übertragung
-sfehler handhabt.
+sfehler behandelt.
 \end_layout
 
 \begin_layout Standard
@@ -6736,28 +6651,21 @@ name "sub:Szenario-04:-Zeitweiser"
 \end_layout
 
 \begin_layout Standard
-In diesem Szenario wird die ursprüngliche Konfiguration der Testumgebung
- (siehe Kapitel 
+In diesem Szenario wird wieder von der ursprünglichen Konfiguration der
+ Testumgebung (siehe Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sec:Aufbau-der-Testumgebung"
 
 \end_inset
 
-) nicht modifiziert.
- Stattdessen wird die Netzwerkanbindung ans Netzwerk A über das Netzwerk-Interfa
-ce 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- während der Messung nach einem bestimmten Intervall (z.B.
- alle 10 Sekunden) aktiviert / deaktiviert.
- Dadurch soll herausgefunden werden wie der PRP-1 stack mit zeitweisen Ausfällen
- umgeht.
+) ausgegangen.
+ Die Netzwerkanbindung ans Netzwerk A über das Netzwerk-Interface eth0 während
+ der Messung nach einem bestimmten Intervall (z.
+ B.
+ alle 10 Sekunden) aktiviert/deaktiviert.
+ Dadurch soll herausgefunden werden, wie der PRP-1 stack mit zeitweisen
+ Ausfällen umgeht.
  Dazu werden Messungen mit jeder Netzwerklast mit unterschiedlichen Intervallen
  sowie auch mit einem Komplettausfall durchgeführt, was in folgenden Fällen
  resultiert:
@@ -7013,7 +6921,7 @@ Intervall von 9s
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Fälle von zeitweisem Ausfall eines Netzwerkpfades
+Fälle von zeitweisem Ausfall oder Komplettausfall eines Netzwerkpfades
 \end_layout
 
 \end_inset
@@ -7027,7 +6935,7 @@ Fälle von zeitweisem Ausfall eines Netzwerkpfades
 \end_layout
 
 \begin_layout Standard
-Der oben erwähnte Kürzel ist bei der Bezeichnung in den graphischen Resulaten
+Das oben erwähnte Kürzel ist bei der Bezeichnung in den graphischen Resulaten
  
 \begin_inset CommandInset ref
 LatexCommand vpageref
@@ -7036,49 +6944,25 @@ reference "sub:Graphische-Resultate-1"
 \end_inset
 
  der entsprechenden Netzwerklast angehängt und weist auf den verwendeten
- Intervall in Sekunden oder den Komplettausfall hin.
+ Ausfallintervall in Sekunden oder den Komplettausfall hin.
 \end_layout
 
 \begin_layout Standard
 Es bestünde die Möglichkeit, die Netzwerk-Interfaces direkt über die Kommandozei
-le auf dem Host zu aktivieren / deaktivieren, jedoch werden dann die Nutzungssta
-tistiken des entsprechenden Interfaces im /proc-Dateisystem zurückgesetzt.
+le auf dem Host zu aktivieren/deaktivieren, jedoch werden dann die Nutzungsstati
+stiken des entsprechenden Interfaces im /proc-Dateisystem zurückgesetzt.
  Da diese Statistiken für die Messungen mit meas essenziell sind, stellt
  dieses Vorgehen hier keine Option dar.
- Aus diesem Grund werden bei dem Host 
-\begin_inset Quotes fld
-\end_inset
-
-srv01
-\begin_inset Quotes frd
-\end_inset
-
- ECI-Boxen (siehe Tabelle 
+ Aus diesem Grund werden bei dem Host srv01 ECI-Boxen (siehe Tabelle 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "tab:ECI-Weitere-Hilfsmittel:-Ethernet"
 
 \end_inset
 
-) bei den Netzwerk-Interfaces 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- und 
-\begin_inset Quotes fld
-\end_inset
-
-eth1
-\begin_inset Quotes frd
-\end_inset
-
- dazwischen geschaltet.
+) bei den Netzwerk-Interfaces eth0 und eth1 dazwischen geschaltet.
  Diese werden bei beiden Interfaces dazwischen geschaltet, damit die beiden
- Netzwerkanbindungen äquivalent zueinander bleiben (selbe Distanz / Verzögerung).
+ Netzwerkanbindungen äquivalent zueinander bleiben (selbe Distanz/Verzögerung).
 \end_layout
 
 \begin_layout Standard
@@ -7120,12 +7004,12 @@ PRP-Netzwerkaufbau mit ECI-Boxen
 
 \begin_layout Standard
 Eine ECI-Box verursacht auf einem Netzwerkpfad einen Delay von 
-\begin_inset Formula $1.144\pm6\mu s$
+\begin_inset Formula $1.144\pm6\,\mu s$
 \end_inset
 
 , was vernachlässigt werden kann, da dieser Delay bei beiden Netzwerkanbindungen
  auftritt und weil die versendeten Pakete zwar um diesen Delay später ankommen,
- jedoch im Steady State gemessen wird, in welchem ständig die selbe Last
+ jedoch im Steady State gemessen wird, in welchem ständig dieselbe Last
  versendet wird.
  
 \end_layout
@@ -7148,48 +7032,10 @@ reference "sub:Standorte"
 
 ) via USB angeschlossen sind, über Python-Scripts.
  Auf diesem Host wird in diesem Szenario ein Bash-Skript ausgeführt, welches
- das Python-Skript zur ECI-Box-Steuerung ausführt und auf dem Host 
-\begin_inset Quotes fld
-\end_inset
-
-srv03
-\begin_inset Quotes frd
-\end_inset
-
- via SSH über das Netzwerk Ext die Messung auf 
-\begin_inset Quotes fld
-\end_inset
-
-srv01
-\begin_inset Quotes frd
-\end_inset
-
- und 
-\begin_inset Quotes fld
-\end_inset
-
-srv02
-\begin_inset Quotes frd
-\end_inset
-
- startet.
- Hier wird lediglich die ECI-Box am Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- des Hosts 
-\begin_inset Quotes fld
-\end_inset
-
-srv01
-\begin_inset Quotes frd
-\end_inset
-
- gesteuert, während die zweite ECI-Box im aktiven Zustand bleibt.
+ das Python-Skript zur ECI-Box-Steuerung ausführt und auf dem Host srv03
+ via SSH über das Netzwerk Ext die Messung auf srv01 und srv02 startet.
+ Hier wird lediglich die ECI-Box am Interface eth0 des Hosts srv01 gesteuert,
+ während die zweite ECI-Box im aktiven Zustand bleibt.
 \end_layout
 
 \begin_layout Standard
@@ -7545,23 +7391,8 @@ reference "sub:Szenario-03:-Effekt"
 
 \end_inset
 
-), bei dem am Netzwerk-Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- des Hosts 
-\begin_inset Quotes fld
-\end_inset
-
-srv01
-\begin_inset Quotes frd
-\end_inset
-
- ein Calnex Paragon Störungs-Generator (siehe Tabelle 
+), bei dem am Netzwerk-Interface eth0 des Hosts srv01 ein Calnex Paragon
+ Störungs-Generator (siehe Tabelle 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "tab:Weitere-Hilfsmittel:-Calnex"
@@ -7574,9 +7405,10 @@ reference "tab:Weitere-Hilfsmittel:-Calnex"
 
 \begin_layout Standard
 So kann bewirkt werden, dass die Pakete über Netzwerk A in einer anderen
- Folge als über Netzwerk B ankommen.
- Diese Variation der Paketabfolge kann wie in Szenario 03 dazu führen, dass
- Duplikate vom PRP-1 stack nicht mehr erkannt werden (siehe Kapitel 
+ Reihenfolge als über Netzwerk B ankommen.
+ Diese Permutation der Paketabfolge kann wie in Szenario 03 dazu führen,
+ dass Duplikate vom PRP-1 stack nicht mehr erkannt werden (siehe Kapitel
+ 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sub:Delay-in-Netzwerk/Einfluss nicht entf Dupl"
@@ -7880,7 +7712,7 @@ reference "sec:Szenario-06:-Auswirkungen,"
 \end_layout
 
 \begin_layout Subsection
-Szenario 07: Einluss von Offload-Mechanismen
+Szenario 07: Einfluss von Offload-Mechanismen
 \begin_inset CommandInset label
 LatexCommand label
 name "sub:Einluss-von-Offload-Mechanismen"
@@ -7918,12 +7750,13 @@ TCP Segmentation Offload
 \begin_inset Newline newline
 \end_inset
 
-Aufgrund der Fokussierung dieser Arbeit auf Frames / Pakete, die der minimalen
+Aufgrund der Fokussierung dieser Arbeit auf Frames/Pakete, die der minimalen
  oder maximalen Grösse eines Ethernet-Frames entsprechen, wurde keine Netzwerkla
 st mit Fragmentierung konzipiert und versandt.
  Des Weiteren ist es über das virtuelle PRP-Interface nicht möglich, diesen
  Offload-Mechanismus einzusetzen, da der PRP-1 stack alles, was er von der
- oberen Schicht erhält, als Ethernet-Frames den physischen Interfaces weitergibt.
+ oberen Netzwerkschicht erhält, als Ethernet-Frames den physischen Interfaces
+ weitergibt.
  Das heisst, dass grosse TCP-/UDP-Pakete bereits auf Betriebssystem-Ebene
  fragmentiert und in Ethernet-Frames verpackt werden.
 \end_layout
@@ -7936,7 +7769,7 @@ UDP Fragmentation Offload
 \begin_inset Quotes frd
 \end_inset
 
-, aus dem selben Grund wie bei 
+: Aus dem selben Grund wie bei 
 \begin_inset Quotes fld
 \end_inset
 
@@ -7955,7 +7788,7 @@ Generic Segmentation Offload
 \begin_inset Quotes frd
 \end_inset
 
-, aus dem selben Grund wie bei 
+: Aus dem selben Grund wie bei 
 \begin_inset Quotes fld
 \end_inset
 
@@ -7974,7 +7807,7 @@ Generic Recieve Offload
 \begin_inset Quotes frd
 \end_inset
 
-, aus dem selben Grund wie bei 
+: Aus dem selben Grund wie bei 
 \begin_inset Quotes fld
 \end_inset
 
@@ -7993,8 +7826,8 @@ RX/TX VLAN Acceleration
 \begin_inset Quotes frd
 \end_inset
 
-, da dies lediglich VLAN-Umgebungen betreffen würde, in der hier verwendeten
- Umgebung jedoch kein VLAN eingesetzt wird.
+: Da dieser Mechanismus lediglich VLAN-Umgebungen betreffen würde, in der
+ hier verwendeten Umgebung jedoch kein VLAN eingesetzt wird.
  
 \end_layout
 
@@ -8006,7 +7839,7 @@ RX ntuple Filters and Actions
 \begin_inset Quotes frd
 \end_inset
 
-, weil der Mechanismus nicht aktiviert werden kann (
+: Weil der Mechanismus nicht aktiviert werden kann (
 \begin_inset Quotes fld
 \end_inset
 
@@ -8025,7 +7858,7 @@ RX Hashing Offload
 \begin_inset Quotes frd
 \end_inset
 
-, aus dem selben Grund wie bei 
+: Aus dem selben Grund wie bei 
 \begin_inset Quotes fld
 \end_inset
 
@@ -8034,6 +7867,13 @@ RX ntuple Filters and Actions
 \end_inset
 
 .
+\end_layout
+
+\begin_layout Standard
+\begin_inset Newpage pagebreak
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard
@@ -8273,8 +8113,16 @@ Jeder Mechanismus wird auf beiden physischen Netzwerk-Interfaces beider
 Diese Mechanismen sollen die CPU erleichtern, indem je nach Mechanismus
  bestimmte Aufgaben direkt in der NIC anstatt dem Prozessor getätigt werden.
  Demnach sollte der Engpass durch den Prozessor bei den betroffenen Netzwerklast
-en aufgelockert werden, was in einer höheren RX-/TX-Bitrate resultieren
- würde.
+en entlastet werden, was in einer höheren RX-/TX-Bitrate bei Datenströmen
+ mit Lasttyp 
+\begin_inset Quotes fld
+\end_inset
+
+MIN
+\begin_inset Quotes frd
+\end_inset
+
+ resultieren würde.
 \end_layout
 
 \begin_layout Standard

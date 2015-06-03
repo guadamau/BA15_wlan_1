@@ -102,11 +102,11 @@ nen zeigen wichtige Erkenntnisse bezüglich der verwendeten Software und
 Es ist aus sämtlichen Messresultaten ersichtlich, dass die Verwendung von
  TCP gegenüber UDP einen höheren Bedarf an Prozessorleistung beim Sender
  und Empfänger verursacht.
- Dies wird durch die Natur von TCP, sämtliche empfangenen Daten zu quittieren,
- begründet.
+ Dies wird durch die Beschaffenheit von TCP, sämtliche empfangenen Daten
+ zu quittieren, begründet.
  Der Vergleich von Netzwerklasten bestehend aus reinen Ethernet-Frames und
- UDP-Paketen führt zum Entschluss, dass Layer-2- und UDP-Verkehr so gut
- wie denselben Effekt auf den PRP-1 stack erzielen.
+ UDP-Paketen führt zum Entschluss, dass Layer-2- und UDP-Verkehr denselben
+ Effekt auf den PRP-1 stack erzielen.
 \end_layout
 
 \begin_layout Standard
@@ -120,9 +120,9 @@ MIN
 \end_inset
 
 , welche bereits durch den Prozessor limitiert werden.
- Hingegen erreichen sämtliche Netzwerklasten, die aus maximal grossen Frames
- / Paketen bestehen, die theoretische Maximalgeschwindigkeit bei der Übermittlun
-g sowohl in einer PRP-Umgebung als auch in einer Nicht-PRP-Umgebung.
+ Hingegen erreichen sämtliche Netzwerklasten, die aus maximal grossen Frames/Pak
+eten bestehen, die theoretische Maximalgeschwindigkeit bei der Übermittlung
+ sowohl in einer PRP-Umgebung als auch in einer Nicht-PRP-Umgebung.
  Dies deutet darauf hin, dass diese Ströme des Lasttyps 
 \begin_inset Quotes fld
 \end_inset
@@ -177,8 +177,8 @@ Bezüglich der Auswertung von Performance-Messungen anhand des PRP-1 stacks
 \end_layout
 
 \begin_layout Standard
-Ermittlungen in Abwesenheit des PRP-1 stacks haben ergeben, dass bei Netzwerklas
-ten mit Lasttyp 
+Ermittlungen, bei denen der PRP-1 stack nicht verwendet wurde, haben ergeben,
+ dass bei Netzwerklasten mit Lasttyp 
 \begin_inset Quotes fld
 \end_inset
 
@@ -198,12 +198,12 @@ Messungen während einer in Netzwerk A generierten Störung zeigen auf, dass
  in etwa dieselbe Auswirkung auf den PRP-1 stack haben.
  Der Ausfall eines Pfades hat keinen Einfluss auf die Prozessorleistungsbeanspru
 chung beim Client, wobei beim Server die beanspruchte CPU-Last mit der Anzahl
- an erhaltenen Duplikaten sinkt.
+ an erhaltenen Duplikaten sinkt/steigt.
  Beim Stand der Drucklegung dieser Arbeit verhält sich der PRP-1 stack so,
  dass dieser den Status eines angebundenen physischen Interfaces nicht erkennt
- und so handelt, als wenn beide Interfaces permanent aktiv sind.
+ und handelt so, als wenn beide Interfaces permanent aktiv sind.
  Selbst wenn die Softwareimplementation mit inaktiven NICs gestartet wird,
- nimmt dieser an, dass beide Interfaces aktiv sind.
+ nimmt diese an, dass beide Interfaces aktiv sind.
 \end_layout
 
 \begin_layout Standard
@@ -285,15 +285,17 @@ Bezüglich den nach genauen Vorgaben zu generierenden Netzwerklasten für
  diese Vorgaben komplett erfüllt.
  Des Weiteren ist es für den Vergleich der Resultate anhand unterschiedlicher
  Netzwerklasten wichtig, dass sich diese lediglich in einem Faktor unterscheiden
- (z.B.
+ (z.
+ B.
  beim Protokoll oder dem Lasttyp).
  Daher ist es nötig, dass sämtliche Netzwerklasten mit einem Tool generiert
  werden können, da bei der Abdeckung der Lasten durch unterschiedliche Tools
  jedes Tool bei der Generierung unterschiedlich vorgehen könnte und somit
  die Differenzen zwischen den Tools in die Resultate einfliessen würden.
- Die Suche nach einem Tool für die Generierung u.a.
+ Die Suche nach einem Tool für die Generierung u.
+ a.
  reiner Layer-2-Netzwerklast oder TCP-Verkehr, der aus minimal grossen Paketen
- besteht, fiel des Weiteren erfolglos aus.
+ besteht, fiel zudem erfolglos aus.
  Daher wurde für die Generierung der Netzwerklast eine weitere eigene Applikatio
 n entwickelt, welche alle in dieser Arbeit zu generierenden Netzwerklasten
  abdeckt und bei welcher sich die Lasten durch den Benutzer detailliert
@@ -314,10 +316,12 @@ Faktor Hardware und gewählte Messintervalle
 
 \begin_layout Standard
 Beim Messen der Performance ist es wichtig, dass die Werte zur Berechnung
- (z.B.
+ (z.
+ B.
  Anzahl an übertragenen Bytes bei einem Interface) öfters aktualisiert werden,
- als das sie eingelesen werden.
- Diese Statistik-Aktualisierungs-Intervalle werden von der Hardware (z.B.
+ als dass sie eingelesen werden.
+ Diese Statistikaktualisierungsintervalle werden von der Hardware (z.
+ B.
  Netzwerkkarte) vorgegeben, lassen sich jedoch nicht bei jeder Hardware
  modifizieren.
  Für genaue Messungen muss dieses Intervall möglichst klein sein.
@@ -326,20 +330,20 @@ Beim Messen der Performance ist es wichtig, dass die Werte zur Berechnung
 
 \begin_layout Standard
 Beispiel: Es ist zu ermitteln, wie viel an bestimmten Daten innerhalb von
- 100ms versendet werden können.
- Dazu werden die Statistik-Werte der Netzwerkkarte alle 100ms eingelesen.
- Aktualisiert die Netzwerkkarte jedoch nur jede Sekunde seine Werte, lautet
- das Resultat fälschlicherweise, dass innerhalb von 100ms nichts versendet
- wurde.
+ 100 ms versendet werden können.
+ Dazu werden die Statistikwerte der Netzwerkkarte alle 100 ms eingelesen.
+ Aktualisiert die Netzwerkkarte jedoch nur jede Sekunde ihre Werte, entsteht
+ ein falsches Messresultat, da innerhalb von 100 ms vermeintlich nichts
+ versendet wurde.
  Dies liegt daran, dass sich die Werte bezüglich der Anzahl an versendeten
- Bytes innerhalb von 100ms nicht geändert haben.
+ Bytes innerhalb von 100 ms nicht geändert haben.
  Damit die richtigen Resultate bei dieser Messung ermittelt werden können,
- muss die Netzwerkkarte seine Statistiken mindestens alle 100ms aktualisieren.
+ muss die Netzwerkkarte ihre Statistiken mindestens alle 100 ms aktualisieren.
  
 \end_layout
 
 \begin_layout Standard
-Die Konfiguration des Statistik-Aktualisierungs-Intervalls wird in Kapitel
+Die Konfiguration des Statistikaktualisierungsintervalls wird in Kapitel
  
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -351,10 +355,10 @@ reference "sub:proc-Netzwerkstatistiken"
 \end_layout
 
 \begin_layout Standard
-Zudem haben die Zeitabstände, in denen die Statistik-Werte eingelesen werden,
+Zudem haben die Zeitabstände, in denen die Statistikwerte eingelesen werden,
  einen Einfluss auf die Messresultate.
  Der Grund dafür ist, dass das Einlesen der Werte auch Zeit benötigt.
- Auf den Einfluss der gewählten Messintervallen wird in Kapitel 
+ Auf den Einfluss der gewählten Messintervalle wird in Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "par:Einfluss von Intervallgroessen"
@@ -378,7 +382,7 @@ Faktor Betriebssystem
 \end_layout
 
 \begin_layout Standard
-Wie in der Interpretation des Szenarios 01 in Kapitel 
+Wie unter anderem in der Interpretation des Szenarios 01 in Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sub:01:Weitere-Aspekte"
@@ -388,7 +392,8 @@ reference "sub:01:Weitere-Aspekte"
  nachgelesen werden kann, beeinflusst das Betriebssystem bzw.
  dessen Mechanismen (Scheduler) die ausgeführten Applikationen.
  Besonders bei bezüglich der Prozessorleistung anspruchvollen Prozessen
- (z.B.
+ (z.
+ B.
  Versand von UDP-Verkehr mit Lasttyp 
 \begin_inset Quotes fld
 \end_inset
@@ -519,7 +524,7 @@ Soll
 \begin_layout Plain Layout
 Es ist eine einfache PRP-Umgebung aufzubauen, die aus zwei Netzwerken A
  und B (je durch einen Ethernet-Switch repräsentiert) sowie zwei bis drei
- Endsystemen bestehen.
+ Endsystemen besteht.
  Das Protokoll und seine Implementierung sind zu studieren.
 \begin_inset Newline newline
 \end_inset
@@ -546,7 +551,7 @@ Ist
 \begin_layout Plain Layout
 Die einfache PRP-Umgebung wurde aufgebaut und dokumentiert.
  Daraufhin erfolgte das Studieren des PRP-Protokolls und des PRP-1 stacks
- von ZHAW Institute of Embedded Systems.
+ vom Institute of Embedded Systems der ZHAW.
 \begin_inset Newline newline
 \end_inset
 
@@ -648,7 +653,7 @@ Es sollen Konfigurationen definiert werden, in welchen die Leistungsfähigkeit
 \end_layout
 
 \begin_layout Itemize
-Effekt von Laufzeitunterschieden zwischen Netz A und Netz B.
+Effekt von Laufzeitunterschieden zwischen Netz A und Netz B
 \begin_inset VSpace -5bp
 \end_inset
 
@@ -656,7 +661,7 @@ Effekt von Laufzeitunterschieden zwischen Netz A und Netz B.
 \end_layout
 
 \begin_layout Itemize
-Zeitweiser Ausfall eines Netzwerkpfades.
+Zeitweiser Ausfall eines Netzwerkpfades
 \begin_inset VSpace -5bp
 \end_inset
 
@@ -664,7 +669,7 @@ Zeitweiser Ausfall eines Netzwerkpfades.
 \end_layout
 
 \begin_layout Itemize
-Abhängigkeit vom verwendeten Protokoll (TCP, UDP).
+Abhängigkeit vom verwendeten Protokoll (TCP, UDP)
 \begin_inset VSpace -5bp
 \end_inset
 
@@ -672,7 +677,7 @@ Abhängigkeit vom verwendeten Protokoll (TCP, UDP).
 \end_layout
 
 \begin_layout Itemize
-Einfluss nicht entfernter Duplikate auf Funktion und Performance.
+Einfluss nicht entfernter Duplikate auf Funktion und Performance
 \begin_inset VSpace -5bp
 \end_inset
 
@@ -705,14 +710,15 @@ Die Konfigurationen wurden in Form von Szenarien definiert, wobei jeder
  Da jedes Szenario dieselben Messungen unter unterschiedlichen Umständen
  durchführt, können die Szenarien übersichtlich verglichen und interpretiert
  werden.
- Des Weiteren wurde ein Szenario für den Normalfall geschaffen, der als
+ Des Weiteren wurde ein Szenario für den Normalfall geschaffen, das als
  Referenzpunkt für die Interpretation der anderen Szenarien dient.
 \end_layout
 
 \begin_layout Plain Layout
-Vor der effektiven Szenarien-Definierung wurden u.a.
+Vor der effektiven Szenarien-Definierung wurden u.
+ a.
  Grundsätze und Rahmenbedingungen aufgestellt, der allgemeine Ablauf eines
- Szenarios festgelegt und signifikante Resultat-Parameter erörtert, um den
+ Szenarios festgelegt und signifikante Resultatparameter erörtert, um den
  Szenarien eine gemeinsame Basis zu bieten.
 \begin_inset Newline newline
 \end_inset
@@ -745,9 +751,10 @@ reference "sec:Ermittlung-der-Performance"
 \end_inset
 
  werden sämtliche Szenarien-Definitionen sowie auch die dafür nötige Basis
- u.a.
- in Form von Grundsätzen und Rahmenbedingungen, vorgängigen Untersuchungen
- und Erörterung signifikanter Resultat-Parameter definiert.
+ u.
+ a.
+ in Form von Grundsätzen und Rahmenbedingungen, der vorgängigen Untersuchungen
+ und Erörterung signifikanter Resultatparameter definiert.
 \end_layout
 
 \begin_layout Plain Layout
@@ -762,7 +769,7 @@ reference "sub:Szenario-03:-Effekt"
 
 \end_inset
 
-: Effekt von Laufzeitunterschieden zwischen Netz A und Netz B.
+: Effekt von Laufzeitunterschieden zwischen Netz A und Netz B
 \begin_inset VSpace -5bp
 \end_inset
 
@@ -777,7 +784,7 @@ reference "sub:Szenario-04:-Zeitweiser"
 
 \end_inset
 
-: Zeitweiser Ausfall eines Netzwerkpfades.
+: Zeitweiser Ausfall eines Netzwerkpfades
 \begin_inset VSpace -5bp
 \end_inset
 
@@ -792,7 +799,7 @@ reference "sub:Szenario-05:-Abhängigkeit"
 
 \end_inset
 
-: Abhängigkeit vom verwendeten Protokoll (TCP, UDP).
+: Abhängigkeit vom verwendeten Protokoll (TCP, UDP)
 \begin_inset VSpace -5bp
 \end_inset
 
@@ -807,7 +814,7 @@ reference "sub:Szenario-03:-Effekt"
 
 \end_inset
 
-: Einfluss nicht entfernter Duplikate auf Funktion und Performance.
+: Einfluss nicht entfernter Duplikate auf Funktion und Performance
 \begin_inset VSpace -5bp
 \end_inset
 
@@ -901,13 +908,15 @@ Soll
 \begin_layout Plain Layout
 Für den Blackbox-Ansatz existieren diverse Tools, welche die Nutzung von
  Ressourcen bzw.
- Performanceparameter messen (z.B.
+ Performance-Parameter messen (z.
+ B.
  ping, BWping, iperf, netperf, flowgrind, top, ntop, atop, sar, und viele
  andere mehr).
 \end_layout
 
 \begin_layout Plain Layout
-Neben Linux-Bordmitteln sind auch selbst entwickelte Hilfsmittel (z.B.
+Neben Linux-Bordmitteln sind auch selbst entwickelte Hilfsmittel (z.
+ B.
  Applikationen, die eine genau definierte Last erzeugen) und dedizierte
  Messgeräte in Betracht zu ziehen.
 \begin_inset Newline newline
@@ -934,8 +943,8 @@ Ist
 
 \begin_layout Plain Layout
 Die im Rahmen dieser Arbeit selbst entwickelten Tools meas und shck dienten
- für das Messen mit Blackbox-Ansatz der Ressourcen-Nutzung bzw.
- der Performanceparameter.
+ für das Messen mit Blackbox-Ansatz der Ressourcennutzung bzw.
+ der Performance-Parameter.
 \begin_inset Newline newline
 \end_inset
 
@@ -967,9 +976,9 @@ reference "sub:Ablauf-eines-Szenarios"
 \end_inset
 
  erläutert, in welchem aufgeführt ist, dass bei einer Messung zu Beginn
- eine Netzwerklast-Generierung mit shck gestartet wird.
+ eine Netzwerklastgenerierung mit shck gestartet wird.
  Kurze Zeit darauf wird meas auf dem Sender und Empfänger gestartet und
- die Performanceparameter gemessen.
+ die Performance-Parameter gemessen.
  Nach der Messung wird die Netzwerklast-Generierung beendet.
 \end_layout
 
@@ -1077,14 +1086,7 @@ Ist
 \begin_inset Text
 
 \begin_layout Plain Layout
-Der PRP-1 stack wurde in diversen Szenarien mit dem Profiling-Tool 
-\begin_inset Quotes fld
-\end_inset
-
-perf
-\begin_inset Quotes frd
-\end_inset
-
+Der PRP-1 stack wurde in diversen Szenarien mit dem Profiling-Tool perf
  (siehe Tabelle 
 \begin_inset CommandInset ref
 LatexCommand vref
@@ -1268,7 +1270,7 @@ reference "sub:Szenario-01:-Performance-1"
 
 ) und als Anhaltspunkt zum Vergleich mit anderen Szenarien, die unterschiedliche
  Aspekte behandeln, dient.
- Ein Fall ohne PRP ist des Weiteren in Szenario 02 in Kapitel 
+ Ein Fall ohne PRP ist in Szenario 02 in Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sub:Szenario-02:-Performance"
@@ -1300,7 +1302,7 @@ reference "chap:Resultate"
 \end_inset
 
  erläutert und interpretiert.
- Wie die Resultate interpretiert werden ist ebenfalls im vorher erwähnten
+ Wie die Resultate interpretiert werden, ist ebenfalls im vorher erwähnten
  Kapitel aufzufinden.
 \end_layout
 
@@ -1363,7 +1365,7 @@ Soll
 
 \begin_layout Plain Layout
 Es soll auch geklärt werden, welchen Einfluss die Offload-Mechanismen moderner
- Ethernet- Adapter haben.
+ Ethernet-Adapter haben.
 \begin_inset Newline newline
 \end_inset
 
@@ -1525,7 +1527,7 @@ Ist
 \begin_layout Plain Layout
 Die Auswirkung der Anwendung von PRP wird in Form von Szenario 01 und 02
  studiert.
- In Szenario 01 wird die Standard-Konfiguration einer PRP-Umgebung behandelt,
+ In Szenario 01 wird die Standardkonfiguration einer PRP-Umgebung behandelt,
  bei der zwei DANs für die Messung eingesetzt werden.
  Szenario 02 beinhaltet unterschiedliche Fälle, bei denen alle möglichen
  Kombinationen von Client als DAN/SAN und Server als DAN/SAN erstellt, gemessen
@@ -1577,7 +1579,7 @@ reference "sub:Szenario-01:-Performance-1"
 
 \end_inset
 
-) behandelt die PRP-Umgebung, bei der es sich bei jedem Teilnehmer um ein
+) behandelt die PRP-Umgebung, bei der es sich bei jedem Teilnehmer um einen
  DAN handelt.
 \end_layout
 
@@ -1610,7 +1612,9 @@ Client DAN sendet an Server DAN
 
 \begin_layout Plain Layout
 Die Auswirkung von PRP auf das Endsystem sowie der Vergleich von DANs und
- SANs wird u.a in der Interpretation von Szenario 02 in Kapitel 
+ SANs wird u.
+ a.
+ in der Interpretation von Szenario 02 in Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vpageref
 reference "sec:Szenario-02:-Performance"
@@ -1754,7 +1758,8 @@ reference "sub:Grundsätze-und-Rahmenbedingungen"
  Innerhalb des vorher erwähnten Kapitels werden zudem die verwendeten Einheiten,
  die generierten Netzwerklasten, theoretische Grenzwerte und die Ermittlung
  der Einschwingzeit erläutert.
- Darauf folgen weitere Grundsteine für die Szenarien-Durchführung wie u.a.
+ Darauf folgen weitere Grundsteine für die Szenarien-Durchführung wie u.
+ a.
  der Einfluss von gewählten Intervallgrössen 
 \begin_inset CommandInset ref
 LatexCommand vpageref
@@ -1769,7 +1774,7 @@ reference "sub:Ablauf-eines-Szenarios"
 
 \end_inset
 
- sowie die Erörterung der signifikanten Resultat-Parameter 
+ sowie die Erörterung der signifikanten Resultatparameter 
 \begin_inset CommandInset ref
 LatexCommand vpageref
 reference "sub:Erörterung-signifikanter-Resulta"
@@ -1862,9 +1867,9 @@ Ist
 
 \begin_layout Plain Layout
 Zu Beginn wurden Kriterien für die Toolauswahl sowie sämtliche für diese
- Arbeit potenziell einsetzbare Tools gesammelt und grob studiert.
- Darauf stellte erfolgte die Aufstellung und Bewertung der engeren Auswahl
- der Tools und zuletzt wurden die Messwerte der Tools verifiziert.
+ Arbeit potentiell einsetzbaren Tools gesammelt und studiert.
+ Darauf erfolgte die Aufstellung und Bewertung der engeren Auswahl der Tools
+ und zuletzt wurden die Messwerte der Tools verifiziert.
 \begin_inset Newline newline
 \end_inset
 
@@ -1985,8 +1990,15 @@ key "pa-thesis"
 
 \begin_layout Standard
 Bei den Recherchen bezüglich des PRP-1 stacks stiessen wir bei dessen Dokumentat
-ion (Quelle!) auf einen zu wenig hohen Detaillierungsgrad und hatten somit
- einen Mehraufwand beim Studieren des Quellcodes.
+ion 
+\begin_inset CommandInset citation
+LatexCommand cite
+key "prp-1-stack-doc"
+
+\end_inset
+
+ auf einen zu wenig hohen Detaillierungsgrad und hatten somit einen Mehraufwand
+ beim Studieren des Quellcodes.
  Zum Beispiel fehlt eine Erklärung zum Aufbau der Duplikattabelle, welche
  in dieser Arbeit im Paragraph 
 \begin_inset Quotes fld
@@ -2019,8 +2031,8 @@ reference "par:Datenstruktur"
 
  erläutert wird.
  Die besagte Dokumentation war trotzdem eine grosse Hilfe, wobei sich besonders
- die Ablaufdiagramme zum Empfangen und Übertragen von Frames als äusserst
- aufschlussreich herausstellten.
+ die Ablaufdiagramme bezüglich dem Empfangen und Übertragen von Frames als
+ äusserst aufschlussreich herausstellten.
 \end_layout
 
 \begin_layout Standard
@@ -2039,7 +2051,7 @@ reference "sec:Szenario-03:-Effekt"
 ) trotz langer Auseinandersetzung und Profiling keine konkrete Erklärung
  für das ermittelte Verhalten gefunden werden.
  Allerdings war es uns von grosser Wichtigkeit, alle gewonnenen Erkenntnisse
- sowie auch die Gründe dafür zu notieren.
+ sowie auch die entsprechenden Gründe zu notieren.
  Eventuell hätten ein grösseres Zeitkontingent und weitere Vertiefung sich
  als aufschlussreich erweisen können.
 \end_layout
@@ -2087,31 +2099,8 @@ key "pa-thesis"
 \end_layout
 
 \begin_layout Standard
-Wir sind uns der umfassenden Ausführung dieser Arbeit bewusst und möchten
- sicher gehen, dass der Leser anhand der dargebotenen Informationen alles
- nachvollziehen kann.
- Der wesentliche Gehalt dieser Arbeit (Auswirkung von PRP in Form des PRP-1
- stacks auf das Endsystem, ermittelt durch Performance-Messungen) wird im
- Kapitel 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "chap:Resultate"
-
-\end_inset
-
- und im Kapitel 
-\begin_inset CommandInset ref
-LatexCommand vref
-reference "sec:Besprechung-der-Ergebnisse"
-
-\end_inset
-
- erläutert.
-\end_layout
-
-\begin_layout Standard
-Zusammenfassend kann ein positives Fazit gezogen werden: Das Projekt wurde
- mit grossem Interesse erarbeitet und wurde unserer Meinung nach erfolgreich
+Zusammenfassend resultiert die Arbeit in einem positiven Fazit: Das Projekt
+ wurde mit grossem Interesse erarbeitet und unserer Meinung nach erfolgreich
  umgesetzt.
  
 \end_layout
@@ -2131,7 +2120,7 @@ key "Aufgabenstellung"
  enthält noch weitere Aspekte bezüglich der Virtualisierung der PRP-Umgebung,
  die nicht zwingend im Rahmen dieser Arbeit zu erfüllen waren.
  Diese konnten aus Zeitgründen nicht studiert werden, würden jedoch mit
- den in dieser Arbeit geschaffenen Mittel ermittelbar sein.
+ den in dieser Arbeit geschaffenen Mittel analysierbar sein.
 \end_layout
 
 \begin_layout Standard
@@ -2140,7 +2129,7 @@ Des Weiteren wäre der genauere Einfluss von den Mechanismen des Betriebssystems
  weitere Befunde bezüglich der Performance von PRP erlangen zu können.
  Zusätzliche Untersuchungen bezüglich des Einflusses von Störungen in einem
  von beiden Netzwerken der PRP-Umgebung wie Delays, Paketverluste oder Übertragu
-ngsfehlern könnten weitere Erkenntnisse bringen.
+ngsfehler könnten weitere Erkenntnisse bringen.
 \end_layout
 
 \begin_layout Standard
