@@ -263,6 +263,12 @@ width=.8\textwidth
 
 %disable different vertical spacing when using twoside
 \raggedbottom
+
+\usepackage{tocloft}
+\setlength{\cftchapnumwidth}{2em}
+\setlength{\cftsecnumwidth}{3em}
+\setlength{\cftsubsecnumwidth}{4em}
+\setlength{\cftsubsubsecnumwidth}{5em}
 \end_preamble
 \options bibliography=totocnumbered,listof=totocnumbered,numbers=noenddot,headings=optiontoheadandtoc,twoside
 \use_default_options true

@@ -119,9 +119,9 @@ begin{otherlanguage*}{british}
 
 \end_inset
 
-Distributed systems whose communication channels are realized by Ethernet
+Distributed systems whose communication channels are realized via Ethernet
  networks often require a high degree of failure safety.
- One way to achieve this is the usage of the 
+ One way to achieve this is the use of a 
 \begin_inset Quotes fld
 \end_inset
 
@@ -129,14 +129,15 @@ Parallel Redundancy Protocol
 \begin_inset Quotes frd
 \end_inset
 
- (hereafter also referred to as PRP protocol).
- The PRP protocol provides redundant data transmission over two entirely
- physical independent Ethernet networks.
+ (PRP).
+ The PRP protocol provides redundant data transmission via two entirely
+ physically independent Ethernet networks.
  The main focus of this project consists of the evaluation and application
- of appropriate measurement methods as well as the interpretation of the
- resulting findings, regarding data transmissions applying the PRP protocol.
- In a first phase several testing scenarios were defined, which address
- the special properties of the PRP protocol.
+ of appropriate measurement methods, as well as the interpretation of the
+ resulting findings with regard to data transmissions which apply the PRP
+ protocol.
+ In a first phase, several testing scenarios, which address the special
+ properties of the PRP protocol were defined.
  To process these scenarios two applications were developed, 
 \begin_inset Quotes fld
 \end_inset
@@ -153,17 +154,17 @@ meas
 \begin_inset Quotes frd
 \end_inset
 
-, to capture and analyse measurement data.
- As a conclusion it is stated that the implementation of the PRP protocol
- operates mainly stable and as expected.
- Impairments to the data rate at a data transmission speed of Fast Ethernet
- (100 MBit/s) cannot be determined.
- Nevertheless a remarkable CPU load is detected in general while transmitting
- data dependent of the data volume.
- A migration of the of the PRP protocol implementation, which currently
- performs in userspace, to a kernel module and also optimizations of the
- implementation regarding the communication between physical network adapters
- and the virtual PRP network adapter can reduce the additional CPU workload.
+, a software to capture and analyse measurement data.
+ In conclusion, the implementation of the PRP protocol can be said to operate
+ stably for the most part and as expected.
+ No impairments to the data rate at a data transmission speed of Fast Ethernet
+ (100 MBit/s) could be detected.
+ Nevertheless, depending on the data volume, an additional, not inconsiderable
+ CPU load is usually registered while transmitting data.
+ A migration of the of the PRP protocol implementation, currently running
+ in userspace, to a kernel module, and also optimization of the implementation
+ regarding the communication between physical network adapters and the virtual
+ PRP network adapter can reduce the additional CPU workload.
  
 \begin_inset ERT
 status open
