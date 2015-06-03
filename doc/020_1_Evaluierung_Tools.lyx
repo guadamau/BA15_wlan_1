@@ -4547,7 +4547,7 @@ Tool
 
 \series bold
 \size footnotesize
-%CPU [0 s, 5 s]
+%CPU [0s, 5s]
 \end_layout
 
 \end_inset
@@ -4559,23 +4559,7 @@ Tool
 
 \series bold
 \size footnotesize
-%CPU [5 s, 10 s]
-\end_layout
-
-\end_inset
-</cell>
-<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
-\begin_inset Text
-
-\begin_layout Plain Layout
-
-\series bold
-\size footnotesize
-System-
-\begin_inset Newline newline
-\end_inset
-
-time [s] [0 s, 5 s]
+%CPU [5s, 10s]
 \end_layout
 
 \end_inset
@@ -4591,7 +4575,23 @@ System-
 \begin_inset Newline newline
 \end_inset
 
-time [s] [5 s, 10 s]
+time [s] [0s, 5s]
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+\size footnotesize
+System-
+\begin_inset Newline newline
+\end_inset
+
+time [s] [5s, 10s]
 \end_layout
 
 \end_inset
@@ -4607,7 +4607,7 @@ User-
 \begin_inset Newline newline
 \end_inset
 
-time [s] [0 s, 5 s]
+time [s] [0s, 5s]
 \end_layout
 
 \end_inset
@@ -4623,7 +4623,7 @@ User-
 \begin_inset Newline newline
 \end_inset
 
-time [s] [5 s, 10 s]
+time [s] [5s, 10s]
 \end_layout
 
 \end_inset
@@ -4748,7 +4748,7 @@ pidstat-Messung von dd
 \begin_layout Plain Layout
 
 \size footnotesize
-99.60% von 5 s
+99.60% von 5s
 \begin_inset Newline newline
 \end_inset
 
@@ -4763,7 +4763,7 @@ pidstat-Messung von dd
 \begin_layout Plain Layout
 
 \size footnotesize
-99.80% von 5 s
+99.80% von 5s
 \begin_inset Newline newline
 \end_inset
 
@@ -4993,7 +4993,7 @@ pidstat-Messung von iperf3
 \begin_layout Plain Layout
 
 \size footnotesize
-3.58% von 5 s
+3.58% von 5s
 \begin_inset Newline newline
 \end_inset
 
@@ -5008,7 +5008,7 @@ pidstat-Messung von iperf3
 \begin_layout Plain Layout
 
 \size footnotesize
-3.20% von 5 s
+3.20% von 5s
 \begin_inset Newline newline
 \end_inset
 
@@ -5023,7 +5023,7 @@ pidstat-Messung von iperf3
 \begin_layout Plain Layout
 
 \size footnotesize
-0.20% von 5 s
+0.20% von 5s
 \begin_inset Newline newline
 \end_inset
 
@@ -5038,7 +5038,7 @@ pidstat-Messung von iperf3
 \begin_layout Plain Layout
 
 \size footnotesize
-0.20% von 5 s
+0.20% von 5s
 \begin_inset Newline newline
 \end_inset
 
@@ -6398,7 +6398,7 @@ status open
 \begin_inset Tabular
 <lyxtabular version="3" rows="12" columns="7">
 <features rotate="0" tabularvalignment="middle">
-<column alignment="left" valignment="top" width="7col%">
+<column alignment="left" valignment="top" width="15col%">
 <column alignment="left" valignment="top" width="10col%">
 <column alignment="left" valignment="top" width="10col%">
 <column alignment="left" valignment="top" width="10col%">
@@ -6481,7 +6481,7 @@ srv01 (iperf3-Client, tätigt Upload)
 
 \series bold
 \size footnotesize
-Interval [s]
+Intervall [s]
 \end_layout
 
 \end_inset
@@ -7541,7 +7541,7 @@ status open
 \begin_inset Tabular
 <lyxtabular version="3" rows="12" columns="5">
 <features rotate="0" tabularvalignment="middle">
-<column alignment="left" valignment="top" width="7col%">
+<column alignment="left" valignment="top" width="15col%">
 <column alignment="left" valignment="top" width="10col%">
 <column alignment="left" valignment="top" width="10col%">
 <column alignment="left" valignment="top" width="10col%">

@@ -2857,6 +2857,24 @@ Die Messgenauigkeit bezüglich der Netzwerkstatistiken wird durch einige
  unumgängliche Faktoren beeinträchtigt:
 \end_layout
 
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{sloppypar} 
+\backslash
+tolerance=1000
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
 \begin_layout Itemize
 Verzögerung durch Mechanismen des Betriebssystems
 \end_layout
@@ -2876,20 +2894,6 @@ Scheduler bevorzugt höher priorisierte Prozesse.
 
 \end_deeper
 \begin_layout Itemize
-\begin_inset ERT
-status open
-
-\begin_layout Plain Layout
-
-
-\backslash
-begin{sloppypar} 
-\backslash
-tolerance=1000
-\end_layout
-
-\end_inset
-
 Verzögerungszeit, die während des Auslesens der Werte aus dem /proc-Dateisystem
  entsteht.
  Detailliert wird darauf in Paragraph 
@@ -2915,6 +2919,9 @@ reference "par:Minderung-von-Messfehlern"
 \end_inset
 
  näher eingegangen.
+\end_layout
+
+\begin_layout Standard
 \begin_inset ERT
 status open
 
@@ -3629,7 +3636,7 @@ reference "sub:Theoretische-Grenzwerte"
 Mit der nachfolgenden Graphik wird illustriert, dass der Messfehler (roter
  Abschnitt) immer eine ähnliche Länge aufweist, unabhängig von der Länge
  des Messintervalls.
- Die Abszissenachse repräsentiert jeweils die Zeit.
+ Die Abszissenachse der folgenden Abbildung repräsentiert jeweils die Zeit.
 \end_layout
 
 \begin_layout Standard
