@@ -107,6 +107,20 @@ addcontentsline{toc}{chapter}{Zusammenfassung}
 \end_layout
 
 \begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{sloppypar} 
+\backslash
+tolerance=1000
+\end_layout
+
+\end_inset
+
 Verteilte Systeme, deren Kommunikationskanäle mittels Ethernet-Netzwerken
  realisiert werden, müssen oft ein hohes Mass an Ausfallsicherheit gewährleisten.
  Eine Möglichkeit dazu bietet das 
@@ -121,6 +135,19 @@ Parallel Redundancy Protocol
  Das PRP-Protokoll ermöglicht eine redundante Datenübertragung über zwei
  physisch vollständig unabhängige Ethernet-Netzwerke.
  
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{sloppypar}
+\end_layout
+
+\end_inset
+
+
 \end_layout
 
 \begin_layout Standard

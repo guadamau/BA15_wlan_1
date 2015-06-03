@@ -132,7 +132,11 @@ Parallel Redundancy Protocol
  (PRP).
  The PRP protocol provides redundant data transmission via two entirely
  physically independent Ethernet networks.
- The main focus of this project consists of the evaluation and application
+ 
+\end_layout
+
+\begin_layout Standard
+The main focus of this project consists of the evaluation and application
  of appropriate measurement methods, as well as the interpretation of the
  resulting findings with regard to data transmissions which apply the PRP
  protocol.
@@ -155,7 +159,11 @@ meas
 \end_inset
 
 , a software to capture and analyse measurement data.
- In conclusion, the implementation of the PRP protocol can be said to operate
+ 
+\end_layout
+
+\begin_layout Standard
+In conclusion, the implementation of the PRP protocol can be said to operate
  stably for the most part and as expected.
  No impairments to the data rate at a data transmission speed of Fast Ethernet
  (100 MBit/s) could be detected.
