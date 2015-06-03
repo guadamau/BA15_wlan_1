@@ -355,15 +355,7 @@ filename "_tex/02_noPRP/rxsrv01.tex"
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Client ohne PRP (SAN sendet an SAN): RX-Bitrate
- auf 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
--Netzwerk-Interface [MBit/s]
+ auf eth0-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -401,15 +393,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Client ohne PRP (SAN sendet an SAN): RX-Bitrate
- auf 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
--Netzwerk-Interface [MBit/s]
+ auf eth0-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -453,15 +437,7 @@ filename "_tex/02_noPRP/txsrv01.tex"
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Client ohne PRP (SAN sendet an SAN): TX-Bitrate
- auf 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
--Netzwerk-Interface [MBit/s]
+ auf eth0-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -499,15 +475,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Client ohne PRP (SAN sendet an SAN): TX-Bitrate
- auf 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
--Netzwerk-Interface [MBit/s]
+ auf eth0-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -644,15 +612,7 @@ filename "_tex/02_noPRP/rxsrv02.tex"
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Server ohne PRP (SAN sendet an SAN): RX-Bitrate
- auf 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
--Netzwerk-Interface [MBit/s]
+ auf eth0-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -690,15 +650,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Server ohne PRP (SAN sendet an SAN): RX-Bitrate
- auf 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
--Netzwerk-Interface [MBit/s]
+ auf eth0-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -742,15 +694,7 @@ filename "_tex/02_noPRP/txsrv02.tex"
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Server ohne PRP (SAN sendet an SAN): TX-Bitrate
- auf 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
--Netzwerk-Interface [MBit/s]
+ auf eth0-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -788,15 +732,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Server ohne PRP (SAN sendet an SAN): TX-Bitrate
- auf 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
--Netzwerk-Interface [MBit/s]
+ auf eth0-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -849,7 +785,7 @@ shck-Client
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -950,15 +886,7 @@ filename "_tex/02_SAN_DAN/rxsrv01.tex"
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Client (SAN sendet an DAN): RX-Bitrate auf
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
--Netzwerk-Interface [MBit/s]
+ eth0-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -996,15 +924,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Client (SAN sendet an DAN): RX-Bitrate auf
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
--Netzwerk-Interface [MBit/s]
+ eth0-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -1048,15 +968,7 @@ filename "_tex/02_SAN_DAN/txsrv01.tex"
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Client (SAN sendet an DAN): TX-Bitrate auf
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
--Netzwerk-Interface [MBit/s]
+ eth0-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -1094,15 +1006,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Client (SAN sendet an DAN): TX-Bitrate auf
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
--Netzwerk-Interface [MBit/s]
+ eth0-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -1131,7 +1035,7 @@ shck-Server
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1168,7 +1072,7 @@ Resultat Szenario 02 auf shck-Server (SAN sendet an DAN): CPU-Last, System-
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1213,7 +1117,7 @@ ikation
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1269,15 +1173,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Server (SAN sendet an DAN): RX-Bitrate auf
- 
-\begin_inset Quotes fld
-\end_inset
-
-prp1
-\begin_inset Quotes frd
-\end_inset
-
--Netzwerk-Interface [MBit/s]
+ prp1-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -1302,7 +1198,7 @@ prp1
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1338,7 +1234,7 @@ Resultat Szenario 02 auf shck-Server (SAN sendet an DAN): TX-Bitrate [MBit/s]
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1358,15 +1254,7 @@ status collapsed
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Server (SAN sendet an DAN): TX-Bitrate auf
- 
-\begin_inset Quotes fld
-\end_inset
-
-prp1
-\begin_inset Quotes frd
-\end_inset
-
--Netzwerk-Interface [MBit/s]
+ prp1-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -1419,7 +1307,7 @@ shck-Client
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1456,7 +1344,7 @@ Resultat Szenario 02 auf shck-Client (DAN sendet an SAN): CPU-Last, System-
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1501,7 +1389,7 @@ ikation
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1537,7 +1425,7 @@ Resultat Szenario 02 auf shck-Client (DAN sendet an SAN): RX-Bitrate [MBit/s]
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1557,15 +1445,7 @@ status collapsed
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Client (DAN sendet an SAN): RX-Bitrate auf
- 
-\begin_inset Quotes fld
-\end_inset
-
-prp1
-\begin_inset Quotes frd
-\end_inset
-
--Netzwerk-Interface [MBit/s]
+ prp1-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -1590,7 +1470,7 @@ prp1
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1646,15 +1526,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Client (DAN sendet an SAN): TX-Bitrate auf
- 
-\begin_inset Quotes fld
-\end_inset
-
-prp1
-\begin_inset Quotes frd
-\end_inset
-
--Netzwerk-Interface [MBit/s]
+ prp1-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -1683,7 +1555,7 @@ shck-Server
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1720,7 +1592,7 @@ Resultat Szenario 02 auf shck-Server (DAN sendet an SAN): CPU-Last, System-
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -1784,15 +1656,7 @@ filename "_tex/02_DAN_SAN/rxsrv02.tex"
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Server (DAN sendet an SAN): RX-Bitrate auf
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
--Netzwerk-Interface [MBit/s]
+ eth0-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -1830,15 +1694,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Server (DAN sendet an SAN): RX-Bitrate auf
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
--Netzwerk-Interface [MBit/s]
+ eth0-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -1882,15 +1738,7 @@ filename "_tex/02_DAN_SAN/txsrv02.tex"
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Server (DAN sendet an SAN): TX-Bitrate auf
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
--Netzwerk-Interface [MBit/s]
+ eth0-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -1928,15 +1776,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Server (DAN sendet an SAN): TX-Bitrate auf
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
--Netzwerk-Interface [MBit/s]
+ eth0-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -1989,7 +1829,7 @@ shck-Client
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2026,7 +1866,7 @@ Resultat Szenario 02 auf shck-Client mit PRP (DAN sendet an DAN): CPU-Last,
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2071,7 +1911,7 @@ Resultat Szenario 02 auf shck-Client mit PRP (DAN sendet an DAN): CPU-Last
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2108,7 +1948,7 @@ Resultat Szenario 02 auf shck-Client mit PRP (DAN sendet an DAN): RX-Bitrate
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2128,15 +1968,7 @@ status collapsed
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Client mit PRP (DAN sendet an DAN): RX-Bitrate
- auf 
-\begin_inset Quotes fld
-\end_inset
-
-prp1
-\begin_inset Quotes frd
-\end_inset
-
--Netzwerk-Interface [MBit/s]
+ auf prp1-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -2161,7 +1993,7 @@ prp1
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2198,7 +2030,7 @@ Resultat Szenario 02 auf shck-Client mit PRP (DAN sendet an DAN): TX-Bitrate
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2218,15 +2050,7 @@ status collapsed
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Client mit PRP (DAN sendet an DAN): TX-Bitrate
- auf 
-\begin_inset Quotes fld
-\end_inset
-
-prp1
-\begin_inset Quotes frd
-\end_inset
-
--Netzwerk-Interface [MBit/s]
+ auf prp1-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -2299,7 +2123,7 @@ name "tab:TABELLE-Resultat-Szenario-02"
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2344,7 +2168,7 @@ Resultat Szenario 02 auf shck-Server mit PRP (DAN sendet an DAN): CPU-Last
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2381,7 +2205,7 @@ Resultat Szenario 02 auf shck-Server mit PRP (DAN sendet an DAN): RX-Bitrate
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2401,15 +2225,7 @@ status collapsed
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Server mit PRP (DAN sendet an DAN): RX-Bitrate
- auf 
-\begin_inset Quotes fld
-\end_inset
-
-prp1
-\begin_inset Quotes frd
-\end_inset
-
--Netzwerk-Interface [MBit/s]
+ auf prp1-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -2434,7 +2250,7 @@ prp1
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2471,7 +2287,7 @@ Resultat Szenario 02 auf shck-Server mit PRP (DAN sendet an DAN): TX-Bitrate
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -2491,15 +2307,7 @@ status collapsed
 
 \begin_layout Plain Layout
 Resultat Szenario 02 auf shck-Server mit PRP (DAN sendet an DAN): TX-Bitrate
- auf 
-\begin_inset Quotes fld
-\end_inset
-
-prp1
-\begin_inset Quotes frd
-\end_inset
-
--Netzwerk-Interface [MBit/s]
+ auf prp1-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -2527,12 +2335,12 @@ status open
 
 
 \backslash
-section[head={Szenario 03: Effekt von Laufzeitunterscheidungen / 
+section[head={Szenario 03: Effekt von Laufzeitunterschieden / 
 \backslash
 
 \backslash
-Einfluss nicht entfernter Duplikate}]{Szenario 03: Effekt von Laufzeitunterschei
-dungen zwischen Netzwerk A und B / Einfluss nicht entfernter Duplikate auf
+Einfluss nicht entfernter Duplikate}]{Szenario 03: Effekt von Laufzeitunterschie
+den zwischen Netzwerk A und B / Einfluss nicht entfernter Duplikate auf
  Funktion und Performance}
 \end_layout
 
@@ -2549,7 +2357,7 @@ name "sec:Szenario-03:-Effekt-1"
 \end_layout
 
 \begin_layout Standard
-Die Messwerte dieses Szenarios werden in 3 Teile aufgesplittet:
+Die Messwerte dieses Szenarios werden in 3 Teile aufgeteilt:
 \end_layout
 
 \begin_layout Itemize
@@ -2609,22 +2417,7 @@ name "sub:03-Delay-in-Netzwerk"
 \end_layout
 
 \begin_layout Standard
-Zu Beachten ist, dass sich die Bitraten für die Interfaces 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- und 
-\begin_inset Quotes fld
-\end_inset
-
-eth1
-\begin_inset Quotes frd
-\end_inset
-
+Zu Beachten ist, dass sich die Bitraten für die Interfaces eth0 und eth1
  kaum unterscheiden, ausser auf dem Client beim Empfangen von Quittierungen
  bei der Netzwerklast über TCP mit Lasttyp 
 \begin_inset Quotes fld
@@ -2870,8 +2663,7 @@ E
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Fälle von Laufzeitunterscheidungen in Form von Delay, erzeugt in Netzwerk
- A
+Fälle von Laufzeitunterschieden in Form von Delay, erzeugt in Netzwerk A
 \end_layout
 
 \end_inset
@@ -3139,16 +2931,8 @@ Es erfolgen zu jeder generierten Netzwerklast 6 Abbildungen (3 Merkmale
 \end_layout
 
 \begin_layout Standard
-Das Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- ist welches, dessen Durchsatz beinträchtigt wird, weshalb hier nur dieses
- aufgeführt wird.
+Das Interface eth0 ist welches, dessen Durchsatz beinträchtigt wird, weshalb
+ hier nur dieses aufgeführt wird.
 \end_layout
 
 \begin_layout Standard
@@ -3163,7 +2947,7 @@ U.MIN.U
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -3298,7 +3082,7 @@ Resultat Szenario 03: Delay in Netzwerk A: CPU-Last des PRP-1 stacks der
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -3410,14 +3194,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 03: Delay in Netzwerk A: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
+Resultat Szenario 03: Delay in Netzwerk A: RX-Bitrate auf Interface eth0
  der Netzwerklast U.MIN.U auf shck-Client und -Server
 \end_layout
 
@@ -3440,7 +3217,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -3552,14 +3329,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 03: Delay in Netzwerk A: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
+Resultat Szenario 03: Delay in Netzwerk A: TX-Bitrate auf Interface eth0
  der Netzwerklast U.MIN.U auf shck-Client und -Server
 \end_layout
 
@@ -3585,7 +3355,7 @@ U.MIN.K
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -3720,7 +3490,7 @@ Resultat Szenario 03: Delay in Netzwerk A: CPU-Last des PRP-1 stacks der
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -3832,14 +3602,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 03: Delay in Netzwerk A: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
+Resultat Szenario 03: Delay in Netzwerk A: RX-Bitrate auf Interface eth0
  der Netzwerklast U.MIN.K auf shck-Client und -Server
 \end_layout
 
@@ -3862,7 +3625,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -3974,14 +3737,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 03: Delay in Netzwerk A: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
+Resultat Szenario 03: Delay in Netzwerk A: TX-Bitrate auf Interface eth0
  der Netzwerklast U.MIN.K auf shck-Client und -Server
 \end_layout
 
@@ -4007,7 +3763,7 @@ U.MAX.U
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -4142,7 +3898,7 @@ Resultat Szenario 03: Delay in Netzwerk A: CPU-Last des PRP-1 stacks der
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -4254,14 +4010,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 03: Delay in Netzwerk A: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
+Resultat Szenario 03: Delay in Netzwerk A: RX-Bitrate auf Interface eth0
  der Netzwerklast U.MAX.U auf shck-Client und -Server
 \end_layout
 
@@ -4284,7 +4033,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -4396,14 +4145,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 03: Delay in Netzwerk A: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
+Resultat Szenario 03: Delay in Netzwerk A: TX-Bitrate auf Interface eth0
  der Netzwerklast U.MAX.U auf shck-Client und -Server
 \end_layout
 
@@ -4426,7 +4168,7 @@ U.MAX.K
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -4561,7 +4303,7 @@ Resultat Szenario 03: Delay in Netzwerk A: CPU-Last des PRP-1 stacks der
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -4673,14 +4415,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 03: Delay in Netzwerk A: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
+Resultat Szenario 03: Delay in Netzwerk A: RX-Bitrate auf Interface eth0
  der Netzwerklast U.MAX.K auf shck-Client und -Server
 \end_layout
 
@@ -4703,7 +4438,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -4815,14 +4550,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 03: Delay in Netzwerk A: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
+Resultat Szenario 03: Delay in Netzwerk A: TX-Bitrate auf Interface eth0
  der Netzwerklast U.MAX.K auf shck-Client und -Server
 \end_layout
 
@@ -4848,7 +4576,7 @@ T.MIN.U
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -4983,7 +4711,7 @@ Resultat Szenario 03: Delay in Netzwerk A: CPU-Last des PRP-1 stacks der
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -5095,14 +4823,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 03: Delay in Netzwerk A: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
+Resultat Szenario 03: Delay in Netzwerk A: RX-Bitrate auf Interface eth0
  der Netzwerklast T.MIN.U auf shck-Client und -Server
 \end_layout
 
@@ -5125,7 +4846,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -5237,14 +4958,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 03: Delay in Netzwerk A: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
+Resultat Szenario 03: Delay in Netzwerk A: TX-Bitrate auf Interface eth0
  der Netzwerklast T.MIN.U auf shck-Client und -Server
 \end_layout
 
@@ -5270,7 +4984,7 @@ T.MIN.K
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -5405,7 +5119,7 @@ Resultat Szenario 03: Delay in Netzwerk A: CPU-Last des PRP-1 stacks der
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -5517,14 +5231,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 03: Delay in Netzwerk A: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
+Resultat Szenario 03: Delay in Netzwerk A: RX-Bitrate auf Interface eth0
  der Netzwerklast T.MIN.K auf shck-Client und -Server
 \end_layout
 
@@ -5547,7 +5254,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -5659,14 +5366,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 03: Delay in Netzwerk A: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
+Resultat Szenario 03: Delay in Netzwerk A: TX-Bitrate auf Interface eth0
  der Netzwerklast T.MIN.K auf shck-Client und -Server
 \end_layout
 
@@ -5692,7 +5392,7 @@ T.MAX.U
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -5827,7 +5527,7 @@ Resultat Szenario 03: Delay in Netzwerk A: CPU-Last des PRP-1 stacks der
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -5939,14 +5639,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 03: Delay in Netzwerk A: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
+Resultat Szenario 03: Delay in Netzwerk A: RX-Bitrate auf Interface eth0
  der Netzwerklast T.MAX.U auf shck-Client und -Server
 \end_layout
 
@@ -5969,7 +5662,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -6081,14 +5774,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 03: Delay in Netzwerk A: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
+Resultat Szenario 03: Delay in Netzwerk A: TX-Bitrate auf Interface eth0
  der Netzwerklast T.MAX.U auf shck-Client und -Server
 \end_layout
 
@@ -6111,7 +5797,7 @@ T.MAX.K
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -6246,7 +5932,7 @@ Resultat Szenario 03: Delay in Netzwerk A: CPU-Last des PRP-1 stacks der
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -6358,14 +6044,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 03: Delay in Netzwerk A: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
+Resultat Szenario 03: Delay in Netzwerk A: RX-Bitrate auf Interface eth0
  der Netzwerklast T.MAX.K auf shck-Client und -Server
 \end_layout
 
@@ -6388,7 +6067,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -6500,14 +6179,7 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 03: Delay in Netzwerk A: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
+Resultat Szenario 03: Delay in Netzwerk A: TX-Bitrate auf Interface eth0
  der Netzwerklast T.MAX.K auf shck-Client und -Server
 \end_layout
 
@@ -6692,8 +6364,8 @@ S
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Fälle von Laufzeitunterscheidungen in Form von Paketverlust, erzeugt in
- Netzwerk A
+Fälle von Laufzeitunterschieden in Form von Paketverlust, erzeugt in Netzwerk
+ A
 \end_layout
 
 \end_inset
@@ -6966,22 +6638,14 @@ Graphische Resultate
 \end_layout
 
 \begin_layout Standard
-Es erfolgen zu jeder generierten Netzwerklast 6 Abbildungen (3 Merkmale
- (siehe Beginn dieses Kapitels) pro Teilnehmer), welche je alle 5 Fälle
- in Form von Delay abdecken.
+Es erfolgen zu jeder generierten Netzwerklast 6 Abbildungen [3 Merkmale
+ (siehe Beginn dieses Kapitels) pro Teilnehmer], welche je alle 5 Fälle
+ in Form von Paketverlust abdecken.
 \end_layout
 
 \begin_layout Standard
-Das Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- ist welches, dessen Durchsatz beinträchtigt wird, weshalb hier nur dieses
- aufgeführt wird.
+Das Interface eth0 ist welches, dessen Durchsatz beinträchtigt wird, weshalb
+ hier nur dieses aufgeführt wird.
 \end_layout
 
 \begin_layout Standard
@@ -6996,7 +6660,7 @@ U.MIN.U
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -7131,7 +6795,7 @@ Resultat Szenario 03: Paketverlust in Netzwerk A: CPU-Last des PRP-1 stacks
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -7244,15 +6908,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Paketverlust in Netzwerk A: RX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MIN.U auf shck-Client und -Server
+ eth0 der Netzwerklast U.MIN.U auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -7274,7 +6930,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -7387,15 +7043,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Paketverlust in Netzwerk A: TX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MIN.U auf shck-Client und -Server
+ eth0 der Netzwerklast U.MIN.U auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -7420,7 +7068,7 @@ U.MIN.K
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -7555,7 +7203,7 @@ Resultat Szenario 03: Paketverlust in Netzwerk A: CPU-Last des PRP-1 stacks
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -7668,15 +7316,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Paketverlust in Netzwerk A: RX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MIN.K auf shck-Client und -Server
+ eth0 der Netzwerklast U.MIN.K auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -7698,7 +7338,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -7811,15 +7451,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Paketverlust in Netzwerk A: TX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MIN.K auf shck-Client und -Server
+ eth0 der Netzwerklast U.MIN.K auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -7844,7 +7476,7 @@ U.MAX.U
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -7979,7 +7611,7 @@ Resultat Szenario 03: Paketverlust in Netzwerk A: CPU-Last des PRP-1 stacks
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -8092,15 +7724,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Paketverlust in Netzwerk A: RX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MAX.U auf shck-Client und -Server
+ eth0 der Netzwerklast U.MAX.U auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -8122,7 +7746,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -8235,15 +7859,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Paketverlust in Netzwerk A: TX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MAX.U auf shck-Client und -Server
+ eth0 der Netzwerklast U.MAX.U auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -8265,7 +7881,7 @@ U.MAX.K
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -8400,7 +8016,7 @@ Resultat Szenario 03: Paketverlust in Netzwerk A: CPU-Last des PRP-1 stacks
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -8513,15 +8129,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Paketverlust in Netzwerk A: RX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MAX.K auf shck-Client und -Server
+ eth0 der Netzwerklast U.MAX.K auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -8543,7 +8151,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -8656,15 +8264,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Paketverlust in Netzwerk A: TX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MAX.K auf shck-Client und -Server
+ eth0 der Netzwerklast U.MAX.K auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -8689,7 +8289,7 @@ T.MIN.U
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -8824,7 +8424,7 @@ Resultat Szenario 03: Paketverlust in Netzwerk A: CPU-Last des PRP-1 stacks
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -8937,15 +8537,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Paketverlust in Netzwerk A: RX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MIN.U auf shck-Client und -Server
+ eth0 der Netzwerklast T.MIN.U auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -9080,15 +8672,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Paketverlust in Netzwerk A: TX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MIN.U auf shck-Client und -Server
+ eth0 der Netzwerklast T.MIN.U auf shck-Client und -Server
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:ABBILDUNG-Resultat-Szenario-03:"
@@ -9120,7 +8704,7 @@ T.MIN.K
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -9368,15 +8952,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Paketverlust in Netzwerk A: RX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MIN.K auf shck-Client und -Server
+ eth0 der Netzwerklast T.MIN.K auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -9398,7 +8974,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -9511,15 +9087,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Paketverlust in Netzwerk A: TX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MIN.K auf shck-Client und -Server
+ eth0 der Netzwerklast T.MIN.K auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -9544,7 +9112,7 @@ T.MAX.U
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -9679,7 +9247,7 @@ Resultat Szenario 03: Paketverlust in Netzwerk A: CPU-Last des PRP-1 stacks
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -9792,15 +9360,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Paketverlust in Netzwerk A: RX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MAX.U auf shck-Client und -Server
+ eth0 der Netzwerklast T.MAX.U auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -9822,7 +9382,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -9935,15 +9495,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Paketverlust in Netzwerk A: TX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MAX.U auf shck-Client und -Server
+ eth0 der Netzwerklast T.MAX.U auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -9965,7 +9517,7 @@ T.MAX.K
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -10100,7 +9652,7 @@ Resultat Szenario 03: Paketverlust in Netzwerk A: CPU-Last des PRP-1 stacks
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -10213,15 +9765,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Paketverlust in Netzwerk A: RX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MAX.K auf shck-Client und -Server
+ eth0 der Netzwerklast T.MAX.K auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -10356,15 +9900,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Paketverlust in Netzwerk A: TX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MAX.K auf shck-Client und -Server
+ eth0 der Netzwerklast T.MAX.K auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -10548,7 +10084,7 @@ X
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Fälle von Laufzeitunterscheidungen in Form von Übertragungsfehlern, erzeugt
+Fälle von Laufzeitunterschieden in Form von Übertragungsfehlern, erzeugt
  in Netzwerk A
 \end_layout
 
@@ -10817,20 +10353,12 @@ Graphische Resultate
 \begin_layout Standard
 Es erfolgen zu jeder generierten Netzwerklast 6 Abbildungen (3 Merkmale
  (siehe Beginn dieses Kapitels) pro Teilnehmer), welche je alle 5 Fälle
- in Form von Delay abdecken.
+ in Form von Übertragungsfehlern abdecken.
 \end_layout
 
 \begin_layout Standard
-Das Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- ist welches, dessen Durchsatz beinträchtigt wird, weshalb hier nur dieses
- aufgeführt wird.
+Das Interface eth0 ist welches, dessen Durchsatz beinträchtigt wird, weshalb
+ hier nur dieses aufgeführt wird.
 \end_layout
 
 \begin_layout Standard
@@ -11093,15 +10621,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Übertragungsfehler in LAN A: RX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MIN.U auf shck-Client und -Server
+ eth0 der Netzwerklast U.MIN.U auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -11236,15 +10756,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Übertragungsfehler in LAN A: TX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MIN.U auf shck-Client und -Server
+ eth0 der Netzwerklast U.MIN.U auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -11517,15 +11029,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Übertragungsfehler in LAN A: RX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MIN.K auf shck-Client und -Server
+ eth0 der Netzwerklast U.MIN.K auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -11660,15 +11164,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Übertragungsfehler in LAN A: TX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MIN.K auf shck-Client und -Server
+ eth0 der Netzwerklast U.MIN.K auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -11941,15 +11437,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Übertragungsfehler in LAN A: RX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MAX.U auf shck-Client und -Server
+ eth0 der Netzwerklast U.MAX.U auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -12084,15 +11572,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Übertragungsfehler in LAN A: TX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MAX.U auf shck-Client und -Server
+ eth0 der Netzwerklast U.MAX.U auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -12362,15 +11842,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Übertragungsfehler in LAN A: RX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MAX.K auf shck-Client und -Server
+ eth0 der Netzwerklast U.MAX.K auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -12505,15 +11977,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Übertragungsfehler in LAN A: TX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MAX.K auf shck-Client und -Server
+ eth0 der Netzwerklast U.MAX.K auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -12786,15 +12250,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Übertragungsfehler in LAN A: RX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MIN.U auf shck-Client und -Server
+ eth0 der Netzwerklast T.MIN.U auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -12929,15 +12385,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Übertragungsfehler in LAN A: TX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MIN.U auf shck-Client und -Server
+ eth0 der Netzwerklast T.MIN.U auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -13210,15 +12658,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Übertragungsfehler in LAN A: RX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MIN.K auf shck-Client und -Server
+ eth0 der Netzwerklast T.MIN.K auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -13353,15 +12793,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Übertragungsfehler in LAN A: TX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MIN.K auf shck-Client und -Server
+ eth0 der Netzwerklast T.MIN.K auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -13634,15 +13066,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Übertragungsfehler in LAN A: RX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MAX.U auf shck-Client und -Server
+ eth0 der Netzwerklast T.MAX.U auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -13777,15 +13201,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Übertragungsfehler in LAN A: TX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MAX.U auf shck-Client und -Server
+ eth0 der Netzwerklast T.MAX.U auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -14055,15 +13471,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Übertragungsfehler in LAN A: RX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MAX.K auf shck-Client und -Server
+ eth0 der Netzwerklast T.MAX.K auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -14198,15 +13606,7 @@ status open
 
 \begin_layout Plain Layout
 Resultat Szenario 03: Übertragungsfehler in LAN A: TX-Bitrate auf Interface
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MAX.K auf shck-Client und -Server
+ eth0 der Netzwerklast T.MAX.K auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -14240,15 +13640,7 @@ CPU-Last [%] (Durchschnitt)
 \end_layout
 
 \begin_layout Itemize
-Netzwerkbelastung Netzwerk-Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
-
+Netzwerkbelastung Netzwerk-Interface eth0
 \end_layout
 
 \begin_deeper
@@ -14262,24 +13654,9 @@ TX-Bitrate (Download) [MBit/s] (Durchschnitt)
 
 \end_deeper
 \begin_layout Standard
-Das Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- ist welches, dessen Durchsatz beinträchtigt wird.
- Die durschnittlichen RX-/TX-Bitraten des 
-\begin_inset Quotes fld
-\end_inset
-
-prp1
-\begin_inset Quotes frd
-\end_inset
-
--Netzwerk-Interfaces können in Szenario 01 in Kapitel 
+Das Interface eth0 ist welches, dessen Durchsatz beinträchtigt wird.
+ Die durschnittlichen RX-/TX-Bitraten des prp1-Netzwerk-Interfaces können
+ in Szenario 01 in Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sub:Szenario-01:-Performance-1"
@@ -14288,15 +13665,7 @@ reference "sub:Szenario-01:-Performance-1"
 
  eingesehen werden, da diese vom Ausstieg einer einzelnen NIC nicht beeinflusst
  werden.
- Analog dazu gilt das für das aktive Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth1
-\begin_inset Quotes frd
-\end_inset
-
-.
+ Analog dazu gilt dies für das aktive Interface eth1.
 \end_layout
 
 \begin_layout Standard
@@ -14308,7 +13677,7 @@ reference "sub:Szenario-04:-Zeitweiser"
 \end_inset
 
  beschriebene Fall-Bezeichnung ist bei der Bezeichnung der entsprechenden
- Netzwerklast angehängt und weist auf den verwendeten Intervall in Sekunden
+ Netzwerklast angehängt und weist auf das verwendete Intervall in Sekunden
  oder den Komplettausfall hin.
 \end_layout
 
@@ -29603,8 +28972,8 @@ name "sub:Graphische-Resultate-1"
 \end_layout
 
 \begin_layout Standard
-Es erfolgen zu jeder generierten Netzwerklast 6 Abbildungen (3 Merkmale
- (siehe Beginn dieses Kapitels) pro Teilnehmer), welche je alle 10 Fälle
+Es erfolgen zu jeder generierten Netzwerklast 6 Abbildungen [3 Merkmale
+ (siehe Beginn dieses Kapitels) pro Teilnehmer], welche je alle 10 Fälle
  abdecken.
 \end_layout
 
@@ -29620,7 +28989,7 @@ U.MIN.U
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -29755,7 +29124,7 @@ Resultat Szenario 04: CPU-Last des PRP-1 stacks der Netzwerklast U.MIN.U auf
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -29867,15 +29236,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 04: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MIN.U auf shck-Client und -Server
+Resultat Szenario 04: RX-Bitrate auf Interface eth0 der Netzwerklast U.MIN.U
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -29897,7 +29259,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -30009,15 +29371,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 04: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MIN.U auf shck-Client und -Server
+Resultat Szenario 04: TX-Bitrate auf Interface eth0 der Netzwerklast U.MIN.U
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -30042,7 +29397,7 @@ U.MIN.K
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -30177,7 +29532,7 @@ Resultat Szenario 04: CPU-Last des PRP-1 stacks der Netzwerklast U.MIN.K auf
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -30289,15 +29644,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 04: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MIN.K auf shck-Client und -Server
+Resultat Szenario 04: RX-Bitrate auf Interface eth0 der Netzwerklast U.MIN.K
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -30319,7 +29667,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -30431,15 +29779,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 04: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MIN.K auf shck-Client und -Server
+Resultat Szenario 04: TX-Bitrate auf Interface eth0 der Netzwerklast U.MIN.K
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -30464,7 +29805,7 @@ U.MAX.U
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -30599,7 +29940,7 @@ Resultat Szenario 04: CPU-Last des PRP-1 stacks der Netzwerklast U.MAX.U auf
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -30711,15 +30052,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 04: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MAX.U auf shck-Client und -Server
+Resultat Szenario 04: RX-Bitrate auf Interface eth0 der Netzwerklast U.MAX.U
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -30741,7 +30075,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -30853,15 +30187,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 04: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MAX.U auf shck-Client und -Server
+Resultat Szenario 04: TX-Bitrate auf Interface eth0 der Netzwerklast U.MAX.U
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -30883,7 +30210,7 @@ U.MAX.K
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -31018,7 +30345,7 @@ Resultat Szenario 04: CPU-Last des PRP-1 stacks der Netzwerklast U.MAX.K auf
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -31130,15 +30457,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 04: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MAX.K auf shck-Client und -Server
+Resultat Szenario 04: RX-Bitrate auf Interface eth0 der Netzwerklast U.MAX.K
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -31160,7 +30480,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -31272,15 +30592,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 04: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MAX.K auf shck-Client und -Server
+Resultat Szenario 04: TX-Bitrate auf Interface eth0 der Netzwerklast U.MAX.K
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -31305,7 +30618,7 @@ T.MIN.U
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -31440,7 +30753,7 @@ Resultat Szenario 04: CPU-Last des PRP-1 stacks der Netzwerklast T.MIN.U auf
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -31552,15 +30865,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 04: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MIN.U auf shck-Client und -Server
+Resultat Szenario 04: RX-Bitrate auf Interface eth0 der Netzwerklast T.MIN.U
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -31582,7 +30888,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -31694,15 +31000,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 04: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MIN.U auf shck-Client und -Server
+Resultat Szenario 04: TX-Bitrate auf Interface eth0 der Netzwerklast T.MIN.U
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -31727,7 +31026,7 @@ T.MIN.K
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -31862,7 +31161,7 @@ Resultat Szenario 04: CPU-Last des PRP-1 stacks der Netzwerklast T.MIN.K auf
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -31974,15 +31273,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 04: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MIN.K auf shck-Client und -Server
+Resultat Szenario 04: RX-Bitrate auf Interface eth0 der Netzwerklast T.MIN.K
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -32004,7 +31296,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -32116,15 +31408,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 04: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MIN.K auf shck-Client und -Server
+Resultat Szenario 04: TX-Bitrate auf Interface eth0 der Netzwerklast T.MIN.K
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -32149,7 +31434,7 @@ T.MAX.U
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -32284,7 +31569,7 @@ Resultat Szenario 04: CPU-Last des PRP-1 stacks der Netzwerklast T.MAX.U auf
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -32396,15 +31681,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 04: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MAX.U auf shck-Client und -Server
+Resultat Szenario 04: RX-Bitrate auf Interface eth0 der Netzwerklast T.MAX.U
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -32426,7 +31704,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -32538,15 +31816,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 04: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MAX.U auf shck-Client und -Server
+Resultat Szenario 04: TX-Bitrate auf Interface eth0 der Netzwerklast T.MAX.U
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -32568,7 +31839,7 @@ T.MAX.K
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -32703,7 +31974,7 @@ Resultat Szenario 04: CPU-Last des PRP-1 stacks der Netzwerklast T.MAX.K auf
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -32815,15 +32086,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 04: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MAX.K auf shck-Client und -Server
+Resultat Szenario 04: RX-Bitrate auf Interface eth0 der Netzwerklast T.MAX.K
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -32845,7 +32109,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -32957,15 +32221,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 04: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MAX.K auf shck-Client und -Server
+Resultat Szenario 04: TX-Bitrate auf Interface eth0 der Netzwerklast T.MAX.K
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -33022,8 +32279,7 @@ reference "sub:Client-DAN-sendet-1"
 
 \end_inset
 
- betrachtet werden muss, der die selbe Konfiguration wie in Szenario 01
- behandelt.
+ betrachtet werden muss, der die selbe Konfiguration wie Szenario 01 behandelt.
 \end_layout
 
 \begin_layout Standard
@@ -33189,7 +32445,7 @@ D
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Fälle von Paket-Permutationen, erzeugt in Netzwerk A
+Fälle von Paketpermutationen, erzeugt in Netzwerk A
 \end_layout
 
 \end_inset
@@ -33482,22 +32738,14 @@ name "06-Graphische Resultate"
 \end_layout
 
 \begin_layout Standard
-Es erfolgen zu jeder generierten Netzwerklast 6 Abbildungen (3 Merkmale
- (siehe Beginn dieses Kapitels) pro Teilnehmer), welche je alle 5 Fälle
- in Form von Delay abdecken.
+Es erfolgen zu jeder generierten Netzwerklast 6 Abbildungen [3 Merkmale
+ (siehe Beginn dieses Kapitels) pro Teilnehmer], welche je alle 4 Fälle
+ in Form von Paketpermutationen abdecken.
 \end_layout
 
 \begin_layout Standard
-Das Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- ist welches, dessen Durchsatz beinträchtigt wird, weshalb hier nur dieses
- aufgeführt wird.
+Das Interface eth0 ist welches, dessen Durchsatz beinträchtigt wird, weshalb
+ hier nur dieses aufgeführt wird.
 \end_layout
 
 \begin_layout Standard
@@ -33759,15 +33007,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 06: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MIN.U auf shck-Client und -Server
+Resultat Szenario 06: RX-Bitrate auf Interface eth0 der Netzwerklast U.MIN.U
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -33901,15 +33142,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 06: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MIN.U auf shck-Client und -Server
+Resultat Szenario 06: TX-Bitrate auf Interface eth0 der Netzwerklast U.MIN.U
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -34181,15 +33415,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 06: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MIN.K auf shck-Client und -Server
+Resultat Szenario 06: RX-Bitrate auf Interface eth0 der Netzwerklast U.MIN.K
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -34323,15 +33550,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 06: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MIN.K auf shck-Client und -Server
+Resultat Szenario 06: TX-Bitrate auf Interface eth0 der Netzwerklast U.MIN.K
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -34603,15 +33823,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 06: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MAX.U auf shck-Client und -Server
+Resultat Szenario 06: RX-Bitrate auf Interface eth0 der Netzwerklast U.MAX.U
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -34745,15 +33958,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 06: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MAX.U auf shck-Client und -Server
+Resultat Szenario 06: TX-Bitrate auf Interface eth0 der Netzwerklast U.MAX.U
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -35022,15 +34228,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 06: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MAX.K auf shck-Client und -Server
+Resultat Szenario 06: RX-Bitrate auf Interface eth0 der Netzwerklast U.MAX.K
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -35164,15 +34363,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 06: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MAX.K auf shck-Client und -Server
+Resultat Szenario 06: TX-Bitrate auf Interface eth0 der Netzwerklast U.MAX.K
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -35444,15 +34636,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 06: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MIN.U auf shck-Client und -Server
+Resultat Szenario 06: RX-Bitrate auf Interface eth0 der Netzwerklast T.MIN.U
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -35586,15 +34771,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 06: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MIN.U auf shck-Client und -Server
+Resultat Szenario 06: TX-Bitrate auf Interface eth0 der Netzwerklast T.MIN.U
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -35866,15 +35044,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 06: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MIN.K auf shck-Client und -Server
+Resultat Szenario 06: RX-Bitrate auf Interface eth0 der Netzwerklast T.MIN.K
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -36008,15 +35179,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 06: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MIN.K auf shck-Client und -Server
+Resultat Szenario 06: TX-Bitrate auf Interface eth0 der Netzwerklast T.MIN.K
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -36288,15 +35452,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 06: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MAX.U auf shck-Client und -Server
+Resultat Szenario 06: RX-Bitrate auf Interface eth0 der Netzwerklast T.MAX.U
+ auf shck-Client und -Server
 \begin_inset CommandInset label
 LatexCommand label
 name "fig:ABBILDUNG-Resultat-Szenario-06:"
@@ -36437,15 +35594,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 06: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MAX.U auf shck-Client und -Server
+Resultat Szenario 06: TX-Bitrate auf Interface eth0 der Netzwerklast T.MAX.U
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -36714,15 +35864,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 06: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MAX.K auf shck-Client und -Server
+Resultat Szenario 06: RX-Bitrate auf Interface eth0 der Netzwerklast T.MAX.K
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -36856,15 +35999,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 06: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MAX.K auf shck-Client und -Server
+Resultat Szenario 06: TX-Bitrate auf Interface eth0 der Netzwerklast T.MAX.K
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -36878,7 +36014,7 @@ eth0
 \end_layout
 
 \begin_layout Section
-Szenario 07: Einluss von Offload-Mechanismen
+Szenario 07: Einfluss von Offload-Mechanismen
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Szenario-07:-Einluss-1"
@@ -36898,15 +36034,7 @@ CPU-Last [%] (Durchschnitt)
 \end_layout
 
 \begin_layout Itemize
-Netzwerkbelastung Netzwerk-Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
-
+Netzwerkbelastung Netzwerk-Interface eth0
 \end_layout
 
 \begin_deeper
@@ -36920,54 +36048,14 @@ TX-Bitrate (Download) [MBit/s] (Durchschnitt)
 
 \end_deeper
 \begin_layout Standard
-Die Netzwerk-Interfaces 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- und 
-\begin_inset Quotes fld
-\end_inset
-
-eth1
-\begin_inset Quotes frd
-\end_inset
-
- haben beide jeweils den gleichen Mechanismus aktiviert / deaktiviert und
- erzielen jeweils die selben Bitraten.
- Das Netzwerk-Interface 
-\begin_inset Quotes fld
-\end_inset
-
-prp1
-\begin_inset Quotes frd
-\end_inset
-
- wird nicht aufgeführt, weil es von den Mechanismen nicht direkt beeinflusst
- wird (Die Differenz in der Bitrate wird durch das Hinzufügen und Entfernen
- des RCTs erzielt).
+Die Netzwerk-Interfaces eth0 und eth1 haben beide jeweils den gleichen Mechanism
+us aktiviert/deaktiviert und erzielen jeweils die selben Bitraten.
+ Das Netzwerk-Interface prp1 wird nicht aufgeführt, weil es von den Mechanismen
+ nicht direkt beeinflusst wird (Die Differenz in der Bitrate wird durch
+ das Hinzufügen und Entfernen des RCTs erzielt).
  Die selben Einflüsse sind auch in den Werten des physischen Interfaces
- 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- aufzufinden.
- Daher genügt es hier lediglich das Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- anzuzeigen.
+ eth0 aufzufinden.
+ Daher genügt es, hier lediglich das Interface eth0 anzuzeigen.
 \end_layout
 
 \begin_layout Standard
@@ -39264,15 +38352,7 @@ cellcolor{tbl_lighterblue}
 
 \begin_layout Plain Layout
 Resultat Szenario 07 auf shck-Client: CPU-Last des PRP-1 stacks, RX-/TX-Bitrate
- auf 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
--Netzwerk-Interface [MBit/s]
+ auf eth0-Netzwerk-Interface [MBit/s]
 \begin_inset CommandInset label
 LatexCommand label
 name "tab:TABELLE-Resultat-Szenario-07"
@@ -41430,15 +40510,7 @@ cellcolor{tbl_lighterblue}
 
 \begin_layout Plain Layout
 Resultat Szenario 07 auf shck-Server: CPU-Last des PRP-1 stacks, RX-/TX-Bitrate
- auf 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
--Netzwerk-Interface [MBit/s]
+ auf eth0-Netzwerk-Interface [MBit/s]
 \end_layout
 
 \end_inset
@@ -41468,8 +40540,8 @@ subsection[head={Szenario 07: Graphische Resultate}]{Graphische Resultate}
 \end_layout
 
 \begin_layout Standard
-Es erfolgen zu jeder generierten Netzwerklast 6 Abbildungen (3 Merkmale
- (siehe Beginn dieses Kapitels) pro Teilnehmer), welche je alle 3 in dieser
+Es erfolgen zu jeder generierten Netzwerklast 6 Abbildungen [3 Merkmale
+ (siehe Beginn dieses Kapitels) pro Teilnehmer], welche je alle 3 in dieser
  Arbeit im Fokus liegenden Mechanismen abdecken.
 \end_layout
 
@@ -41485,7 +40557,7 @@ U.MIN.U
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -41620,7 +40692,7 @@ Resultat Szenario 07: CPU-Last des PRP-1 stacks der Netzwerklast U.MIN.U auf
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -41732,15 +40804,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 07: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MIN.U auf shck-Client und -Server
+Resultat Szenario 07: RX-Bitrate auf Interface eth0 der Netzwerklast U.MIN.U
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -41762,7 +40827,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -41874,15 +40939,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 07: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MIN.U auf shck-Client und -Server
+Resultat Szenario 07: TX-Bitrate auf Interface eth0 der Netzwerklast U.MIN.U
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -41907,7 +40965,7 @@ U.MIN.K
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -42042,7 +41100,7 @@ Resultat Szenario 07: CPU-Last des PRP-1 stacks der Netzwerklast U.MIN.K auf
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -42154,15 +41212,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 07: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MIN.K auf shck-Client und -Server
+Resultat Szenario 07: RX-Bitrate auf Interface eth0 der Netzwerklast U.MIN.K
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -42184,7 +41235,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -42296,15 +41347,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 07: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MIN.K auf shck-Client und -Server
+Resultat Szenario 07: TX-Bitrate auf Interface eth0 der Netzwerklast U.MIN.K
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -42329,7 +41373,7 @@ U.MAX.U
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -42464,7 +41508,7 @@ Resultat Szenario 07: CPU-Last des PRP-1 stacks der Netzwerklast U.MAX.U auf
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -42576,15 +41620,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 07: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MAX.U auf shck-Client und -Server
+Resultat Szenario 07: RX-Bitrate auf Interface eth0 der Netzwerklast U.MAX.U
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -42606,7 +41643,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -42718,15 +41755,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 07: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MAX.U auf shck-Client und -Server
+Resultat Szenario 07: TX-Bitrate auf Interface eth0 der Netzwerklast U.MAX.U
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -42748,7 +41778,7 @@ U.MAX.K
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -42883,7 +41913,7 @@ Resultat Szenario 07: CPU-Last des PRP-1 stacks der Netzwerklast U.MAX.K auf
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -42995,15 +42025,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 07: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MAX.K auf shck-Client und -Server
+Resultat Szenario 07: RX-Bitrate auf Interface eth0 der Netzwerklast U.MAX.K
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -43025,7 +42048,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -43137,15 +42160,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 07: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast U.MAX.K auf shck-Client und -Server
+Resultat Szenario 07: TX-Bitrate auf Interface eth0 der Netzwerklast U.MAX.K
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -43170,7 +42186,7 @@ T.MIN.U
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -43305,7 +42321,7 @@ Resultat Szenario 07: CPU-Last des PRP-1 stacks der Netzwerklast T.MIN.U auf
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -43417,15 +42433,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 07: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MIN.U auf shck-Client und -Server
+Resultat Szenario 07: RX-Bitrate auf Interface eth0 der Netzwerklast T.MIN.U
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -43447,7 +42456,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -43559,15 +42568,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 07: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MIN.U auf shck-Client und -Server
+Resultat Szenario 07: TX-Bitrate auf Interface eth0 der Netzwerklast T.MIN.U
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -43592,7 +42594,7 @@ T.MIN.K
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -43727,7 +42729,7 @@ Resultat Szenario 07: CPU-Last des PRP-1 stacks der Netzwerklast T.MIN.K auf
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -43839,15 +42841,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 07: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MIN.K auf shck-Client und -Server
+Resultat Szenario 07: RX-Bitrate auf Interface eth0 der Netzwerklast T.MIN.K
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -43869,7 +42864,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -43981,15 +42976,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 07: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MIN.K auf shck-Client und -Server
+Resultat Szenario 07: TX-Bitrate auf Interface eth0 der Netzwerklast T.MIN.K
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -44149,7 +43137,7 @@ Resultat Szenario 07: CPU-Last des PRP-1 stacks der Netzwerklast T.MAX.U auf
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -44261,15 +43249,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 07: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MAX.U auf shck-Client und -Server
+Resultat Szenario 07: RX-Bitrate auf Interface eth0 der Netzwerklast T.MAX.U
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -44291,7 +43272,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -44403,15 +43384,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 07: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MAX.U auf shck-Client und -Server
+Resultat Szenario 07: TX-Bitrate auf Interface eth0 der Netzwerklast T.MAX.U
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -44433,7 +43407,7 @@ T.MAX.K
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -44568,7 +43542,7 @@ Resultat Szenario 07: CPU-Last des PRP-1 stacks der Netzwerklast T.MAX.K auf
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -44680,15 +43654,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 07: RX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MAX.K auf shck-Client und -Server
+Resultat Szenario 07: RX-Bitrate auf Interface eth0 der Netzwerklast T.MAX.K
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -44710,7 +43677,7 @@ eth0
 placement H
 wide false
 sideways false
-status collapsed
+status open
 
 \begin_layout Plain Layout
 \noindent
@@ -44822,15 +43789,8 @@ status open
 \begin_inset Caption Standard
 
 \begin_layout Plain Layout
-Resultat Szenario 07: TX-Bitrate auf Interface 
-\begin_inset Quotes fld
-\end_inset
-
-eth0
-\begin_inset Quotes frd
-\end_inset
-
- der Netzwerklast T.MAX.K auf shck-Client und -Server
+Resultat Szenario 07: TX-Bitrate auf Interface eth0 der Netzwerklast T.MAX.K
+ auf shck-Client und -Server
 \end_layout
 
 \end_inset
@@ -45164,7 +44124,7 @@ Fokus auf PRP-1, Satz spendieren an PRP-0
 \end_layout
 
 \begin_layout Itemize
-Aging beobachten
+Aging-Mechanismus beobachten, Implementierung studieren
 \end_layout
 
 \begin_layout Standard
@@ -45319,12 +44279,12 @@ Kalenderwoche 12: 16.03.2015
 \end_layout
 
 \begin_layout Itemize
-Programme und Scripts erstellt
+Programme und Skripts erstellt
 \end_layout
 
 \begin_deeper
 \begin_layout Itemize
-Bis jetzt nur Single-Threaded
+Bis jetzt nur single-threaded
 \end_layout
 
 \end_deeper
@@ -45340,7 +44300,7 @@ Was für Mechanismen gibt es? Wie funktionieren sie?
 
 \end_deeper
 \begin_layout Itemize
-Switch sendet alle 30s LLDP-Pakete, muss deaktiviert werden.
+Switch sendet alle 30 s LLDP-Pakete, muss deaktiviert werden.
  Falls dies nicht möglich ist, sollte es keinen merkbaren Einfluss erzielen.
 \end_layout
 
@@ -45429,8 +44389,8 @@ Keine Modifikationen am stack vornehmen
 \begin_layout Itemize
 Performancemässig besteht zwischen UDP- und Ethernet-Netzwerklast ein kleiner
  Unterschied.
- Wenn das nachgewiesen werden kann, kann auf die Ethernet-Netzwerklast verzichte
-t werden.
+ Wenn dies nachgewiesen werden kann, kann auf die Ethernet-Netzwerklast
+ verzichtet werden.
 \end_layout
 
 \begin_layout Section
@@ -45461,13 +44421,13 @@ Kalenderwoche 16: 13.04.2015
 
 \begin_layout Itemize
 Ein Stromausfall fand vor dem Karfreitag statt, wobei ein Server nicht wieder
- automatisch hochgefahren ist.
+ automatisch hochgefahren wurde.
  Da kein direkter Zugang zum Raum mit den Servern besteht, konnte am Karfreitag
  nicht mit den Servern gearbeitet werden.
 \end_layout
 
 \begin_layout Itemize
-Python-Script shck optimieren
+Python-Skript shck optimieren
 \end_layout
 
 \begin_deeper
@@ -45538,7 +44498,7 @@ Bitratenangabe in MBit/s auf ca.
 \end_layout
 
 \begin_layout Itemize
-Tests mehrmals laufen lassen
+Tests mehrmals durchführen
 \end_layout
 
 \begin_layout Itemize
@@ -45566,13 +44526,13 @@ Kalenderwoche 19: 04.05.2015
 \end_layout
 
 \begin_layout Itemize
-Bei den Grafiken, welche die Beschaffenheit des Frameaufbaus von shck erläutern,
- muss erwähnt werden, dass der TCP- und IP-Header generell eine variable
+Bei den Graphiken, welche die Beschaffenheit des Frameaufbaus von shck erläutern
+, muss erwähnt werden, dass der TCP- und IP-Header generell eine variable
  Grösse haben.
 \end_layout
 
 \begin_layout Itemize
-Bei der Erklärung der Lasttypen, einen Verweis auf die Frame-Grafiken einfügen.
+Bei der Erklärung der Lasttypen einen Verweis auf die Frame-Grafiken einfügen.
 \end_layout
 
 \begin_layout Itemize
@@ -45593,7 +44553,7 @@ Anstelle der Random-Last sollte ein beliebig definierbares Lastmuster angegeben
 
 \end_deeper
 \begin_layout Itemize
-Ausformulieren, weshalb meas nur Singlethreaded-Prozesse/-Applikationen
+Ausformulieren, weshalb meas nur single-threaded Prozesse/Applikationen
  überwacht.
 \end_layout
 
@@ -45684,6 +44644,34 @@ Nächste Woche ist Herr Weibel abwesend, jedoch per E-Mail erreichbar
 Kalenderwoche 23: 01.06.2015
 \end_layout
 
+\begin_layout Itemize
+Diverse Korrekturvorschläge
+\end_layout
+
+\begin_layout Itemize
+Arbeit doppelseitig drucken (Layout-Anpassungen notwendig)
+\end_layout
+
+\begin_layout Itemize
+Szenario 03 beim Delay-Fall: Erklärung zur hohen Bitrate des PRP-Netzwerk-Interf
+aces
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Duplikathistory geht nicht so weit züruck, Frames können auch vor Aging-Time
+ entfernt werden
+\end_layout
+
+\begin_layout Itemize
+Korrektur bei Szenario 03 notwendig
+\end_layout
+
+\end_deeper
+\begin_layout Itemize
+Diverse Anmerkungen zur kommenden Präsentation vom 02.07.2015
+\end_layout
+
 \begin_layout Standard
 \begin_inset Newpage pagebreak
 \end_inset
@@ -45714,8 +44702,8 @@ name "sec:meas---Messung"
 \end_layout
 
 \begin_layout Standard
-Bei meas handelt es sich um eine C-Applikation, die Daten bzüglich Netzwerkinter
-faces und CPU-Last spezifischer Prozesse aufzeichnet, diese statistisch
+Bei meas handelt es sich um eine C-Applikation, die Daten bezüglich Netzwerk-Int
+erfaces und CPU-Last spezifischer Prozesse aufzeichnet, diese statistisch
  evaluiert und anschliessend als Messreport ausgibt.
  Der Quellcode wurde im Rahmen dieser Arbeit mit einem GNU-C-Compiler (GCC)
  der Version 4.7.2 kompiliert.
@@ -45892,8 +44880,8 @@ end{lstlisting}
 \end_layout
 
 \begin_layout Standard
-Mit $-Zeichen umgebene Zeichen im Dateipfad werden in diesem Fall durch
- die Prozess-ID ersetzt, die dem Programm als Argument übergeben wird.
+Mit $-Symbol umgebene Zeichen im Dateipfad werden in diesem Fall durch die
+ Prozess-ID ersetzt, die dem Programm als Argument übergeben wird.
 \end_layout
 
 \begin_layout Standard
@@ -46163,7 +45151,7 @@ evaluate_overall_data()
 
  zuständig.
  Die Funktion berechnet sämtliche durchschnittlichen Werte sowie Minima
- und Maxima über die gesamte Mess-Serie.
+ und Maxima über die gesamte Messserie.
  Aufgrund des Umfangs der Funktion wurde diese hier nicht publiziert.
  Die Funktion kann jedoch dem dieser Arbeit beiliegenden Datenträger entnommen
  und eingesehen werden (Datei: evaluate.c).
@@ -46289,7 +45277,7 @@ reference "sub:server()-Funktion"
 
 \end_inset
 
-) auf dem Server ausgeführt wird.
+) im Server-Modus ausgeführt wird.
 \end_layout
 
 \begin_layout Standard
@@ -46688,7 +45676,7 @@ name "sub:server()-Funktion"
 
 \begin_layout Standard
 Die server()-Funktion öffnet den gewünschten Socket und empfängt in einer
- Endlos-Schlaufe TCP- oder UDP-Pakete.
+ Endlosschleife TCP- oder UDP-Pakete.
 \end_layout
 
 \begin_layout Standard
@@ -46937,82 +45925,21 @@ reference "sec:Aufbau-der-Testumgebung"
 \end_layout
 
 \begin_layout Standard
-Die Szenarien wurden in Form von Bash-Scripts automatisiert, damit auf allnen
+Die Szenarien wurden in Form von Bash-Skripts automatisiert, damit auf allnen
  Teilnehmern die Messung möglichst gleichzeitig ausgeführt wird.
- Gestartet wurden die Messungen jeweils auf dem Host 
-\begin_inset Quotes fld
-\end_inset
-
-srv03
-\begin_inset Quotes frd
-\end_inset
-
-, welcher über das Netzwerk Ext (befindet sich ausserhalb des PRP-Netzwerks)
- via SSH auf 
-\begin_inset Quotes fld
-\end_inset
-
-srv01
-\begin_inset Quotes frd
-\end_inset
-
- und 
-\begin_inset Quotes fld
-\end_inset
-
-srv02
-\begin_inset Quotes frd
-\end_inset
-
- die Messungen gestartet hat.
+ Gestartet wurden die Messungen jeweils auf dem Host srv03, welcher über
+ das Netzwerk Ext (befindet sich ausserhalb des PRP-Netzwerks) via SSH auf
+ srv01 und srv02 die Messungen gestartet hat.
  Eine Messung besteht jeweils aus mehreren Netzwerklasten, die individuell
  mit einem genügenden Zeitabstand voneinander gemessen wurden.
- Voraussetzung für eine Messung war jeweils, dass auf 
-\begin_inset Quotes fld
-\end_inset
-
-srv02
-\begin_inset Quotes frd
-\end_inset
-
- shck bereits im Server-Modus gestartet ist.
+ Voraussetzung für eine Messung war jeweils, dass auf srv02 shck bereits
+ im Server-Modus gestartet ist.
  Sämtliche Scripts für die Messungen befinden sich auf den Hosts im Ordner
  /home/scripts/testing.
  Der Inhalt des Ordners /home/scripts wurde des Weiteren über alle Hosts
- (
-\begin_inset Quotes fld
-\end_inset
-
-srv01
-\begin_inset Quotes frd
-\end_inset
-
-, 
-\begin_inset Quotes fld
-\end_inset
-
-srv02
-\begin_inset Quotes frd
-\end_inset
-
- und 
-\begin_inset Quotes fld
-\end_inset
-
-srv03
-\begin_inset Quotes frd
-\end_inset
-
-) vor jeder Messung synchronisiert, sodass jeder Host die selben Scripts
- ausführt.
- Innerhalb eines Scripts wird dann zwischen den Hosts unterschieden (
-\begin_inset Quotes fld
-\end_inset
-
-srv02
-\begin_inset Quotes frd
-\end_inset
-
+ (srv01, srv02 und srv03) vor jeder Messung synchronisiert, sodass jeder
+ Host dieselben Scripts ausführt.
+ Innerhalb eines Scripts wird dann zwischen den Hosts unterschieden (srv02
  wird in jedem Script als Server angenommen).
 \end_layout
 
@@ -47029,20 +45956,13 @@ reference "chap:Speichermedium"
  Innerhalb dieses Kapitels werden die Scripts, die für das erste Szenario
  verwendet wurden, aufgelistet.
  Die Scripts für die weiteren Szenarien laufen jeweils ähnlich oder gar
- gleich ab (die Scripts variieren u.a.
+ gleich ab (die Scripts variieren u.
+ a.
  lediglich beim Speicherort der Resultate).
 \end_layout
 
 \begin_layout Standard
-Zu Beginn wird auf 
-\begin_inset Quotes fld
-\end_inset
-
-srv03
-\begin_inset Quotes frd
-\end_inset
-
- das Bash-Script 
+Zu Beginn wird auf srv03 das Bash-Skript 
 \begin_inset Quotes fld
 \end_inset
 
@@ -47051,15 +45971,7 @@ teststarter.sh
 \end_inset
 
  mit der Szenarionummer und der Netzwerk-Ext-IP-Adresse des Clients (hier
- von 
-\begin_inset Quotes fld
-\end_inset
-
-srv01
-\begin_inset Quotes frd
-\end_inset
-
-) gestartet.
+ von srv01) gestartet.
  In diesem Beispiel wird folgender Befehl ausgeführt:
 \end_layout
 
@@ -47294,24 +46206,9 @@ echo "Started scenario $1 on client $2 and server ${SERVER}"
 \end_layout
 
 \begin_layout Standard
-Darauf wird auf 
-\begin_inset Quotes fld
-\end_inset
-
-srv01
-\begin_inset Quotes frd
-\end_inset
-
- und 
-\begin_inset Quotes fld
-\end_inset
-
-srv02
-\begin_inset Quotes frd
-\end_inset
-
- das Bash-Script /home/scripts/testing/01_perf_prp.sh ausgeführt.
- Dieses Script startet für jede Netzwerklast sequenziell eine Messung (01_perf_p
+Darauf wird auf srv01 und srv02 das Bash-Script /home/scripts/testing/01_perf_pr
+p.sh ausgeführt.
+ Dieses Skript startet für jede Netzwerklast sequentiell eine Messung (01_perf_p
 rp_test.sh) und übergibt der Messung die entsprechenden Parameter.
  Im folgenden Code wird lediglich das Starten der Messung für zwei Netzwerklaste
 n aufgeführt.
@@ -47418,8 +46315,8 @@ sleep 90
 \end_layout
 
 \begin_layout Standard
-Im Script für eine einzelne Messung (hier 01_perf_prp_test.sh) wird je nach
- Host, der das Script ausführt, die Netzwerklast-Generierung gestartet und
+Im Skript für eine einzelne Messung (hier 01_perf_prp_test.sh) wird je nach
+ Host, der das Skript ausführt, die Netzwerklastgenerierung gestartet und
  nach der Messung beendet.
 \end_layout
 
@@ -47576,8 +46473,9 @@ fi
 Die Messresultate werden auf dem jeweiligen Host gespeichert und via SSH
  auf den Arbeitsrechner geladen, um daraus die Tabellen und Graphen generieren
  zu können.
- Diese Generierung besteht aus Bash-Scripts, welche den meas-Output parsen
- und für die Tabellen in entsprechenden 
+ Diese Generierung besteht aus Bash-Scripts, welche den meas-Output der
+ Messungen parsen und für die numerischen Ergebnisse dieser Arbeit in entspreche
+nden 
 \begin_inset ERT
 status open
 
@@ -47591,10 +46489,10 @@ LaTeX
 \end_inset
 
 -Code in passende Dateien umwandeln.
- Für die Graphen werden entsprechende gnuplot-Scripts generiert, welche
- beim Ausführen die zugehörige Grafik generieren.
- Diese Scripts zur Tabellen- und Graphen-Generierung werden sequenziell
- ausgeführt und in ein Bash-Script gepackt, welches den Namen 
+ Für die Graphen werden entsprechende gnuplot-Skripts generiert, welche
+ beim Ausführen die zugehörige Graphik generieren.
+ Diese Skripts zur Tabellen- und Graphen-Generierung werden sequentiell
+ ausgeführt und in ein Bash-Skript gepackt, welches den Namen 
 \begin_inset Quotes fld
 \end_inset
 
@@ -47735,7 +46633,7 @@ Software
 
 \begin_layout Plain Layout
 Beinhaltet den Source-Code von meas, shck und dem untersuchten PRP-1 stack.
- Zudem sind hier die in dieser Arbeit verwendeten Scripts gespeichert.
+ Zudem sind hier die in dieser Arbeit verwendeten Skripts gespeichert.
  Folgende Ordner befinden sich innerhalb dieses Verzeichnisses:
 \end_layout
 
@@ -47845,7 +46743,7 @@ BA15_wlan_1_print_300dpi.pdf
 
 \begin_layout Plain Layout
 Druckerfreundliche Version der BA15_wlan_1.pdf-Datei, bei dem die Seiten
- als Bilder mit 300 / 600 dpi gerendert werden
+ als Bilder mit 300 / 600 dpi gerendert wurden
 \end_layout
 
 \end_inset
@@ -47900,7 +46798,7 @@ Inhalt des Speichermediums auf erster Ebene
 \end_layout
 
 \begin_layout Section
-Messresultate
+/Messresultate
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Messresultate"
@@ -47919,8 +46817,8 @@ Messresultate
 \begin_inset Quotes frd
 \end_inset
 
- beinhaltet zwei Ordner, welche für den Client / Server stehen, auf welche
- die Resultate aufgeteilt sind:
+ beinhaltet zwei Ordner, welche jeweils für den Client/Server stehen, auf
+ welche die Resultate aufgeteilt sind:
 \end_layout
 
 \begin_layout Itemize
@@ -48490,7 +47388,7 @@ shck-Client_srv01
 \begin_inset Text
 
 \begin_layout Plain Layout
-Messresultate der Erörterung signifikanter Resultat-Parameter (siehe Kapitel
+Messresultate der Erörterung signifikanter Resultatparameter (siehe Kapitel
  
 \begin_inset CommandInset ref
 LatexCommand ref
@@ -48640,6 +47538,8 @@ reference "tab:TABELLE-Resultat-Szenario-02"
 \begin_inset Newline newline
 \end_inset
 
+
+\family typewriter
 Messresultate/
 \color green
 shck-Server_srv02
@@ -48695,6 +47595,8 @@ reference "tab:TABELLE-Resultat-Szenario-03:"
 \begin_inset Newline newline
 \end_inset
 
+
+\family typewriter
 Messresultate/
 \color green
 shck-Server_srv02
@@ -48754,6 +47656,8 @@ reference "tab:TABELLE-Resultat-Szenario-07"
 \begin_inset Newline newline
 \end_inset
 
+
+\family typewriter
 Messresultate/
 \color green
 shck-Client_srv01
@@ -48811,6 +47715,8 @@ reference "fig:ABBILDUNG-Resultat-Szenario-02"
 \begin_inset Newline newline
 \end_inset
 
+
+\family typewriter
 Messresultate/
 \color green
 shck-Server_srv02
@@ -48869,7 +47775,9 @@ Client
 \color inherit
 :
 \series default
- Messresultate/
+ 
+\family typewriter
+Messresultate/
 \color green
 shck-Client_srv01
 \color inherit
@@ -48894,6 +47802,8 @@ srv01
 03.T.MIN.U
 \color inherit
 .svg
+\family default
+
 \begin_inset Newline newline
 \end_inset
 
@@ -48904,7 +47814,9 @@ Server
 \color inherit
 :
 \series default
- Messresultate/
+ 
+\family typewriter
+Messresultate/
 \color green
 shck-Server_srv02
 \color inherit
@@ -48962,7 +47874,9 @@ Client
 \color inherit
 :
 \series default
- Messresultate/
+ 
+\family typewriter
+Messresultate/
 \color green
 shck-Client_srv01
 \color inherit
@@ -48987,6 +47901,8 @@ srv01
 06.T.MAX.U
 \color inherit
 .svg
+\family default
+
 \begin_inset Newline newline
 \end_inset
 
@@ -48997,7 +47913,9 @@ Server
 \color inherit
 :
 \series default
- Messresultate/
+ 
+\family typewriter
+Messresultate/
 \color green
 shck-Server_srv02
 \color inherit
@@ -49026,7 +47944,7 @@ srv02
 
 \end_deeper
 \begin_layout Section
-Scripts
+/Software/scripts
 \begin_inset CommandInset label
 LatexCommand label
 name "sec:Scripts"
@@ -49037,7 +47955,7 @@ name "sec:Scripts"
 \end_layout
 
 \begin_layout Standard
-Die Scripts werden in zwei Ordner aufgesplittet:
+Die Skripts werden in zwei Ordner aufgesplittet:
 \end_layout
 
 \begin_layout Itemize
@@ -49045,7 +47963,7 @@ server
 \begin_inset Newline newline
 \end_inset
 
-Hier befinden sich die Scripts, wie sie auf den Servern der PRP-Umgebung
+Hier befinden sich die Skripts, wie sie auf den Servern der PRP-Umgebung
  ausgeführt wurden.
  Darunter befinden sich 
 \begin_inset Quotes fld
@@ -49081,7 +47999,7 @@ measurement/test_reliability
 \begin_inset Newline newline
 \end_inset
 
-Hier sind die Bash-Scripts zum Kapitel 
+Hier sind die Bash-Skripts zum Kapitel 
 \begin_inset CommandInset ref
 LatexCommand vref
 reference "sub:Verifizierung-der-Messwerte"
@@ -49096,7 +48014,7 @@ shck
 \begin_inset Newline newline
 \end_inset
 
-Beinhaltet das shck-Python-Script
+Beinhaltet das shck-Python-Skript
 \end_layout
 
 \begin_layout Itemize
@@ -49112,7 +48030,7 @@ testing
 \begin_inset Newline newline
 \end_inset
 
-Scripts, die für das Ausführen der entsprechenden Messungen der aufgestellten
+Skripts, die für das Ausführen der entsprechenden Messungen der aufgestellten
  Szenarien ausgeführt wurden
 \end_layout
 
@@ -49122,7 +48040,7 @@ workstation_used_for_doc
 \begin_inset Newline newline
 \end_inset
 
-Innerhalb diesem Ordner sind die Scripts, die auf der Arbeitsstation, auf
+Innerhalb diesem Ordner sind die Skripts, die auf der Arbeitsstation, auf
  welcher die Dokumentation verfasst wurde, ausgeführt wurden.
  Hier ist das am Ende im Kapitel 
 \begin_inset CommandInset ref
@@ -49131,7 +48049,7 @@ reference "sec:Szenarien"
 
 \end_inset
 
- erwähnten 
+ erwähnte 
 \begin_inset Quotes fld
 \end_inset
 
@@ -49139,7 +48057,7 @@ generate_all.sh
 \begin_inset Quotes frd
 \end_inset
 
--Script aufzufinden, welches aus den Messresultaten 
+-Skript aufzufinden, welches aus den Messresultaten 
 \begin_inset ERT
 status open
 
@@ -49153,7 +48071,7 @@ LaTeX
 \end_inset
 
 -Tabellen und Graphen generiert.
- Weiter enthalten sind in diesem Ordner die Scripts, welche das 
+ Weiter enthalten sind in diesem Ordner die Skripts, welche das 
 \begin_inset Quotes fld
 \end_inset
 
